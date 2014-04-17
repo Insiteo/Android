@@ -23,7 +23,7 @@ public class InsiteoConf {
 	public static final Server SERVER = Server.TEST;
 
 	// This key that Insiteo will provide you is mandatory to use our API.
-	public static final String API_KEY = "9f3c8008-8b62-40e8-9263-555d3bb21fd8";//"5a30df2a-6038-698f-e387-0691ff1239d6";
+	public static final String API_KEY = "5a30df2a-6038-698f-e387-0691ff1239d6";
 
 	// This indicates to the api if it should starts the analytics engine
 	public static final boolean ANALYTICS_ENABLED    = false;
