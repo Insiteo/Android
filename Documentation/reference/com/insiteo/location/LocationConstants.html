@@ -1,0 +1,2953 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+<title>
+
+  LocationConstants
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../", "../../../../assets/");
+</script>
+<script src="../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../')"
+                      onkeyup="return search_changed(event, false, '../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../packages.html"  >Package Index</a> | 
+                <a href="../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/analytics/package-summary.html">com.insiteo.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/analytics/entities/package-summary.html">com.insiteo.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/common/package-summary.html">com.insiteo.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/common/rendertouch/package-summary.html">com.insiteo.common.rendertouch</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/common/utils/geom/package-summary.html">com.insiteo.common.utils.geom</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/common/utils/threading/package-summary.html">com.insiteo.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/geofence/package-summary.html">com.insiteo.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/init/package-summary.html">com.insiteo.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/itinerary/package-summary.html">com.insiteo.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/itinerary/entities/package-summary.html">com.insiteo.itinerary.entities</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../com/insiteo/location/package-summary.html">com.insiteo.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/location/utils/package-summary.html">com.insiteo.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/map/package-summary.html">com.insiteo.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/map/database/package-summary.html">com.insiteo.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/map/entities/package-summary.html">com.insiteo.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/map/render/package-summary.html">com.insiteo.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/map/utils/package-summary.html">com.insiteo.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/meetme/package-summary.html">com.insiteo.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../com/insiteo/meetme/requests/package-summary.html">com.insiteo.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/ILbsModule.html">ILbsModule</a></li>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/ILocationListener.html">ILocationListener</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/GfxLocation.html">GfxLocation</a></li>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/InsLocation.html">InsLocation</a></li>
+          <li class="selected api apilevel-"><a href="../../../com/insiteo/location/LocationConstants.html">LocationConstants</a></li>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/LocationProvider.html">LocationProvider</a></li>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/LocationRenderer.html">LocationRenderer</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/EInsLocationSource.html">EInsLocationSource</a></li>
+          <li class="api apilevel-"><a href="../../../com/insiteo/location/ELocationModule.html">ELocationModule</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../packages.html"  >Package Index</a> | 
+            <a href="../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="LocationConstants-source.html">View Source</a>
+</div>
+
+
+Summary:
+
+
+
+
+
+  <a href="#constants">Constants</a>
+  
+
+
+
+  &#124; <a href="#lfields">Fields</a>
+  
+
+
+
+  &#124; <a href="#pubctors">Ctors</a>
+  
+
+
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>LocationConstants</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="http://d.android.com/reference/java/lang/Object.html">java.lang.Object</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">com.insiteo.location.LocationConstants</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>Class defining all constants for the location lib
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#BLE_APS_FILE_NAME">BLE_APS_FILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#DEFAULT_PHONE_MODEL_ID">DEFAULT_PHONE_MODEL_ID</a></td>
+        <td class="jd-descrcol" width="100%">default value for phone model ID </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#GEOFENCE_CONFIG_FILE_NAME">GEOFENCE_CONFIG_FILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#GEOFENCE_FILE_NAME">GEOFENCE_FILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#GEOFENCE_MAPS_FILE_NAME">GEOFENCE_MAPS_FILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#GPS_PROVIDER_NAME">GPS_PROVIDER_NAME</a></td>
+        <td class="jd-descrcol" width="100%">Name of the GPS provider in Android system </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#ITI_FILE_NAME">ITI_FILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_EXT_CHANGESTATUS_SERVICE">MM_EXT_CHANGESTATUS_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_EXT_CONNECTUSER_SERVICE">MM_EXT_CONNECTUSER_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%">MeetMe external URLs </td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_EXT_JOINGROUP_SERVICE">MM_EXT_JOINGROUP_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_EXT_LEAVEGROUPS_SERVICE">MM_EXT_LEAVEGROUPS_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_EXT_REFRESHGROUPS_SERVICE">MM_EXT_REFRESHGROUPS_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_CHANGESTATUS_SERVICE">MM_INS_CHANGESTATUS_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_CONNECTUSER_SERVICE">MM_INS_CONNECTUSER_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_CREATEGROUP_SERVICE">MM_INS_CREATEGROUP_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_CREATETMPUSER_SERVICE">MM_INS_CREATETMPUSER_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_CREATEUSER_SERVICE">MM_INS_CREATEUSER_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_GETGROUPS_SERVICE">MM_INS_GETGROUPS_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%">MeetMe insiteo URLs </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_JOINGROUP_SERVICE">MM_INS_JOINGROUP_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_LEAVEGROUPS_SERVICE">MM_INS_LEAVEGROUPS_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MM_INS_REFRESHGROUPS_SERVICE">MM_INS_REFRESHGROUPS_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#PUSH_LOC_SERVICE">PUSH_LOC_SERVICE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#REQUEST_LOC_SERVICE_FILTER">REQUEST_LOC_SERVICE_FILTER</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#REQUEST_LOC_SERVICE_FULL">REQUEST_LOC_SERVICE_FULL</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#TERMINALS_FILE_NAME">TERMINALS_FILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_DATE_BEGIN">URLKEY_DATE_BEGIN</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_DATE_CLOSE">URLKEY_DATE_CLOSE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_DATE_END">URLKEY_DATE_END</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_EVENT_EXT_ID">URLKEY_EVENT_EXT_ID</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_EVENT_NAME">URLKEY_EVENT_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_EXCLUSIVE">URLKEY_EXCLUSIVE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_GROUP_ID">URLKEY_GROUP_ID</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_GROUP_NAME">URLKEY_GROUP_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_GUID">URLKEY_GUID</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_LOGIN">URLKEY_LOGIN</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_NAME">URLKEY_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_PASS">URLKEY_PASS</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#URLKEY_STATUS">URLKEY_STATUS</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+        <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#WIFI_APS_FILE_NAME">WIFI_APS_FILE_NAME</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- =========== FIELD SUMMARY =========== -->
+<table id="lfields" class="jd-sumtable"><tr><th colspan="12">Fields</th></tr>
+
+
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          long</td>
+          <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#COMPASS_REFRESH_INTERVAL">COMPASS_REFRESH_INTERVAL</a></td>
+          <td class="jd-descrcol" width="100%">time between two compas events (milliseconds) </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          boolean</td>
+          <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#DEBUG_MODE">DEBUG_MODE</a></td>
+          <td class="jd-descrcol" width="100%"></td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          <a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+          <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#INIT_LBS_SERVICE">INIT_LBS_SERVICE</a></td>
+          <td class="jd-descrcol" width="100%">Location URLs </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          long</td>
+          <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#ITINERARY_WAITFORLOC_TIMEOUT">ITINERARY_WAITFORLOC_TIMEOUT</a></td>
+          <td class="jd-descrcol" width="100%">time - if no location - before itinerary timeout </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          int</td>
+          <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#MOTION_DETECTION_MAX_AGE">MOTION_DETECTION_MAX_AGE</a></td>
+          <td class="jd-descrcol" width="100%">maximum age for measures used in motion detection  (milliseconds) </td>
+      </tr>
+      
+    
+      <tr class=" api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          <a href="http://d.android.com/reference/java/lang/String.html">String</a></td>
+          <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#REQUEST_ITI_SERVICE">REQUEST_ITI_SERVICE</a></td>
+          <td class="jd-descrcol" width="100%">Itinerary URLs </td>
+      </tr>
+      
+    
+      <tr class="alt-color api apilevel-" >
+          <td class="jd-typecol">
+          public
+          static
+          
+          long</td>
+          <td class="jd-linkcol"><a href="../../../com/insiteo/location/LocationConstants.html#UNIQUE_LOCATION_REQUEST_TIMEOUT">UNIQUE_LOCATION_REQUEST_TIMEOUT</a></td>
+          <td class="jd-descrcol" width="100%">time - if no location received for unique request timeout </td>
+      </tr>
+      
+    
+
+</table>
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../com/insiteo/location/LocationConstants.html#LocationConstants()">LocationConstants</a></span>()
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="http://d.android.com/reference/java/lang/Object.html">java.lang.Object</a>
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">equals</span>(<a href="http://d.android.com/reference/java/lang/Object.html">Object</a> arg0)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            <a href="http://d.android.com/reference/java/lang/Class.html">Class</a>&lt;?&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">getClass</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">hashCode</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notify</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notifyAll</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">toString</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0, int arg1)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0)
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<a id="BLE_APS_FILE_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        BLE_APS_FILE_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "Bap.txt"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="DEFAULT_PHONE_MODEL_ID"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        DEFAULT_PHONE_MODEL_ID
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>default value for phone model ID </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="GEOFENCE_CONFIG_FILE_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        GEOFENCE_CONFIG_FILE_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "geoConf.csv"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="GEOFENCE_FILE_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        GEOFENCE_FILE_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "geofence.bin"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="GEOFENCE_MAPS_FILE_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        GEOFENCE_MAPS_FILE_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "mapsSettings.csv"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="GPS_PROVIDER_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        GPS_PROVIDER_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Name of the GPS provider in Android system </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "gps"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="ITI_FILE_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        ITI_FILE_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "graph.bin"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_EXT_CHANGESTATUS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_EXT_CHANGESTATUS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/external/changestatus/${lang}?GUID=${GUID}&GroupIds=${grId}&Status=${status}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_EXT_CONNECTUSER_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_EXT_CONNECTUSER_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>MeetMe external URLs </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/external/connectuser/${lang}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_EXT_JOINGROUP_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_EXT_JOINGROUP_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/external/joingroup/${lang}?GUID=${GUID}&EId=${eventExtID}&EName=${eventName}&Begin=${dateBegin}&End=${dateEnd}&Exclu=${isExclu}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_EXT_LEAVEGROUPS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_EXT_LEAVEGROUPS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/external/leavegroup/${lang}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_EXT_REFRESHGROUPS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_EXT_REFRESHGROUPS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/external/getactivegroups/${lang}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_CHANGESTATUS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_CHANGESTATUS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/changestatus/${lang}?GUID=${GUID}&GroupIds=${grId}&Status=${status}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_CONNECTUSER_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_CONNECTUSER_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/connectuser/${lang}?Log=${login}&Pass=${pass}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_CREATEGROUP_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_CREATEGROUP_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/creategroup/${lang}?GUID=${GUID}&GName=${grName}&Pass=${pass}&End=${dateEnd}&Close=${dateClose}&Exclu=${isExclu}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_CREATETMPUSER_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_CREATETMPUSER_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/createtempuser/${lang}?Nick=${name}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_CREATEUSER_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_CREATEUSER_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/createuser/${lang}?Log=${login}&Pass=${pass}&Nick=${name}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_GETGROUPS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_GETGROUPS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>MeetMe insiteo URLs </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/getgroups/${lang}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_JOINGROUP_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_JOINGROUP_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/joingroup/${lang}?GUID=${GUID}&GId=${grId}&Pass=${pass}&Exclu=${isExclu}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_LEAVEGROUPS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_LEAVEGROUPS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/leavegroup/${lang}?GUID=${GUID}&GroupIds=${grId}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="MM_INS_REFRESHGROUPS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        MM_INS_REFRESHGROUPS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/meetme/insiteo/getactivegroups/${lang}?GUID=${GUID}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="PUSH_LOC_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        PUSH_LOC_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/loc/push/${lang}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="REQUEST_LOC_SERVICE_FILTER"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        REQUEST_LOC_SERVICE_FILTER
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/loc/measures"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="REQUEST_LOC_SERVICE_FULL"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        REQUEST_LOC_SERVICE_FULL
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "/rest/api/${siteId}/${appVers}/loc/measures/mac"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="TERMINALS_FILE_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        TERMINALS_FILE_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "terminals.csv"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_DATE_BEGIN"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_DATE_BEGIN
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${dateBegin}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_DATE_CLOSE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_DATE_CLOSE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${dateClose}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_DATE_END"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_DATE_END
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${dateEnd}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_EVENT_EXT_ID"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_EVENT_EXT_ID
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${eventExtID}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_EVENT_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_EVENT_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${eventName}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_EXCLUSIVE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_EXCLUSIVE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${isExclu}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_GROUP_ID"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_GROUP_ID
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${grId}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_GROUP_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_GROUP_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${grName}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_GUID"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_GUID
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${GUID}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_LOGIN"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_LOGIN
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${login}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${name}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_PASS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_PASS
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${pass}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="URLKEY_STATUS"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        URLKEY_STATUS
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "${status}"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<a id="WIFI_APS_FILE_NAME"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        WIFI_APS_FILE_NAME
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                "wap.txt"
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- ========= FIELD DETAIL ======== -->
+<h2>Fields</h2>
+
+
+
+
+<a id="COMPASS_REFRESH_INTERVAL"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        long
+      </span>
+        COMPASS_REFRESH_INTERVAL
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>time between two compas events (milliseconds) </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="DEBUG_MODE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        boolean
+      </span>
+        DEBUG_MODE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="INIT_LBS_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        INIT_LBS_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Location URLs </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="ITINERARY_WAITFORLOC_TIMEOUT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        long
+      </span>
+        ITINERARY_WAITFORLOC_TIMEOUT
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>time - if no location - before itinerary timeout </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="MOTION_DETECTION_MAX_AGE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        int
+      </span>
+        MOTION_DETECTION_MAX_AGE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>maximum age for measures used in motion detection  (milliseconds) </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="REQUEST_ITI_SERVICE"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+        REQUEST_ITI_SERVICE
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Itinerary URLs </p></div>
+
+    
+    </div>
+</div>
+
+
+
+<a id="UNIQUE_LOCATION_REQUEST_TIMEOUT"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+        long
+      </span>
+        UNIQUE_LOCATION_REQUEST_TIMEOUT
+    </h4>
+      <div class="api-level">
+        
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>time - if no location received for unique request timeout </p></div>
+
+    
+    </div>
+</div>
+
+
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<a id="LocationConstants()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">LocationConstants</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<a id="navbar_top"></a>
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>
