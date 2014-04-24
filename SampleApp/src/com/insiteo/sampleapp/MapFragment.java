@@ -67,10 +67,8 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 public class MapFragment extends Fragment implements IMapListener, IRTOListener, OnClickListener, IItineraryRendererListener, IItineraryRequestListener, ILocationListener, IGeofenceListener, OnNavigationListener{
 
 
-	public final static int MAP_3D_TAG = 1;
-	public final static int MAP_2D_TAG = 2;
-
 	private final static boolean PMR_ENABLED = false;
+	
 	// MAP
 	private MapView mMapView = null;
 
@@ -80,7 +78,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 
 	// ITINERARY
 	private final static boolean ITINERARY_RECOMPUTE_ACTIVATED = true;
-	private final static float ITINERARY_RECOMPUTE_DISTANCE = 8;
+	private final static float MAX_RECOMPUTATION_DISTANCE = 5;
 	private ItineraryProvider mItineraryProvider;
 	private ItineraryRenderer mItineraryRenderer;
 
@@ -510,14 +508,16 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	}
 
 	/**
-	 * Callback fired when the itinerary of the last Request changed (when location is updated for example) 
+	 * Callback fired when the itinerary of the last request changed (when location is updated for example). 
+	 * This method can be used to ask for a new itinerary if the user is now too far from the itinerary (we usually recompute
+	 * the itinerary over a distance of 5 meters).
 	 * @param aRequest the related request
 	 * @param aDistanceToIti the distance between the user location and the itinerary (in meter)
 	 */
 	@Override
 	public void onItineraryChanged(BaseRequest aRequest, float aDistanceToIti) {
 		if (aRequest instanceof ItineraryRequest && LocationProvider.getInstance().isStarted() && ITINERARY_RECOMPUTE_ACTIVATED) {	
-			if (aDistanceToIti > ITINERARY_RECOMPUTE_DISTANCE || aDistanceToIti == -1) {
+			if (aDistanceToIti > MAX_RECOMPUTATION_DISTANCE || aDistanceToIti == -1) {
 				computeItinerary();
 			}
 		}
@@ -659,7 +659,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		LocationProvider.getInstance().stop();
 		mLocationButton.setImageResource(R.drawable.ic_location_off);
 		mLastLocMapID = CommonConstants.NULL_ID;
-		mMapView.rotateAngle(0f, false);
+		mMapView.rotate(0f, false);
 	}
 
 	/**
@@ -727,7 +727,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 					angle = mapAzimuth - aAzimuth;
 				}
 			}
-			mMapView.rotateAngle(angle - mMapView.getScreenOrientation(), false);
+			mMapView.rotate(angle - mMapView.getScreenOrientation(), false);
 		}
 	}
 
