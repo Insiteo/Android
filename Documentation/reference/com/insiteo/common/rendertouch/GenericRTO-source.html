@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+<title>
+
+  GenericRTO
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/analytics/package-summary.html">com.insiteo.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/analytics/entities/package-summary.html">com.insiteo.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/common/package-summary.html">com.insiteo.common</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../com/insiteo/common/rendertouch/package-summary.html">com.insiteo.common.rendertouch</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/common/utils/geom/package-summary.html">com.insiteo.common.utils.geom</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/common/utils/threading/package-summary.html">com.insiteo.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/geofence/package-summary.html">com.insiteo.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/init/package-summary.html">com.insiteo.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/itinerary/package-summary.html">com.insiteo.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/itinerary/entities/package-summary.html">com.insiteo.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/location/package-summary.html">com.insiteo.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/location/utils/package-summary.html">com.insiteo.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/package-summary.html">com.insiteo.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/database/package-summary.html">com.insiteo.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/entities/package-summary.html">com.insiteo.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/render/package-summary.html">com.insiteo.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/utils/package-summary.html">com.insiteo.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/meetme/package-summary.html">com.insiteo.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/meetme/requests/package-summary.html">com.insiteo.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/IRenderer.html">IRenderer</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/IRTO.html">IRTO</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/IRTOListener.html">IRTOListener</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/GenericRenderer.html">GenericRenderer</a></li>
+          <li class="selected api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/GenericRTO.html">GenericRTO</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/ISObject3D.html">ISObject3D</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/Touch.html">Touch</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/ERenderMode.html">ERenderMode</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/common/rendertouch/ETouchObjectResult.html">ETouchObjectResult</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="GenericRTO.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>GenericRTO</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../com/insiteo/common/rendertouch/IRTO.html">IRTO</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+package com.insiteo.common.rendertouch;
+
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.graphics.Point;
+import android.graphics.PointF;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+
+import com.insiteo.common.CommonConstants;
+import com.insiteo.common.IMapData;
+import com.insiteo.common.R;
+import com.insiteo.common.utils.ColorUtils;
+import com.insiteo.common.utils.geom.Position;
+import com.threed.jpct.Object3D;
+import com.threed.jpct.Primitives;
+import com.threed.jpct.RGBColor;
+import com.threed.jpct.SimpleVector;
+import com.threed.jpct.Texture;
+import com.threed.jpct.TextureManager;
+import com.threed.jpct.World;
+import com.threed.jpct.util.ExtendedPrimitives;
+
+/**
+ * Concrete implementation of a basic {@link IRTO}  Object.
+ * @author Insiteo
+ *
+ */
+public class GenericRTO implements IRTO{
+
+	private final static String TAG = GenericRTO.class.getSimpleName();
+	
+
+	private String mName;
+	private int mId;
+	private int mPinResId;
+
+	private boolean mIsNameDisplayed = true;
+	private boolean mIsAnimationActivated = false;
+
+	private Position mPosition;
+	private PointF mZoneOffset;
+	
+	private int mNameMargin;
+	private int mNamePadding;
+	
+	private int mNameBkgColor;
+	private int mNameTextColor;
+	
+	private float mLastAngle;
+	private Point mLastPos = new Point();
+
+	private ERenderMode mRenderingMode;
+
+	private Point debug = new Point();
+
+	//******************************************************************************************************************
+	// 	Constructors
+	// *****************************************************************************************************************
+
+	public GenericRTO(int id){
+		this(id, null, null, CommonConstants.NULL_ID);
+	}
+
+	public GenericRTO(int id, Position pos, String name){
+		this(id, pos, name, CommonConstants.NULL_ID);
+	}
+
+	public GenericRTO(int id, Position pos, String name, int pinResId){
+		mId = id;
+		mPosition = pos;
+		mName = name;	
+		mPinResId = pinResId;
+	}
+
+	//******************************************************************************************************************
+	//
+	// *****************************************************************************************************************
+
+	@Override
+	public int getRtoID() {
+		return mId;
+	}
+
+	public void setRtoID(int id){
+		mId = id;
+	}
+	
+	@Override
+	public int getMapID() {
+		return (mPosition != null) ? mPosition.getMapID(): ALL_MAP_ID;
+	}
+
+	@Override
+	public void setZoneOffset(PointF zoneOffset) {
+		mZoneOffset = zoneOffset;
+	}
+
+	@Override
+	public PointF getZoneOffset() {
+		return mZoneOffset;
+	}
+
+	@Override
+	public void setRenderMode(ERenderMode renderingMode) {
+		mRenderingMode = renderingMode;
+	}
+
+	@Override
+	public ERenderMode getRenderMode() {
+		return mRenderingMode;
+	}
+
+	//******************************************************************************************************************
+	// 	Resources Handling
+	// *****************************************************************************************************************
+
+	@Override
+	public IRTO cloneRTO() {
+		GenericRTO p = null;
+		try {
+			p = (GenericRTO)super.clone();
+		}
+		catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return p;
+	}
+
+	@Override
+	public void setResources(Resources resources) {
+		if (resources != null &amp;&amp; mRenderingMode != null) {
+			if (mRenderingMode == ERenderMode.RENDER_MODE_2D) {
+				set2DResources(resources);
+			} else {
+				set3DResources(resources);
+			}
+		}
+	}
+
+	private void set2DResources(Resources resources){
+		m2DModelBitmap = BitmapFactory.decodeResource(resources, (mPinResId != CommonConstants.NULL_ID) ? mPinResId : R.drawable.is_generic_pin);
+
+		m2DModelBitmapRect = new Rect();
+		m2DModelNameRect = new Rect();
+		m2DModelPaint = new Paint();
+		
+		m2DModelPaint.setTextSize(resources.getDimension(R.dimen.generic_rto_text_size));
+		m2DModelPaint.setAntiAlias(true);
+		
+		mNameMargin = (int) resources.getDimension(R.dimen.generic_rto_name_margin);
+		mNamePadding = (int) resources.getDimension(R.dimen.generic_rto_name_padding);
+		
+		mNameBkgColor = resources.getColor(R.color.generic_rto_name_bkg_color);
+		mNameTextColor = resources.getColor(R.color.generic_rto_name_text_color);
+		
+		m2DModelBitmapWidth = (m2DModelBitmapWidth &gt; 0) ? m2DModelBitmapWidth : m2DModelBitmap.getWidth();
+		m2DModelBitmapHeight = (m2DModelBitmapHeight &gt; 0) ? m2DModelBitmapHeight : m2DModelBitmap.getWidth();
+	}
+
+	private void set3DResources(Resources resources){
+		create3DModel();
+		m3DModelDefaultColor = ColorUtils.getRGBColor(resources.getColor(R.color.generic_rto_3d_model_default_color));
+		m3DModelTouchedColor = ColorUtils.getRGBColor(resources.getColor(R.color.generic_rto_3d_model_touched_color));
+
+		m3DNameColor = resources.getColor(R.color.generic_rto_3d_name_color);
+		m3DNameStrokeColor = resources.getColor(R.color.generic_rto_3d_name_stroke_color);
+
+	}
+
+	@Override
+	public void freeResources() {
+		if (mRenderingMode == ERenderMode.RENDER_MODE_2D) {		
+			free2DResources();
+		}
+	}
+
+	private void free2DResources(){
+		m2DModelBitmap.recycle();
+		m2DModelBitmapRect = null;	
+	}
+
+	//******************************************************************************************************************
+	// 	DRAWING 2D
+	// *****************************************************************************************************************
+
+	private Bitmap m2DModelBitmap;
+	private int m2DModelBitmapWidth, m2DModelBitmapHeight;
+	private Rect m2DModelBitmapRect;
+	private Rect m2DModelNameRect;
+	private Paint m2DModelPaint;
+
+	@Override
+	public void draw(Canvas aCanvas, double aRatio, Point aOffset, float aAngle) {
+		int newOffsetX = aOffset.x + ((mZoneOffset != null) ? (int) Math.round(mZoneOffset.x * aRatio) : 0);
+		int newOffsetY = aOffset.y + ((mZoneOffset != null) ? (int) Math.round(mZoneOffset.y * aRatio) : 0);
+
+		//rotate canvas back if needed
+		if (aAngle != 0f) {
+			aCanvas.save();
+			aCanvas.rotate(-aAngle, newOffsetX, newOffsetY);
+		}
+
+		Point drawingPosition = getDrawingPosition(aRatio, aOffset);
+		draw2DModelBitmap(aCanvas, drawingPosition, aAngle);
+		if(mIsNameDisplayed) draw2DModelName(aCanvas, drawingPosition, aAngle);
+		
+		//restore canvas if needed
+		if (aAngle != 0f) {
+			aCanvas.restore();
+		}
+
+		mLastAngle = aAngle;
+		mLastPos.set(drawingPosition.x, drawingPosition.y);
+	}
+
+	private Point getDrawingPosition(double aRatio, Point aOffset){
+		Point drawingPosition = null;
+		if (mPosition != null) {
+			int drawingPosX = aOffset.x + (int) (mPosition.getX() * aRatio);
+			int drawingPosY = aOffset.y + (int) (mPosition.getY() * aRatio);;
+
+			drawingPosition = new Point(drawingPosX, drawingPosY);
+		} else {
+			int drawingPosX = aOffset.x + ((mZoneOffset != null) ? (int) Math.round(mZoneOffset.x * aRatio) : 0);
+			int drawingPosY = aOffset.y + ((mZoneOffset != null) ? (int) Math.round(mZoneOffset.y * aRatio) : 0);
+
+			drawingPosition = new Point(drawingPosX, drawingPosY);
+		}
+		return drawingPosition;
+	}
+
+	/**
+	 * Draws the bitmap associated to this GenericRTO.
+	 * @param aCanvas The destination Canvas where this object should be drawn to.
+	 * @param aOffset In pixels, the offset from the (0, 0) of the drawing Canvas that should be added to this object coords.
+	 * @param aAngle The offset angle in case a rotation should be done. The rotation is relative to the screen center.
+	 */
+	public void draw2DModelBitmap(Canvas aCanvas, Point drawingPosition, float aAngle) {
+		m2DModelBitmapRect.left = drawingPosition.x - m2DModelBitmapWidth/2 ;
+		m2DModelBitmapRect.top = drawingPosition.y - m2DModelBitmapHeight; 
+		m2DModelBitmapRect.right = m2DModelBitmapRect.left + m2DModelBitmapWidth;
+		m2DModelBitmapRect.bottom = m2DModelBitmapRect.top + m2DModelBitmapHeight;
+
+		aCanvas.drawBitmap(m2DModelBitmap, null, m2DModelBitmapRect, m2DModelPaint);
+	}
+
+	public void draw2DModelName(Canvas aCanvas, Point drawingPosition, float aAngle){
+		if(mName != null){
+			int textWidth = (int) m2DModelPaint.measureText(mName);
+			int textHeight = (int) m2DModelPaint.getTextSize();
+			
+			m2DModelNameRect.bottom = drawingPosition.y - m2DModelBitmapHeight - mNameMargin;
+			m2DModelNameRect.left = drawingPosition.x - textWidth/2 - mNamePadding;
+			m2DModelNameRect.top = m2DModelNameRect.bottom - textHeight - 2*mNamePadding; 
+			m2DModelNameRect.right = drawingPosition.x + textWidth/2 + mNamePadding;
+			
+			m2DModelPaint.setStyle(Style.FILL);
+			m2DModelPaint.setColor(mNameBkgColor);
+			aCanvas.drawRoundRect(new RectF(m2DModelNameRect), 10, 10, m2DModelPaint);
+			
+			m2DModelPaint.setStyle(Style.FILL);
+			m2DModelPaint.setColor(mNameTextColor);
+			aCanvas.drawText(mName, m2DModelNameRect.left + mNamePadding, m2DModelNameRect.bottom - mNamePadding, m2DModelPaint);
+		}		
+	}
+	
+	/**
+	 * Set the size of the bitmap that is used by this GenericRTO.
+	 * @param width The width of the bitmap in pixel.
+	 * @param height The height of the bitmap in pixel.
+	 */
+	public void setBitmapSize(int width, int height){
+		this.m2DModelBitmapWidth = width;
+		this.m2DModelBitmapHeight = height;
+	}
+
+	//******************************************************************************************************************
+	// 	DRAWING 3D
+	// *****************************************************************************************************************
+
+	private final static int MODEL_3D_SIZE = 4;
+	private final static int ANIMATION_FRAME = 10;
+
+	// Represent the global 3D object, it has no visual representation but is used to agglomerate several 3D objects
+	private ISObject3D m3DObject;
+
+	private Object3D m3DModel;
+
+	private RGBColor m3DModelDefaultColor;
+	private RGBColor m3DModelTouchedColor;
+
+	private Object3D m3DNameModel;
+	private Texture m3DNameTexture;
+	private Paint m3DNamePaint;
+	private int m3DNameColor;
+	private int m3DNameStrokeColor;
+	private int m3DNameOffset = 4;
+
+	private float mAnimCount = 0f;
+
+
+	@Override
+	public void draw3D(World world, IMapData map, double ratio, float angle) {
+		if (m3DModel != null) {
+
+			m3DModel.setOrigin(m3DObject.getOrigin());
+
+			if (m3DModel != null &amp;&amp; mPosition != null) {
+				SimpleVector origin = new SimpleVector(mPosition.getX()/map.getMapScale(), mPosition.getY()/map.getMapScale(), 0);
+				m3DModel.setOrigin(origin);
+			}
+
+			offset3DModel();
+
+			set3DModelColor((mIsTouched) ? m3DModelTouchedColor : m3DModelDefaultColor);
+
+			if (mIsAnimationActivated) animate();
+
+			draw3DName(world, map, ratio, angle);
+		}
+	}
+
+	private void offset3DModel() {
+		if (mZoneOffset != null) {
+			SimpleVector origin = m3DModel.getOrigin();
+			m3DModel.setOrigin(new SimpleVector(origin.x + mZoneOffset.x, origin.y + mZoneOffset.y, origin.z));
+		}
+	}
+
+	private void draw3DName(World world, IMapData map, double ratio, float angle){
+		if(mIsNameDisplayed) {
+			if (m3DNameModel == null) {
+				create3DNameModel();
+			}
+
+			m3DNameModel.setVisibility(Object3D.OBJ_VISIBLE);
+
+			SimpleVector origin = m3DModel.getOrigin();
+
+			float scale = (float) (/*1+*/16/Math.ceil(ratio));
+
+			m3DNameModel.setScale(scale);
+			m3DNameModel.setOrigin(new SimpleVector(origin.x, origin.y, origin.z - MODEL_3D_SIZE/2 - m3DNameOffset));
+			m3DNameModel.rotateZ((float) Math.toRadians(-mLastAngle));
+			m3DNameModel.rotateZ((float) Math.toRadians(angle));
+			mLastAngle = angle;
+		} else {
+			if (m3DNameModel != null) {
+				m3DNameModel.setVisibility(Object3D.OBJ_INVISIBLE);
+			}
+		}
+
+	}
+
+	@Override
+	public ISObject3D get3DObject() {
+		return m3DObject;
+	}
+
+	private void create3DModel(){
+		m3DObject = new ISObject3D();
+		m3DModel = ExtendedPrimitives.createCube(MODEL_3D_SIZE);
+		m3DModel.setLighting(Object3D.LIGHTING_NO_LIGHTS);
+
+		m3DObject.addChild(m3DModel);
+	}
+
+	private void create3DNameModel(){
+		m3DNameModel = Primitives.getPlane(12, 1);
+
+		m3DNamePaint = new Paint();
+		m3DNamePaint.setAntiAlias(true);
+		m3DNamePaint.setTypeface(Typeface.create((String)null, Typeface.BOLD));
+		m3DNamePaint.setTextSize(46);
+
+		if (!TextureManager.getInstance().containsTexture(mName)) {
+			Texture texture = new Texture(getTextBitmap(m3DNamePaint, mName), true);		
+			TextureManager.getInstance().addTexture(mName, texture);
+			TextureManager.getInstance().compress();
+		}		
+
+		m3DNameModel.setMaxLights(0);
+
+		m3DNameModel.rotateX((float) Math.toRadians(-45));
+		m3DNameModel.setTransparency(20);
+		m3DNameModel.setTexture(mName);
+
+		m3DObject.addChild(m3DNameModel);
+	}
+
+	private void set3DModelColor(RGBColor color){
+		if (m3DModel != null) {
+			m3DModel.setAdditionalColor(color);
+		}
+	}
+
+	private Bitmap getTextBitmap(Paint paint, String text){
+		int width = (int)paint.measureText(text);
+		int height = (int) paint.getTextSize();
+
+
+		Bitmap.Config config = Bitmap.Config.ARGB_8888;
+		Bitmap charImage = Bitmap.createBitmap(512, 512, config);		
+		Canvas canvas = new Canvas(charImage);
+
+		paint.setColor(m3DNameColor);
+		canvas.drawText(text, (charImage.getWidth()-width)/2, (charImage.getHeight()-height)/2, paint);
+		paint.setColor(m3DNameStrokeColor);
+		paint.setStyle(Style.STROKE);
+		paint.setStrokeWidth(1);
+		canvas.drawText(text, (charImage.getWidth()-width)/2, (charImage.getHeight()-height)/2, paint);
+
+		return charImage;
+	}
+
+	private void animate(){
+		if (mAnimCount &lt;= 4) {
+			mAnimCount += 0.1f;
+			m3DModel.translate(0, 0, -0.1f);
+		} else {
+			m3DModel.translate(0, 0, mAnimCount);
+			mAnimCount = 0;
+		}
+		m3DModel.setTransparency((int) (10 + mAnimCount));
+	}
+
+	//******************************************************************************************************************
+	// 	Touch Management
+	// *****************************************************************************************************************
+
+	private boolean mIsTouchable = true;
+	private boolean mIsTouched = true;
+
+	/**
+	 * Returns True if this GenericRTO is touchable (ie will react to touch event). 
+	 * @return True if this instance is touchable.
+	 */
+	public boolean isTouchable(){
+		return mIsTouchable;
+	}
+
+	/**
+	 * Sets whether or not this GenericRTO is touchable. If set to false none of the IRTO callback will be triggered for this IRTO.
+	 * @param isTouchable
+	 */
+	public void setTouchable(boolean isTouchable){
+		mIsTouchable = isTouchable;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchDown(Touch aTouch) {
+		Touch rotatedTouch = new Touch(aTouch);
+		// If the map is rotating the touch event needs to be rotated also
+		if (mLastAngle != 0f) {
+			rotatedTouch.rotate(mLastAngle, mLastPos.x, mLastPos.y);
+		}
+
+		debug.set(rotatedTouch.getPosition(0).x, rotatedTouch.getPosition(0).y);
+
+		ETouchObjectResult touchResult = ETouchObjectResult.RESULT_NOTHING;
+
+		if (mIsTouchable) {
+			if (isTouchInsideObject(rotatedTouch)) {
+				mIsTouched = true;
+				mIsNameDisplayed = !mIsNameDisplayed;
+				touchResult = ETouchObjectResult.RESULT_NOTIFY_CONSUME;
+			}
+		} else {
+
+		}
+
+		return touchResult;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchPointerDown(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchMove(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchPointerUp(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchUp(Touch aTouch) {
+		Touch rotatedTouch = new Touch(aTouch);
+		// If the map is rotating the touch event needs to be rotated also
+		if (mLastAngle != 0f) {
+			rotatedTouch.rotate(mLastAngle, mLastPos.x, mLastPos.y);
+		}
+
+		if (mIsTouched) {
+			if (isTouchInsideObject(rotatedTouch)) {
+				return ETouchObjectResult.RESULT_NOTIFY_CONSUME;
+			}
+		}
+
+		mIsTouched = false;
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	public boolean isTouchInsideObject(Touch aTouch){
+		if (mRenderingMode == ERenderMode.RENDER_MODE_3D) {
+			return isTouchInside3DObject(aTouch);
+		} else {
+			return isTouchInside2DObject(aTouch);
+		}
+	}
+
+	public boolean isTouchInside3DObject(Touch aTouch){		
+		boolean isInside = false;
+
+		if (m3DObject != null) {
+			if (!aTouch.isMultiTouch()) {
+				SimpleVector pos = aTouch.getTouchedRays().get(0).getPos();
+				SimpleVector dir = aTouch.getTouchedRays().get(0).getDir();
+
+				for (Object3D obj : m3DObject.getObjects()) {
+					if (obj.rayIntersectsAABB(pos, dir, true) != Object3D.RAY_MISSES_BOX) {
+						isInside = false;
+						break;
+					}
+				}
+			}
+		}
+
+		return isInside;
+	}
+
+	public boolean isTouchInside2DObject(Touch aTouch){
+		return m2DModelBitmapRect.contains(aTouch.getPosition(0).x, aTouch.getPosition(0).y);
+	}
+
+
+
+
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>
