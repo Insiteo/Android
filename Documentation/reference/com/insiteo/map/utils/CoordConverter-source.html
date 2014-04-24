@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+<title>
+
+  CoordConverter
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/analytics/package-summary.html">com.insiteo.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/analytics/entities/package-summary.html">com.insiteo.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/common/package-summary.html">com.insiteo.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/common/rendertouch/package-summary.html">com.insiteo.common.rendertouch</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/common/utils/geom/package-summary.html">com.insiteo.common.utils.geom</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/common/utils/threading/package-summary.html">com.insiteo.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/geofence/package-summary.html">com.insiteo.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/init/package-summary.html">com.insiteo.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/itinerary/package-summary.html">com.insiteo.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/itinerary/entities/package-summary.html">com.insiteo.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/location/package-summary.html">com.insiteo.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/location/utils/package-summary.html">com.insiteo.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/package-summary.html">com.insiteo.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/database/package-summary.html">com.insiteo.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/entities/package-summary.html">com.insiteo.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/map/render/package-summary.html">com.insiteo.map.render</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../com/insiteo/map/utils/package-summary.html">com.insiteo.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/meetme/package-summary.html">com.insiteo.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/meetme/requests/package-summary.html">com.insiteo.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="selected api apilevel-"><a href="../../../../com/insiteo/map/utils/CoordConverter.html">CoordConverter</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/map/utils/MapUtils.html">MapUtils</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="CoordConverter.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>CoordConverter</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+package com.insiteo.map.utils;
+
+import android.graphics.Point;
+import android.graphics.PointF;
+import android.graphics.Rect;
+
+import com.insiteo.common.utils.Log;
+import com.insiteo.common.utils.geom.PointD;
+
+/**
+ * Converts coordinates for 3 systems of references :
+ *  - screen coordinates (in pixel, with (0,0) at the top left corner of the displayed surface)
+ *  - real coordinates (in meter, with (0,0) at the top left corner of the map)
+ *  - map coordinates (in pixel at zoom level 0, with (0,0) at the top left corner of the map) 
+ */
+public class CoordConverter {
+
+	
+	private final static String TAG = "INSITEO_MAP_COORD_CONVERTER";
+	
+	private static Point sScreenDimen = null;	//point storing half screen width, and half screen height
+	
+	
+	//constructor, unreachable
+	private CoordConverter() {
+	}
+		
+	/**
+	 * This should be called before any use of the coord converter, in order to initialize it
+	 * @param screenWidth map canvas width
+	 * @param screenHeight map canvas height
+	 */
+	public static void setScreenDimensions(int screenWidth, int screenHeight) {
+		Log.d(TAG, "ScreenDimension(" + (screenWidth/2) + ", " + (screenHeight/2) + ")");
+		sScreenDimen = new Point(screenWidth / 2, screenHeight / 2);
+	}
+	
+	
+	/**
+	 * Computes the "map ratio", that is a combination of the map's scale and the map's current zoom level.
+	 * The result is used everywhere in the coord transformations.
+	 * @param aZoomLevel
+	 * @param aScale
+	 * @return
+	 */
+	public static double getRatio(float aZoomLevel, float aScale) {
+		return (Math.pow(2, aZoomLevel) / aScale);
+	}
+	
+	/**
+	 * Computes the position of map (0,0) on the screen, in pixels at z0 
+	 * @param aDisplayCenter
+	 * @return
+	 */
+	public static PointD getDisplayOffset(PointD aDisplayCenter, float aZoomLevel) {
+		double ratio = Math.pow(2, aZoomLevel);
+		return new PointD(sScreenDimen.x/ratio - aDisplayCenter.x, sScreenDimen.y/ratio - aDisplayCenter.y);
+	}
+	/**
+	 * Computes the position of map (0,0) on the screen, in pixels at zoomLevel 
+	 * @param aDisplayCenter
+	 * @param zoomLevel
+	 * @return
+	 */
+	public static Point getDisplayOffsetAtZ(PointD aDisplayCenter, float zoomLevel) {
+		PointD centerAtZ = convertCoordForZoomLevel(aDisplayCenter, 0, zoomLevel);
+		return new Point((int)(sScreenDimen.x - centerAtZ.x), (int)(sScreenDimen.y - centerAtZ.y));
+	}
+	
+	
+	/**
+	 * convert coordinates in pixel from source zoom level, to dest zoom level
+	 * @param pixels
+	 * @param srcZoomLevel
+	 * @param destZoomLevel
+	 * @return
+	 */
+	public static PointD convertCoordForZoomLevel(PointD pixels, float srcZoomLevel, float destZoomLevel) {
+    	double ratio = Math.pow(2, destZoomLevel - srcZoomLevel);
+		return new PointD(pixels.x * ratio, pixels.y * ratio);
+	}
+    public static Rect convertCoordForZoomLevel(Rect pixels, float srcZoomLevel, float destZoomLevel) {
+    	float ratio = (float)Math.pow(2, destZoomLevel - srcZoomLevel);
+		return new Rect(Math.round(pixels.left * ratio), Math.round(pixels.top * ratio), Math.round(pixels.right * ratio), Math.round(pixels.bottom * ratio));
+	}
+    
+	
+	// ==================================================================================================
+	// Real &lt;=&gt; screen
+	// ==================================================================================================	
+	
+	
+	/**
+	 * Converts a raw distance into a screen distance, 
+	 * in the routine above we already computed the ratio using a scale and a zoom level 
+	 * @param aDistance
+	 * @param aRatio
+	 * @return
+	 */
+	public static int convertRealDistanceToScreenDistance(float aDistance, float aRatio) {
+		return (int)(aDistance * aRatio);
+	}
+	public static float convertScreenDistanceToRealDistance(int aDistance, float aRatio) {
+		return (float)(aDistance / aRatio);
+	}
+	
+	
+	public static PointD convertScreenPointToRealPoint(Point aScreenPoint, PointD aDisplayCenter, float aZoomLevel, float aScale) {
+		float ratio = (float)getRatio(aZoomLevel, aScale);
+		PointD displayOffset = getDisplayOffset(aDisplayCenter, aZoomLevel);
+		PointD realPoint = new PointD(aScreenPoint.x / ratio - displayOffset.x, aScreenPoint.y / ratio - displayOffset.y);
+		return realPoint;		
+	}
+	public static Point convertRealPointToScreenPoint(PointD aRealPoint, PointD aDisplayCenter, float aZoomLevel, float aScale) {
+		float ratio = (float)getRatio(aZoomLevel, aScale);
+		PointD displayOffset = getDisplayOffset(aDisplayCenter, aZoomLevel);
+		Point screenPoint = new Point((int)((aRealPoint.x + displayOffset.x) * ratio), (int)((aRealPoint.y + displayOffset.y) * ratio));
+		return screenPoint;		
+	}
+	
+	
+	// ==================================================================================================
+	// Map &lt;=&gt; Real
+	// ==================================================================================================	
+		
+	/**
+	 * convert real distance into map coordinates (pixels at z0) 
+	 * @param realDistance
+	 * @param scale
+	 * @return
+	 */
+	public static float convertRealDistanceInMapDistance(float realDistance, float scale) {
+		return realDistance / scale;
+    }
+	public static float convertMapDistanceInRealDistance(float mapDistance, float scale) {
+        return mapDistance * scale;
+    }
+	
+	/**
+	 * Converts a real point (in meters) into a map point (in pixel)
+	 * @param x
+	 * @param y
+	 * @param scale
+	 * @return
+	 */
+	public static PointD convertRealPointToMapPoint(double x, double y, float scale) {
+		PointD mapPoint = new PointD((x / scale), (y / scale));
+		return mapPoint;
+    }
+	
+	/**
+	 * Converts a map point (in pixels) into a real point (in meters)
+	 * @param x
+	 * @param y
+	 * @param scale
+	 * @return
+	 */
+	public static PointD convertMapPointToRealPoint(double x, double y, float scale) {
+		PointD realPoint = new PointD((x * scale), (y * scale));
+		return realPoint;
+    }
+	
+	// ==================================================================================================
+	// Map &lt;=&gt; screen
+	// ==================================================================================================	
+		
+	/**
+	 * convert screen distance into map coordinates (pixels at z0) 
+	 * @param screenDistance
+	 * @param zoomLevel
+	 * @return
+	 */
+	public static float convertScreenDistanceInMapDistance(float screenDistance, float zoomLevel) {
+        double ratio = Math.pow(2, zoomLevel);
+		return (float)(screenDistance / ratio);
+    }
+	public static float convertMapDistanceInScreenDistance(float mapDistance, float zoomLevel) {
+        float ratio = (float)Math.pow(2, zoomLevel);
+        return mapDistance * ratio;
+    }	
+	public static PointF convertScreenDistanceInMapDistance(Point screenDistance, float zoomLevel) {
+        float ratio = (float)Math.pow(2, zoomLevel);
+        PointF mapDistance = new PointF((screenDistance.x / ratio), (screenDistance.y / ratio));
+		return mapDistance;
+    }
+	public static PointF convertMapDistanceInScreenDistance(Point mapDistance, float zoomLevel) {
+        float ratio = (float)Math.pow(2, zoomLevel);
+        PointF screenDistance = new PointF((mapDistance.x * ratio), (mapDistance.y * ratio));
+		return screenDistance;
+    }
+	
+	/**
+	 * convert map coordinates (pixels at z0) into screen coordinates
+	 * input : pixels (float)
+	 * output : pixels (integer)
+	 */
+	public static Point convertMapPointToScreenPoint(double x, double y, PointD aDisplayCenter, float aZoomLevel) {
+		PointD displayOffset = getDisplayOffset(aDisplayCenter, aZoomLevel);
+		PointD tmpPoint = new PointD(x + displayOffset.x, y + displayOffset.y);
+		tmpPoint = convertCoordForZoomLevel(tmpPoint, 0, aZoomLevel);
+    	return new Point(Math.round((int)tmpPoint.x), Math.round((int)tmpPoint.y));
+    }
+	public static PointD convertScreenPointToMapPoint(int x, int y, PointD aDisplayCenter, float aZoomLevel) {
+		PointD displayOffset = getDisplayOffset(aDisplayCenter, aZoomLevel);
+		PointD tmpPoint = convertCoordForZoomLevel(new PointD(x, y), aZoomLevel, 0);
+		return new PointD(tmpPoint.x - displayOffset.x, tmpPoint.y - displayOffset.y);
+    }
+	
+	
+	// ==================================================================================================
+	// View port
+	// ==================================================================================================	
+	
+    /**
+     * calculate the current screen rectangle in pixels at this zoomlevel
+     * @param aDisplayCenter
+     * @param aZoomLevel
+     * @return
+     */
+	public static Rect getViewPort(PointD aDisplayCenter, float aZoomLevel) {
+		PointD displayCenterAtZ = convertCoordForZoomLevel(aDisplayCenter, 0, aZoomLevel);
+		int centerX = (int)displayCenterAtZ.x;
+		int centerY = (int)displayCenterAtZ.y;
+		
+        return new Rect(	centerX - sScreenDimen.x, centerY - sScreenDimen.y,
+        					centerX + sScreenDimen.x, centerY + sScreenDimen.y);
+    }
+	
+	/**
+	 * convert the view port at srcZoomLevel, in destZoomLevel coordinates
+	 * @param viewPort
+	 * @param srcZoomLevel
+	 * @param destZoomLevel
+	 * @return
+	 */
+	public static Rect convertViewPort(Rect viewPort, float srcZoomLevel, float destZoomLevel) {
+    	if (srcZoomLevel == destZoomLevel) {
+    		return new Rect(viewPort);
+    	}
+    	else {
+    		return convertCoordForZoomLevel(viewPort, srcZoomLevel, destZoomLevel);
+    	}
+	}
+    
+	/**
+	 * Get the zoomlevel for a given width in meter (use only with the width, ie the X axis)
+	 * @param scale In meters/pixels
+	 * @param realWidth In meters
+	 * @return
+	 */
+	public static double getZoomLevelForRealViewport(float scale, double realWidth) {
+	    return Math.log(sScreenDimen.x * 2 * scale / realWidth) / Math.log(2);
+	}
+	
+	/**
+	 * @return the MapView half-width and half-height (in pixels)
+	 */
+	public static Point getScreenDimen() {
+		if (sScreenDimen == null) {
+			return null;
+		}
+		else {
+			return new Point(sScreenDimen);
+		}
+	}
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>
