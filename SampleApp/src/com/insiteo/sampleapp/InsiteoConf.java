@@ -1,8 +1,8 @@
 package com.insiteo.sampleapp;
 
-import com.insiteo.common.CommonConstants;
-import com.insiteo.init.InitProvider.Server;
-import com.insiteo.location.LocationProvider;
+import com.insiteo.lbs.common.CommonConstants;
+import com.insiteo.lbs.common.init.InitProvider.Server;
+import com.insiteo.lbs.location.LocationProvider;
 
 public class InsiteoConf {
 
@@ -11,7 +11,7 @@ public class InsiteoConf {
 			CommonConstants.URL_VERSION + "/Insiteo.Dispatch.test/Insiteo.Dispatch.svc";
 
 	// This set of values represent all the required data to identify a site on a given server
-	public static final int SITE_ID = 356;
+	public static final int SITE_ID = 300;
 	public static final int VERSION = 1;
 	public static final String LANG = "fr";
 
@@ -35,7 +35,7 @@ public class InsiteoConf {
 	public static int LOCATION_FLAGS = LocationProvider.COMPASS|LocationProvider.GPS|/*LocationProvider.WIFI|*/LocationProvider.MEMS;
 
 
-	public static final boolean LOG_ENABLED    			= false;
+	public static final boolean LOG_ENABLED    			= true;
 	public static final boolean EMBEDDED_LOG_ENABLED    = false;
 
 }

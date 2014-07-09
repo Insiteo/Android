@@ -1,15 +1,13 @@
 package com.insiteo.sampleapp.render;
 
-import android.graphics.Bitmap;
-
-import com.insiteo.common.rendertouch.GenericRTO;
-import com.insiteo.common.utils.geom.Position;
+import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.map.render.GenericRTO;
 
 /**
  * @author Insiteo
  *
  */
-public class GfxRto extends GenericRTO{
+public class GfxRto extends GenericRTO {
 	
 
 	public GfxRto(int id) {
@@ -24,5 +22,6 @@ public class GfxRto extends GenericRTO{
 		super(id, pos, name, pinResId);
 	}
 
+	
 
 }

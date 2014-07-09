@@ -26,39 +26,38 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.insiteo.common.CommonConstants;
-import com.insiteo.common.IMapData;
-import com.insiteo.common.IZone;
-import com.insiteo.common.InsiteoError;
-import com.insiteo.common.rendertouch.IRTO;
-import com.insiteo.common.rendertouch.IRTOListener;
-import com.insiteo.common.utils.Log;
-import com.insiteo.common.utils.geom.Position;
-import com.insiteo.geofence.GeofenceProvider;
-import com.insiteo.geofence.GeofenceZone;
-import com.insiteo.geofence.IGeofenceListener;
-import com.insiteo.init.InitProvider;
-import com.insiteo.itinerary.IItineraryRendererListener;
-import com.insiteo.itinerary.IItineraryRequestListener;
-import com.insiteo.itinerary.ItineraryProvider;
-import com.insiteo.itinerary.ItineraryProvider.BaseRequest;
-import com.insiteo.itinerary.ItineraryProvider.EOptimizationMode;
-import com.insiteo.itinerary.ItineraryProvider.ItineraryRequest;
-import com.insiteo.itinerary.ItineraryRenderer;
-import com.insiteo.itinerary.entities.Itinerary;
-import com.insiteo.itinerary.entities.Section;
-import com.insiteo.location.ELocationModule;
-import com.insiteo.location.ILocationListener;
-import com.insiteo.location.InsLocation;
-import com.insiteo.location.LocationConstants;
-import com.insiteo.location.LocationProvider;
-import com.insiteo.location.LocationRenderer;
-import com.insiteo.map.IMapListener;
-import com.insiteo.map.MapView;
-import com.insiteo.map.database.MapDBHelper;
-import com.insiteo.map.entities.MapData;
-import com.insiteo.map.entities.ZonePoiAssoc;
-import com.insiteo.map.render.EZoneAction;
+import com.insiteo.lbs.common.CommonConstants;
+import com.insiteo.lbs.common.InsiteoError;
+import com.insiteo.lbs.common.init.InitProvider;
+import com.insiteo.lbs.common.utils.Log;
+import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.geofence.GeofenceProvider;
+import com.insiteo.lbs.geofence.GeofenceZone;
+import com.insiteo.lbs.geofence.IGeofenceListener;
+import com.insiteo.lbs.itinerary.IItineraryRendererListener;
+import com.insiteo.lbs.itinerary.IItineraryRequestListener;
+import com.insiteo.lbs.itinerary.ItineraryProvider;
+import com.insiteo.lbs.itinerary.ItineraryProvider.BaseRequest;
+import com.insiteo.lbs.itinerary.ItineraryProvider.EOptimizationMode;
+import com.insiteo.lbs.itinerary.ItineraryProvider.ItineraryRequest;
+import com.insiteo.lbs.itinerary.ItineraryRenderer;
+import com.insiteo.lbs.itinerary.entities.Itinerary;
+import com.insiteo.lbs.itinerary.entities.Section;
+import com.insiteo.lbs.location.ELocationModule;
+import com.insiteo.lbs.location.ILocationListener;
+import com.insiteo.lbs.location.InsLocation;
+import com.insiteo.lbs.location.LocationConstants;
+import com.insiteo.lbs.location.LocationProvider;
+import com.insiteo.lbs.location.LocationRenderer;
+import com.insiteo.lbs.map.IMapListener;
+import com.insiteo.lbs.map.MapView;
+import com.insiteo.lbs.map.database.MapDBHelper;
+import com.insiteo.lbs.map.entities.Map;
+import com.insiteo.lbs.map.entities.Zone;
+import com.insiteo.lbs.map.entities.ZonePoi;
+import com.insiteo.lbs.map.render.EZoneAction;
+import com.insiteo.lbs.map.render.IRTO;
+import com.insiteo.lbs.map.render.IRTOListener;
 import com.insiteo.sampleapp.render.GfxRto;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
@@ -72,9 +71,9 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	// MAP
 	private MapView mMapView = null;
 
-	private IMapData mCurrentMap;
+	private Map mCurrentMap;
 	private boolean mRotateMap = true;
-	List<MapData> mMaps;
+	List<Map> mMaps;
 
 	// ITINERARY
 	private final static boolean ITINERARY_RECOMPUTE_ACTIVATED = true;
@@ -187,7 +186,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	@Override
 	public boolean onNavigationItemSelected(int position, long id) {
 		if(mMaps != null && mMaps.size() > position){
-			MapData map = mMaps.get(position);
+			Map map = mMaps.get(position);
 			mMapView.changeMap(map.getId(), false, false, false);
 		}
 		return true;
@@ -212,8 +211,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		// 2 - We tell the MapViewController to put a listener for touch events on this type of RTOs
 		mMapView.setRTOListener(this, GfxRto.class);
 	}
-	
-	
 
 	private void setMapNavigationList(){
 		
@@ -222,7 +219,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		final String[] mapNames = new String[mMaps.size()];
 
 		int i = 0;
-		for (MapData map : mMaps) {
+		for (Map map : mMaps) {
 			mapNames[i] = map.getName();
 			i++;
 		}
@@ -293,7 +290,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		});
 	}
 
-
 	/**
 	 * This event is triggered when a Zone object was clicked, and its associated action is custom, 
 	 * so it can't be handled by MapController.
@@ -308,11 +304,12 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		mMapView.clearRenderer(GfxRto.class);
 
 		// Get all the external POI that are associated to this zone and add them on the map.
-		List<ZonePoiAssoc> zpas = MapDBHelper.getPoiAssocFromZone(zoneID, true);
+		List<ZonePoi> zpas = MapDBHelper.getPoiAssocFromZone(zoneID, true);
 
 		for(int i = 0; i < zpas.size(); i++) {
-			String poiExtId = zpas.get(i).getPoiExtID();			
+			String poiExtId = zpas.get(i).getExternalPoiId();			
 			GfxRto rto = new GfxRto(i, null, poiExtId);
+			rto.setNameDisplayed(true);
 			
 			// Apply a particular offset to this rto. This is used to have multiple rto in the same zone without superposition.
 			rto.setZoneOffset(zpas.get(i).getOffset());
@@ -328,7 +325,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * Called when the MapView is clicked
 	 */
 	@Override
-	public void onMapClicked() {
+	public void onMapClicked(Position clickedPosition) {		
 	}
 
 	/**
@@ -368,16 +365,20 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 					public void onClick(DialogInterface dialog, int whichButton) {
 						String value = input.getText().toString();
 						
-						List<ZonePoiAssoc> zpas = MapDBHelper.getZoneAssocFromExtPoi(value);
+						// Clear the MapView from all the GfxRto previously rendered.
+						mMapView.clearRenderer(GfxRto.class);
+						
+						List<ZonePoi> zpas = MapDBHelper.getZoneAssocFromExtPoi(value);
 						
 						for(int i = 0; i < zpas.size(); i++) {
-							String poiExtId = zpas.get(i).getPoiExtID();			
+							String poiExtId = zpas.get(i).getExternalPoiId();			
 							GfxRto rto = new GfxRto(i, null, poiExtId);
-							mMapView.addRTOInZone(zpas.get(i).getZoneID(), rto);
+							rto.setNameDisplayed(true);
+							mMapView.addRTOInZone(zpas.get(i).getZoneId(), rto);
 						}
 
 						if(!zpas.isEmpty()) {
-							mMapView.centerMap(zpas.get(0).getZoneID(), true);						
+							mMapView.centerMap(zpas.get(0).getZoneId(), true);						
 						} else {
 							Crouton.makeText(getActivity(), R.string.error_no_ext_poi_found, Style.ALERT).show();
 						}
@@ -402,7 +403,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aZone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
-	public void onRTOClicked(IRTO rto, IZone zone) {
+	public void onRTOClicked(IRTO rto, Zone zone) {
 	}
 
 	/**
@@ -411,7 +412,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aZone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
-	public void onRTOMoved(IRTO rto, IZone zone) {
+	public void onRTOMoved(IRTO rto, Zone zone) {
 	}
 
 	/**
@@ -420,7 +421,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aZone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
-	public void onRTOReleased(IRTO rto, IZone zone) {
+	public void onRTOReleased(IRTO rto, Zone zone) {
 	}
 
 	/**
@@ -429,7 +430,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aZone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
-	public void onRTOSelected(IRTO rto, IZone zone) {
+	public void onRTOSelected(IRTO rto, Zone zone) {
 	}	
 
 	//******************************************************************************************************************
@@ -440,7 +441,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		// create an itinerary provider, as we don't use location. 
 		// When using location, it is easier to get itinerary provider from location provider)
 		mItineraryProvider = (ItineraryProvider) LocationProvider.getInstance().getModule(ELocationModule.ITINERARY);
-		mItineraryProvider.setDynamicMode(true);
+		mItineraryProvider.setDynamicMode(false);
 
 		//get itinerary renderer linked to provider
 		mItineraryRenderer = (ItineraryRenderer) mItineraryProvider.getRenderer(getResources());
@@ -518,7 +519,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	public void onItineraryChanged(BaseRequest aRequest, float aDistanceToIti) {
 		if (aRequest instanceof ItineraryRequest && LocationProvider.getInstance().isStarted() && ITINERARY_RECOMPUTE_ACTIVATED) {	
 			if (aDistanceToIti > MAX_RECOMPUTATION_DISTANCE || aDistanceToIti == -1) {
-				computeItinerary();
+				aRequest.recompute();
 			}
 		}
 	}
@@ -727,7 +728,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 					angle = mapAzimuth - aAzimuth;
 				}
 			}
-			mMapView.rotate(angle - mMapView.getScreenOrientation(), false);
+			mMapView.rotate(angle, false);
 		}
 	}
 
@@ -799,5 +800,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			}
 		});	
 	}
+
+	
 
 }
