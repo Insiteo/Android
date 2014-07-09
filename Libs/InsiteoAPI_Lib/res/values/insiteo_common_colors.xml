@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="generic_rto_3d_model_default_color">#FF0000</color>
+    <color name="generic_rto_3d_model_touched_color">#00FF00</color>
+    <color name="generic_rto_3d_name_color">#474747</color>
+    <color name="generic_rto_3d_name_stroke_color">#FFFFFF</color>
+    
+    
+    <color name="generic_rto_name_bkg_color">#4a4a4a</color>
+    <color name="generic_rto_name_text_color">#FFFFFF</color>
+</resources>

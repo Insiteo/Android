@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<color name="insiteo_location_userlocation">#ff00caff</color>
+	<color name="insiteo_location_userlocationlost">#ff9600</color>
+	<color name="insiteo_location_accuracy_color">#4400caff</color>
+	<color name="insiteo_location_accuracy_stroke_color">#ff00caff</color>
+		
+</resources>

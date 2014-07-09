@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<dimen name="insiteo_location_position_width">22dip</dimen>
+	<dimen name="insiteo_location_position_height">22dip</dimen>
+	<dimen name="insiteo_location_fov_width">100dip</dimen>
+	<dimen name="insiteo_location_fov_height">100dip</dimen>
+		
+</resources>
