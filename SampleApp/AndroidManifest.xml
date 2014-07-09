@@ -37,7 +37,7 @@
         </activity>
         
         <service
-            android:name="com.insiteo.location.LocationService"
+            android:name="com.insiteo.lbs.location.LocationService"
             android:exported="false"
             android:stopWithTask="true" />
         

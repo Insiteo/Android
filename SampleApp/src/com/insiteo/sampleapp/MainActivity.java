@@ -8,12 +8,12 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.insiteo.common.InsiteoError;
-import com.insiteo.common.utils.threading.ICancelable;
-import com.insiteo.init.EInitResult;
-import com.insiteo.init.EPackageType;
-import com.insiteo.init.IInitListener;
-import com.insiteo.init.InitProvider;
+import com.insiteo.lbs.common.InsiteoError;
+import com.insiteo.lbs.common.init.EInitResult;
+import com.insiteo.lbs.common.init.EPackageType;
+import com.insiteo.lbs.common.init.IInitListener;
+import com.insiteo.lbs.common.init.InitProvider;
+import com.insiteo.lbs.common.utils.threading.ICancelable;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -28,14 +28,6 @@ public class MainActivity extends Activity implements IInitListener {
 		setContentView(R.layout.activity_main);
 				
 		initAPI();
-	}
-
-	@Override
-	public void onRestoreInstanceState(Bundle savedInstanceState) {
-	}
-
-	@Override
-	public void onSaveInstanceState(Bundle outState) {
 	}
 
 	@Override
@@ -84,7 +76,6 @@ public class MainActivity extends Activity implements IInitListener {
 				InsiteoConf.VERSION, InsiteoConf.LANG, InsiteoConf.SERVER, InsiteoConf.ANALYTICS_ENABLED);
 
 		mInitStatusView.setVisibility(View.VISIBLE);
-
 
 	}
 
