@@ -1,0 +1,3072 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC1." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+<title>
+
+  ItineraryRenderer
+
+
+| Insiteo API Documentation - Version 3.2.0_RC1
+
+</title>
+<link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC1</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/package-summary.html">com.insiteo.lbs.common.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/IItineraryRendererListener.html">IItineraryRendererListener</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/IItineraryRequestListener.html">IItineraryRequestListener</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryError.html">ItineraryError</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryProvider.html">ItineraryProvider</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryProvider.BaseRequest.html">ItineraryProvider.BaseRequest</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryProvider.ItineraryRequest.html">ItineraryProvider.ItineraryRequest</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryProvider.OptimizeRequest.html">ItineraryProvider.OptimizeRequest</a></li>
+          <li class="selected api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html">ItineraryRenderer</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryProvider.EOptimizationMode.html">ItineraryProvider.EOptimizationMode</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="ItineraryRenderer-source.html">View Source</a>
+</div>
+
+
+Summary:
+
+
+
+
+
+
+
+
+
+  <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>ItineraryRenderer</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../com/insiteo/lbs/map/render/IRenderer.html">IRenderer</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="http://d.android.com/reference/java/lang/Object.html">java.lang.Object</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">com.insiteo.lbs.itinerary.ItineraryRenderer</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>Renderer for itinerary. This class is meant to be used with com.insiteo.map.MapView
+ If you want the itinerary to react to touch events, you need to set an IItineraryRendererListener with setListener().
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#ItineraryRenderer(android.content.res.Resources)">ItineraryRenderer</a></span>(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> aResources)
+        
+        <div class="jd-descrdiv">Constructor</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#addRTO(com.insiteo.lbs.map.render.IRTO)">addRTO</a></span>(<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Add a IRTO to this IRenderer</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#addRTOInZone(int, com.insiteo.lbs.map.render.IRTO)">addRTOInZone</a></span>(int aZoneId, <a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Add a IRTO to this IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#clear()">clear</a></span>()
+        
+        <div class="jd-descrdiv">Removes all inner IRTO instances.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#clearZone(int)">clearZone</a></span>(int aZoneId)
+        
+        <div class="jd-descrdiv">Removes inner IRTO instances from the given zone.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#draw(android.graphics.Canvas, double, android.graphics.Point, float)">draw</a></span>(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> aCanvas, double aRatio, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> aOffset, float aAngle)
+        
+        <div class="jd-descrdiv">Method that will draw all the IRTOs added to the IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#draw3D(World, double, float)">draw3D</a></span>(World world, double ratio, float angle)
+        
+        <div class="jd-descrdiv">Method that will draw all the IRTOs added to the IRenderer in their 3D mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#getPriority()">getPriority</a></span>()
+        
+        <div class="jd-descrdiv">Get the priority of this renderer, for the notification dispatch.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a>&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#getRTOClass()">getRTOClass</a></span>()
+        
+        <div class="jd-descrdiv">Get the class of IRTO that this IRenderer handles</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../../com/insiteo/lbs/map/render/ERenderMode.html">ERenderMode</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#getRenderMode()">getRenderMode</a></span>()
+        
+        <div class="jd-descrdiv">Return the current ERenderMode for this IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#isDisplayEnabled()">isDisplayEnabled</a></span>()
+        
+        <div class="jd-descrdiv">Return if the display is currently enabled for this Renderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#isTouchEnabled()">isTouchEnabled</a></span>()
+        
+        <div class="jd-descrdiv">Return whether touch interaction is enabled for this Renderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#onTouch3D(java.lang.Object)">onTouch3D</a></span>(<a href="http://d.android.com/reference/java/lang/Object.html">Object</a> obj)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#onTouchDown(com.insiteo.lbs.map.render.Touch)">onTouchDown</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch down event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#onTouchMove(com.insiteo.lbs.map.render.Touch)">onTouchMove</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch move event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#onTouchPointerDown(com.insiteo.lbs.map.render.Touch)">onTouchPointerDown</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch pointer down event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#onTouchPointerUp(com.insiteo.lbs.map.render.Touch)">onTouchPointerUp</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for pointer touch up event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#onTouchUp(com.insiteo.lbs.map.render.Touch)">onTouchUp</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch up event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#removeRTO(com.insiteo.lbs.map.render.IRTO)">removeRTO</a></span>(<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Remove a IRTO from this IRenderer </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#removeRTOFromZone(int, com.insiteo.lbs.map.render.IRTO)">removeRTOFromZone</a></span>(int aZoneId, <a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Remove a IRTO from a zone.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setAnimated(boolean)">setAnimated</a></span>(boolean aEnable)
+        
+        <div class="jd-descrdiv">If set to true the itinerary will be drawn with an animation</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setCurrentMap(com.insiteo.lbs.map.entities.Map)">setCurrentMap</a></span>(<a href="../../../../com/insiteo/lbs/map/entities/Map.html">Map</a> aMap)
+        
+        <div class="jd-descrdiv">Set the current map.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setDisplayEnabled(boolean)">setDisplayEnabled</a></span>(boolean aOn)
+        
+        <div class="jd-descrdiv">Set this renderer visibility (ie : it's draw method will be called on a drawing event)</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setDisplayOrientation(int)">setDisplayOrientation</a></span>(int aDisplayOrientation)
+        
+        <div class="jd-descrdiv">Set the current orientation of the display (depending phone rotation).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setLinkToEnds(boolean, boolean)">setLinkToEnds</a></span>(boolean aLinkToDeparture, boolean aLinkToArrival)
+        
+        <div class="jd-descrdiv">Use this method to display a line between itinerary points and departure and arrival positions.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setListener(com.insiteo.lbs.itinerary.IItineraryRendererListener)">setListener</a></span>(<a href="../../../../com/insiteo/lbs/itinerary/IItineraryRendererListener.html">IItineraryRendererListener</a> aListener)
+        
+        <div class="jd-descrdiv">Set listener to be notified on itinerary graphical events.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setPriority(int)">setPriority</a></span>(int aPriority)
+        
+        <div class="jd-descrdiv">Set the priority of this renderer, for the notification dispatch.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setRTOListener(com.insiteo.lbs.map.render.IRTOListener)">setRTOListener</a></span>(<a href="../../../../com/insiteo/lbs/map/render/IRTOListener.html">IRTOListener</a> listener)
+        
+        <div class="jd-descrdiv">Set the listener that will receive notifications when RTOs are touched.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setRenderMode(com.insiteo.lbs.map.render.ERenderMode)">setRenderMode</a></span>(<a href="../../../../com/insiteo/lbs/map/render/ERenderMode.html">ERenderMode</a> renderingMode)
+        
+        <div class="jd-descrdiv">Set the ERenderMode for this IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setSelectedInstructionIndex(int)">setSelectedInstructionIndex</a></span>(int aInstructionIndex)
+        
+        <div class="jd-descrdiv">Set the index of the selected instruction (thus updating rendering)</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/itinerary/ItineraryRenderer.html#setTouchEnabled(boolean)">setTouchEnabled</a></span>(boolean aOn)
+        
+        <div class="jd-descrdiv">Set this renderer touchable (ie : it's onTouch...</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="http://d.android.com/reference/java/lang/Object.html">java.lang.Object</a>
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">equals</span>(<a href="http://d.android.com/reference/java/lang/Object.html">Object</a> arg0)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            <a href="http://d.android.com/reference/java/lang/Class.html">Class</a>&lt;?&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">getClass</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">hashCode</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notify</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">notifyAll</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">toString</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0, int arg1)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            final
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad">wait</span>(long arg0)
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-com.insiteo.lbs.map.render.IRenderer" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-com.insiteo.lbs.map.render.IRenderer-trigger"
+          src="../../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface
+
+  <a href="../../../../com/insiteo/lbs/map/render/IRenderer.html">com.insiteo.lbs.map.render.IRenderer</a>
+
+<div id="inherited-methods-com.insiteo.lbs.map.render.IRenderer">
+  <div id="inherited-methods-com.insiteo.lbs.map.render.IRenderer-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-com.insiteo.lbs.map.render.IRenderer-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#addRTO(com.insiteo.lbs.map.render.IRTO)">addRTO</a></span>(<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Add a IRTO to this IRenderer</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#addRTOInZone(int, com.insiteo.lbs.map.render.IRTO)">addRTOInZone</a></span>(int aZoneId, <a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Add a IRTO to this IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#clear()">clear</a></span>()
+        
+        <div class="jd-descrdiv">Removes all inner IRTO instances.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#clearZone(int)">clearZone</a></span>(int aZoneId)
+        
+        <div class="jd-descrdiv">Removes inner IRTO instances from the given zone.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#draw(android.graphics.Canvas, double, android.graphics.Point, float)">draw</a></span>(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> canvas, double ratio, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> offset, float angle)
+        
+        <div class="jd-descrdiv">Method that will draw all the IRTOs added to the IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#draw3D(World, double, float)">draw3D</a></span>(World world, double ratio, float angle)
+        
+        <div class="jd-descrdiv">Method that will draw all the IRTOs added to the IRenderer in their 3D mode.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            int
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#getPriority()">getPriority</a></span>()
+        
+        <div class="jd-descrdiv">Get the priority of this renderer, for the notification dispatch.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a>&gt;
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#getRTOClass()">getRTOClass</a></span>()
+        
+        <div class="jd-descrdiv">Get the class of IRTO that this IRenderer handles</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            <a href="../../../../com/insiteo/lbs/map/render/ERenderMode.html">ERenderMode</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#getRenderMode()">getRenderMode</a></span>()
+        
+        <div class="jd-descrdiv">Return the current ERenderMode for this IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#isDisplayEnabled()">isDisplayEnabled</a></span>()
+        
+        <div class="jd-descrdiv">Return if the display is currently enabled for this Renderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#isTouchEnabled()">isTouchEnabled</a></span>()
+        
+        <div class="jd-descrdiv">Return whether touch interaction is enabled for this Renderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#onTouchDown(com.insiteo.lbs.map.render.Touch)">onTouchDown</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch down event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#onTouchMove(com.insiteo.lbs.map.render.Touch)">onTouchMove</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch move event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#onTouchPointerDown(com.insiteo.lbs.map.render.Touch)">onTouchPointerDown</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch pointer down event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#onTouchPointerUp(com.insiteo.lbs.map.render.Touch)">onTouchPointerUp</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for pointer touch up event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#onTouchUp(com.insiteo.lbs.map.render.Touch)">onTouchUp</a></span>(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)
+        
+        <div class="jd-descrdiv">Callback for touch up event</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#removeRTO(com.insiteo.lbs.map.render.IRTO)">removeRTO</a></span>(<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Remove a IRTO from this IRenderer </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#removeRTOFromZone(int, com.insiteo.lbs.map.render.IRTO)">removeRTOFromZone</a></span>(int aZoneId, <a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)
+        
+        <div class="jd-descrdiv">Remove a IRTO from a zone.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#setCurrentMap(com.insiteo.lbs.map.entities.Map)">setCurrentMap</a></span>(<a href="../../../../com/insiteo/lbs/map/entities/Map.html">Map</a> aMap)
+        
+        <div class="jd-descrdiv">Set the current map.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#setDisplayEnabled(boolean)">setDisplayEnabled</a></span>(boolean aOn)
+        
+        <div class="jd-descrdiv">Set this renderer visibility (ie : it's draw method will be called on a drawing event)</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#setDisplayOrientation(int)">setDisplayOrientation</a></span>(int aDisplayOrientation)
+        
+        <div class="jd-descrdiv">Set the current orientation of the display (depending phone rotation).</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#setPriority(int)">setPriority</a></span>(int aPriority)
+        
+        <div class="jd-descrdiv">Set the priority of this renderer, for the notification dispatch.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#setRTOListener(com.insiteo.lbs.map.render.IRTOListener)">setRTOListener</a></span>(<a href="../../../../com/insiteo/lbs/map/render/IRTOListener.html">IRTOListener</a> listener)
+        
+        <div class="jd-descrdiv">Set the listener that will receive notifications when RTOs are touched.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#setRenderMode(com.insiteo.lbs.map.render.ERenderMode)">setRenderMode</a></span>(<a href="../../../../com/insiteo/lbs/map/render/ERenderMode.html">ERenderMode</a> renderingMode)
+        
+        <div class="jd-descrdiv">Set the ERenderMode for this IRenderer.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../com/insiteo/lbs/map/render/IRenderer.html#setTouchEnabled(boolean)">setTouchEnabled</a></span>(boolean aOn)
+        
+        <div class="jd-descrdiv">Set this renderer touchable (ie : it's onTouch...</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<a id="ItineraryRenderer(android.content.res.Resources)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">ItineraryRenderer</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> aResources)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Constructor</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aResources</th>
+          <td>resources used to get images and strings
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<a id="addRTO(com.insiteo.lbs.map.render.IRTO)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">addRTO</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add a IRTO to this IRenderer</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aObject</th>
+          <td>the RTO to add</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if the RTO was added, false otherwise
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="addRTOInZone(int, com.insiteo.lbs.map.render.IRTO)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">addRTOInZone</span>
+      <span class="normal">(int aZoneId, <a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Add a IRTO to this IRenderer. 
+ The RTO will be placed in a zone, and thus displayed at this zone center instead of real RTO position. </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aZoneId</th>
+          <td>the id of the zone in which to RTO has to be put.</td>
+        </tr>
+        <tr>
+          <th>aObject</th>
+          <td>the IRTO to add in the IRenderer</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>true if the RTO was added, false otherwise
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="clear()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">clear</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Removes all inner IRTO instances.
+</p></div>
+
+    </div>
+</div>
+
+
+<a id="clearZone(int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">clearZone</span>
+      <span class="normal">(int aZoneId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Removes inner IRTO instances from the given zone.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aZoneId</th>
+          <td>the id of the zone to clean. If it is set to CommonConstants.NULL_ID, all RTO not added in a zone will be cleared.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="draw(android.graphics.Canvas, double, android.graphics.Point, float)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">draw</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> aCanvas, double aRatio, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> aOffset, float aAngle)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Method that will draw all the IRTOs added to the IRenderer.</p></div>
+
+    </div>
+</div>
+
+
+<a id="draw3D(World, double, float)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">draw3D</span>
+      <span class="normal">(World world, double ratio, float angle)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Method that will draw all the IRTOs added to the IRenderer in their 3D mode.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>world</th>
+          <td>The JPCT current World.</td>
+        </tr>
+        <tr>
+          <th>ratio</th>
+          <td>The ratio to apply to meter coordinates to transform them in screen coordinates.</td>
+        </tr>
+        <tr>
+          <th>angle</th>
+          <td>The angle between screen's y axis and the canvas y axis.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getPriority()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">getPriority</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the priority of this renderer, for the notification dispatch.
+ The highest priority will be notified last (see TouchComparator)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the priority of the renderer
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getRTOClass()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://d.android.com/reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a>&gt;
+      </span>
+      <span class="sympad">getRTOClass</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Get the class of IRTO that this IRenderer handles</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the class of RTO this renderer handles
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="getRenderMode()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../com/insiteo/lbs/map/render/ERenderMode.html">ERenderMode</a>
+      </span>
+      <span class="sympad">getRenderMode</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return the current ERenderMode for this IRenderer.</p></div>
+
+    </div>
+</div>
+
+
+<a id="isDisplayEnabled()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isDisplayEnabled</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return if the display is currently enabled for this Renderer.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the IRenderer is receiving drawing events.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="isTouchEnabled()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isTouchEnabled</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Return whether touch interaction is enabled for this Renderer.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the IRenderer is receiving touch events.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="onTouch3D(java.lang.Object)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">onTouch3D</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/Object.html">Object</a> obj)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="onTouchDown(com.insiteo.lbs.map.render.Touch)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">onTouchDown</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback for touch down event</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aTouch</th>
+          <td>The Touch that should be handle.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the event has been consumed.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="onTouchMove(com.insiteo.lbs.map.render.Touch)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">onTouchMove</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback for touch move event</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aTouch</th>
+          <td>The Touch that should be handle.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the event has been consumed.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="onTouchPointerDown(com.insiteo.lbs.map.render.Touch)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">onTouchPointerDown</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback for touch pointer down event</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aTouch</th>
+          <td>The Touch that should be handle.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the event has been consumed.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="onTouchPointerUp(com.insiteo.lbs.map.render.Touch)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">onTouchPointerUp</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback for pointer touch up event</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aTouch</th>
+          <td>The Touch that should be handle.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the event has been consumed.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="onTouchUp(com.insiteo.lbs.map.render.Touch)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">onTouchUp</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> aTouch)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Callback for touch up event</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aTouch</th>
+          <td>The Touch that should be handle.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>True if the event has been consumed.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="removeRTO(com.insiteo.lbs.map.render.IRTO)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">removeRTO</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove a IRTO from this IRenderer </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aObject</th>
+          <td>the RTO to remove
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="removeRTOFromZone(int, com.insiteo.lbs.map.render.IRTO)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">removeRTOFromZone</span>
+      <span class="normal">(int aZoneId, <a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> aObject)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Remove a IRTO from a zone.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aZoneId</th>
+          <td>id of the zone from which the rto should be removed</td>
+        </tr>
+        <tr>
+          <th>aObject</th>
+          <td>the rto that should be remove
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setAnimated(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setAnimated</span>
+      <span class="normal">(boolean aEnable)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>If set to true the itinerary will be drawn with an animation</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aEnable</th>
+          <td>True if it should use animation.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setCurrentMap(com.insiteo.lbs.map.entities.Map)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setCurrentMap</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/entities/Map.html">Map</a> aMap)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the current map. This map is used to filter RTO that should be drawn.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aMap</th>
+          <td>the currently displayed map. See also <code><a href="../../../../com/insiteo/lbs/map/render/IRTO.html#NO_MAP_ID">IRTO.NO_MAP_ID</a></code> 
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setDisplayEnabled(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDisplayEnabled</span>
+      <span class="normal">(boolean aOn)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set this renderer visibility (ie : it's draw method will be called on a drawing event)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aOn</th>
+          <td>if true the IRenderer will be drawn
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setDisplayOrientation(int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setDisplayOrientation</span>
+      <span class="normal">(int aDisplayOrientation)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the current orientation of the display (depending phone rotation). 
+ This will be updated each time the phone switches from landscape to portrait.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aDisplayOrientation</th>
+          <td>the angle of the display (can be 0, 90, 180, or 270)
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setLinkToEnds(boolean, boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLinkToEnds</span>
+      <span class="normal">(boolean aLinkToDeparture, boolean aLinkToArrival)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Use this method to display a line between itinerary points and departure and arrival positions.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aLinkToDeparture</th>
+          <td>if true, first itinerary point drawn will be departure point.</td>
+        </tr>
+        <tr>
+          <th>aLinkToArrival</th>
+          <td>if true, last itinerary point drawn will be destination point.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setListener(com.insiteo.lbs.itinerary.IItineraryRendererListener)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setListener</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/itinerary/IItineraryRendererListener.html">IItineraryRendererListener</a> aListener)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set listener to be notified on itinerary graphical events. </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aListener</th>
+          <td>the listener that will receive notifications. If null, no notification will be sent.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setPriority(int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setPriority</span>
+      <span class="normal">(int aPriority)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the priority of this renderer, for the notification dispatch.
+ The highest priority will be drawn first, and thus notified last (see TouchComparator)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aPriority</th>
+          <td>the priority to set
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setRTOListener(com.insiteo.lbs.map.render.IRTOListener)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setRTOListener</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/IRTOListener.html">IRTOListener</a> listener)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the listener that will receive notifications when RTOs are touched.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>listener</th>
+          <td>the listener that will receive notifications. If null, no notification will be send.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setRenderMode(com.insiteo.lbs.map.render.ERenderMode)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setRenderMode</span>
+      <span class="normal">(<a href="../../../../com/insiteo/lbs/map/render/ERenderMode.html">ERenderMode</a> renderingMode)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the ERenderMode for this IRenderer.</p></div>
+
+    </div>
+</div>
+
+
+<a id="setSelectedInstructionIndex(int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setSelectedInstructionIndex</span>
+      <span class="normal">(int aInstructionIndex)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the index of the selected instruction (thus updating rendering)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aInstructionIndex</th>
+          <td>the index of the instruction that will be active 
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setTouchEnabled(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setTouchEnabled</span>
+      <span class="normal">(boolean aOn)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set this renderer touchable (ie : it's onTouch... methods will be called on a touch event)</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aOn</th>
+          <td>if true the IRenderer will receive onTouch notifications
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<a id="navbar_top"></a>
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

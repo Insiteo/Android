@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/parsers/package-summary.html">com.insiteo.lbs.common.auth.parsers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/geometry/package-summary.html">com.insiteo.lbs.common.utils.geometry</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/threading/package-summary.html">com.insiteo.lbs.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/analytics/request/package-summary.html">com.insiteo.lbs.protobuf.analytics.request</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/request/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.request.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/init/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/package-summary.html">com.insiteo.lbs.protobuf.lbs.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/loc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.loc</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/geofence/package-summary.html">com.insiteo.lbs.protobuf.model.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/itinerary/package-summary.html">com.insiteo.lbs.protobuf.model.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/map/package-summary.html">com.insiteo.lbs.protobuf.model.map</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupResOrBuilder.html">ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRootOrBuilder.html">ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusResOrBuilder.html">ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRootOrBuilder.html">ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserResOrBuilder.html">ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRootOrBuilder.html">ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupResOrBuilder.html">ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRootOrBuilder.html">ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserResOrBuilder.html">ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRootOrBuilder.html">ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserResOrBuilder.html">ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRootOrBuilder.html">ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusResOrBuilder.html">ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRootOrBuilder.html">ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserResOrBuilder.html">ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRootOrBuilder.html">ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsResOrBuilder.html">ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRootOrBuilder.html">ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinGroupRoot.PBRepMmFbJoinGroupRootOrBuilder.html">ProtoRepMmFbJoinGroupRoot.PBRepMmFbJoinGroupRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinOrUpdateGroup.PBRepMmFbJoinOrUpdateGroupOrBuilder.html">ProtoRepMmFbJoinOrUpdateGroup.PBRepMmFbJoinOrUpdateGroupOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupResOrBuilder.html">ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRootOrBuilder.html">ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsResOrBuilder.html">ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRootOrBuilder.html">ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetGroupsPositions.PBRepMmGetGroupLocsOrBuilder.html">ProtoRepMmGetGroupsPositions.PBRepMmGetGroupLocsOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetGroupsPositions.PBRepMmGetGroupsPositionsOrBuilder.html">ProtoRepMmGetGroupsPositions.PBRepMmGetGroupsPositionsOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsResOrBuilder.html">ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRootOrBuilder.html">ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupFbUser.PBRepMmGroupFbUserOrBuilder.html">ProtoRepMmGroupFbUser.PBRepMmGroupFbUserOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOnOrBuilder.html">ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOnOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmInsiteoGroup.PBRepMmInsiteoGroupOrBuilder.html">ProtoRepMmInsiteoGroup.PBRepMmInsiteoGroupOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupResOrBuilder.html">ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupResOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRootOrBuilder.html">ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmPersonLoc.PBRepMmPersonLocOrBuilder.html">ProtoRepMmPersonLoc.PBRepMmPersonLocOrBuilder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoMmLeaveInsiteoGroupRoot.html">ProtoMmLeaveInsiteoGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRes.html">ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRes.Builder.html">ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRoot.html">ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRoot.Builder.html">ProtoMmLeaveInsiteoGroupRoot.PBRepMmLeaveInsiteoGroupRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmChangeInsiteoStatusRoot.html">ProtoRepMmChangeInsiteoStatusRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRes.html">ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRes.Builder.html">ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRoot.html">ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRoot.Builder.html">ProtoRepMmChangeInsiteoStatusRoot.PBRepMmChangeInsiteoStatusRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.html">ProtoRepMmConnectInsiteoUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.html">ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.Builder.html">ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.Builder</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot.html">ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot.Builder.html">ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoGroupRoot.html">ProtoRepMmCreateInsiteoGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRes.html">ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRes.Builder.html">ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRoot.html">ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRoot.Builder.html">ProtoRepMmCreateInsiteoGroupRoot.PBRepMmCreateInsiteoGroupRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoTempUserRoot.html">ProtoRepMmCreateInsiteoTempUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRes.html">ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRes.Builder.html">ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRoot.html">ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRoot.Builder.html">ProtoRepMmCreateInsiteoTempUserRoot.PBRepMmCreateInsiteoTempUserRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoUserRoot.html">ProtoRepMmCreateInsiteoUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRes.html">ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRes.Builder.html">ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRoot.html">ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRoot.Builder.html">ProtoRepMmCreateInsiteoUserRoot.PBRepMmCreateInsiteoUserRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbChangeStatusRoot.html">ProtoRepMmFbChangeStatusRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRes.html">ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRes.Builder.html">ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRoot.html">ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRoot.Builder.html">ProtoRepMmFbChangeStatusRoot.PBRepMmFbChangeStatusRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbConnectUserRoot.html">ProtoRepMmFbConnectUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRes.html">ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRes.Builder.html">ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRoot.html">ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRoot.Builder.html">ProtoRepMmFbConnectUserRoot.PBRepMmFbConnectUserRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbGetActiveGroupsRoot.html">ProtoRepMmFbGetActiveGroupsRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRes.html">ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRes.Builder.html">ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRoot.html">ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRoot.Builder.html">ProtoRepMmFbGetActiveGroupsRoot.PBRepMmFbGetActiveGroupsRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinGroupRoot.html">ProtoRepMmFbJoinGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinGroupRoot.PBRepMmFbJoinGroupRoot.html">ProtoRepMmFbJoinGroupRoot.PBRepMmFbJoinGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinGroupRoot.PBRepMmFbJoinGroupRoot.Builder.html">ProtoRepMmFbJoinGroupRoot.PBRepMmFbJoinGroupRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinOrUpdateGroup.html">ProtoRepMmFbJoinOrUpdateGroup</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinOrUpdateGroup.PBRepMmFbJoinOrUpdateGroup.html">ProtoRepMmFbJoinOrUpdateGroup.PBRepMmFbJoinOrUpdateGroup</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbJoinOrUpdateGroup.PBRepMmFbJoinOrUpdateGroup.Builder.html">ProtoRepMmFbJoinOrUpdateGroup.PBRepMmFbJoinOrUpdateGroup.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbLeaveGroupRoot.html">ProtoRepMmFbLeaveGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRes.html">ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRes.Builder.html">ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRoot.html">ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRoot.Builder.html">ProtoRepMmFbLeaveGroupRoot.PBRepMmFbLeaveGroupRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetActiveInsiteoGroupsRoot.html">ProtoRepMmGetActiveInsiteoGroupsRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRes.html">ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRes.Builder.html">ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRoot.html">ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRoot.Builder.html">ProtoRepMmGetActiveInsiteoGroupsRoot.PBRepMmGetActiveInsiteoGroupsRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetGroupsPositions.html">ProtoRepMmGetGroupsPositions</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetGroupsPositions.PBRepMmGetGroupLocs.html">ProtoRepMmGetGroupsPositions.PBRepMmGetGroupLocs</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetGroupsPositions.PBRepMmGetGroupLocs.Builder.html">ProtoRepMmGetGroupsPositions.PBRepMmGetGroupLocs.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetGroupsPositions.PBRepMmGetGroupsPositions.html">ProtoRepMmGetGroupsPositions.PBRepMmGetGroupsPositions</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetGroupsPositions.PBRepMmGetGroupsPositions.Builder.html">ProtoRepMmGetGroupsPositions.PBRepMmGetGroupsPositions.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetInsiteoGroupsRoot.html">ProtoRepMmGetInsiteoGroupsRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRes.html">ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRes.Builder.html">ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRoot.html">ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRoot.Builder.html">ProtoRepMmGetInsiteoGroupsRoot.PBRepMmGetInsiteoGroupsRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupFbUser.html">ProtoRepMmGroupFbUser</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupFbUser.PBRepMmGroupFbUser.html">ProtoRepMmGroupFbUser.PBRepMmGroupFbUser</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupFbUser.PBRepMmGroupFbUser.Builder.html">ProtoRepMmGroupFbUser.PBRepMmGroupFbUser.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupInsiteoUserOn.html">ProtoRepMmGroupInsiteoUserOn</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.html">ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.Builder.html">ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmInsiteoGroup.html">ProtoRepMmInsiteoGroup</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmInsiteoGroup.PBRepMmInsiteoGroup.html">ProtoRepMmInsiteoGroup.PBRepMmInsiteoGroup</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmInsiteoGroup.PBRepMmInsiteoGroup.Builder.html">ProtoRepMmInsiteoGroup.PBRepMmInsiteoGroup.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmJoinInsiteoGroupRoot.html">ProtoRepMmJoinInsiteoGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRes.html">ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRes</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRes.Builder.html">ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRes.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRoot.html">ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRoot.Builder.html">ProtoRepMmJoinInsiteoGroupRoot.PBRepMmJoinInsiteoGroupRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmPersonLoc.html">ProtoRepMmPersonLoc</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmPersonLoc.PBRepMmPersonLoc.html">ProtoRepMmPersonLoc.PBRepMmPersonLoc</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmPersonLoc.PBRepMmPersonLoc.Builder.html">ProtoRepMmPersonLoc.PBRepMmPersonLoc.Builder</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+    final 
+    
+    class
+<h1>ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot</h1>
+
+
+
+  
+  
+  
+
+  
+    extends GeneratedMessageLite<br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRootOrBuilder.html">ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRootOrBuilder</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+// Generated by the protocol buffer compiler.  DO NOT EDIT!
+// source: PBRepMmConnectInsiteoUserRoot.proto
+
+package com.insiteo.lbs.protobuf.lbs.response.meetme;
+
+public final class ProtoRepMmConnectInsiteoUserRoot {
+  private ProtoRepMmConnectInsiteoUserRoot() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+  public interface PBRepMmConnectInsiteoUserRootOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // required .com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmConnectInsiteoUserRes mmConnectInsiteoUserResult = 1;
+    boolean hasMmConnectInsiteoUserResult();
+    com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes getMmConnectInsiteoUserResult();
+  }
+  public static final class PBRepMmConnectInsiteoUserRoot extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBRepMmConnectInsiteoUserRootOrBuilder {
+    // Use PBRepMmConnectInsiteoUserRoot.newBuilder() to construct.
+    private PBRepMmConnectInsiteoUserRoot(Builder builder) {
+      super(builder);
+    }
+    private PBRepMmConnectInsiteoUserRoot(boolean noInit) {}
+    
+    private static final PBRepMmConnectInsiteoUserRoot defaultInstance;
+    public static PBRepMmConnectInsiteoUserRoot getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBRepMmConnectInsiteoUserRoot getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // required .com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmConnectInsiteoUserRes mmConnectInsiteoUserResult = 1;
+    public static final int MMCONNECTINSITEOUSERRESULT_FIELD_NUMBER = 1;
+    private com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes mmConnectInsiteoUserResult_;
+    public boolean hasMmConnectInsiteoUserResult() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes getMmConnectInsiteoUserResult() {
+      return mmConnectInsiteoUserResult_;
+    }
+    
+    private void initFields() {
+      mmConnectInsiteoUserResult_ = com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasMmConnectInsiteoUserResult()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getMmConnectInsiteoUserResult().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, mmConnectInsiteoUserResult_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, mmConnectInsiteoUserResult_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot, Builder&gt;
+        implements com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRootOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        mmConnectInsiteoUserResult_ = com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.getDefaultInstance();
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot build() {
+        com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot buildPartial() {
+        com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot result = new com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.mmConnectInsiteoUserResult_ = mmConnectInsiteoUserResult_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot other) {
+        if (other == com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRoot.getDefaultInstance()) return this;
+        if (other.hasMmConnectInsiteoUserResult()) {
+          mergeMmConnectInsiteoUserResult(other.getMmConnectInsiteoUserResult());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasMmConnectInsiteoUserResult()) {
+          
+          return false;
+        }
+        if (!getMmConnectInsiteoUserResult().isInitialized()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.Builder subBuilder = com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.newBuilder();
+              if (hasMmConnectInsiteoUserResult()) {
+                subBuilder.mergeFrom(getMmConnectInsiteoUserResult());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setMmConnectInsiteoUserResult(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required .com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmConnectInsiteoUserRes mmConnectInsiteoUserResult = 1;
+      private com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes mmConnectInsiteoUserResult_ = com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.getDefaultInstance();
+      public boolean hasMmConnectInsiteoUserResult() {
+        return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+      }
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes getMmConnectInsiteoUserResult() {
+        return mmConnectInsiteoUserResult_;
+      }
+      public Builder setMmConnectInsiteoUserResult(com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mmConnectInsiteoUserResult_ = value;
+        
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder setMmConnectInsiteoUserResult(
+          com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.Builder builderForValue) {
+        mmConnectInsiteoUserResult_ = builderForValue.build();
+        
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder mergeMmConnectInsiteoUserResult(com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes value) {
+        if (((bitField0_ &amp; 0x00000001) == 0x00000001) &amp;&amp;
+            mmConnectInsiteoUserResult_ != com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.getDefaultInstance()) {
+          mmConnectInsiteoUserResult_ =
+            com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.newBuilder(mmConnectInsiteoUserResult_).mergeFrom(value).buildPartial();
+        } else {
+          mmConnectInsiteoUserResult_ = value;
+        }
+        
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder clearMmConnectInsiteoUserResult() {
+        mmConnectInsiteoUserResult_ = com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.getDefaultInstance();
+        
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmConnectInsiteoUserRoot)
+    }
+    
+    static {
+      defaultInstance = new PBRepMmConnectInsiteoUserRoot(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmConnectInsiteoUserRoot)
+  }
+  
+  public interface PBRepMmConnectInsiteoUserResOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // repeated .com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmGroupInsiteoUserOn mmGroupInsiteoUserOn = 1;
+    java.util.List&lt;com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn&gt; 
+        getMmGroupInsiteoUserOnList();
+    com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn getMmGroupInsiteoUserOn(int index);
+    int getMmGroupInsiteoUserOnCount();
+    
+    // required string guid = 2;
+    boolean hasGuid();
+    String getGuid();
+    
+    // required string nick = 3;
+    boolean hasNick();
+    String getNick();
+  }
+  public static final class PBRepMmConnectInsiteoUserRes extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBRepMmConnectInsiteoUserResOrBuilder {
+    // Use PBRepMmConnectInsiteoUserRes.newBuilder() to construct.
+    private PBRepMmConnectInsiteoUserRes(Builder builder) {
+      super(builder);
+    }
+    private PBRepMmConnectInsiteoUserRes(boolean noInit) {}
+    
+    private static final PBRepMmConnectInsiteoUserRes defaultInstance;
+    public static PBRepMmConnectInsiteoUserRes getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBRepMmConnectInsiteoUserRes getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // repeated .com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmGroupInsiteoUserOn mmGroupInsiteoUserOn = 1;
+    public static final int MMGROUPINSITEOUSERON_FIELD_NUMBER = 1;
+    private java.util.List&lt;com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn&gt; mmGroupInsiteoUserOn_;
+    public java.util.List&lt;com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn&gt; getMmGroupInsiteoUserOnList() {
+      return mmGroupInsiteoUserOn_;
+    }
+    public java.util.List&lt;? extends com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOnOrBuilder&gt; 
+        getMmGroupInsiteoUserOnOrBuilderList() {
+      return mmGroupInsiteoUserOn_;
+    }
+    public int getMmGroupInsiteoUserOnCount() {
+      return mmGroupInsiteoUserOn_.size();
+    }
+    public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn getMmGroupInsiteoUserOn(int index) {
+      return mmGroupInsiteoUserOn_.get(index);
+    }
+    public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOnOrBuilder getMmGroupInsiteoUserOnOrBuilder(
+        int index) {
+      return mmGroupInsiteoUserOn_.get(index);
+    }
+    
+    // required string guid = 2;
+    public static final int GUID_FIELD_NUMBER = 2;
+    private java.lang.Object guid_;
+    public boolean hasGuid() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public String getGuid() {
+      java.lang.Object ref = guid_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          guid_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getGuidBytes() {
+      java.lang.Object ref = guid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        guid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string nick = 3;
+    public static final int NICK_FIELD_NUMBER = 3;
+    private java.lang.Object nick_;
+    public boolean hasNick() {
+      return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+    }
+    public String getNick() {
+      java.lang.Object ref = nick_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          nick_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getNickBytes() {
+      java.lang.Object ref = nick_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        nick_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      mmGroupInsiteoUserOn_ = java.util.Collections.emptyList();
+      guid_ = "";
+      nick_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasGuid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasNick()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i &lt; getMmGroupInsiteoUserOnCount(); i++) {
+        if (!getMmGroupInsiteoUserOn(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i &lt; mmGroupInsiteoUserOn_.size(); i++) {
+        output.writeMessage(1, mmGroupInsiteoUserOn_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeBytes(2, getGuidBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        output.writeBytes(3, getNickBytes());
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      for (int i = 0; i &lt; mmGroupInsiteoUserOn_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, mmGroupInsiteoUserOn_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getGuidBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getNickBytes());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes, Builder&gt;
+        implements com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserResOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        mmGroupInsiteoUserOn_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        guid_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        nick_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes build() {
+        com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes buildPartial() {
+        com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes result = new com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          mmGroupInsiteoUserOn_ = java.util.Collections.unmodifiableList(mmGroupInsiteoUserOn_);
+          bitField0_ = (bitField0_ &amp; ~0x00000001);
+        }
+        result.mmGroupInsiteoUserOn_ = mmGroupInsiteoUserOn_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.guid_ = guid_;
+        if (((from_bitField0_ &amp; 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.nick_ = nick_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes other) {
+        if (other == com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmConnectInsiteoUserRoot.PBRepMmConnectInsiteoUserRes.getDefaultInstance()) return this;
+        if (!other.mmGroupInsiteoUserOn_.isEmpty()) {
+          if (mmGroupInsiteoUserOn_.isEmpty()) {
+            mmGroupInsiteoUserOn_ = other.mmGroupInsiteoUserOn_;
+            bitField0_ = (bitField0_ &amp; ~0x00000001);
+          } else {
+            ensureMmGroupInsiteoUserOnIsMutable();
+            mmGroupInsiteoUserOn_.addAll(other.mmGroupInsiteoUserOn_);
+          }
+          
+        }
+        if (other.hasGuid()) {
+          setGuid(other.getGuid());
+        }
+        if (other.hasNick()) {
+          setNick(other.getNick());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasGuid()) {
+          
+          return false;
+        }
+        if (!hasNick()) {
+          
+          return false;
+        }
+        for (int i = 0; i &lt; getMmGroupInsiteoUserOnCount(); i++) {
+          if (!getMmGroupInsiteoUserOn(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.Builder subBuilder = com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addMmGroupInsiteoUserOn(subBuilder.buildPartial());
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              guid_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              nick_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated .com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmGroupInsiteoUserOn mmGroupInsiteoUserOn = 1;
+      private java.util.List&lt;com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn&gt; mmGroupInsiteoUserOn_ =
+        java.util.Collections.emptyList();
+      private void ensureMmGroupInsiteoUserOnIsMutable() {
+        if (!((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          mmGroupInsiteoUserOn_ = new java.util.ArrayList&lt;com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn&gt;(mmGroupInsiteoUserOn_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      
+      public java.util.List&lt;com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn&gt; getMmGroupInsiteoUserOnList() {
+        return java.util.Collections.unmodifiableList(mmGroupInsiteoUserOn_);
+      }
+      public int getMmGroupInsiteoUserOnCount() {
+        return mmGroupInsiteoUserOn_.size();
+      }
+      public com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn getMmGroupInsiteoUserOn(int index) {
+        return mmGroupInsiteoUserOn_.get(index);
+      }
+      public Builder setMmGroupInsiteoUserOn(
+          int index, com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMmGroupInsiteoUserOnIsMutable();
+        mmGroupInsiteoUserOn_.set(index, value);
+        
+        return this;
+      }
+      public Builder setMmGroupInsiteoUserOn(
+          int index, com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.Builder builderForValue) {
+        ensureMmGroupInsiteoUserOnIsMutable();
+        mmGroupInsiteoUserOn_.set(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addMmGroupInsiteoUserOn(com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMmGroupInsiteoUserOnIsMutable();
+        mmGroupInsiteoUserOn_.add(value);
+        
+        return this;
+      }
+      public Builder addMmGroupInsiteoUserOn(
+          int index, com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMmGroupInsiteoUserOnIsMutable();
+        mmGroupInsiteoUserOn_.add(index, value);
+        
+        return this;
+      }
+      public Builder addMmGroupInsiteoUserOn(
+          com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.Builder builderForValue) {
+        ensureMmGroupInsiteoUserOnIsMutable();
+        mmGroupInsiteoUserOn_.add(builderForValue.build());
+        
+        return this;
+      }
+      public Builder addMmGroupInsiteoUserOn(
+          int index, com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn.Builder builderForValue) {
+        ensureMmGroupInsiteoUserOnIsMutable();
+        mmGroupInsiteoUserOn_.add(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addAllMmGroupInsiteoUserOn(
+          java.lang.Iterable&lt;? extends com.insiteo.lbs.protobuf.lbs.response.meetme.ProtoRepMmGroupInsiteoUserOn.PBRepMmGroupInsiteoUserOn&gt; values) {
+        ensureMmGroupInsiteoUserOnIsMutable();
+        super.addAll(values, mmGroupInsiteoUserOn_);
+        
+        return this;
+      }
+      public Builder clearMmGroupInsiteoUserOn() {
+        mmGroupInsiteoUserOn_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        
+        return this;
+      }
+      public Builder removeMmGroupInsiteoUserOn(int index) {
+        ensureMmGroupInsiteoUserOnIsMutable();
+        mmGroupInsiteoUserOn_.remove(index);
+        
+        return this;
+      }
+      
+      // required string guid = 2;
+      private java.lang.Object guid_ = "";
+      public boolean hasGuid() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public String getGuid() {
+        java.lang.Object ref = guid_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          guid_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setGuid(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        guid_ = value;
+        
+        return this;
+      }
+      public Builder clearGuid() {
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        guid_ = getDefaultInstance().getGuid();
+        
+        return this;
+      }
+      void setGuid(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        guid_ = value;
+        
+      }
+      
+      // required string nick = 3;
+      private java.lang.Object nick_ = "";
+      public boolean hasNick() {
+        return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+      }
+      public String getNick() {
+        java.lang.Object ref = nick_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          nick_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setNick(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nick_ = value;
+        
+        return this;
+      }
+      public Builder clearNick() {
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        nick_ = getDefaultInstance().getNick();
+        
+        return this;
+      }
+      void setNick(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        nick_ = value;
+        
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmConnectInsiteoUserRes)
+    }
+    
+    static {
+      defaultInstance = new PBRepMmConnectInsiteoUserRes(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.lbs.response.meetme.PBRepMmConnectInsiteoUserRes)
+  }
+  
+  
+  static {
+  }
+  
+  // @@protoc_insertion_point(outer_class_scope)
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC1." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
+<title>
+
+  Zone
+
+
+| Insiteo API Documentation - Version 3.2.0_RC1
+
+</title>
+<link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC1</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/auth/package-summary.html">com.insiteo.lbs.common.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../com/insiteo/lbs/map/entities/Map.html">Map</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../com/insiteo/lbs/map/entities/Zone.html">Zone</a></li>
+          <li class="api apilevel-"><a href="../../../../../com/insiteo/lbs/map/entities/ZoneCategory.html">ZoneCategory</a></li>
+          <li class="api apilevel-"><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="Zone.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>Zone</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+package com.insiteo.lbs.map.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.graphics.Color;
+import android.graphics.PointF;
+
+import com.insiteo.lbs.common.CommonConstants;
+import com.insiteo.lbs.common.TileIndex;
+import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.map.render.EZoneAction;
+
+/**
+ * Class that defines a zone in a {@link Map}.
+ * @author Insiteo
+ *
+ */
+public class Zone {
+
+	private int mId;
+	private String mGuid;
+
+	private String mLabel;
+
+	private int mType;
+
+	private Position mCenter; 
+	private int mZ;
+
+	private int mZoomMin;
+	private int mZoomMax;
+
+	private ArrayList&lt;PointF&gt; mPolygon;
+	private ArrayList&lt;TileIndex&gt; mTileIndex;
+
+	private EZoneAction mActionType = EZoneAction.UNKNOWN;;
+	private String mActionParam;
+
+	private int mDispSortIndex;
+	private String mComments;
+
+	private String mExtra1;
+	private String mExtra2;
+	private String mExtra3;
+	private String mExtra4;
+	private String mExtra5;
+
+	private Float mFExtra1;
+
+	private String mDispExtra1;
+	private String mDispExtra2;
+	private String mDispExtra3;
+
+	private Float mDispFExtra1;
+
+	private boolean mIsVisible;
+
+	private Position mP1, mP2;
+	private float mCustomGeoWidth;
+	private boolean mIsDisplayShelving;	
+
+	/**
+	 * Zone constructor.
+	 * @param id
+	 * @param guid
+	 * @param label
+	 * @param zoneType
+	 * @param mapId
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param zoomMin
+	 * @param zoomMax
+	 * @param polygon
+	 * @param tileIndex
+	 * @param sortIndex
+	 * @param comments
+	 * @param isVisible
+	 */
+	public Zone(int id, String guid, String label, int zoneType, int mapId, float x, float y, int z, int zoomMin, int zoomMax, ArrayList&lt;PointF&gt; polygon, ArrayList&lt;TileIndex&gt; tileIndex, 
+			int sortIndex, String comments, boolean isVisible) {
+		mId = id;
+		mGuid = guid;
+
+		mLabel = label;
+
+		mType = zoneType;
+
+		mCenter = new Position(mapId, x, y);
+		mZ = z;
+
+		mZoomMin = zoomMin;
+		mZoomMax = zoomMax;
+
+		mPolygon = polygon;
+		mTileIndex = tileIndex;
+
+		mDispSortIndex = sortIndex;
+		mComments = comments;
+
+		mIsVisible = isVisible;
+	}
+
+	//******************************************************************************************************************
+	//  
+	// *****************************************************************************************************************
+
+	/**
+	 * Returns the {@link Zone} id.
+	 * @return the {@link Zone} id.
+	 */
+	public int getId() {
+		return mId;
+	}
+
+	/**
+	 * Returns the {@link Zone} guid.
+	 * @return the {@link Zone} guid.
+	 */
+	public String getGuid() {
+		return mGuid;
+	}
+
+	/**
+	 * Returns the {@link Zone} label.
+	 * @return the zone label.
+	 */
+	public String getLabel() {
+		return mLabel;
+	}
+
+	/**
+	 * Returns the {@link Zone} type.
+	 * @return the zone type.
+	 */
+	public int getType() {
+		return mType;
+	}
+
+	/**
+	 * Returns the {@link Zone} center {@link Position}.
+	 * @return the center {@link Position}.
+	 */
+	public Position getCenter() {
+		return mCenter;
+	}
+
+	/**
+	 * Returns the {@link Zone} map id.
+	 * @return the zone map id.
+	 */
+	public int getMapId() {
+		if(mCenter != null) return mCenter.getMapID();
+		return CommonConstants.NULL_ID;
+	}
+	
+	/**
+	 * returns the {@link Zone} height value.
+	 * @return the zone height value.
+	 */
+	public int getZ() {
+		return mZ;
+	}
+
+	/**
+	 * Returns the min zoom when this {@link Zone} should be visible.
+	 * @return the zoom min value to be displayed.
+	 */
+	public int getZoomMin() {
+		return mZoomMin;
+	}
+
+	/**
+	 * Returns the max zoom when this {@link Zone} should be visible.
+	 * @return the zoom max value to be displayed.
+	 */
+	public int getZoomMax() {
+		return mZoomMax;
+	}
+
+	/**
+	 * Returns the {@link List} of {@link PointF} defining the {@link Zone} polygon.
+	 * @return the {@link List} of {@link PointF} defining the {@link Zone}.
+	 */
+	public List&lt;PointF&gt; getPolygon() {
+		return mPolygon;
+	}
+
+	/**
+	 * @hide
+	 * @return
+	 */
+	public List&lt;TileIndex&gt; getTileIndex() {
+		return mTileIndex;
+	}
+
+	/**
+	 * Returns the {@link Zone} {@link EZoneAction}.
+	 * @return the {@link Zone} {@link EZoneAction}.
+	 */
+	public EZoneAction getActionType() {
+		return mActionType;
+	}
+
+	/**
+	 * Returns the action parameter. 
+	 * @return the {@link Zone} action parameter.
+	 */
+	public String getActionParam() {
+		return mActionParam;
+	}
+
+	/**
+	 * Returns the {@link Zone} sort index.
+	 * @return the {@link Zone} sort index.
+	 */
+	public int getSortIndex() {
+		return mDispSortIndex;
+	}
+
+	/**
+	 * Returns the {@link Zone} comments.
+	 * @return the {@link Zone} comments.
+	 */
+	public String getComments() {
+		return mComments;
+	}
+
+	/**
+	 * Returns true if this zone should be displayed.
+	 * @return true if it should be displayed.
+	 */
+	public boolean isVisible() {
+		return mIsVisible;
+	}
+
+	//******************************************************************************************************************
+	//  Action
+	// *****************************************************************************************************************
+
+	/**
+	 * Sets the {@link Zone} action values.
+	 * @param zoneAction the {@link EZoneAction}
+	 * @param actionParam the action parameter.
+	 */
+	public void setActionParam(EZoneAction zoneAction, String actionParam) {
+		mActionType = zoneAction;
+		mActionParam = actionParam;		
+	}
+
+	//******************************************************************************************************************
+	//  Extras
+	// *****************************************************************************************************************
+
+	/**
+	 * Returns the {@link String} extra 1.
+	 * @return the extra 1 value.
+	 */
+	public String getExtra1() {
+		return mExtra1;
+	}
+
+	/**
+	 * Sets the {@link String} extra 1.
+	 * @param extra the extra value.
+	 */
+	public void setExtra1(String extra) {
+		mExtra1 = extra;
+		if(mExtra1 != null) {
+			String[] params = mExtra1.split(";");
+			// Extract zone label
+			if(params.length &gt; 0) {
+				mLabel = params[0];
+			}
+		}
+	}
+
+	/**
+	 * Returns the {@link String} extra 2.
+	 * @return the extra 2 value.
+	 */
+	public String getExtra2() {
+		return mExtra2;
+	}
+
+	/**
+	 * Sets the extra 2 value.
+	 * @param extra the extra value.
+	 */
+	public void setExtra2(String extra) {
+		mExtra2 = extra;
+		if(mExtra2 != null) {
+			String[] points = mExtra2.split(";");
+			if(points.length == 2) {
+				try {
+					String[] p1Coords = points[0].split(",");
+					if(p1Coords.length == 2) {
+						mP1 = new Position(mCenter.getMapID(), Float.parseFloat(p1Coords[0]), Float.parseFloat(p1Coords[1]));
+					}
+
+					String[] p2Coords = points[1].split(",");
+					if(p2Coords.length == 2) {
+						mP2 = new Position(mCenter.getMapID(), Float.parseFloat(p2Coords[0]), Float.parseFloat(p2Coords[1]));
+					}
+				} catch(NumberFormatException nfe) {
+					mP1 = mP2 = null;
+				}				
+			}
+		}
+	}
+
+	/**
+	 * Returns the {@link String} extra 3.
+	 * @return the extra 3 value.
+	 */
+	public String getExtra3() {
+		return mExtra3;
+	}
+
+	/**
+	 * Sets the extra 3 value.
+	 * @param extra the extra value.
+	 */
+	public void setExtra3(String extra) {
+		mExtra3 = extra;
+		if(mExtra3 != null) {
+			String[] params = mExtra3.split(";");
+
+			if(params.length &gt; 1) {
+				try {
+					mIsDisplayShelving = Integer.parseInt(params[1]) == 1;
+				} catch(NumberFormatException nfe) {
+					mIsDisplayShelving = false;
+				}	
+			}
+
+			if(params.length &gt; 2) {
+				try {
+					mCustomGeoWidth = Float.parseFloat(params[2]);
+				} catch(NumberFormatException nfe) {
+					mCustomGeoWidth = 0f;
+				}	
+			}
+		}
+	}
+
+	/**
+	 * Returns the {@link String} extra 4.
+	 * @return the extra 4 value.
+	 */
+	public String getExtra4() {
+		return mExtra4;
+	}
+
+	/**
+	 * Sets the extra 4 value.
+	 * @param extra the extra value.
+	 */
+	public void setExtra4(String extra) {
+		mExtra4 = extra;
+	}
+
+	/**
+	 * Returns the {@link String} extra 5.
+	 * @return the extra 5 value.
+	 */
+	public String getExtra5() {
+		return mExtra5;
+	}
+
+	/**
+	 * Sets the extra 5 value.
+	 * @param extra the extra value.
+	 */
+	public void setExtra5(String extra) {
+		mExtra5 = extra;
+	}
+
+	//******************************************************************************************************************
+	//  FExtras
+	// *****************************************************************************************************************
+
+	/**
+	 * Returns the {@link Float} extra 1.
+	 * @return the extra 3 value.
+	 */
+	public Float getFExtra1() {
+		return mFExtra1;
+	}
+
+	/**
+	 * Sets the {@link Float} extra value.
+	 * @param extra the extra value.
+	 */
+	public void setFExtra1(float extra) {
+		mFExtra1 = extra;
+	}
+
+	//******************************************************************************************************************
+	//  DispExtras
+	// *****************************************************************************************************************
+
+	/**
+	 * Returns the {@link String} disp extra 1 value.
+	 * @return the disp extra 1 value
+	 */
+	public String getDispExtra1() {
+		return mDispExtra1;
+	}
+
+	/**
+	 * Sets the {@link String} disp extra 1 value.
+	 * @param extra the extra value.
+	 */
+	public void setDispExtra1(String extra) {
+		mDispExtra1 = extra;
+	}
+
+	/**
+	 * Returns the {@link String} disp extra 2 value.
+	 * @return the disp extra 2 value.
+	 */
+	public String getDispExtra2() {
+		return mDispExtra2;
+	}
+
+	/**
+	 * Sets the {@link String} disp extra 2 value.
+	 * @param extra the extra value.
+	 */
+	public void setDispExtra2(String extra) {
+		mDispExtra2 = extra;
+	}
+
+	/**
+	 * Returns the {@link String} disp extra 3 value.
+	 * @return the disp extra 3 value.
+	 */
+	public String getDispExtra3() {
+		return mDispExtra3;
+	}
+
+	/**
+	 * Sets the {@link String} disp extra 2 value.
+	 * @param extra the extra value.
+	 */
+	public void setDispExtra3(String extra) {
+		mDispExtra3 = extra;
+	}
+
+	//******************************************************************************************************************
+	//  DispFExtras
+	// *****************************************************************************************************************
+
+	/**
+	 * Returns the {@link Float} disp extra 1.
+	 * @return the float disp extra 1 value.
+	 */
+	public Float getDispFExtra1() {
+		return mDispFExtra1;
+	}
+
+	/**
+	 * Sets the {@link Float} disp extra 1 value.
+	 * @param extra the extra value.
+	 */
+	public void setDispFExtra1(float extra) {
+		mDispFExtra1 = extra;
+	}
+
+
+	//******************************************************************************************************************
+	//  
+	// *****************************************************************************************************************
+
+	/**
+	 * Return the p1 {@link Position} of this zone.
+	 * @return the p1 {@link Position}.
+	 */
+	public Position getP1() {
+		return mP1;
+	}
+
+	/**
+	 * Return the p2 {@link Position} of this zone.
+	 * @return the p2 {@link Position}.
+	 */
+	public Position getP2() {
+		return mP2;
+	}
+
+	/**
+	 * Returns the custom geowidth value.
+	 * @return the custom geowidth value.
+	 */
+	public float getCustomGeoWidth() {
+		return mCustomGeoWidth;
+	}
+
+	/**
+	 * Returns true if this zone is representing a shelving.
+	 * @return true if it is a shelving.
+	 */
+	public boolean isDisplayShelving() {
+		return mIsDisplayShelving;
+	}
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

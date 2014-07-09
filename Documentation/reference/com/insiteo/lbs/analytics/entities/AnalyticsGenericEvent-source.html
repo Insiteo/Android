@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC1." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
+<title>
+
+  AnalyticsGenericEvent
+
+
+| Insiteo API Documentation - Version 3.2.0_RC1
+
+</title>
+<link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../", "../../../../../../assets/");
+</script>
+<script src="../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC1</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/auth/package-summary.html">com.insiteo.lbs.common.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="selected api apilevel-"><a href="../../../../../com/insiteo/lbs/analytics/entities/AnalyticsGenericEvent.html">AnalyticsGenericEvent</a></li>
+          <li class="api apilevel-"><a href="../../../../../com/insiteo/lbs/analytics/entities/AnalyticsLocationEvent.html">AnalyticsLocationEvent</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="AnalyticsGenericEvent.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>AnalyticsGenericEvent</h1>
+
+
+
+  
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+package com.insiteo.lbs.analytics.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.insiteo.lbs.analytics.AnalyticsConstants;
+import com.insiteo.lbs.common.utils.geometry.Position;
+
+/**
+ * Generic event that can be used to catch specific behavior. This event will be sort by its type and can contain 2 String parameters, 2 int parameters, 2 double parameters
+ * and 2 Positions. All the required field of the event must be filled before passing it to the AnalyticsManager.
+ *
+ */
+public class AnalyticsGenericEvent extends AnalyticsAbstractEvent{
+
+	private final static String TAG = "AnalyticsGenericEvent";
+
+	private String mType;
+
+	private Position mPos1;
+	private Position mPos2;
+
+	private String mString1;
+	private String mString2;
+
+	private double mDouble1;
+	private double mDouble2;
+
+	private int mInt1;
+	private int mInt2;
+
+	/**
+	 * Create an AnalyticsGenericEvent with all its parameters
+	 * @param aId
+	 * @param aTimestamp
+	 * @param aGuid
+	 * @param aType
+	 * @param aPos1
+	 * @param aPos2
+	 * @param aString1
+	 * @param aString2
+	 * @param aDouble1
+	 * @param aDouble2
+	 * @param aInt1
+	 * @param aInt2
+	 */
+	public AnalyticsGenericEvent(long aId, long aTimestamp, String aGuid, String aType, Position aPos1, Position aPos2, String aString1, String aString2, double aDouble1, double aDouble2, int aInt1, int aInt2) {
+		super(aId, aTimestamp, aGuid);
+		this.mType = aType;
+		this.mPos1 = aPos1;
+		this.mPos2 = aPos2;
+		this.mString1 = aString1;
+		this.mString2 = aString2;
+		this.mDouble1 = aDouble1;
+		this.mDouble2 = aDouble2;
+		this.mInt1 = aInt1;
+		this.mInt2 = aInt2;
+	}
+
+	/**
+	 * Create an AnalyticsGenericEvent with the given type.
+	 * @param aType of the {@link AnalyticsGenericEvent}
+	 */
+	public AnalyticsGenericEvent(String aType){
+		super(AnalyticsConstants.TYPE_GENERIC_EVENT);
+		this.mType = aType;
+	}
+
+	/**
+	 * Returns the type of the {@link AnalyticsGenericEvent}.
+	 * @return The type of the {@link AnalyticsGenericEvent}.
+	 */
+	public String getType() {
+		return mType;
+	}
+
+	/**
+	 * Sets the type {@link String} of the {@link AnalyticsGenericEvent}.
+	 * @param type The type {@link String} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setType(String type) {
+		this.mType = type;
+	}
+
+	/**
+	 * Returns the first {@link Position} of the {@link AnalyticsGenericEvent}.
+	 * @return The first {@link Position} of the {@link AnalyticsGenericEvent}.
+	 */
+	public Position getPos1() {
+		return mPos1;
+	}
+
+	/**
+	 * Sets the first {@link Position} of the {@link AnalyticsGenericEvent}.
+	 * @param pos1 The first {@link Position} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setPos1(Position pos1) {
+		this.mPos1 = pos1;
+	}
+
+	/**
+	 * Returns the second {@link Position} of the {@link AnalyticsGenericEvent}.
+	 * @return The second {@link Position} of the {@link AnalyticsGenericEvent}.
+	 */
+	public Position getPos2() {
+		return mPos2;
+	}
+
+	/**
+	 * Sets the second {@link Position} of the {@link AnalyticsGenericEvent}.
+	 * @param pos2 The second {@link Position} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setPos2(Position pos2) {
+		this.mPos2 = pos2;
+	}
+
+	/**
+	 * Returns the first {@link String} of the {@link AnalyticsGenericEvent}.
+	 * @return The first {@link String} of the {@link AnalyticsGenericEvent}.
+	 */
+	public String getString1() {
+		return mString1;
+	}
+
+	/**
+	 * Sets the first {@link String} of the {@link AnalyticsGenericEvent}.
+	 * @param string1 The first {@link String} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setString1(String string1) {
+		this.mString1 = string1;
+	}
+
+
+	/**
+	 * Returns the second {@link Position} of the {@link AnalyticsGenericEvent}.
+	 * @return The second {@link Position} of the {@link AnalyticsGenericEvent}.
+	 */
+	public String getString2() {
+		return mString2;
+	}
+
+	/**
+	 * Sets the second {@link String} of the {@link AnalyticsGenericEvent}.
+	 * @param string2 The second {@link String} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setString2(String string2) {
+		this.mString2 = string2;
+	}
+
+	/**
+	 * Returns the first {@link Double} of the {@link AnalyticsGenericEvent}.
+	 * @return The first {@link Double} of the {@link AnalyticsGenericEvent}.
+	 */
+	public double getDouble1() {
+		return mDouble1;
+	}
+
+	/**
+	 * Sets the first {@link Double} of the {@link AnalyticsGenericEvent}.
+	 * @param double1 The first {@link Double} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setDouble1(double double1) {
+		this.mDouble1 = double1;
+	}
+
+
+	/**
+	 * Returns the second {@link Double} of the {@link AnalyticsGenericEvent}.
+	 * @return The second {@link Double} of the {@link AnalyticsGenericEvent}.
+	 */
+	public double getDouble2() {
+		return mDouble2;
+	}
+
+	/**
+	 * Sets the second {@link Double} of the {@link AnalyticsGenericEvent}.
+	 * @param double2 The second {@link Double} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setDouble2(double double2) {
+		this.mDouble2 = double2;
+	}
+
+	/**
+	 * Returns the first {@link Integer} of the {@link AnalyticsGenericEvent}.
+	 * @return The first {@link Integer} of the {@link AnalyticsGenericEvent}.
+	 */
+	public int getInt1() {
+		return mInt1;
+	}
+
+	/**
+	 * Sets the first {@link Integer} of the {@link AnalyticsGenericEvent}.
+	 * @param int1 The first {@link Integer} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setInt1(int int1) {
+		this.mInt1 = int1;
+	}
+
+	/**
+	 * Returns the second {@link Integer} of the {@link AnalyticsGenericEvent}.
+	 * @return The second {@link Integer} of the {@link AnalyticsGenericEvent}.
+	 */
+	public int getInt2() {
+		return mInt2;
+	}
+
+	/**
+	 * Sets the second {@link Integer} of the {@link AnalyticsGenericEvent}.
+	 * @param int2 The second {@link Integer} of the {@link AnalyticsGenericEvent}
+	 */
+	public void setInt2(int int2) {
+		this.mInt2 = int2;
+	}
+
+
+	/**
+	 * Returns a {@link List} containing all the {@link Position} of this {@link AnalyticsGenericEvent}.
+	 * @return the {@link List} containing all the {@link Position}.
+	 */
+	public List&lt;Position&gt; getPositions(){
+
+		List&lt;Position&gt; positions = new ArrayList&lt;Position&gt;();
+
+		if (mPos1 != null) {
+			positions.add(mPos1);
+		}
+
+		if (mPos2 != null) {
+			positions.add(mPos2);
+		}
+
+		return positions;
+	}
+
+	@Override
+	public String toString(){
+		String val = "Generic Event with : \n label = " + mType;
+
+		if (mPos1 != null) {
+			val += " position 1 = " + mPos1.toString(); 
+		}
+
+		if (mPos2 != null) {
+			val += " position 2 = " + mPos2.toString(); 
+		}
+
+		if (mString1 != null) {
+			val += " string 1 = " + mString1; 
+		}
+
+		if (mString2 != null) {
+			val += " string 2 = " + mString2; 
+		}
+
+		if (mInt1 != 0) {
+			val += " int 1 = " + mInt1; 
+		}
+
+		if (mInt2 != 0) {
+			val += " int 2 = " + mInt2; 
+		}
+
+		if (mDouble1 != 0.0d) {
+			val += " double 1 = " + mDouble1; 
+		}
+
+		if (mDouble2 != 0.0d) {
+			val += " double 2 = " + mDouble2; 
+		}
+
+		return val;
+	}
+
+
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

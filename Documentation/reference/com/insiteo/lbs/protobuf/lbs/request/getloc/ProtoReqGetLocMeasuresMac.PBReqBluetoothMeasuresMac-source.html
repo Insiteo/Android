@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/parsers/package-summary.html">com.insiteo.lbs.common.auth.parsers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/geometry/package-summary.html">com.insiteo.lbs.common.utils.geometry</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/threading/package-summary.html">com.insiteo.lbs.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/analytics/request/package-summary.html">com.insiteo.lbs.protobuf.analytics.request</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/request/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.request.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/init/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.init</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/package-summary.html">com.insiteo.lbs.protobuf.lbs.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/loc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.loc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/geofence/package-summary.html">com.insiteo.lbs.protobuf.model.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/itinerary/package-summary.html">com.insiteo.lbs.protobuf.model.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/map/package-summary.html">com.insiteo.lbs.protobuf.model.map</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqClientGpsData.PBReqClientGpsDataOrBuilder.html">ProtoReqClientGpsData.PBReqClientGpsDataOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqClientGpsData.PBReqClientGpsDetailsOrBuilder.html">ProtoReqClientGpsData.PBReqClientGpsDetailsOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocGeofContent.PBReqGetLocGeofContentOrBuilder.html">ProtoReqGetLocGeofContent.PBReqGetLocGeofContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocItiContent.PBReqGetLocItiContentOrBuilder.html">ProtoReqGetLocItiContent.PBReqGetLocItiContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMacRoot.PBReqGetLocMacRootOrBuilder.html">ProtoReqGetLocMacRoot.PBReqGetLocMacRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqBluetoothMeasuresOrBuilder.html">ProtoReqGetLocMeasures.PBReqBluetoothMeasuresOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqGetLocMeasuresOrBuilder.html">ProtoReqGetLocMeasures.PBReqGetLocMeasuresOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqWifiMeasuresOrBuilder.html">ProtoReqGetLocMeasures.PBReqWifiMeasuresOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMacOrBuilder.html">ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMacOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMacOrBuilder.html">ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMacOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMacOrBuilder.html">ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMacOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMmContent.PBReqGetLocMmContentOrBuilder.html">ProtoReqGetLocMmContent.PBReqGetLocMmContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocModulesContent.PBReqGetLocModulesContentOrBuilder.html">ProtoReqGetLocModulesContent.PBReqGetLocModulesContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocRoot.PBReqGetLocRootOrBuilder.html">ProtoReqGetLocRoot.PBReqGetLocRootOrBuilder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqClientGpsData.html">ProtoReqClientGpsData</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqClientGpsData.PBReqClientGpsData.html">ProtoReqClientGpsData.PBReqClientGpsData</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqClientGpsData.PBReqClientGpsData.Builder.html">ProtoReqClientGpsData.PBReqClientGpsData.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqClientGpsData.PBReqClientGpsDetails.html">ProtoReqClientGpsData.PBReqClientGpsDetails</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqClientGpsData.PBReqClientGpsDetails.Builder.html">ProtoReqClientGpsData.PBReqClientGpsDetails.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocGeofContent.html">ProtoReqGetLocGeofContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocGeofContent.PBReqGetLocGeofContent.html">ProtoReqGetLocGeofContent.PBReqGetLocGeofContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocGeofContent.PBReqGetLocGeofContent.Builder.html">ProtoReqGetLocGeofContent.PBReqGetLocGeofContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocItiContent.html">ProtoReqGetLocItiContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocItiContent.PBReqGetLocItiContent.html">ProtoReqGetLocItiContent.PBReqGetLocItiContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocItiContent.PBReqGetLocItiContent.Builder.html">ProtoReqGetLocItiContent.PBReqGetLocItiContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMacRoot.html">ProtoReqGetLocMacRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMacRoot.PBReqGetLocMacRoot.html">ProtoReqGetLocMacRoot.PBReqGetLocMacRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMacRoot.PBReqGetLocMacRoot.Builder.html">ProtoReqGetLocMacRoot.PBReqGetLocMacRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.html">ProtoReqGetLocMeasures</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqBluetoothMeasures.html">ProtoReqGetLocMeasures.PBReqBluetoothMeasures</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqBluetoothMeasures.Builder.html">ProtoReqGetLocMeasures.PBReqBluetoothMeasures.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqGetLocMeasures.html">ProtoReqGetLocMeasures.PBReqGetLocMeasures</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqGetLocMeasures.Builder.html">ProtoReqGetLocMeasures.PBReqGetLocMeasures.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqWifiMeasures.html">ProtoReqGetLocMeasures.PBReqWifiMeasures</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasures.PBReqWifiMeasures.Builder.html">ProtoReqGetLocMeasures.PBReqWifiMeasures.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.html">ProtoReqGetLocMeasuresMac</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.html">ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.Builder.html">ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac.html">ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac.Builder.html">ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.html">ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.Builder.html">ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMmContent.html">ProtoReqGetLocMmContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMmContent.PBReqGetLocMmContent.html">ProtoReqGetLocMmContent.PBReqGetLocMmContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMmContent.PBReqGetLocMmContent.Builder.html">ProtoReqGetLocMmContent.PBReqGetLocMmContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocModulesContent.html">ProtoReqGetLocModulesContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocModulesContent.PBReqGetLocModulesContent.html">ProtoReqGetLocModulesContent.PBReqGetLocModulesContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocModulesContent.PBReqGetLocModulesContent.Builder.html">ProtoReqGetLocModulesContent.PBReqGetLocModulesContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocRoot.html">ProtoReqGetLocRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocRoot.PBReqGetLocRoot.html">ProtoReqGetLocRoot.PBReqGetLocRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocRoot.PBReqGetLocRoot.Builder.html">ProtoReqGetLocRoot.PBReqGetLocRoot.Builder</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+    final 
+    
+    class
+<h1>ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac</h1>
+
+
+
+  
+  
+  
+
+  
+    extends GeneratedMessageLite<br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMacOrBuilder.html">ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMacOrBuilder</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+// Generated by the protocol buffer compiler.  DO NOT EDIT!
+// source: PBReqGetLocMeasuresMac.proto
+
+package com.insiteo.lbs.protobuf.lbs.request.getloc;
+
+public final class ProtoReqGetLocMeasuresMac {
+  private ProtoReqGetLocMeasuresMac() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+  public interface PBReqGetLocMeasuresMacOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // repeated .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqWifiMeasuresMac wifiMeasuresMac = 1;
+    java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac&gt; 
+        getWifiMeasuresMacList();
+    com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac getWifiMeasuresMac(int index);
+    int getWifiMeasuresMacCount();
+    
+    // optional .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqClientGpsData gpsData = 2;
+    boolean hasGpsData();
+    com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData getGpsData();
+    
+    // repeated .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqBluetoothMeasuresMac buetoothMeasures = 3;
+    java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac&gt; 
+        getBuetoothMeasuresList();
+    com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac getBuetoothMeasures(int index);
+    int getBuetoothMeasuresCount();
+  }
+  public static final class PBReqGetLocMeasuresMac extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBReqGetLocMeasuresMacOrBuilder {
+    // Use PBReqGetLocMeasuresMac.newBuilder() to construct.
+    private PBReqGetLocMeasuresMac(Builder builder) {
+      super(builder);
+    }
+    private PBReqGetLocMeasuresMac(boolean noInit) {}
+    
+    private static final PBReqGetLocMeasuresMac defaultInstance;
+    public static PBReqGetLocMeasuresMac getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBReqGetLocMeasuresMac getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // repeated .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqWifiMeasuresMac wifiMeasuresMac = 1;
+    public static final int WIFIMEASURESMAC_FIELD_NUMBER = 1;
+    private java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac&gt; wifiMeasuresMac_;
+    public java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac&gt; getWifiMeasuresMacList() {
+      return wifiMeasuresMac_;
+    }
+    public java.util.List&lt;? extends com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMacOrBuilder&gt; 
+        getWifiMeasuresMacOrBuilderList() {
+      return wifiMeasuresMac_;
+    }
+    public int getWifiMeasuresMacCount() {
+      return wifiMeasuresMac_.size();
+    }
+    public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac getWifiMeasuresMac(int index) {
+      return wifiMeasuresMac_.get(index);
+    }
+    public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMacOrBuilder getWifiMeasuresMacOrBuilder(
+        int index) {
+      return wifiMeasuresMac_.get(index);
+    }
+    
+    // optional .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqClientGpsData gpsData = 2;
+    public static final int GPSDATA_FIELD_NUMBER = 2;
+    private com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData gpsData_;
+    public boolean hasGpsData() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData getGpsData() {
+      return gpsData_;
+    }
+    
+    // repeated .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqBluetoothMeasuresMac buetoothMeasures = 3;
+    public static final int BUETOOTHMEASURES_FIELD_NUMBER = 3;
+    private java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac&gt; buetoothMeasures_;
+    public java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac&gt; getBuetoothMeasuresList() {
+      return buetoothMeasures_;
+    }
+    public java.util.List&lt;? extends com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMacOrBuilder&gt; 
+        getBuetoothMeasuresOrBuilderList() {
+      return buetoothMeasures_;
+    }
+    public int getBuetoothMeasuresCount() {
+      return buetoothMeasures_.size();
+    }
+    public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac getBuetoothMeasures(int index) {
+      return buetoothMeasures_.get(index);
+    }
+    public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMacOrBuilder getBuetoothMeasuresOrBuilder(
+        int index) {
+      return buetoothMeasures_.get(index);
+    }
+    
+    private void initFields() {
+      wifiMeasuresMac_ = java.util.Collections.emptyList();
+      gpsData_ = com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.getDefaultInstance();
+      buetoothMeasures_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      for (int i = 0; i &lt; getWifiMeasuresMacCount(); i++) {
+        if (!getWifiMeasuresMac(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i &lt; getBuetoothMeasuresCount(); i++) {
+        if (!getBuetoothMeasures(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i &lt; wifiMeasuresMac_.size(); i++) {
+        output.writeMessage(1, wifiMeasuresMac_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeMessage(2, gpsData_);
+      }
+      for (int i = 0; i &lt; buetoothMeasures_.size(); i++) {
+        output.writeMessage(3, buetoothMeasures_.get(i));
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      for (int i = 0; i &lt; wifiMeasuresMac_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, wifiMeasuresMac_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, gpsData_);
+      }
+      for (int i = 0; i &lt; buetoothMeasures_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, buetoothMeasures_.get(i));
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac, Builder&gt;
+        implements com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMacOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        wifiMeasuresMac_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        gpsData_ = com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.getDefaultInstance();
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        buetoothMeasures_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac build() {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac buildPartial() {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac result = new com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          wifiMeasuresMac_ = java.util.Collections.unmodifiableList(wifiMeasuresMac_);
+          bitField0_ = (bitField0_ &amp; ~0x00000001);
+        }
+        result.wifiMeasuresMac_ = wifiMeasuresMac_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.gpsData_ = gpsData_;
+        if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+          buetoothMeasures_ = java.util.Collections.unmodifiableList(buetoothMeasures_);
+          bitField0_ = (bitField0_ &amp; ~0x00000004);
+        }
+        result.buetoothMeasures_ = buetoothMeasures_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac other) {
+        if (other == com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqGetLocMeasuresMac.getDefaultInstance()) return this;
+        if (!other.wifiMeasuresMac_.isEmpty()) {
+          if (wifiMeasuresMac_.isEmpty()) {
+            wifiMeasuresMac_ = other.wifiMeasuresMac_;
+            bitField0_ = (bitField0_ &amp; ~0x00000001);
+          } else {
+            ensureWifiMeasuresMacIsMutable();
+            wifiMeasuresMac_.addAll(other.wifiMeasuresMac_);
+          }
+          
+        }
+        if (other.hasGpsData()) {
+          mergeGpsData(other.getGpsData());
+        }
+        if (!other.buetoothMeasures_.isEmpty()) {
+          if (buetoothMeasures_.isEmpty()) {
+            buetoothMeasures_ = other.buetoothMeasures_;
+            bitField0_ = (bitField0_ &amp; ~0x00000004);
+          } else {
+            ensureBuetoothMeasuresIsMutable();
+            buetoothMeasures_.addAll(other.buetoothMeasures_);
+          }
+          
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        for (int i = 0; i &lt; getWifiMeasuresMacCount(); i++) {
+          if (!getWifiMeasuresMac(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i &lt; getBuetoothMeasuresCount(); i++) {
+          if (!getBuetoothMeasures(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.Builder subBuilder = com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addWifiMeasuresMac(subBuilder.buildPartial());
+              break;
+            }
+            case 18: {
+              com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.Builder subBuilder = com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.newBuilder();
+              if (hasGpsData()) {
+                subBuilder.mergeFrom(getGpsData());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setGpsData(subBuilder.buildPartial());
+              break;
+            }
+            case 26: {
+              com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.Builder subBuilder = com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addBuetoothMeasures(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqWifiMeasuresMac wifiMeasuresMac = 1;
+      private java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac&gt; wifiMeasuresMac_ =
+        java.util.Collections.emptyList();
+      private void ensureWifiMeasuresMacIsMutable() {
+        if (!((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          wifiMeasuresMac_ = new java.util.ArrayList&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac&gt;(wifiMeasuresMac_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      
+      public java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac&gt; getWifiMeasuresMacList() {
+        return java.util.Collections.unmodifiableList(wifiMeasuresMac_);
+      }
+      public int getWifiMeasuresMacCount() {
+        return wifiMeasuresMac_.size();
+      }
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac getWifiMeasuresMac(int index) {
+        return wifiMeasuresMac_.get(index);
+      }
+      public Builder setWifiMeasuresMac(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWifiMeasuresMacIsMutable();
+        wifiMeasuresMac_.set(index, value);
+        
+        return this;
+      }
+      public Builder setWifiMeasuresMac(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.Builder builderForValue) {
+        ensureWifiMeasuresMacIsMutable();
+        wifiMeasuresMac_.set(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addWifiMeasuresMac(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWifiMeasuresMacIsMutable();
+        wifiMeasuresMac_.add(value);
+        
+        return this;
+      }
+      public Builder addWifiMeasuresMac(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWifiMeasuresMacIsMutable();
+        wifiMeasuresMac_.add(index, value);
+        
+        return this;
+      }
+      public Builder addWifiMeasuresMac(
+          com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.Builder builderForValue) {
+        ensureWifiMeasuresMacIsMutable();
+        wifiMeasuresMac_.add(builderForValue.build());
+        
+        return this;
+      }
+      public Builder addWifiMeasuresMac(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.Builder builderForValue) {
+        ensureWifiMeasuresMacIsMutable();
+        wifiMeasuresMac_.add(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addAllWifiMeasuresMac(
+          java.lang.Iterable&lt;? extends com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac&gt; values) {
+        ensureWifiMeasuresMacIsMutable();
+        super.addAll(values, wifiMeasuresMac_);
+        
+        return this;
+      }
+      public Builder clearWifiMeasuresMac() {
+        wifiMeasuresMac_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        
+        return this;
+      }
+      public Builder removeWifiMeasuresMac(int index) {
+        ensureWifiMeasuresMacIsMutable();
+        wifiMeasuresMac_.remove(index);
+        
+        return this;
+      }
+      
+      // optional .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqClientGpsData gpsData = 2;
+      private com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData gpsData_ = com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.getDefaultInstance();
+      public boolean hasGpsData() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData getGpsData() {
+        return gpsData_;
+      }
+      public Builder setGpsData(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gpsData_ = value;
+        
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder setGpsData(
+          com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.Builder builderForValue) {
+        gpsData_ = builderForValue.build();
+        
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder mergeGpsData(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData value) {
+        if (((bitField0_ &amp; 0x00000002) == 0x00000002) &amp;&amp;
+            gpsData_ != com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.getDefaultInstance()) {
+          gpsData_ =
+            com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.newBuilder(gpsData_).mergeFrom(value).buildPartial();
+        } else {
+          gpsData_ = value;
+        }
+        
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder clearGpsData() {
+        gpsData_ = com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqClientGpsData.PBReqClientGpsData.getDefaultInstance();
+        
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        return this;
+      }
+      
+      // repeated .com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqBluetoothMeasuresMac buetoothMeasures = 3;
+      private java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac&gt; buetoothMeasures_ =
+        java.util.Collections.emptyList();
+      private void ensureBuetoothMeasuresIsMutable() {
+        if (!((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+          buetoothMeasures_ = new java.util.ArrayList&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac&gt;(buetoothMeasures_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      
+      public java.util.List&lt;com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac&gt; getBuetoothMeasuresList() {
+        return java.util.Collections.unmodifiableList(buetoothMeasures_);
+      }
+      public int getBuetoothMeasuresCount() {
+        return buetoothMeasures_.size();
+      }
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac getBuetoothMeasures(int index) {
+        return buetoothMeasures_.get(index);
+      }
+      public Builder setBuetoothMeasures(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBuetoothMeasuresIsMutable();
+        buetoothMeasures_.set(index, value);
+        
+        return this;
+      }
+      public Builder setBuetoothMeasures(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.Builder builderForValue) {
+        ensureBuetoothMeasuresIsMutable();
+        buetoothMeasures_.set(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addBuetoothMeasures(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBuetoothMeasuresIsMutable();
+        buetoothMeasures_.add(value);
+        
+        return this;
+      }
+      public Builder addBuetoothMeasures(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBuetoothMeasuresIsMutable();
+        buetoothMeasures_.add(index, value);
+        
+        return this;
+      }
+      public Builder addBuetoothMeasures(
+          com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.Builder builderForValue) {
+        ensureBuetoothMeasuresIsMutable();
+        buetoothMeasures_.add(builderForValue.build());
+        
+        return this;
+      }
+      public Builder addBuetoothMeasures(
+          int index, com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.Builder builderForValue) {
+        ensureBuetoothMeasuresIsMutable();
+        buetoothMeasures_.add(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addAllBuetoothMeasures(
+          java.lang.Iterable&lt;? extends com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac&gt; values) {
+        ensureBuetoothMeasuresIsMutable();
+        super.addAll(values, buetoothMeasures_);
+        
+        return this;
+      }
+      public Builder clearBuetoothMeasures() {
+        buetoothMeasures_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        
+        return this;
+      }
+      public Builder removeBuetoothMeasures(int index) {
+        ensureBuetoothMeasuresIsMutable();
+        buetoothMeasures_.remove(index);
+        
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqGetLocMeasuresMac)
+    }
+    
+    static {
+      defaultInstance = new PBReqGetLocMeasuresMac(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqGetLocMeasuresMac)
+  }
+  
+  public interface PBReqWifiMeasuresMacOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // required string macAddress = 1;
+    boolean hasMacAddress();
+    String getMacAddress();
+    
+    // required float signalStrenght = 2;
+    boolean hasSignalStrenght();
+    float getSignalStrenght();
+  }
+  public static final class PBReqWifiMeasuresMac extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBReqWifiMeasuresMacOrBuilder {
+    // Use PBReqWifiMeasuresMac.newBuilder() to construct.
+    private PBReqWifiMeasuresMac(Builder builder) {
+      super(builder);
+    }
+    private PBReqWifiMeasuresMac(boolean noInit) {}
+    
+    private static final PBReqWifiMeasuresMac defaultInstance;
+    public static PBReqWifiMeasuresMac getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBReqWifiMeasuresMac getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // required string macAddress = 1;
+    public static final int MACADDRESS_FIELD_NUMBER = 1;
+    private java.lang.Object macAddress_;
+    public boolean hasMacAddress() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public String getMacAddress() {
+      java.lang.Object ref = macAddress_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          macAddress_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getMacAddressBytes() {
+      java.lang.Object ref = macAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        macAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required float signalStrenght = 2;
+    public static final int SIGNALSTRENGHT_FIELD_NUMBER = 2;
+    private float signalStrenght_;
+    public boolean hasSignalStrenght() {
+      return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+    }
+    public float getSignalStrenght() {
+      return signalStrenght_;
+    }
+    
+    private void initFields() {
+      macAddress_ = "";
+      signalStrenght_ = 0F;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasMacAddress()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSignalStrenght()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getMacAddressBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, signalStrenght_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getMacAddressBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, signalStrenght_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac, Builder&gt;
+        implements com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMacOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        macAddress_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        signalStrenght_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac build() {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac buildPartial() {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac result = new com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.macAddress_ = macAddress_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.signalStrenght_ = signalStrenght_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac other) {
+        if (other == com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqWifiMeasuresMac.getDefaultInstance()) return this;
+        if (other.hasMacAddress()) {
+          setMacAddress(other.getMacAddress());
+        }
+        if (other.hasSignalStrenght()) {
+          setSignalStrenght(other.getSignalStrenght());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasMacAddress()) {
+          
+          return false;
+        }
+        if (!hasSignalStrenght()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              macAddress_ = input.readBytes();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              signalStrenght_ = input.readFloat();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string macAddress = 1;
+      private java.lang.Object macAddress_ = "";
+      public boolean hasMacAddress() {
+        return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+      }
+      public String getMacAddress() {
+        java.lang.Object ref = macAddress_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          macAddress_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setMacAddress(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        macAddress_ = value;
+        
+        return this;
+      }
+      public Builder clearMacAddress() {
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        macAddress_ = getDefaultInstance().getMacAddress();
+        
+        return this;
+      }
+      void setMacAddress(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        macAddress_ = value;
+        
+      }
+      
+      // required float signalStrenght = 2;
+      private float signalStrenght_ ;
+      public boolean hasSignalStrenght() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public float getSignalStrenght() {
+        return signalStrenght_;
+      }
+      public Builder setSignalStrenght(float value) {
+        bitField0_ |= 0x00000002;
+        signalStrenght_ = value;
+        
+        return this;
+      }
+      public Builder clearSignalStrenght() {
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        signalStrenght_ = 0F;
+        
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqWifiMeasuresMac)
+    }
+    
+    static {
+      defaultInstance = new PBReqWifiMeasuresMac(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqWifiMeasuresMac)
+  }
+  
+  public interface PBReqBluetoothMeasuresMacOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // required string ieeeAddress = 1;
+    boolean hasIeeeAddress();
+    String getIeeeAddress();
+    
+    // required float signalStrenght = 2;
+    boolean hasSignalStrenght();
+    float getSignalStrenght();
+  }
+  public static final class PBReqBluetoothMeasuresMac extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBReqBluetoothMeasuresMacOrBuilder {
+    // Use PBReqBluetoothMeasuresMac.newBuilder() to construct.
+    private PBReqBluetoothMeasuresMac(Builder builder) {
+      super(builder);
+    }
+    private PBReqBluetoothMeasuresMac(boolean noInit) {}
+    
+    private static final PBReqBluetoothMeasuresMac defaultInstance;
+    public static PBReqBluetoothMeasuresMac getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBReqBluetoothMeasuresMac getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // required string ieeeAddress = 1;
+    public static final int IEEEADDRESS_FIELD_NUMBER = 1;
+    private java.lang.Object ieeeAddress_;
+    public boolean hasIeeeAddress() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public String getIeeeAddress() {
+      java.lang.Object ref = ieeeAddress_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          ieeeAddress_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getIeeeAddressBytes() {
+      java.lang.Object ref = ieeeAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        ieeeAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required float signalStrenght = 2;
+    public static final int SIGNALSTRENGHT_FIELD_NUMBER = 2;
+    private float signalStrenght_;
+    public boolean hasSignalStrenght() {
+      return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+    }
+    public float getSignalStrenght() {
+      return signalStrenght_;
+    }
+    
+    private void initFields() {
+      ieeeAddress_ = "";
+      signalStrenght_ = 0F;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasIeeeAddress()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSignalStrenght()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getIeeeAddressBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, signalStrenght_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getIeeeAddressBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, signalStrenght_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac, Builder&gt;
+        implements com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMacOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        ieeeAddress_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        signalStrenght_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac build() {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac buildPartial() {
+        com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac result = new com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.ieeeAddress_ = ieeeAddress_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.signalStrenght_ = signalStrenght_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac other) {
+        if (other == com.insiteo.lbs.protobuf.lbs.request.getloc.ProtoReqGetLocMeasuresMac.PBReqBluetoothMeasuresMac.getDefaultInstance()) return this;
+        if (other.hasIeeeAddress()) {
+          setIeeeAddress(other.getIeeeAddress());
+        }
+        if (other.hasSignalStrenght()) {
+          setSignalStrenght(other.getSignalStrenght());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasIeeeAddress()) {
+          
+          return false;
+        }
+        if (!hasSignalStrenght()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              ieeeAddress_ = input.readBytes();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              signalStrenght_ = input.readFloat();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string ieeeAddress = 1;
+      private java.lang.Object ieeeAddress_ = "";
+      public boolean hasIeeeAddress() {
+        return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+      }
+      public String getIeeeAddress() {
+        java.lang.Object ref = ieeeAddress_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          ieeeAddress_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setIeeeAddress(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        ieeeAddress_ = value;
+        
+        return this;
+      }
+      public Builder clearIeeeAddress() {
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        ieeeAddress_ = getDefaultInstance().getIeeeAddress();
+        
+        return this;
+      }
+      void setIeeeAddress(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        ieeeAddress_ = value;
+        
+      }
+      
+      // required float signalStrenght = 2;
+      private float signalStrenght_ ;
+      public boolean hasSignalStrenght() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public float getSignalStrenght() {
+        return signalStrenght_;
+      }
+      public Builder setSignalStrenght(float value) {
+        bitField0_ |= 0x00000002;
+        signalStrenght_ = value;
+        
+        return this;
+      }
+      public Builder clearSignalStrenght() {
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        signalStrenght_ = 0F;
+        
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqBluetoothMeasuresMac)
+    }
+    
+    static {
+      defaultInstance = new PBReqBluetoothMeasuresMac(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.lbs.request.getloc.PBReqBluetoothMeasuresMac)
+  }
+  
+  
+  static {
+  }
+  
+  // @@protoc_insertion_point(outer_class_scope)
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>
