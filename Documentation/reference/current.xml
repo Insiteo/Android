@@ -558,7 +558,7 @@
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;3.2.0_RC1&quot;"
+ value="&quot;3.2.0_RC2&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -1164,7 +1164,7 @@
 >
 </method>
 <method name="getServer"
- return="com.insiteo.lbs.common.init.InitProvider.Server"
+ return="com.insiteo.lbs.common.init.InitProvider.EServerType"
  abstract="false"
  native="false"
  synchronized="false"
@@ -1195,7 +1195,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 <parameter name="email" type="java.lang.String">
 </parameter>
@@ -1214,7 +1214,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 <parameter name="listener" type="com.insiteo.lbs.common.auth.IAuthListener">
 </parameter>
@@ -1554,7 +1554,7 @@
 </parameter>
 <parameter name="role" type="com.insiteo.lbs.common.auth.entities.EUserRole">
 </parameter>
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 <parameter name="sites" type="java.util.List&lt;com.insiteo.lbs.protobuf.dispatch.response.auth.ProtoRepDispatchLoginRootContent.PBRepUserSite&gt;">
 </parameter>
@@ -1627,11 +1627,11 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 </method>
 <method name="getServer"
- return="com.insiteo.lbs.common.init.InitProvider.Server"
+ return="com.insiteo.lbs.common.init.InitProvider.EServerType"
  abstract="false"
  native="false"
  synchronized="false"
@@ -1651,7 +1651,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 </method>
 <method name="hasAccessToAdvancedSettings"
@@ -1765,7 +1765,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 <parameter name="role" type="com.insiteo.lbs.common.auth.entities.EUserRole">
 </parameter>
@@ -1780,7 +1780,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 </method>
 <method name="setSites"
@@ -1793,7 +1793,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.Server">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
 <parameter name="sites" type="java.util.List&lt;com.insiteo.lbs.common.auth.entities.Site&gt;">
 </parameter>
@@ -2018,17 +2018,6 @@
 </method>
 <method name="getApplicationContext"
  return="android.content.Context"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-</method>
-<method name="getContentUrl"
- return="java.lang.String"
  abstract="false"
  native="false"
  synchronized="false"
@@ -2417,17 +2406,15 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="aContext" type="android.app.Activity">
+<parameter name="activity" type="android.app.Activity">
 </parameter>
-<parameter name="aListener" type="com.insiteo.lbs.common.init.IInitListener">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
-<parameter name="aInitUrl" type="java.lang.String">
+<parameter name="siteId" type="int">
 </parameter>
-<parameter name="aSiteId" type="int">
+<parameter name="siteLang" type="java.lang.String">
 </parameter>
-<parameter name="aAppVersion" type="int">
-</parameter>
-<parameter name="aLang" type="java.lang.String">
+<parameter name="listener" type="com.insiteo.lbs.common.init.IInitListener">
 </parameter>
 </method>
 <method name="startAPI"
@@ -2440,21 +2427,98 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="aContext" type="android.app.Activity">
+<parameter name="activity" type="android.app.Activity">
 </parameter>
-<parameter name="aListener" type="com.insiteo.lbs.common.init.IInitListener">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
 </parameter>
-<parameter name="aInitUrl" type="java.lang.String">
+<parameter name="siteId" type="int">
 </parameter>
-<parameter name="aSiteId" type="int">
+<parameter name="siteLang" type="java.lang.String">
 </parameter>
-<parameter name="aAppVersion" type="int">
+<parameter name="listener" type="com.insiteo.lbs.common.init.IInitListener">
 </parameter>
-<parameter name="aLang" type="java.lang.String">
+<parameter name="appVersion" type="int">
 </parameter>
-<parameter name="aServer" type="com.insiteo.lbs.common.init.InitProvider.Server">
+</method>
+<method name="startAPI"
+ return="com.insiteo.lbs.common.utils.threading.ICancelable"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
 </parameter>
-<parameter name="aAnalyticsAutoStart" type="boolean">
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
+</parameter>
+<parameter name="siteId" type="int">
+</parameter>
+<parameter name="siteLang" type="java.lang.String">
+</parameter>
+<parameter name="listener" type="com.insiteo.lbs.common.init.IInitListener">
+</parameter>
+<parameter name="appVersion" type="int">
+</parameter>
+<parameter name="analyticsAutoStart" type="boolean">
+</parameter>
+</method>
+<method name="startAPI"
+ return="com.insiteo.lbs.common.utils.threading.ICancelable"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
+</parameter>
+<parameter name="siteId" type="int">
+</parameter>
+<parameter name="siteLang" type="java.lang.String">
+</parameter>
+<parameter name="listener" type="com.insiteo.lbs.common.init.IInitListener">
+</parameter>
+<parameter name="appVersion" type="int">
+</parameter>
+<parameter name="analyticsAutoStart" type="boolean">
+</parameter>
+<parameter name="renderMode" type="com.insiteo.lbs.map.render.ERenderMode">
+</parameter>
+</method>
+<method name="startAPI"
+ return="com.insiteo.lbs.common.utils.threading.ICancelable"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activity" type="android.app.Activity">
+</parameter>
+<parameter name="server" type="com.insiteo.lbs.common.init.InitProvider.EServerType">
+</parameter>
+<parameter name="siteId" type="int">
+</parameter>
+<parameter name="siteLang" type="java.lang.String">
+</parameter>
+<parameter name="listener" type="com.insiteo.lbs.common.init.IInitListener">
+</parameter>
+<parameter name="appVersion" type="int">
+</parameter>
+<parameter name="analyticsAutoStart" type="boolean">
+</parameter>
+<parameter name="renderMode" type="com.insiteo.lbs.map.render.ERenderMode">
+</parameter>
+<parameter name="serverUrl" type="java.lang.String">
 </parameter>
 </method>
 <method name="updatePackages"
@@ -2467,8 +2531,6 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="aContext" type="android.app.Activity">
-</parameter>
 <parameter name="aListener" type="com.insiteo.lbs.common.init.IInitListener">
 </parameter>
 <parameter name="aForceUpdate" type="boolean">
@@ -2484,15 +2546,45 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="aContext" type="android.app.Activity">
-</parameter>
 <parameter name="aListener" type="com.insiteo.lbs.common.init.IInitListener">
 </parameter>
 <parameter name="aPackagesToUpdate" type="java.util.Stack&lt;com.insiteo.lbs.common.init.Package&gt;">
 </parameter>
 </method>
+<field name="DEFAULT_ANALYTICS_ENABLED"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ value="true"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_APP_VERSION"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEFAULT_RENDER_MODE"
+ type="com.insiteo.lbs.map.render.ERenderMode"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 </class>
-<class name="InitProvider.Server"
+<class name="InitProvider.EServerType"
  extends="java.lang.Enum"
  abstract="false"
  static="true"
@@ -2501,7 +2593,7 @@
  visibility="public"
 >
 <method name="valueOf"
- return="com.insiteo.lbs.common.init.InitProvider.Server"
+ return="com.insiteo.lbs.common.init.InitProvider.EServerType"
  abstract="false"
  native="false"
  synchronized="false"
@@ -2514,7 +2606,7 @@
 </parameter>
 </method>
 <method name="values"
- return="com.insiteo.lbs.common.init.InitProvider.Server[]"
+ return="com.insiteo.lbs.common.init.InitProvider.EServerType[]"
  abstract="false"
  native="false"
  synchronized="false"
@@ -5120,6 +5212,32 @@
  deprecated="not deprecated"
  visibility="public"
 >
+</method>
+<method name="setIsFromLocation"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="fromLocation" type="boolean">
+</parameter>
+</method>
+<method name="setIsToLocation"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="toLocation" type="boolean">
+</parameter>
 </method>
 </class>
 <class name="ItineraryProvider.OptimizeRequest"
@@ -7740,11 +7858,9 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="aContext" type="android.content.Context">
+<parameter name="locationFlags" type="int">
 </parameter>
-<parameter name="aListener" type="com.insiteo.lbs.location.ILocationListener">
-</parameter>
-<parameter name="aLocationFlags" type="int">
+<parameter name="listener" type="com.insiteo.lbs.location.ILocationListener">
 </parameter>
 </method>
 <method name="start"
@@ -7757,34 +7873,13 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="aContext" type="android.content.Context">
+<parameter name="locationFlags" type="int">
 </parameter>
-<parameter name="aListener" type="com.insiteo.lbs.location.ILocationListener">
+<parameter name="listener" type="com.insiteo.lbs.location.ILocationListener">
 </parameter>
-<parameter name="aLocationFlags" type="int">
+<parameter name="defaultMapID" type="int">
 </parameter>
-<parameter name="path" type="java.lang.String">
-</parameter>
-</method>
-<method name="start"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="aContext" type="android.content.Context">
-</parameter>
-<parameter name="aListener" type="com.insiteo.lbs.location.ILocationListener">
-</parameter>
-<parameter name="aLocationFlags" type="int">
-</parameter>
-<parameter name="aDefaultMapID" type="int">
-</parameter>
-<parameter name="aForceDefaultMap" type="boolean">
+<parameter name="forceDefaultMap" type="boolean">
 </parameter>
 </method>
 <method name="start"
@@ -7797,44 +7892,13 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="aContext" type="android.content.Context">
+<parameter name="locationFlags" type="int">
 </parameter>
-<parameter name="aListener" type="com.insiteo.lbs.location.ILocationListener">
+<parameter name="listener" type="com.insiteo.lbs.location.ILocationListener">
 </parameter>
-<parameter name="aLocationFlags" type="int">
+<parameter name="defaultMapID" type="int">
 </parameter>
-<parameter name="aScanRefreshDelay" type="long">
-</parameter>
-<parameter name="aScanRefreshDelayBackground" type="long">
-</parameter>
-<parameter name="aBackgroundDuration" type="long">
-</parameter>
-</method>
-<method name="start"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="aContext" type="android.content.Context">
-</parameter>
-<parameter name="aListener" type="com.insiteo.lbs.location.ILocationListener">
-</parameter>
-<parameter name="aLocationFlags" type="int">
-</parameter>
-<parameter name="aScanRefreshDelay" type="long">
-</parameter>
-<parameter name="aScanRefreshDelayBackground" type="long">
-</parameter>
-<parameter name="aBackgroundDuration" type="long">
-</parameter>
-<parameter name="aDefaultMapID" type="int">
-</parameter>
-<parameter name="aForceDefaultMap" type="boolean">
+<parameter name="forceDefaultMap" type="boolean">
 </parameter>
 <parameter name="locationDirPath" type="java.lang.String">
 </parameter>
@@ -7850,17 +7914,28 @@
  visibility="public"
 >
 </method>
-<method name="updateLoc"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
+<field name="BACKGROUND_FLAG_BLE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="40"
+ static="true"
+ final="true"
  deprecated="not deprecated"
  visibility="public"
 >
-</method>
+</field>
+<field name="BACKGROUND_FLAG_WIFI"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="10"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="BLE"
  type="int"
  transient="false"
@@ -7920,6 +7995,28 @@
  transient="false"
  volatile="false"
  value="8"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NAVIGATION_FLAG_BLE"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="53"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="NAVIGATION_FLAG_WIFI"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="23"
  static="true"
  final="true"
  deprecated="not deprecated"

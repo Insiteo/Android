@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC1." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   AuthManager
 
 
-| Insiteo API Documentation - Version 3.2.0_RC1
+| Insiteo API Documentation - Version 3.2.0_RC2
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC1</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
     
     </div>
     <div id="headerRight">
@@ -324,7 +324,7 @@ import com.insiteo.lbs.common.InsiteoError;
 import com.insiteo.lbs.common.auth.entities.User;
 import com.insiteo.lbs.common.auth.parsers.LoginRequestEncoder;
 import com.insiteo.lbs.common.auth.parsers.LoginResponseParser;
-import com.insiteo.lbs.common.init.InitProvider.Server;
+import com.insiteo.lbs.common.init.InitProvider.EServerType;
 import com.insiteo.lbs.common.parser.ProtoLoader;
 import com.insiteo.lbs.common.utils.EncodeUtils;
 import com.insiteo.lbs.common.utils.Log;
@@ -357,7 +357,7 @@ public class AuthManager {
 
 	private static AuthManager sInstance;
 
-	private Server mCurrentServer;
+	private EServerType mCurrentServer;
 	private User mLoggedUser;
 
 	private IAuthListener mListener;
@@ -377,10 +377,10 @@ public class AuthManager {
 	}
 
 	/**
-	 * Returns the current {@link Server} on which the {@link User} is authenticated.
-	 * @return the current {@link Server}.
+	 * Returns the current {@link EServerType} on which the {@link User} is authenticated.
+	 * @return the current {@link EServerType}.
 	 */
-	public Server getServer(){
+	public EServerType getServer(){
 		return mCurrentServer;
 	}
 
@@ -394,12 +394,12 @@ public class AuthManager {
 
 	/**
 	 * Tries to login with the given credentials. The {@link IAuthListener} will be notified of the result.
-	 * @param server the {@link Server} to authenticate on.
+	 * @param server the {@link EServerType} to authenticate on.
 	 * @param email the email of the {@link User}.
 	 * @param password the account password.
 	 * @param listener the {@link IAuthListener} that will be notified.
 	 */
-	public void login(Server server, String email, String password, IAuthListener listener) {
+	public void login(EServerType server, String email, String password, IAuthListener listener) {
 		mListener = listener;
 
 		LoginTask loginTask = new LoginTask();
@@ -408,11 +408,11 @@ public class AuthManager {
 
 
 	/**
-	 * Tries to logout the current {@link User} from the given {@link Server}.
-	 * @param server the {@link Server} to logout from.
+	 * Tries to logout the current {@link User} from the given {@link EServerType}.
+	 * @param server the {@link EServerType} to logout from.
 	 * @param listener The {@link IAuthListener} that will be notified.
 	 */
-	public void logout(Server server, IAuthListener listener) {
+	public void logout(EServerType server, IAuthListener listener) {
 		mListener = listener;
 		
 		LogoutTask logoutTask = new LogoutTask();
@@ -435,7 +435,7 @@ public class AuthManager {
 	 */
 	private class LoginTask extends AsyncTask&lt;String, Void, Boolean&gt; {
 
-		Server server;
+		EServerType server;
 		String email, password;
 
 		InsiteoError error = null;
@@ -449,11 +449,11 @@ public class AuthManager {
 				return false;
 			}
 
-			server = Server.valueOf(params[0]);
+			server = EServerType.valueOf(params[0]);
 			email = params[1];
 			password = params[2];
 
-			String url = (server == Server.PROD) ? PROD_LOGIN_URL.replaceAll(SERVER_KEY, server.toString()) : 
+			String url = (server == EServerType.PROD) ? PROD_LOGIN_URL.replaceAll(SERVER_KEY, server.toString()) : 
 				DEFAULT_LOGIN_URL.replaceAll(SERVER_KEY, server.toString()); 
 
 			LoginRequestEncoder req = new LoginRequestEncoder(email, password);
@@ -500,15 +500,15 @@ public class AuthManager {
 
 	private class LogoutTask extends AsyncTask&lt;String, Void, Boolean&gt; {
 
-		Server server;
+		EServerType server;
 		InsiteoError error = null;
 
 		@Override
 		protected Boolean doInBackground(String... params) {
 
-			server = Server.valueOf(params[0]);
+			server = EServerType.valueOf(params[0]);
 			
-			String url = (server == Server.PROD) ? PROD_LOGOUT_URL.replaceAll(SERVER_KEY, server.toString()) : 
+			String url = (server == EServerType.PROD) ? PROD_LOGOUT_URL.replaceAll(SERVER_KEY, server.toString()) : 
 				DEFAULT_LOGOUT_URL.replaceAll(SERVER_KEY, server.toString()); 
 
 			error = ProtoLoader.load(url, null);

@@ -13,7 +13,7 @@ var NAVTREE_DATA =
 , "" ] ]
 , "" ], [ "com.insiteo.lbs.common.init", "com/insiteo/lbs/common/init/package-summary.html", [ [ "Interfaces", null, [ [ "IInitListener", "com/insiteo/lbs/common/init/IInitListener.html", null, "" ] ]
 , "" ], [ "Classes", null, [ [ "InitProvider", "com/insiteo/lbs/common/init/InitProvider.html", null, "" ], [ "Package", "com/insiteo/lbs/common/init/Package.html", null, "" ] ]
-, "" ], [ "Enums", null, [ [ "EInitResult", "com/insiteo/lbs/common/init/EInitResult.html", null, "" ], [ "EPackageType", "com/insiteo/lbs/common/init/EPackageType.html", null, "" ], [ "InitProvider.Server", "com/insiteo/lbs/common/init/InitProvider.Server.html", null, "" ] ]
+, "" ], [ "Enums", null, [ [ "EInitResult", "com/insiteo/lbs/common/init/EInitResult.html", null, "" ], [ "EPackageType", "com/insiteo/lbs/common/init/EPackageType.html", null, "" ], [ "InitProvider.EServerType", "com/insiteo/lbs/common/init/InitProvider.EServerType.html", null, "" ] ]
 , "" ] ]
 , "" ], [ "com.insiteo.lbs.geofence", "com/insiteo/lbs/geofence/package-summary.html", [ [ "Interfaces", null, [ [ "IGeofenceListener", "com/insiteo/lbs/geofence/IGeofenceListener.html", null, "" ] ]
 , "" ], [ "Classes", null, [ [ "GeofenceArea", "com/insiteo/lbs/geofence/GeofenceArea.html", null, "" ], [ "GeofenceProvider", "com/insiteo/lbs/geofence/GeofenceProvider.html", null, "" ], [ "GeofenceZone", "com/insiteo/lbs/geofence/GeofenceZone.html", null, "" ] ]

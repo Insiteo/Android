@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC1." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   User
 
 
-| Insiteo API Documentation - Version 3.2.0_RC1
+| Insiteo API Documentation - Version 3.2.0_RC2
 
 </title>
 <link href="../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC1</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
     
     </div>
     <div id="headerRight">
@@ -329,7 +329,7 @@ import org.json.JSONObject;
 import android.R.string;
 
 import com.insiteo.lbs.common.init.InitProvider;
-import com.insiteo.lbs.common.init.InitProvider.Server;
+import com.insiteo.lbs.common.init.InitProvider.EServerType;
 import com.insiteo.lbs.protobuf.dispatch.response.auth.ProtoRepDispatchLoginRootContent.PBRepUserSite;
 
 /**
@@ -343,10 +343,10 @@ public class User {
 	private String mEncryptedPassword;
 
 
-	private HashMap&lt;Server, EUserRole&gt; mRoles;
-	private HashMap&lt;Server, List&lt;Site&gt;&gt; mSites;
+	private HashMap&lt;EServerType, EUserRole&gt; mRoles;
+	private HashMap&lt;EServerType, List&lt;Site&gt;&gt; mSites;
 
-	private Server mServer = Server.PROD;
+	private EServerType mServer = EServerType.PROD;
 
 	/**
 	 * 
@@ -356,7 +356,7 @@ public class User {
 	 * @param server
 	 * @param sites
 	 */
-	public User(String login, String password, EUserRole role, Server server, List&lt;PBRepUserSite&gt; sites) {
+	public User(String login, String password, EUserRole role, EServerType server, List&lt;PBRepUserSite&gt; sites) {
 		super();
 
 		mEmail = login;
@@ -364,7 +364,7 @@ public class User {
 
 		mServer = server;
 
-		mRoles = new HashMap&lt;InitProvider.Server, EUserRole&gt;();
+		mRoles = new HashMap&lt;InitProvider.EServerType, EUserRole&gt;();
 		mRoles.put(server, role);
 
 		List&lt;Site&gt; serverSites = new ArrayList&lt;Site&gt;();
@@ -372,7 +372,7 @@ public class User {
 		for (PBRepUserSite site : sites) {
 			serverSites.add(new Site(site));
 		}
-		mSites = new HashMap&lt;InitProvider.Server, List&lt;Site&gt;&gt;();
+		mSites = new HashMap&lt;InitProvider.EServerType, List&lt;Site&gt;&gt;();
 		mSites.put(server, serverSites);
 	}
 
@@ -385,8 +385,8 @@ public class User {
 		mEmail = login;
 		mEncryptedPassword = pwd;
 
-		mRoles = new HashMap&lt;InitProvider.Server, EUserRole&gt;();
-		mSites = new HashMap&lt;InitProvider.Server, List&lt;Site&gt;&gt;();
+		mRoles = new HashMap&lt;InitProvider.EServerType, EUserRole&gt;();
+		mSites = new HashMap&lt;InitProvider.EServerType, List&lt;Site&gt;&gt;();
 	}
 
 	/**
@@ -414,11 +414,11 @@ public class User {
 	}
 
 	/**
-	 * Returns the {@link EUserRole} on the given {@link Server}.
+	 * Returns the {@link EUserRole} on the given {@link EServerType}.
 	 * @param server
 	 * @return
 	 */
-	public EUserRole getRole(Server server) {
+	public EUserRole getRole(EServerType server) {
 		if (mRoles != null) {
 			return mRoles.get(server);
 		}
@@ -426,38 +426,38 @@ public class User {
 	}
 
 	/**
-	 * Sets the {@link EUserRole} of this {@link User} on the given {@link Server}.
-	 * @param server the {@link Server} associated to the {@link EUserRole}.
+	 * Sets the {@link EUserRole} of this {@link User} on the given {@link EServerType}.
+	 * @param server the {@link EServerType} associated to the {@link EUserRole}.
 	 * @param role the {@link EUserRole}.
 	 */
-	public void setRole(Server server, EUserRole role) {
+	public void setRole(EServerType server, EUserRole role) {
 		if(mRoles != null) {
 			mRoles.put(server, role);
 		}
 	}
 
 	/**
-	 * Returns the current {@link Server}.
-	 * @return the current {@link Server}.
+	 * Returns the current {@link EServerType}.
+	 * @return the current {@link EServerType}.
 	 */
-	public Server getServer() {
+	public EServerType getServer() {
 		return mServer;
 	}
 
 	/**
-	 * Sets the current {@link Server}.
+	 * Sets the current {@link EServerType}.
 	 * @param server
 	 */
-	public void setServer(Server server) {
+	public void setServer(EServerType server) {
 		mServer = server;
 	}
 
 	/**
-	 * Returns the {@link List} of all the {@link Site} available on the given {@link Server}.
+	 * Returns the {@link List} of all the {@link Site} available on the given {@link EServerType}.
 	 * @param server to look on.
 	 * @return The {@link List} of {@link Site}.
 	 */
-	public List&lt;Site&gt; getSites(Server server){
+	public List&lt;Site&gt; getSites(EServerType server){
 		List&lt;Site&gt; result = null;
 		if (mSites != null &amp;&amp; server != null) {
 			result = mSites.get(server);
@@ -466,11 +466,11 @@ public class User {
 	}
 
 	/**
-	 * Sets the {@link List} of {@link Site} for the given {@link Server}.
+	 * Sets the {@link List} of {@link Site} for the given {@link EServerType}.
 	 * @param server associated to the {@link List} of {@link Site}.
 	 * @param sites the {@link List} of {@link Site}.
 	 */
-	public void setSites(Server server, List&lt;Site&gt; sites) {
+	public void setSites(EServerType server, List&lt;Site&gt; sites) {
 		if(mSites != null) {
 			mSites.put(server, sites);
 		}
@@ -586,14 +586,14 @@ public class User {
 			userJson.put(PASSWORD, mEncryptedPassword);
 
 
-			JSONObject devServer = encodeServerData(Server.DEV);
-			if(devServer != null)userJson.put(Server.DEV.toString(), devServer);
+			JSONObject devServer = encodeServerData(EServerType.DEV);
+			if(devServer != null)userJson.put(EServerType.DEV.toString(), devServer);
 
-			JSONObject testServer = encodeServerData(Server.TEST);
-			if(testServer != null)userJson.put(Server.TEST.toString(), testServer);
+			JSONObject testServer = encodeServerData(EServerType.TEST);
+			if(testServer != null)userJson.put(EServerType.TEST.toString(), testServer);
 
-			JSONObject prodServer = encodeServerData(Server.PROD);
-			if(prodServer != null)userJson.put(Server.PROD.toString(), prodServer);
+			JSONObject prodServer = encodeServerData(EServerType.PROD);
+			if(prodServer != null)userJson.put(EServerType.PROD.toString(), prodServer);
 
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -604,7 +604,7 @@ public class User {
 	}
 
 
-	private JSONObject encodeServerData(Server server){
+	private JSONObject encodeServerData(EServerType server){
 		JSONObject serverJson = null;
 
 		try {
@@ -656,9 +656,9 @@ public class User {
 
 			user = new User(login, password);
 
-			decodeServer(Server.DEV, json, user);
-			decodeServer(Server.TEST, json, user);
-			decodeServer(Server.PROD, json, user);
+			decodeServer(EServerType.DEV, json, user);
+			decodeServer(EServerType.TEST, json, user);
+			decodeServer(EServerType.PROD, json, user);
 
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -668,7 +668,7 @@ public class User {
 		return user;
 	}
 
-	private static void decodeServer(Server server, JSONObject userJson, User user){
+	private static void decodeServer(EServerType server, JSONObject userJson, User user){
 		try {
 			if (!userJson.isNull(server.toString())) {
 				JSONObject serverJson = userJson.getJSONObject(server.toString());

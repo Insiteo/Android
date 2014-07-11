@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC1." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
 
 <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   Class Index
 
 
-| Insiteo API Documentation - Version 3.2.0_RC1
+| Insiteo API Documentation - Version 3.2.0_RC2
 
 </title>
 <link href="./../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -91,7 +91,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC1</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
     
     </div>
     <div id="headerRight">
@@ -574,12 +574,13 @@
     
         <tr class="alt-color api apilevel-" >
             <td class="jd-linkcol"><a href="./com/insiteo/lbs/common/init/InitProvider.html">InitProvider</a></td>
-            <td class="jd-descrcol" width="100%">Singleton that handles initialization of Insiteo API.&nbsp;</td>
+            <td class="jd-descrcol" width="100%">Singleton that will enable to initialize Insiteo API (see <code><a href="./com/insiteo/lbs/common/init/InitProvider.html#startAPI(android.app.Activity, com.insiteo.lbs.common.init.InitProvider.EServerType, int, java.lang.String, com.insiteo.lbs.common.init.IInitListener)">startAPI(Activity, EServerType, int, String, IInitListener)</a></code>) and update the 
+ application data (see InitProvider#updatePackages(Activity, IInitListener, boolean)).&nbsp;</td>
         </tr>
     
     
         <tr class=" api apilevel-" >
-            <td class="jd-linkcol"><a href="./com/insiteo/lbs/common/init/InitProvider.Server.html">InitProvider.Server</a></td>
+            <td class="jd-linkcol"><a href="./com/insiteo/lbs/common/init/InitProvider.EServerType.html">InitProvider.EServerType</a></td>
             <td class="jd-descrcol" width="100%">This enum is used to defined the type of server used.&nbsp;</td>
         </tr>
     
@@ -742,8 +743,7 @@
     
         <tr class=" api apilevel-" >
             <td class="jd-linkcol"><a href="./com/insiteo/lbs/location/LocationProvider.html">LocationProvider</a></td>
-            <td class="jd-descrcol" width="100%">Singleton that handles Location requests
-&nbsp;</td>
+            <td class="jd-descrcol" width="100%">Singleton that handles location processing.&nbsp;</td>
         </tr>
     
     

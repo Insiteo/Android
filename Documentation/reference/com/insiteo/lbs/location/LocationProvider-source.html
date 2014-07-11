@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC1." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   LocationProvider
 
 
-| Insiteo API Documentation - Version 3.2.0_RC1
+| Insiteo API Documentation - Version 3.2.0_RC2
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC1</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
     
     </div>
     <div id="headerRight">
@@ -353,6 +353,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.res.Resources;
+import android.hardware.Sensor;
 import android.os.IBinder;
 
 import com.insiteo.lbs.analytics.AnalyticsConstants;
@@ -372,7 +373,7 @@ import com.insiteo.lbs.map.render.IRenderer;
 import com.insiteo.lbs.meetme.MeetMeProvider;
 
 /**
- * Singleton that handles Location requests
+ * Singleton that handles location processing. To start the service call {@link LocationProvider#start(int, ILocationListener)} with a the appropriate flags.
  */
 public final class LocationProvider implements ServiceConnection {
 
@@ -380,19 +381,35 @@ public final class LocationProvider implements ServiceConnection {
 
 	private static final int LOCATION_ID = 1;
 
+	/** Flag that should be used in order to use &lt;strong&gt;GPS&lt;/strong&gt; information during location processing. */
 	public static final int GPS = 1&lt;&lt;0;
-	public static final int WIFI = 1&lt;&lt;1;
+	/** Flag that should be used in order to use &lt;strong&gt;compass&lt;/strong&gt; information during location processing. */
 	public static final int COMPASS = 1&lt;&lt;2;
+	/** Flag that should be used in order to use &lt;strong&gt;motion filtering&lt;/strong&gt; information during location processing ({@link Sensor#TYPE_ACCELEROMETER} and {@link Sensor#TYPE_PRESSURE}). */
 	public static final int MOTION_FILTERING = 1&lt;&lt;3;
+	/** Flag that should be used in order to use &lt;strong&gt;MEMS&lt;/strong&gt; information during location processing ({@link Sensor#TYPE_ACCELEROMETER}, {@link Sensor#TYPE_PRESSURE} and {@link Sensor#TYPE_GYROSCOPE}). */
 	public static final int MEMS = 1&lt;&lt;4;
+	/** Flag that should be used in order to use &lt;strong&gt;WIFI&lt;/strong&gt; scan information during location processing. */
+	public static final int WIFI = 1&lt;&lt;1;
+	/** Flag that should be used in order to use &lt;strong&gt;BLE&lt;/strong&gt; scan information during location processing. */
 	public static final int BLE = 1&lt;&lt;5;
 
+	/** The BLE scanning period	 */
 	public static long BLE_SCANNING_DELTA = 2000;
+	
+	/** Default set of flag (GPS + COMPASS + MEMS + BLE) that can be used when requesting location in a &lt;strong&gt;foreground&lt;/strong&gt; mode with BLE scan */
+	public static final int NAVIGATION_FLAG_BLE = GPS | COMPASS | MEMS  | BLE;
+	/** Default set of flag (GPS + COMPASS + MEMS + WIFI) that can be used when requesting location in a &lt;strong&gt;foreground&lt;/strong&gt; mode with WIFI scan */
+	public static final int NAVIGATION_FLAG_WIFI = GPS | COMPASS | MEMS  | WIFI;
+	/** Default set of flag that can be used when requesting location in a &lt;strong&gt;background&lt;/strong&gt; mode with BLE scan */
+	public static final int BACKGROUND_FLAG_BLE = MOTION_FILTERING | BLE ;
+	/** Default set of flag that can be used when requesting location in a &lt;strong&gt;background&lt;/strong&gt; mode with WIFI scan */
+	public static final int BACKGROUND_FLAG_WIFI = MOTION_FILTERING | WIFI ;
 
 	private volatile boolean mIsBound = false;
-	private Context mContext = null;
+
 	private LocationService mLocService = null;
-	//	private List&lt;ILbsModule&gt; mLbsModules = null;
+
 	private Map&lt;ELocationModule, ILbsModule&gt; mLbsModules;
 	private WeakReference&lt;ILocationListener&gt; mListener = null;
 	private LocationRenderer mRenderer = null;
@@ -406,7 +423,6 @@ public final class LocationProvider implements ServiceConnection {
 	private boolean locationManuallyStarted = false;
 	private List&lt;LocationRequest&gt; mLocationRequests = new ArrayList&lt;LocationRequest&gt;();
 
-	//private constructor
 	private LocationProvider() {
 		mListener = new WeakReference&lt;ILocationListener&gt;(null);
 		//		mLbsModules = new LinkedList&lt;ILbsModule&gt;();
@@ -425,74 +441,61 @@ public final class LocationProvider implements ServiceConnection {
 		return sInstance;
 	}
 
-
+	
 	/**
-	 * Identical to start(aContext, aListener, aLocationFlags, -1, false);
-	 * @return true if the location provider was started successfully
+	 *  Start the {@link LocationProvider} only if it is not already started. To change the location flags during processing see {@link #changeLocation(int)}.
+	 * This method is asynchronous the initialization result will be notified via the {@link ILocationListener#onLocationInitDone(boolean, InsiteoError)}.
+	 * @param listener the listener that will receive location notifications. The listener is stored as a &lt;code&gt;WeakReference&lt;/code&gt; : be careful to keep 
+	 * a reference on it in your code if you want to receive notifications.
+	 * @param locationFlags flags indicating what type of location to use.
+	 * @return true if the location provider was started successfully.
 	 */
-	public boolean start(Context aContext, ILocationListener aListener, int aLocationFlags) {
-		return start(aContext, aListener, aLocationFlags, CommonConstants.NULL_ID, false);
+	public boolean start(int locationFlags, ILocationListener listener) {
+		return start(locationFlags, listener, CommonConstants.NULL_ID, false);
 	}
-
+	
 	/**
-	 * Use to test loc with the generated values
+	 * Start the {@link LocationProvider} only if it is not already started. To change the location flags during processing see {@link #changeLocation(int)}.
+	 * This method is asynchronous the initialization result will be notified via the {@link ILocationListener#onLocationInitDone(boolean, InsiteoError)}.
+	 * @param listener the listener that will receive location notifications. The listener is stored as a &lt;code&gt;WeakReference&lt;/code&gt; : be careful to keep 
+	 * a reference on it in your code if you want to receive notifications.
+	 * @param locationFlags flags indicating what type of location to use.
+	 * @param defaultMapID the ID of the map used by default for location (if only GPS data is available for example). If set to {@link CommonConstants#NULL_ID}, it is ignored.
+	 * @param forceDefaultMap if true, location will be forced on default map.
+	 * @return true if the location provider was started successfully.
 	 */
-	public boolean start(Context aContext, ILocationListener aListener, int aLocationFlags, String path) {
-		return start(aContext, aListener, aLocationFlags, 0, 0, 0, -1, false, path);
-	}
-
-	/**
-	 * Identical to start(aContext, aListener, aLocationFlags, 0, 0, 0, aDefaultMapID, aForceDefaultMap, null);
-	 * @return true if the location provider was started successfully
-	 */
-	public boolean start(Context aContext, ILocationListener aListener, int aLocationFlags, int aDefaultMapID, boolean aForceDefaultMap) {
-		return start(aContext, aListener, aLocationFlags, 0, 0, 0, aDefaultMapID, aForceDefaultMap, null);	
-	}
-
-	/**
-	 * Identical to start(aContext, aListener, aLocationFlags, aScanRefreshDelay, aScanRefreshDelayBackground, aBackgroundDuration, -1, false);
-	 * @return true if the location provider was started successfully
-	 */
-	public boolean start(Context aContext, ILocationListener aListener, int aLocationFlags, long aScanRefreshDelay, long aScanRefreshDelayBackground, long aBackgroundDuration) {
-		return start(aContext, aListener, aLocationFlags, aScanRefreshDelay, aScanRefreshDelayBackground, aBackgroundDuration, -1, false, null);
+	public boolean start(int locationFlags, ILocationListener listener, int defaultMapID, boolean forceDefaultMap) {
+		return start(locationFlags, listener, defaultMapID, forceDefaultMap, null);	
 	}
 
 	/**
 	 * Start the location provider only if it is not already started. To change the location flags see {@link #changeLocation(int) changeLocation} method.
 	 * This method is asynchronous the initialization result will be notified via the {@link ILocationListener#onLocationInitDone(boolean, InsiteoError)}.
-	 * @param aContext the context used to start the location service
-	 * @param aListener the listener that will receive location notifications. The listener is stored as a &lt;code&gt;WeakReference&lt;/code&gt; : be careful to keep a reference on it in your code if you want to receive notifications.
-	 * @param aLocationFlags a flag indicating what type of location to use
-	 * @param aScanRefreshDelay (milliseconds) Delay between two wifi scans when location is running foreground. When set to 0, scans will run as fast as possible.
-	 * @param aScanRefreshDelayBackground (milliseconds) Delay between two wifi scans when location is running background. When set to 0, scans will run as fast as possible. 
-	 * @param aBackgroundDuration (milliseconds) When stopped, location will continue running background for this amount of time.
-	 * @param aDefaultMapID the ID of the map used by default for location (if only GPS data is available for example). If set to -1, it is ignored.
-	 * @param aForceDefaultMap if true, location will be forced on default map
+	 * @param listener the listener that will receive location notifications. The listener is stored as a &lt;code&gt;WeakReference&lt;/code&gt; : be careful to keep a reference on it in your code if you want to receive notifications.
+	 * @param locationFlags a flag indicating what type of location to use
+	 * @param defaultMapID the ID of the map used by default for location (if only GPS data is available for example). If set to {@link CommonConstants#NULL_ID}, it is ignored.
+	 * @param forceDefaultMap if true, location will be forced on default map.
+	 * @param locationDirPath the location directory that should be loaded to compute location.
 	 * @return true if the location provider was started successfully (or was already started)
 	 */
-	public boolean start(final Context aContext, final ILocationListener aListener, final int aLocationFlags, 
-			final long aScanRefreshDelay, final long aScanRefreshDelayBackground, final long aBackgroundDuration, 
-			final int aDefaultMapID, final boolean aForceDefaultMap, final String locationDirPath) {
+	public boolean start(int locationFlags, ILocationListener listener, int defaultMapID, boolean forceDefaultMap, String locationDirPath) {
 
-		mContext = aContext;
-		mListener = new WeakReference&lt;ILocationListener&gt;(aListener);
-		Intent intent = new Intent(aContext, LocationService.class);
-		intent.putExtra(LocationService.EXTRA_LOCATION_BEHAVIOR, aLocationFlags);
-		intent.putExtra(LocationService.EXTRA_LOCATION_DEFAULT_MAP, aDefaultMapID);
-		intent.putExtra(LocationService.EXTRA_LOCATION_FORCE_DEFAULT_MAP, aForceDefaultMap);
-		intent.putExtra(LocationService.EXTRA_LOCATION_REFRESH_DELAY_FOREGROUND, aScanRefreshDelay);
-		intent.putExtra(LocationService.EXTRA_LOCATION_REFRESH_DELAY_BACKGROUND, aScanRefreshDelayBackground);
-		intent.putExtra(LocationService.EXTRA_LOCATION_BACKGROUND_DURATION, aBackgroundDuration);
+		mListener = new WeakReference&lt;ILocationListener&gt;(listener);
+		Intent intent = new Intent(InitProvider.getInstance().getApplicationContext(), LocationService.class);
+		
+		intent.putExtra(LocationService.EXTRA_LOCATION_BEHAVIOR, locationFlags);
+		intent.putExtra(LocationService.EXTRA_LOCATION_DEFAULT_MAP, defaultMapID);
+		intent.putExtra(LocationService.EXTRA_LOCATION_FORCE_DEFAULT_MAP, forceDefaultMap);
 		intent.putExtra(LocationService.EXTRA_LOCATION_USE_LOCATION_PATH, locationDirPath);
 
-		if(mContext.startService(intent) == null){
+		if(InitProvider.getInstance().getApplicationContext().startService(intent) == null){
 			Log.d(TAG, "Location service not declared in AndroidManifest.xml");
 			if(mListener != null) {
 				mListener.get().onLocationInitDone(false, new InsiteoError(InsiteoError.LOC_SERVICE_NOT_DECLARED, "Location service was not declared in your AndroidManifest.xml"));
 			}
 		} else {
 			locationManuallyStarted = true;
-			mIsBound = mContext.bindService(intent, LocationProvider.this, Context.BIND_AUTO_CREATE);	
+			mIsBound = InitProvider.getInstance().getApplicationContext().bindService(intent, LocationProvider.this, Context.BIND_AUTO_CREATE);	
 			
 			Log.d(TAG, "Location was started");
 
@@ -504,7 +507,7 @@ public final class LocationProvider implements ServiceConnection {
 	}
 
 	/**
-	 * Stops the location provider. This method is synchronous.
+	 * Stops the location processing.
 	 */
 	public void stop() {
 		if (mIsBound) {
@@ -512,7 +515,7 @@ public final class LocationProvider implements ServiceConnection {
 			mIsBound = false;
 			locationManuallyStarted = false;
 			
-			if(mContext != null) mContext.unbindService(this);
+			InitProvider.getInstance().getApplicationContext().unbindService(this);
 
 			if (mLocService != null) {
 				mLocService.setLocationProvider(null);
@@ -522,8 +525,7 @@ public final class LocationProvider implements ServiceConnection {
 			if (mRenderer != null) {
 				mGfxLocation.setLocation(null);
 			}
-
-			mContext = null;
+			
 			mListener.clear();
 			
 			AnalyticsGenericEvent locStoppedEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_LOC_STOP_LABEL);
@@ -532,8 +534,10 @@ public final class LocationProvider implements ServiceConnection {
 		} 
 	}
 
-	public void destroy(){
-		// TODO destroy the service
+	/**
+	 * Destroy the {@link LocationService}.
+	 */
+	public void destroy() {
 		if (mLocService != null) {
 			mLocService.stopSelf();
 		}
@@ -618,9 +622,6 @@ public final class LocationProvider implements ServiceConnection {
 		return mRenderer;
 	}
 
-	public void updateLoc(){
-
-	}
 
 	//******************************************************************************************************************
 	// HARDWARE PERMISSIONS
@@ -653,6 +654,10 @@ public final class LocationProvider implements ServiceConnection {
 		}
 	}
 
+	/**
+	 * Returns the current location flags.
+	 * @return the current location flags.
+	 */
 	public int getLocationFlags(){
 		if(mLocService != null &amp;&amp; locationManuallyStarted){
 			return mLocService.getLocationFlags();
@@ -660,6 +665,11 @@ public final class LocationProvider implements ServiceConnection {
 		return CommonConstants.NULL_ID;
 	}
 
+	/**
+	 * Checks whether the current location flags contains the given flag.
+	 * @param flag to look for.
+	 * @return true if the flag is contained.
+	 */
 	public boolean hasLocationFlag(int flag){
 		if (mLocService != null &amp;&amp; locationManuallyStarted) {
 			return mLocService.check(flag);
@@ -668,7 +678,7 @@ public final class LocationProvider implements ServiceConnection {
 	}
 
 	/**
-	 * Change the scanning time. If scan is already processing a restart will be necessary
+	 * Change the BLE scanning period. If scan is already processing a restart will be necessary
 	 * @param delay
 	 */
 	public void setBleScanTime(long delay){
@@ -869,7 +879,7 @@ public final class LocationProvider implements ServiceConnection {
 			if (!mIsBound) {
 				//Start it
 				Log.d(TAG, "starting location for unique request");
-				start(aContext, null, aLocationFlags);
+				start(aLocationFlags, null);
 				locationManuallyStarted = false;
 			}
 

@@ -20,7 +20,7 @@ var DATA = [
       { id:18, label:"com.insiteo.lbs.common.init.EPackageType", link:"com/insiteo/lbs/common/init/EPackageType.html", type:"class" },
       { id:19, label:"com.insiteo.lbs.common.init.IInitListener", link:"com/insiteo/lbs/common/init/IInitListener.html", type:"class" },
       { id:20, label:"com.insiteo.lbs.common.init.InitProvider", link:"com/insiteo/lbs/common/init/InitProvider.html", type:"class" },
-      { id:21, label:"com.insiteo.lbs.common.init.InitProvider.Server", link:"com/insiteo/lbs/common/init/InitProvider.Server.html", type:"class" },
+      { id:21, label:"com.insiteo.lbs.common.init.InitProvider.EServerType", link:"com/insiteo/lbs/common/init/InitProvider.EServerType.html", type:"class" },
       { id:22, label:"com.insiteo.lbs.common.init.Package", link:"com/insiteo/lbs/common/init/Package.html", type:"class" },
       { id:23, label:"com.insiteo.lbs.geofence", link:"com/insiteo/lbs/geofence/package-summary.html", type:"package" },
       { id:24, label:"com.insiteo.lbs.geofence.GeofenceArea", link:"com/insiteo/lbs/geofence/GeofenceArea.html", type:"class" },
