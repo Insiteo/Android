@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <dimen name="generic_rto_name_margin">6dp</dimen>
-    <dimen name="generic_rto_name_padding">10dp</dimen>
-    <dimen name="generic_rto_text_size">18sp</dimen>
-</resources>

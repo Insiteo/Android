@@ -50,8 +50,6 @@ public class MainActivity extends Activity implements IInitListener {
 	private TextView mUpdateStepView;
 	private TextView mUpdateValueView;
 
-	private ICancelable mInitTask = null;
-
 	/**
 	 * This method initializes the InsiteoAPI in order to be able to use all services 
 	 */
@@ -72,8 +70,7 @@ public class MainActivity extends Activity implements IInitListener {
 		initProvider.setAPIKey(InsiteoConf.API_KEY);
 
 		// Start Insiteo API initialization (asynchronous), and get the running initialization task
-		mInitTask = initProvider.startAPI(MainActivity.this, MainActivity.this, InsiteoConf.SERVER_URL, InsiteoConf.SITE_ID, 
-				InsiteoConf.VERSION, InsiteoConf.LANG, InsiteoConf.SERVER, InsiteoConf.ANALYTICS_ENABLED);
+		initProvider.startAPI(this, InsiteoConf.SERVER, InsiteoConf.SITE_ID, InsiteoConf.LANG, this);
 
 		mInitStatusView.setVisibility(View.VISIBLE);
 
@@ -162,7 +159,7 @@ public class MainActivity extends Activity implements IInitListener {
 		mUpdateStepView.setVisibility(View.VISIBLE);
 		mUpdateValueView.setVisibility(View.VISIBLE);
 
-		mInitTask = InitProvider.getInstance().updatePackages(MainActivity.this, MainActivity.this, false);
+		InitProvider.getInstance().updatePackages(MainActivity.this, false);
 	}
 
 	/**
@@ -221,7 +218,7 @@ public class MainActivity extends Activity implements IInitListener {
 	}
 
 	/**
-	 * Launches the Dashboard activity
+	 * Launches the {@link MapFragment}
 	 */
 	private void startDashboard() {
 		if (InitProvider.getInstance().hasPackage(EPackageType.MAPDATA)
