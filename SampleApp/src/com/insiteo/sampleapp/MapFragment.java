@@ -143,6 +143,10 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		inflater.inflate(R.menu.main, menu);
+		
+		MenuItem item = menu.findItem(R.id.action_version);
+		item.setTitle(CommonConstants.API_VERSION);
+		
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 

@@ -3,6 +3,12 @@
     tools:context="com.insiteo.sampleapp.MainActivity" >
 
     <item
+        android:id="@+id/action_version"
+        android:showAsAction="always"
+        android:enabled="false"
+        android:title="version"/>
+    
+    <item
         android:id="@+id/action_itinerary"
         android:orderInCategory="100"
         android:showAsAction="never"
