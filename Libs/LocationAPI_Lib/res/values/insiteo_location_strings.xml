@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="insiteo_location_error_init_api">API is not initialized.</string>
-   <string name="insiteo_location_init_failed">Unable to initialize location service</string>
-</resources>

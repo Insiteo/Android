@@ -49,6 +49,7 @@ import com.insiteo.lbs.location.InsLocation;
 import com.insiteo.lbs.location.LocationConstants;
 import com.insiteo.lbs.location.LocationProvider;
 import com.insiteo.lbs.location.LocationRenderer;
+import com.insiteo.lbs.location.utils.LocationUtils;
 import com.insiteo.lbs.map.IMapListener;
 import com.insiteo.lbs.map.MapView;
 import com.insiteo.lbs.map.database.MapDBHelper;
@@ -67,7 +68,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 
 
 	private final static boolean PMR_ENABLED = false;
-	
+
 	// MAP
 	private MapView mMapView = null;
 
@@ -84,6 +85,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	// LOCATION
 	private LocationRenderer mLocationrenderer;
 	private ImageButton mLocationButton;
+	private InsLocation mLastLocation;
 
 	// GEOFENCING
 	private GeofenceProvider mGeofenceProvider;
@@ -119,7 +121,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		super.onViewCreated(view, savedInstanceState);
 	}
 
-	
+
 	@Override
 	public void onPause() {
 		stopLocation();
@@ -191,14 +193,14 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		}
 		return true;
 	}
-	
+
 	//******************************************************************************************************************
 	// 	MAP SERVICE
 	// *****************************************************************************************************************
 
 	private void initializeMapService(){
 		mMapView = (MapView) getView().findViewById(R.id.map);
-		
+
 		// The MapView listener. By default the listener is set to the context (if it implements IMapListener) that created the View.
 		// In the case of fragment we have to explicitly set it.
 		mMapView.setListener(this);
@@ -213,7 +215,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	}
 
 	private void setMapNavigationList(){
-		
+
 		// Retrieve the list MapData associated to the current site.
 		mMaps = MapDBHelper.getMaps(false);
 		final String[] mapNames = new String[mMaps.size()];
@@ -310,10 +312,10 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			String poiExtId = zpas.get(i).getExternalPoiId();			
 			GfxRto rto = new GfxRto(i, null, poiExtId);
 			rto.setNameDisplayed(true);
-			
+
 			// Apply a particular offset to this rto. This is used to have multiple rto in the same zone without superposition.
 			rto.setZoneOffset(zpas.get(i).getOffset());
-			
+
 			mMapView.addRTOInZone(zoneID, rto);
 		}
 
@@ -350,7 +352,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	public void onMapReleased() {
 	}
 
-	
+
 	public void locateExtPoi(){
 		getActivity().runOnUiThread(new Runnable() {
 			@Override
@@ -364,12 +366,12 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 				alert.setPositiveButton(R.string.action_locate, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						String value = input.getText().toString();
-						
+
 						// Clear the MapView from all the GfxRto previously rendered.
 						mMapView.clearRenderer(GfxRto.class);
-						
+
 						List<ZonePoi> zpas = MapDBHelper.getZoneAssocFromExtPoi(value);
-						
+
 						for(int i = 0; i < zpas.size(); i++) {
 							String poiExtId = zpas.get(i).getExternalPoiId();			
 							GfxRto rto = new GfxRto(i, null, poiExtId);
@@ -392,7 +394,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			}
 		});	
 	}
-	
+
 	//******************************************************************************************************************
 	// 	RTO SERVICE 
 	// *****************************************************************************************************************
@@ -441,7 +443,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		// create an itinerary provider, as we don't use location. 
 		// When using location, it is easier to get itinerary provider from location provider)
 		mItineraryProvider = (ItineraryProvider) LocationProvider.getInstance().getModule(ELocationModule.ITINERARY);
-		mItineraryProvider.setDynamicMode(false);
+		mItineraryProvider.setDynamicMode(true);
 
 		//get itinerary renderer linked to provider
 		mItineraryRenderer = (ItineraryRenderer) mItineraryProvider.getRenderer(getResources());
@@ -456,26 +458,15 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	private void computeItinerary() {
 		//hide the old itinerary if it exists
-		mItineraryRenderer.setDisplayEnabled(false);
+		mItineraryRenderer.setDisplayEnabled(false);         
 
-		//departure is map's top left corner, arrival is bottom right corner.
-		int mapID = mMapView.getMapId();            
+		Position arrival = new Position(mMapView.getMapId(), 100, 100);
+		mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
 
 		// If the location is started will request an itinerary from our current position
-		if (LocationProvider.getInstance().isStarted()) {
-
-			Position arrival = new Position(mapID, 168, 100);
-			mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
+		if (!LocationProvider.getInstance().isStarted()) {
+			startLocation();
 		} 
-		// Otherwise it will request an itinerary from 2 fake positions
-		else {
-			int startMapId = mMaps.get(0).getId();
-			int destMapId = mMaps.get(1).getId();
-
-			Position departure = new Position(startMapId, 40, 40);
-			Position arrival = new Position(destMapId, 168, 100);
-			mItineraryProvider.requestItinerary(departure, arrival, this, PMR_ENABLED);
-		}
 
 	}
 
@@ -642,8 +633,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 
 	private void locationHandler() {
 		if (!LocationProvider.getInstance().isStarted()) {
-			mLocationButton.setImageResource(R.drawable.localization_button);
-			((AnimationDrawable) mLocationButton.getDrawable()).start();
 			startLocation();
 		} else if(LocationProvider.getInstance().isStarted() && !mRotateMap){
 			mRotateMap = true;
@@ -661,13 +650,24 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		mLocationButton.setImageResource(R.drawable.ic_location_off);
 		mLastLocMapID = CommonConstants.NULL_ID;
 		mMapView.rotate(0f, false);
+
+		mLastLocation = null;
 	}
 
 	/**
 	 * Starts the location computing process using the flags that were defined in the LauncherActivity
 	 */
 	private void startLocation() {
-		LocationProvider.getInstance().start(getActivity(), this, InsiteoConf.LOCATION_FLAGS); 
+		mLocationButton.setImageResource(R.drawable.localization_button);
+		((AnimationDrawable) mLocationButton.getDrawable()).start();
+
+		/**
+		 *  Start the LocationProvider with the default location flags (BLE or WIFI) depending on the availability.
+		 *  You could also decide to set your proper flags.
+		 */
+		int locationFlags = LocationUtils.hasBleFeature(getActivity()) ? LocationProvider.NAVIGATION_FLAG_BLE : LocationProvider.NAVIGATION_FLAG_WIFI;
+
+		LocationProvider.getInstance().start(locationFlags, this); 
 	}
 
 	/**
@@ -677,7 +677,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void onLocationInitDone(final boolean aSuccess, final InsiteoError aError) {
-
 	}
 
 	/**
@@ -693,14 +692,14 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			}
 		});
 
-		if (aLocation != null) {
-			/**
-			 * this method animate the map to be centered on the given position, here the user's position
-			 */
-			mMapView.centerMap(aLocation.getPosition(), true);
+		mLastLocation = aLocation;
 
-			mLastLocMapID = aLocation.getMapID();
-		}	
+		/**
+		 * this method animate the map to be centered on the given position, here the user's position
+		 */
+		mMapView.centerMap(aLocation.getPosition(), true);
+
+		mLastLocMapID = aLocation.getMapID();	
 	}
 
 	/**
@@ -719,7 +718,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 
 	@Override
 	public void onAzimuthReceived(final float aAzimuth) {
-		if (mRotateMap) {
+		if (mRotateMap && mLastLocation != null) {
 			float angle = aAzimuth;
 			if (mCurrentMap != null && mLastLocMapID == mCurrentMap.getId()) {
 				boolean isMapOriented = mCurrentMap.isOriented();
@@ -738,7 +737,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void onLocationLost(InsLocation aLastKnownLocation) {
-		// TODO Auto-generated method stub
 	}
 
 	/**
@@ -746,7 +744,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void noRegisteredBeaconDetected() {
-		// TODO Auto-generated method stub
 	}   
 
 	/**
@@ -801,6 +798,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		});	
 	}
 
-	
+
 
 }
