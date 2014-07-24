@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="generic_rto_name_margin">6dp</dimen>
-    <dimen name="generic_rto_name_padding">10dp</dimen>
-    <dimen name="generic_rto_text_size">18sp</dimen>
+	<dimen name="generic_rto_window_stroke">0dp</dimen>
+	<dimen name="generic_rto_window_attacher_size">12dp</dimen>
+    
+    <dimen name="generic_rto_window_text_size">16sp</dimen>
+    <dimen name="generic_rto_label_text_size">12sp</dimen>
+    <dimen name="generic_rto_label_stroke">1dp</dimen>
+    
+    <dimen name="generic_rto_radius">4dp</dimen>
+    
+    
+    <dimen name="generic_rto_action_anchor_x">8dp</dimen>
+    <dimen name="generic_rto_action_anchor_y">8dp</dimen>
+    <dimen name="generic_rto_indicator_anchor_x">4dp</dimen>
+    <dimen name="generic_rto_indicator_anchor_y">8dp</dimen>
+    
+    <dimen name="generic_rto_name_anchor_x">6dp</dimen>
+    <dimen name="generic_rto_name_anchor_y">0dp</dimen>
 </resources>

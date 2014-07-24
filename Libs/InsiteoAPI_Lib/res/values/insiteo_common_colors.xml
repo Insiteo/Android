@@ -6,6 +6,14 @@
     <color name="generic_rto_3d_name_stroke_color">#FFFFFF</color>
     
     
-    <color name="generic_rto_name_bkg_color">#4a4a4a</color>
-    <color name="generic_rto_name_text_color">#FFFFFF</color>
+    <color name="generic_rto_annotation_bkg_normal">#666666</color>
+    <color name="generic_rto_annotation_bkg_pressed">#d8d8d8</color>
+    <color name="generic_rto_annotation_text_color">#FFFFFF</color>
+    <color name="generic_rto_window_stroke_color">#666666</color>
+     
+    <color name="generic_rto_label_stroke_color">#FFFFFF</color>
+    <color name="generic_rto_label_color">#333333</color>
+
+    <color name="generic_rto_action_normal">#00dea9</color>
+	<color name="generic_rto_action_pressed">#05fbc0</color>
 </resources>
