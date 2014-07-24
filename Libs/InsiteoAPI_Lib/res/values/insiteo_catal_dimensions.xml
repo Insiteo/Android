@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="insiteo_catal_poi_pin_width">58dip</dimen>
+	<dimen name="insiteo_catal_poi_pin_height">46dip</dimen>
+	<dimen name="insiteo_catal_poi_pin_hoffset">29dip</dimen>
+	<dimen name="insiteo_catal_poi_pin_voffset">0dip</dimen>
+	
+	<dimen name="insiteo_catal_poi_name_text_length">150dip</dimen>
+	<dimen name="insiteo_catal_poi_name_text">20dip</dimen>
+	<dimen name="insiteo_catal_poi_name_text_space">4dip</dimen>
+	<dimen name="insiteo_catal_poi_name_text_speed">35dip</dimen>
+	<dimen name="insiteo_catal_poi_name_text_shadow_radius">4dip</dimen>
+	
+	<dimen name="insiteo_catal_player_button">40dip</dimen>
+	<dimen name="insiteo_catal_player_line_height">1px</dimen>
+	
+	<dimen name="insiteo_catal_header_height">50dip</dimen>
+	<dimen name="insiteo_catal_header_searchButton_width">40dip</dimen>
+	<dimen name="insiteo_catal_header_searchButton_height">40dip</dimen>
+	<dimen name="insiteo_catal_header_textsize">25dip</dimen>
+	
+	<dimen name="insiteo_catal_searchbar_height">45dip</dimen>
+	<dimen name="insiteo_catal_searchbar_vmargins">0dip</dimen>
+	<!-- maximum size for clearbutton is 56 per cent of insiteo_catal_searchbar_height -->
+	<dimen name="insiteo_catal_clearbutton">20dip</dimen>
+	
+</resources>
+

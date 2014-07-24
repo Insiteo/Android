@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <style name="insiteo_catal_button" parent="android:Widget.ImageButton">
+        <item name="android:background">@drawable/insiteo_catal_button_bkg</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_height">@dimen/insiteo_catal_player_button</item>
+        <item name="android:layout_width">@dimen/insiteo_catal_player_button</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">centerInside</item>   
+        <item name="android:focusable">false</item>
+    </style>
+    
+    <style name="insiteo_catal_ProgressBar" parent="android:Widget.ProgressBar.Horizontal">
+		 <item name="android:indeterminateOnly">false</item>
+          <item name="android:progressDrawable">@drawable/insiteo_catal_progress_bar_horizontal</item>
+          <item name="android:minHeight">10dip</item>
+          <item name="android:maxHeight">20dip</item>
+	</style>
+	
+	<style name="CustomSeekBar" parent="android:Widget.SeekBar">
+          <item name="android:progressDrawable">@drawable/insiteo_catal_seek_bar</item>
+      	   <item name="android:thumb">@drawable/insiteo_catal_seek_bar_thumb</item>
+      	   <item name="android:thumbOffset">0dip</item>
+	</style>
+    
+</resources>

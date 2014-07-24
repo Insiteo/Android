@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="insiteo_catal_backlink">Retour</string>
+    <string name="insiteo_catal_err_loading_template">Impossible d\'ouvrir les templates du catalogue</string>
+    <string name="insiteo_catal_no_entry">Aucun résultat</string>
+    <string name="insiteo_catal_no_favorite">Aucun favori</string>
+    <string name="insiteo_catal_search_results">Recherche</string>
+    <string name="insiteo_catal_medias">Médias</string>
+    <string name="insiteo_catal_favorites">Favoris</string>
+    
+    <string name="insiteo_catal_searchedtext_too_short">Le texte recherché est trop court</string>
+</resources>
