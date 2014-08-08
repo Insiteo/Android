@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/insiteo_catal_mainview"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/insiteo_catal_bkg">
+     
+    <!-- This spacer is used to align the webview below the header 
+    	(because the header must be layouted after the webview) -->
+    <FrameLayout
+        android:id="@+id/insiteo_catal_header_space"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/insiteo_catal_header_height" >
+    </FrameLayout>
+         
+    <!-- WEBVIEWS -->
+    <ViewSwitcher 
+        android:id="@+id/catalog_view_switcher"
+        android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_below="@id/insiteo_catal_header_space" >
+        <com.insiteo.catalog.CatalogWebView 
+			android:id="@+id/catalog_view_1" 
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"	
+		/>		
+		<com.insiteo.catalog.CatalogWebView 
+			android:id="@+id/catalog_view_2" 
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+		/>
+	</ViewSwitcher>
+		
+	<RelativeLayout
+		android:id="@+id/insiteo_catal_searchBar"
+		android:layout_width="fill_parent"
+		android:layout_height="@dimen/insiteo_catal_searchbar_height"
+		android:layout_below="@id/insiteo_catal_header_space"
+		android:background="@drawable/insiteo_catal_searchbar_bkg"
+		android:layout_marginTop="@dimen/insiteo_catal_searchbar_vmargins"
+		android:layout_marginBottom="@dimen/insiteo_catal_searchbar_vmargins"
+		android:visibility="gone">
+		<Button
+			android:id="@+id/insiteo_catal_searchClear"
+			android:layout_height="@dimen/insiteo_catal_clearbutton"
+			android:layout_width="@dimen/insiteo_catal_clearbutton"
+			android:background="@drawable/insiteo_catal_btn_clear_bkg"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="5dip"
+			android:visibility="invisible"
+		/>
+		<EditText
+			android:id="@+id/insiteo_catal_searchEdit"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="#00000000"
+			android:layout_toLeftOf="@id/insiteo_catal_searchClear"
+			android:layout_centerVertical="true"
+			android:inputType="textNoSuggestions"
+			android:imeOptions="actionSearch"
+		/>
+	</RelativeLayout>
+	
+	<FrameLayout 
+        android:id="@+id/insiteo_catal_header"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/insiteo_catal_header_height"
+        android:background="@color/insiteo_catal_header_bottomline_bkg"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="1px">
+        <TextView 
+            android:id="@+id/insiteo_catal_header_title"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:background="@drawable/insiteo_catal_header_bkg"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="@dimen/insiteo_catal_header_textsize"
+            android:textColor="@color/insiteo_catal_header_textcolor"
+            android:paddingLeft="@dimen/insiteo_catal_header_searchButton_width"
+            android:paddingRight="@dimen/insiteo_catal_header_searchButton_width"
+		/>
+        <ImageButton 
+            android:id="@+id/insiteo_catal_header_searchButton"
+            android:layout_width="@dimen/insiteo_catal_header_searchButton_width"
+            android:layout_height="@dimen/insiteo_catal_header_searchButton_height"
+            android:layout_gravity="center_vertical|right"
+            android:background="@drawable/insiteo_catal_header_button_bkg"
+            android:src="@drawable/insiteo_catal_header_search"
+		/>
+    </FrameLayout>
+    
+</RelativeLayout>

@@ -6,9 +6,9 @@
     <color name="generic_rto_3d_name_stroke_color">#FFFFFF</color>
     
     
-    <color name="generic_rto_annotation_bkg_normal">#666666</color>
+    <color name="generic_rto_annotation_bkg_normal">#FFFFFF</color>
     <color name="generic_rto_annotation_bkg_pressed">#d8d8d8</color>
-    <color name="generic_rto_annotation_text_color">#FFFFFF</color>
+    <color name="generic_rto_annotation_text_color">#666666</color>
     <color name="generic_rto_window_stroke_color">#666666</color>
      
     <color name="generic_rto_label_stroke_color">#FFFFFF</color>

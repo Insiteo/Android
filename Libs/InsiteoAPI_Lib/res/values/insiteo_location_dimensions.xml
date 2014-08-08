@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<dimen name="insiteo_location_position_width">22dp</dimen>
-	<dimen name="insiteo_location_position_height">22dp</dimen>
-	<dimen name="insiteo_location_fov_width">96dp</dimen>
-	<dimen name="insiteo_location_fov_height">96dp</dimen>
+    <dimen name="insiteo_location_position_size">10dp</dimen>
+    <dimen name="insiteo_location_position_stroke_size">2dp</dimen>	
+	<dimen name="insiteo_location_acc_stroke_width">1dp</dimen>
 		
 </resources>
