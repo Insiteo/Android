@@ -314,8 +314,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 
 		for(int i = 0; i < zpas.size(); i++) {
 			String poiExtId = zpas.get(i).getExternalPoiId();			
-			GfxRto rto = new GfxRto(i, null, poiExtId);
-			rto.setNameDisplayed(true);
+			GfxRto rto = new GfxRto();
+			rto.setLabel(poiExtId);
 
 			// Apply a particular offset to this rto. This is used to have multiple rto in the same zone without superposition.
 			rto.setZoneOffset(zpas.get(i).getOffset());
@@ -378,8 +378,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 
 						for(int i = 0; i < zpas.size(); i++) {
 							String poiExtId = zpas.get(i).getExternalPoiId();			
-							GfxRto rto = new GfxRto(i, null, poiExtId);
-							rto.setNameDisplayed(true);
+							GfxRto rto = new GfxRto();
+							rto.setLabel(poiExtId);
 							mMapView.addRTOInZone(zpas.get(i).getZoneId(), rto);
 						}
 
@@ -487,17 +487,17 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			double x = Math.random() * 300;
 			double y = Math.random() * 300;
 
-			Position p = new Position(1, x, y);
+			Position p = new Position(mCurrentMap.getId(), x, y);
 			pos.add(p);
 		}
 
-		for (int i = 0; i < positionNbr; i++) {
-			double x = Math.random() * 300;
-			double y = Math.random() * 300;
-
-			Position p = new Position(2, x, y);
-			pos.add(p);
-		}
+//		for (int i = 0; i < positionNbr; i++) {
+//			double x = Math.random() * 300;
+//			double y = Math.random() * 300;
+//
+//			Position p = new Position(2, x, y);
+//			pos.add(p);
+//		}
 
 		mItineraryProvider.requestOptimizedItinerary(pos, EOptimizationMode.EOptimizationModeNearestNeighbourShortestPath, true, false, this, false);
 
