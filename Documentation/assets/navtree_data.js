@@ -1,5 +1,6 @@
 var NAVTREE_DATA =
-[ [ "com.insiteo.lbs.analytics", "com/insiteo/lbs/analytics/package-summary.html", [ [ "Classes", null, [ [ "AnalyticsConstants", "com/insiteo/lbs/analytics/AnalyticsConstants.html", null, "" ], [ "AnalyticsManager", "com/insiteo/lbs/analytics/AnalyticsManager.html", null, "" ] ]
+[ [ "com.insiteo.lbs.analytics", "com/insiteo/lbs/analytics/package-summary.html", [ [ "Interfaces", null, [ [ "IAnalyticsListener", "com/insiteo/lbs/analytics/IAnalyticsListener.html", null, "" ] ]
+, "" ], [ "Classes", null, [ [ "AnalyticsConstants", "com/insiteo/lbs/analytics/AnalyticsConstants.html", null, "" ], [ "AnalyticsManager", "com/insiteo/lbs/analytics/AnalyticsManager.html", null, "" ] ]
 , "" ] ]
 , "" ], [ "com.insiteo.lbs.analytics.entities", "com/insiteo/lbs/analytics/entities/package-summary.html", [ [ "Classes", null, [ [ "AnalyticsGenericEvent", "com/insiteo/lbs/analytics/entities/AnalyticsGenericEvent.html", null, "" ], [ "AnalyticsLocationEvent", "com/insiteo/lbs/analytics/entities/AnalyticsLocationEvent.html", null, "" ] ]
 , "" ] ]

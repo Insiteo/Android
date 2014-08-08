@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   MapView
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -412,10 +412,13 @@ import com.insiteo.lbs.common.init.InitProvider;
 import com.insiteo.lbs.common.utils.Log;
 import com.insiteo.lbs.common.utils.geometry.PointD;
 import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.location.InsLocation;
+import com.insiteo.lbs.location.LocationProvider;
 import com.insiteo.lbs.map.database.MapDBHelper;
 import com.insiteo.lbs.map.entities.EStartViewMode;
 import com.insiteo.lbs.map.entities.Map;
 import com.insiteo.lbs.map.entities.Zone;
+import com.insiteo.lbs.map.entities.ZonePoi;
 import com.insiteo.lbs.map.render.ERenderMode;
 import com.insiteo.lbs.map.render.EZoneAction;
 import com.insiteo.lbs.map.render.GenericRenderer;
@@ -708,21 +711,20 @@ public class MapView extends GLSurfaceView {
 	}
 
 	public void onZoom(int previousDistance, int newDistance, PointF touchCenter){
-
 		double distRatio = newDistance / (double) previousDistance;
 		float zoomOffset = (float) ((Math.log(distRatio)) / Math.log(2d));		
 
-		float previous = mMapDataManager.getZoomLevel();
+//		float previous = mMapDataManager.getZoomLevel();
 		if(zoomOffset != 0f) mMapDataManager.onZoom(distRatio, zoomOffset, touchCenter);
-		if (Math.abs(previous - mMapDataManager.getZoomLevel()) &gt; 2) {
-			// TODO
-			Log.d("BUG", "Zoom level from " + previous + " to " + mMapDataManager.getZoomLevel());
-			Log.d("BUG", "old distance " + previousDistance);
-			Log.d("BUG", "new distance " + newDistance);
-
-			Log.d("BUG", "Distance ratio = " + distRatio);
-			Log.d("BUG", "Zoom offset = " + zoomOffset);
-		}
+//		if (Math.abs(previous - mMapDataManager.getZoomLevel()) &gt; 2) {
+//			// TODO
+//			Log.d("BUG", "Zoom level from " + previous + " to " + mMapDataManager.getZoomLevel());
+//			Log.d("BUG", "old distance " + previousDistance);
+//			Log.d("BUG", "new distance " + newDistance);
+//
+//			Log.d("BUG", "Distance ratio = " + distRatio);
+//			Log.d("BUG", "Zoom offset = " + zoomOffset);
+//		}
 
 
 	}
@@ -753,7 +755,7 @@ public class MapView extends GLSurfaceView {
 	 * Returns whether this map uses 3D rendering
 	 * @return True if it uses 3D rendering
 	 */
-	public boolean isMap3D(){
+	public boolean isMap3D() {
 		return this instanceof Map3DView;
 	}
 
@@ -761,7 +763,7 @@ public class MapView extends GLSurfaceView {
 	 * Return true if the MapView is fully loaded.
 	 * @return
 	 */
-	public boolean isMapViewReady(){
+	public boolean isMapViewReady() {
 		return mIsMapViewReady;
 	}
 
@@ -1158,6 +1160,49 @@ public class MapView extends GLSurfaceView {
 
 		return result;
 	}
+	
+	/**
+	 * Add an RTO object to the appropriate renderer to be drawn in the zone defined by the {@link ZonePoi}. The {@link IRTO} will be drawn with the offset define in the {@link ZonePoi}.
+	 * @param rto The RTO object that should be added.
+	 * @param zonePoi where the {@link IRTO} should be drawn.
+	 * @return True if the RTO was properly added.
+	 */
+	public boolean addRTOInZone(IRTO rto, ZonePoi zonePoi) {
+		boolean result = false;
+
+		if(rto != null &amp;&amp; zonePoi != null) {
+			rto.setRenderMode(mIs3D ? (ERenderMode.RENDER_MODE_3D) : ERenderMode.RENDER_MODE_2D);
+			rto.setResources(getResources());
+
+			IRenderer renderer = null;
+			try {
+				mRenderingLock.acquire();
+				renderer = rendererExist(rto.getClass());
+
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				mRenderingLock.release();
+			}
+
+			if(renderer == null) renderer = createGenericRenderer(rto.getClass(), mPriorityCounter ++, null);
+
+			//check passed zone ID
+			if (zonePoi.getZoneId() != CommonConstants.NULL_ID) {
+				rto.setZonePoi(zonePoi);
+				rto.setZoneOffset(zonePoi.getOffset());
+				result = renderer.addRTOInZone(zonePoi.getZoneId(), rto);
+			} else {
+				result = renderer.addRTO(rto);
+			}
+			
+			AnalyticsGenericEvent event = new AnalyticsGenericEvent(AnalyticsConstants.IS_SHOW_ONMAP);
+			event.setString1(zonePoi.getExternalPoiId());
+			AnalyticsManager.getInstance().addGenericEvent(event);
+		}
+
+		return result;
+	}
 
 	/**
 	 * Removes the given RTO object from the zone were it was drawn
@@ -1435,6 +1480,9 @@ public class MapView extends GLSurfaceView {
 				AnalyticsGenericEvent mapChangedEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_MAP_CHANGED_LABEL);
 				mapChangedEvent.setInt1(getMapId());
 				mapChangedEvent.setInt2(mapId);
+				mapChangedEvent.setInt2(mapId);
+				InsLocation lastLocation = LocationProvider.getInstance().getLastLocation();
+				if(lastLocation != null)  mapChangedEvent.setPos1(lastLocation.getPosition());
 				AnalyticsManager.getInstance().addGenericEvent(mapChangedEvent);
 
 				// ZoomLevel of the map before the new one is displayed
@@ -1644,7 +1692,6 @@ public class MapView extends GLSurfaceView {
 					if (mMapListener != null) {
 						IMapListener listener = mMapListener.get();
 						if (listener != null) {
-							Log.d("INSITEO_MAP_API", "notifying map changed");
 							listener.onMapChanged(mapId, mapName);
 						}
 					}
@@ -1668,7 +1715,6 @@ public class MapView extends GLSurfaceView {
 					if (mMapListener != null) {
 						IMapListener listener = mMapListener.get();
 						if (listener != null) {
-							Log.d("INSITEO_MAP_API", "notifying map moved");
 							listener.onMapMoved();
 						}
 					}
@@ -1715,16 +1761,19 @@ public class MapView extends GLSurfaceView {
 			@Override public void run() {
 				try {
 					mListenerLock.acquire();
+					
+					AnalyticsGenericEvent zoneClickedEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_ZONE_CLICKED_LABEL);
+					zoneClickedEvent.setInt1(aZoneID);
+					InsLocation lastLocation = LocationProvider.getInstance().getLastLocation();
+					if(lastLocation != null) zoneClickedEvent.setPos1(lastLocation.getPosition());
+					AnalyticsManager.getInstance().addGenericEvent(zoneClickedEvent);
+					
 					if(mMapListener != null){
 						IMapListener listener = mMapListener.get();
 						if (listener != null) {
 							listener.onZoneClicked(aZoneID, aActionType, aActionParam);
 						}
 					}					
-
-					AnalyticsGenericEvent zoneClickedEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_ZONE_CLICKED_LABEL);
-					zoneClickedEvent.setInt1(aZoneID);
-					AnalyticsManager.getInstance().addGenericEvent(zoneClickedEvent);
 
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -1747,7 +1796,6 @@ public class MapView extends GLSurfaceView {
 					if(mMapListener != null){
 						IMapListener listener = mMapListener.get();
 						if (listener != null) {
-							Log.d("INSITEO_MAP_API", "notifying map zoom end");
 							listener.onZoomEnd(newZoomLevel);
 						}
 					}					
@@ -1771,7 +1819,6 @@ public class MapView extends GLSurfaceView {
 					if(mMapListener != null){
 						IMapListener listener = mMapListener.get();
 						if (listener != null) {
-							Log.d("INSITEO_MAP_API", "notifying map released");
 							listener.onMapReleased();
 						}						
 					}

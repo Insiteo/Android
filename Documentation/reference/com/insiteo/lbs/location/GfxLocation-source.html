@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GfxLocation
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -347,32 +347,29 @@
   <pre class="prettyprint">
 package com.insiteo.lbs.location;
 
-import java.util.Enumeration;
-
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
 
 import com.insiteo.lbs.R;
 import com.insiteo.lbs.common.CommonConstants;
-import com.insiteo.lbs.common.utils.ColorUtils;
 import com.insiteo.lbs.common.utils.Log;
 import com.insiteo.lbs.common.utils.geometry.PointD;
 import com.insiteo.lbs.map.entities.Map;
+import com.insiteo.lbs.map.entities.ZonePoi;
 import com.insiteo.lbs.map.render.ERenderMode;
 import com.insiteo.lbs.map.render.ETouchObjectResult;
 import com.insiteo.lbs.map.render.IRTO;
 import com.insiteo.lbs.map.render.ISObject3D;
 import com.insiteo.lbs.map.render.Touch;
+import com.insiteo.lbs.map.utils.MapUtils;
 import com.threed.jpct.Object3D;
 import com.threed.jpct.Primitives;
 import com.threed.jpct.SimpleVector;
@@ -390,34 +387,31 @@ public class GfxLocation implements IRTO {
 	private final static String TAG = "INSITEO_GFX_LOCATION";
 
 	protected static final int ANIM_MAX_ALPHA = 140;
-	private static final int ACC_FILL_ALPHA = 40;
-	private static final float ACC_STROKE_WIDTH = 4f;
-	private static final int ACC_STROKE_ALPHA = 200;
 	protected static final int ANIM_DURATION = 1700;	//milliseconds
 
 	private int mId = CommonConstants.NULL_ID;
 	protected InsLocation mLocation = null;
 	protected Float mAzimuth = null;
-	protected Float mMapAzimuth = null;
+	protected Float mMapAzimuth = 0f;
 	protected int mDisplayAngle	= 0;
 
 	protected Paint mPaint = null;
-	protected Paint mAccFillPaint = null;
-	protected Paint mAccBorderPaint = null;
+	protected Paint mFovPaint = null;
+	protected Paint mAccuracyPaint = null;
 
-	protected Bitmap mImage = null;
 	protected Bitmap mFovImage = null;
-	protected int mImageHalfWidth = 0;
-	protected int mImageHalfHeight = 0;
-	protected int mFovHalfWidth = 0;
-	protected int mFovHalfHeight = 0;
 
+	private float mStrokeSize;
+
+	private int mColor, mStrokeColor;
 	private int mLocationColor;
 	private int mLocationLostColor;
 	private int mLocationAccuracyColor;
 	private int mLocationAccuracyStrokeColor;
 
 	private boolean isLocationLost = false;
+
+	private float mLocationRadius;
 
 
 	//******************************************************************************************************************
@@ -426,8 +420,6 @@ public class GfxLocation implements IRTO {
 
 	public GfxLocation(int aId) {
 		mId = aId;
-
-		create3DObject();
 	}
 
 
@@ -485,52 +477,35 @@ public class GfxLocation implements IRTO {
 					}
 				}
 			}).start();
-		}
-		else {
+		} else {
 			mLocation = aLoc;
 		}
+
+		if(aLoc == null) mAzimuth = null;
+
 		mIsLocUpdated = true;
 	}
 
-	public void setLocationLost(InsLocation aLastKnownLoc){
-		if (mLocation != null &amp;&amp; aLastKnownLoc != null &amp;&amp; mLocation.getMapID() == aLastKnownLoc.getMapID()) {
+	public void setLocationLost(InsLocation aLastKnownLoc) {
+		setLocation(aLastKnownLoc);
 
-			if (!isLocationLost) {
-				isLocationLost = true;	
-				setDrawingColors();
-			}
-
-			//animate location from old point to new one
-			//compute distance between the two positions
-			final double xDistance = (aLastKnownLoc.getCoord().x - mLocation.getCoord().x) / CommonConstants.COS_SQUARE_THETA_SUM;
-			final double yDistance = (aLastKnownLoc.getCoord().y - mLocation.getCoord().y) / CommonConstants.COS_SQUARE_THETA_SUM;
-			//set new location with old position
-			aLastKnownLoc.setCoord(mLocation.getCoord());
-			mLocation = aLastKnownLoc;
-			//get a reference on the position object, and run a thread to update it
-			final PointD coord = mLocation.getCoord();
-			new Thread(new Runnable() {
-				@Override public void run() {
-					for (double d : CommonConstants.COS_SQUARE_THETA) {
-						coord.x += xDistance * d;
-						coord.y += yDistance * d;
-						try {
-							Thread.sleep(10);
-						} 
-						catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			}).start();
+		if (!isLocationLost) {
+			isLocationLost = true;	
+			setDrawingColors();
 		}
-		else {
-			mLocation = aLastKnownLoc;
-		}
-
 	}
 
 	public void setAzimuth(Float aAzimuth) {
+		if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+			if(mAzimuth == null) {
+				mDrawingAngle = mMapAzimuth + mDisplayAngle;
+				mDrawingAngle += aAzimuth;
+			} else {
+				mDrawingAngle += aAzimuth - mAzimuth;
+			}
+
+		}
+
 		mAzimuth = aAzimuth;
 	}
 
@@ -543,6 +518,15 @@ public class GfxLocation implements IRTO {
 	@Override
 	public int getRtoID() {
 		return mId;
+	}
+
+	@Override
+	public ZonePoi getZonePoi() {
+		return null;
+	}
+
+	@Override
+	public void setZonePoi(ZonePoi zonePoi) {		
 	}
 
 	@Override
@@ -638,34 +622,45 @@ public class GfxLocation implements IRTO {
 	}
 
 	private void set2DResources(Resources aResources) {
-		mImage = BitmapFactory.decodeResource(aResources, R.drawable.insiteo_location_position);
-		mFovImage = BitmapFactory.decodeResource(aResources, R.drawable.insiteo_location_fov);
+		mPaint = new Paint();
+		mPaint.setAntiAlias(true);
+		mFovPaint = new Paint();
+		mFovPaint.setAntiAlias(true);
+		mAccuracyPaint = new Paint();
+		mAccuracyPaint.setAntiAlias(true);
 
-		mImageHalfWidth = aResources.getDimensionPixelSize(R.dimen.insiteo_location_position_width) / 2;
-		mImageHalfHeight = aResources.getDimensionPixelSize(R.dimen.insiteo_location_position_height) / 2;
-		mFovHalfWidth = aResources.getDimensionPixelSize(R.dimen.insiteo_location_fov_width) / 2;
-		mFovHalfHeight = aResources.getDimensionPixelSize(R.dimen.insiteo_location_fov_height) / 2;
+		mFovImage = BitmapFactory.decodeResource(aResources, R.drawable.compass);
 
+		mLocationRadius = aResources.getDimensionPixelSize(R.dimen.insiteo_location_position_size);		
+
+		mStrokeSize = aResources.getDimensionPixelSize(R.dimen.insiteo_location_position_stroke_size);
+		mPaint.setStrokeWidth(mStrokeSize);
+
+		mAccuracyPaint.setStrokeWidth(aResources.getDimensionPixelSize(R.dimen.insiteo_location_acc_stroke_width));
+
+		mStrokeColor = aResources.getColor(R.color.insiteo_location_stroke);
 		mLocationColor = aResources.getColor(R.color.insiteo_location_userlocation);
 		mLocationLostColor = aResources.getColor(R.color.insiteo_location_userlocationlost);
 		mLocationAccuracyColor = aResources.getColor(R.color.insiteo_location_accuracy_color);
 		mLocationAccuracyStrokeColor = aResources.getColor(R.color.insiteo_location_accuracy_stroke_color);
 
-		mPaint = new Paint();
-
 		setDrawingColors();
 	}
 
 	private void set3DResources(Resources aResources) {
-		Texture color = new Texture(1, 1, ColorUtils.getRGBColor(mLocationColor));
-		if (!TextureManager.getInstance().containsTexture(TEXTURE)) {
-			TextureManager.getInstance().addTexture(TEXTURE, color);
-		} else {
-			TextureManager.getInstance().removeTexture(TEXTURE);
-			TextureManager.getInstance().addTexture(TEXTURE, color);
-		}
 
-		if(m3DObject != null) m3DObject.setTexture(TEXTURE);
+		set2DResources(aResources);
+
+		create3DObject();
+		//		Texture color = new Texture(1, 1, ColorUtils.getRGBColor(mLocationColor));
+		//		if (!TextureManager.getInstance().containsTexture(TEXTURE)) {
+		//			TextureManager.getInstance().addTexture(TEXTURE, color);
+		//		} else {
+		//			TextureManager.getInstance().removeTexture(TEXTURE);
+		//			TextureManager.getInstance().addTexture(TEXTURE, color);
+		//		}
+
+		//		if(m3DObject != null) m3DObject.setTexture(TEXTURE);
 	}
 
 	@Override
@@ -678,9 +673,10 @@ public class GfxLocation implements IRTO {
 	}
 
 	private void free2DResources() {
-		mImage = null;
+		mFovImage= null;
 		mFovImage = null;
 		mPaint = null;
+		mPaint = mFovPaint = mAccuracyPaint = null;
 	}
 
 	private void free3DResources() {
@@ -692,53 +688,57 @@ public class GfxLocation implements IRTO {
 	// 	DRAWING 2D
 	// *****************************************************************************************************************
 
-	private void setDrawingColors(){
-		int color = (isLocationLost) ? mLocationLostColor : mLocationColor;
+	private void setDrawingColors() {
+		mColor = (isLocationLost) ? mLocationLostColor : mLocationColor;
+		mFovPaint.setColorFilter(new PorterDuffColorFilter(mColor, Mode.MULTIPLY));
 
-		mPaint.setColorFilter(new PorterDuffColorFilter(color, Mode.MULTIPLY));
-
-		mAccFillPaint = new Paint();
-		mAccFillPaint.setColor(mLocationAccuracyColor);
-		mAccFillPaint.setAlpha(Color.alpha(mLocationAccuracyColor));
-		mAccFillPaint.setStyle(Style.FILL);
-		mAccBorderPaint = new Paint();
-		mAccBorderPaint.setColor(mLocationAccuracyColor);
-		mAccBorderPaint.setAlpha(Color.alpha(mLocationAccuracyStrokeColor));
-		mAccBorderPaint.setStyle(Style.STROKE);
-		mAccBorderPaint.setStrokeWidth(ACC_STROKE_WIDTH);
-		mAccBorderPaint.setAntiAlias(true);
-
+		if(mRenderMode == ERenderMode.RENDER_MODE_3D) setLocationTexture();
 	}
 
 	@Override
 	public void draw(Canvas aCanvas, double aRatio, Point aOffset, float aAngle) {
-		if (mLocation != null &amp;&amp; mImage != null &amp;&amp; mFovImage != null) {
+		if (mLocation != null &amp;&amp; mFovImage != null) {
 			//calculate position on screen
-			int posX =  (int)(mLocation.getCoord().x * aRatio) + aOffset.x;
-			int posY =  (int)(mLocation.getCoord().y * aRatio) + aOffset.y;
+			int posX =  (int) (mLocation.getCoord().x * aRatio) + aOffset.x;
+			int posY =  (int) (mLocation.getCoord().y * aRatio) + aOffset.y;
 			float accRadius = (float)(mLocation.getAccuracy() * aRatio);
 
-			aCanvas.save();
-
-			aCanvas.drawCircle(posX, posY, accRadius, mAccFillPaint);
-			aCanvas.drawCircle(posX, posY, accRadius, mAccBorderPaint);
-
-			//if azimuth is set, draw fov image
-			if (mAzimuth != null &amp;&amp; mMapAzimuth != null) {
-				//compute angle for drawing (used by derived classes
-				float angle = computeDrawingAzimuth();
-
-				Rect rect = new Rect(posX-mFovHalfWidth, posY-mFovHalfHeight, posX+mFovHalfWidth, posY+mFovHalfHeight);
-				aCanvas.rotate(angle - mMapAzimuth + mDisplayAngle, posX, posY);
-				aCanvas.drawBitmap(mFovImage, null, rect, null);
-			}
-
-			aCanvas.restore();
-
-			//draw location point
-			Rect rect = new Rect(posX-mImageHalfWidth, posY-mImageHalfHeight, posX+mImageHalfWidth, posY+mImageHalfHeight);
-			aCanvas.drawBitmap(mImage, null, rect, mPaint);
+			drawAccuracyCircle(aCanvas, posX, posY, accRadius);
+			drawCompass(aCanvas, posX, posY);
+			drawPosition(aCanvas, posX, posY);
 		}
+	}
+
+	private void drawAccuracyCircle(Canvas canvas, float x, float y, float radius) {
+		mAccuracyPaint.setStyle(Style.FILL);
+		mAccuracyPaint.setColor(mLocationAccuracyColor);
+		canvas.drawCircle(x, y, radius, mAccuracyPaint);
+		mAccuracyPaint.setStyle(Style.STROKE);
+		mAccuracyPaint.setColor(mLocationAccuracyStrokeColor);
+		canvas.drawCircle(x, y, radius, mAccuracyPaint);
+	}
+
+	private void drawCompass(Canvas canvas, float x, float y) {
+		canvas.save();
+
+		if (mAzimuth != null &amp;&amp; mMapAzimuth != null) {
+
+			float angle = computeDrawingAzimuth();
+
+			canvas.rotate(angle - mMapAzimuth + mDisplayAngle, x, y);
+			canvas.drawBitmap(mFovImage, x - mFovImage.getWidth() / 2, y - mLocationRadius - mFovImage.getHeight(), mFovPaint);
+		}
+
+		canvas.restore();
+	}
+
+	private void drawPosition(Canvas canvas, float x, float y) {
+		mPaint.setColor(mColor);
+		mPaint.setStyle(Style.FILL);
+		canvas.drawCircle(x, y, (float) mLocationRadius, mPaint);
+		mPaint.setColor(mStrokeColor);
+		mPaint.setStyle(Style.STROKE);
+		canvas.drawCircle(x, y, (float) mLocationRadius, mPaint);
 	}
 
 	//******************************************************************************************************************
@@ -750,14 +750,47 @@ public class GfxLocation implements IRTO {
 	private static final String TEXTURE = "GFX_LOCATION_TEXTURE";
 	private boolean mIsLocUpdated = false;
 
-	private void create3DObject(){
-		Texture color = new Texture(1, 1, ColorUtils.getRGBColor(mLocationColor));
-		if (!TextureManager.getInstance().containsTexture(TEXTURE)) {
-			TextureManager.getInstance().addTexture(TEXTURE, color);
-		}
+	private float mDrawingAngle = 0f;
 
-		m3DObject = Primitives.getSphere(10);
+	private void create3DObject() {
+
+		//		Texture color = new Texture(1, 1, ColorUtils.getRGBColor(mLocationColor));
+
+		setLocationTexture();
+
+
+		int width = MapUtils.closestTwoPower((int) (2 * mLocationRadius));
+
+		m3DObject = Primitives.getPlane(width, 1);
 		m3DObject.setTexture(TEXTURE);
+		m3DObject.setTransparency(20);
+//		m3DObject.setBillboarding(Object3D.BILLBOARDING_ENABLED);
+//		m3DObject.setSortOffset(0);
+//				m3DObject.calcTextureWrapSpherical();
+		m3DObject.setOrigin(new SimpleVector(0, 0, -0.5));
+
+
+	}
+
+	private void setLocationTexture() {
+
+		Bitmap.Config config = Bitmap.Config.ARGB_8888;
+
+		int size = MapUtils.closestTwoPower((int) (2 * (mLocationRadius + mStrokeSize + mFovImage.getHeight())));
+
+		Bitmap bitmap = Bitmap.createBitmap(size, size, config);		
+		Canvas canvas = new Canvas(bitmap);
+
+		canvas.drawBitmap(mFovImage, size / 2 - mFovImage.getWidth() / 2, size / 2 - mLocationRadius - mFovImage.getHeight(), mFovPaint);
+		drawPosition(canvas, size / 2, size / 2);
+
+		Texture locTexture = new Texture(bitmap, true);
+
+		if (TextureManager.getInstance().containsTexture(TEXTURE)) {
+			TextureManager.getInstance().replaceTexture(TEXTURE, locTexture);
+		} else {
+			TextureManager.getInstance().addTexture(TEXTURE, locTexture);
+		}
 	}
 
 	@Override
@@ -774,25 +807,28 @@ public class GfxLocation implements IRTO {
 
 			float r = (ratio &lt; 1) ? 1 : (int) ratio;
 			Log.d(TAG, "value = " + r + " | " + ratio + " ---&gt; " + (1/r));
-			m3DObject.setScale((float) (1/r));
-			m3DObject.setOrigin(new SimpleVector(posX, posY, 0));
+			//			m3DObject.setScale((float) (1/r));
+			m3DObject.setOrigin(new SimpleVector(posX, posY, -0.5));
 
-			Enumeration&lt;Object3D&gt; objs = world.getObjects();
-
-			while (objs.hasMoreElements()) {
-				Object3D obj = objs.nextElement();
-				if (obj.getName().equals(CommonConstants.ZONE_OBJECT_3D_NAME)) {
-					if (obj.sphereIntersectsAABB(m3DObject.getOrigin(), 10*m3DObject.getScale())) {
-						obj.setUserObject(true);//setTransparency(10);
-					} else {
-						//						obj.setUserObject(false);
-					}
-				}
-
-			}
+			//			Enumeration&lt;Object3D&gt; objs = world.getObjects();
+			//
+			//			while (objs.hasMoreElements()) {
+			//				Object3D obj = objs.nextElement();
+			//				if (obj.getName().equals(CommonConstants.ZONE_OBJECT_3D_NAME)) {
+			//					if (obj.sphereIntersectsAABB(m3DObject.getOrigin(), 10*m3DObject.getScale())) {
+			//						obj.setUserObject(true);//setTransparency(10);
+			//					} else {
+			//						//						obj.setUserObject(false);
+			//					}
+			//				}
+			//
+			//			}
 
 
 		}
+
+		m3DObject.rotateZ((float) Math.toRadians(mDrawingAngle));
+		mDrawingAngle = 0f;
 
 
 	}
@@ -830,20 +866,6 @@ public class GfxLocation implements IRTO {
 	public ETouchObjectResult onTouchMove(Touch aTouch) {
 		return ETouchObjectResult.RESULT_NOTHING;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

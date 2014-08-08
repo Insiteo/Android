@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/common/auth/parsers
+END
+LoginResponseParser.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/common/auth/parsers/LoginResponseParser.html
+END
+LoginRequestEncoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/common/auth/parsers/LoginRequestEncoder.html
+END
+LoginRequestEncoder-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/common/auth/parsers/LoginRequestEncoder-source.html
+END
+LoginResponseParser-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/common/auth/parsers/LoginResponseParser-source.html
+END
+package-summary.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/common/auth/parsers/package-summary.html
+END
+package-descr.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/common/auth/parsers/package-descr.html
+END

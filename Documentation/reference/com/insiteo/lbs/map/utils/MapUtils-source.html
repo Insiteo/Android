@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   MapUtils
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -403,6 +403,19 @@ public class MapUtils {
     	}
 		
 		return false;
+	}
+	
+	/**
+	 * Returns the closest two power bigger then  the given number
+	 * @param i
+	 * @return
+	 */
+	public static int closestTwoPower(int i) {
+		int power = 1;
+		while (power &lt; i) {
+			power &lt;&lt;= 1;
+		}
+		return power;
 	}
 }
 

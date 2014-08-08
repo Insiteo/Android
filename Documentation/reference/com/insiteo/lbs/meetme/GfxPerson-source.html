@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GfxPerson
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -368,6 +368,7 @@ import com.insiteo.lbs.R;
 import com.insiteo.lbs.common.CommonConstants;
 import com.insiteo.lbs.common.utils.geometry.Position;
 import com.insiteo.lbs.map.entities.Map;
+import com.insiteo.lbs.map.entities.ZonePoi;
 import com.insiteo.lbs.map.render.ERenderMode;
 import com.insiteo.lbs.map.render.ETouchObjectResult;
 import com.insiteo.lbs.map.render.IRTO;
@@ -442,6 +443,15 @@ public class GfxPerson implements IRTO {
 	@Override
 	public int getRtoID() {
 		return mId;
+	}
+	
+	@Override
+	public ZonePoi getZonePoi() {
+		return null;
+	}
+
+	@Override
+	public void setZonePoi(ZonePoi zonePoi) {		
 	}
 	
 	@Override

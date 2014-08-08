@@ -1,0 +1,2893 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  ProtoMapZone.PBMapZone.Builder
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/auth/parsers/package-summary.html">com.insiteo.lbs.common.auth.parsers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/utils/geometry/package-summary.html">com.insiteo.lbs.common.utils.geometry</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/utils/threading/package-summary.html">com.insiteo.lbs.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/analytics/request/package-summary.html">com.insiteo.lbs.protobuf.analytics.request</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/request/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.request.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/response/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/response/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/response/init/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/package-summary.html">com.insiteo.lbs.protobuf.lbs.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/loc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.loc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/package-summary.html">com.insiteo.lbs.protobuf.model.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/model/itinerary/package-summary.html">com.insiteo.lbs.protobuf.model.itinerary</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/model/map/package-summary.html">com.insiteo.lbs.protobuf.model.map</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapPoint.PBMapPointOrBuilder.html">ProtoMapPoint.PBMapPointOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapTile.PBMapTileOrBuilder.html">ProtoMapTile.PBMapTileOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZone.PBMapZoneOrBuilder.html">ProtoMapZone.PBMapZoneOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZones.PBMapZonesOrBuilder.html">ProtoMapZones.PBMapZonesOrBuilder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapPoint.html">ProtoMapPoint</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapPoint.PBMapPoint.html">ProtoMapPoint.PBMapPoint</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapPoint.PBMapPoint.Builder.html">ProtoMapPoint.PBMapPoint.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapTile.html">ProtoMapTile</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapTile.PBMapTile.html">ProtoMapTile.PBMapTile</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapTile.PBMapTile.Builder.html">ProtoMapTile.PBMapTile.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZone.html">ProtoMapZone</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZone.PBMapZone.html">ProtoMapZone.PBMapZone</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZone.PBMapZone.Builder.html">ProtoMapZone.PBMapZone.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZones.html">ProtoMapZones</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZones.PBMapZones.html">ProtoMapZones.PBMapZones</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZones.PBMapZones.Builder.html">ProtoMapZones.PBMapZones.Builder</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="ProtoMapZone.PBMapZone.Builder.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+    final 
+    
+    class
+<h1>ProtoMapZone.PBMapZone.Builder</h1>
+
+
+
+  
+  
+  
+
+  
+    extends <any><br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../../../com/insiteo/lbs/protobuf/model/map/ProtoMapZone.PBMapZoneOrBuilder.html">ProtoMapZone.PBMapZoneOrBuilder</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+// Generated by the protocol buffer compiler.  DO NOT EDIT!
+// source: PBMapZone.proto
+
+package com.insiteo.lbs.protobuf.model.map;
+
+public final class ProtoMapZone {
+  private ProtoMapZone() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+  public interface PBMapZoneOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // required int32 zoneId = 1;
+    boolean hasZoneId();
+    int getZoneId();
+    
+    // required string guid = 2;
+    boolean hasGuid();
+    String getGuid();
+    
+    // required int32 mapId = 3;
+    boolean hasMapId();
+    int getMapId();
+    
+    // required int32 zoneTypeId = 4;
+    boolean hasZoneTypeId();
+    int getZoneTypeId();
+    
+    // optional string comments = 5;
+    boolean hasComments();
+    String getComments();
+    
+    // required int32 zoomMin = 6;
+    boolean hasZoomMin();
+    int getZoomMin();
+    
+    // required int32 zoomMax = 7;
+    boolean hasZoomMax();
+    int getZoomMax();
+    
+    // required int32 z = 8;
+    boolean hasZ();
+    int getZ();
+    
+    // repeated .com.insiteo.lbs.protobuf.model.map.PBMapPoint polygon = 9;
+    java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint&gt; 
+        getPolygonList();
+    com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint getPolygon(int index);
+    int getPolygonCount();
+    
+    // required .com.insiteo.lbs.protobuf.model.map.PBMapPoint coord = 10;
+    boolean hasCoord();
+    com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint getCoord();
+    
+    // required bool isHiddenZone = 11;
+    boolean hasIsHiddenZone();
+    boolean getIsHiddenZone();
+    
+    // repeated .com.insiteo.lbs.protobuf.model.map.PBMapTile tilesList = 12;
+    java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile&gt; 
+        getTilesListList();
+    com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile getTilesList(int index);
+    int getTilesListCount();
+    
+    // optional string extra1 = 13;
+    boolean hasExtra1();
+    String getExtra1();
+    
+    // optional string extra2 = 14;
+    boolean hasExtra2();
+    String getExtra2();
+    
+    // optional string extra3 = 15;
+    boolean hasExtra3();
+    String getExtra3();
+    
+    // optional string extra4 = 16;
+    boolean hasExtra4();
+    String getExtra4();
+    
+    // optional string extra5 = 17;
+    boolean hasExtra5();
+    String getExtra5();
+    
+    // optional float fextra1 = 18;
+    boolean hasFextra1();
+    float getFextra1();
+    
+    // optional string dispLabel = 19;
+    boolean hasDispLabel();
+    String getDispLabel();
+    
+    // optional string dispExtra1 = 20;
+    boolean hasDispExtra1();
+    String getDispExtra1();
+    
+    // optional string dispExtra2 = 21;
+    boolean hasDispExtra2();
+    String getDispExtra2();
+    
+    // optional string dispExtra3 = 22;
+    boolean hasDispExtra3();
+    String getDispExtra3();
+    
+    // optional float dispFextra1 = 23;
+    boolean hasDispFextra1();
+    float getDispFextra1();
+    
+    // optional int32 dispSortIndex = 24;
+    boolean hasDispSortIndex();
+    int getDispSortIndex();
+    
+    // optional int32 actionType = 25;
+    boolean hasActionType();
+    int getActionType();
+    
+    // optional string actionParameter = 26;
+    boolean hasActionParameter();
+    String getActionParameter();
+  }
+  public static final class PBMapZone extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBMapZoneOrBuilder {
+    // Use PBMapZone.newBuilder() to construct.
+    private PBMapZone(Builder builder) {
+      super(builder);
+    }
+    private PBMapZone(boolean noInit) {}
+    
+    private static final PBMapZone defaultInstance;
+    public static PBMapZone getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBMapZone getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // required int32 zoneId = 1;
+    public static final int ZONEID_FIELD_NUMBER = 1;
+    private int zoneId_;
+    public boolean hasZoneId() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public int getZoneId() {
+      return zoneId_;
+    }
+    
+    // required string guid = 2;
+    public static final int GUID_FIELD_NUMBER = 2;
+    private java.lang.Object guid_;
+    public boolean hasGuid() {
+      return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+    }
+    public String getGuid() {
+      java.lang.Object ref = guid_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          guid_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getGuidBytes() {
+      java.lang.Object ref = guid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        guid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required int32 mapId = 3;
+    public static final int MAPID_FIELD_NUMBER = 3;
+    private int mapId_;
+    public boolean hasMapId() {
+      return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+    }
+    public int getMapId() {
+      return mapId_;
+    }
+    
+    // required int32 zoneTypeId = 4;
+    public static final int ZONETYPEID_FIELD_NUMBER = 4;
+    private int zoneTypeId_;
+    public boolean hasZoneTypeId() {
+      return ((bitField0_ &amp; 0x00000008) == 0x00000008);
+    }
+    public int getZoneTypeId() {
+      return zoneTypeId_;
+    }
+    
+    // optional string comments = 5;
+    public static final int COMMENTS_FIELD_NUMBER = 5;
+    private java.lang.Object comments_;
+    public boolean hasComments() {
+      return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+    }
+    public String getComments() {
+      java.lang.Object ref = comments_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          comments_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCommentsBytes() {
+      java.lang.Object ref = comments_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        comments_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required int32 zoomMin = 6;
+    public static final int ZOOMMIN_FIELD_NUMBER = 6;
+    private int zoomMin_;
+    public boolean hasZoomMin() {
+      return ((bitField0_ &amp; 0x00000020) == 0x00000020);
+    }
+    public int getZoomMin() {
+      return zoomMin_;
+    }
+    
+    // required int32 zoomMax = 7;
+    public static final int ZOOMMAX_FIELD_NUMBER = 7;
+    private int zoomMax_;
+    public boolean hasZoomMax() {
+      return ((bitField0_ &amp; 0x00000040) == 0x00000040);
+    }
+    public int getZoomMax() {
+      return zoomMax_;
+    }
+    
+    // required int32 z = 8;
+    public static final int Z_FIELD_NUMBER = 8;
+    private int z_;
+    public boolean hasZ() {
+      return ((bitField0_ &amp; 0x00000080) == 0x00000080);
+    }
+    public int getZ() {
+      return z_;
+    }
+    
+    // repeated .com.insiteo.lbs.protobuf.model.map.PBMapPoint polygon = 9;
+    public static final int POLYGON_FIELD_NUMBER = 9;
+    private java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint&gt; polygon_;
+    public java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint&gt; getPolygonList() {
+      return polygon_;
+    }
+    public java.util.List&lt;? extends com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPointOrBuilder&gt; 
+        getPolygonOrBuilderList() {
+      return polygon_;
+    }
+    public int getPolygonCount() {
+      return polygon_.size();
+    }
+    public com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint getPolygon(int index) {
+      return polygon_.get(index);
+    }
+    public com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPointOrBuilder getPolygonOrBuilder(
+        int index) {
+      return polygon_.get(index);
+    }
+    
+    // required .com.insiteo.lbs.protobuf.model.map.PBMapPoint coord = 10;
+    public static final int COORD_FIELD_NUMBER = 10;
+    private com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint coord_;
+    public boolean hasCoord() {
+      return ((bitField0_ &amp; 0x00000100) == 0x00000100);
+    }
+    public com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint getCoord() {
+      return coord_;
+    }
+    
+    // required bool isHiddenZone = 11;
+    public static final int ISHIDDENZONE_FIELD_NUMBER = 11;
+    private boolean isHiddenZone_;
+    public boolean hasIsHiddenZone() {
+      return ((bitField0_ &amp; 0x00000200) == 0x00000200);
+    }
+    public boolean getIsHiddenZone() {
+      return isHiddenZone_;
+    }
+    
+    // repeated .com.insiteo.lbs.protobuf.model.map.PBMapTile tilesList = 12;
+    public static final int TILESLIST_FIELD_NUMBER = 12;
+    private java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile&gt; tilesList_;
+    public java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile&gt; getTilesListList() {
+      return tilesList_;
+    }
+    public java.util.List&lt;? extends com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTileOrBuilder&gt; 
+        getTilesListOrBuilderList() {
+      return tilesList_;
+    }
+    public int getTilesListCount() {
+      return tilesList_.size();
+    }
+    public com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile getTilesList(int index) {
+      return tilesList_.get(index);
+    }
+    public com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTileOrBuilder getTilesListOrBuilder(
+        int index) {
+      return tilesList_.get(index);
+    }
+    
+    // optional string extra1 = 13;
+    public static final int EXTRA1_FIELD_NUMBER = 13;
+    private java.lang.Object extra1_;
+    public boolean hasExtra1() {
+      return ((bitField0_ &amp; 0x00000400) == 0x00000400);
+    }
+    public String getExtra1() {
+      java.lang.Object ref = extra1_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra1_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra1Bytes() {
+      java.lang.Object ref = extra1_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra1_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string extra2 = 14;
+    public static final int EXTRA2_FIELD_NUMBER = 14;
+    private java.lang.Object extra2_;
+    public boolean hasExtra2() {
+      return ((bitField0_ &amp; 0x00000800) == 0x00000800);
+    }
+    public String getExtra2() {
+      java.lang.Object ref = extra2_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra2_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra2Bytes() {
+      java.lang.Object ref = extra2_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra2_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string extra3 = 15;
+    public static final int EXTRA3_FIELD_NUMBER = 15;
+    private java.lang.Object extra3_;
+    public boolean hasExtra3() {
+      return ((bitField0_ &amp; 0x00001000) == 0x00001000);
+    }
+    public String getExtra3() {
+      java.lang.Object ref = extra3_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra3_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra3Bytes() {
+      java.lang.Object ref = extra3_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra3_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string extra4 = 16;
+    public static final int EXTRA4_FIELD_NUMBER = 16;
+    private java.lang.Object extra4_;
+    public boolean hasExtra4() {
+      return ((bitField0_ &amp; 0x00002000) == 0x00002000);
+    }
+    public String getExtra4() {
+      java.lang.Object ref = extra4_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra4_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra4Bytes() {
+      java.lang.Object ref = extra4_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra4_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string extra5 = 17;
+    public static final int EXTRA5_FIELD_NUMBER = 17;
+    private java.lang.Object extra5_;
+    public boolean hasExtra5() {
+      return ((bitField0_ &amp; 0x00004000) == 0x00004000);
+    }
+    public String getExtra5() {
+      java.lang.Object ref = extra5_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra5_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra5Bytes() {
+      java.lang.Object ref = extra5_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra5_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional float fextra1 = 18;
+    public static final int FEXTRA1_FIELD_NUMBER = 18;
+    private float fextra1_;
+    public boolean hasFextra1() {
+      return ((bitField0_ &amp; 0x00008000) == 0x00008000);
+    }
+    public float getFextra1() {
+      return fextra1_;
+    }
+    
+    // optional string dispLabel = 19;
+    public static final int DISPLABEL_FIELD_NUMBER = 19;
+    private java.lang.Object dispLabel_;
+    public boolean hasDispLabel() {
+      return ((bitField0_ &amp; 0x00010000) == 0x00010000);
+    }
+    public String getDispLabel() {
+      java.lang.Object ref = dispLabel_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          dispLabel_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getDispLabelBytes() {
+      java.lang.Object ref = dispLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        dispLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string dispExtra1 = 20;
+    public static final int DISPEXTRA1_FIELD_NUMBER = 20;
+    private java.lang.Object dispExtra1_;
+    public boolean hasDispExtra1() {
+      return ((bitField0_ &amp; 0x00020000) == 0x00020000);
+    }
+    public String getDispExtra1() {
+      java.lang.Object ref = dispExtra1_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          dispExtra1_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getDispExtra1Bytes() {
+      java.lang.Object ref = dispExtra1_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        dispExtra1_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string dispExtra2 = 21;
+    public static final int DISPEXTRA2_FIELD_NUMBER = 21;
+    private java.lang.Object dispExtra2_;
+    public boolean hasDispExtra2() {
+      return ((bitField0_ &amp; 0x00040000) == 0x00040000);
+    }
+    public String getDispExtra2() {
+      java.lang.Object ref = dispExtra2_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          dispExtra2_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getDispExtra2Bytes() {
+      java.lang.Object ref = dispExtra2_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        dispExtra2_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string dispExtra3 = 22;
+    public static final int DISPEXTRA3_FIELD_NUMBER = 22;
+    private java.lang.Object dispExtra3_;
+    public boolean hasDispExtra3() {
+      return ((bitField0_ &amp; 0x00080000) == 0x00080000);
+    }
+    public String getDispExtra3() {
+      java.lang.Object ref = dispExtra3_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          dispExtra3_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getDispExtra3Bytes() {
+      java.lang.Object ref = dispExtra3_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        dispExtra3_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional float dispFextra1 = 23;
+    public static final int DISPFEXTRA1_FIELD_NUMBER = 23;
+    private float dispFextra1_;
+    public boolean hasDispFextra1() {
+      return ((bitField0_ &amp; 0x00100000) == 0x00100000);
+    }
+    public float getDispFextra1() {
+      return dispFextra1_;
+    }
+    
+    // optional int32 dispSortIndex = 24;
+    public static final int DISPSORTINDEX_FIELD_NUMBER = 24;
+    private int dispSortIndex_;
+    public boolean hasDispSortIndex() {
+      return ((bitField0_ &amp; 0x00200000) == 0x00200000);
+    }
+    public int getDispSortIndex() {
+      return dispSortIndex_;
+    }
+    
+    // optional int32 actionType = 25;
+    public static final int ACTIONTYPE_FIELD_NUMBER = 25;
+    private int actionType_;
+    public boolean hasActionType() {
+      return ((bitField0_ &amp; 0x00400000) == 0x00400000);
+    }
+    public int getActionType() {
+      return actionType_;
+    }
+    
+    // optional string actionParameter = 26;
+    public static final int ACTIONPARAMETER_FIELD_NUMBER = 26;
+    private java.lang.Object actionParameter_;
+    public boolean hasActionParameter() {
+      return ((bitField0_ &amp; 0x00800000) == 0x00800000);
+    }
+    public String getActionParameter() {
+      java.lang.Object ref = actionParameter_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          actionParameter_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getActionParameterBytes() {
+      java.lang.Object ref = actionParameter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        actionParameter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      zoneId_ = 0;
+      guid_ = "";
+      mapId_ = 0;
+      zoneTypeId_ = 0;
+      comments_ = "";
+      zoomMin_ = 0;
+      zoomMax_ = 0;
+      z_ = 0;
+      polygon_ = java.util.Collections.emptyList();
+      coord_ = com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.getDefaultInstance();
+      isHiddenZone_ = false;
+      tilesList_ = java.util.Collections.emptyList();
+      extra1_ = "";
+      extra2_ = "";
+      extra3_ = "";
+      extra4_ = "";
+      extra5_ = "";
+      fextra1_ = 0F;
+      dispLabel_ = "";
+      dispExtra1_ = "";
+      dispExtra2_ = "";
+      dispExtra3_ = "";
+      dispFextra1_ = 0F;
+      dispSortIndex_ = 0;
+      actionType_ = 0;
+      actionParameter_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasZoneId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasGuid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMapId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasZoneTypeId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasZoomMin()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasZoomMax()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasZ()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCoord()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasIsHiddenZone()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i &lt; getPolygonCount(); i++) {
+        if (!getPolygon(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (!getCoord().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i &lt; getTilesListCount(); i++) {
+        if (!getTilesList(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, zoneId_);
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getGuidBytes());
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, mapId_);
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, zoneTypeId_);
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getCommentsBytes());
+      }
+      if (((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+        output.writeInt32(6, zoomMin_);
+      }
+      if (((bitField0_ &amp; 0x00000040) == 0x00000040)) {
+        output.writeInt32(7, zoomMax_);
+      }
+      if (((bitField0_ &amp; 0x00000080) == 0x00000080)) {
+        output.writeInt32(8, z_);
+      }
+      for (int i = 0; i &lt; polygon_.size(); i++) {
+        output.writeMessage(9, polygon_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000100) == 0x00000100)) {
+        output.writeMessage(10, coord_);
+      }
+      if (((bitField0_ &amp; 0x00000200) == 0x00000200)) {
+        output.writeBool(11, isHiddenZone_);
+      }
+      for (int i = 0; i &lt; tilesList_.size(); i++) {
+        output.writeMessage(12, tilesList_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000400) == 0x00000400)) {
+        output.writeBytes(13, getExtra1Bytes());
+      }
+      if (((bitField0_ &amp; 0x00000800) == 0x00000800)) {
+        output.writeBytes(14, getExtra2Bytes());
+      }
+      if (((bitField0_ &amp; 0x00001000) == 0x00001000)) {
+        output.writeBytes(15, getExtra3Bytes());
+      }
+      if (((bitField0_ &amp; 0x00002000) == 0x00002000)) {
+        output.writeBytes(16, getExtra4Bytes());
+      }
+      if (((bitField0_ &amp; 0x00004000) == 0x00004000)) {
+        output.writeBytes(17, getExtra5Bytes());
+      }
+      if (((bitField0_ &amp; 0x00008000) == 0x00008000)) {
+        output.writeFloat(18, fextra1_);
+      }
+      if (((bitField0_ &amp; 0x00010000) == 0x00010000)) {
+        output.writeBytes(19, getDispLabelBytes());
+      }
+      if (((bitField0_ &amp; 0x00020000) == 0x00020000)) {
+        output.writeBytes(20, getDispExtra1Bytes());
+      }
+      if (((bitField0_ &amp; 0x00040000) == 0x00040000)) {
+        output.writeBytes(21, getDispExtra2Bytes());
+      }
+      if (((bitField0_ &amp; 0x00080000) == 0x00080000)) {
+        output.writeBytes(22, getDispExtra3Bytes());
+      }
+      if (((bitField0_ &amp; 0x00100000) == 0x00100000)) {
+        output.writeFloat(23, dispFextra1_);
+      }
+      if (((bitField0_ &amp; 0x00200000) == 0x00200000)) {
+        output.writeInt32(24, dispSortIndex_);
+      }
+      if (((bitField0_ &amp; 0x00400000) == 0x00400000)) {
+        output.writeInt32(25, actionType_);
+      }
+      if (((bitField0_ &amp; 0x00800000) == 0x00800000)) {
+        output.writeBytes(26, getActionParameterBytes());
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, zoneId_);
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getGuidBytes());
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, mapId_);
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, zoneTypeId_);
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getCommentsBytes());
+      }
+      if (((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, zoomMin_);
+      }
+      if (((bitField0_ &amp; 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, zoomMax_);
+      }
+      if (((bitField0_ &amp; 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, z_);
+      }
+      for (int i = 0; i &lt; polygon_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, polygon_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, coord_);
+      }
+      if (((bitField0_ &amp; 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, isHiddenZone_);
+      }
+      for (int i = 0; i &lt; tilesList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, tilesList_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, getExtra1Bytes());
+      }
+      if (((bitField0_ &amp; 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(14, getExtra2Bytes());
+      }
+      if (((bitField0_ &amp; 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(15, getExtra3Bytes());
+      }
+      if (((bitField0_ &amp; 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(16, getExtra4Bytes());
+      }
+      if (((bitField0_ &amp; 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(17, getExtra5Bytes());
+      }
+      if (((bitField0_ &amp; 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(18, fextra1_);
+      }
+      if (((bitField0_ &amp; 0x00010000) == 0x00010000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(19, getDispLabelBytes());
+      }
+      if (((bitField0_ &amp; 0x00020000) == 0x00020000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(20, getDispExtra1Bytes());
+      }
+      if (((bitField0_ &amp; 0x00040000) == 0x00040000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(21, getDispExtra2Bytes());
+      }
+      if (((bitField0_ &amp; 0x00080000) == 0x00080000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(22, getDispExtra3Bytes());
+      }
+      if (((bitField0_ &amp; 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(23, dispFextra1_);
+      }
+      if (((bitField0_ &amp; 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(24, dispSortIndex_);
+      }
+      if (((bitField0_ &amp; 0x00400000) == 0x00400000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(25, actionType_);
+      }
+      if (((bitField0_ &amp; 0x00800000) == 0x00800000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(26, getActionParameterBytes());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone, Builder&gt;
+        implements com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZoneOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        zoneId_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        guid_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        mapId_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        zoneTypeId_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        comments_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        zoomMin_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000020);
+        zoomMax_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000040);
+        z_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000080);
+        polygon_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000100);
+        coord_ = com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.getDefaultInstance();
+        bitField0_ = (bitField0_ &amp; ~0x00000200);
+        isHiddenZone_ = false;
+        bitField0_ = (bitField0_ &amp; ~0x00000400);
+        tilesList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000800);
+        extra1_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00001000);
+        extra2_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00002000);
+        extra3_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00004000);
+        extra4_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00008000);
+        extra5_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00010000);
+        fextra1_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00020000);
+        dispLabel_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00040000);
+        dispExtra1_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00080000);
+        dispExtra2_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00100000);
+        dispExtra3_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00200000);
+        dispFextra1_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00400000);
+        dispSortIndex_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00800000);
+        actionType_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x01000000);
+        actionParameter_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x02000000);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone build() {
+        com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone buildPartial() {
+        com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone result = new com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.zoneId_ = zoneId_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.guid_ = guid_;
+        if (((from_bitField0_ &amp; 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.mapId_ = mapId_;
+        if (((from_bitField0_ &amp; 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.zoneTypeId_ = zoneTypeId_;
+        if (((from_bitField0_ &amp; 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.comments_ = comments_;
+        if (((from_bitField0_ &amp; 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.zoomMin_ = zoomMin_;
+        if (((from_bitField0_ &amp; 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.zoomMax_ = zoomMax_;
+        if (((from_bitField0_ &amp; 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.z_ = z_;
+        if (((bitField0_ &amp; 0x00000100) == 0x00000100)) {
+          polygon_ = java.util.Collections.unmodifiableList(polygon_);
+          bitField0_ = (bitField0_ &amp; ~0x00000100);
+        }
+        result.polygon_ = polygon_;
+        if (((from_bitField0_ &amp; 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.coord_ = coord_;
+        if (((from_bitField0_ &amp; 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.isHiddenZone_ = isHiddenZone_;
+        if (((bitField0_ &amp; 0x00000800) == 0x00000800)) {
+          tilesList_ = java.util.Collections.unmodifiableList(tilesList_);
+          bitField0_ = (bitField0_ &amp; ~0x00000800);
+        }
+        result.tilesList_ = tilesList_;
+        if (((from_bitField0_ &amp; 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.extra1_ = extra1_;
+        if (((from_bitField0_ &amp; 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.extra2_ = extra2_;
+        if (((from_bitField0_ &amp; 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.extra3_ = extra3_;
+        if (((from_bitField0_ &amp; 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        result.extra4_ = extra4_;
+        if (((from_bitField0_ &amp; 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.extra5_ = extra5_;
+        if (((from_bitField0_ &amp; 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        result.fextra1_ = fextra1_;
+        if (((from_bitField0_ &amp; 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00010000;
+        }
+        result.dispLabel_ = dispLabel_;
+        if (((from_bitField0_ &amp; 0x00080000) == 0x00080000)) {
+          to_bitField0_ |= 0x00020000;
+        }
+        result.dispExtra1_ = dispExtra1_;
+        if (((from_bitField0_ &amp; 0x00100000) == 0x00100000)) {
+          to_bitField0_ |= 0x00040000;
+        }
+        result.dispExtra2_ = dispExtra2_;
+        if (((from_bitField0_ &amp; 0x00200000) == 0x00200000)) {
+          to_bitField0_ |= 0x00080000;
+        }
+        result.dispExtra3_ = dispExtra3_;
+        if (((from_bitField0_ &amp; 0x00400000) == 0x00400000)) {
+          to_bitField0_ |= 0x00100000;
+        }
+        result.dispFextra1_ = dispFextra1_;
+        if (((from_bitField0_ &amp; 0x00800000) == 0x00800000)) {
+          to_bitField0_ |= 0x00200000;
+        }
+        result.dispSortIndex_ = dispSortIndex_;
+        if (((from_bitField0_ &amp; 0x01000000) == 0x01000000)) {
+          to_bitField0_ |= 0x00400000;
+        }
+        result.actionType_ = actionType_;
+        if (((from_bitField0_ &amp; 0x02000000) == 0x02000000)) {
+          to_bitField0_ |= 0x00800000;
+        }
+        result.actionParameter_ = actionParameter_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone other) {
+        if (other == com.insiteo.lbs.protobuf.model.map.ProtoMapZone.PBMapZone.getDefaultInstance()) return this;
+        if (other.hasZoneId()) {
+          setZoneId(other.getZoneId());
+        }
+        if (other.hasGuid()) {
+          setGuid(other.getGuid());
+        }
+        if (other.hasMapId()) {
+          setMapId(other.getMapId());
+        }
+        if (other.hasZoneTypeId()) {
+          setZoneTypeId(other.getZoneTypeId());
+        }
+        if (other.hasComments()) {
+          setComments(other.getComments());
+        }
+        if (other.hasZoomMin()) {
+          setZoomMin(other.getZoomMin());
+        }
+        if (other.hasZoomMax()) {
+          setZoomMax(other.getZoomMax());
+        }
+        if (other.hasZ()) {
+          setZ(other.getZ());
+        }
+        if (!other.polygon_.isEmpty()) {
+          if (polygon_.isEmpty()) {
+            polygon_ = other.polygon_;
+            bitField0_ = (bitField0_ &amp; ~0x00000100);
+          } else {
+            ensurePolygonIsMutable();
+            polygon_.addAll(other.polygon_);
+          }
+          
+        }
+        if (other.hasCoord()) {
+          mergeCoord(other.getCoord());
+        }
+        if (other.hasIsHiddenZone()) {
+          setIsHiddenZone(other.getIsHiddenZone());
+        }
+        if (!other.tilesList_.isEmpty()) {
+          if (tilesList_.isEmpty()) {
+            tilesList_ = other.tilesList_;
+            bitField0_ = (bitField0_ &amp; ~0x00000800);
+          } else {
+            ensureTilesListIsMutable();
+            tilesList_.addAll(other.tilesList_);
+          }
+          
+        }
+        if (other.hasExtra1()) {
+          setExtra1(other.getExtra1());
+        }
+        if (other.hasExtra2()) {
+          setExtra2(other.getExtra2());
+        }
+        if (other.hasExtra3()) {
+          setExtra3(other.getExtra3());
+        }
+        if (other.hasExtra4()) {
+          setExtra4(other.getExtra4());
+        }
+        if (other.hasExtra5()) {
+          setExtra5(other.getExtra5());
+        }
+        if (other.hasFextra1()) {
+          setFextra1(other.getFextra1());
+        }
+        if (other.hasDispLabel()) {
+          setDispLabel(other.getDispLabel());
+        }
+        if (other.hasDispExtra1()) {
+          setDispExtra1(other.getDispExtra1());
+        }
+        if (other.hasDispExtra2()) {
+          setDispExtra2(other.getDispExtra2());
+        }
+        if (other.hasDispExtra3()) {
+          setDispExtra3(other.getDispExtra3());
+        }
+        if (other.hasDispFextra1()) {
+          setDispFextra1(other.getDispFextra1());
+        }
+        if (other.hasDispSortIndex()) {
+          setDispSortIndex(other.getDispSortIndex());
+        }
+        if (other.hasActionType()) {
+          setActionType(other.getActionType());
+        }
+        if (other.hasActionParameter()) {
+          setActionParameter(other.getActionParameter());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasZoneId()) {
+          
+          return false;
+        }
+        if (!hasGuid()) {
+          
+          return false;
+        }
+        if (!hasMapId()) {
+          
+          return false;
+        }
+        if (!hasZoneTypeId()) {
+          
+          return false;
+        }
+        if (!hasZoomMin()) {
+          
+          return false;
+        }
+        if (!hasZoomMax()) {
+          
+          return false;
+        }
+        if (!hasZ()) {
+          
+          return false;
+        }
+        if (!hasCoord()) {
+          
+          return false;
+        }
+        if (!hasIsHiddenZone()) {
+          
+          return false;
+        }
+        for (int i = 0; i &lt; getPolygonCount(); i++) {
+          if (!getPolygon(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (!getCoord().isInitialized()) {
+          
+          return false;
+        }
+        for (int i = 0; i &lt; getTilesListCount(); i++) {
+          if (!getTilesList(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              zoneId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              guid_ = input.readBytes();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              mapId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              zoneTypeId_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              comments_ = input.readBytes();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              zoomMin_ = input.readInt32();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              zoomMax_ = input.readInt32();
+              break;
+            }
+            case 64: {
+              bitField0_ |= 0x00000080;
+              z_ = input.readInt32();
+              break;
+            }
+            case 74: {
+              com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.Builder subBuilder = com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addPolygon(subBuilder.buildPartial());
+              break;
+            }
+            case 82: {
+              com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.Builder subBuilder = com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.newBuilder();
+              if (hasCoord()) {
+                subBuilder.mergeFrom(getCoord());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setCoord(subBuilder.buildPartial());
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000400;
+              isHiddenZone_ = input.readBool();
+              break;
+            }
+            case 98: {
+              com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile.Builder subBuilder = com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addTilesList(subBuilder.buildPartial());
+              break;
+            }
+            case 106: {
+              bitField0_ |= 0x00001000;
+              extra1_ = input.readBytes();
+              break;
+            }
+            case 114: {
+              bitField0_ |= 0x00002000;
+              extra2_ = input.readBytes();
+              break;
+            }
+            case 122: {
+              bitField0_ |= 0x00004000;
+              extra3_ = input.readBytes();
+              break;
+            }
+            case 130: {
+              bitField0_ |= 0x00008000;
+              extra4_ = input.readBytes();
+              break;
+            }
+            case 138: {
+              bitField0_ |= 0x00010000;
+              extra5_ = input.readBytes();
+              break;
+            }
+            case 149: {
+              bitField0_ |= 0x00020000;
+              fextra1_ = input.readFloat();
+              break;
+            }
+            case 154: {
+              bitField0_ |= 0x00040000;
+              dispLabel_ = input.readBytes();
+              break;
+            }
+            case 162: {
+              bitField0_ |= 0x00080000;
+              dispExtra1_ = input.readBytes();
+              break;
+            }
+            case 170: {
+              bitField0_ |= 0x00100000;
+              dispExtra2_ = input.readBytes();
+              break;
+            }
+            case 178: {
+              bitField0_ |= 0x00200000;
+              dispExtra3_ = input.readBytes();
+              break;
+            }
+            case 189: {
+              bitField0_ |= 0x00400000;
+              dispFextra1_ = input.readFloat();
+              break;
+            }
+            case 192: {
+              bitField0_ |= 0x00800000;
+              dispSortIndex_ = input.readInt32();
+              break;
+            }
+            case 200: {
+              bitField0_ |= 0x01000000;
+              actionType_ = input.readInt32();
+              break;
+            }
+            case 210: {
+              bitField0_ |= 0x02000000;
+              actionParameter_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int32 zoneId = 1;
+      private int zoneId_ ;
+      public boolean hasZoneId() {
+        return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+      }
+      public int getZoneId() {
+        return zoneId_;
+      }
+      public Builder setZoneId(int value) {
+        bitField0_ |= 0x00000001;
+        zoneId_ = value;
+        
+        return this;
+      }
+      public Builder clearZoneId() {
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        zoneId_ = 0;
+        
+        return this;
+      }
+      
+      // required string guid = 2;
+      private java.lang.Object guid_ = "";
+      public boolean hasGuid() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public String getGuid() {
+        java.lang.Object ref = guid_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          guid_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setGuid(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        guid_ = value;
+        
+        return this;
+      }
+      public Builder clearGuid() {
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        guid_ = getDefaultInstance().getGuid();
+        
+        return this;
+      }
+      void setGuid(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        guid_ = value;
+        
+      }
+      
+      // required int32 mapId = 3;
+      private int mapId_ ;
+      public boolean hasMapId() {
+        return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+      }
+      public int getMapId() {
+        return mapId_;
+      }
+      public Builder setMapId(int value) {
+        bitField0_ |= 0x00000004;
+        mapId_ = value;
+        
+        return this;
+      }
+      public Builder clearMapId() {
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        mapId_ = 0;
+        
+        return this;
+      }
+      
+      // required int32 zoneTypeId = 4;
+      private int zoneTypeId_ ;
+      public boolean hasZoneTypeId() {
+        return ((bitField0_ &amp; 0x00000008) == 0x00000008);
+      }
+      public int getZoneTypeId() {
+        return zoneTypeId_;
+      }
+      public Builder setZoneTypeId(int value) {
+        bitField0_ |= 0x00000008;
+        zoneTypeId_ = value;
+        
+        return this;
+      }
+      public Builder clearZoneTypeId() {
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        zoneTypeId_ = 0;
+        
+        return this;
+      }
+      
+      // optional string comments = 5;
+      private java.lang.Object comments_ = "";
+      public boolean hasComments() {
+        return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+      }
+      public String getComments() {
+        java.lang.Object ref = comments_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          comments_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setComments(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        comments_ = value;
+        
+        return this;
+      }
+      public Builder clearComments() {
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        comments_ = getDefaultInstance().getComments();
+        
+        return this;
+      }
+      void setComments(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
+        comments_ = value;
+        
+      }
+      
+      // required int32 zoomMin = 6;
+      private int zoomMin_ ;
+      public boolean hasZoomMin() {
+        return ((bitField0_ &amp; 0x00000020) == 0x00000020);
+      }
+      public int getZoomMin() {
+        return zoomMin_;
+      }
+      public Builder setZoomMin(int value) {
+        bitField0_ |= 0x00000020;
+        zoomMin_ = value;
+        
+        return this;
+      }
+      public Builder clearZoomMin() {
+        bitField0_ = (bitField0_ &amp; ~0x00000020);
+        zoomMin_ = 0;
+        
+        return this;
+      }
+      
+      // required int32 zoomMax = 7;
+      private int zoomMax_ ;
+      public boolean hasZoomMax() {
+        return ((bitField0_ &amp; 0x00000040) == 0x00000040);
+      }
+      public int getZoomMax() {
+        return zoomMax_;
+      }
+      public Builder setZoomMax(int value) {
+        bitField0_ |= 0x00000040;
+        zoomMax_ = value;
+        
+        return this;
+      }
+      public Builder clearZoomMax() {
+        bitField0_ = (bitField0_ &amp; ~0x00000040);
+        zoomMax_ = 0;
+        
+        return this;
+      }
+      
+      // required int32 z = 8;
+      private int z_ ;
+      public boolean hasZ() {
+        return ((bitField0_ &amp; 0x00000080) == 0x00000080);
+      }
+      public int getZ() {
+        return z_;
+      }
+      public Builder setZ(int value) {
+        bitField0_ |= 0x00000080;
+        z_ = value;
+        
+        return this;
+      }
+      public Builder clearZ() {
+        bitField0_ = (bitField0_ &amp; ~0x00000080);
+        z_ = 0;
+        
+        return this;
+      }
+      
+      // repeated .com.insiteo.lbs.protobuf.model.map.PBMapPoint polygon = 9;
+      private java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint&gt; polygon_ =
+        java.util.Collections.emptyList();
+      private void ensurePolygonIsMutable() {
+        if (!((bitField0_ &amp; 0x00000100) == 0x00000100)) {
+          polygon_ = new java.util.ArrayList&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint&gt;(polygon_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+      
+      public java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint&gt; getPolygonList() {
+        return java.util.Collections.unmodifiableList(polygon_);
+      }
+      public int getPolygonCount() {
+        return polygon_.size();
+      }
+      public com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint getPolygon(int index) {
+        return polygon_.get(index);
+      }
+      public Builder setPolygon(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolygonIsMutable();
+        polygon_.set(index, value);
+        
+        return this;
+      }
+      public Builder setPolygon(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.Builder builderForValue) {
+        ensurePolygonIsMutable();
+        polygon_.set(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addPolygon(com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolygonIsMutable();
+        polygon_.add(value);
+        
+        return this;
+      }
+      public Builder addPolygon(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolygonIsMutable();
+        polygon_.add(index, value);
+        
+        return this;
+      }
+      public Builder addPolygon(
+          com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.Builder builderForValue) {
+        ensurePolygonIsMutable();
+        polygon_.add(builderForValue.build());
+        
+        return this;
+      }
+      public Builder addPolygon(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.Builder builderForValue) {
+        ensurePolygonIsMutable();
+        polygon_.add(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addAllPolygon(
+          java.lang.Iterable&lt;? extends com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint&gt; values) {
+        ensurePolygonIsMutable();
+        super.addAll(values, polygon_);
+        
+        return this;
+      }
+      public Builder clearPolygon() {
+        polygon_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000100);
+        
+        return this;
+      }
+      public Builder removePolygon(int index) {
+        ensurePolygonIsMutable();
+        polygon_.remove(index);
+        
+        return this;
+      }
+      
+      // required .com.insiteo.lbs.protobuf.model.map.PBMapPoint coord = 10;
+      private com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint coord_ = com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.getDefaultInstance();
+      public boolean hasCoord() {
+        return ((bitField0_ &amp; 0x00000200) == 0x00000200);
+      }
+      public com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint getCoord() {
+        return coord_;
+      }
+      public Builder setCoord(com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        coord_ = value;
+        
+        bitField0_ |= 0x00000200;
+        return this;
+      }
+      public Builder setCoord(
+          com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.Builder builderForValue) {
+        coord_ = builderForValue.build();
+        
+        bitField0_ |= 0x00000200;
+        return this;
+      }
+      public Builder mergeCoord(com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint value) {
+        if (((bitField0_ &amp; 0x00000200) == 0x00000200) &amp;&amp;
+            coord_ != com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.getDefaultInstance()) {
+          coord_ =
+            com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.newBuilder(coord_).mergeFrom(value).buildPartial();
+        } else {
+          coord_ = value;
+        }
+        
+        bitField0_ |= 0x00000200;
+        return this;
+      }
+      public Builder clearCoord() {
+        coord_ = com.insiteo.lbs.protobuf.model.map.ProtoMapPoint.PBMapPoint.getDefaultInstance();
+        
+        bitField0_ = (bitField0_ &amp; ~0x00000200);
+        return this;
+      }
+      
+      // required bool isHiddenZone = 11;
+      private boolean isHiddenZone_ ;
+      public boolean hasIsHiddenZone() {
+        return ((bitField0_ &amp; 0x00000400) == 0x00000400);
+      }
+      public boolean getIsHiddenZone() {
+        return isHiddenZone_;
+      }
+      public Builder setIsHiddenZone(boolean value) {
+        bitField0_ |= 0x00000400;
+        isHiddenZone_ = value;
+        
+        return this;
+      }
+      public Builder clearIsHiddenZone() {
+        bitField0_ = (bitField0_ &amp; ~0x00000400);
+        isHiddenZone_ = false;
+        
+        return this;
+      }
+      
+      // repeated .com.insiteo.lbs.protobuf.model.map.PBMapTile tilesList = 12;
+      private java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile&gt; tilesList_ =
+        java.util.Collections.emptyList();
+      private void ensureTilesListIsMutable() {
+        if (!((bitField0_ &amp; 0x00000800) == 0x00000800)) {
+          tilesList_ = new java.util.ArrayList&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile&gt;(tilesList_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+      
+      public java.util.List&lt;com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile&gt; getTilesListList() {
+        return java.util.Collections.unmodifiableList(tilesList_);
+      }
+      public int getTilesListCount() {
+        return tilesList_.size();
+      }
+      public com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile getTilesList(int index) {
+        return tilesList_.get(index);
+      }
+      public Builder setTilesList(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTilesListIsMutable();
+        tilesList_.set(index, value);
+        
+        return this;
+      }
+      public Builder setTilesList(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile.Builder builderForValue) {
+        ensureTilesListIsMutable();
+        tilesList_.set(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addTilesList(com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTilesListIsMutable();
+        tilesList_.add(value);
+        
+        return this;
+      }
+      public Builder addTilesList(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTilesListIsMutable();
+        tilesList_.add(index, value);
+        
+        return this;
+      }
+      public Builder addTilesList(
+          com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile.Builder builderForValue) {
+        ensureTilesListIsMutable();
+        tilesList_.add(builderForValue.build());
+        
+        return this;
+      }
+      public Builder addTilesList(
+          int index, com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile.Builder builderForValue) {
+        ensureTilesListIsMutable();
+        tilesList_.add(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addAllTilesList(
+          java.lang.Iterable&lt;? extends com.insiteo.lbs.protobuf.model.map.ProtoMapTile.PBMapTile&gt; values) {
+        ensureTilesListIsMutable();
+        super.addAll(values, tilesList_);
+        
+        return this;
+      }
+      public Builder clearTilesList() {
+        tilesList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000800);
+        
+        return this;
+      }
+      public Builder removeTilesList(int index) {
+        ensureTilesListIsMutable();
+        tilesList_.remove(index);
+        
+        return this;
+      }
+      
+      // optional string extra1 = 13;
+      private java.lang.Object extra1_ = "";
+      public boolean hasExtra1() {
+        return ((bitField0_ &amp; 0x00001000) == 0x00001000);
+      }
+      public String getExtra1() {
+        java.lang.Object ref = extra1_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra1_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra1(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        extra1_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra1() {
+        bitField0_ = (bitField0_ &amp; ~0x00001000);
+        extra1_ = getDefaultInstance().getExtra1();
+        
+        return this;
+      }
+      void setExtra1(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00001000;
+        extra1_ = value;
+        
+      }
+      
+      // optional string extra2 = 14;
+      private java.lang.Object extra2_ = "";
+      public boolean hasExtra2() {
+        return ((bitField0_ &amp; 0x00002000) == 0x00002000);
+      }
+      public String getExtra2() {
+        java.lang.Object ref = extra2_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra2_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra2(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        extra2_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra2() {
+        bitField0_ = (bitField0_ &amp; ~0x00002000);
+        extra2_ = getDefaultInstance().getExtra2();
+        
+        return this;
+      }
+      void setExtra2(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00002000;
+        extra2_ = value;
+        
+      }
+      
+      // optional string extra3 = 15;
+      private java.lang.Object extra3_ = "";
+      public boolean hasExtra3() {
+        return ((bitField0_ &amp; 0x00004000) == 0x00004000);
+      }
+      public String getExtra3() {
+        java.lang.Object ref = extra3_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra3_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra3(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
+        extra3_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra3() {
+        bitField0_ = (bitField0_ &amp; ~0x00004000);
+        extra3_ = getDefaultInstance().getExtra3();
+        
+        return this;
+      }
+      void setExtra3(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00004000;
+        extra3_ = value;
+        
+      }
+      
+      // optional string extra4 = 16;
+      private java.lang.Object extra4_ = "";
+      public boolean hasExtra4() {
+        return ((bitField0_ &amp; 0x00008000) == 0x00008000);
+      }
+      public String getExtra4() {
+        java.lang.Object ref = extra4_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra4_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra4(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00008000;
+        extra4_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra4() {
+        bitField0_ = (bitField0_ &amp; ~0x00008000);
+        extra4_ = getDefaultInstance().getExtra4();
+        
+        return this;
+      }
+      void setExtra4(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00008000;
+        extra4_ = value;
+        
+      }
+      
+      // optional string extra5 = 17;
+      private java.lang.Object extra5_ = "";
+      public boolean hasExtra5() {
+        return ((bitField0_ &amp; 0x00010000) == 0x00010000);
+      }
+      public String getExtra5() {
+        java.lang.Object ref = extra5_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra5_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra5(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00010000;
+        extra5_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra5() {
+        bitField0_ = (bitField0_ &amp; ~0x00010000);
+        extra5_ = getDefaultInstance().getExtra5();
+        
+        return this;
+      }
+      void setExtra5(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00010000;
+        extra5_ = value;
+        
+      }
+      
+      // optional float fextra1 = 18;
+      private float fextra1_ ;
+      public boolean hasFextra1() {
+        return ((bitField0_ &amp; 0x00020000) == 0x00020000);
+      }
+      public float getFextra1() {
+        return fextra1_;
+      }
+      public Builder setFextra1(float value) {
+        bitField0_ |= 0x00020000;
+        fextra1_ = value;
+        
+        return this;
+      }
+      public Builder clearFextra1() {
+        bitField0_ = (bitField0_ &amp; ~0x00020000);
+        fextra1_ = 0F;
+        
+        return this;
+      }
+      
+      // optional string dispLabel = 19;
+      private java.lang.Object dispLabel_ = "";
+      public boolean hasDispLabel() {
+        return ((bitField0_ &amp; 0x00040000) == 0x00040000);
+      }
+      public String getDispLabel() {
+        java.lang.Object ref = dispLabel_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          dispLabel_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setDispLabel(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00040000;
+        dispLabel_ = value;
+        
+        return this;
+      }
+      public Builder clearDispLabel() {
+        bitField0_ = (bitField0_ &amp; ~0x00040000);
+        dispLabel_ = getDefaultInstance().getDispLabel();
+        
+        return this;
+      }
+      void setDispLabel(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00040000;
+        dispLabel_ = value;
+        
+      }
+      
+      // optional string dispExtra1 = 20;
+      private java.lang.Object dispExtra1_ = "";
+      public boolean hasDispExtra1() {
+        return ((bitField0_ &amp; 0x00080000) == 0x00080000);
+      }
+      public String getDispExtra1() {
+        java.lang.Object ref = dispExtra1_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          dispExtra1_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setDispExtra1(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00080000;
+        dispExtra1_ = value;
+        
+        return this;
+      }
+      public Builder clearDispExtra1() {
+        bitField0_ = (bitField0_ &amp; ~0x00080000);
+        dispExtra1_ = getDefaultInstance().getDispExtra1();
+        
+        return this;
+      }
+      void setDispExtra1(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00080000;
+        dispExtra1_ = value;
+        
+      }
+      
+      // optional string dispExtra2 = 21;
+      private java.lang.Object dispExtra2_ = "";
+      public boolean hasDispExtra2() {
+        return ((bitField0_ &amp; 0x00100000) == 0x00100000);
+      }
+      public String getDispExtra2() {
+        java.lang.Object ref = dispExtra2_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          dispExtra2_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setDispExtra2(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00100000;
+        dispExtra2_ = value;
+        
+        return this;
+      }
+      public Builder clearDispExtra2() {
+        bitField0_ = (bitField0_ &amp; ~0x00100000);
+        dispExtra2_ = getDefaultInstance().getDispExtra2();
+        
+        return this;
+      }
+      void setDispExtra2(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00100000;
+        dispExtra2_ = value;
+        
+      }
+      
+      // optional string dispExtra3 = 22;
+      private java.lang.Object dispExtra3_ = "";
+      public boolean hasDispExtra3() {
+        return ((bitField0_ &amp; 0x00200000) == 0x00200000);
+      }
+      public String getDispExtra3() {
+        java.lang.Object ref = dispExtra3_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          dispExtra3_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setDispExtra3(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00200000;
+        dispExtra3_ = value;
+        
+        return this;
+      }
+      public Builder clearDispExtra3() {
+        bitField0_ = (bitField0_ &amp; ~0x00200000);
+        dispExtra3_ = getDefaultInstance().getDispExtra3();
+        
+        return this;
+      }
+      void setDispExtra3(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00200000;
+        dispExtra3_ = value;
+        
+      }
+      
+      // optional float dispFextra1 = 23;
+      private float dispFextra1_ ;
+      public boolean hasDispFextra1() {
+        return ((bitField0_ &amp; 0x00400000) == 0x00400000);
+      }
+      public float getDispFextra1() {
+        return dispFextra1_;
+      }
+      public Builder setDispFextra1(float value) {
+        bitField0_ |= 0x00400000;
+        dispFextra1_ = value;
+        
+        return this;
+      }
+      public Builder clearDispFextra1() {
+        bitField0_ = (bitField0_ &amp; ~0x00400000);
+        dispFextra1_ = 0F;
+        
+        return this;
+      }
+      
+      // optional int32 dispSortIndex = 24;
+      private int dispSortIndex_ ;
+      public boolean hasDispSortIndex() {
+        return ((bitField0_ &amp; 0x00800000) == 0x00800000);
+      }
+      public int getDispSortIndex() {
+        return dispSortIndex_;
+      }
+      public Builder setDispSortIndex(int value) {
+        bitField0_ |= 0x00800000;
+        dispSortIndex_ = value;
+        
+        return this;
+      }
+      public Builder clearDispSortIndex() {
+        bitField0_ = (bitField0_ &amp; ~0x00800000);
+        dispSortIndex_ = 0;
+        
+        return this;
+      }
+      
+      // optional int32 actionType = 25;
+      private int actionType_ ;
+      public boolean hasActionType() {
+        return ((bitField0_ &amp; 0x01000000) == 0x01000000);
+      }
+      public int getActionType() {
+        return actionType_;
+      }
+      public Builder setActionType(int value) {
+        bitField0_ |= 0x01000000;
+        actionType_ = value;
+        
+        return this;
+      }
+      public Builder clearActionType() {
+        bitField0_ = (bitField0_ &amp; ~0x01000000);
+        actionType_ = 0;
+        
+        return this;
+      }
+      
+      // optional string actionParameter = 26;
+      private java.lang.Object actionParameter_ = "";
+      public boolean hasActionParameter() {
+        return ((bitField0_ &amp; 0x02000000) == 0x02000000);
+      }
+      public String getActionParameter() {
+        java.lang.Object ref = actionParameter_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          actionParameter_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setActionParameter(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x02000000;
+        actionParameter_ = value;
+        
+        return this;
+      }
+      public Builder clearActionParameter() {
+        bitField0_ = (bitField0_ &amp; ~0x02000000);
+        actionParameter_ = getDefaultInstance().getActionParameter();
+        
+        return this;
+      }
+      void setActionParameter(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x02000000;
+        actionParameter_ = value;
+        
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.model.map.PBMapZone)
+    }
+    
+    static {
+      defaultInstance = new PBMapZone(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.model.map.PBMapZone)
+  }
+  
+  
+  static {
+  }
+  
+  // @@protoc_insertion_point(outer_class_scope)
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

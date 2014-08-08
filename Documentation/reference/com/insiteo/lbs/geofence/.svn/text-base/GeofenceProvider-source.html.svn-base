@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+<title>
+
+  GeofenceProvider
+
+
+| Insiteo API Documentation - Version 3.2.0_RC2
+
+</title>
+<link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/package-summary.html">com.insiteo.lbs.common.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/geofence/IGeofenceListener.html">IGeofenceListener</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/geofence/GeofenceArea.html">GeofenceArea</a></li>
+          <li class="selected api apilevel-"><a href="../../../../com/insiteo/lbs/geofence/GeofenceProvider.html">GeofenceProvider</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/geofence/GeofenceZone.html">GeofenceZone</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="GeofenceProvider.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>GeofenceProvider</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../com/insiteo/lbs/location/ILbsModule.html">ILbsModule</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+package com.insiteo.lbs.geofence;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Stack;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.content.res.Resources;
+import android.os.SystemClock;
+import android.util.SparseArray;
+
+import com.insiteo.lbs.analytics.AnalyticsConstants;
+import com.insiteo.lbs.analytics.AnalyticsManager;
+import com.insiteo.lbs.analytics.entities.AnalyticsGenericEvent;
+import com.insiteo.lbs.common.init.EPackageType;
+import com.insiteo.lbs.common.init.InitProvider;
+import com.insiteo.lbs.common.utils.Log;
+import com.insiteo.lbs.common.utils.geometry.PointD;
+import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.geofence.render.GeofenceAreaRenderer;
+import com.insiteo.lbs.geofence.render.GfxGeofenceArea;
+import com.insiteo.lbs.location.ELocationModule;
+import com.insiteo.lbs.location.ILbsModule;
+import com.insiteo.lbs.location.InsLocation;
+import com.insiteo.lbs.location.LocationProvider;
+import com.insiteo.lbs.location.parser.LbsModuleRequest;
+import com.insiteo.lbs.location.parser.LbsModuleResponse;
+import com.insiteo.lbs.map.entities.Zone;
+import com.insiteo.lbs.map.entities.ZonePoi;
+import com.insiteo.lbs.map.render.IRenderer;
+
+/**
+ * This class handles the geofencing process. You can retrieve an instance of it by calling &lt;code&gt;(GeofenceProvider)LocationProvider.getInstance().getModule(ELocationModule.GEOFENCING)&lt;/code&gt;. 
+ * It provides a way to be notified when location is detected in a certain area (see GeofenceZone), defined on Insiteo servers.
+ * To use this class, you just have to call {@link #setListener(IGeofenceListener)}, and start the location. The listener will then receive notification each time
+ * location enter/stay/leave an area.  
+ */
+public class GeofenceProvider implements ILbsModule {
+
+	private final static String TAG = GeofenceProvider.class.getSimpleName();
+
+	private static int GEOFENCE_DEFAULT_TIME = 3000; // in ms
+	private static int GEOFENCE_DEFAULT_WIDTH = 2; // in meters
+
+	private CoordinatesMode mCoordSystem;
+	private long mTimeToReset;	//in ms
+	private HashMap&lt;Integer, MapSettings&gt; mMapsSettings;
+
+	private SparseArray&lt;GeoPushMapSettings&gt; mGeoPushMapSettings;
+
+	private HashMap&lt;String, GeofenceArea&gt; mGeofenceAreas;
+
+	//	private ArrayList&lt;GeofenceArea&gt; mAreas;
+	private ArrayList&lt;GeofenceZone&gt; mActiveZones;
+	private IGeofenceListener mListener;
+
+//	private volatile boolean mIsInitializing;
+	private volatile boolean mIsInitialized;
+
+	//timer used to reset geofencing, if no location is received for a long duration (mTimeToReset)
+	private class ResetTask extends TimerTask {
+		@Override public void run() {
+			reset();
+		}
+	}
+	private Timer mResetTimer;
+	private ResetTask mResetTask;
+
+	private GeofenceAreaRenderer mRenderer;
+
+
+	/**
+	 * @hide
+	 * Default constructor. Application should not use it directly. 
+	 * Instead use {@link LocationProvider#getModule(ELocationModule)} with GEOFENCING flag.
+	 */
+	public GeofenceProvider() {
+		mResetTimer = new Timer();
+
+		clear();          
+	}
+
+	/**
+	 * Get GeofenceProvider initialization status
+	 * @return true if GeofenceProvider is initialized, false otherwise.
+	 */
+	public boolean isInitialized() {
+		return mIsInitialized;
+	}
+
+	/**
+	 * Set listener to be notified on new geofencing events
+	 * @param aListener the listener that will receive notifications. If null, no notification will be sent.
+	 */
+	public void setListener(IGeofenceListener aListener) {
+		mListener = aListener;
+	}
+
+
+	//******************************************************************************************************************
+	//  geofencing
+	// *****************************************************************************************************************
+
+	private boolean init() {
+		String dataDir = InitProvider.getInstance().getDataDirPath() + "/" + EPackageType.GEOFENCING.getDirName();
+
+		GeofenceInitParser initParser = new GeofenceInitParser();
+		boolean configLoaded = initParser.parseConfig(dataDir);
+		boolean mapsLoaded = initParser.parseMaps(dataDir);
+		boolean protoLoaded = initParser.parseProtoFile(dataDir);
+		boolean geoPushLoaded = initParser.parseGeoPush(dataDir);
+
+
+		if (configLoaded &amp;&amp; mapsLoaded &amp;&amp; protoLoaded /*&amp;&amp; geoPushLoaded*/) {
+			mCoordSystem = initParser.getCoordSystem();
+			mTimeToReset = initParser.getTimeToReset();
+			mMapsSettings = initParser.getMapsSettings();
+
+			mGeoPushMapSettings = initParser.getGeoPushMapSettings();
+
+			// Add the protobug geofence zone to the list of the zone handled by the provider
+			ArrayList&lt;GeofenceArea&gt; areas = initParser.getAreas();
+			for (int i = 0; i &lt; areas.size(); i++) {
+				mGeofenceAreas.put(areas.get(i).getGUID(), areas.get(i));
+			}
+
+			if(mRenderer != null) {
+				for (String key : mGeofenceAreas.keySet()) {				
+					GfxGeofenceArea gfxGeofenceArea = new GfxGeofenceArea(mGeofenceAreas.get(key));
+					mRenderer.addRTO(gfxGeofenceArea);	
+				}
+			}
+
+
+			return true;
+		}
+
+		return false;
+	}
+
+	private void reset() {
+		Log.d(TAG, "Reseting active zones");
+		mActiveZones = new ArrayList&lt;GeofenceZone&gt;();
+		if (mListener != null) {
+			new Thread(new Runnable() {
+				@Override public void run() {
+					if (mListener != null) {
+						mListener.onGeofenceDataCleared();
+					}
+				}
+			}).start();
+		}
+	}
+
+	private void runGeofencing(InsLocation aLocation) {
+		int mapID = aLocation.getMapID();
+		MapSettings mapSettings = mMapsSettings.get(mapID);
+		if (mapSettings != null) {
+			//convert loc in internal coordinates (meters)
+			PointD coords = aLocation.getCoord();
+			PointD internCoords = mapSettings.toInternalCoordinates(mCoordSystem, coords.x, coords.y);
+			Position internPos = new Position(mapID, (float)internCoords.x, (float)internCoords.y);
+
+			//get areas that contains this pos
+			Stack&lt;GeofenceArea&gt; detectedAreas = new Stack&lt;GeofenceArea&gt;();
+			for (String key : mGeofenceAreas.keySet()) {
+				GeofenceArea area = mGeofenceAreas.get(key);
+				if (area.containsPosition(internPos)) {
+					detectedAreas.push(area);
+				}
+			}
+
+			//check for each active zone if it has a status update
+			for (GeofenceZone zone : mActiveZones) {
+				String guid = zone.getGUID();
+
+				//search the given zone in the detected areas stack
+				boolean found = false;
+				GeofenceArea area = null;
+				Iterator&lt;GeofenceArea&gt; it = detectedAreas.iterator();
+				while (it.hasNext() &amp;&amp; !found) {
+					GeofenceArea ga = it.next();
+					if (guid.equals(ga.getGUID())) {
+						//this area correspond to an active zone
+						found = true;
+						area = ga;
+						//this areas is done : remove it from the stack
+						it.remove();
+					}
+				}
+
+				//update the zone, depending its detection
+				updateActiveZone(zone, area, found);
+			}
+
+			//check remaining areas in the stack (areas not done yet)
+			for (GeofenceArea area : detectedAreas) {
+				Log.d(TAG, "ADDING new AREA");
+				//this area correspond to no active zone
+				//convert area center in external coordinates (meters)
+				PointD extCoords = mapSettings.toExternalCoordinates(mCoordSystem, area.getCenter().getCoord().x, area.getCenter().getCoord().y);
+				Position extPos = new Position(mapID, (float)extCoords.x, (float)extCoords.y);
+				//create a new active zone and add it to the list
+				GeofenceZone zone = new GeofenceZone(area.getGUID(), extPos, area.getTimeToLeave(), area.isLeaveEnabled(), area.getExtra1(), area.getExtra2(), area.getExtra3());
+				updateActiveZone(zone, area, true);
+				mActiveZones.add(zone);
+			}
+
+			//create lists for notification and remove active zones, if needed
+			final List&lt;GeofenceZone&gt; enteredZones = new ArrayList&lt;GeofenceZone&gt;(3);
+			final List&lt;GeofenceZone&gt; stayedZones = new ArrayList&lt;GeofenceZone&gt;(3);
+			final List&lt;GeofenceZone&gt; leftZones = new ArrayList&lt;GeofenceZone&gt;(3);
+			boolean notify = prepareNotification(enteredZones, stayedZones, leftZones);
+
+
+
+			// Analytics
+			for (int i = 0; i &lt; enteredZones.size(); i++) { //2
+				AnalyticsGenericEvent zoneEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_GEO_FENCING_LABEL);
+				zoneEvent.setString1(enteredZones.get(i).getGUID());
+				zoneEvent.setInt1(2);
+				AnalyticsManager.getInstance().addGenericEvent(zoneEvent);
+			}
+
+			for (int i = 0; i &lt; stayedZones.size(); i++) {//3
+				AnalyticsGenericEvent zoneEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_GEO_FENCING_LABEL);
+				zoneEvent.setString1(stayedZones.get(i).getGUID());
+				zoneEvent.setInt1(3);
+				AnalyticsManager.getInstance().addGenericEvent(zoneEvent);
+			}
+
+			for (int i = 0; i &lt; leftZones.size(); i++) {//5
+				AnalyticsGenericEvent zoneEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_GEO_FENCING_LABEL);
+				zoneEvent.setString1(leftZones.get(i).getGUID());
+				zoneEvent.setInt1(5);
+				AnalyticsManager.getInstance().addGenericEvent(zoneEvent);
+			}
+
+			//notify listener if any
+			if (mListener != null &amp;&amp; notify) {
+				new Thread(new Runnable() {
+					@Override public void run() {
+						if (mListener != null) {
+							mListener.onGeofenceUpdate(enteredZones, stayedZones, leftZones);
+						}
+					}
+				}).start();
+			}
+		}
+	}	
+
+	private void updateActiveZone(GeofenceZone aZone, GeofenceArea aArea, boolean aIsDetected) {
+		long currentTime = SystemClock.elapsedRealtime();
+		if (aIsDetected) {
+			switch (aZone.getEventType()) {
+			case UNDEFINED:
+				aZone.setEventType(EventType.ENTERING);
+				aZone.setEventTime(currentTime);
+				break;
+			case ENTERING:
+				if (currentTime - aZone.getEventTime() &gt; aArea.getTimeToEnter()) {
+					//time inside this zone is long enough =&gt; "enter" it
+					aZone.setEventType(EventType.ENTERED);
+					aZone.setEventTime(currentTime);
+					aZone.setNotify(aArea.isEnterEnabled());
+				}
+				break;
+			case ENTERED:
+				aZone.setEventType(EventType.STAY);
+			case STAY:
+				if (aArea.isStayEnabled()) {
+					if (currentTime - aZone.getEventTime() &gt; aArea.getTimeToStay()) {
+						//time inside this zone is long enough =&gt; "stay" in it
+						aZone.setEventTime(currentTime);
+						aZone.setNotify(aArea.isStayEnabled());
+					}
+				}
+				break;
+			case LEAVING:
+				//position re-entered the zone
+				aZone.setEventType(EventType.STAY);
+				aZone.setEventTime(currentTime);
+				break;
+			case LEFT:
+				aZone.setEventType(EventType.ENTERING);
+				aZone.setEventTime(currentTime);
+				break;
+			}
+		}
+		else {
+			switch (aZone.getEventType()) {
+			case UNDEFINED:
+				break;
+			case ENTERING:
+				aZone.setEventType(EventType.UNDEFINED);
+				break;
+			case ENTERED:
+			case STAY:
+				aZone.setEventType(EventType.LEAVING);
+				aZone.setEventTime(currentTime);
+				break;
+			case LEAVING:
+				if (currentTime - aZone.getEventTime() &gt; aZone.getTimeToLeave()) {
+					//time outside this zone is long enough =&gt; "leave" it
+					aZone.setEventType(EventType.LEFT);
+					aZone.setEventTime(currentTime);
+					aZone.setNotify(aZone.isLeaveEnabled());
+				}
+				break;
+			case LEFT:
+				aZone.setEventType(EventType.UNDEFINED);
+				break;
+			}
+		}		
+	}
+
+	//returns true if a notification is needed (ie : lists are not empty), false otherwise
+	private boolean prepareNotification(List&lt;GeofenceZone&gt; enteredZones, List&lt;GeofenceZone&gt; stayedZones, List&lt;GeofenceZone&gt; leftZones) {
+		boolean notify = false;
+		Iterator&lt;GeofenceZone&gt; it = mActiveZones.iterator();
+		while(it.hasNext()) {
+			GeofenceZone zone = it.next();
+
+			switch (zone.getEventType()) {
+			case UNDEFINED:
+				it.remove();
+				break;
+			case ENTERING:
+				break;
+			case ENTERED:
+				if (zone.getNotify()) {
+					enteredZones.add(zone);
+					zone.setNotify(false);
+					notify = true;
+				}
+				break;
+			case STAY:
+				if (zone.getNotify()) {
+					stayedZones.add(zone);
+					zone.setNotify(false);
+					notify = true;
+				}
+				break;
+			case LEAVING:
+				break;
+			case LEFT:
+				if (zone.getNotify()) {
+					leftZones.add(zone);
+					zone.setNotify(false);
+					notify = true;
+				}
+				it.remove();						
+				break;
+			}	
+		}
+		return notify;
+	}
+
+
+	private GeoPushMapSettings getGeoPushMapSettingsWithZoneID(int zoneId) {
+		//		ISgeopushcustomgeowidth;
+		Zone zone = InitProvider.getInstance().getZone(zoneId);
+
+		if(zone != null &amp;&amp; mGeoPushMapSettings != null) {
+			int mapId = zone.getCenter().getMapID();
+
+			GeoPushMapSettings settings = mGeoPushMapSettings.get(mapId);
+			if(settings != null) {
+				return settings;
+			} else {
+				return new GeoPushMapSettings(true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, GEOFENCE_DEFAULT_WIDTH);
+			}
+		} else {
+			return new GeoPushMapSettings(true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, GEOFENCE_DEFAULT_WIDTH);
+		}
+	}
+
+
+	private GeoPushMapSettings getGeoPushMapSettingsWithMapID(int mapId) {
+
+		if(mGeoPushMapSettings != null) {
+			GeoPushMapSettings settings = mGeoPushMapSettings.get(mapId);
+			if(settings != null) {
+				return settings;
+			} else {
+				return new GeoPushMapSettings(true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, GEOFENCE_DEFAULT_WIDTH);
+			}
+		} else {
+			return new GeoPushMapSettings(true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, true, GEOFENCE_DEFAULT_TIME, GEOFENCE_DEFAULT_WIDTH);
+		}
+	}
+
+	//******************************************************************************************************************
+	//  LbsModule
+	// *****************************************************************************************************************
+
+	@Override
+	public ELocationModule getType() {
+		return ELocationModule.GEOFENCING;
+	}
+
+	@Override
+	/**
+	 * @
+	 */
+	public boolean addLbsModuleRequest(LbsModuleRequest aLocRequest) {
+		return false;
+	}
+
+	@Override
+	/**
+	 * @hide
+	 */
+	public void setLbsResponse(LbsModuleResponse aLocResponse) {
+		//nothing to do
+	}
+
+	@Override
+	public void setLocation(InsLocation aLocation) {
+		//do genfencing only if there is a listener
+		if (mListener != null) {
+
+			if (aLocation != null) {
+				if (!mIsInitialized) {
+//					mIsInitializing = true;
+					new Thread(new Runnable() {
+						@Override public void run() {
+							if (init()) {
+								//init is successful
+								mIsInitialized = true;
+							}
+//							mIsInitializing = false;
+						}
+					}).start();
+				} else {
+					//module is initialized
+					if (mResetTask != null) {
+						//cancel reset task if any
+						mResetTask.cancel();
+						mResetTask = null;
+					}
+					runGeofencing(aLocation);
+				}
+			}
+
+			//schedule a reset if no one is already schedule
+			if (mIsInitialized &amp;&amp; mResetTask == null) {
+				mResetTask = new ResetTask();
+				mResetTimer.schedule(mResetTask, mTimeToReset);
+			}
+		}
+	}
+
+	@Override
+	public void clear() {
+
+		mListener = null;
+
+		mIsInitialized = false;
+		mActiveZones = new ArrayList&lt;GeofenceZone&gt;();
+		mGeofenceAreas = new HashMap&lt;String, GeofenceArea&gt;();
+//		mIsInitializing = false;
+		if (mResetTask != null) {
+			//cancel reset task if any
+			mResetTask.cancel();
+			mResetTask = null;
+		}
+
+		mRenderer = null;
+
+		init();
+	}
+
+
+	//******************************************************************************************************************
+	//  Rendering
+	// *****************************************************************************************************************
+
+	public IRenderer getRenderer(Resources aResources){
+		Log.d("DEBUG", "Retrieving geofence renderer");
+		if (mRenderer == null) {
+			mRenderer = new GeofenceAreaRenderer(aResources);
+		}
+
+		for (String key : mGeofenceAreas.keySet()) {				
+			GfxGeofenceArea gfxGeofenceArea = new GfxGeofenceArea(mGeofenceAreas.get(key));
+			mRenderer.addRTO(gfxGeofenceArea);	
+		}
+
+		return mRenderer;
+	}
+
+	//******************************************************************************************************************
+	//  Dynamic Geofencing
+	// *****************************************************************************************************************
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceZone(int, String, boolean, long, boolean, long, boolean, long)} with 
+	 * enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = GEOFENCE_DEFAULT_TIME.
+	 * @param zoneId The ID of the zone where the content should be added.
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(int zoneId, String content) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithZoneID(zoneId);
+		return addGeofenceArea(zoneId, content, 
+				settings.isEnteredEnabled(), settings.getEnteredTime(), 
+				settings.isStayedEnabled(), settings.getStayedTime(), 
+				settings.isLeftEnabled(), settings.getLeftTime(), 
+				settings.getCustomWidth());
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceZone(int, String, boolean, long, boolean, long, boolean, long)} with 
+	 * enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.
+	 * @param zoneId The ID of the zone where the content should be added.
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @param eventTime The time used to trigged the geofencing events (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(int zoneId, String content, long eventTime) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithZoneID(zoneId);
+		return addGeofenceArea(zoneId, content, 
+				settings.isEnteredEnabled(), eventTime, 
+				settings.isStayedEnabled(), eventTime, 
+				settings.isLeftEnabled(), eventTime, 
+				settings.getCustomWidth());
+	}
+
+	/**
+	 * Creates a new {@link GeofenceArea} and add it to the set of areas handled by the {@link GeofenceProvider}.
+	 * @param zoneId The ID of the zone where the content should be added.
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @param enteredEnabled True if entered event should be enabled.
+	 * @param enteredTime The threshold time to trigger the entered event (in ms).
+	 * @param stayedEnabled True if stayed event should be enabled.
+	 * @param stayedTime The threshold time to trigger the stayed event (in ms).
+	 * @param leaveEnabled True if leave event should be enabled.
+	 * @param leaveTime The threshold time to trigger the leave event (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */ 
+	public GeofenceArea addGeofenceArea(int zoneId, String content, 
+			boolean enteredEnabled, long enteredTime, 
+			boolean stayedEnabled, long stayedTime,
+			boolean leaveEnabled, long leaveTime,
+			float width) {
+
+		GeofenceArea geoArea = new GeofenceArea(zoneId, null, content, enteredEnabled, enteredTime, stayedEnabled, stayedTime, leaveEnabled, leaveTime, width);
+
+		if(geoArea.getPolygon() == null) {
+			geoArea = null;
+			return null;
+		}
+
+		mGeofenceAreas.put(geoArea.getGUID(), geoArea);
+
+		// Add the created GeofenceArea to the renderer
+		GfxGeofenceArea gfxGeofenceArea = new GfxGeofenceArea(geoArea);
+		mRenderer.addRTO(gfxGeofenceArea);	
+
+		return geoArea;
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceZone(IZonePoi, String, boolean, long, boolean, long, boolean, long)} with 
+	 * enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = GEOFENCE_DEFAULT_TIME.
+	 * @param zonePoi The {@link ZonePoi} association that will be used to set the new {@link GeofenceArea}.
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(ZonePoi zonePoi, String content) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithZoneID(zonePoi.getZoneId());
+		return addGeofenceArea(zonePoi, content, 
+				settings.isEnteredEnabled(), settings.getEnteredTime(), 
+				settings.isStayedEnabled(), settings.getStayedTime(), 
+				settings.isLeftEnabled(), settings.getLeftTime(), 
+				settings.getCustomWidth());
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceZone(IZonePoi, String, boolean, long, boolean, long, boolean, long)} with 
+	 * enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.
+	 * @param zonePoi The {@link ZonePoi} association that will be used to set the new {@link GeofenceArea}.
+	 * @param content  The content for the created {@link GeofenceArea}.
+	 * @param eventTime The time used to trigged the geofencing events (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(ZonePoi zonePoi, String content, long eventTime) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithZoneID(zonePoi.getZoneId());
+		return addGeofenceArea(zonePoi, content, 
+				settings.isEnteredEnabled(), eventTime, 
+				settings.isStayedEnabled(), eventTime, 
+				settings.isLeftEnabled(), eventTime, 
+				settings.getCustomWidth());
+	}
+
+	/**
+	 * Creates a new {@link GeofenceArea} and add it to the set of areas handled by the {@link GeofenceProvider}.
+	 * @param zonePoi The {@link ZonePoi} association that will be used to set the new {@link GeofenceArea}.
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @param enteredEnabled True if entered event should be enabled.
+	 * @param enteredTime The threshold time to trigger the entered event (in ms).
+	 * @param stayedEnabled True if stayed event should be enabled.
+	 * @param stayedTime The threshold time to trigger the stayed event (in ms).
+	 * @param leaveEnabled True if leave event should be enabled.
+	 * @param leaveTime The threshold time to trigger the leave event (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(ZonePoi zonePoi, String content, 
+			boolean enteredEnabled, long enteredTime, 
+			boolean stayedEnabled, long stayedTime,
+			boolean leaveEnabled, long leaveTime, 
+			float width) {
+
+		GeofenceArea geoArea = new GeofenceArea(zonePoi.getZoneId(), zonePoi, content, enteredEnabled, enteredTime, stayedEnabled, stayedTime, leaveEnabled, leaveTime, width);
+
+		if(geoArea.getPolygon() == null) {
+			geoArea = null;
+			return null;
+		}
+
+		mGeofenceAreas.put(geoArea.getGUID(), geoArea);
+
+		// Add the created GeofenceArea to the renderer
+		GfxGeofenceArea gfxGeofenceArea = new GfxGeofenceArea(geoArea);
+		mRenderer.addRTO(gfxGeofenceArea);	
+
+		return geoArea;
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceArea(String, Position, float, String, boolean, long, boolean, long, boolean, long)} with 
+	 * the following values size = 4 * {@link GeofenceArea#LD}, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = GEOFENCE_DEFAULT_TIME.
+	 * @param guid The guid that should be used for the new {@link GeofenceArea}. Guid can not be null or empty!
+	 * @param center The center of the {@link GeofenceArea}.
+	 * @param content  The content for the created {@link GeofenceArea}.
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(String guid, Position center, String content) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithMapID(center.getMapID());
+		return addGeofenceArea(guid, center, 4 * settings.getCustomWidth(), content, 
+				settings.isEnteredEnabled(), settings.getEnteredTime(), 
+				settings.isStayedEnabled(), settings.getStayedTime(), 
+				settings.isLeftEnabled(), settings.getLeftTime());
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceArea(String, Position, float, String, boolean, long, boolean, long, boolean, long)} with 
+	 * the following values size = 4 * {@link GeofenceArea#LD}, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.
+	 * @param guid The guid that should be used for the new {@link GeofenceArea}. Guid can not be null or empty!
+	 * @param center The center of the {@link GeofenceArea}.
+	 * @param content  The content for the created {@link GeofenceArea}.
+	 * @param eventTime The time used to trigged the geofencing events (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(String guid, Position center, String content, long eventTime) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithMapID(center.getMapID());
+		return addGeofenceArea(guid, center, 4 * settings.getCustomWidth(), content,
+				settings.isEnteredEnabled(), eventTime, 
+				settings.isStayedEnabled(), eventTime, 
+				settings.isLeftEnabled(), eventTime);
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceArea(String, Position, float, String, boolean, long, boolean, long, boolean, long)} with 
+	 * the following values size = 4 * {@link GeofenceArea#LD}.
+	 * @param guid The guid that should be used for the new {@link GeofenceArea}. Guid can not be null or empty!
+	 * @param center The center of the {@link GeofenceArea}.
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @param enteredEnabled True if entered event should be enabled.
+	 * @param enteredTime The threshold time to trigger the entered event (in ms).
+	 * @param stayedEnabled True if stayed event should be enabled.
+	 * @param stayedTime The threshold time to trigger the stayed event (in ms).
+	 * @param leaveEnabled True if leave event should be enabled.
+	 * @param leaveTime The threshold time to trigger the leave event (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(String guid, Position center, String content,
+			boolean enteredEnabled, long enteredTime, 
+			boolean stayedEnabled, long stayedTime,
+			boolean leaveEnabled, long leaveTime) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithMapID(center.getMapID());
+		return addGeofenceArea(guid, center, 4 * settings.getCustomWidth(), content, enteredEnabled, enteredTime, stayedEnabled, stayedTime, leaveEnabled, leaveTime);
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceArea(String, Position, float, String, boolean, long, boolean, long, boolean, long)} with 
+	 * the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = GEOFENCE_DEFAULT_TIME.
+	 * @param guid The guid that should be used for the new {@link GeofenceArea}. Guid can not be null or empty!
+	 * @param center The center of the {@link GeofenceArea}.
+	 * @param size The size for the square. 
+	 * @param content The content for the created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(String guid, Position center, float size, String content) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithMapID(center.getMapID());
+		return addGeofenceArea(guid, center, size, content, 
+				settings.isEnteredEnabled(), settings.getEnteredTime(), 
+				settings.isStayedEnabled(), settings.getStayedTime(), 
+				settings.isLeftEnabled(), settings.getLeftTime());
+	}
+
+	/**
+	 * Equivalent to {@link GeofenceProvider#addGeofenceArea(String, Position, float, String, boolean, long, boolean, long, boolean, long)} with 
+	 * the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.
+	 * @param guid The guid that should be used for the new {@link GeofenceArea}. Guid can not be null or empty!
+	 * @param center The center of the {@link GeofenceArea}.
+	 * @param size The size for the square. 
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @param eventTime The time used to trigged the geofencing events (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(String guid, Position center, float size, String content, long eventTime) {
+		GeoPushMapSettings settings = getGeoPushMapSettingsWithMapID(center.getMapID());
+		return addGeofenceArea(guid, center, size, content,
+				settings.isEnteredEnabled(), eventTime, 
+				settings.isStayedEnabled(), eventTime, 
+				settings.isLeftEnabled(), eventTime);
+	}
+
+	/**
+	 * Creates a new {@link GeofenceArea} around the given {@link Position}. The area will be a square constructed with the given size.
+	 * @param guid The guid that should be used for the new {@link GeofenceArea}. Guid can not be null or empty!
+	 * @param center The center of the {@link GeofenceArea}.
+	 * @param size The size for the square. 
+	 * @param content The content for the created {@link GeofenceArea}.
+	 * @param enteredEnabled True if entered event should be enabled.
+	 * @param enteredTime The threshold time to trigger the entered event (in ms).
+	 * @param stayedEnabled True if stayed event should be enabled.
+	 * @param stayedTime The threshold time to trigger the stayed event (in ms).
+	 * @param leaveEnabled True if leave event should be enabled.
+	 * @param leaveTime The threshold time to trigger the leave event (in ms).
+	 * @return The created {@link GeofenceArea} or null if it was not properly created.
+	 */
+	public GeofenceArea addGeofenceArea(String guid, Position center, float size, String content,
+			boolean enteredEnabled, long enteredTime, 
+			boolean stayedEnabled, long stayedTime,
+			boolean leaveEnabled, long leaveTime) {
+
+		if(guid == null || guid.isEmpty()) {
+			Log.d(TAG, "GUID must be set explicitly");
+			return null;
+		}
+
+		GeofenceArea geoArea = new GeofenceArea(guid, center, size, content, enteredEnabled, enteredTime, stayedEnabled, stayedTime, leaveEnabled, leaveTime);
+
+		if(geoArea.getPolygon() == null) {
+			geoArea = null;
+			return null;
+		}
+
+		mGeofenceAreas.put(geoArea.getGUID(), geoArea);
+
+		// Add the created GeofenceArea to the renderer
+		GfxGeofenceArea gfxGeofenceArea = new GfxGeofenceArea(geoArea);
+		mRenderer.addRTO(gfxGeofenceArea);	
+
+		return geoArea;
+	}
+
+	/**
+	 * Removes the {@link GeofenceArea} corresponding to the given guid from the geofence engine and from its renderer.
+	 * @param guid the guid of the {@link GeofenceArea} to remove.
+	 */
+	public void removeGeofenceArea(String guid) {
+		if(guid != null &amp;&amp; mGeofenceAreas.containsKey(guid)) {
+			mGeofenceAreas.remove(guid);
+			mRenderer.removeRTO(guid);
+		}
+	}
+
+	/**
+	 * Removes the {@link GeofenceArea} corresponding to the given zone id from the geofence engine and from its renderer.
+	 * @param zoneId the zoneId of the {@link GeofenceArea} to remove.
+	 */
+	public void removeGeofenceArea(int zoneId) {
+		removeGeofenceArea(zoneId + "");
+	}
+
+	/**
+	 * Removes the {@link GeofenceArea} corresponding to the given {@link ZonePoi} from the geofence engine and from its renderer.
+	 * @param zonePoi the {@link ZonePoi} of the {@link GeofenceArea} to remove.
+	 */
+	public void removeGeofenceArea(ZonePoi zonePoi) {
+		if(zonePoi != null) {
+			String guid = getGuid(zonePoi);
+			removeGeofenceArea(guid);
+		}
+	}
+
+	/**
+	 * Removes a the {@link GeofenceArea} defined by the given guid, from the geofencing engine.
+	 * @param guid The guid of the {@link GeofenceArea} to remove.
+	 * @return True if it was removed.
+	 */
+	public void removeGeofenceArea(GeofenceArea area) {
+		if(area != null) {
+			removeGeofenceArea(area.getGUID());
+		}
+	}
+
+	/**
+	 * Checks whether a {@link GeofenceArea} with the given guid exists in the geofence engine.
+	 * @param guid the guid to look for.
+	 * @return true if it already exist.
+	 */
+	public boolean hasGeofenceArea(String guid) {
+		return guid != null &amp;&amp; mGeofenceAreas.containsKey(guid);
+	}
+
+	/**
+	 * Checks whether a {@link GeofenceArea} with the given zoneId exists in the geofence engine.
+	 * @param zoneId the zoneId to look for.
+	 * @return true if it already exist.
+	 */
+	public boolean hasGeofenceArea(int zoneId) {
+		return hasGeofenceArea(zoneId + "");
+	}
+
+	/**
+	 * Checks whether a {@link GeofenceArea} with the given {@link ZonePoi} exists in the geofence engine.
+	 * @param zonePoi the {@link ZonePoi} to look for.
+	 * @return true if it already exist.
+	 */
+	public boolean hasGeofenceArea(ZonePoi zonePoi) {
+		return zonePoi != null &amp;&amp; hasGeofenceArea(getGuid(zonePoi));
+	}
+
+	/**
+	 * @hide
+	 * Returns the guid that will be set for a given {@link ZonePoi}.
+	 * @param zonePoi
+	 * @return
+	 */
+	static String getGuid(ZonePoi zonePoi) {
+		return  zonePoi.getZoneId() + "_" + ((zonePoi.getExternalPoiId() != null &amp;&amp; !zonePoi.getExternalPoiId().isEmpty()) ? zonePoi.getExternalPoiId() : zonePoi.getPoiId());
+	}
+
+}
+
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

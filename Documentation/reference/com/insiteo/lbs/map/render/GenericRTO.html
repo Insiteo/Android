@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GenericRTO
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -520,9 +520,9 @@ Summary:
             
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(int)">GenericRTO</a></span>(int id)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO()">GenericRTO</a></span>()
         
-        <div class="jd-descrdiv">Equivalent to <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, int)">GenericRTO(int, Position, String, int)</a></code> with no name, no Position and no resource for the marker (the Insiteo default marker will be used).</div>
+        <div class="jd-descrdiv">Equivalent to GenericRTO#GenericRTO(int, Position, String, int) with no name, no Position and no resource for the marker (the Insiteo default marker will be used).</div>
   
   </td></tr>
 
@@ -538,9 +538,9 @@ Summary:
             
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String)">GenericRTO</a></span>(int id, <a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(com.insiteo.lbs.common.utils.geometry.Position, java.lang.String)">GenericRTO</a></span>(<a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name)
         
-        <div class="jd-descrdiv">Equivalent to <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, int)">GenericRTO(int, Position, String, int)</a></code> with a no specific resource for the marker.</div>
+        <div class="jd-descrdiv">Equivalent to GenericRTO#GenericRTO(int, Position, String, int) with a no specific resource for the marker.</div>
   
   </td></tr>
 
@@ -556,7 +556,7 @@ Summary:
             
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, int)">GenericRTO</a></span>(int id, <a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name, int pinResId)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, boolean, boolean)">GenericRTO</a></span>(<a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name, boolean windowDisplayed, boolean labelDisplayed)
         
         <div class="jd-descrdiv">Default constructor for <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> </div>
   
@@ -623,9 +623,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#draw2DModelBitmap(android.graphics.Canvas, android.graphics.Point, float)">draw2DModelBitmap</a></span>(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> aCanvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition, float aAngle)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#draw3D(World, com.insiteo.lbs.map.entities.Map, double, float)">draw3D</a></span>(World world, <a href="../../../../../com/insiteo/lbs/map/entities/Map.html">Map</a> map, double ratio, float angle)
         
-        <div class="jd-descrdiv">Draws the bitmap associated to this GenericRTO.</div>
+        <div class="jd-descrdiv">Draws this object with its 3D mode on the given Canvas.</div>
   
   </td></tr>
 
@@ -641,9 +641,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#draw2DModelName(android.graphics.Canvas, android.graphics.Point)">draw2DModelName</a></span>(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> canvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#drawMarker(android.graphics.Canvas, android.graphics.Point)">drawMarker</a></span>(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> aCanvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition)
         
-        <div class="jd-descrdiv">Draws the name of the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> </div>
+        <div class="jd-descrdiv">Draws the bitmap associated to this GenericRTO.</div>
   
   </td></tr>
 
@@ -659,9 +659,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#draw3D(World, com.insiteo.lbs.map.entities.Map, double, float)">draw3D</a></span>(World world, <a href="../../../../../com/insiteo/lbs/map/entities/Map.html">Map</a> map, double ratio, float angle)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#drawWindow(android.graphics.Canvas, android.graphics.Point)">drawWindow</a></span>(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> canvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition)
         
-        <div class="jd-descrdiv">Draws this object with its 3D mode on the given Canvas.</div>
+        <div class="jd-descrdiv">Draws the window and the label of the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code>.</div>
   
   </td></tr>
 
@@ -710,6 +710,40 @@ Summary:
             
             
             
+            <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#getAnnotationLabel()">getAnnotationLabel</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#getLabel()">getLabel</a></span>()
+        
+        <div class="jd-descrdiv">Returns the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
             int
         </td>
         <td class="jd-linkcol" width="100%">
@@ -728,24 +762,6 @@ Summary:
             
             
             
-            <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#getName()">getName</a></span>()
-        
-        <div class="jd-descrdiv">Returns the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
             <a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a>
         </td>
         <td class="jd-linkcol" width="100%">
@@ -757,7 +773,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -775,7 +791,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -793,7 +809,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -811,7 +827,73 @@ Summary:
 
 
 	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            <a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#getZonePoi()">getZonePoi</a></span>()
+        
+        <div class="jd-descrdiv">Returns the <code><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></code> associated with this <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>.</div>
+  
+  </td></tr>
+
+
+	 
     <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isActionClicked()">isActionClicked</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isActionDisplayed()">isActionDisplayed</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isAnnotationClicked()">isAnnotationClicked</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -829,7 +911,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -847,6 +929,22 @@ Summary:
 
 
 	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isIndicatorDisplayed()">isIndicatorDisplayed</a></span>()
+        
+  </td></tr>
+
+
+	 
     <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
@@ -857,7 +955,7 @@ Summary:
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isNameDisplayed()">isNameDisplayed</a></span>()
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isLabelDisplayed()">isLabelDisplayed</a></span>()
         
         <div class="jd-descrdiv">Returns whether the name should be displayed.</div>
   
@@ -875,44 +973,7 @@ Summary:
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isTouchInside2DObject(com.insiteo.lbs.map.render.Touch)">isTouchInside2DObject</a></span>(<a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> touch)
-        
-        <div class="jd-descrdiv">Checks whether the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside our <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> in a 2D context, ie it checks if the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside the <code><a href="http://d.android.com/reference/android/graphics/RectF.html">RectF</a></code>
- where the marker is being drawn.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class=" api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            boolean
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isTouchInside3DObject(com.insiteo.lbs.map.render.Touch)">isTouchInside3DObject</a></span>(<a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> touch)
-        
-        <div class="jd-descrdiv">Checks whether the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside our <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> in a 3D context.</div>
-  
-  </td></tr>
-
-
-	 
-    <tr class="alt-color api apilevel-" >
-        <td class="jd-typecol">
-            
-            
-            
-            
-            
-            boolean
-        </td>
-        <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isTouchInsideObject(com.insiteo.lbs.map.render.Touch)">isTouchInsideObject</a></span>(<a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> touch)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isTouchInsideMarker(com.insiteo.lbs.map.render.Touch)">isTouchInsideMarker</a></span>(<a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> touch)
         
         <div class="jd-descrdiv">Checks whether the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside our <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code>.</div>
   
@@ -948,13 +1009,29 @@ Summary:
             boolean
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#mIsTouched()">mIsTouched</a></span>()
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isWindowDisplayed()">isWindowDisplayed</a></span>()
         
   </td></tr>
 
 
 	 
     <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            boolean
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#mIsTouched()">mIsTouched</a></span>()
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -972,7 +1049,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -990,7 +1067,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1008,7 +1085,7 @@ Summary:
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1026,7 +1103,7 @@ Summary:
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
             
@@ -1044,6 +1121,22 @@ Summary:
 
 
 	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setActionBitmap(android.content.res.Resources, int)">setActionBitmap</a></span>(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> res, int imgResId)
+        
+  </td></tr>
+
+
+	 
     <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             
@@ -1054,9 +1147,41 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setBitmapAnchor(android.graphics.Point)">setBitmapAnchor</a></span>(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> anchor)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setActionBitmap(android.graphics.Bitmap)">setActionBitmap</a></span>(<a href="http://d.android.com/reference/android/graphics/Bitmap.html">Bitmap</a> img)
         
-        <div class="jd-descrdiv">Sets the anchor that should be used when drawing the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> marker.</div>
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setActionDisplayed(boolean)">setActionDisplayed</a></span>(boolean displayed)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setActionMargin(android.graphics.Point)">setActionMargin</a></span>(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)
+        
+        <div class="jd-descrdiv">Sets the margin that should be used on the action button.</div>
   
   </td></tr>
 
@@ -1072,10 +1197,8 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setBitmapSize(int, int)">setBitmapSize</a></span>(int width, int height)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setAnnotationLabel(java.lang.String)">setAnnotationLabel</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> label)
         
-        <div class="jd-descrdiv">Set the size of the bitmap that is used by this GenericRTO.</div>
-  
   </td></tr>
 
 
@@ -1108,7 +1231,73 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setName(java.lang.String)">setName</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> name)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setIndicatoBitmap(android.content.res.Resources, int)">setIndicatoBitmap</a></span>(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> res, int imgResId)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setIndicatorBitamp(android.graphics.Bitmap)">setIndicatorBitamp</a></span>(<a href="http://d.android.com/reference/android/graphics/Bitmap.html">Bitmap</a> img)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setIndicatorDisplayed(boolean)">setIndicatorDisplayed</a></span>(boolean displayed)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setIndicatorMargin(android.graphics.Point)">setIndicatorMargin</a></span>(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)
+        
+        <div class="jd-descrdiv">Sets the margin that should be used on the indicator.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setLabel(java.lang.String)">setLabel</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> label)
         
         <div class="jd-descrdiv">Sets the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.</div>
   
@@ -1126,9 +1315,9 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setNameAnchor(android.graphics.Point)">setNameAnchor</a></span>(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> anchor)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setLabelDisplayed(boolean)">setLabelDisplayed</a></span>(boolean displayed)
         
-        <div class="jd-descrdiv">Sets the anchor to use when drawing the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> name.</div>
+        <div class="jd-descrdiv">Sets whether the name should be displayed.</div>
   
   </td></tr>
 
@@ -1144,9 +1333,41 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
-        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setNameDisplayed(boolean)">setNameDisplayed</a></span>(boolean displayed)
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setMarkerBitmap(android.graphics.Bitmap)">setMarkerBitmap</a></span>(<a href="http://d.android.com/reference/android/graphics/Bitmap.html">Bitmap</a> img)
         
-        <div class="jd-descrdiv">Sets whether the name should be displayed.</div>
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setMarkerBitmap(android.content.res.Resources, int)">setMarkerBitmap</a></span>(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> res, int imgResId)
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setNameMargin(android.graphics.Point)">setNameMargin</a></span>(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)
+        
+        <div class="jd-descrdiv">Sets the margin that should be used on the name.</div>
   
   </td></tr>
 
@@ -1250,9 +1471,61 @@ Summary:
             void
         </td>
         <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setWindowDisplayed(boolean)">setWindowDisplayed</a></span>(boolean displayed)
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setWindowMargin(android.graphics.Point)">setWindowMargin</a></span>(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)
+        
+        <div class="jd-descrdiv">Sets the anchor to use when drawing the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> name.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
         <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setZoneOffset(android.graphics.PointF)">setZoneOffset</a></span>(<a href="http://d.android.com/reference/android/graphics/PointF.html">PointF</a> zoneOffset)
         
         <div class="jd-descrdiv">Sets the zone offset of this IRTO.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setZonePoi(com.insiteo.lbs.map.entities.ZonePoi)">setZonePoi</a></span>(<a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a> zonePoi)
+        
+        <div class="jd-descrdiv">Associate a <code><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></code> with this <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>.</div>
   
   </td></tr>
 
@@ -1631,6 +1904,24 @@ From interface
             
             
             
+            <a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a>
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html#getZonePoi()">getZonePoi</a></span>()
+        
+        <div class="jd-descrdiv">Returns the <code><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></code> associated with this <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
             <a href="../../../../../com/insiteo/lbs/map/render/ETouchObjectResult.html">ETouchObjectResult</a>
         </td>
         <td class="jd-linkcol" width="100%">
@@ -1642,7 +1933,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1660,7 +1951,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1678,7 +1969,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1696,7 +1987,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1714,7 +2005,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1732,7 +2023,7 @@ From interface
 
 
 	 
-    <tr class=" api apilevel-" >
+    <tr class="alt-color api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1750,7 +2041,7 @@ From interface
 
 
 	 
-    <tr class="alt-color api apilevel-" >
+    <tr class=" api apilevel-" >
         <td class="jd-typecol">
             abstract
             
@@ -1763,6 +2054,24 @@ From interface
         <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html#setZoneOffset(android.graphics.PointF)">setZoneOffset</a></span>(<a href="http://d.android.com/reference/android/graphics/PointF.html">PointF</a> zoneOffset)
         
         <div class="jd-descrdiv">Sets the zone offset of this IRTO.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol">
+            abstract
+            
+            
+            
+            
+            void
+        </td>
+        <td class="jd-linkcol" width="100%">
+        <span class="sympad"><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html#setZonePoi(com.insiteo.lbs.map.entities.ZonePoi)">setZonePoi</a></span>(<a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a> zonePoi)
+        
+        <div class="jd-descrdiv">Associate a <code><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></code> with this <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>.</div>
   
   </td></tr>
 
@@ -1809,7 +2118,7 @@ From interface
 
 
 
-<a id="GenericRTO(int)"></a>
+<a id="GenericRTO()"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1822,7 +2131,7 @@ From interface
         
       </span>
       <span class="sympad">GenericRTO</span>
-      <span class="normal">(int id)</span>
+      <span class="normal">()</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1836,23 +2145,13 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Equivalent to <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, int)">GenericRTO(int, Position, String, int)</a></code> with no name, no Position and no resource for the marker (the Insiteo default marker will be used).</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>id</th>
-          <td>the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> id.
-</td>
-        </tr>
-      </table>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p>Equivalent to GenericRTO#GenericRTO(int, Position, String, int) with no name, no Position and no resource for the marker (the Insiteo default marker will be used).</p></div>
 
     </div>
 </div>
 
 
-<a id="GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String)"></a>
+<a id="GenericRTO(com.insiteo.lbs.common.utils.geometry.Position, java.lang.String)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1865,7 +2164,7 @@ From interface
         
       </span>
       <span class="sympad">GenericRTO</span>
-      <span class="normal">(int id, <a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name)</span>
+      <span class="normal">(<a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1879,14 +2178,10 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Equivalent to <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, int)">GenericRTO(int, Position, String, int)</a></code> with a no specific resource for the marker. In this case the default Insiteo marker will be used.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Equivalent to GenericRTO#GenericRTO(int, Position, String, int) with a no specific resource for the marker. In this case the default Insiteo marker will be used.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
-        <tr>
-          <th>id</th>
-          <td>the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> id.</td>
-        </tr>
         <tr>
           <th>pos</th>
           <td>the Position where the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> should be drawn (this is not mandatory when the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> is drawn in a <code><a href="../../../../../com/insiteo/lbs/map/entities/Zone.html">Zone</a></code>). </td>
@@ -1903,7 +2198,7 @@ From interface
 </div>
 
 
-<a id="GenericRTO(int, com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, int)"></a>
+<a id="GenericRTO(com.insiteo.lbs.common.utils.geometry.Position, java.lang.String, boolean, boolean)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1916,7 +2211,7 @@ From interface
         
       </span>
       <span class="sympad">GenericRTO</span>
-      <span class="normal">(int id, <a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name, int pinResId)</span>
+      <span class="normal">(<a href="../../../../../com/insiteo/lbs/common/utils/geometry/Position.html">Position</a> pos, <a href="http://d.android.com/reference/java/lang/String.html">String</a> name, boolean windowDisplayed, boolean labelDisplayed)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1935,21 +2230,12 @@ From interface
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
-          <th>id</th>
-          <td>the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> id.</td>
-        </tr>
-        <tr>
           <th>pos</th>
           <td>the Position where the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> should be drawn (this is not mandatory when the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> is drawn in a <code><a href="../../../../../com/insiteo/lbs/map/entities/Zone.html">Zone</a></code>). </td>
         </tr>
         <tr>
           <th>name</th>
           <td>the name of the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>.</td>
-        </tr>
-        <tr>
-          <th>pinResId</th>
-          <td>the resource of the image that should be used as the marker.
-</td>
         </tr>
       </table>
   </div>
@@ -2069,101 +2355,6 @@ From interface
 </div>
 
 
-<a id="draw2DModelBitmap(android.graphics.Canvas, android.graphics.Point, float)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">draw2DModelBitmap</span>
-      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> aCanvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition, float aAngle)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Draws the bitmap associated to this GenericRTO.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>aCanvas</th>
-          <td>The destination Canvas where this object should be drawn to.</td>
-        </tr>
-        <tr>
-          <th>aAngle</th>
-          <td>The offset angle in case a rotation should be done. The rotation is relative to the screen center.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="draw2DModelName(android.graphics.Canvas, android.graphics.Point)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">draw2DModelName</span>
-      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> canvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Draws the name of the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> </p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>canvas</th>
-          <td>where the name should be drawn.</td>
-        </tr>
-        <tr>
-          <th>drawingPosition</th>
-          <td>the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> drawing position. The position where the name will be drawn depends on this last position and on the name 
- anchor (see <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setNameAnchor(android.graphics.Point)">setNameAnchor(Point)</a></code>).
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
 <a id="draw3D(World, com.insiteo.lbs.map.entities.Map, double, float)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2212,6 +2403,96 @@ From interface
         <tr>
           <th>angle</th>
           <td>The angle between screen's y axis and the canvas y axis.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="drawMarker(android.graphics.Canvas, android.graphics.Point)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">drawMarker</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> aCanvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Draws the bitmap associated to this GenericRTO.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>aCanvas</th>
+          <td>The destination Canvas where this object should be drawn to.</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="drawWindow(android.graphics.Canvas, android.graphics.Point)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">drawWindow</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Canvas.html">Canvas</a> canvas, <a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> drawingPosition)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Draws the window and the label of the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>canvas</th>
+          <td>where the name should be drawn.</td>
+        </tr>
+        <tr>
+          <th>drawingPosition</th>
+          <td>the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> drawing position. The position where the annotation will be drawn depends on this last position and on the name 
+ anchor (see <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#setWindowMargin(android.graphics.Point)">setWindowMargin(Point)</a></code>).
 </td>
         </tr>
       </table>
@@ -2295,6 +2576,77 @@ From interface
 </div>
 
 
+<a id="getAnnotationLabel()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">getAnnotationLabel</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="getLabel()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">getLabel</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
 <a id="getMapID()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2327,44 +2679,6 @@ From interface
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>The ID of the map where this RTO should be displayed
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="getName()"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
-      </span>
-      <span class="sympad">getName</span>
-      <span class="normal">()</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Returns the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.
 </li></ul>
   </div>
 
@@ -2525,6 +2839,143 @@ From interface
 </div>
 
 
+<a id="getZonePoi()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a>
+      </span>
+      <span class="sympad">getZonePoi</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the <code><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></code> associated with this <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the <code><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></code> associated.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="isActionClicked()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isActionClicked</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="isActionDisplayed()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isActionDisplayed</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="isAnnotationClicked()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isAnnotationClicked</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
 <a id="isDraggable()"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -2601,7 +3052,7 @@ From interface
 </div>
 
 
-<a id="isNameDisplayed()"></a>
+<a id="isIndicatorDisplayed()"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2613,7 +3064,40 @@ From interface
          
         boolean
       </span>
-      <span class="sympad">isNameDisplayed</span>
+      <span class="sympad">isIndicatorDisplayed</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="isLabelDisplayed()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isLabelDisplayed</span>
       <span class="normal">()</span>
     </h4>
       <div class="api-level">
@@ -2639,7 +3123,7 @@ From interface
 </div>
 
 
-<a id="isTouchInside2DObject(com.insiteo.lbs.map.render.Touch)"></a>
+<a id="isTouchInsideMarker(com.insiteo.lbs.map.render.Touch)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -2651,97 +3135,7 @@ From interface
          
         boolean
       </span>
-      <span class="sympad">isTouchInside2DObject</span>
-      <span class="normal">(<a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> touch)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Checks whether the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside our <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> in a 2D context, ie it checks if the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside the <code><a href="http://d.android.com/reference/android/graphics/RectF.html">RectF</a></code>
- where the marker is being drawn.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>touch</th>
-          <td>to check.</td>
-        </tr>
-      </table>
-  </div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>true if the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside.
-</li></ul>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="isTouchInside3DObject(com.insiteo.lbs.map.render.Touch)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        boolean
-      </span>
-      <span class="sympad">isTouchInside3DObject</span>
-      <span class="normal">(<a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> touch)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Checks whether the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside our <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> in a 3D context.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>touch</th>
-          <td>to check.</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="isTouchInsideObject(com.insiteo.lbs.map.render.Touch)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        boolean
-      </span>
-      <span class="sympad">isTouchInsideObject</span>
+      <span class="sympad">isTouchInsideMarker</span>
       <span class="normal">(<a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a> touch)</span>
     </h4>
       <div class="api-level">
@@ -2757,7 +3151,7 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Checks whether the <code><a href="../../../../../com/insiteo/lbs/map/render/Touch.html">Touch</a></code> is inside our <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code>. It calls
- <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isTouchInside2DObject(com.insiteo.lbs.map.render.Touch)">isTouchInside2DObject(Touch)</a></code> or <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isTouchInside3DObject(com.insiteo.lbs.map.render.Touch)">isTouchInside3DObject(Touch)</a></code>
+ <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html#isTouchInsideMarker(com.insiteo.lbs.map.render.Touch)">isTouchInsideMarker(Touch)</a></code> or GenericRTO#isTouchInside3DIcon(Touch)
  depending on the <code><a href="../../../../../com/insiteo/lbs/map/render/ERenderMode.html">ERenderMode</a></code>.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
@@ -2811,6 +3205,39 @@ From interface
       <ul class="nolist"><li>True if this instance is touchable.
 </li></ul>
   </div>
+
+    </div>
+</div>
+
+
+<a id="isWindowDisplayed()"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isWindowDisplayed</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -3084,7 +3511,7 @@ From interface
 </div>
 
 
-<a id="setBitmapAnchor(android.graphics.Point)"></a>
+<a id="setActionBitmap(android.content.res.Resources, int)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3096,8 +3523,8 @@ From interface
          
         void
       </span>
-      <span class="sympad">setBitmapAnchor</span>
-      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> anchor)</span>
+      <span class="sympad">setActionBitmap</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> res, int imgResId)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3111,13 +3538,112 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the anchor that should be used when drawing the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> marker.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setActionBitmap(android.graphics.Bitmap)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setActionBitmap</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Bitmap.html">Bitmap</a> img)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setActionDisplayed(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setActionDisplayed</span>
+      <span class="normal">(boolean displayed)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setActionMargin(android.graphics.Point)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setActionMargin</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the margin that should be used on the action button.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Parameters</h5>
       <table class="jd-tagtable">
         <tr>
-          <th>anchor</th>
-          <td>that should be used when drawing the marker.
+          <th>margin</th>
+          <td>the margin that should be used.
 </td>
         </tr>
       </table>
@@ -3127,7 +3653,7 @@ From interface
 </div>
 
 
-<a id="setBitmapSize(int, int)"></a>
+<a id="setAnnotationLabel(java.lang.String)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3139,8 +3665,8 @@ From interface
          
         void
       </span>
-      <span class="sympad">setBitmapSize</span>
-      <span class="normal">(int width, int height)</span>
+      <span class="sympad">setAnnotationLabel</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> label)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3154,21 +3680,7 @@ From interface
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>Set the size of the bitmap that is used by this GenericRTO.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>width</th>
-          <td>The width of the bitmap in pixel.</td>
-        </tr>
-        <tr>
-          <th>height</th>
-          <td>The height of the bitmap in pixel.
-</td>
-        </tr>
-      </table>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
 
     </div>
 </div>
@@ -3207,7 +3719,7 @@ From interface
 </div>
 
 
-<a id="setName(java.lang.String)"></a>
+<a id="setIndicatoBitmap(android.content.res.Resources, int)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3219,8 +3731,150 @@ From interface
          
         void
       </span>
-      <span class="sympad">setName</span>
-      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> name)</span>
+      <span class="sympad">setIndicatoBitmap</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> res, int imgResId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setIndicatorBitamp(android.graphics.Bitmap)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIndicatorBitamp</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Bitmap.html">Bitmap</a> img)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setIndicatorDisplayed(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIndicatorDisplayed</span>
+      <span class="normal">(boolean displayed)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setIndicatorMargin(android.graphics.Point)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setIndicatorMargin</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the margin that should be used on the indicator.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>margin</th>
+          <td>the margin that should be used.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setLabel(java.lang.String)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLabel</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> label)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -3235,22 +3889,12 @@ From interface
     <div class="jd-details-descr">
       
   <div class="jd-tagdata jd-tagdescr"><p>Sets the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code> name.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>name</th>
-          <td>for the <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>.
-</td>
-        </tr>
-      </table>
-  </div>
 
     </div>
 </div>
 
 
-<a id="setNameAnchor(android.graphics.Point)"></a>
+<a id="setLabelDisplayed(boolean)"></a>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -3262,50 +3906,7 @@ From interface
          
         void
       </span>
-      <span class="sympad">setNameAnchor</span>
-      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> anchor)</span>
-    </h4>
-      <div class="api-level">
-        <div>
-
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
-</div>
-        
-  
-
-      </div>
-    <div class="jd-details-descr">
-      
-  <div class="jd-tagdata jd-tagdescr"><p>Sets the anchor to use when drawing the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> name.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Parameters</h5>
-      <table class="jd-tagtable">
-        <tr>
-          <th>anchor</th>
-          <td>that should be used when drawing the name.
-</td>
-        </tr>
-      </table>
-  </div>
-
-    </div>
-</div>
-
-
-<a id="setNameDisplayed(boolean)"></a>
-
-<div class="jd-details api apilevel-"> 
-    <h4 class="jd-details-title">
-      <span class="normal">
-        public 
-         
-         
-         
-         
-        void
-      </span>
-      <span class="sympad">setNameDisplayed</span>
+      <span class="sympad">setLabelDisplayed</span>
       <span class="normal">(boolean displayed)</span>
     </h4>
       <div class="api-level">
@@ -3327,6 +3928,115 @@ From interface
         <tr>
           <th>displayed</th>
           <td>true if the name should be displayed.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<a id="setMarkerBitmap(android.graphics.Bitmap)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setMarkerBitmap</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Bitmap.html">Bitmap</a> img)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setMarkerBitmap(android.content.res.Resources, int)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setMarkerBitmap</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/content/res/Resources.html">Resources</a> res, int imgResId)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setNameMargin(android.graphics.Point)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setNameMargin</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the margin that should be used on the name.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>margin</th>
+          <td>that should be used.
 </td>
         </tr>
       </table>
@@ -3524,6 +4234,72 @@ From interface
 </div>
 
 
+<a id="setWindowDisplayed(boolean)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setWindowDisplayed</span>
+      <span class="normal">(boolean displayed)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<a id="setWindowMargin(android.graphics.Point)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setWindowMargin</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/graphics/Point.html">Point</a> margin)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the anchor to use when drawing the <code><a href="../../../../../com/insiteo/lbs/map/render/GenericRTO.html">GenericRTO</a></code> name.</p></div>
+
+    </div>
+</div>
+
+
 <a id="setZoneOffset(android.graphics.PointF)"></a>
 
 <div class="jd-details api apilevel-"> 
@@ -3562,6 +4338,39 @@ From interface
         </tr>
       </table>
   </div>
+
+    </div>
+</div>
+
+
+<a id="setZonePoi(com.insiteo.lbs.map.entities.ZonePoi)"></a>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setZonePoi</span>
+      <span class="normal">(<a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a> zonePoi)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Associate a <code><a href="../../../../../com/insiteo/lbs/map/entities/ZonePoi.html">ZonePoi</a></code> with this <code><a href="../../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a></code>. </p></div>
 
     </div>
 </div>

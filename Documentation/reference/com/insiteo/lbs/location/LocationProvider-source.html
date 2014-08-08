@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   LocationProvider
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -359,6 +359,7 @@ import android.os.IBinder;
 import com.insiteo.lbs.analytics.AnalyticsConstants;
 import com.insiteo.lbs.analytics.AnalyticsManager;
 import com.insiteo.lbs.analytics.entities.AnalyticsGenericEvent;
+import com.insiteo.lbs.analytics.entities.AnalyticsLocationEvent;
 import com.insiteo.lbs.common.CommonConstants;
 import com.insiteo.lbs.common.InsiteoError;
 import com.insiteo.lbs.common.init.InitProvider;
@@ -422,6 +423,9 @@ public final class LocationProvider implements ServiceConnection {
 	// flags to handle unique location request
 	private boolean locationManuallyStarted = false;
 	private List&lt;LocationRequest&gt; mLocationRequests = new ArrayList&lt;LocationRequest&gt;();
+	
+	private InsLocation mLastLocation;
+	private float mLastAzimuth;
 
 	private LocationProvider() {
 		mListener = new WeakReference&lt;ILocationListener&gt;(null);
@@ -529,9 +533,12 @@ public final class LocationProvider implements ServiceConnection {
 			mListener.clear();
 			
 			AnalyticsGenericEvent locStoppedEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_LOC_STOP_LABEL);
+			locStoppedEvent.setPos1((mLastLocation != null) ? mLastLocation.getPosition() : null);
 			AnalyticsManager.getInstance().addGenericEvent(locStoppedEvent);
 			
 		} 
+		mLastAzimuth = 0f;
+		mLastLocation = null;
 	}
 
 	/**
@@ -558,6 +565,14 @@ public final class LocationProvider implements ServiceConnection {
 		return locationManuallyStarted;
 	}
 
+	/**
+	 * If the {@link LocationProvider} is started it will return the last location computed ow null.
+	 * @return the last knwon location.
+	 */
+	public InsLocation getLastLocation() {
+		return mLastLocation;
+	}
+	
 	/**
 	 * Get the requested module if it exists
 	 * @param aModuleType the type of the module to get
@@ -717,6 +732,15 @@ public final class LocationProvider implements ServiceConnection {
 		//get first location in list (if many) 
 		if (aLocations != null &amp;&amp; aLocations.size() &gt; 0) {
 			location = aLocations.get(0);
+			if(mLastLocation == null) {
+				AnalyticsGenericEvent firstLocEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_FIRST_LOC);
+				firstLocEvent.setPos1(location.getPosition());
+				firstLocEvent.setInt1(getLocationFlags());
+				firstLocEvent.setDouble1(location.getAccuracy());
+				firstLocEvent.setDouble1(mLastAzimuth);
+				AnalyticsManager.getInstance().addGenericEvent(firstLocEvent);
+			}
+			mLastLocation = location;
 		}
 
 		//set location in modules
@@ -768,6 +792,7 @@ public final class LocationProvider implements ServiceConnection {
 	//set the compass azimuth. If null, no orientation will be displayed 
 	/*package*/ void setAzimuth(Float aAzimuth) {
 		if (aAzimuth != null) {
+			mLastAzimuth = aAzimuth;
 			//set azimuth in renderer if it exists
 			if (mRenderer != null) {
 				mGfxLocation.setAzimuth(aAzimuth);

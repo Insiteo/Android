@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GfxZone
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -348,7 +348,16 @@
   <pre class="prettyprint">
 package com.insiteo.lbs.map.render;
 
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import org.poly2tri.Poly2Tri;
+import org.poly2tri.geometry.polygon.Polygon;
+import org.poly2tri.geometry.polygon.PolygonPoint;
+import org.poly2tri.triangulation.TriangulationPoint;
+import org.poly2tri.triangulation.delaunay.DelaunayTriangle;
 
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -360,11 +369,26 @@ import android.graphics.PointF;
 
 import com.insiteo.lbs.R;
 import com.insiteo.lbs.common.CommonConstants;
+import com.insiteo.lbs.common.init.InitProvider;
+import com.insiteo.lbs.common.utils.ColorUtils;
+import com.insiteo.lbs.common.utils.Log;
 import com.insiteo.lbs.common.utils.geometry.Topology;
+import com.insiteo.lbs.map.Map3DView;
 import com.insiteo.lbs.map.MapConstants;
 import com.insiteo.lbs.map.entities.Map;
 import com.insiteo.lbs.map.entities.Zone;
+import com.insiteo.lbs.map.entities.ZonePoi;
+import com.insiteo.lbs.map.utils.CoordConverter;
+import com.threed.jpct.GenericVertexController;
+import com.threed.jpct.Interact2D;
+import com.threed.jpct.Mesh;
+import com.threed.jpct.Object3D;
+import com.threed.jpct.PolygonManager;
+import com.threed.jpct.SimpleVector;
+import com.threed.jpct.Texture;
+import com.threed.jpct.TextureManager;
 import com.threed.jpct.World;
+import com.threed.jpct.util.MemoryHelper;
 
 
 /**
@@ -376,34 +400,44 @@ public class GfxZone implements IRTO {
 
 	private Zone mZone;
 
+	private Map mMap;
+
 	private ERenderMode mRenderMode;
 
 	private double 			mLastRatio	= 1;
 	private Point 			mLastOffset	= new Point(0, 0);
 
+	private float mZoneHeight = MapConstants.DEFAULT_ZONE_HEIGHT;
 
-
-	private float mZoneHeight;
 	private int mZoneColor = MapConstants.DEFAULT_ZONE_SELECTED_COLOR;
+	private int mZonePressedColor = MapConstants.DEFAULT_ZONE_SELECTED_COLOR;
 
 	private int mShelfNbr;
+
+	private Point mLastPos = new Point();
+	private float mLastAngle = 0f;
 
 
 	public GfxZone(Zone zone) {
 		mZone = zone;
 
+		mMap = InitProvider.getInstance().getMap(zone.getCenter().getMapID());
+
 
 		if(mZone.getExtra1() != null) {
 			String[] params = mZone.getExtra1().split(";");
 			if(params.length &gt; 1) {
-				mZoneColor = Color.parseColor("#" + params[1]);
+				try{
+					mZoneColor = Color.parseColor("#" + params[1]);
+				} catch(Exception e) {
+					Log.d(TAG, "An error occured while parsing the color.");
+				}
 			}
 		}
 
 		// Parse extra 3 values
 		if(mZone.getExtra3() != null) {
 			String[] params = mZone.getExtra3().split(";");
-
 			if(params.length &gt; 0) {
 				try {
 					mShelfNbr = Integer.parseInt(params[0]);
@@ -413,10 +447,16 @@ public class GfxZone implements IRTO {
 			}
 		}
 
-		// Set zone Height from fextra1
-		mZoneHeight = (mZone.getFExtra1() != null) ? mZone.getFExtra1() : 3.0f;
-	}
+		// Set zone height
+		if(mZone.getFExtra1() != null) {
+			if(mZone.getFExtra1() != 0.0f) {
+				mZoneHeight = mZone.getFExtra1() / mMap.getScale();
+			} else if(mMap.getFExtra1() != null  &amp;&amp; mMap.getFExtra1() != 0.0f) {
+				mZoneHeight = mMap.getFExtra1() / mMap.getScale();
+			}
+		}
 
+	}
 
 	public int getColor() {
 		return mZoneColor;
@@ -448,6 +488,14 @@ public class GfxZone implements IRTO {
 		return mZone.getId();
 	}
 
+	@Override
+	public ZonePoi getZonePoi() {
+		return null;
+	}
+
+	@Override
+	public void setZonePoi(ZonePoi zonePoi) {		
+	}
 
 	@Override
 	public int getMapID() {
@@ -513,11 +561,17 @@ public class GfxZone implements IRTO {
 	public void freeResources() {
 		if(mRenderMode == ERenderMode.RENDER_MODE_2D) {
 			free2DResources();
+		} else if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+			free3DResources();
 		}
 	}
 
 	private void free2DResources() {
 		mPaint = null;
+	}
+
+	private void free3DResources() {
+		mIsInWorld = false;
 	}
 
 	//******************************************************************************************************************
@@ -538,6 +592,8 @@ public class GfxZone implements IRTO {
 				drawPolygon(aCanvas, poly, aOffset, aRatio);
 			}
 		}
+		mLastPos.set((int) (mZone.getCenter().getX() * aRatio) + aOffset.x, (int) (mZone.getCenter().getY() * aRatio) + aOffset.y);
+		mLastAngle = aAngle;
 	}
 
 	private void drawPolygon(Canvas canvas, List&lt;PointF&gt; polygon, Point aOffset, double ratio) {
@@ -565,16 +621,343 @@ public class GfxZone implements IRTO {
 	//  DRAWING 3D
 	// *****************************************************************************************************************
 
+	private ISObject3D m3DObject;
+	private Object3D m3DZone;
 
-	@Override
-	public void draw3D(World world, Map map, double ratio, float angle) {
-	}
+	private float[] mBoundingBox;
 
+	private boolean mIsInWorld;
+
+	private WeakReference&lt;World&gt; mWorldRef;
+
+	private boolean mIsBuildingZone = false;
+	private boolean mIs3DInit = false;
+
+	private int frame = 0;
+	private boolean isOnScreen = false;
 
 
 	@Override
 	public ISObject3D get3DObject() {
-		return null;
+		return m3DObject;
+	}
+
+	@Override
+	public void draw3D(World world, Map map, double ratio, float angle) {
+		if(m3DZone == null) return;
+
+		if(!mIs3DInit) {
+			mIs3DInit = true;
+
+			mWorldRef = new WeakReference&lt;World&gt;(world);
+			mBoundingBox = getWorldSpaceBounds(m3DZone);
+
+			if(!TextureManager.getInstance().containsTexture(mZoneColor + "")) {
+				TextureManager.getInstance().addTexture(mZoneColor + "", new Texture(1, 1, ColorUtils.getRGBColor(mZoneColor)));
+			}
+
+			if(!TextureManager.getInstance().containsTexture(mZonePressedColor + "")) {
+				TextureManager.getInstance().addTexture(mZonePressedColor + "", new Texture(1, 1, ColorUtils.getRGBColor(mZonePressedColor)));
+			}
+
+			//			m3DZone.clearObject();
+		}
+
+		//		if(isOnScreen()) {
+		if(!mIsInWorld) {
+			// Add to the world
+			world.addObject(m3DZone);
+			mIsInWorld = true;
+			m3DZone.setTexture(mZoneColor + "");
+		}
+
+
+		m3DZone.setVisibility(mZone.isVisible());
+
+		//			if(mIsTouched) {
+		//				m3DZone.setTexture(mZonePressedColor + "");
+		//			} else {
+		//				m3DZone.setTexture(mZoneColor + "");
+		//			}
+		//		} else {
+		//			if(mIsInWorld) {
+		//				// Remove from world
+		//				world.removeObject(m3DZone);
+		//				MemoryHelper.compact();
+		//				mIsInWorld = false;
+		//
+		//			}
+		//		}
+
+		//		if(frame == 1000) {
+		//			isOnScreen = isOnScreen();
+		//		} else {
+		//			frame ++;
+		//		}
+		mLastAngle = angle;
+	}
+
+	public float[] getWorldSpaceBounds(Object3D obj) {
+		float[] objectSpaceBounds = obj.getMesh().getBoundingBox();
+		SimpleVector mins = new SimpleVector(objectSpaceBounds[0], objectSpaceBounds[2], objectSpaceBounds[4]);
+		SimpleVector maxs = new SimpleVector(objectSpaceBounds[1], objectSpaceBounds[3], objectSpaceBounds[5]);
+		SimpleVector[] p = new SimpleVector[8];
+		p[0] = new SimpleVector(mins.x, mins.y, maxs.z); p[1] = new SimpleVector(mins.x, mins.y, mins.z); p[2] = new SimpleVector(maxs.x, mins.y, mins.z);
+		p[3] = new SimpleVector(maxs.x, mins.y, maxs.z); p[4] = new SimpleVector(maxs.x, maxs.y, mins.z);
+		p[5] = new SimpleVector(maxs.x, maxs.y, maxs.z); p[6] = new SimpleVector(mins.x, maxs.y, mins.z); p[7] = new SimpleVector(mins.x, maxs.y, maxs.z);
+		float minX = Float.MAX_VALUE, minY = Float.MAX_VALUE, minZ = Float.MAX_VALUE, maxX = -Float.MAX_VALUE, maxY = -Float.MAX_VALUE, maxZ = -Float.MAX_VALUE;
+		for (int i = 0; i &lt; 8; i++) {
+			p[i].matMul(obj.getWorldTransformation());
+			if (p[i].x &lt; minX)
+				minX = p[i].x;
+			if (p[i].y &lt; minY)
+				minY = p[i].y;
+			if (p[i].z &lt; minZ)
+				minZ = p[i].z;
+			if (p[i].x &gt; maxX)
+				maxX = p[i].x;
+			if (p[i].y &gt; maxY)
+				maxY = p[i].y;
+			if (p[i].z &gt; maxZ)
+				maxZ = p[i].z;
+		}
+		float[] worldSpaceBounds = new float[6];
+		worldSpaceBounds[0] = minX;
+		worldSpaceBounds[2] = minY;
+		worldSpaceBounds[4] = minZ;
+		worldSpaceBounds[1] = maxX;
+		worldSpaceBounds[3] = maxY;
+		worldSpaceBounds[5] = maxZ;
+		return worldSpaceBounds;
+	}
+
+	private boolean isOnScreen() {
+		float xMin = mBoundingBox[0];
+		float xMax = mBoundingBox[1];
+		float yMin = mBoundingBox[2];
+		float yMax = mBoundingBox[3];
+		float z = mBoundingBox[4];
+
+		SimpleVector pt1 = new SimpleVector(xMin, yMin, z);
+		SimpleVector pt2 = new SimpleVector(xMax, yMin, z);
+		SimpleVector pt3 = new SimpleVector(xMin, yMax, z);
+		SimpleVector pt4 = new SimpleVector(xMax, yMax, z);
+		return isPointOnScreen(pt1) || isPointOnScreen(pt2) || isPointOnScreen(pt3) || isPointOnScreen(pt4);
+	}
+
+	private boolean isPointOnScreen(SimpleVector p) {
+		SimpleVector proj = Interact2D.project3D2D(mWorldRef.get().getCamera(), Map3DView.mFrameBuffer, new SimpleVector(p.x, p.y, p.z));
+		return proj != null &amp;&amp; (proj.x &gt; 0 &amp;&amp; proj.y &gt; 0 &amp;&amp; proj.x &lt; CoordConverter.sScreenDimen.x * 2 &amp;&amp; proj.y &lt; CoordConverter.sScreenDimen.y * 2);
+	}
+
+	//******************************************************************************************************************
+	//  3D Zone creation
+	// *****************************************************************************************************************
+
+	private boolean mIsZoneCreated = false;
+
+	public void createZone3D() {
+
+		mIsBuildingZone = true;
+		if(!mIsZoneCreated) {
+			long start = System.currentTimeMillis();
+
+			List&lt;PointF&gt; poly = new ArrayList&lt;PointF&gt;();
+
+			for (int i = 0; i &lt; mZone.getPolygon().size(); i++) {
+				poly.add(new PointF(mZone.getPolygon().get(i).x / mMap.getScale(), mZone.getPolygon().get(i).y / mMap.getScale()));
+			}
+
+			cleanZone(poly);
+
+			m3DZone = createZone(poly, mZoneHeight);
+			m3DZone.setSortOffset(2);
+//			m3DZone.setTransparency(16);
+
+			if(m3DZone != null) {
+				m3DZone.setCollisionMode(Object3D.COLLISION_CHECK_OTHERS);
+
+				//								m3DZone.forceGeometryIndices(true);
+				//				m3DZone.setName(CommonConstants.ZONE_OBJECT_3D_NAME);
+				//			m3DZone.strip();
+				//				m3DZone.setCollisionOptimization(true);
+				//			m3DZone.build();
+
+				m3DObject = new ISObject3D();
+				m3DObject.addChild(m3DZone);
+			}
+
+
+
+			long end = System.currentTimeMillis();
+			//			Log.d(TAG, "zone created in : " + (end - start) + " ms");
+
+			mIsBuildingZone = false;
+			mIsZoneCreated = true;
+		}
+	}
+
+	private Object3D createZone(List&lt;PointF&gt; points, float height){
+		List&lt;PolygonPoint&gt; polyPoints = new ArrayList&lt;PolygonPoint&gt;();
+
+		for (int i = 0; i &lt; points.size(); i++) {
+			polyPoints.add(new PolygonPoint(points.get(i).x, points.get(i).y));
+		}
+
+		Polygon poly = new Polygon(polyPoints);
+		Poly2Tri.triangulate(poly);
+
+		List&lt;DelaunayTriangle&gt; triangles = poly.getTriangles();
+
+		Object3D roof = new Object3D(triangles.size());
+
+
+		for (int i = triangles.size()-1; i &gt;= 0 ; i--) {
+			DelaunayTriangle triangle = triangles.get(i);
+
+			SimpleVector v1, v2, v3;
+
+			TriangulationPoint vertex1 = triangle.points[2];
+			TriangulationPoint vertex2 = triangle.points[1];
+			TriangulationPoint vertex3 = triangle.points[0];
+
+			v1 = new SimpleVector(vertex1.getX(), vertex1.getY(), -height);
+			v2 = new SimpleVector(vertex2.getX(), vertex2.getY(), -height);
+			v3 = new SimpleVector(vertex3.getX(), vertex3.getY(), -height);
+
+			roof.addTriangle(v1, v2, v3);
+		}
+
+		Object3D sides = new Object3D(points.size()*2);
+
+		for (int i = 0; i &lt; points.size(); i++) {
+
+			Object3D t = new Object3D(2);
+
+			SimpleVector v1, v2, v1h, v2h;
+
+			if (i == points.size()-1) {
+				v1 = new SimpleVector(points.get(i).x, points.get(i).y, 0);
+				v2 = new SimpleVector(points.get(0).x, points.get(0).y, 0);
+				v1h = new SimpleVector(points.get(i).x, points.get(i).y, -height);
+				v2h = new SimpleVector(points.get(0).x, points.get(0).y, -height);
+			} else {
+				v1 = new SimpleVector(points.get(i).x, points.get(i).y, 0);
+				v2 = new SimpleVector(points.get(i+1).x, points.get(i+1).y, 0);
+				v1h = new SimpleVector(points.get(i).x, points.get(i).y, -height);
+				v2h = new SimpleVector(points.get(i+1).x, points.get(i+1).y, -height);
+			}
+
+			t.addTriangle(v1h, v1, v2h);
+			t.addTriangle(v1, v2, v2h);
+
+			sides = Object3D.mergeObjects(sides, t);
+		}
+
+		roof.calcNormals();
+		VertexController roofVC = new VertexController();
+		roofVC.setPolyManager(roof.getPolygonManager());
+		roof.getMesh().setVertexController(roofVC, false);			
+		Mesh mesh = roof.getMesh();
+		mesh.applyVertexController();
+
+		sides.calcNormals();
+		VertexController sideVC = new VertexController();
+		sideVC.setSide();
+		sideVC.setPolyManager(sides.getPolygonManager());
+		sides.getMesh().setVertexController(sideVC, false);			
+		mesh = sides.getMesh();
+		mesh.applyVertexController();
+
+		Object3D zone = Object3D.mergeObjects(roof, sides);
+//		zone.getMesh().compress();
+//		zone.getMesh().setSerializeMethod(Mesh.SERIALIZE_LOW_PRECISION);
+
+		//		zone.setCollisionMode(Object3D.COLLISION_CHECK_OTHERS);
+		//		zone.strip();
+		//		zone.compile();
+
+		zone.build();
+
+		return zone;
+
+
+	}
+
+	private void cleanZone(List&lt;PointF&gt; points){
+		points.remove(points.size()-1);
+
+		int signedArea = 0;
+
+		for (int i = 0; i &lt; points.size(); i++) {
+			PointF ptA = points.get(i);
+			PointF ptB = points.get((i == points.size() -1) ? 0 : i+1);
+			signedArea += (ptA.x * ptB.y - ptB.x * ptA.y);
+		}
+
+		if (signedArea &gt; 0) {
+			Collections.reverse(points);
+		}
+
+	}
+
+	class VertexController extends GenericVertexController {
+
+		private static final long serialVersionUID = 1L;
+
+		private PolygonManager mPolyManager;
+		private boolean isSide = false;
+
+		public VertexController() {
+		}
+
+		public void setPolyManager(PolygonManager poly){
+			mPolyManager = poly;
+		}
+
+		public void setSide(){
+			isSide = true;
+		}
+
+		public void apply() {
+			SimpleVector[] source = getSourceMesh();
+			SimpleVector[] destinationNormals = getDestinationNormals();
+
+			for (int i = 0; i &lt; source.length; i++) {
+				if (isSide) {
+					int[] polyIds = getPolygonIDs(i, 3);
+
+					SimpleVector normal = new SimpleVector();
+
+					List&lt;SimpleVector&gt; usedNormal = new ArrayList&lt;SimpleVector&gt;();
+
+					for (int j = 0; j &lt; polyIds.length; j++) {
+						SimpleVector t = mPolyManager.getTransformedNormal(polyIds[j]);
+						boolean in = false;
+						for (int k = 0; k &lt; usedNormal.size(); k++) {
+							if (usedNormal.get(k).x == t.x &amp;&amp; 
+									usedNormal.get(k).y == t.y &amp;&amp; 
+									usedNormal.get(k).z == t.z) {
+								in = true;
+								break;
+							}
+						}
+
+						if (!in) {
+							usedNormal.add(t);
+							normal.x += t.x;
+							normal.y += t.y;
+							normal.z = 0;
+
+						}
+
+						destinationNormals[i] = normal;
+					}
+				} else {
+					destinationNormals[i].set(new SimpleVector(0, 0, -1));
+				}
+			}
+		}
 	}
 
 	//******************************************************************************************************************
@@ -586,10 +969,16 @@ public class GfxZone implements IRTO {
 
 	@Override
 	public ETouchObjectResult onTouchDown(Touch aTouch) {
+
 		// if i am under the touch, notify observers
 		if (isTouchInsideZone(aTouch)) {
 			mReferencePoint.set(aTouch.getPosition(0).x, aTouch.getPosition(0).y);
 			mIsTouched = true;
+
+			if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+				m3DZone.setTexture(mZonePressedColor + "");
+			}
+
 			return ETouchObjectResult.RESULT_CONSUME;
 		}
 		return ETouchObjectResult.RESULT_NOTHING;
@@ -604,12 +993,15 @@ public class GfxZone implements IRTO {
 
 	@Override
 	public ETouchObjectResult onTouchMove(Touch aTouch) {
+
 		// if no zone selected, no need to check this event
 		if (mIsTouched) {
 			if (aTouch.isMultiTouch()) {
 				mIsTouched = false;
-			}
-			else {
+				if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+					m3DZone.setTexture(mZoneColor + "");
+				}
+			} else {
 				Point currentPoint = aTouch.getPosition();
 				//if the touch position change too much, deselect the zone
 				int dx = Math.abs(currentPoint.x - mReferencePoint.x);
@@ -635,6 +1027,11 @@ public class GfxZone implements IRTO {
 	public ETouchObjectResult onTouchUp(Touch aTouch) {
 		if (mIsTouched) {
 			mIsTouched = false;
+
+			if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+				m3DZone.setTexture(mZoneColor + "");
+			}
+
 			return ETouchObjectResult.RESULT_NOTIFY_CONSUME;
 		}
 		return ETouchObjectResult.RESULT_NOTHING;
@@ -649,494 +1046,20 @@ public class GfxZone implements IRTO {
 					(float)((aTouch.getPosition(0).y - mLastOffset.y) / mLastRatio));
 
 			result = Topology.isPointInsidePoly(mZone.getPolygon(), p);
-		} else {
+		} else if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+
+			if (m3DZone != null) {
+				SimpleVector pos = aTouch.getTouchedRays().get(0).getPos();
+				SimpleVector dir = aTouch.getTouchedRays().get(0).getDir();
+				if (m3DZone.rayIntersectsAABB(pos, dir, true) != Object3D.RAY_MISSES_BOX) {
+					result = m3DZone.wasTargetOfLastCollision();//true;
+				}
+			}
 
 		}
 
 		return result;
 	}
-
-
-
-
-	//
-	//	public void init3D(float scale){
-	//		if (mGraphics == null) {
-	//			mGraphics = new ZoneGraphics(0);
-	//			mGraphics.createZone3D(scale);
-	//		}
-	//	}
-	//
-	//	public Object3D get3DZone(){
-	//		return mGraphics.m3DZone;
-	//	}
-	//
-
-	//	//******************************************************************************************************************
-	//	//  DRAWING 3D
-	//	// *****************************************************************************************************************
-	//
-	//	private boolean mContainsObject;
-	//
-	//	@Override
-	//	public void draw3D(World world, IMapData map, double ratio, float angle) {		
-	//		if(mGraphics != null &amp;&amp; mGraphics.get3DZone() != null) {	
-	//			mGraphics.draw3D(world);
-	//
-	//			if (mGraphics.get3DZone().getUserObject() != null) {
-	//				try{
-	//					Boolean needTransparency = (Boolean) mGraphics.get3DZone().getUserObject();
-	//					if (needTransparency) {
-	//						mGraphics.get3DZone().setTransparency(10);
-	//					} else {
-	//						mGraphics.get3DZone().setTransparency(-1);
-	//					}
-	//				} catch(ClassCastException e){
-	//
-	//				}
-	//			}
-	//
-	//
-	//			mGraphics.get3DZone().setUserObject(false);
-	//		}
-	//	}
-	//
-	//	@Override
-	//	public void draw3D(World world, IMapData map, double ratio, float angle, IRTO rto) {
-	//		if (rto != null &amp;&amp; rto.get3DObject() != null) {
-	//			rto.get3DObject().setOrigin(new SimpleVector(mCenterPosition.getX() / map.getMapScale(), mCenterPosition.getY() / map.getMapScale(), -mGraphics.getHeight()/2f));
-	//			rto.draw3D(world, map, ratio, angle);
-	//			mGraphics.get3DZone().setUserObject(true);
-	//		}
-	//	}
-	//
-	//	public void clear3DZone(World world){
-	//		if(mGraphics != null){
-	//			mGraphics.clear3DZone(world);
-	//		}
-	//	}
-	//
-	//	@Override
-	//	public ISObject3D get3DObject() {
-	//		return null;
-	//	}
-	//
-
-
-	//
-	//	/**
-	//	 * Inner class used to handle touch events
-	//	 */
-	//	private class ZoneTouch {
-	//		private Point 	mReferencePoint = new Point();
-	//		private boolean mTouchDown		= false;
-	//		private boolean	mTouchOn		= true;
-	//
-	//
-	//		private void setTouchable(boolean aOn) {
-	//			mTouchOn = aOn;
-	//		}
-	//
-	//		public ETouchObjectResult onTouchDown(Touch aTouch) {	
-	//
-	//			if(mTouchOn) {
-	//				// if i am under the touch, notify observers
-	//				if (isTouchInsideZone(aTouch)) {
-	//					mReferencePoint.set(aTouch.getPosition(0).x, aTouch.getPosition(0).y);
-	//					mTouchDown = true;
-	//					GfxZone.this.show();
-	//					return ETouchObjectResult.RESULT_CONSUME;
-	//				}
-	//			}
-	//			return ETouchObjectResult.RESULT_NOTHING;
-	//		}
-	//
-	//		public ETouchObjectResult onTouchMove(Touch aTouch) {
-	//			// if no zone selected, no need to check this event
-	//			if (mTouchOn &amp;&amp; mTouchDown) {
-	//				if (aTouch.isMultiTouch()) {
-	//					mTouchDown = false;
-	//					GfxZone.this.hide();
-	//				}
-	//				else {
-	//					Point currentPoint = aTouch.getPosition();
-	//					//Log.d("zone", "MOVE " + Zone.this.getZoneId());
-	//					//if the touch position change too much, deselect the zone
-	//					int dx = Math.abs(currentPoint.x - mReferencePoint.x);
-	//					int dy = Math.abs(currentPoint.y - mReferencePoint.y);
-	//					if ((dx &gt; CommonConstants.CLICKABLE_ZONE_SIZE) || (dy &gt; CommonConstants.CLICKABLE_ZONE_SIZE)) {
-	//						onTouchUp(aTouch);
-	//						//notify observers or "release" won't work
-	//						return ETouchObjectResult.RESULT_NOTIFY;
-	//					}
-	//				}
-	//			}
-	//			return ETouchObjectResult.RESULT_NOTHING;
-	//		}
-	//
-	//		public ETouchObjectResult onTouchUp(Touch aTouch) {
-	//			if (mTouchOn &amp;&amp; mTouchDown) {
-	//				mTouchDown = false;
-	//				GfxZone.this.hide();
-	//				//Log.d("zone", "HIDE " + Zone.this.getZoneId());
-	//				return ETouchObjectResult.RESULT_NOTIFY_CONSUME;
-	//			}
-	//			return ETouchObjectResult.RESULT_NOTHING;
-	//		}
-	//
-	//		private boolean isTouchInsideZone(Touch aTouch){
-	//			boolean result = false;
-	//
-	//			if (mRenderMode == ERenderMode.RENDER_MODE_3D) {
-	//				if (mGraphics != null &amp;&amp; mGraphics.get3DZone() != null) {
-	//					SimpleVector pos = aTouch.getTouchedRays().get(0).getPos();
-	//					SimpleVector dir = aTouch.getTouchedRays().get(0).getDir();
-	//					if (mGraphics.get3DZone().rayIntersectsAABB(pos, dir, true) != Object3D.RAY_MISSES_BOX) {
-	//						result = (mGraphics.get3DZone().wasTargetOfLastCollision());//true;
-	//					}
-	//				}
-	//			} else {
-	//				PointF p = new PointF((float)((aTouch.getPosition(0).x - mLastOffset.x) / mLastRatio), 
-	//						(float)((aTouch.getPosition(0).y - mLastOffset.y) / mLastRatio));
-	//
-	//				result = Topology.isPointInsidePoly(getPolygon(), p);
-	//			}
-	//
-	//			return result;
-	//		}
-	//	}
-	//
-	//
-	//	//******************************************************************************************************************
-	//	//  GRAPHICS
-	//	// *****************************************************************************************************************
-	//	private class ZoneGraphics {
-	//		private float						mCircleRadius 	= 1f;
-	//		private Paint 						mPaint 			= null;
-	//		private boolean 					mIsVisible 		= false;
-	//
-	//		private Object3D m3DZone;
-	//		private boolean mIsInWorld = false;
-	//
-	//		private float mHeight = 0;
-	//
-	//		private Integer mColor;
-	//
-	//		ZoneGraphics(int aLineWidth) {
-	//			mPaint = new Paint();
-	//			mPaint.setColor(Color.TRANSPARENT);
-	//			mPaint.setStrokeJoin(Join.MITER);
-	//			mPaint.setAntiAlias(true);
-	//			mPaint.setStrokeWidth(aLineWidth);
-	//			mPaint.setStrokeMiter(aLineWidth);
-	//			mCircleRadius = aLineWidth/2f;
-	//
-	//			mColor = MapConstants.DEFAULT_ZONE_SELECTED_COLOR;
-	//		}
-	//
-	//		public float getHeight(){
-	//			return mHeight;
-	//		}
-	//
-	//		private void setColor(Integer aColor) {
-	//			if (aColor == null) {
-	//				mPaint.setColor(Color.TRANSPARENT);
-	//			}
-	//			else {
-	//				mColor = aColor;
-	//				mPaint.setColor(aColor);
-	//				
-	//				if(!TextureManager.getInstance().containsTexture(mColor + "")){					
-	//					Texture tex = new Texture(1, 1, ColorUtils.getRGBColor(mColor));
-	//					TextureManager.getInstance().addTexture(mColor + "", tex);
-	//				}
-	//			}
-	//		}
-	//
-	//		private void show() {
-	//			mIsVisible = true;
-	//		}
-	//
-	//		private void hide() {
-	//			mIsVisible = false;	
-	//		}
-	//
-	//		//******************************************************************************************************************
-	//		//  SPECIFIC 2D
-	//		// *****************************************************************************************************************
-	//
-	//		private void draw(Canvas aCanvas, Point aOffset, double aRatio, float aAngle) {
-	//			if(mIsVisible) {
-	//				// draw zone
-	//				List&lt;PointF&gt; poly = GfxZone.this.getPolygon();
-	//				if (poly.size() &gt; 2) {
-	//					drawPolygon(aCanvas, poly, aOffset, aRatio);
-	//				}
-	//			}
-	//		}
-	//
-	//		private void drawPolygon(Canvas canvas, List&lt;PointF&gt; polygon, Point aOffset, double ratio) {
-	//			PointF point = polygon.get(0);
-	//			Point start = new Point((int)(point.x * ratio) + aOffset.x, (int)(point.y * ratio) + aOffset.y);
-	//			Point a 	= new Point(start);
-	//			Point b 	= new Point();
-	//
-	//			for (int i = 1; i &lt; polygon.size(); i++) {
-	//				point = polygon.get(i);
-	//				b.x = (int)(point.x * ratio) + aOffset.x;
-	//				b.y = (int)(point.y * ratio) + aOffset.y;
-	//
-	//				canvas.drawCircle(a.x, a.y, mCircleRadius, mPaint);
-	//				canvas.drawLine(a.x, a.y, b.x, b.y, mPaint);
-	//
-	//				a.x = b.x; 
-	//				a.y = b.y;
-	//			}
-	//			canvas.drawCircle(start.x, start.y, mCircleRadius, mPaint);
-	//			canvas.drawLine(a.x, a.y, start.x, start.y, mPaint);
-	//		}
-	//
-	//		//******************************************************************************************************************
-	//		//  SPECIFIC 3D
-	//		// *****************************************************************************************************************
-	//
-	//		private void draw3D(World world) {		
-	//			if (!mIsInWorld) {
-	//				mIsInWorld = true;
-	//				world.addObject(m3DZone);
-	//
-	//				if(mZoneColor != -1 &amp;&amp; !TextureManager.getInstance().containsTexture(mZoneColor + "")){
-	//					TextureManager.getInstance().addTexture(mZoneColor + "", new Texture(1, 1, ColorUtils.getRGBColor(mZoneColor)));	
-	//				}
-	//				if(mZoneColor != -1) {
-	//					m3DZone.setTexture(mZoneColor + "");
-	//				} else {
-	//					m3DZone.setTexture(mColor + "");
-	//				}
-	//			}
-	//
-	////			if(!TextureManager.getInstance().containsTexture(RGBColor.RED + "")){					
-	////				Texture tex = new Texture(1, 1, RGBColor.RED);
-	////				TextureManager.getInstance().addTexture(RGBColor.RED + "", tex);
-	////				
-	////			}
-	////			m3DZone.setTexture(RGBColor.RED + "");
-	////			if (!mIsVisible) {
-	//			
-	////				m3DZone.setTexture((mZoneColor != -1) ? mZoneColor + "" : mColor + "");
-	////			} else {
-	////				m3DZone.setTexture(MapConstants.DEFAULT_MAP_ZONE_COLOR + "");
-	////			}
-	//		}
-	//
-	//		private void clear3DZone(World world){
-	//			if (m3DZone != null &amp;&amp; mIsInWorld) {
-	//				world.removeObject(m3DZone);
-	//				mIsInWorld = false;
-	//			}
-	//		}
-	//
-	//		private Object3D get3DZone(){
-	//			return m3DZone;
-	//		}
-	//
-	//		private Object3D createZone(List&lt;PointF&gt; points, float height){
-	//			List&lt;PolygonPoint&gt; polyPoints = new ArrayList&lt;PolygonPoint&gt;();
-	//
-	//			for (int i = 0; i &lt; points.size(); i++) {
-	//				polyPoints.add(new PolygonPoint(points.get(i).x, points.get(i).y));
-	//			}
-	//
-	//			Polygon poly = new Polygon(polyPoints);
-	//			Poly2Tri.triangulate(poly);
-	//
-	//			List&lt;DelaunayTriangle&gt; triangles = poly.getTriangles();
-	//
-	//			Object3D roof = new Object3D(triangles.size());
-	//
-	//
-	//			for (int i = triangles.size()-1; i &gt;= 0 ; i--) {
-	//				DelaunayTriangle triangle = triangles.get(i);
-	//
-	//				SimpleVector v1, v2, v3;
-	//
-	//				TriangulationPoint vertex1 = triangle.points[2];
-	//				TriangulationPoint vertex2 = triangle.points[1];
-	//				TriangulationPoint vertex3 = triangle.points[0];
-	//
-	//				v1 = new SimpleVector(vertex1.getX(), vertex1.getY(), -height);
-	//				v2 = new SimpleVector(vertex2.getX(), vertex2.getY(), -height);
-	//				v3 = new SimpleVector(vertex3.getX(), vertex3.getY(), -height);
-	//
-	//				roof.addTriangle(v1, v2, v3);
-	//			}
-	//
-	//			Object3D sides = new Object3D(points.size()*2);
-	//
-	//			for (int i = 0; i &lt; points.size(); i++) {
-	//
-	//				Object3D t = new Object3D(2);
-	//
-	//				SimpleVector v1, v2, v1h, v2h;
-	//
-	//				if (i == points.size()-1) {
-	//					v1 = new SimpleVector(points.get(i).x, points.get(i).y, 0);
-	//					v2 = new SimpleVector(points.get(0).x, points.get(0).y, 0);
-	//					v1h = new SimpleVector(points.get(i).x, points.get(i).y, -height);
-	//					v2h = new SimpleVector(points.get(0).x, points.get(0).y, -height);
-	//				} else {
-	//					v1 = new SimpleVector(points.get(i).x, points.get(i).y, 0);
-	//					v2 = new SimpleVector(points.get(i+1).x, points.get(i+1).y, 0);
-	//					v1h = new SimpleVector(points.get(i).x, points.get(i).y, -height);
-	//					v2h = new SimpleVector(points.get(i+1).x, points.get(i+1).y, -height);
-	//				}
-	//
-	//				t.addTriangle(v1h, v1, v2h);
-	//				t.addTriangle(v1, v2, v2h);
-	//
-	//				sides = Object3D.mergeObjects(sides, t);
-	//			}
-	//
-	//			roof.calcNormals();
-	//			VertexController roofVC = new VertexController();
-	//			roofVC.setPolyManager(roof.getPolygonManager());
-	//			roof.getMesh().setVertexController(roofVC, false);			
-	//			Mesh mesh = roof.getMesh();
-	//			mesh.applyVertexController();
-	//
-	//			sides.calcNormals();
-	//			VertexController sideVC = new VertexController();
-	//			sideVC.setSide();
-	//			sideVC.setPolyManager(sides.getPolygonManager());
-	//			sides.getMesh().setVertexController(sideVC, false);			
-	//			mesh = sides.getMesh();
-	//			mesh.applyVertexController();
-	//
-	//			Object3D zone = Object3D.mergeObjects(roof, sides);
-	//			zone.setCollisionMode(Object3D.COLLISION_CHECK_OTHERS);
-	//			zone.strip();
-	//			zone.compile();
-	//
-	//			return zone;
-	//
-	//
-	//		}
-	//
-	//		private void createZone3D(float mapScale){
-	//			if (m3DZone == null) {
-	//
-	//				List&lt;PointF&gt; poly = (List&lt;PointF&gt;) mPolygon.clone();
-	//
-	//				for (int j = 0; j &lt; poly.size(); j++) {
-	//					poly.get(j).x = poly.get(j).x / mapScale;
-	//					poly.get(j).y = poly.get(j).y / mapScale;
-	//				}
-	//
-	//				cleanZone(poly);
-	//
-	//				if(mZoneHeight == 0) {
-	//					Map map = (Map) InitProvider.getInstance().getMap(mCenterPosition.getMapID());
-	//					mZoneHeight = map.getFExtra1();
-	//				}
-	//				
-	//				mHeight = mZoneHeight / mapScale;
-	////				if(mHeight &lt; 2) mHeight = 2;
-	//				m3DZone = createZone(poly, mHeight);
-	////				m3DZone.setTexture(MapConstants.DEFAULT_MAP_ZONE_COLOR + "");
-	//
-	//				m3DZone.setCollisionMode(Object3D.COLLISION_CHECK_OTHERS);
-	//
-	//				m3DZone.forceGeometryIndices(true);
-	//				m3DZone.setName(CommonConstants.ZONE_OBJECT_3D_NAME);
-	//				m3DZone.strip();
-	//				m3DZone.setCollisionOptimization(true);
-	//				m3DZone.build();
-	//			} 
-	//		}
-	//
-	//		private void cleanZone(List&lt;PointF&gt; points){
-	//			points.remove(points.size()-1);
-	//
-	//			int signedArea = 0;
-	//
-	//			for (int i = 0; i &lt; points.size(); i++) {
-	//				PointF ptA = points.get(i);
-	//				PointF ptB = points.get((i == points.size() -1) ? 0 : i+1);
-	//				signedArea += (ptA.x * ptB.y - ptB.x * ptA.y);
-	//			}
-	//
-	//			if (signedArea &gt; 0) {
-	//				Collections.reverse(points);
-	//			}
-	//
-	//		}
-	//
-	//		class VertexController extends GenericVertexController {
-	//
-	//			private final static String TAG = "VertexController.class";
-	//
-	//			private static final long serialVersionUID = 1L;
-	//
-	//			private PolygonManager mPolyManager;
-	//			private boolean isSide = false;
-	//
-	//			public VertexController() {
-	//			}
-	//
-	//			public void setPolyManager(PolygonManager poly){
-	//				mPolyManager = poly;
-	//			}
-	//
-	//			public void setSide(){
-	//				isSide = true;
-	//			}
-	//
-	//			public void apply() {
-	//				SimpleVector[] source = getSourceMesh();
-	//				SimpleVector[] destinationNormals = getDestinationNormals();
-	//
-	//				Log.d(TAG, "sources: " + source.length);
-	//
-	//
-	//				for (int i = 0; i &lt; source.length; i++) {
-	//					if (isSide) {
-	//						int[] polyIds = getPolygonIDs(i, 3);
-	//
-	//						SimpleVector normal = new SimpleVector();
-	//
-	//						List&lt;SimpleVector&gt; usedNormal = new ArrayList&lt;SimpleVector&gt;();
-	//
-	//						for (int j = 0; j &lt; polyIds.length; j++) {
-	//							SimpleVector t = mPolyManager.getTransformedNormal(polyIds[j]);
-	//							boolean in = false;
-	//							for (int k = 0; k &lt; usedNormal.size(); k++) {
-	//								if (usedNormal.get(k).x == t.x &amp;&amp; 
-	//										usedNormal.get(k).y == t.y &amp;&amp; 
-	//										usedNormal.get(k).z == t.z) {
-	//									in = true;
-	//									break;
-	//								}
-	//							}
-	//
-	//							if (!in) {
-	//								usedNormal.add(t);
-	//								normal.x += t.x;
-	//								normal.y += t.y;
-	//								normal.z = 0;
-	//
-	//							}
-	//
-	//							destinationNormals[i] = normal;
-	//						}
-	//					} else {
-	//						destinationNormals[i].set(new SimpleVector(0, 0, -1));
-	//					}
-	//				}
-	//			}
-	//		}
-	//
-	//	}
-
 
 
 }

@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   CoordConverter
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -331,7 +331,7 @@ public class CoordConverter {
 	
 	private final static String TAG = "INSITEO_MAP_COORD_CONVERTER";
 	
-	private static Point sScreenDimen = null;	//point storing half screen width, and half screen height
+	public static Point sScreenDimen = null;	//point storing half screen width, and half screen height
 	
 	
 	//constructor, unreachable
@@ -491,7 +491,7 @@ public class CoordConverter {
         float ratio = (float)Math.pow(2, zoomLevel);
         return mapDistance * ratio;
     }	
-	public static PointF convertScreenDistanceInMapDistance(Point screenDistance, float zoomLevel) {
+	public static PointF convertScreenDistanceInMapDistance(PointF screenDistance, float zoomLevel) {
         float ratio = (float)Math.pow(2, zoomLevel);
         PointF mapDistance = new PointF((screenDistance.x / ratio), (screenDistance.y / ratio));
 		return mapDistance;

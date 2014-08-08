@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  ProtoZone.PBGeofenceZone
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/auth/parsers/package-summary.html">com.insiteo.lbs.common.auth.parsers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/utils/geometry/package-summary.html">com.insiteo.lbs.common.utils.geometry</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/utils/threading/package-summary.html">com.insiteo.lbs.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/analytics/request/package-summary.html">com.insiteo.lbs.protobuf.analytics.request</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/request/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.request.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/response/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/response/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/dispatch/response/init/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/request/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/package-summary.html">com.insiteo.lbs.protobuf.lbs.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/loc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.loc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/lbs/response/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.pushloc</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/package-summary.html">com.insiteo.lbs.protobuf.model.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/model/itinerary/package-summary.html">com.insiteo.lbs.protobuf.model.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/protobuf/model/map/package-summary.html">com.insiteo.lbs.protobuf.model.map</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoGeofence.PBGeofenceOrBuilder.html">ProtoGeofence.PBGeofenceOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoPoint.PBGeofencePointOrBuilder.html">ProtoPoint.PBGeofencePointOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoTileIndex.PBGeofenceTileIndexOrBuilder.html">ProtoTileIndex.PBGeofenceTileIndexOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoZone.PBGeofenceZoneOrBuilder.html">ProtoZone.PBGeofenceZoneOrBuilder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoGeofence.html">ProtoGeofence</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoGeofence.PBGeofence.html">ProtoGeofence.PBGeofence</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoGeofence.PBGeofence.Builder.html">ProtoGeofence.PBGeofence.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoPoint.html">ProtoPoint</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoPoint.PBGeofencePoint.html">ProtoPoint.PBGeofencePoint</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoPoint.PBGeofencePoint.Builder.html">ProtoPoint.PBGeofencePoint.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoTileIndex.html">ProtoTileIndex</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoTileIndex.PBGeofenceTileIndex.html">ProtoTileIndex.PBGeofenceTileIndex</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoTileIndex.PBGeofenceTileIndex.Builder.html">ProtoTileIndex.PBGeofenceTileIndex.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoZone.html">ProtoZone</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoZone.PBGeofenceZone.html">ProtoZone.PBGeofenceZone</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoZone.PBGeofenceZone.Builder.html">ProtoZone.PBGeofenceZone.Builder</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="ProtoZone.PBGeofenceZone.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+    final 
+    
+    class
+<h1>ProtoZone.PBGeofenceZone</h1>
+
+
+
+  
+  
+  
+
+  
+    extends GeneratedMessageLite<br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../../../com/insiteo/lbs/protobuf/model/geofence/ProtoZone.PBGeofenceZoneOrBuilder.html">ProtoZone.PBGeofenceZoneOrBuilder</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+// Generated by the protocol buffer compiler.  DO NOT EDIT!
+// source: PBGeofenceZone.proto
+
+package com.insiteo.lbs.protobuf.model.geofence;
+
+public final class ProtoZone {
+  private ProtoZone() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+  public interface PBGeofenceZoneOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // required string guid = 1;
+    boolean hasGuid();
+    String getGuid();
+    
+    // required int32 mapID = 2;
+    boolean hasMapID();
+    int getMapID();
+    
+    // required .com.insiteo.lbs.protobuf.model.geofence.PBGeofencePoint coord = 3;
+    boolean hasCoord();
+    com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint getCoord();
+    
+    // repeated .com.insiteo.lbs.protobuf.model.geofence.PBGeofencePoint polygon = 4;
+    java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint&gt; 
+        getPolygonList();
+    com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint getPolygon(int index);
+    int getPolygonCount();
+    
+    // required int32 indexZL = 5;
+    boolean hasIndexZL();
+    int getIndexZL();
+    
+    // repeated .com.insiteo.lbs.protobuf.model.geofence.PBGeofenceTileIndex indexes = 6;
+    java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex&gt; 
+        getIndexesList();
+    com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex getIndexes(int index);
+    int getIndexesCount();
+    
+    // required int32 inZoneSec = 7;
+    boolean hasInZoneSec();
+    int getInZoneSec();
+    
+    // required int32 inZonePos = 8;
+    boolean hasInZonePos();
+    int getInZonePos();
+    
+    // required int32 outZoneSec = 9;
+    boolean hasOutZoneSec();
+    int getOutZoneSec();
+    
+    // required int32 outZonePos = 10;
+    boolean hasOutZonePos();
+    int getOutZonePos();
+    
+    // required bool stayEnabled = 11;
+    boolean hasStayEnabled();
+    boolean getStayEnabled();
+    
+    // required int32 staySec = 12;
+    boolean hasStaySec();
+    int getStaySec();
+    
+    // optional string extra1 = 13;
+    boolean hasExtra1();
+    String getExtra1();
+    
+    // optional string extra2 = 14;
+    boolean hasExtra2();
+    String getExtra2();
+    
+    // optional string extra3 = 15;
+    boolean hasExtra3();
+    String getExtra3();
+    
+    // required bool inEnabled = 16;
+    boolean hasInEnabled();
+    boolean getInEnabled();
+    
+    // required bool outEnabled = 17;
+    boolean hasOutEnabled();
+    boolean getOutEnabled();
+  }
+  public static final class PBGeofenceZone extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBGeofenceZoneOrBuilder {
+    // Use PBGeofenceZone.newBuilder() to construct.
+    private PBGeofenceZone(Builder builder) {
+      super(builder);
+    }
+    private PBGeofenceZone(boolean noInit) {}
+    
+    private static final PBGeofenceZone defaultInstance;
+    public static PBGeofenceZone getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBGeofenceZone getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // required string guid = 1;
+    public static final int GUID_FIELD_NUMBER = 1;
+    private java.lang.Object guid_;
+    public boolean hasGuid() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public String getGuid() {
+      java.lang.Object ref = guid_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          guid_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getGuidBytes() {
+      java.lang.Object ref = guid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        guid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required int32 mapID = 2;
+    public static final int MAPID_FIELD_NUMBER = 2;
+    private int mapID_;
+    public boolean hasMapID() {
+      return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+    }
+    public int getMapID() {
+      return mapID_;
+    }
+    
+    // required .com.insiteo.lbs.protobuf.model.geofence.PBGeofencePoint coord = 3;
+    public static final int COORD_FIELD_NUMBER = 3;
+    private com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint coord_;
+    public boolean hasCoord() {
+      return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+    }
+    public com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint getCoord() {
+      return coord_;
+    }
+    
+    // repeated .com.insiteo.lbs.protobuf.model.geofence.PBGeofencePoint polygon = 4;
+    public static final int POLYGON_FIELD_NUMBER = 4;
+    private java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint&gt; polygon_;
+    public java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint&gt; getPolygonList() {
+      return polygon_;
+    }
+    public java.util.List&lt;? extends com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePointOrBuilder&gt; 
+        getPolygonOrBuilderList() {
+      return polygon_;
+    }
+    public int getPolygonCount() {
+      return polygon_.size();
+    }
+    public com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint getPolygon(int index) {
+      return polygon_.get(index);
+    }
+    public com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePointOrBuilder getPolygonOrBuilder(
+        int index) {
+      return polygon_.get(index);
+    }
+    
+    // required int32 indexZL = 5;
+    public static final int INDEXZL_FIELD_NUMBER = 5;
+    private int indexZL_;
+    public boolean hasIndexZL() {
+      return ((bitField0_ &amp; 0x00000008) == 0x00000008);
+    }
+    public int getIndexZL() {
+      return indexZL_;
+    }
+    
+    // repeated .com.insiteo.lbs.protobuf.model.geofence.PBGeofenceTileIndex indexes = 6;
+    public static final int INDEXES_FIELD_NUMBER = 6;
+    private java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex&gt; indexes_;
+    public java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex&gt; getIndexesList() {
+      return indexes_;
+    }
+    public java.util.List&lt;? extends com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndexOrBuilder&gt; 
+        getIndexesOrBuilderList() {
+      return indexes_;
+    }
+    public int getIndexesCount() {
+      return indexes_.size();
+    }
+    public com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex getIndexes(int index) {
+      return indexes_.get(index);
+    }
+    public com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndexOrBuilder getIndexesOrBuilder(
+        int index) {
+      return indexes_.get(index);
+    }
+    
+    // required int32 inZoneSec = 7;
+    public static final int INZONESEC_FIELD_NUMBER = 7;
+    private int inZoneSec_;
+    public boolean hasInZoneSec() {
+      return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+    }
+    public int getInZoneSec() {
+      return inZoneSec_;
+    }
+    
+    // required int32 inZonePos = 8;
+    public static final int INZONEPOS_FIELD_NUMBER = 8;
+    private int inZonePos_;
+    public boolean hasInZonePos() {
+      return ((bitField0_ &amp; 0x00000020) == 0x00000020);
+    }
+    public int getInZonePos() {
+      return inZonePos_;
+    }
+    
+    // required int32 outZoneSec = 9;
+    public static final int OUTZONESEC_FIELD_NUMBER = 9;
+    private int outZoneSec_;
+    public boolean hasOutZoneSec() {
+      return ((bitField0_ &amp; 0x00000040) == 0x00000040);
+    }
+    public int getOutZoneSec() {
+      return outZoneSec_;
+    }
+    
+    // required int32 outZonePos = 10;
+    public static final int OUTZONEPOS_FIELD_NUMBER = 10;
+    private int outZonePos_;
+    public boolean hasOutZonePos() {
+      return ((bitField0_ &amp; 0x00000080) == 0x00000080);
+    }
+    public int getOutZonePos() {
+      return outZonePos_;
+    }
+    
+    // required bool stayEnabled = 11;
+    public static final int STAYENABLED_FIELD_NUMBER = 11;
+    private boolean stayEnabled_;
+    public boolean hasStayEnabled() {
+      return ((bitField0_ &amp; 0x00000100) == 0x00000100);
+    }
+    public boolean getStayEnabled() {
+      return stayEnabled_;
+    }
+    
+    // required int32 staySec = 12;
+    public static final int STAYSEC_FIELD_NUMBER = 12;
+    private int staySec_;
+    public boolean hasStaySec() {
+      return ((bitField0_ &amp; 0x00000200) == 0x00000200);
+    }
+    public int getStaySec() {
+      return staySec_;
+    }
+    
+    // optional string extra1 = 13;
+    public static final int EXTRA1_FIELD_NUMBER = 13;
+    private java.lang.Object extra1_;
+    public boolean hasExtra1() {
+      return ((bitField0_ &amp; 0x00000400) == 0x00000400);
+    }
+    public String getExtra1() {
+      java.lang.Object ref = extra1_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra1_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra1Bytes() {
+      java.lang.Object ref = extra1_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra1_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string extra2 = 14;
+    public static final int EXTRA2_FIELD_NUMBER = 14;
+    private java.lang.Object extra2_;
+    public boolean hasExtra2() {
+      return ((bitField0_ &amp; 0x00000800) == 0x00000800);
+    }
+    public String getExtra2() {
+      java.lang.Object ref = extra2_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra2_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra2Bytes() {
+      java.lang.Object ref = extra2_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra2_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string extra3 = 15;
+    public static final int EXTRA3_FIELD_NUMBER = 15;
+    private java.lang.Object extra3_;
+    public boolean hasExtra3() {
+      return ((bitField0_ &amp; 0x00001000) == 0x00001000);
+    }
+    public String getExtra3() {
+      java.lang.Object ref = extra3_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          extra3_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getExtra3Bytes() {
+      java.lang.Object ref = extra3_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        extra3_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required bool inEnabled = 16;
+    public static final int INENABLED_FIELD_NUMBER = 16;
+    private boolean inEnabled_;
+    public boolean hasInEnabled() {
+      return ((bitField0_ &amp; 0x00002000) == 0x00002000);
+    }
+    public boolean getInEnabled() {
+      return inEnabled_;
+    }
+    
+    // required bool outEnabled = 17;
+    public static final int OUTENABLED_FIELD_NUMBER = 17;
+    private boolean outEnabled_;
+    public boolean hasOutEnabled() {
+      return ((bitField0_ &amp; 0x00004000) == 0x00004000);
+    }
+    public boolean getOutEnabled() {
+      return outEnabled_;
+    }
+    
+    private void initFields() {
+      guid_ = "";
+      mapID_ = 0;
+      coord_ = com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.getDefaultInstance();
+      polygon_ = java.util.Collections.emptyList();
+      indexZL_ = 0;
+      indexes_ = java.util.Collections.emptyList();
+      inZoneSec_ = 0;
+      inZonePos_ = 0;
+      outZoneSec_ = 0;
+      outZonePos_ = 0;
+      stayEnabled_ = false;
+      staySec_ = 0;
+      extra1_ = "";
+      extra2_ = "";
+      extra3_ = "";
+      inEnabled_ = false;
+      outEnabled_ = false;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasGuid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMapID()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasCoord()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasIndexZL()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasInZoneSec()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasInZonePos()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasOutZoneSec()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasOutZonePos()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasStayEnabled()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasStaySec()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasInEnabled()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasOutEnabled()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getCoord().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i &lt; getPolygonCount(); i++) {
+        if (!getPolygon(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i &lt; getIndexesCount(); i++) {
+        if (!getIndexes(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getGuidBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, mapID_);
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, coord_);
+      }
+      for (int i = 0; i &lt; polygon_.size(); i++) {
+        output.writeMessage(4, polygon_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        output.writeInt32(5, indexZL_);
+      }
+      for (int i = 0; i &lt; indexes_.size(); i++) {
+        output.writeMessage(6, indexes_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        output.writeInt32(7, inZoneSec_);
+      }
+      if (((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+        output.writeInt32(8, inZonePos_);
+      }
+      if (((bitField0_ &amp; 0x00000040) == 0x00000040)) {
+        output.writeInt32(9, outZoneSec_);
+      }
+      if (((bitField0_ &amp; 0x00000080) == 0x00000080)) {
+        output.writeInt32(10, outZonePos_);
+      }
+      if (((bitField0_ &amp; 0x00000100) == 0x00000100)) {
+        output.writeBool(11, stayEnabled_);
+      }
+      if (((bitField0_ &amp; 0x00000200) == 0x00000200)) {
+        output.writeInt32(12, staySec_);
+      }
+      if (((bitField0_ &amp; 0x00000400) == 0x00000400)) {
+        output.writeBytes(13, getExtra1Bytes());
+      }
+      if (((bitField0_ &amp; 0x00000800) == 0x00000800)) {
+        output.writeBytes(14, getExtra2Bytes());
+      }
+      if (((bitField0_ &amp; 0x00001000) == 0x00001000)) {
+        output.writeBytes(15, getExtra3Bytes());
+      }
+      if (((bitField0_ &amp; 0x00002000) == 0x00002000)) {
+        output.writeBool(16, inEnabled_);
+      }
+      if (((bitField0_ &amp; 0x00004000) == 0x00004000)) {
+        output.writeBool(17, outEnabled_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getGuidBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, mapID_);
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, coord_);
+      }
+      for (int i = 0; i &lt; polygon_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, polygon_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, indexZL_);
+      }
+      for (int i = 0; i &lt; indexes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, indexes_.get(i));
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, inZoneSec_);
+      }
+      if (((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, inZonePos_);
+      }
+      if (((bitField0_ &amp; 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, outZoneSec_);
+      }
+      if (((bitField0_ &amp; 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, outZonePos_);
+      }
+      if (((bitField0_ &amp; 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, stayEnabled_);
+      }
+      if (((bitField0_ &amp; 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, staySec_);
+      }
+      if (((bitField0_ &amp; 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, getExtra1Bytes());
+      }
+      if (((bitField0_ &amp; 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(14, getExtra2Bytes());
+      }
+      if (((bitField0_ &amp; 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(15, getExtra3Bytes());
+      }
+      if (((bitField0_ &amp; 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(16, inEnabled_);
+      }
+      if (((bitField0_ &amp; 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(17, outEnabled_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone, Builder&gt;
+        implements com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZoneOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        guid_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        mapID_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        coord_ = com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.getDefaultInstance();
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        polygon_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        indexZL_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        indexes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000020);
+        inZoneSec_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000040);
+        inZonePos_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000080);
+        outZoneSec_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000100);
+        outZonePos_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000200);
+        stayEnabled_ = false;
+        bitField0_ = (bitField0_ &amp; ~0x00000400);
+        staySec_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000800);
+        extra1_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00001000);
+        extra2_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00002000);
+        extra3_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00004000);
+        inEnabled_ = false;
+        bitField0_ = (bitField0_ &amp; ~0x00008000);
+        outEnabled_ = false;
+        bitField0_ = (bitField0_ &amp; ~0x00010000);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone build() {
+        com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone buildPartial() {
+        com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone result = new com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.guid_ = guid_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.mapID_ = mapID_;
+        if (((from_bitField0_ &amp; 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.coord_ = coord_;
+        if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+          polygon_ = java.util.Collections.unmodifiableList(polygon_);
+          bitField0_ = (bitField0_ &amp; ~0x00000008);
+        }
+        result.polygon_ = polygon_;
+        if (((from_bitField0_ &amp; 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.indexZL_ = indexZL_;
+        if (((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+          indexes_ = java.util.Collections.unmodifiableList(indexes_);
+          bitField0_ = (bitField0_ &amp; ~0x00000020);
+        }
+        result.indexes_ = indexes_;
+        if (((from_bitField0_ &amp; 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.inZoneSec_ = inZoneSec_;
+        if (((from_bitField0_ &amp; 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.inZonePos_ = inZonePos_;
+        if (((from_bitField0_ &amp; 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.outZoneSec_ = outZoneSec_;
+        if (((from_bitField0_ &amp; 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.outZonePos_ = outZonePos_;
+        if (((from_bitField0_ &amp; 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.stayEnabled_ = stayEnabled_;
+        if (((from_bitField0_ &amp; 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.staySec_ = staySec_;
+        if (((from_bitField0_ &amp; 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.extra1_ = extra1_;
+        if (((from_bitField0_ &amp; 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.extra2_ = extra2_;
+        if (((from_bitField0_ &amp; 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.extra3_ = extra3_;
+        if (((from_bitField0_ &amp; 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        result.inEnabled_ = inEnabled_;
+        if (((from_bitField0_ &amp; 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.outEnabled_ = outEnabled_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone other) {
+        if (other == com.insiteo.lbs.protobuf.model.geofence.ProtoZone.PBGeofenceZone.getDefaultInstance()) return this;
+        if (other.hasGuid()) {
+          setGuid(other.getGuid());
+        }
+        if (other.hasMapID()) {
+          setMapID(other.getMapID());
+        }
+        if (other.hasCoord()) {
+          mergeCoord(other.getCoord());
+        }
+        if (!other.polygon_.isEmpty()) {
+          if (polygon_.isEmpty()) {
+            polygon_ = other.polygon_;
+            bitField0_ = (bitField0_ &amp; ~0x00000008);
+          } else {
+            ensurePolygonIsMutable();
+            polygon_.addAll(other.polygon_);
+          }
+          
+        }
+        if (other.hasIndexZL()) {
+          setIndexZL(other.getIndexZL());
+        }
+        if (!other.indexes_.isEmpty()) {
+          if (indexes_.isEmpty()) {
+            indexes_ = other.indexes_;
+            bitField0_ = (bitField0_ &amp; ~0x00000020);
+          } else {
+            ensureIndexesIsMutable();
+            indexes_.addAll(other.indexes_);
+          }
+          
+        }
+        if (other.hasInZoneSec()) {
+          setInZoneSec(other.getInZoneSec());
+        }
+        if (other.hasInZonePos()) {
+          setInZonePos(other.getInZonePos());
+        }
+        if (other.hasOutZoneSec()) {
+          setOutZoneSec(other.getOutZoneSec());
+        }
+        if (other.hasOutZonePos()) {
+          setOutZonePos(other.getOutZonePos());
+        }
+        if (other.hasStayEnabled()) {
+          setStayEnabled(other.getStayEnabled());
+        }
+        if (other.hasStaySec()) {
+          setStaySec(other.getStaySec());
+        }
+        if (other.hasExtra1()) {
+          setExtra1(other.getExtra1());
+        }
+        if (other.hasExtra2()) {
+          setExtra2(other.getExtra2());
+        }
+        if (other.hasExtra3()) {
+          setExtra3(other.getExtra3());
+        }
+        if (other.hasInEnabled()) {
+          setInEnabled(other.getInEnabled());
+        }
+        if (other.hasOutEnabled()) {
+          setOutEnabled(other.getOutEnabled());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasGuid()) {
+          
+          return false;
+        }
+        if (!hasMapID()) {
+          
+          return false;
+        }
+        if (!hasCoord()) {
+          
+          return false;
+        }
+        if (!hasIndexZL()) {
+          
+          return false;
+        }
+        if (!hasInZoneSec()) {
+          
+          return false;
+        }
+        if (!hasInZonePos()) {
+          
+          return false;
+        }
+        if (!hasOutZoneSec()) {
+          
+          return false;
+        }
+        if (!hasOutZonePos()) {
+          
+          return false;
+        }
+        if (!hasStayEnabled()) {
+          
+          return false;
+        }
+        if (!hasStaySec()) {
+          
+          return false;
+        }
+        if (!hasInEnabled()) {
+          
+          return false;
+        }
+        if (!hasOutEnabled()) {
+          
+          return false;
+        }
+        if (!getCoord().isInitialized()) {
+          
+          return false;
+        }
+        for (int i = 0; i &lt; getPolygonCount(); i++) {
+          if (!getPolygon(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        for (int i = 0; i &lt; getIndexesCount(); i++) {
+          if (!getIndexes(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              guid_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              mapID_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.Builder subBuilder = com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.newBuilder();
+              if (hasCoord()) {
+                subBuilder.mergeFrom(getCoord());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setCoord(subBuilder.buildPartial());
+              break;
+            }
+            case 34: {
+              com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.Builder subBuilder = com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addPolygon(subBuilder.buildPartial());
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              indexZL_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex.Builder subBuilder = com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addIndexes(subBuilder.buildPartial());
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              inZoneSec_ = input.readInt32();
+              break;
+            }
+            case 64: {
+              bitField0_ |= 0x00000080;
+              inZonePos_ = input.readInt32();
+              break;
+            }
+            case 72: {
+              bitField0_ |= 0x00000100;
+              outZoneSec_ = input.readInt32();
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000200;
+              outZonePos_ = input.readInt32();
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000400;
+              stayEnabled_ = input.readBool();
+              break;
+            }
+            case 96: {
+              bitField0_ |= 0x00000800;
+              staySec_ = input.readInt32();
+              break;
+            }
+            case 106: {
+              bitField0_ |= 0x00001000;
+              extra1_ = input.readBytes();
+              break;
+            }
+            case 114: {
+              bitField0_ |= 0x00002000;
+              extra2_ = input.readBytes();
+              break;
+            }
+            case 122: {
+              bitField0_ |= 0x00004000;
+              extra3_ = input.readBytes();
+              break;
+            }
+            case 128: {
+              bitField0_ |= 0x00008000;
+              inEnabled_ = input.readBool();
+              break;
+            }
+            case 136: {
+              bitField0_ |= 0x00010000;
+              outEnabled_ = input.readBool();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string guid = 1;
+      private java.lang.Object guid_ = "";
+      public boolean hasGuid() {
+        return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+      }
+      public String getGuid() {
+        java.lang.Object ref = guid_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          guid_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setGuid(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        guid_ = value;
+        
+        return this;
+      }
+      public Builder clearGuid() {
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        guid_ = getDefaultInstance().getGuid();
+        
+        return this;
+      }
+      void setGuid(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        guid_ = value;
+        
+      }
+      
+      // required int32 mapID = 2;
+      private int mapID_ ;
+      public boolean hasMapID() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public int getMapID() {
+        return mapID_;
+      }
+      public Builder setMapID(int value) {
+        bitField0_ |= 0x00000002;
+        mapID_ = value;
+        
+        return this;
+      }
+      public Builder clearMapID() {
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        mapID_ = 0;
+        
+        return this;
+      }
+      
+      // required .com.insiteo.lbs.protobuf.model.geofence.PBGeofencePoint coord = 3;
+      private com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint coord_ = com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.getDefaultInstance();
+      public boolean hasCoord() {
+        return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+      }
+      public com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint getCoord() {
+        return coord_;
+      }
+      public Builder setCoord(com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        coord_ = value;
+        
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder setCoord(
+          com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.Builder builderForValue) {
+        coord_ = builderForValue.build();
+        
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder mergeCoord(com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint value) {
+        if (((bitField0_ &amp; 0x00000004) == 0x00000004) &amp;&amp;
+            coord_ != com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.getDefaultInstance()) {
+          coord_ =
+            com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.newBuilder(coord_).mergeFrom(value).buildPartial();
+        } else {
+          coord_ = value;
+        }
+        
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder clearCoord() {
+        coord_ = com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.getDefaultInstance();
+        
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        return this;
+      }
+      
+      // repeated .com.insiteo.lbs.protobuf.model.geofence.PBGeofencePoint polygon = 4;
+      private java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint&gt; polygon_ =
+        java.util.Collections.emptyList();
+      private void ensurePolygonIsMutable() {
+        if (!((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+          polygon_ = new java.util.ArrayList&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint&gt;(polygon_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      
+      public java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint&gt; getPolygonList() {
+        return java.util.Collections.unmodifiableList(polygon_);
+      }
+      public int getPolygonCount() {
+        return polygon_.size();
+      }
+      public com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint getPolygon(int index) {
+        return polygon_.get(index);
+      }
+      public Builder setPolygon(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolygonIsMutable();
+        polygon_.set(index, value);
+        
+        return this;
+      }
+      public Builder setPolygon(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.Builder builderForValue) {
+        ensurePolygonIsMutable();
+        polygon_.set(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addPolygon(com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolygonIsMutable();
+        polygon_.add(value);
+        
+        return this;
+      }
+      public Builder addPolygon(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolygonIsMutable();
+        polygon_.add(index, value);
+        
+        return this;
+      }
+      public Builder addPolygon(
+          com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.Builder builderForValue) {
+        ensurePolygonIsMutable();
+        polygon_.add(builderForValue.build());
+        
+        return this;
+      }
+      public Builder addPolygon(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint.Builder builderForValue) {
+        ensurePolygonIsMutable();
+        polygon_.add(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addAllPolygon(
+          java.lang.Iterable&lt;? extends com.insiteo.lbs.protobuf.model.geofence.ProtoPoint.PBGeofencePoint&gt; values) {
+        ensurePolygonIsMutable();
+        super.addAll(values, polygon_);
+        
+        return this;
+      }
+      public Builder clearPolygon() {
+        polygon_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        
+        return this;
+      }
+      public Builder removePolygon(int index) {
+        ensurePolygonIsMutable();
+        polygon_.remove(index);
+        
+        return this;
+      }
+      
+      // required int32 indexZL = 5;
+      private int indexZL_ ;
+      public boolean hasIndexZL() {
+        return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+      }
+      public int getIndexZL() {
+        return indexZL_;
+      }
+      public Builder setIndexZL(int value) {
+        bitField0_ |= 0x00000010;
+        indexZL_ = value;
+        
+        return this;
+      }
+      public Builder clearIndexZL() {
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        indexZL_ = 0;
+        
+        return this;
+      }
+      
+      // repeated .com.insiteo.lbs.protobuf.model.geofence.PBGeofenceTileIndex indexes = 6;
+      private java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex&gt; indexes_ =
+        java.util.Collections.emptyList();
+      private void ensureIndexesIsMutable() {
+        if (!((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+          indexes_ = new java.util.ArrayList&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex&gt;(indexes_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      
+      public java.util.List&lt;com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex&gt; getIndexesList() {
+        return java.util.Collections.unmodifiableList(indexes_);
+      }
+      public int getIndexesCount() {
+        return indexes_.size();
+      }
+      public com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex getIndexes(int index) {
+        return indexes_.get(index);
+      }
+      public Builder setIndexes(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIndexesIsMutable();
+        indexes_.set(index, value);
+        
+        return this;
+      }
+      public Builder setIndexes(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex.Builder builderForValue) {
+        ensureIndexesIsMutable();
+        indexes_.set(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addIndexes(com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIndexesIsMutable();
+        indexes_.add(value);
+        
+        return this;
+      }
+      public Builder addIndexes(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIndexesIsMutable();
+        indexes_.add(index, value);
+        
+        return this;
+      }
+      public Builder addIndexes(
+          com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex.Builder builderForValue) {
+        ensureIndexesIsMutable();
+        indexes_.add(builderForValue.build());
+        
+        return this;
+      }
+      public Builder addIndexes(
+          int index, com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex.Builder builderForValue) {
+        ensureIndexesIsMutable();
+        indexes_.add(index, builderForValue.build());
+        
+        return this;
+      }
+      public Builder addAllIndexes(
+          java.lang.Iterable&lt;? extends com.insiteo.lbs.protobuf.model.geofence.ProtoTileIndex.PBGeofenceTileIndex&gt; values) {
+        ensureIndexesIsMutable();
+        super.addAll(values, indexes_);
+        
+        return this;
+      }
+      public Builder clearIndexes() {
+        indexes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ &amp; ~0x00000020);
+        
+        return this;
+      }
+      public Builder removeIndexes(int index) {
+        ensureIndexesIsMutable();
+        indexes_.remove(index);
+        
+        return this;
+      }
+      
+      // required int32 inZoneSec = 7;
+      private int inZoneSec_ ;
+      public boolean hasInZoneSec() {
+        return ((bitField0_ &amp; 0x00000040) == 0x00000040);
+      }
+      public int getInZoneSec() {
+        return inZoneSec_;
+      }
+      public Builder setInZoneSec(int value) {
+        bitField0_ |= 0x00000040;
+        inZoneSec_ = value;
+        
+        return this;
+      }
+      public Builder clearInZoneSec() {
+        bitField0_ = (bitField0_ &amp; ~0x00000040);
+        inZoneSec_ = 0;
+        
+        return this;
+      }
+      
+      // required int32 inZonePos = 8;
+      private int inZonePos_ ;
+      public boolean hasInZonePos() {
+        return ((bitField0_ &amp; 0x00000080) == 0x00000080);
+      }
+      public int getInZonePos() {
+        return inZonePos_;
+      }
+      public Builder setInZonePos(int value) {
+        bitField0_ |= 0x00000080;
+        inZonePos_ = value;
+        
+        return this;
+      }
+      public Builder clearInZonePos() {
+        bitField0_ = (bitField0_ &amp; ~0x00000080);
+        inZonePos_ = 0;
+        
+        return this;
+      }
+      
+      // required int32 outZoneSec = 9;
+      private int outZoneSec_ ;
+      public boolean hasOutZoneSec() {
+        return ((bitField0_ &amp; 0x00000100) == 0x00000100);
+      }
+      public int getOutZoneSec() {
+        return outZoneSec_;
+      }
+      public Builder setOutZoneSec(int value) {
+        bitField0_ |= 0x00000100;
+        outZoneSec_ = value;
+        
+        return this;
+      }
+      public Builder clearOutZoneSec() {
+        bitField0_ = (bitField0_ &amp; ~0x00000100);
+        outZoneSec_ = 0;
+        
+        return this;
+      }
+      
+      // required int32 outZonePos = 10;
+      private int outZonePos_ ;
+      public boolean hasOutZonePos() {
+        return ((bitField0_ &amp; 0x00000200) == 0x00000200);
+      }
+      public int getOutZonePos() {
+        return outZonePos_;
+      }
+      public Builder setOutZonePos(int value) {
+        bitField0_ |= 0x00000200;
+        outZonePos_ = value;
+        
+        return this;
+      }
+      public Builder clearOutZonePos() {
+        bitField0_ = (bitField0_ &amp; ~0x00000200);
+        outZonePos_ = 0;
+        
+        return this;
+      }
+      
+      // required bool stayEnabled = 11;
+      private boolean stayEnabled_ ;
+      public boolean hasStayEnabled() {
+        return ((bitField0_ &amp; 0x00000400) == 0x00000400);
+      }
+      public boolean getStayEnabled() {
+        return stayEnabled_;
+      }
+      public Builder setStayEnabled(boolean value) {
+        bitField0_ |= 0x00000400;
+        stayEnabled_ = value;
+        
+        return this;
+      }
+      public Builder clearStayEnabled() {
+        bitField0_ = (bitField0_ &amp; ~0x00000400);
+        stayEnabled_ = false;
+        
+        return this;
+      }
+      
+      // required int32 staySec = 12;
+      private int staySec_ ;
+      public boolean hasStaySec() {
+        return ((bitField0_ &amp; 0x00000800) == 0x00000800);
+      }
+      public int getStaySec() {
+        return staySec_;
+      }
+      public Builder setStaySec(int value) {
+        bitField0_ |= 0x00000800;
+        staySec_ = value;
+        
+        return this;
+      }
+      public Builder clearStaySec() {
+        bitField0_ = (bitField0_ &amp; ~0x00000800);
+        staySec_ = 0;
+        
+        return this;
+      }
+      
+      // optional string extra1 = 13;
+      private java.lang.Object extra1_ = "";
+      public boolean hasExtra1() {
+        return ((bitField0_ &amp; 0x00001000) == 0x00001000);
+      }
+      public String getExtra1() {
+        java.lang.Object ref = extra1_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra1_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra1(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        extra1_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra1() {
+        bitField0_ = (bitField0_ &amp; ~0x00001000);
+        extra1_ = getDefaultInstance().getExtra1();
+        
+        return this;
+      }
+      void setExtra1(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00001000;
+        extra1_ = value;
+        
+      }
+      
+      // optional string extra2 = 14;
+      private java.lang.Object extra2_ = "";
+      public boolean hasExtra2() {
+        return ((bitField0_ &amp; 0x00002000) == 0x00002000);
+      }
+      public String getExtra2() {
+        java.lang.Object ref = extra2_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra2_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra2(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        extra2_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra2() {
+        bitField0_ = (bitField0_ &amp; ~0x00002000);
+        extra2_ = getDefaultInstance().getExtra2();
+        
+        return this;
+      }
+      void setExtra2(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00002000;
+        extra2_ = value;
+        
+      }
+      
+      // optional string extra3 = 15;
+      private java.lang.Object extra3_ = "";
+      public boolean hasExtra3() {
+        return ((bitField0_ &amp; 0x00004000) == 0x00004000);
+      }
+      public String getExtra3() {
+        java.lang.Object ref = extra3_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          extra3_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setExtra3(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
+        extra3_ = value;
+        
+        return this;
+      }
+      public Builder clearExtra3() {
+        bitField0_ = (bitField0_ &amp; ~0x00004000);
+        extra3_ = getDefaultInstance().getExtra3();
+        
+        return this;
+      }
+      void setExtra3(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00004000;
+        extra3_ = value;
+        
+      }
+      
+      // required bool inEnabled = 16;
+      private boolean inEnabled_ ;
+      public boolean hasInEnabled() {
+        return ((bitField0_ &amp; 0x00008000) == 0x00008000);
+      }
+      public boolean getInEnabled() {
+        return inEnabled_;
+      }
+      public Builder setInEnabled(boolean value) {
+        bitField0_ |= 0x00008000;
+        inEnabled_ = value;
+        
+        return this;
+      }
+      public Builder clearInEnabled() {
+        bitField0_ = (bitField0_ &amp; ~0x00008000);
+        inEnabled_ = false;
+        
+        return this;
+      }
+      
+      // required bool outEnabled = 17;
+      private boolean outEnabled_ ;
+      public boolean hasOutEnabled() {
+        return ((bitField0_ &amp; 0x00010000) == 0x00010000);
+      }
+      public boolean getOutEnabled() {
+        return outEnabled_;
+      }
+      public Builder setOutEnabled(boolean value) {
+        bitField0_ |= 0x00010000;
+        outEnabled_ = value;
+        
+        return this;
+      }
+      public Builder clearOutEnabled() {
+        bitField0_ = (bitField0_ &amp; ~0x00010000);
+        outEnabled_ = false;
+        
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.model.geofence.PBGeofenceZone)
+    }
+    
+    static {
+      defaultInstance = new PBGeofenceZone(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.model.geofence.PBGeofenceZone)
+  }
+  
+  
+  static {
+  }
+  
+  // @@protoc_insertion_point(outer_class_scope)
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   AnalyticsManager
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -208,6 +208,11 @@
           <div id="classes-nav">
             <ul>
               
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/analytics/IAnalyticsListener.html">IAnalyticsListener</a></li>
+      </ul>
+    </li>
               
     <li><h2>Classes</h2>
       <ul>
@@ -348,9 +353,9 @@ import com.insiteo.lbs.common.utils.Log;
 /**
  * Main class used to launch the datamining process. 
  */
-public class AnalyticsManager{
+public class AnalyticsManager {
 
-	private final static String TAG = "INSITEO_ANALYTICS"; 
+	private final static String TAG = AnalyticsManager.class.getSimpleName(); 
 
 	private String mDeviceId;
 
@@ -369,6 +374,8 @@ public class AnalyticsManager{
 	private AnalyticsUserEvent mCurrentUserEvent;
 
 	private Semaphore mAnalyticsLock = new Semaphore(1);
+
+	private IAnalyticsListener mListener;
 
 	/**
 	 * Get the AnalyticsManager unique instance
@@ -394,6 +401,14 @@ public class AnalyticsManager{
 	}
 
 	//******************************************************************************************************************
+	// Listener
+	// *****************************************************************************************************************
+
+	public void setAnalyticsListener(IAnalyticsListener listener) {
+		mListener = listener;
+	}
+	
+	//******************************************************************************************************************
 	// Analytics Configuration
 	// *****************************************************************************************************************
 
@@ -409,6 +424,8 @@ public class AnalyticsManager{
 		// set the services url configuration
 
 		File configFile = new File(InitProvider.getInstance().getDataDirPath() + "/" + EPackageType.ANALYTICS.getDirName() + "/" + "analytics_config.csv");
+
+		if(!configFile.exists()) return false;
 
 		InputStream csvStream;
 		BufferedReader bufferedReader;
@@ -557,7 +574,7 @@ public class AnalyticsManager{
 		if (isStarted()) {
 			AnalyticsUserEvent newUser = new AnalyticsUserEvent();
 			if (mCurrentUserEvent == null || !mCurrentUserEvent.isEqual(newUser)) {
-				Log.d(TAG, "Adding User Event");
+				Log.d(TAG, "Adding User Event : " + newUser.toString());
 
 				try {
 					mAnalyticsLock.acquire();
@@ -579,11 +596,13 @@ public class AnalyticsManager{
 	 */
 	public void addGenericEvent(AnalyticsGenericEvent aGenericEvent){
 		if (isStarted()) {
-			Log.d(TAG, "Adding Generic Event");
+			Log.d(TAG, "Adding Generic Event : " + aGenericEvent.toString());
 			try {
 				mAnalyticsLock.acquire();
-				AnalyticsDBHelper.getInstance().addGenericEvent(aGenericEvent);
-				startAnalyticsThreadIfRequired();
+				if(mListener == null || mListener.analyticsManagerShouldSendGenericEvent(aGenericEvent)) {
+					AnalyticsDBHelper.getInstance().addGenericEvent(aGenericEvent);
+					startAnalyticsThreadIfRequired();
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} finally {
@@ -599,7 +618,7 @@ public class AnalyticsManager{
 	 */
 	public void addLocationEvent(AnalyticsLocationEvent aLocationEvent){
 		if (isStarted()) {
-			Log.d(TAG, "Adding Location Event");
+			Log.d(TAG, "Adding Location Event : " + aLocationEvent.toString());
 			if (mLastAddedLocationEvent == null) {
 				tryAddUserEvent();
 

@@ -39,6 +39,39 @@
  visibility="public"
 >
 </field>
+<field name="IS_GEO_FENCING_ENTERED"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="0"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="IS_GEO_FENCING_LEFT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="2"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="IS_GEO_FENCING_STAYED"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 </class>
 <class name="AnalyticsManager"
  extends="java.lang.Object"
@@ -107,6 +140,19 @@
  visibility="public"
 >
 </method>
+<method name="setAnalyticsListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="com.insiteo.lbs.analytics.IAnalyticsListener">
+</parameter>
+</method>
 <method name="tryAddUserEvent"
  return="void"
  abstract="false"
@@ -119,6 +165,27 @@
 >
 </method>
 </class>
+<interface name="IAnalyticsListener"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="analyticsManagerShouldSendGenericEvent"
+ return="boolean"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="event" type="com.insiteo.lbs.analytics.entities.AnalyticsGenericEvent">
+</parameter>
+</method>
+</interface>
 </package>
 <package name="com.insiteo.lbs.analytics.entities"
 >
@@ -558,7 +625,7 @@
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;3.2.0_RC2&quot;"
+ value="&quot;3.2.0_RC4&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -581,6 +648,17 @@
  volatile="false"
  static="true"
  final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DEBUG_TAG"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;ISDebug&quot;"
+ static="true"
+ final="true"
  deprecated="not deprecated"
  visibility="public"
 >
@@ -3341,6 +3419,17 @@
  visibility="public"
 >
 </method>
+<method name="isAutoStart"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isEnterEnabled"
  return="boolean"
  abstract="false"
@@ -3887,6 +3976,17 @@
 </method>
 <method name="getGUID"
  return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isAutoStart"
+ return="boolean"
  abstract="false"
  native="false"
  synchronized="false"
@@ -4443,6 +4543,17 @@
  visibility="public"
 >
 </method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="onTouchDown"
  return="com.insiteo.lbs.map.render.ETouchObjectResult"
  abstract="false"
@@ -4545,6 +4656,19 @@
  visibility="public"
 >
 <parameter name="zoneOffset" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="setZonePoi"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
 </parameter>
 </method>
 </class>
@@ -6456,6 +6580,17 @@
  visibility="public"
 >
 </method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="onTouchDown"
  return="com.insiteo.lbs.map.render.ETouchObjectResult"
  abstract="false"
@@ -6675,6 +6810,19 @@
  visibility="public"
 >
 <parameter name="zoneOffset" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="setZonePoi"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
 </parameter>
 </method>
 </class>
@@ -7700,6 +7848,17 @@
  native="false"
  synchronized="false"
  static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLastLocation"
+ return="com.insiteo.lbs.location.InsLocation"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
  final="false"
  deprecated="not deprecated"
  visibility="public"
@@ -8866,6 +9025,17 @@
  visibility="public"
 >
 </field>
+<field name="DEFAULT_ZONE_HEIGHT"
+ type="float"
+ transient="false"
+ volatile="false"
+ value="3.0f"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 <field name="DEFAULT_ZONE_SELECTED_COLOR"
  type="java.lang.Integer"
  transient="false"
@@ -9112,7 +9282,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="distanceScreen" type="android.graphics.Point">
+<parameter name="distanceScreen" type="android.graphics.PointF">
 </parameter>
 </method>
 <method name="onInitDone"
@@ -9197,7 +9367,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="distance" type="android.graphics.Point">
+<parameter name="distance" type="android.graphics.PointF">
 </parameter>
 </method>
 <method name="onZoomEnd"
@@ -9645,6 +9815,21 @@
 <parameter name="rto" type="com.insiteo.lbs.map.render.IRTO">
 </parameter>
 <parameter name="zoneOffset" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="addRTOInZone"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="rto" type="com.insiteo.lbs.map.render.IRTO">
+</parameter>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
 </parameter>
 </method>
 <method name="addRenderer"
@@ -12308,8 +12493,6 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="id" type="int">
-</parameter>
 </constructor>
 <constructor name="GenericRTO"
  type="com.insiteo.lbs.map.render.GenericRTO"
@@ -12318,8 +12501,6 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="id" type="int">
-</parameter>
 <parameter name="pos" type="com.insiteo.lbs.common.utils.geometry.Position">
 </parameter>
 <parameter name="name" type="java.lang.String">
@@ -12332,13 +12513,13 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="id" type="int">
-</parameter>
 <parameter name="pos" type="com.insiteo.lbs.common.utils.geometry.Position">
 </parameter>
 <parameter name="name" type="java.lang.String">
 </parameter>
-<parameter name="pinResId" type="int">
+<parameter name="windowDisplayed" type="boolean">
+</parameter>
+<parameter name="labelDisplayed" type="boolean">
 </parameter>
 </constructor>
 <method name="cloneRTO"
@@ -12371,38 +12552,6 @@
 <parameter name="aAngle" type="float">
 </parameter>
 </method>
-<method name="draw2DModelBitmap"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="aCanvas" type="android.graphics.Canvas">
-</parameter>
-<parameter name="drawingPosition" type="android.graphics.Point">
-</parameter>
-<parameter name="aAngle" type="float">
-</parameter>
-</method>
-<method name="draw2DModelName"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="canvas" type="android.graphics.Canvas">
-</parameter>
-<parameter name="drawingPosition" type="android.graphics.Point">
-</parameter>
-</method>
 <method name="draw3D"
  return="void"
  abstract="false"
@@ -12420,6 +12569,36 @@
 <parameter name="ratio" type="double">
 </parameter>
 <parameter name="angle" type="float">
+</parameter>
+</method>
+<method name="drawMarker"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="aCanvas" type="android.graphics.Canvas">
+</parameter>
+<parameter name="drawingPosition" type="android.graphics.Point">
+</parameter>
+</method>
+<method name="drawWindow"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="canvas" type="android.graphics.Canvas">
+</parameter>
+<parameter name="drawingPosition" type="android.graphics.Point">
 </parameter>
 </method>
 <method name="freeResources"
@@ -12444,8 +12623,8 @@
  visibility="public"
 >
 </method>
-<method name="getMapID"
- return="int"
+<method name="getAnnotationLabel"
+ return="java.lang.String"
  abstract="false"
  native="false"
  synchronized="false"
@@ -12455,8 +12634,19 @@
  visibility="public"
 >
 </method>
-<method name="getName"
+<method name="getLabel"
  return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMapID"
+ return="int"
  abstract="false"
  native="false"
  synchronized="false"
@@ -12510,6 +12700,50 @@
  visibility="public"
 >
 </method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isActionClicked"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isActionDisplayed"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isAnnotationClicked"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isDraggable"
  return="boolean"
  abstract="false"
@@ -12532,7 +12766,7 @@
  visibility="public"
 >
 </method>
-<method name="isNameDisplayed"
+<method name="isIndicatorDisplayed"
  return="boolean"
  abstract="false"
  native="false"
@@ -12543,7 +12777,7 @@
  visibility="public"
 >
 </method>
-<method name="isTouchInside2DObject"
+<method name="isLabelDisplayed"
  return="boolean"
  abstract="false"
  native="false"
@@ -12553,23 +12787,8 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="touch" type="com.insiteo.lbs.map.render.Touch">
-</parameter>
 </method>
-<method name="isTouchInside3DObject"
- return="boolean"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="touch" type="com.insiteo.lbs.map.render.Touch">
-</parameter>
-</method>
-<method name="isTouchInsideObject"
+<method name="isTouchInsideMarker"
  return="boolean"
  abstract="false"
  native="false"
@@ -12583,6 +12802,17 @@
 </parameter>
 </method>
 <method name="isTouchable"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isWindowDisplayed"
  return="boolean"
  abstract="false"
  native="false"
@@ -12669,7 +12899,7 @@
 <parameter name="aTouch" type="com.insiteo.lbs.map.render.Touch">
 </parameter>
 </method>
-<method name="setBitmapAnchor"
+<method name="setActionBitmap"
  return="void"
  abstract="false"
  native="false"
@@ -12679,10 +12909,10 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="anchor" type="android.graphics.Point">
+<parameter name="img" type="android.graphics.Bitmap">
 </parameter>
 </method>
-<method name="setBitmapSize"
+<method name="setActionBitmap"
  return="void"
  abstract="false"
  native="false"
@@ -12692,9 +12922,48 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="width" type="int">
+<parameter name="res" type="android.content.res.Resources">
 </parameter>
-<parameter name="height" type="int">
+<parameter name="imgResId" type="int">
+</parameter>
+</method>
+<method name="setActionDisplayed"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="displayed" type="boolean">
+</parameter>
+</method>
+<method name="setActionMargin"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="margin" type="android.graphics.Point">
+</parameter>
+</method>
+<method name="setAnnotationLabel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="label" type="java.lang.String">
 </parameter>
 </method>
 <method name="setDraggable"
@@ -12710,7 +12979,7 @@
 <parameter name="isDraggable" type="boolean">
 </parameter>
 </method>
-<method name="setName"
+<method name="setIndicatoBitmap"
  return="void"
  abstract="false"
  native="false"
@@ -12720,10 +12989,12 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="name" type="java.lang.String">
+<parameter name="res" type="android.content.res.Resources">
+</parameter>
+<parameter name="imgResId" type="int">
 </parameter>
 </method>
-<method name="setNameAnchor"
+<method name="setIndicatorBitamp"
  return="void"
  abstract="false"
  native="false"
@@ -12733,10 +13004,10 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="anchor" type="android.graphics.Point">
+<parameter name="img" type="android.graphics.Bitmap">
 </parameter>
 </method>
-<method name="setNameDisplayed"
+<method name="setIndicatorDisplayed"
  return="void"
  abstract="false"
  native="false"
@@ -12747,6 +13018,86 @@
  visibility="public"
 >
 <parameter name="displayed" type="boolean">
+</parameter>
+</method>
+<method name="setIndicatorMargin"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="margin" type="android.graphics.Point">
+</parameter>
+</method>
+<method name="setLabel"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="label" type="java.lang.String">
+</parameter>
+</method>
+<method name="setLabelDisplayed"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="displayed" type="boolean">
+</parameter>
+</method>
+<method name="setMarkerBitmap"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="img" type="android.graphics.Bitmap">
+</parameter>
+</method>
+<method name="setMarkerBitmap"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="res" type="android.content.res.Resources">
+</parameter>
+<parameter name="imgResId" type="int">
+</parameter>
+</method>
+<method name="setNameMargin"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="margin" type="android.graphics.Point">
 </parameter>
 </method>
 <method name="setPosition"
@@ -12814,6 +13165,32 @@
 <parameter name="isTouchable" type="boolean">
 </parameter>
 </method>
+<method name="setWindowDisplayed"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="displayed" type="boolean">
+</parameter>
+</method>
+<method name="setWindowMargin"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="margin" type="android.graphics.Point">
+</parameter>
+</method>
 <method name="setZoneOffset"
  return="void"
  abstract="false"
@@ -12825,6 +13202,19 @@
  visibility="public"
 >
 <parameter name="zoneOffset" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="setZonePoi"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
 </parameter>
 </method>
 </class>
@@ -12901,21 +13291,6 @@
  deprecated="not deprecated"
  visibility="public"
 >
-</method>
-<method name="clear3DObjectFromWorld"
- return="void"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="world" type="World">
-</parameter>
-<parameter name="rto" type="com.insiteo.lbs.map.render.IRTO">
-</parameter>
 </method>
 <method name="clearZone"
  return="void"
@@ -13237,6 +13612,17 @@
  visibility="public"
 >
 </method>
+<method name="createZone3D"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="draw"
  return="void"
  abstract="false"
@@ -13341,6 +13727,19 @@
  visibility="public"
 >
 </method>
+<method name="getWorldSpaceBounds"
+ return="float[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="obj" type="Object3D">
+</parameter>
+</method>
 <method name="getZone"
  return="com.insiteo.lbs.map.entities.Zone"
  abstract="false"
@@ -13354,6 +13753,17 @@
 </method>
 <method name="getZoneOffset"
  return="android.graphics.PointF"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
  abstract="false"
  native="false"
  synchronized="false"
@@ -13508,6 +13918,19 @@
 <parameter name="zoneOffset" type="android.graphics.PointF">
 </parameter>
 </method>
+<method name="setZonePoi"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
+</parameter>
+</method>
 </class>
 <interface name="IRTO"
  abstract="true"
@@ -13631,6 +14054,17 @@
  visibility="public"
 >
 </method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="onTouchDown"
  return="com.insiteo.lbs.map.render.ETouchObjectResult"
  abstract="true"
@@ -13733,6 +14167,19 @@
  visibility="public"
 >
 <parameter name="zoneOffset" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="setZonePoi"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
 </parameter>
 </method>
 <field name="ALL_MAP_ID"
@@ -14777,7 +15224,7 @@
  deprecated="not deprecated"
  visibility="public"
 >
-<parameter name="screenDistance" type="android.graphics.Point">
+<parameter name="screenDistance" type="android.graphics.PointF">
 </parameter>
 <parameter name="zoomLevel" type="float">
 </parameter>
@@ -14953,6 +15400,16 @@
 <parameter name="screenHeight" type="int">
 </parameter>
 </method>
+<field name="sScreenDimen"
+ type="android.graphics.Point"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
 </class>
 <class name="MapUtils"
  extends="java.lang.Object"
@@ -14970,6 +15427,19 @@
  visibility="public"
 >
 </constructor>
+<method name="closestTwoPower"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="i" type="int">
+</parameter>
+</method>
 <method name="getMapIdForLatLong"
  return="int"
  abstract="false"
@@ -15179,6 +15649,17 @@
  visibility="public"
 >
 </method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isInit"
  return="boolean"
  abstract="false"
@@ -15292,6 +15773,19 @@
  visibility="public"
 >
 <parameter name="zoneOffset" type="android.graphics.PointF">
+</parameter>
+</method>
+<method name="setZonePoi"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
 </parameter>
 </method>
 <method name="update"

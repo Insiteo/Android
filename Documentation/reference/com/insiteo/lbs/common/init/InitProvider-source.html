@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   InitProvider
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -838,6 +838,7 @@ public class InitProvider implements IInitListener {
 	public void onInstallProgress(long aCurrentFile, long aTotalFiles) {
 		IInitListener listener = mListener.get(); 
 		if (listener != null) {
+			Log.d(TAG, "onInstallProgress");
 			listener.onInstallProgress(aCurrentFile, aTotalFiles);
 		}
 	}
@@ -862,7 +863,6 @@ public class InitProvider implements IInitListener {
 			listener.onDataUpdateDone(aSuccess, aError);
 		}
 
-		mListener.clear();
 	}
 
 	/**
@@ -880,11 +880,11 @@ public class InitProvider implements IInitListener {
 
 		//notify lister if any
 		IInitListener listener = mListener.get(); 
+		
 		if (listener != null) {
 			listener.onInitDone(aResult, mError);
 		}
 
-		mListener.clear();
 	}
 
 	/**
@@ -895,6 +895,7 @@ public class InitProvider implements IInitListener {
 	public void onDownloadProgress(long aDownloadedBytes, long aTotalBytes) {
 		IInitListener listener = mListener.get(); 
 		if (listener != null) {
+			Log.d(TAG, "onDownloadProgress");
 			listener.onDownloadProgress(aDownloadedBytes, aTotalBytes);
 		}
 	}
@@ -922,6 +923,7 @@ public class InitProvider implements IInitListener {
 			setZoomLevels(mMaps);
 
 			mZones = parseZones();
+			Log.d(CommonConstants.DEBUG_TAG, mZones.size() + " zones on this map");
 		}
 	}
 
@@ -954,7 +956,10 @@ public class InitProvider implements IInitListener {
 				//iterate over protobuff zones and create GfxZones
 				List&lt;PBMapZone&gt; pbMZs = root.getZonesList();
 				Iterator&lt;PBMapZone&gt; pbIte = pbMZs.iterator(); 
-				while (/*!mCancel &amp;&amp; */pbIte.hasNext()) {
+				
+				int i = 0;
+				while (/*!mCancel &amp;&amp; */pbIte.hasNext() /*&amp;&amp; i &lt; 36*/ ) {
+					i++;
 					PBMapZone pbMZ = pbIte.next();
 
 					//create polygon array
@@ -1012,9 +1017,8 @@ public class InitProvider implements IInitListener {
 
 					if (pbMZ.hasDispFextra1()) {
 						zone.setDispFExtra1(pbMZ.getDispFextra1());
-					}
-
-					//add zone in list
+					}					
+					
 					zones.put(zone.getId(), zone);
 				}
 			} catch (Exception e) {
@@ -1381,6 +1385,12 @@ public class InitProvider implements IInitListener {
 			Package pd = new Package(EPackageType.ANALYTICS, null, analyticsVersion, null, 0);
 			packages.add(pd);
 		}
+		
+		if(hasPackage(EPackageType.EXTRA)){
+			int extraVersion = EPackageType.EXTRA.getVersion();
+			Package pd = new Package(EPackageType.EXTRA, null, extraVersion, null, 0);
+			packages.add(pd);
+		}
 
 		return packages;
 	}
@@ -1469,6 +1479,9 @@ public class InitProvider implements IInitListener {
 				}
 			} catch(Exception e) {
 
+				mRODataDirPath = initDataDirPath();
+				mRWDataDirPath = initRWDataDirPath();
+				
 				//create error message
 				String errorMsg = "";
 				Activity activity = mActivityRef.get();

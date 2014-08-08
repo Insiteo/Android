@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser
+END
+LbsPushLocResponseParser.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsPushLocResponseParser.html
+END
+LbsModuleRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsModuleRequest.html
+END
+LbsPushLocRequestEncoder.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsPushLocRequestEncoder.html
+END
+LbsModuleRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsModuleRequest-source.html
+END
+LbsPushLocRequestEncoder-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsPushLocRequestEncoder-source.html
+END
+LbsPushLocResponseParser-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsPushLocResponseParser-source.html
+END
+package-summary.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/package-summary.html
+END
+LbsModuleResponse-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsModuleResponse-source.html
+END
+LbsModuleResponse.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/LbsModuleResponse.html
+END
+package-descr.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/location/parser/package-descr.html
+END

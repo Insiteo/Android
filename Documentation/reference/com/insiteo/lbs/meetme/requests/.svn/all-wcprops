@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/InsiteoAPI/!svn/ver/3068/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests
+END
+InsCreateTmpUserRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsCreateTmpUserRequest.html
+END
+InsConnectRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsConnectRequest-source.html
+END
+InsConnectRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsConnectRequest.html
+END
+InsLeaveGroupsRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsLeaveGroupsRequest.html
+END
+InsCreateTmpUserRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsCreateTmpUserRequest-source.html
+END
+InsCreateUserRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsCreateUserRequest-source.html
+END
+ExtJoinGroupRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtJoinGroupRequest-source.html
+END
+InsChangeStatusRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsChangeStatusRequest-source.html
+END
+InsJoinGroupRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsJoinGroupRequest.html
+END
+ExtLeaveGroupsRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtLeaveGroupsRequest-source.html
+END
+ExtRefreshGroupsRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtRefreshGroupsRequest.html
+END
+InsJoinGroupRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsJoinGroupRequest-source.html
+END
+package-summary.html
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/package-summary.html
+END
+InsCreateUserRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsCreateUserRequest.html
+END
+package-descr.html
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/package-descr.html
+END
+InsLeaveGroupsRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsLeaveGroupsRequest-source.html
+END
+InsGetGroupsRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsGetGroupsRequest-source.html
+END
+InsGetGroupsRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsGetGroupsRequest.html
+END
+AbstractMeetMeRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/AbstractMeetMeRequest.html
+END
+InsCreateGroupRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsCreateGroupRequest-source.html
+END
+InsRefreshGroupsRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsRefreshGroupsRequest.html
+END
+ExtChangeStatusRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtChangeStatusRequest.html
+END
+ExtRefreshGroupsRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtRefreshGroupsRequest-source.html
+END
+ExtConnectRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtConnectRequest.html
+END
+ExtLeaveGroupsRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtLeaveGroupsRequest.html
+END
+ExtConnectRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtConnectRequest-source.html
+END
+InsChangeStatusRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsChangeStatusRequest.html
+END
+ExtChangeStatusRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtChangeStatusRequest-source.html
+END
+ExtJoinGroupRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/ExtJoinGroupRequest.html
+END
+AbstractMeetMeRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/AbstractMeetMeRequest-source.html
+END
+InsCreateGroupRequest.html
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsCreateGroupRequest.html
+END
+InsRefreshGroupsRequest-source.html
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/InsiteoAPI/!svn/ver/3071/Android/trunk/lbs/doc/output/reference/com/insiteo/lbs/meetme/requests/InsRefreshGroupsRequest-source.html
+END

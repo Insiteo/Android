@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   Zone
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -320,9 +320,11 @@ import java.util.List;
 
 import android.graphics.Color;
 import android.graphics.PointF;
+import android.net.ParseException;
 
 import com.insiteo.lbs.common.CommonConstants;
 import com.insiteo.lbs.common.TileIndex;
+import com.insiteo.lbs.common.utils.Log;
 import com.insiteo.lbs.common.utils.geometry.Position;
 import com.insiteo.lbs.map.render.EZoneAction;
 
@@ -333,6 +335,8 @@ import com.insiteo.lbs.map.render.EZoneAction;
  */
 public class Zone {
 
+	private final static String TAG = Zone.class.getSimpleName();
+	
 	private int mId;
 	private String mGuid;
 
@@ -611,12 +615,20 @@ public class Zone {
 				try {
 					String[] p1Coords = points[0].split(",");
 					if(p1Coords.length == 2) {
-						mP1 = new Position(mCenter.getMapID(), Float.parseFloat(p1Coords[0]), Float.parseFloat(p1Coords[1]));
+						try {
+							mP1 = new Position(mCenter.getMapID(), Float.parseFloat(p1Coords[0]), Float.parseFloat(p1Coords[1]));
+						} catch(NumberFormatException e) {
+							Log.d(TAG, "An error occured while parsing P1.");
+						}
 					}
 
 					String[] p2Coords = points[1].split(",");
 					if(p2Coords.length == 2) {
-						mP2 = new Position(mCenter.getMapID(), Float.parseFloat(p2Coords[0]), Float.parseFloat(p2Coords[1]));
+						try {
+							mP2 = new Position(mCenter.getMapID(), Float.parseFloat(p2Coords[0]), Float.parseFloat(p2Coords[1]));
+						} catch(NumberFormatException e) {
+							Log.d(TAG, "An error occured while parsing P2.");
+						}
 					}
 				} catch(NumberFormatException nfe) {
 					mP1 = mP2 = null;
@@ -646,6 +658,7 @@ public class Zone {
 				try {
 					mIsDisplayShelving = Integer.parseInt(params[1]) == 1;
 				} catch(NumberFormatException nfe) {
+					Log.d(TAG, "An error occured while parsing DisplayShelving.");
 					mIsDisplayShelving = false;
 				}	
 			}
@@ -654,6 +667,7 @@ public class Zone {
 				try {
 					mCustomGeoWidth = Float.parseFloat(params[2]);
 				} catch(NumberFormatException nfe) {
+					Log.d(TAG, "An error occured while parsing CustomWidth.");
 					mCustomGeoWidth = 0f;
 				}	
 			}

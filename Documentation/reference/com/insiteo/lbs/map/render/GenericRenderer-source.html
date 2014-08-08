@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GenericRenderer
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -369,7 +369,7 @@ public class GenericRenderer implements IRenderer {
 	private static final String TAG = GenericRenderer.class.getSimpleName();
 
 	private int									mPriority		= 0;
-	protected Map							mCurrentMap		= null;
+	protected Map								mCurrentMap		= null;
 	protected int								mCurrentMapID	= IRTO.NO_MAP_ID;
 	protected boolean 							mIsDisplayed 	= true;
 	protected boolean 							mIsTouchable	= true;
@@ -413,7 +413,7 @@ public class GenericRenderer implements IRenderer {
 		}
 	}
 
-	private void onMapChanged(){
+	protected void onMapChanged(){
 		if (mRenderMode != null) {
 			if (mRenderMode == ERenderMode.RENDER_MODE_3D &amp;&amp; mWorld != null) clear3DObjectsFromWorld(mWorld.get());
 		}
@@ -602,10 +602,8 @@ public class GenericRenderer implements IRenderer {
 	@Override
 	public void draw(Canvas aCanvas, double aRatio, Point aOffset, float aAngle) {
 		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; !mRTOs.isEmpty()) {
-			boolean acq = false;
 			try {
-				acq = mRTOSema.tryAcquire();
-				if(acq) {
+				mRTOSema.acquire();
 					for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : mRTOs.values()) {
 						for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
 							IRTO r = pair.first;
@@ -627,12 +625,10 @@ public class GenericRenderer implements IRenderer {
 							}
 						}
 					}
-				}
-			}
-			finally {
-				if(acq) {
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
 					mRTOSema.release();
-				}
 			}
 		}
 	}
@@ -709,7 +705,7 @@ public class GenericRenderer implements IRenderer {
 	 * Remove the object from the world and also all the parent of this object
 	 * @param rto
 	 */
-	public void clear3DObjectFromWorld(World world, IRTO rto){
+	protected void clear3DObjectFromWorld(World world, IRTO rto) {
 		ISObject3D obj = rto.get3DObject();
 		if (obj != null) {
 			obj.removeFromWorld(world);

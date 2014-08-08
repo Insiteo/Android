@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+<title>
+
+  GfxLocation
+
+
+| Insiteo API Documentation - Version 3.2.0_RC2
+
+</title>
+<link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/package-summary.html">com.insiteo.lbs.common.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/ILbsModule.html">ILbsModule</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/ILocationListener.html">ILocationListener</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="selected api apilevel-"><a href="../../../../com/insiteo/lbs/location/GfxLocation.html">GfxLocation</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/InsLocation.html">InsLocation</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/LocationConstants.html">LocationConstants</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/LocationProvider.html">LocationProvider</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/LocationRenderer.html">LocationRenderer</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/EInsLocationSource.html">EInsLocationSource</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/location/ELocationModule.html">ELocationModule</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="GfxLocation.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>GfxLocation</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../com/insiteo/lbs/map/render/IRTO.html">IRTO</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+package com.insiteo.lbs.location;
+
+import java.util.Enumeration;
+
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Paint.Style;
+import android.graphics.Point;
+import android.graphics.PointF;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+
+import com.insiteo.lbs.R;
+import com.insiteo.lbs.common.CommonConstants;
+import com.insiteo.lbs.common.utils.ColorUtils;
+import com.insiteo.lbs.common.utils.Log;
+import com.insiteo.lbs.common.utils.geometry.PointD;
+import com.insiteo.lbs.map.entities.Map;
+import com.insiteo.lbs.map.render.ERenderMode;
+import com.insiteo.lbs.map.render.ETouchObjectResult;
+import com.insiteo.lbs.map.render.IRTO;
+import com.insiteo.lbs.map.render.ISObject3D;
+import com.insiteo.lbs.map.render.Touch;
+import com.threed.jpct.Object3D;
+import com.threed.jpct.Primitives;
+import com.threed.jpct.SimpleVector;
+import com.threed.jpct.Texture;
+import com.threed.jpct.TextureManager;
+import com.threed.jpct.World;
+
+/**
+ * The IRTO that is used to display the location on the map.
+ * @author MMO
+ *
+ */
+public class GfxLocation implements IRTO {
+
+	private final static String TAG = "INSITEO_GFX_LOCATION";
+
+	protected static final int ANIM_MAX_ALPHA = 140;
+	private static final int ACC_FILL_ALPHA = 40;
+	private static final float ACC_STROKE_WIDTH = 4f;
+	private static final int ACC_STROKE_ALPHA = 200;
+	protected static final int ANIM_DURATION = 1700;	//milliseconds
+
+	private int mId = CommonConstants.NULL_ID;
+	protected InsLocation mLocation = null;
+	protected Float mAzimuth = null;
+	protected Float mMapAzimuth = null;
+	protected int mDisplayAngle	= 0;
+
+	protected Paint mPaint = null;
+	protected Paint mAccFillPaint = null;
+	protected Paint mAccBorderPaint = null;
+
+	protected Bitmap mImage = null;
+	protected Bitmap mFovImage = null;
+	protected int mImageHalfWidth = 0;
+	protected int mImageHalfHeight = 0;
+	protected int mFovHalfWidth = 0;
+	protected int mFovHalfHeight = 0;
+
+	private int mLocationColor;
+	private int mLocationLostColor;
+	private int mLocationAccuracyColor;
+	private int mLocationAccuracyStrokeColor;
+
+	private boolean isLocationLost = false;
+
+
+	//******************************************************************************************************************
+	// 	Constructors
+	// *****************************************************************************************************************
+
+	public GfxLocation(int aId) {
+		mId = aId;
+
+		create3DObject();
+	}
+
+
+	//******************************************************************************************************************
+	// 	
+	// *****************************************************************************************************************
+
+
+	protected float computeDrawingAzimuth() {
+		return mAzimuth;
+	}
+
+
+	public Float getAzimuth() {
+		return mAzimuth;
+	}
+
+	public void setMapAzimuth(Float aMapAzimuth) {
+		mMapAzimuth = aMapAzimuth;
+	}
+
+	public void setDisplayOrientation(int aDisplayAngle) {
+		mDisplayAngle = aDisplayAngle;
+	}
+
+	public void setLocation(InsLocation aLoc) {
+		if (mLocation != null &amp;&amp; aLoc != null &amp;&amp; mLocation.getMapID() == aLoc.getMapID()) {
+
+			// If previously the location was lost we reset the proper colors
+			if (isLocationLost) {
+				isLocationLost = false;
+				setDrawingColors();
+			}
+
+			//animate location from old point to new one
+			//compute distance between the two positions
+			final double xDistance = (aLoc.getCoord().x - mLocation.getCoord().x) / CommonConstants.COS_SQUARE_THETA_SUM;
+			final double yDistance = (aLoc.getCoord().y - mLocation.getCoord().y) / CommonConstants.COS_SQUARE_THETA_SUM;
+			//set new location with old position
+			aLoc.setCoord(mLocation.getCoord());
+			mLocation = aLoc;
+			//get a reference on the position object, and run a thread to update it
+			final PointD coord = mLocation.getCoord();
+			new Thread(new Runnable() {
+				@Override public void run() {
+					for (double d : CommonConstants.COS_SQUARE_THETA) {
+						coord.x += xDistance * d;
+						coord.y += yDistance * d;
+						try {
+							Thread.sleep(10);
+						} 
+						catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}).start();
+		}
+		else {
+			mLocation = aLoc;
+		}
+		mIsLocUpdated = true;
+	}
+
+	public void setLocationLost(InsLocation aLastKnownLoc){
+		if (mLocation != null &amp;&amp; aLastKnownLoc != null &amp;&amp; mLocation.getMapID() == aLastKnownLoc.getMapID()) {
+
+			if (!isLocationLost) {
+				isLocationLost = true;	
+				setDrawingColors();
+			}
+
+			//animate location from old point to new one
+			//compute distance between the two positions
+			final double xDistance = (aLastKnownLoc.getCoord().x - mLocation.getCoord().x) / CommonConstants.COS_SQUARE_THETA_SUM;
+			final double yDistance = (aLastKnownLoc.getCoord().y - mLocation.getCoord().y) / CommonConstants.COS_SQUARE_THETA_SUM;
+			//set new location with old position
+			aLastKnownLoc.setCoord(mLocation.getCoord());
+			mLocation = aLastKnownLoc;
+			//get a reference on the position object, and run a thread to update it
+			final PointD coord = mLocation.getCoord();
+			new Thread(new Runnable() {
+				@Override public void run() {
+					for (double d : CommonConstants.COS_SQUARE_THETA) {
+						coord.x += xDistance * d;
+						coord.y += yDistance * d;
+						try {
+							Thread.sleep(10);
+						} 
+						catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}).start();
+		}
+		else {
+			mLocation = aLastKnownLoc;
+		}
+
+	}
+
+	public void setAzimuth(Float aAzimuth) {
+		mAzimuth = aAzimuth;
+	}
+
+
+
+	//******************************************************************************************************************
+	// 	IRTO
+	// *****************************************************************************************************************
+
+	@Override
+	public int getRtoID() {
+		return mId;
+	}
+
+	@Override
+	public int getMapID() {
+		int mapId = NO_MAP_ID;
+		if (mLocation != null) {
+			mapId = mLocation.getMapID();
+		}
+		return mapId;
+	}
+
+	@Override
+	public IRTO cloneRTO() {
+		return null;
+	}
+
+	@Override
+	public void setZoneOffset(PointF zoneOffset) {
+	}
+
+	@Override
+	public PointF getZoneOffset() {
+		return null;
+	}
+
+	//******************************************************************************************************************
+	// 	UI Custom
+	// *****************************************************************************************************************
+
+	/**
+	 * Enable to override the color of the location rendering item.
+	 * This color can also be overriden in the resources by defining a color named insiteo_location_userlocation.
+	 * @param color
+	 */
+	public void setLocationColor(int color){
+		mLocationColor = color;
+		setDrawingColors();
+	}
+
+	/**
+	 * Enable to override the color of the location rendering item when location has been lost.
+	 * This color can also be overriden in the resources by defining a color named insiteo_location_userlocationlost.
+	 * @param color
+	 */
+	public void setLocationLostColor(int color){
+		mLocationLostColor = color;
+		setDrawingColors();
+	}
+
+	/**
+	 * Enable to override the color of the location's accuracy rendering item.
+	 * This color can also be overriden in the resources by defining a color named insiteo_location_accuracy_color.
+	 * @param color
+	 */
+	public void setLocationAccuracyColor(int color){
+		mLocationAccuracyColor = color;
+		setDrawingColors();
+	}
+
+	/**
+	 * Enable to override the color of the location's accuracy stroke rendering item.
+	 * This color can also be overriden in the resources by defining a color named insiteo_location_accuracy_color.
+	 * @param color
+	 */
+	public void setLocationAccuracyStrokeColor(int color){
+		mLocationAccuracyStrokeColor = color;
+		setDrawingColors();
+	}
+
+	//******************************************************************************************************************
+	// 	DRAWING
+	// *****************************************************************************************************************
+
+	private ERenderMode mRenderMode; 
+
+	@Override
+	public void setRenderMode(ERenderMode renderingMode) {
+		mRenderMode = renderingMode;
+	}
+
+	@Override
+	public ERenderMode getRenderMode() {
+		return mRenderMode;
+	}
+
+	@Override
+	public void setResources(Resources aResources) {
+		if(mRenderMode == ERenderMode.RENDER_MODE_2D) {
+			set2DResources(aResources);
+		} else if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+			set3DResources(aResources);
+		}		
+	}
+
+	private void set2DResources(Resources aResources) {
+		mImage = BitmapFactory.decodeResource(aResources, R.drawable.insiteo_location_position);
+		mFovImage = BitmapFactory.decodeResource(aResources, R.drawable.insiteo_location_fov);
+
+		mImageHalfWidth = aResources.getDimensionPixelSize(R.dimen.insiteo_location_position_width) / 2;
+		mImageHalfHeight = aResources.getDimensionPixelSize(R.dimen.insiteo_location_position_height) / 2;
+		mFovHalfWidth = aResources.getDimensionPixelSize(R.dimen.insiteo_location_fov_width) / 2;
+		mFovHalfHeight = aResources.getDimensionPixelSize(R.dimen.insiteo_location_fov_height) / 2;
+
+		mLocationColor = aResources.getColor(R.color.insiteo_location_userlocation);
+		mLocationLostColor = aResources.getColor(R.color.insiteo_location_userlocationlost);
+		mLocationAccuracyColor = aResources.getColor(R.color.insiteo_location_accuracy_color);
+		mLocationAccuracyStrokeColor = aResources.getColor(R.color.insiteo_location_accuracy_stroke_color);
+
+		mPaint = new Paint();
+
+		setDrawingColors();
+	}
+
+	private void set3DResources(Resources aResources) {
+		Texture color = new Texture(1, 1, ColorUtils.getRGBColor(mLocationColor));
+		if (!TextureManager.getInstance().containsTexture(TEXTURE)) {
+			TextureManager.getInstance().addTexture(TEXTURE, color);
+		} else {
+			TextureManager.getInstance().removeTexture(TEXTURE);
+			TextureManager.getInstance().addTexture(TEXTURE, color);
+		}
+
+		if(m3DObject != null) m3DObject.setTexture(TEXTURE);
+	}
+
+	@Override
+	public void freeResources() {
+		if(mRenderMode == ERenderMode.RENDER_MODE_2D) {
+			free2DResources();
+		} else if(mRenderMode == ERenderMode.RENDER_MODE_3D) {
+			free3DResources();
+		}	
+	}
+
+	private void free2DResources() {
+		mImage = null;
+		mFovImage = null;
+		mPaint = null;
+	}
+
+	private void free3DResources() {
+
+	}
+
+
+	//******************************************************************************************************************
+	// 	DRAWING 2D
+	// *****************************************************************************************************************
+
+	private void setDrawingColors(){
+		int color = (isLocationLost) ? mLocationLostColor : mLocationColor;
+
+		mPaint.setColorFilter(new PorterDuffColorFilter(color, Mode.MULTIPLY));
+
+		mAccFillPaint = new Paint();
+		mAccFillPaint.setColor(mLocationAccuracyColor);
+		mAccFillPaint.setAlpha(Color.alpha(mLocationAccuracyColor));
+		mAccFillPaint.setStyle(Style.FILL);
+		mAccBorderPaint = new Paint();
+		mAccBorderPaint.setColor(mLocationAccuracyColor);
+		mAccBorderPaint.setAlpha(Color.alpha(mLocationAccuracyStrokeColor));
+		mAccBorderPaint.setStyle(Style.STROKE);
+		mAccBorderPaint.setStrokeWidth(ACC_STROKE_WIDTH);
+		mAccBorderPaint.setAntiAlias(true);
+
+	}
+
+	@Override
+	public void draw(Canvas aCanvas, double aRatio, Point aOffset, float aAngle) {
+		if (mLocation != null &amp;&amp; mImage != null &amp;&amp; mFovImage != null) {
+			//calculate position on screen
+			int posX =  (int)(mLocation.getCoord().x * aRatio) + aOffset.x;
+			int posY =  (int)(mLocation.getCoord().y * aRatio) + aOffset.y;
+			float accRadius = (float)(mLocation.getAccuracy() * aRatio);
+
+			aCanvas.save();
+
+			aCanvas.drawCircle(posX, posY, accRadius, mAccFillPaint);
+			aCanvas.drawCircle(posX, posY, accRadius, mAccBorderPaint);
+
+			//if azimuth is set, draw fov image
+			if (mAzimuth != null &amp;&amp; mMapAzimuth != null) {
+				//compute angle for drawing (used by derived classes
+				float angle = computeDrawingAzimuth();
+
+				Rect rect = new Rect(posX-mFovHalfWidth, posY-mFovHalfHeight, posX+mFovHalfWidth, posY+mFovHalfHeight);
+				aCanvas.rotate(angle - mMapAzimuth + mDisplayAngle, posX, posY);
+				aCanvas.drawBitmap(mFovImage, null, rect, null);
+			}
+
+			aCanvas.restore();
+
+			//draw location point
+			Rect rect = new Rect(posX-mImageHalfWidth, posY-mImageHalfHeight, posX+mImageHalfWidth, posY+mImageHalfHeight);
+			aCanvas.drawBitmap(mImage, null, rect, mPaint);
+		}
+	}
+
+	//******************************************************************************************************************
+	// 	DRAWING 3D
+	// *****************************************************************************************************************
+
+	private boolean mIsInWorld;
+	private Object3D m3DObject;
+	private static final String TEXTURE = "GFX_LOCATION_TEXTURE";
+	private boolean mIsLocUpdated = false;
+
+	private void create3DObject(){
+		Texture color = new Texture(1, 1, ColorUtils.getRGBColor(mLocationColor));
+		if (!TextureManager.getInstance().containsTexture(TEXTURE)) {
+			TextureManager.getInstance().addTexture(TEXTURE, color);
+		}
+
+		m3DObject = Primitives.getSphere(10);
+		m3DObject.setTexture(TEXTURE);
+	}
+
+	@Override
+	public void draw3D(World world, Map map, double ratio, float angle) {
+		if (!mIsInWorld) {
+			mIsInWorld = true;
+			world.addObject(m3DObject);
+		}
+
+		if (mIsLocUpdated) {
+			mIsLocUpdated = false;
+			int posX =  (int)(mLocation.getCoord().x / map.getScale());
+			int posY =  (int)(mLocation.getCoord().y / map.getScale());
+
+			float r = (ratio &lt; 1) ? 1 : (int) ratio;
+			Log.d(TAG, "value = " + r + " | " + ratio + " ---&gt; " + (1/r));
+			m3DObject.setScale((float) (1/r));
+			m3DObject.setOrigin(new SimpleVector(posX, posY, 0));
+
+			Enumeration&lt;Object3D&gt; objs = world.getObjects();
+
+			while (objs.hasMoreElements()) {
+				Object3D obj = objs.nextElement();
+				if (obj.getName().equals(CommonConstants.ZONE_OBJECT_3D_NAME)) {
+					if (obj.sphereIntersectsAABB(m3DObject.getOrigin(), 10*m3DObject.getScale())) {
+						obj.setUserObject(true);//setTransparency(10);
+					} else {
+						//						obj.setUserObject(false);
+					}
+				}
+
+			}
+
+
+		}
+
+
+	}
+
+	@Override
+	public ISObject3D get3DObject() {
+		return null;
+	}
+
+	//******************************************************************************************************************
+	// 	Touch Management
+	// *****************************************************************************************************************
+
+	@Override
+	public ETouchObjectResult onTouchDown(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchPointerDown(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchPointerUp(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchUp(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+	@Override
+	public ETouchObjectResult onTouchMove(Touch aTouch) {
+		return ETouchObjectResult.RESULT_NOTHING;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

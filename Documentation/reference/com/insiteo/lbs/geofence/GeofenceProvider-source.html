@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GeofenceProvider
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -384,12 +384,11 @@ public class GeofenceProvider implements ILbsModule {
 
 	private HashMap&lt;String, GeofenceArea&gt; mGeofenceAreas;
 
-	//	private ArrayList&lt;GeofenceArea&gt; mAreas;
 	private ArrayList&lt;GeofenceZone&gt; mActiveZones;
 	private IGeofenceListener mListener;
 
-//	private volatile boolean mIsInitializing;
 	private volatile boolean mIsInitialized;
+	
 
 	//timer used to reset geofencing, if no location is received for a long duration (mTimeToReset)
 	private class ResetTask extends TimerTask {
@@ -535,7 +534,7 @@ public class GeofenceProvider implements ILbsModule {
 				PointD extCoords = mapSettings.toExternalCoordinates(mCoordSystem, area.getCenter().getCoord().x, area.getCenter().getCoord().y);
 				Position extPos = new Position(mapID, (float)extCoords.x, (float)extCoords.y);
 				//create a new active zone and add it to the list
-				GeofenceZone zone = new GeofenceZone(area.getGUID(), extPos, area.getTimeToLeave(), area.isLeaveEnabled(), area.getExtra1(), area.getExtra2(), area.getExtra3());
+				GeofenceZone zone = new GeofenceZone(area.getGUID(), extPos, area.getTimeToLeave(), area.isLeaveEnabled(), area.getExtra1(), area.getExtra2(), area.getExtra3(), area.isAutoStart());
 				updateActiveZone(zone, area, true);
 				mActiveZones.add(zone);
 			}
@@ -552,21 +551,30 @@ public class GeofenceProvider implements ILbsModule {
 			for (int i = 0; i &lt; enteredZones.size(); i++) { //2
 				AnalyticsGenericEvent zoneEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_GEO_FENCING_LABEL);
 				zoneEvent.setString1(enteredZones.get(i).getGUID());
-				zoneEvent.setInt1(2);
+				zoneEvent.setInt1(AnalyticsConstants.IS_GEO_FENCING_ENTERED);
+				zoneEvent.setInt2(enteredZones.get(i).isAutoStart() ? 1 : 0);
+				zoneEvent.setDouble1(mGeofenceAreas.size());
+				zoneEvent.setPos1(aLocation.getPosition());
 				AnalyticsManager.getInstance().addGenericEvent(zoneEvent);
 			}
 
 			for (int i = 0; i &lt; stayedZones.size(); i++) {//3
 				AnalyticsGenericEvent zoneEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_GEO_FENCING_LABEL);
 				zoneEvent.setString1(stayedZones.get(i).getGUID());
-				zoneEvent.setInt1(3);
+				zoneEvent.setInt1(AnalyticsConstants.IS_GEO_FENCING_STAYED);
+				zoneEvent.setInt2(stayedZones.get(i).isAutoStart() ? 1 : 0);
+				zoneEvent.setDouble1(mGeofenceAreas.size());
+				zoneEvent.setPos1(aLocation.getPosition());
 				AnalyticsManager.getInstance().addGenericEvent(zoneEvent);
 			}
 
 			for (int i = 0; i &lt; leftZones.size(); i++) {//5
 				AnalyticsGenericEvent zoneEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_GEO_FENCING_LABEL);
 				zoneEvent.setString1(leftZones.get(i).getGUID());
-				zoneEvent.setInt1(5);
+				zoneEvent.setInt1(AnalyticsConstants.IS_GEO_FENCING_LEFT);
+				zoneEvent.setInt2(leftZones.get(i).isAutoStart() ? 1 : 0);
+				zoneEvent.setDouble1(mGeofenceAreas.size());
+				zoneEvent.setPos1(aLocation.getPosition());
 				AnalyticsManager.getInstance().addGenericEvent(zoneEvent);
 			}
 

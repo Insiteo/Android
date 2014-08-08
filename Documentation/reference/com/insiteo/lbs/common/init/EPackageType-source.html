@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   EPackageType
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -400,6 +400,10 @@ public enum EPackageType {
 	 */
 	ANALYTICS("analytics"),
 	/**
+	 * Package containing all the data required to used the analytics service.
+	 */
+	EXTRA("extras"),
+	/**
 	 * @hide
 	 */
 	UNKNOWN("");
@@ -429,6 +433,7 @@ public enum EPackageType {
 	/*package*/ static final String CONTENTHRR_STR = "HRRContent";
 	/*package*/ static final String FINGERPRINT_STR = "Fingerprint";
 	/*package*/ static final String ANALYTICS_STR = "Datamining";
+	/*package*/ static final String EXTRAS_STR = "Extras";
 
 	public static EPackageType getFromValue(String value) {
 		EPackageType type = UNKNOWN;
@@ -462,6 +467,8 @@ public enum EPackageType {
 		} 
 		else if (ANALYTICS_STR.equalsIgnoreCase(value)){
 			type = ANALYTICS;
+		} else if (EXTRAS_STR.equalsIgnoreCase(value)){
+			type = EXTRA;
 		}
 
 		return type;

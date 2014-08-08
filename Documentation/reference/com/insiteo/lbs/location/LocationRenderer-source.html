@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   LocationRenderer
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -598,7 +598,7 @@ public class LocationRenderer implements IRenderer {
 
 						for (GfxLocation loc : mLocations) {
 							if (loc.getMapID() == mapID) { 
-								loc.setMapAzimuth(isMapOriented ? mapAzimuth : null);	//set azimuth to null if map is not oriented
+								loc.setMapAzimuth(isMapOriented ? mapAzimuth : 0f);	//set azimuth to null if map is not oriented
 								loc.setDisplayOrientation(mDisplayAngle);
 								loc.draw(aCanvas, aRatio, aOffset, aAngle);
 							}

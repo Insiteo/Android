@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  ProtoRepItineraryMapRect.PBRepItineraryMapRectOrBuilder
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/parsers/package-summary.html">com.insiteo.lbs.common.auth.parsers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/geometry/package-summary.html">com.insiteo.lbs.common.utils.geometry</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/threading/package-summary.html">com.insiteo.lbs.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/analytics/request/package-summary.html">com.insiteo.lbs.protobuf.analytics.request</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/request/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.request.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/init/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/package-summary.html">com.insiteo.lbs.protobuf.lbs.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.init</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/loc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.loc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/geofence/package-summary.html">com.insiteo.lbs.protobuf.model.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/itinerary/package-summary.html">com.insiteo.lbs.protobuf.model.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/map/package-summary.html">com.insiteo.lbs.protobuf.model.map</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryContent.PBRepItineraryContentOrBuilder.html">ProtoRepItineraryContent.PBRepItineraryContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryInstruction.PBRepItineraryInstructionOrBuilder.html">ProtoRepItineraryInstruction.PBRepItineraryInstructionOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapPoint.PBRepItineraryMapPointOrBuilder.html">ProtoRepItineraryMapPoint.PBRepItineraryMapPointOrBuilder</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapRect.PBRepItineraryMapRectOrBuilder.html">ProtoRepItineraryMapRect.PBRepItineraryMapRectOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryNode.PBRepItineraryNodeOrBuilder.html">ProtoRepItineraryNode.PBRepItineraryNodeOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRoot.PBRepItineraryRootOrBuilder.html">ProtoRepItineraryRoot.PBRepItineraryRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRootContent.PBRepItineraryRootContentOrBuilder.html">ProtoRepItineraryRootContent.PBRepItineraryRootContentOrBuilder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryContent.html">ProtoRepItineraryContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryContent.PBRepItineraryContent.html">ProtoRepItineraryContent.PBRepItineraryContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryContent.PBRepItineraryContent.Builder.html">ProtoRepItineraryContent.PBRepItineraryContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryInstruction.html">ProtoRepItineraryInstruction</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryInstruction.PBRepItineraryInstruction.html">ProtoRepItineraryInstruction.PBRepItineraryInstruction</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryInstruction.PBRepItineraryInstruction.Builder.html">ProtoRepItineraryInstruction.PBRepItineraryInstruction.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapPoint.html">ProtoRepItineraryMapPoint</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapPoint.PBRepItineraryMapPoint.html">ProtoRepItineraryMapPoint.PBRepItineraryMapPoint</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapPoint.PBRepItineraryMapPoint.Builder.html">ProtoRepItineraryMapPoint.PBRepItineraryMapPoint.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapRect.html">ProtoRepItineraryMapRect</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapRect.PBRepItineraryMapRect.html">ProtoRepItineraryMapRect.PBRepItineraryMapRect</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryMapRect.PBRepItineraryMapRect.Builder.html">ProtoRepItineraryMapRect.PBRepItineraryMapRect.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryNode.html">ProtoRepItineraryNode</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryNode.PBRepItineraryNode.html">ProtoRepItineraryNode.PBRepItineraryNode</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryNode.PBRepItineraryNode.Builder.html">ProtoRepItineraryNode.PBRepItineraryNode.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRoot.html">ProtoRepItineraryRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRoot.PBRepItineraryRoot.html">ProtoRepItineraryRoot.PBRepItineraryRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRoot.PBRepItineraryRoot.Builder.html">ProtoRepItineraryRoot.PBRepItineraryRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRootContent.html">ProtoRepItineraryRootContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRootContent.PBRepItineraryRootContent.html">ProtoRepItineraryRootContent.PBRepItineraryRootContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/ProtoRepItineraryRootContent.PBRepItineraryRootContent.Builder.html">ProtoRepItineraryRootContent.PBRepItineraryRootContent.Builder</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="ProtoRepItineraryMapRect.PBRepItineraryMapRectOrBuilder.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+     
+    
+    interface
+<h1>ProtoRepItineraryMapRect.PBRepItineraryMapRectOrBuilder</h1>
+
+
+
+  
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+// Generated by the protocol buffer compiler.  DO NOT EDIT!
+// source: response/itinerary/PBRepItineraryMapRect.proto
+
+package com.insiteo.lbs.protobuf.lbs.response.itinerary;
+
+public final class ProtoRepItineraryMapRect {
+  private ProtoRepItineraryMapRect() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+  public interface PBRepItineraryMapRectOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // required int32 mapId = 1;
+    boolean hasMapId();
+    int getMapId();
+    
+    // required float xMin = 2;
+    boolean hasXMin();
+    float getXMin();
+    
+    // required float xMax = 3;
+    boolean hasXMax();
+    float getXMax();
+    
+    // required float yMin = 4;
+    boolean hasYMin();
+    float getYMin();
+    
+    // required float yMax = 5;
+    boolean hasYMax();
+    float getYMax();
+  }
+  public static final class PBRepItineraryMapRect extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBRepItineraryMapRectOrBuilder {
+    // Use PBRepItineraryMapRect.newBuilder() to construct.
+    private PBRepItineraryMapRect(Builder builder) {
+      super(builder);
+    }
+    private PBRepItineraryMapRect(boolean noInit) {}
+    
+    private static final PBRepItineraryMapRect defaultInstance;
+    public static PBRepItineraryMapRect getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBRepItineraryMapRect getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // required int32 mapId = 1;
+    public static final int MAPID_FIELD_NUMBER = 1;
+    private int mapId_;
+    public boolean hasMapId() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public int getMapId() {
+      return mapId_;
+    }
+    
+    // required float xMin = 2;
+    public static final int XMIN_FIELD_NUMBER = 2;
+    private float xMin_;
+    public boolean hasXMin() {
+      return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+    }
+    public float getXMin() {
+      return xMin_;
+    }
+    
+    // required float xMax = 3;
+    public static final int XMAX_FIELD_NUMBER = 3;
+    private float xMax_;
+    public boolean hasXMax() {
+      return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+    }
+    public float getXMax() {
+      return xMax_;
+    }
+    
+    // required float yMin = 4;
+    public static final int YMIN_FIELD_NUMBER = 4;
+    private float yMin_;
+    public boolean hasYMin() {
+      return ((bitField0_ &amp; 0x00000008) == 0x00000008);
+    }
+    public float getYMin() {
+      return yMin_;
+    }
+    
+    // required float yMax = 5;
+    public static final int YMAX_FIELD_NUMBER = 5;
+    private float yMax_;
+    public boolean hasYMax() {
+      return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+    }
+    public float getYMax() {
+      return yMax_;
+    }
+    
+    private void initFields() {
+      mapId_ = 0;
+      xMin_ = 0F;
+      xMax_ = 0F;
+      yMin_ = 0F;
+      yMax_ = 0F;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasMapId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasXMin()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasXMax()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasYMin()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasYMax()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, mapId_);
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, xMin_);
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        output.writeFloat(3, xMax_);
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        output.writeFloat(4, yMin_);
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        output.writeFloat(5, yMax_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, mapId_);
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, xMin_);
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, xMax_);
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, yMin_);
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, yMax_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect, Builder&gt;
+        implements com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRectOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        mapId_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        xMin_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        xMax_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        yMin_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        yMax_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect build() {
+        com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect buildPartial() {
+        com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect result = new com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.mapId_ = mapId_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.xMin_ = xMin_;
+        if (((from_bitField0_ &amp; 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.xMax_ = xMax_;
+        if (((from_bitField0_ &amp; 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.yMin_ = yMin_;
+        if (((from_bitField0_ &amp; 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.yMax_ = yMax_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect other) {
+        if (other == com.insiteo.lbs.protobuf.lbs.response.itinerary.ProtoRepItineraryMapRect.PBRepItineraryMapRect.getDefaultInstance()) return this;
+        if (other.hasMapId()) {
+          setMapId(other.getMapId());
+        }
+        if (other.hasXMin()) {
+          setXMin(other.getXMin());
+        }
+        if (other.hasXMax()) {
+          setXMax(other.getXMax());
+        }
+        if (other.hasYMin()) {
+          setYMin(other.getYMin());
+        }
+        if (other.hasYMax()) {
+          setYMax(other.getYMax());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasMapId()) {
+          
+          return false;
+        }
+        if (!hasXMin()) {
+          
+          return false;
+        }
+        if (!hasXMax()) {
+          
+          return false;
+        }
+        if (!hasYMin()) {
+          
+          return false;
+        }
+        if (!hasYMax()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              mapId_ = input.readInt32();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              xMin_ = input.readFloat();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              xMax_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              yMin_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              yMax_ = input.readFloat();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int32 mapId = 1;
+      private int mapId_ ;
+      public boolean hasMapId() {
+        return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+      }
+      public int getMapId() {
+        return mapId_;
+      }
+      public Builder setMapId(int value) {
+        bitField0_ |= 0x00000001;
+        mapId_ = value;
+        
+        return this;
+      }
+      public Builder clearMapId() {
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        mapId_ = 0;
+        
+        return this;
+      }
+      
+      // required float xMin = 2;
+      private float xMin_ ;
+      public boolean hasXMin() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public float getXMin() {
+        return xMin_;
+      }
+      public Builder setXMin(float value) {
+        bitField0_ |= 0x00000002;
+        xMin_ = value;
+        
+        return this;
+      }
+      public Builder clearXMin() {
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        xMin_ = 0F;
+        
+        return this;
+      }
+      
+      // required float xMax = 3;
+      private float xMax_ ;
+      public boolean hasXMax() {
+        return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+      }
+      public float getXMax() {
+        return xMax_;
+      }
+      public Builder setXMax(float value) {
+        bitField0_ |= 0x00000004;
+        xMax_ = value;
+        
+        return this;
+      }
+      public Builder clearXMax() {
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        xMax_ = 0F;
+        
+        return this;
+      }
+      
+      // required float yMin = 4;
+      private float yMin_ ;
+      public boolean hasYMin() {
+        return ((bitField0_ &amp; 0x00000008) == 0x00000008);
+      }
+      public float getYMin() {
+        return yMin_;
+      }
+      public Builder setYMin(float value) {
+        bitField0_ |= 0x00000008;
+        yMin_ = value;
+        
+        return this;
+      }
+      public Builder clearYMin() {
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        yMin_ = 0F;
+        
+        return this;
+      }
+      
+      // required float yMax = 5;
+      private float yMax_ ;
+      public boolean hasYMax() {
+        return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+      }
+      public float getYMax() {
+        return yMax_;
+      }
+      public Builder setYMax(float value) {
+        bitField0_ |= 0x00000010;
+        yMax_ = value;
+        
+        return this;
+      }
+      public Builder clearYMax() {
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        yMax_ = 0F;
+        
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.lbs.response.itinerary.PBRepItineraryMapRect)
+    }
+    
+    static {
+      defaultInstance = new PBRepItineraryMapRect(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.lbs.response.itinerary.PBRepItineraryMapRect)
+  }
+  
+  
+  static {
+  }
+  
+  // @@protoc_insertion_point(outer_class_scope)
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GeofenceZone
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -336,10 +336,12 @@ public class GeofenceZone {
 	private long mEventTime;
 	private boolean mNotify;
 	
+	private boolean mAutoStart;
+	
 	/**
 	 * Constructor. 
 	 */
-	/*package*/ GeofenceZone(String GUID, Position zoneCenter, long timeToLeave, boolean notifyLeaving, String extra1, String extra2, String extra3) {
+	/*package*/ GeofenceZone(String GUID, Position zoneCenter, long timeToLeave, boolean notifyLeaving, String extra1, String extra2, String extra3, boolean autoStart) {
 		mGUID = GUID;
 		mCenter = new Position(zoneCenter);
 		mTimeToLeave = timeToLeave;
@@ -350,6 +352,8 @@ public class GeofenceZone {
 		mExtra1 = extra1;
 		mExtra2 = extra2;
 		mExtra3 = extra3;
+		
+		mAutoStart = autoStart;
 	}
 	
 	/**
@@ -358,6 +362,10 @@ public class GeofenceZone {
 	 */
 	public String getGUID() {
 		return mGUID;
+	}
+	
+	public boolean isAutoStart() {
+		return mAutoStart;
 	}
 	
 	/**

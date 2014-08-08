@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
+<title>
+
+  MapView
+
+
+| Insiteo API Documentation - Version 3.2.0_RC2
+
+</title>
+<link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../", "../../../../../assets/");
+</script>
+<script src="../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/package-summary.html">com.insiteo.lbs.common.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/map/IMapListener.html">IMapListener</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/map/AnimationConstant.html">AnimationConstant</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/map/Map2DView.html">Map2DView</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/map/MapConstants.html">MapConstants</a></li>
+          <li class="api apilevel-"><a href="../../../../com/insiteo/lbs/map/MapFragment.html">MapFragment</a></li>
+          <li class="selected api apilevel-"><a href="../../../../com/insiteo/lbs/map/MapView.html">MapView</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+   
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="MapView.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>MapView</h1>
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+    extends <a href="http://d.android.com/reference/android/opengl/GLSurfaceView.html">GLSurfaceView</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+package com.insiteo.lbs.map;
+
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.Semaphore;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.opengl.GLSurfaceView;
+import android.util.AttributeSet;
+import android.view.Display;
+import android.view.Surface;
+
+import com.insiteo.lbs.analytics.AnalyticsConstants;
+import com.insiteo.lbs.analytics.AnalyticsManager;
+import com.insiteo.lbs.analytics.entities.AnalyticsGenericEvent;
+import com.insiteo.lbs.common.CommonConstants;
+import com.insiteo.lbs.common.init.InitProvider;
+import com.insiteo.lbs.common.utils.Log;
+import com.insiteo.lbs.common.utils.geometry.PointD;
+import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.map.database.MapDBHelper;
+import com.insiteo.lbs.map.entities.EStartViewMode;
+import com.insiteo.lbs.map.entities.Map;
+import com.insiteo.lbs.map.entities.Zone;
+import com.insiteo.lbs.map.render.ERenderMode;
+import com.insiteo.lbs.map.render.EZoneAction;
+import com.insiteo.lbs.map.render.GenericRenderer;
+import com.insiteo.lbs.map.render.GfxZone;
+import com.insiteo.lbs.map.render.IRTO;
+import com.insiteo.lbs.map.render.IRTOListener;
+import com.insiteo.lbs.map.render.IRenderer;
+import com.insiteo.lbs.map.render.RenderComparator;
+import com.insiteo.lbs.map.render.TileMapRenderer;
+import com.insiteo.lbs.map.render.ZoneRenderer;
+import com.insiteo.lbs.map.tiledmap.Tile;
+import com.insiteo.lbs.map.tiledmap.TileRepository;
+import com.insiteo.lbs.map.tiledmap.loader.FileTileLoader;
+import com.insiteo.lbs.map.tiledmap.loader.RemoteTileLoader;
+import com.insiteo.lbs.map.utils.CoordConverter;
+
+
+/**
+ * View that will draw all the IRenderers and their IRTOs. 
+ * On creation, this view will try to initialize all its data and create a MapController.
+ * You must initialize {@link InitProvider} before using this view.
+ * To be notified of MapView events, calling activity should implements {@link IMapListener} or you should set
+ * a listener via the method {@link #setListener(IMapListener)}.
+ */
+public class MapView extends GLSurfaceView {
+
+	private final static String TAG = MapView.class.getSimpleName();
+
+	Context mContext;
+	MapDataManager mMapDataManager;
+
+	Semaphore mRenderingLock 	= new Semaphore(1);
+	Semaphore mListenerLock 	= new Semaphore(1);
+
+	TileRepository mTileRepository;
+	TileMapRenderer mTileMapRenderer;
+	ZoneRenderer mZoneRenderer;
+
+	List&lt;IRenderer&gt; mRenderers = new LinkedList&lt;IRenderer&gt;();
+	int mPriorityCounter = 0;	
+	RenderComparator mRenderingComparator = new RenderComparator();
+
+	private GestureHandler mGestureHandler;
+
+	Integer	mBGColor = MapConstants.DEFAULT_MAP_BACKGROUND_COLOR;
+
+	WeakReference&lt;IMapListener&gt; mMapListener;
+
+	boolean mZoomReset = true;
+
+	private boolean mIs3D = false;
+
+	private boolean mIsMapViewReady = false;
+
+	boolean mIsSurfaceInitialized = false;
+
+	/**
+	 * Default constructor
+	 */
+	public MapView(Context context, AttributeSet attributes) {
+		super(context, attributes);
+		init(context);
+	}
+
+	/**
+	 * Constructor
+	 */
+	public MapView(Context context) {
+		super(context);
+		init(context);
+	}
+
+	private void init(Context context){
+
+		Log.d(TAG, "Initializing MapView");
+
+		mContext = context;
+
+		mGestureHandler = new GestureHandler();
+		mGestureHandler.init(context, this);
+
+		setOnTouchListener(mGestureHandler);
+
+		mMapDataManager = new MapDataManager(this);
+		mMapDataManager.init(((Activity) context));
+
+
+		try {
+			mMapListener = new WeakReference&lt;IMapListener&gt;((IMapListener) context);
+		} catch (ClassCastException e) {
+			Log.d(TAG, "The current context does not implement the IMapListener interface");
+		}
+
+		if (this instanceof Map3DView) {
+			mIs3D = true;
+		} 
+	}
+
+	private void initTiles(){
+		mTileRepository = new TileRepository(new FileTileLoader(new RemoteTileLoader()));
+		mTileMapRenderer = new TileMapRenderer(mTileRepository, this);
+		mTileMapRenderer.setPriority(mPriorityCounter++);
+		addRenderer(mTileMapRenderer);
+
+
+	}
+
+	private void initZones(){
+		mZoneRenderer = new ZoneRenderer(this, getResources(), mTileMapRenderer);
+		mZoneRenderer.setPriority(mPriorityCounter++);
+		addRenderer(mZoneRenderer);
+		mZoneRenderer.setCurrentMap(mMapDataManager.getMap());
+	}
+
+	public void restart() {
+		if(mContext != null) {
+			mIsMapViewReady = false;
+
+			stopRendering();
+
+			if(mTileRepository != null) mTileRepository.clearRepository();
+			mTileRepository = null;
+
+			if(mTileMapRenderer != null) mTileMapRenderer.clear();
+			mTileMapRenderer = null;
+
+			if(mZoneRenderer != null) mZoneRenderer.clear();
+			mZoneRenderer = null;
+
+			clearRenderers();
+			removeRenderers();
+
+			mGestureHandler.removeListeners();
+
+			mMapDataManager = new MapDataManager(this);
+			mMapDataManager.init(((Activity) mContext));
+		}
+	}
+
+	//******************************************************************************************************************
+	//  GLSurfaceView
+	// *****************************************************************************************************************
+
+	@Override
+	protected void onAttachedToWindow() {
+		Log.d(TAG, "MapView attached to window");
+		super.onAttachedToWindow();
+	}
+
+	@Override
+	protected void onDetachedFromWindow() {
+		Log.d(TAG, "MapView detached from window");
+		super.onDetachedFromWindow();
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		Log.d(TAG, "MapView finalizing");
+		super.finalize();
+	}
+
+	//******************************************************************************************************************
+	//  Private methods
+	// *****************************************************************************************************************
+
+	void initDisplay(int aMapViewWidth, int aMapViewHeight) {		
+		CoordConverter.setScreenDimensions(aMapViewWidth, aMapViewHeight);
+		mIsSurfaceInitialized = true;
+
+		if (mIsMapViewReady) {
+			startRendering();
+		}
+	}
+
+	void destroyDisplay() {
+		try {
+			mTileMapRenderer.getSem().acquire();
+			mTileMapRenderer.clear();
+			stopRendering();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mTileMapRenderer.getSem().release();
+		}
+	}
+
+	/**
+	 * Sets the {@link IMapListener} that will be notified for the {@link MapView} events.
+	 * @param aListener The {@link IMapListener} that should be notified.
+	 */
+	public void setListener(IMapListener aListener) {
+		try {
+			mListenerLock.acquire();
+			mMapListener = new WeakReference&lt;IMapListener&gt;(aListener);
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		finally {
+			mListenerLock.release();
+		}
+	}
+
+	public void removeListener() {
+		try {
+			mListenerLock.acquire();
+			mMapListener = new WeakReference&lt;IMapListener&gt;(null);
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		finally {
+			mListenerLock.release();
+		}
+	}
+
+	private IRenderer createGenericRenderer(Class&lt;? extends IRTO&gt; aObjectType, int aPriority, IRTOListener aListener){
+		IRenderer renderer = null;
+
+		renderer = new GenericRenderer(aObjectType);
+		renderer.setPriority(aPriority);		
+		if(aListener != null) renderer.setRTOListener(aListener);
+
+		if (addRenderer(renderer)) {
+			return renderer;
+		}
+
+		return null;
+	}
+
+	private IRenderer rendererExist(Class&lt;? extends IRTO&gt; aObjectType){
+		IRenderer result = null;
+		for(IRenderer ir : mRenderers) {
+			if(ir.getRTOClass() == aObjectType) {
+				result = ir;
+				break;
+			}
+		}
+		return result;
+	}
+
+	private void activateMapOptions(){
+		mBGColor = mMapDataManager.getMap().getBackgroundColor();
+
+		if (mIs3D) ((Map3DView) this).mapHasChanged();
+
+		activateSlide(mMapDataManager.getMap().isSlideActive());
+		displayBackgroundTile(mMapDataManager.getMap().isSlideActive());
+
+		if(mMapDataManager.getMap().getStartViewMode() == EStartViewMode.FIT_TO_SCREEN){
+			if (mIs3D) {				
+				// TODO
+				//				int zoom = ((Map3DView) this).findFitToScreenZoom();
+				//				mMapDataManager.getZoomController().setLevelBoundaries(zoom, mMapDataManager.getZoomController().getMaxZoomLevel());
+				//				mMapDataManager.getZoomController().setZoomLevel(zoom);
+			} else {
+
+			}
+		}
+	}
+
+	private void displayBackgroundTile(boolean aEnable) {
+		mTileMapRenderer.displayBackgroundTile(aEnable);
+	}
+
+	private void activateSlide(boolean aOn) {
+		mTileMapRenderer.setMapSlide(aOn);
+	}
+
+
+	//******************************************************************************************************************
+	//  Package methods
+	// *****************************************************************************************************************
+
+	void activateBoundaries(boolean aOn) {
+		mMapDataManager.setUseBoundaries(aOn);
+	}
+
+	void updateZoneRenderer(int x, int y) {
+		if (!mIs3D) {
+			Tile t = mTileMapRenderer.getTileUnderTouch(x, y);
+			List&lt;GfxZone&gt; z;
+			if (t == null) {
+				z = null;
+			} else {
+				z = t.getZones();
+			}
+			mZoneRenderer.setZones(z);
+		}		
+	}
+
+	public void onZoom(int previousDistance, int newDistance, PointF touchCenter){
+
+		double distRatio = newDistance / (double) previousDistance;
+		float zoomOffset = (float) ((Math.log(distRatio)) / Math.log(2d));		
+
+		float previous = mMapDataManager.getZoomLevel();
+		if(zoomOffset != 0f) mMapDataManager.onZoom(distRatio, zoomOffset, touchCenter);
+		if (Math.abs(previous - mMapDataManager.getZoomLevel()) &gt; 2) {
+			// TODO
+			Log.d("BUG", "Zoom level from " + previous + " to " + mMapDataManager.getZoomLevel());
+			Log.d("BUG", "old distance " + previousDistance);
+			Log.d("BUG", "new distance " + newDistance);
+
+			Log.d("BUG", "Distance ratio = " + distRatio);
+			Log.d("BUG", "Zoom offset = " + zoomOffset);
+		}
+
+
+	}
+
+	TileMapRenderer getTileMapRenderer(){
+		return mTileMapRenderer;
+	}
+
+	//******************************************************************************************************************
+	//  Public methods
+	// *****************************************************************************************************************
+
+	public void runOnUiThread(Runnable runnable){
+		try{
+			((Activity) mContext).runOnUiThread(runnable);
+		} catch(ClassCastException e){
+
+		}
+	}
+
+	//********** Getters *************//
+
+	public MapDataManager getMapDataManager(){
+		return mMapDataManager;
+	}
+
+	/**
+	 * Returns whether this map uses 3D rendering
+	 * @return True if it uses 3D rendering
+	 */
+	public boolean isMap3D(){
+		return this instanceof Map3DView;
+	}
+
+	/**
+	 * Return true if the MapView is fully loaded.
+	 * @return
+	 */
+	public boolean isMapViewReady(){
+		return mIsMapViewReady;
+	}
+
+	//******************************************************************************************************************
+	//  Renderers
+	// *****************************************************************************************************************
+
+	private boolean mIsRendering;
+
+	/**
+	 * Enables the map rendering
+	 */
+	public void startRendering(){
+		mTileRepository.start();
+		mIsRendering = true;
+	}
+
+	/**
+	 * Disables the map rendering
+	 */
+	public void stopRendering() {
+		if(mIsRendering) {
+			mTileRepository.stop();
+			mIsRendering = false;
+		}
+	}
+
+	/**
+	 * Whether the map is currently being rendered
+	 * @return
+	 */
+	public boolean isRendering(){
+		return mIsRendering;
+	}
+
+	/**
+	 * Returns the {@link IRenderer} handling the specified {@link IRTO} class if it exists or null.
+	 * @param rtoClass the {@link IRTO} class to look for.
+	 * @return the corresponding {@link IRenderer} or null.
+	 */
+	public IRenderer getRenderer(Class&lt;? extends IRTO&gt; rtoClass) {
+		IRenderer renderer = null;
+		if(rtoClass != null) {
+			try {
+				mRenderingLock.acquire();
+				renderer = rendererExist(rtoClass);
+			
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				mRenderingLock.release();
+			}
+		}
+		return renderer;
+	}
+	
+	/**
+	 * Checks if a {@link IRenderer} with the same {@link IRenderer#getRTOClass()} already
+	 * exist in the list of {@link IRenderer} used by the {@link MapView}.
+	 * @param renderer the {@link IRenderer} to check.
+	 * @return true if a {@link IRenderer} handling the same {@link IRTO} class already exists.
+	 */
+	public boolean hasRenderer(IRenderer renderer) {
+		if(renderer == null) {return false;}
+		boolean exist = false;
+		try {
+			mRenderingLock.acquire();
+			exist = (rendererExist(renderer.getRTOClass()) != null);
+		
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+		return exist;
+	}
+	
+	/**
+	 * Add the renderer to the list of renderer that will be drawn of the {@link MapView}.
+	 * The renderer will only be added if no other exist for the same RTO class.
+	 * @param aRenderer
+	 * @return true if the renderer was successfully added
+	 */
+	public boolean addRenderer(IRenderer aRenderer) {
+		if(aRenderer == null) {return false;}
+		
+		Log.d(TAG, "Adding Renderer for class : " + aRenderer.getRTOClass());
+		
+		boolean isNewRenderer = true;
+		try {
+			mRenderingLock.acquire();
+			isNewRenderer = !(rendererExist(aRenderer.getRTOClass()) != null);
+			if(isNewRenderer) {
+				aRenderer.setRenderMode(mIs3D ? (ERenderMode.RENDER_MODE_3D) : ERenderMode.RENDER_MODE_2D);
+				mRenderers.add(aRenderer);
+				Collections.sort(mRenderers, mRenderingComparator);
+
+				mGestureHandler.addTouchListener(aRenderer);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+		return isNewRenderer;
+	}
+
+	private void removeRenderers() {
+		try {
+			mRenderingLock.acquire();
+			mRenderers.clear();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+	}
+
+	/**
+	 * Removes the {@link IRenderer} from the {@link List} of {@link IRenderer} used by the {@link MapView}.
+	 * @param renderer to remove.
+	 */
+	public void removeRenderer(IRenderer renderer) {
+		if(renderer != null) removeRenderer(renderer.getRTOClass());
+	}
+	
+	/**
+	 * Remove the renderer that handle the given RTO class.
+	 * @param rtoClass of the renderer to remove 
+	 */
+	public void removeRenderer(Class&lt;? extends IRTO&gt; rtoClass) {
+		
+		Log.d(TAG, "Removing Renderer for class : " + rtoClass);
+		
+		try {
+			mRenderingLock.acquire();
+			IRenderer renderer = rendererExist(rtoClass);
+			if (renderer != null) {
+				mRenderers.remove(renderer);
+				mGestureHandler.removeTouchListener(renderer);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+	}
+
+	/**
+	 * Clear the renderer that handle the given RTO class.
+	 * @param rtoClass of the renderer to clear
+	 */
+	public void clearRenderer(Class&lt;? extends IRTO&gt; rtoClass) {
+		try {
+			mRenderingLock.acquire();
+			IRenderer renderer = rendererExist(rtoClass);
+			if (renderer != null) {
+				renderer.clear();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+	}
+
+	/**
+	 * Call {@link #clearRenderer(Class&lt;? extends IRTO&gt;)} for every renderer class
+	 */
+	public void clearRenderers() {
+		try {
+			mRenderingLock.acquire();
+			for(IRenderer r : mRenderers) {
+				r.clear();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+	}
+
+	/**
+	 * Enables/disables the touch for the renderer handling the given RTO class.
+	 * @param rtoClass for which the touch should be enabled/disabled
+	 * @param enable True to enable touch false otherwise
+	 */
+	public void setTouchEnabled(Class&lt;? extends IRTO&gt; rtoClass, boolean enable) {
+		try {
+			mRenderingLock.acquire();
+			if(rtoClass == null) {
+				// no object type specified : modify all
+				for(IRenderer ir : mRenderers) {
+					ir.setTouchEnabled(enable);
+				}
+			} else {				
+				IRenderer renderer = rendererExist(rtoClass);
+
+				if (renderer != null) {
+					renderer.setTouchEnabled(enable);
+				}
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+	}
+
+	/**
+	 * Enables/disables the rendering for the renderer handling the given RTO class.
+	 * @param rtoClass for which the touch should be enabled/disabled
+	 * @param enable True to enable touch false otherwise
+	 */
+	public void setDisplayEnabled(Class&lt;? extends IRTO&gt; rtoClass, boolean enable) {
+		try {
+			mRenderingLock.acquire();
+			if(rtoClass == null) {
+				// no object type specified : modify all
+				for(IRenderer ir : mRenderers) {
+					ir.setDisplayEnabled(enable);
+				}
+			} else {
+				IRenderer renderer = rendererExist(rtoClass);
+
+				if (renderer != null) {
+					renderer.setDisplayEnabled(enable);
+				}
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+	}
+
+	/**
+	 * Add the listener to the renderer handling the given RTO class.
+	 * @param listener The listener that should be notified on RTO events.
+	 * @param rtoClass The RTO class to be notify for. 
+	 * @return True if a new {@link GenericRenderer} was created to handle the RTO class
+	 */
+	public boolean setRTOListener(IRTOListener listener, Class&lt;? extends IRTO&gt; rtoClass) {
+		boolean newRenderer = false;
+		boolean found = false;
+		try {
+			mRenderingLock.acquire();
+
+			IRenderer renderer = rendererExist(rtoClass);
+
+			if (renderer != null) {
+				found = true;
+				renderer.setRTOListener(listener);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+
+		if (!found) {
+			newRenderer = (createGenericRenderer(rtoClass, mPriorityCounter++, listener) != null);
+		}
+		return newRenderer;
+	}
+
+	/**
+	 * Changes the rendering priority of the renderer that handles the given RTO class.
+	 * @param rtoClass The RTO class of the targeted renderer.
+	 * @param priority The new priority to set to the renderer
+	 * @return True if a new {@link GenericRenderer} was created to handle the RTO class
+	 */
+	public boolean setPriority(Class&lt;? extends IRTO&gt; rtoClass, int priority)  {
+		boolean newRenderer = false;
+		boolean found = false;
+		try {
+			mRenderingLock.acquire();
+
+			IRenderer renderer = rendererExist(rtoClass);
+
+			if (renderer != null) {
+				found = true;
+				renderer.setPriority(priority);
+				Collections.sort(mRenderers, mRenderingComparator);
+				mGestureHandler.sortTouchListeners();
+			}
+
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mRenderingLock.release();
+		}
+
+		if (!found) {
+			newRenderer = (createGenericRenderer(rtoClass, priority, null) != null);
+		}
+		return newRenderer;
+	}
+
+	//******************************************************************************************************************
+	//  RTOs and Zones
+	// *****************************************************************************************************************
+
+	/**
+	 * Equivalent to {@link #addRTOInZone(int, IRTO)} with -1 as the zone Id.
+	 * @param rto The RTO object to add
+	 * @return True if the RTO was properly added to the renderer
+	 */
+	public boolean addRTO(IRTO rto) {
+		return this.addRTOInZone(CommonConstants.NULL_ID, rto);
+	}
+
+	/**
+	 * Equivalent to {@link #removeRTOFromZone(int, IRTO)} with -1 as the zone Id.
+	 * @param rto The RTO object to remove
+	 */
+	public void removeRTO(IRTO rto) {
+		this.removeRTOFromZone(CommonConstants.NULL_ID, rto);
+	}
+
+	/**
+	 * Add an RTO object to the appropriate renderer to be drawn in the zone defined by the zone Id.
+	 * If no renderer exist a new {@link GenericRenderer} will be created to handle this RTO class 
+	 * @param zoneId The zone id were the RTO should be drawn or -1
+	 * @param rto The RTO object that should be added.
+	 * @return True if the RTO was properly added.
+	 */
+	public boolean addRTOInZone(int zoneId, IRTO rto) {
+		boolean result = false;
+
+		if(rto != null) {
+			rto.setRenderMode(mIs3D ? (ERenderMode.RENDER_MODE_3D) : ERenderMode.RENDER_MODE_2D);
+			rto.setResources(getResources());
+
+			IRenderer renderer = null;
+			try {
+				mRenderingLock.acquire();
+				renderer = rendererExist(rto.getClass());
+
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				mRenderingLock.release();
+			}
+
+			if(renderer == null) renderer = createGenericRenderer(rto.getClass(), mPriorityCounter++, null);
+
+			//check passed zone ID
+			if (zoneId != CommonConstants.NULL_ID) {
+				result = renderer.addRTOInZone(zoneId, rto);
+			} else {
+				result = renderer.addRTO(rto);
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * Add an RTO object to the appropriate renderer to be drawn in the zone defined by the zone Id with the given zone offset.
+	 * If no renderer exist a new {@link GenericRenderer} will be created to handle this RTO class.
+	 * @param zoneId The zone id were the RTO should be drawn or -1
+	 * @param rto The RTO object that should be added.
+	 * @param zoneOffset The offset that should be added when the RTO is drawn
+	 * @return True if the RTO was properly added.
+	 */
+	public boolean addRTOInZone(int zoneId, IRTO rto, PointF zoneOffset) {
+		boolean result = false;
+
+		if(rto != null) {
+			rto.setRenderMode(mIs3D ? (ERenderMode.RENDER_MODE_3D) : ERenderMode.RENDER_MODE_2D);
+			rto.setResources(getResources());
+
+			IRenderer renderer = null;
+			try {
+				mRenderingLock.acquire();
+				renderer = rendererExist(rto.getClass());
+
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				mRenderingLock.release();
+			}
+
+			if(renderer == null) renderer = createGenericRenderer(rto.getClass(), mPriorityCounter++, null);
+
+			//check passed zone ID
+			if (zoneId != CommonConstants.NULL_ID) {
+				rto.setZoneOffset(zoneOffset);
+				result = renderer.addRTOInZone(zoneId, rto);
+			} else {
+				result = renderer.addRTO(rto);
+			}
+		}
+
+		return result;
+	}
+
+	/**
+	 * Removes the given RTO object from the zone were it was drawn
+	 * @param zoneId The zone id were it was drawn or -1
+	 * @param rto The RTO object to remove
+	 */
+	public void removeRTOFromZone(int zoneId, IRTO rto) {
+		if(rto != null) {
+			try {
+				mRenderingLock.acquire();
+				for(IRenderer ir : mRenderers) {
+					if(ir.getRTOClass() == rto.getClass()) {
+						if (zoneId != CommonConstants.NULL_ID) {
+							ir.removeRTOFromZone(zoneId, rto);
+						} else {
+							ir.removeRTO(rto);
+						}
+						break;
+					}
+				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				mRenderingLock.release();
+			}
+		}
+	}
+
+	/**
+	 * Removes for every renderers the RTO that are associated to this zone
+	 * @param zoneId The id of the zone to clear
+	 */
+	public void clearZone(int zoneId) {
+		try {
+			mRenderingLock.acquire();
+			for(IRenderer r : mRenderers) {
+				r.clearZone(zoneId);
+			}
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		finally {
+			mRenderingLock.release();
+		}		
+	}
+
+	/**
+	 * Give the list of all the zones that are visible on the screen.
+	 * This list contains the zones of all the tiles that visible on the screen even if the zone is 
+	 * not currently visible
+	 * @return The list of {@link GfxZone}
+	 */
+	public List&lt;GfxZone&gt; getVisibleZones(){
+		List&lt;GfxZone&gt; visibleZones = new ArrayList&lt;GfxZone&gt;();
+		List&lt;Tile&gt; tiles = mTileMapRenderer.getVisibleTiles();
+
+		synchronized (tiles) {
+			for (Tile tile : mTileMapRenderer.getVisibleTiles()) {
+				// Wait for the tile to be fully loaded
+				int waitinCpt = 0;
+				while(!tile.isLoaded() &amp;&amp; waitinCpt &lt; 20){
+					try {
+						Thread.sleep(10);
+					} catch (InterruptedException e) {
+					}
+					waitinCpt++;
+				}
+
+				if (tile.getZones() != null) {
+					visibleZones.addAll(tile.getZones());
+				}
+			}
+		}
+		return visibleZones;
+	}
+
+	//******************************************************************************************************************
+	//  Zoom
+	// *****************************************************************************************************************
+
+	/**
+	 * Returns the current zoom level
+	 * @return The current zoom level
+	 */
+	public float getZoomLevel() {
+		return mMapDataManager.getZoomController().getZoomLevel();
+	}	
+
+	/**
+	 * Zooms the map to the desired zoom level
+	 * @param zoomLevel The new zoom level
+	 * @param animate True if the transition should be animated
+	 */
+	public void zoom(float zoomLevel, boolean animate) {
+		mMapDataManager.zoom(zoomLevel, animate, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}	
+
+	/**
+	 * Zooms the map to the desired zoom level
+	 * @param zoomLevel The new zoom level
+	 * @param animate True if the transition should be animated
+	 * @param duration The duration of the animation
+	 */
+	public void zoom(float zoomLevel, boolean animate, int duration) {
+		if(duration &lt; 0) duration = 0;
+		mMapDataManager.zoom(zoomLevel, animate, duration);
+	}	
+
+	/**
+	 * Zooms the map to the highest zoom that can contains all the rectangle
+	 * @param rect The rectangle to zoom on
+	 * @param animate True if the transition should be animated
+	 */
+	public void zoomToSpan(RectF rect, boolean animate){
+		mMapDataManager.zoomToSpan(rect, animate, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}
+
+	/**
+	 * Zooms the map to the highest zoom that can contains all the rectangle
+	 * @param rect The rectangle to zoom on in meters
+	 * @param animate True if the transition should be animated
+	 * @param duration The duration of the animation
+	 */
+	public void zoomToSpan(RectF rect, boolean animate, int duration){
+		if(duration &lt; 0) duration = 0;
+		mMapDataManager.zoomToSpan(rect, animate, duration);
+	}
+
+	/**
+	 * @deprecated Use {@link MapView#zoomIn(boolean)} instead.
+	 * Increases the current zoom level by one step.
+	 * The position of the displayed map will not be affected by this.
+	 */
+	public void zoomIn() {
+		mMapDataManager.zoomIn(false, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}
+
+	/**
+	 * Increases the zoom by 1
+	 * @param animate True if it should use transition animation (with the default animation duration)
+	 */
+	public void zoomIn(boolean animate) {
+		mMapDataManager.zoomIn(animate, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}
+
+	/**
+	 * @deprecated Use {@link MapView#zoomOut(boolean)} instead.
+	 * Decreases the current zoom level by one step.
+	 * The position of the displayed map will not be affected by this.
+	 */
+	public void zoomOut() {
+		mMapDataManager.zoomOut(false, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}
+
+	/**
+	 * Decreases the zoom by 1
+	 * @param animate True if it should use transition animation (with the default animation duration)
+	 */
+	public void zoomOut(boolean animate) {
+		mMapDataManager.zoomOut(animate, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}
+
+	//******************************************************************************************************************
+	//  Center
+	// *****************************************************************************************************************
+
+	/**
+	 * Centers the map on the given zone
+	 * @param zoneId The zone id to center on
+	 * @param animate True if the transition should be animated
+	 */
+	public void centerMap(int zoneId, boolean animate) {
+		Zone zone = InitProvider.getInstance().getZone(zoneId);
+		if (zone != null &amp;&amp; zone.getCenter() != null) {
+			centerMap(zone.getCenter(), animate);
+		}
+	}
+
+	/**
+	 * Centers the map on the given zone
+	 * @param zoneId The zone id to center on
+	 * @param animate True if the transition should be animated
+	 * @param duration The duration of the animation
+	 */
+	public void centerMap(int zoneId, boolean animate, int duration) {
+		Zone zone = (Zone) InitProvider.getInstance().getZone(zoneId);
+		if (zone != null &amp;&amp; zone.getCenter() != null) {
+			centerMap(zone.getCenter(), animate, duration);
+		}
+	}
+
+	/**
+	 * Centers the map on the given position. If the position belong to another map it
+	 * will change the map first and then zoom to that position.
+	 * @param position The position to center on (in meters)
+	 * @param animate True if the transition should be animated
+	 */
+	public void centerMap(Position position, boolean animate) {
+		if (position != null) {
+
+			mZoomReset = mMapDataManager.getMapId() != position.getMapID();
+
+			float mapScale = -1;
+
+			if(mMapDataManager.getMapId() != position.getMapID()){
+				mZoomReset = true;
+				Map newMap = MapDBHelper.getMap(position.getMapID());
+				mapScale = newMap.getScale();
+			} else {
+				mapScale = mMapDataManager.getMapScale();
+			}			
+
+			PointD posOnMap = CoordConverter.convertRealPointToMapPoint(position.getX(), position.getY(), mapScale);
+
+			mMapDataManager.changeMapCenter(position.getMapID(), posOnMap, animate, AnimationConstant.DEFAULT_ANIMATION_DURATION);	
+		}
+	}
+
+	/**
+	 * Centers the map on the given position. If the position belong to another map it
+	 * will change the map first and then zoom to that position.
+	 * @param position The position to center on (in meters)
+	 * @param animate True if the transition should be animated
+	 * @param duration The duration of the animation
+	 */
+	public void centerMap(Position position, boolean animate, int duration) {
+		if (position != null) {
+
+			mZoomReset = mMapDataManager.getMapId() != position.getMapID();
+
+			//change map center
+			float mapScale = mMapDataManager.getMapScale();
+			PointD posOnMap = CoordConverter.convertRealPointToMapPoint(position.getX(), position.getY(), mapScale);
+
+			mMapDataManager.changeMapCenter(position.getMapID(), posOnMap, animate, duration);	
+		}
+	}
+
+	/**
+	 * Centers the map on the given position, with the given zoom and angle. If the position belong to another map it
+	 * will change the map first and then perform the other actions.
+	 * @param position The position to center on (in meters)
+	 * @param zoomlevel The new zoom that should be used
+	 * @param angle The new angle that should be used
+	 * @param animate True if the transition should be animated
+	 * @param duration The duration of the animation
+	 */
+	public void centerMap(Position position, float zoomlevel, float angle, boolean animate, int duration){		
+		if (position != null) {
+
+			mZoomReset = mMapDataManager.getMapId() != position.getMapID();
+
+			//change map center
+			float mapScale = mMapDataManager.getMapScale();
+			PointD posOnMap = CoordConverter.convertRealPointToMapPoint(position.getX(), position.getY(), mapScale);
+
+			mMapDataManager.changeMapCenter(position.getMapID(), posOnMap, zoomlevel, angle, animate, duration);	
+		}
+	}
+
+	/**
+	 * Changes the current map.
+	 * @param mapId The id of the new map to display
+	 * @param keepPosition True if the position on the screen should be kept when the new maps will be displayed
+	 * @param keepZoomlevel True if the zoom level on the screen should be kept when the new maps will be displayed
+	 * @param keepRotationAngle True if the rotation angle on the screen should be kept when the new maps will be displayed
+	 */
+	public void changeMap(int mapId, boolean keepPosition, boolean keepZoomLevel, boolean keepRotationAngle) {
+
+		if(mapId != mMapDataManager.getMapId()) {
+			Map newMap = (Map)InitProvider.getInstance().getMap(mapId);
+			if(newMap != null) {
+
+				AnalyticsGenericEvent mapChangedEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_MAP_CHANGED_LABEL);
+				mapChangedEvent.setInt1(getMapId());
+				mapChangedEvent.setInt2(mapId);
+				AnalyticsManager.getInstance().addGenericEvent(mapChangedEvent);
+
+				// ZoomLevel of the map before the new one is displayed
+				float oldZoomLevel = mMapDataManager.getZoomLevel(); 
+
+				// 1 - Retrieve the map center that will be used
+				PointD center = null;
+				// 1.1 - If the KeepPosition is activated we keep the actual display center
+				if(keepPosition) {
+					center = mMapDataManager.getDisplayCenter();
+				} 
+				// 1.2 - Otherwise if the fitToScreen is activated we get the center for the default zoom level
+				else {
+					/*if (newMap.isFitToScreenActivated()) {						
+						center = newMap.getMapCenter(newMap.getDefaultZoomLevel());
+					} else {*/
+					center = null;
+					//}
+				}
+
+				mMapDataManager.changeMapCenter(mapId, center, false, 0);
+
+				//				// 2 change the zoom level accordingly
+				//				float zlevel = newMap.getDefaultZoomLevel();
+
+				// 2 - Keep the same ZoomLevel if it exist in the new map or find the closest corresponding ZoomLevel
+				if(keepZoomLevel) {
+					if (oldZoomLevel &gt; newMap.getZoomMax()) {
+						mMapDataManager.zoom(newMap.getZoomMax(), false, -1);
+					} else if(oldZoomLevel &lt; newMap.getZoomMin()) {
+						mMapDataManager.zoom(newMap.getZoomMin(), false, -1);
+					} else {
+						// Zoom level stay the same no action required
+					}
+				} 
+
+				// 2 -Otherwise we apply the map specific parameters
+				else {
+					// 2.1 - If the fit to screen is activated the zoomLevel will be set int the zoomToSpan
+					if (newMap.isFitToScreenActivated()) {
+						mMapDataManager.fitMapToScreen();
+						/*RectF viewport = new RectF(0, 0, MapConstants.TILE_WIDTH*newMap.getScale(), MapConstants.TILE_WIDTH*newMap.getScale());
+						mMapDataManager.zoomToSpan(viewport, false, -1);*/
+					} 
+					// 2.2 - Otherwise we use the default zoomLevel
+					else {
+						mMapDataManager.zoom(newMap.getDefaultZoomLevel(), false, -1);
+					}
+				}
+
+				//define new rotation angle
+				float rotationAngle = 0;
+				if (keepRotationAngle) {
+					rotationAngle = mMapDataManager.getRotationAngle();
+				}
+				mMapDataManager.changeRotationAngle(rotationAngle, false, 0);
+
+				//used to induce drawing data refresh
+				mZoomReset = true;
+			}
+		}
+	}
+
+
+	//******************************************************************************************************************
+	//  Rotation
+	// *****************************************************************************************************************
+
+	/**
+	 * @deprecated Use {@link MapView#getAngle()} instead.
+	 * Returns the current map rotation angle 
+	 * @return The current map rotation angle 
+	 */
+	public float getRotationAngle() {
+		return mMapDataManager.getRotationAngle();
+	}
+
+	/**
+	 * Returns the current map rotation angle 
+	 * @return The current map rotation angle 
+	 */
+	public float getAngle() {
+		return mMapDataManager.getRotationAngle();
+	}
+
+	/**
+	 * @deprecated Use {@link MapView#rotate(float, boolean)} instead.
+	 * Sets the rotation angle for the map. 
+	 * @param aAngle the angle, in degrees
+	 */
+	public void setRotationAngle(float aAngle) {
+		mMapDataManager.changeRotationAngle(aAngle, false, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}
+
+	/**
+	 * Sets the rotation angle
+	 * @param angle The new angle that should be used (in degrees). The angle used is a clockwise angle.
+	 * @param animate
+	 */
+	public void rotate(float angle, boolean animate) {
+		mMapDataManager.changeRotationAngle(angle, animate, AnimationConstant.DEFAULT_ANIMATION_DURATION);
+	}
+
+	/**
+	 * Sets the map's rotation angle. The angle used is a clockwise angle.
+	 * @param angle The new angle that should be used (in degrees)
+	 * @param animate True if the transition should be animated
+	 * @param duration The duration of the animation
+	 */
+	public void rotate(float angle, boolean animate, int duration) {
+		mMapDataManager.changeRotationAngle(angle, animate, duration);
+	}
+
+	//******************************************************************************************************************
+	//  
+	// *****************************************************************************************************************
+
+	public Map getMap() {
+		return mMapDataManager.getMap();
+	}
+	
+	/**
+	 * Returns the screen center in map coordinate. 
+	 * @return The current screen center
+	 */
+	public Position getScreenCenter() {
+		PointD p = mMapDataManager.getDisplayCenter();
+		p = CoordConverter.convertMapPointToRealPoint(p.x, p.y, mMapDataManager.getMapScale());	//convert from "px at z0" to meters
+		return new Position(mMapDataManager.getMapId(), p);
+	}
+
+	/**
+	 * Returns the id of the current map.
+	 * @return The current map id.
+	 */
+	public int getMapId() {
+		return mMapDataManager.getMapId();
+	}
+
+	//******************************************************************************************************************
+	//  IMapListener callback
+	// *****************************************************************************************************************
+	
+	/**
+	 * @hide
+	 * @param aMapID
+	 * @param aMapName
+	 */
+	protected void notifyMapViewReady() {		
+		initTiles();
+		initZones();
+		activateMapOptions();
+
+		mIsMapViewReady = true;
+
+		startRendering();
+
+		try {
+			mListenerLock.acquire();
+			if (mMapListener != null) {
+				IMapListener listener = mMapListener.get();
+				if (listener != null) {
+					int mapId = mMapDataManager.getMapId();
+					String mapName = mMapDataManager.getMap().getName();
+					listener.onMapViewReady(mapId, mapName);
+				}
+			}			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mListenerLock.release();
+		}
+	}
+
+	/**
+	 * @hide
+	 * @param aReason
+	 */
+	protected void notifyMapInitFailed(String aReason) {
+		try {
+			mListenerLock.acquire();
+			if (mMapListener != null) {
+				IMapListener listener = mMapListener.get();
+				if (listener != null) {
+					listener.onMapInitFailed(aReason);
+				}
+			}					
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mListenerLock.release();
+		}
+	}
+
+	/**
+	 * @hide
+	 * @param mapId
+	 * @param mapName
+	 */
+	protected void notifyMapChanged(final int mapId, final String mapName) {
+		activateMapOptions();
+
+		new Thread(new Runnable() {
+			@Override public void run() {
+				try {
+					mListenerLock.acquire();
+					if (mMapListener != null) {
+						IMapListener listener = mMapListener.get();
+						if (listener != null) {
+							Log.d("INSITEO_MAP_API", "notifying map changed");
+							listener.onMapChanged(mapId, mapName);
+						}
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					mListenerLock.release();
+				}
+			}
+		}).start();
+	}
+
+	/**
+	 * @hide
+	 */
+	protected void notifyMapMoved() {
+		new Thread(new Runnable() {
+			@Override public void run() {
+				try {
+					mListenerLock.acquire();
+					if (mMapListener != null) {
+						IMapListener listener = mMapListener.get();
+						if (listener != null) {
+							Log.d("INSITEO_MAP_API", "notifying map moved");
+							listener.onMapMoved();
+						}
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					mListenerLock.release();
+				}
+			}
+		}).start();
+	}
+
+	/**
+	 * @hide
+	 */
+	protected void notifyMapClicked(final Position clickedPosition) {
+		new Thread(new Runnable() {
+			@Override public void run() {
+				try {
+					mListenerLock.acquire();
+					if (mMapListener != null) {
+						IMapListener listener = mMapListener.get();
+						if (listener != null) {
+							listener.onMapClicked(clickedPosition);
+						}
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					mListenerLock.release();
+				}
+			}
+		}).start();
+	}
+
+	/**
+	 * @hide
+	 * @param aZoneID
+	 * @param aActionType
+	 * @param aActionParam
+	 */
+	public void notifyZoneClicked(final int aZoneID, final EZoneAction aActionType,	final String aActionParam) {
+		new Thread(new Runnable() {
+			@Override public void run() {
+				try {
+					mListenerLock.acquire();
+					if(mMapListener != null){
+						IMapListener listener = mMapListener.get();
+						if (listener != null) {
+							listener.onZoneClicked(aZoneID, aActionType, aActionParam);
+						}
+					}					
+
+					AnalyticsGenericEvent zoneClickedEvent = new AnalyticsGenericEvent(AnalyticsConstants.IS_ZONE_CLICKED_LABEL);
+					zoneClickedEvent.setInt1(aZoneID);
+					AnalyticsManager.getInstance().addGenericEvent(zoneClickedEvent);
+
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					mListenerLock.release();
+				}
+			}
+		}).start();
+	}
+
+	/**
+	 * @hide
+	 * @param newZoomLevel
+	 */
+	protected void notifyZoomEnd(final int newZoomLevel) {		
+		new Thread(new Runnable() {
+			@Override public void run() {
+				try {
+					mListenerLock.acquire();
+					if(mMapListener != null){
+						IMapListener listener = mMapListener.get();
+						if (listener != null) {
+							Log.d("INSITEO_MAP_API", "notifying map zoom end");
+							listener.onZoomEnd(newZoomLevel);
+						}
+					}					
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					mListenerLock.release();
+				}
+			}
+		}).start();
+	}
+
+	/**
+	 * @hide
+	 */
+	protected void notifyMapReleased() {
+		new Thread(new Runnable() {
+			@Override public void run() {
+				try {
+					mListenerLock.acquire();
+					if(mMapListener != null){
+						IMapListener listener = mMapListener.get();
+						if (listener != null) {
+							Log.d("INSITEO_MAP_API", "notifying map released");
+							listener.onMapReleased();
+						}						
+					}
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} finally {
+					mListenerLock.release();
+				}
+			}
+		}).start();
+	}
+
+	// TODO !!!!!!!!!!!!
+	protected int getScreenOrientation() {
+		int orientation = 0;
+		Display display = null;
+		try{
+			display = ((Activity) mContext).getWindowManager().getDefaultDisplay();
+		} catch(Exception e){
+
+		}
+		if (display != null) {
+			orientation = display.getRotation();
+
+			//compute angle depending result
+			switch (orientation) {
+			case Surface.ROTATION_0: orientation = 0; break;
+			case Surface.ROTATION_90: orientation = 90; break;
+			case Surface.ROTATION_180: orientation = 180; break;
+			case Surface.ROTATION_270: orientation = 270; break;
+			}
+		}
+		return 0;
+	}	
+
+
+
+
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

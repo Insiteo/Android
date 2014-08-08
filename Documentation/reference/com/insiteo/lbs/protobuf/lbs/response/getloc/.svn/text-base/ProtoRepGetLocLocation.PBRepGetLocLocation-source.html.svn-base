@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../../favicon.ico" />
+<title>
+
+  ProtoRepGetLocLocation.PBRepGetLocLocation
+
+
+| Insiteo API Documentation - Version 3.2
+
+</title>
+<link href="../../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../../", "../../../../../../../../assets/");
+</script>
+<script src="../../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+        
+  <div id="api-level-toggle">
+    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    <select id="apiLevelSelector">
+      <!-- option elements added by buildApiLevelSelector() -->
+    </select>
+  </div>
+  <script>
+   var SINCE_DATA = [ 'v1', 'v1' ];
+    
+    var SINCE_LABELS = [ 'v1', 'v1' ];
+    buildApiLevelSelector();
+    addLoadEvent(changeApiLevel);
+  </script>
+
+
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/auth/parsers/package-summary.html">com.insiteo.lbs.common.auth.parsers</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/geometry/package-summary.html">com.insiteo.lbs.common.utils.geometry</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/common/utils/threading/package-summary.html">com.insiteo.lbs.common.utils.threading</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/analytics/request/package-summary.html">com.insiteo.lbs.protobuf.analytics.request</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/request/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.request.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/auth/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/dispatch/response/init/package-summary.html">com.insiteo.lbs.protobuf.dispatch.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/request/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.request.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/package-summary.html">com.insiteo.lbs.protobuf.lbs.response</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.getloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/init/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/itinerary/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/loc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.loc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/meetme/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/pushloc/package-summary.html">com.insiteo.lbs.protobuf.lbs.response.pushloc</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/geofence/package-summary.html">com.insiteo.lbs.protobuf.model.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/itinerary/package-summary.html">com.insiteo.lbs.protobuf.model.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../../com/insiteo/lbs/protobuf/model/map/package-summary.html">com.insiteo.lbs.protobuf.model.map</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceContent.PBRepGetLocGeofenceContentOrBuilder.html">ProtoRepGetLocGeofenceContent.PBRepGetLocGeofenceContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceRoot.PBRepGetLocGeofenceRootOrBuilder.html">ProtoRepGetLocGeofenceRoot.PBRepGetLocGeofenceRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiContent.PBRepGetLocItiContentOrBuilder.html">ProtoRepGetLocItiContent.PBRepGetLocItiContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiRoot.PBRepGetLocItiRootOrBuilder.html">ProtoRepGetLocItiRoot.PBRepGetLocItiRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocation.PBRepGetLocLocationOrBuilder.html">ProtoRepGetLocLocation.PBRepGetLocLocationOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocContent.PBRepGetLocGpsStateOrBuilder.html">ProtoRepGetLocLocContent.PBRepGetLocGpsStateOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocContent.PBRepGetLocLocContentOrBuilder.html">ProtoRepGetLocLocContent.PBRepGetLocLocContentOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocRoot.PBRepGetLocLocRootOrBuilder.html">ProtoRepGetLocLocRoot.PBRepGetLocLocRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocMmRoot.PBRepGetLocMmRootOrBuilder.html">ProtoRepGetLocMmRoot.PBRepGetLocMmRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocModulesRoot.PBRepGetLocModulesRootOrBuilder.html">ProtoRepGetLocModulesRoot.PBRepGetLocModulesRootOrBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocRoot.PBRepGetLocRootOrBuilder.html">ProtoRepGetLocRoot.PBRepGetLocRootOrBuilder</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceContent.html">ProtoRepGetLocGeofenceContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceContent.PBRepGetLocGeofenceContent.html">ProtoRepGetLocGeofenceContent.PBRepGetLocGeofenceContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceContent.PBRepGetLocGeofenceContent.Builder.html">ProtoRepGetLocGeofenceContent.PBRepGetLocGeofenceContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceRoot.html">ProtoRepGetLocGeofenceRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceRoot.PBRepGetLocGeofenceRoot.html">ProtoRepGetLocGeofenceRoot.PBRepGetLocGeofenceRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocGeofenceRoot.PBRepGetLocGeofenceRoot.Builder.html">ProtoRepGetLocGeofenceRoot.PBRepGetLocGeofenceRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiContent.html">ProtoRepGetLocItiContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiContent.PBRepGetLocItiContent.html">ProtoRepGetLocItiContent.PBRepGetLocItiContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiContent.PBRepGetLocItiContent.Builder.html">ProtoRepGetLocItiContent.PBRepGetLocItiContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiRoot.html">ProtoRepGetLocItiRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiRoot.PBRepGetLocItiRoot.html">ProtoRepGetLocItiRoot.PBRepGetLocItiRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocItiRoot.PBRepGetLocItiRoot.Builder.html">ProtoRepGetLocItiRoot.PBRepGetLocItiRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocation.html">ProtoRepGetLocLocation</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocation.PBRepGetLocLocation.html">ProtoRepGetLocLocation.PBRepGetLocLocation</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocation.PBRepGetLocLocation.Builder.html">ProtoRepGetLocLocation.PBRepGetLocLocation.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocContent.html">ProtoRepGetLocLocContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocContent.PBRepGetLocGpsState.html">ProtoRepGetLocLocContent.PBRepGetLocGpsState</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocContent.PBRepGetLocGpsState.Builder.html">ProtoRepGetLocLocContent.PBRepGetLocGpsState.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocContent.PBRepGetLocLocContent.html">ProtoRepGetLocLocContent.PBRepGetLocLocContent</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocContent.PBRepGetLocLocContent.Builder.html">ProtoRepGetLocLocContent.PBRepGetLocLocContent.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocRoot.html">ProtoRepGetLocLocRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocRoot.PBRepGetLocLocRoot.html">ProtoRepGetLocLocRoot.PBRepGetLocLocRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocRoot.PBRepGetLocLocRoot.Builder.html">ProtoRepGetLocLocRoot.PBRepGetLocLocRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocMmRoot.html">ProtoRepGetLocMmRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocMmRoot.PBRepGetLocMmRoot.html">ProtoRepGetLocMmRoot.PBRepGetLocMmRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocMmRoot.PBRepGetLocMmRoot.Builder.html">ProtoRepGetLocMmRoot.PBRepGetLocMmRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocModulesRoot.html">ProtoRepGetLocModulesRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocModulesRoot.PBRepGetLocModulesRoot.html">ProtoRepGetLocModulesRoot.PBRepGetLocModulesRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocModulesRoot.PBRepGetLocModulesRoot.Builder.html">ProtoRepGetLocModulesRoot.PBRepGetLocModulesRoot.Builder</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocRoot.html">ProtoRepGetLocRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocRoot.PBRepGetLocRoot.html">ProtoRepGetLocRoot.PBRepGetLocRoot</a></li>
+          <li class="api apilevel-"><a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocRoot.PBRepGetLocRoot.Builder.html">ProtoRepGetLocRoot.PBRepGetLocRoot.Builder</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="ProtoRepGetLocLocation.PBRepGetLocLocation.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+  Since: <a href="../../../../../../../guide/appendix/api-levels.html#level">API Level </a>
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+    final 
+    
+    class
+<h1>ProtoRepGetLocLocation.PBRepGetLocLocation</h1>
+
+
+
+  
+  
+  
+
+  
+    extends GeneratedMessageLite<br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../../../../../com/insiteo/lbs/protobuf/lbs/response/getloc/ProtoRepGetLocLocation.PBRepGetLocLocationOrBuilder.html">ProtoRepGetLocLocation.PBRepGetLocLocationOrBuilder</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+// Generated by the protocol buffer compiler.  DO NOT EDIT!
+// source: response/getloc/PBRepGetLocLocation.proto
+
+package com.insiteo.lbs.protobuf.lbs.response.getloc;
+
+public final class ProtoRepGetLocLocation {
+  private ProtoRepGetLocLocation() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+  public interface PBRepGetLocLocationOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+    
+    // required string locType = 1;
+    boolean hasLocType();
+    String getLocType();
+    
+    // required int32 mapId = 2;
+    boolean hasMapId();
+    int getMapId();
+    
+    // required float x = 3;
+    boolean hasX();
+    float getX();
+    
+    // required float y = 4;
+    boolean hasY();
+    float getY();
+    
+    // required float accuracy = 5;
+    boolean hasAccuracy();
+    float getAccuracy();
+    
+    // optional float altitude = 6;
+    boolean hasAltitude();
+    float getAltitude();
+  }
+  public static final class PBRepGetLocLocation extends
+      com.google.protobuf.GeneratedMessageLite
+      implements PBRepGetLocLocationOrBuilder {
+    // Use PBRepGetLocLocation.newBuilder() to construct.
+    private PBRepGetLocLocation(Builder builder) {
+      super(builder);
+    }
+    private PBRepGetLocLocation(boolean noInit) {}
+    
+    private static final PBRepGetLocLocation defaultInstance;
+    public static PBRepGetLocLocation getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public PBRepGetLocLocation getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    private int bitField0_;
+    // required string locType = 1;
+    public static final int LOCTYPE_FIELD_NUMBER = 1;
+    private java.lang.Object locType_;
+    public boolean hasLocType() {
+      return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+    }
+    public String getLocType() {
+      java.lang.Object ref = locType_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          locType_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getLocTypeBytes() {
+      java.lang.Object ref = locType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        locType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required int32 mapId = 2;
+    public static final int MAPID_FIELD_NUMBER = 2;
+    private int mapId_;
+    public boolean hasMapId() {
+      return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+    }
+    public int getMapId() {
+      return mapId_;
+    }
+    
+    // required float x = 3;
+    public static final int X_FIELD_NUMBER = 3;
+    private float x_;
+    public boolean hasX() {
+      return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+    }
+    public float getX() {
+      return x_;
+    }
+    
+    // required float y = 4;
+    public static final int Y_FIELD_NUMBER = 4;
+    private float y_;
+    public boolean hasY() {
+      return ((bitField0_ &amp; 0x00000008) == 0x00000008);
+    }
+    public float getY() {
+      return y_;
+    }
+    
+    // required float accuracy = 5;
+    public static final int ACCURACY_FIELD_NUMBER = 5;
+    private float accuracy_;
+    public boolean hasAccuracy() {
+      return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+    }
+    public float getAccuracy() {
+      return accuracy_;
+    }
+    
+    // optional float altitude = 6;
+    public static final int ALTITUDE_FIELD_NUMBER = 6;
+    private float altitude_;
+    public boolean hasAltitude() {
+      return ((bitField0_ &amp; 0x00000020) == 0x00000020);
+    }
+    public float getAltitude() {
+      return altitude_;
+    }
+    
+    private void initFields() {
+      locType_ = "";
+      mapId_ = 0;
+      x_ = 0F;
+      y_ = 0F;
+      accuracy_ = 0F;
+      altitude_ = 0F;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasLocType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMapId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasX()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasY()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasAccuracy()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getLocTypeBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, mapId_);
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        output.writeFloat(3, x_);
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        output.writeFloat(4, y_);
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        output.writeFloat(5, accuracy_);
+      }
+      if (((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+        output.writeFloat(6, altitude_);
+      }
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ &amp; 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getLocTypeBytes());
+      }
+      if (((bitField0_ &amp; 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, mapId_);
+      }
+      if (((bitField0_ &amp; 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, x_);
+      }
+      if (((bitField0_ &amp; 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, y_);
+      }
+      if (((bitField0_ &amp; 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, accuracy_);
+      }
+      if (((bitField0_ &amp; 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(6, altitude_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder&lt;
+          com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation, Builder&gt;
+        implements com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocationOrBuilder {
+      // Construct using com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        locType_ = "";
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        mapId_ = 0;
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        x_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        y_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        accuracy_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        altitude_ = 0F;
+        bitField0_ = (bitField0_ &amp; ~0x00000020);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation getDefaultInstanceForType() {
+        return com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation.getDefaultInstance();
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation build() {
+        com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation buildPartial() {
+        com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation result = new com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ &amp; 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.locType_ = locType_;
+        if (((from_bitField0_ &amp; 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.mapId_ = mapId_;
+        if (((from_bitField0_ &amp; 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.x_ = x_;
+        if (((from_bitField0_ &amp; 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.y_ = y_;
+        if (((from_bitField0_ &amp; 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.accuracy_ = accuracy_;
+        if (((from_bitField0_ &amp; 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.altitude_ = altitude_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+      
+      public Builder mergeFrom(com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation other) {
+        if (other == com.insiteo.lbs.protobuf.lbs.response.getloc.ProtoRepGetLocLocation.PBRepGetLocLocation.getDefaultInstance()) return this;
+        if (other.hasLocType()) {
+          setLocType(other.getLocType());
+        }
+        if (other.hasMapId()) {
+          setMapId(other.getMapId());
+        }
+        if (other.hasX()) {
+          setX(other.getX());
+        }
+        if (other.hasY()) {
+          setY(other.getY());
+        }
+        if (other.hasAccuracy()) {
+          setAccuracy(other.getAccuracy());
+        }
+        if (other.hasAltitude()) {
+          setAltitude(other.getAltitude());
+        }
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasLocType()) {
+          
+          return false;
+        }
+        if (!hasMapId()) {
+          
+          return false;
+        }
+        if (!hasX()) {
+          
+          return false;
+        }
+        if (!hasY()) {
+          
+          return false;
+        }
+        if (!hasAccuracy()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              
+              return this;
+            default: {
+              if (!parseUnknownField(input, extensionRegistry, tag)) {
+                
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              locType_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              mapId_ = input.readInt32();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              x_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              y_ = input.readFloat();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              accuracy_ = input.readFloat();
+              break;
+            }
+            case 53: {
+              bitField0_ |= 0x00000020;
+              altitude_ = input.readFloat();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string locType = 1;
+      private java.lang.Object locType_ = "";
+      public boolean hasLocType() {
+        return ((bitField0_ &amp; 0x00000001) == 0x00000001);
+      }
+      public String getLocType() {
+        java.lang.Object ref = locType_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          locType_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setLocType(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        locType_ = value;
+        
+        return this;
+      }
+      public Builder clearLocType() {
+        bitField0_ = (bitField0_ &amp; ~0x00000001);
+        locType_ = getDefaultInstance().getLocType();
+        
+        return this;
+      }
+      void setLocType(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        locType_ = value;
+        
+      }
+      
+      // required int32 mapId = 2;
+      private int mapId_ ;
+      public boolean hasMapId() {
+        return ((bitField0_ &amp; 0x00000002) == 0x00000002);
+      }
+      public int getMapId() {
+        return mapId_;
+      }
+      public Builder setMapId(int value) {
+        bitField0_ |= 0x00000002;
+        mapId_ = value;
+        
+        return this;
+      }
+      public Builder clearMapId() {
+        bitField0_ = (bitField0_ &amp; ~0x00000002);
+        mapId_ = 0;
+        
+        return this;
+      }
+      
+      // required float x = 3;
+      private float x_ ;
+      public boolean hasX() {
+        return ((bitField0_ &amp; 0x00000004) == 0x00000004);
+      }
+      public float getX() {
+        return x_;
+      }
+      public Builder setX(float value) {
+        bitField0_ |= 0x00000004;
+        x_ = value;
+        
+        return this;
+      }
+      public Builder clearX() {
+        bitField0_ = (bitField0_ &amp; ~0x00000004);
+        x_ = 0F;
+        
+        return this;
+      }
+      
+      // required float y = 4;
+      private float y_ ;
+      public boolean hasY() {
+        return ((bitField0_ &amp; 0x00000008) == 0x00000008);
+      }
+      public float getY() {
+        return y_;
+      }
+      public Builder setY(float value) {
+        bitField0_ |= 0x00000008;
+        y_ = value;
+        
+        return this;
+      }
+      public Builder clearY() {
+        bitField0_ = (bitField0_ &amp; ~0x00000008);
+        y_ = 0F;
+        
+        return this;
+      }
+      
+      // required float accuracy = 5;
+      private float accuracy_ ;
+      public boolean hasAccuracy() {
+        return ((bitField0_ &amp; 0x00000010) == 0x00000010);
+      }
+      public float getAccuracy() {
+        return accuracy_;
+      }
+      public Builder setAccuracy(float value) {
+        bitField0_ |= 0x00000010;
+        accuracy_ = value;
+        
+        return this;
+      }
+      public Builder clearAccuracy() {
+        bitField0_ = (bitField0_ &amp; ~0x00000010);
+        accuracy_ = 0F;
+        
+        return this;
+      }
+      
+      // optional float altitude = 6;
+      private float altitude_ ;
+      public boolean hasAltitude() {
+        return ((bitField0_ &amp; 0x00000020) == 0x00000020);
+      }
+      public float getAltitude() {
+        return altitude_;
+      }
+      public Builder setAltitude(float value) {
+        bitField0_ |= 0x00000020;
+        altitude_ = value;
+        
+        return this;
+      }
+      public Builder clearAltitude() {
+        bitField0_ = (bitField0_ &amp; ~0x00000020);
+        altitude_ = 0F;
+        
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:com.insiteo.lbs.protobuf.lbs.response.getloc.PBRepGetLocLocation)
+    }
+    
+    static {
+      defaultInstance = new PBRepGetLocLocation(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:com.insiteo.lbs.protobuf.lbs.response.getloc.PBRepGetLocLocation)
+  }
+  
+  
+  static {
+  }
+  
+  // @@protoc_insertion_point(outer_class_scope)
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

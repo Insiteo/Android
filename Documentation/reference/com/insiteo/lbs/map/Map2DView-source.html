@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   Map2DView
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -422,7 +422,7 @@ import com.insiteo.lbs.map.utils.CoordConverter;
  *
  */
 public class Map2DView extends MapView implements SurfaceHolder.Callback{
-	
+
 	private final static String TAG = "Map2DView";
 
 	protected MapDrawThread mDrawThread;
@@ -436,9 +436,8 @@ public class Map2DView extends MapView implements SurfaceHolder.Callback{
 		super(context, attributes);
 		init();
 	}
-	
+
 	private void init(){
-		android.util.Log.d(TAG, "Initializing Map2DView");
 		ZoomController.mVirtualZoomLevel = MapConstants.MAP_2D_VIRTUAL_ZOOM;
 		SurfaceHolder holder = getHolder();
 		holder.setFormat(PixelFormat.TRANSLUCENT);
@@ -451,24 +450,21 @@ public class Map2DView extends MapView implements SurfaceHolder.Callback{
 
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-		Log.d("DEBUG", "surfaceChanged");
 		initDisplay(width, height);
 	}
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
-		Log.d("DEBUG", "surfaceCreated");
 		mDrawThread = new MapDrawThread(holder);
 		mDrawThread.start();
 	}
 
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
-		Log.d("DEBUG", "surfaceDestroyed");
 		mDrawThread.cancel();
 		destroyDisplay();
 	}
-	
+
 	private void drawMap(Canvas aCanvas) {
 		boolean acq = false;
 		try {
@@ -502,12 +498,12 @@ public class Map2DView extends MapView implements SurfaceHolder.Callback{
 				}
 
 				//get display orientation, in case lansdcape/portrait switching
-				//					int displayOrientation = getScreenOrientation();
+				int displayOrientation = getScreenOrientation();
 
 				// loop through all IRTO renderers and draw all their objects
 				for(IRenderer r : mRenderers) {
 					r.setCurrentMap(mMapDataManager.getMap());
-					//						r.setDisplayOrientation(displayOrientation);
+					r.setDisplayOrientation(displayOrientation);
 					r.draw(aCanvas, mMapDataManager.mLastRatio, mMapDataManager.mLastOffset, angle);
 				}		        	
 			}
@@ -519,7 +515,7 @@ public class Map2DView extends MapView implements SurfaceHolder.Callback{
 			}
 		}
 	}
-	
+
 	protected class MapDrawThread extends Thread {
 
 		private SurfaceHolder 		mSurfaceHolder;
@@ -529,14 +525,17 @@ public class Map2DView extends MapView implements SurfaceHolder.Callback{
 		MapDrawThread(SurfaceHolder aSurfaceHolder) {
 			mSurfaceHolder = aSurfaceHolder;
 		}
-		
+
 		public void cancel(){
 			mContinue = false;
 		}
-		
+
 		@Override
 		public void run() {
 			Canvas c = null;
+			
+			long start = System.currentTimeMillis();
+			int fps = 0;
 
 			while (mContinue) {
 				if (isRendering()) {
@@ -546,20 +545,24 @@ public class Map2DView extends MapView implements SurfaceHolder.Callback{
 							synchronized (mSurfaceHolder) {
 								drawMap(c);
 								Thread.sleep(10);
+								fps ++;
+								if (System.currentTimeMillis() - start &gt;= 1000) {
+									Log.d(TAG, "FPS : " + fps);
+									fps = 0;
+									start = System.currentTimeMillis();
+								}
 							}
 						}
-					} 
-					catch(Exception e) {
+					} catch(Exception e) {
 						Log.d("draw", "Error while drawing MapView", e);
-					}
-					finally {
+					} finally {
 						if (c != null &amp;&amp; mSurfaceHolder != null) {
 							mSurfaceHolder.unlockCanvasAndPost(c);
 						}
 					}
 				} else {
 					try {
-						Thread.sleep(300);
+						Thread.sleep(100);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC2." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GeofenceArea
 
 
-| Insiteo API Documentation - Version 3.2.0_RC2
+| Insiteo API Documentation - Version 3.2.0_RC4
 
 </title>
 <link href="../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC2</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
     
     </div>
     <div id="headerRight">
@@ -356,6 +356,9 @@ public class GeofenceArea {
 	private boolean mLeaveEnabled;
 	private boolean mStayEnabled;
 	private String mExtra1, mExtra2, mExtra3;
+	
+	/** Set to true if the zone is defined in the BO, false if created dynamically. */
+	private boolean mAutoStart;
 
 	/**
 	 * @hide
@@ -390,8 +393,9 @@ public class GeofenceArea {
 		if (aProtoZone.hasExtra3()) {
 			mExtra3 = aProtoZone.getExtra3();
 		}
+		
+		mAutoStart = true;
 	}
-
 
 	/**
 	 * @hide
@@ -785,6 +789,10 @@ public class GeofenceArea {
 		return mGUID;
 	}
 
+	public boolean isAutoStart() {
+		return mAutoStart;
+	}
+	
 	/**
 	 * Returns the {@link GeofenceArea} center.
 	 * @return the center.
