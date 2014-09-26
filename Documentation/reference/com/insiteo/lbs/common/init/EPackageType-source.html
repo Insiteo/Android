@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   EPackageType
 
 
-| Insiteo API Documentation - Version 3.2.0_RC4
+| Insiteo API Documentation - Version 3.2.0
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0</span>
     
     </div>
     <div id="headerRight">
@@ -127,24 +127,6 @@
           </form>
       </div><!-- searchForm -->
   </div><!-- search -->
-      
-        
-  <div id="api-level-toggle">
-    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
-    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
-    <select id="apiLevelSelector">
-      <!-- option elements added by buildApiLevelSelector() -->
-    </select>
-  </div>
-  <script>
-   var SINCE_DATA = [ 'v1', 'v1' ];
-    
-    var SINCE_LABELS = [ 'v1', 'v1' ];
-    buildApiLevelSelector();
-    addLoadEvent(changeApiLevel);
-  </script>
-
-
       
     </div>
 </div><!-- header -->
@@ -306,8 +288,6 @@
 <div class="api-level">
   
 
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
 
   
   
@@ -423,18 +403,23 @@ public enum EPackageType {
 	}
 
 	//strings used to convert type from server 
-	/*package*/ static final String FULL_STR = "Full";
-	/*package*/ static final String LOCATION_STR = "Loc";
-	/*package*/ static final String ITINERARY_STR = "Iti";
-	/*package*/ static final String GEOFENCING_STR = "Geofence";
-	/*package*/ static final String MAPDATA_STR = "MapData";
-	/*package*/ static final String TILES_STR = "Tiles";
-	/*package*/ static final String CONTENTLRR_STR = "LRRContent";
-	/*package*/ static final String CONTENTHRR_STR = "HRRContent";
-	/*package*/ static final String FINGERPRINT_STR = "Fingerprint";
-	/*package*/ static final String ANALYTICS_STR = "Datamining";
-	/*package*/ static final String EXTRAS_STR = "Extras";
+	private static final String FULL_STR = "Full";
+	private static final String LOCATION_STR = "Loc";
+	private static final String ITINERARY_STR = "Iti";
+	private static final String GEOFENCING_STR = "Geofence";
+	private static final String MAPDATA_STR = "MapData";
+	private static final String TILES_STR = "Tiles";
+	private static final String CONTENTLRR_STR = "LRRContent";
+	private static final String CONTENTHRR_STR = "HRRContent";
+	private static final String FINGERPRINT_STR = "Fingerprint";
+	private static final String ANALYTICS_STR = "Datamining";
+	private static final String EXTRAS_STR = "Extras";
 
+	/**
+	 * Returns the {@link EPackageType} corresponding to the string value.
+	 * @param value
+	 * @return
+	 */
 	public static EPackageType getFromValue(String value) {
 		EPackageType type = UNKNOWN;
 

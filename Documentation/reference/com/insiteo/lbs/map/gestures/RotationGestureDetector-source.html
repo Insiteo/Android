@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   RotationGestureDetector
 
 
-| Insiteo API Documentation - Version 3.2.0_RC4
+| Insiteo API Documentation - Version 3.2.0
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0</span>
     
     </div>
     <div id="headerRight">
@@ -127,24 +127,6 @@
           </form>
       </div><!-- searchForm -->
   </div><!-- search -->
-      
-        
-  <div id="api-level-toggle">
-    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
-    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
-    <select id="apiLevelSelector">
-      <!-- option elements added by buildApiLevelSelector() -->
-    </select>
-  </div>
-  <script>
-   var SINCE_DATA = [ 'v1', 'v1' ];
-    
-    var SINCE_LABELS = [ 'v1', 'v1' ];
-    buildApiLevelSelector();
-    addLoadEvent(changeApiLevel);
-  </script>
-
-
       
     </div>
 </div><!-- header -->
@@ -280,8 +262,6 @@
 <div class="api-level">
   
 
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
 
   
   
@@ -320,22 +300,21 @@ package com.insiteo.lbs.map.gestures;
 
 import android.view.MotionEvent;
 
-import com.insiteo.lbs.common.utils.Log;
 import com.insiteo.lbs.common.utils.geometry.Topology;
 
 public class RotationGestureDetector {
 
 	public final static String TAG = RotationGestureDetector.class.getSimpleName();
 
-	private final static int ANGLE_DETECTION_THRESHOLD = 0;//10;
-	private final static int DISTANCE_DETECTION_THRESHOLD = 0;//4;
+	private final static int ANGLE_DETECTION_THRESHOLD = 10;
+	private final static int DISTANCE_DETECTION_THRESHOLD = 4;
 
 	private static final int INVALID_POINTER_ID = -1;
 	private float fX, fY, sX, sY;
 	private int ptrID1, ptrID2;
-	
+
 	private boolean mIsRotationActivated = false;
-	
+
 	private boolean mIsRotationEnabled;
 
 	private float mGlobalAngle = 0f, mLastAngle = 0f;
@@ -366,43 +345,39 @@ public class RotationGestureDetector {
 
 		switch (event.getActionMasked()) {
 		case MotionEvent.ACTION_DOWN:
-			Log.d(TAG, "ACTION_DOWN");
-			if (ptrID1 == INVALID_POINTER_ID) {
-				ptrID1 = event.getPointerId(event.getActionIndex());
+			clearRotation();              
+			if (ptrID1 == INVALID_POINTER_ID) ptrID1 = event.getPointerId(event.getActionIndex());
+			break;
+
+		case MotionEvent.ACTION_POINTER_DOWN:	
+			if (ptrID2 == INVALID_POINTER_ID) ptrID2 = event.getPointerId(event.getActionIndex());			
+			if (ptrID1 == INVALID_POINTER_ID) ptrID1 = event.getPointerId(event.getActionIndex());
+
+			if(ptrID1 != INVALID_POINTER_ID &amp;&amp; ptrID2 != INVALID_POINTER_ID) {		
+				fX = event.getX(event.findPointerIndex(ptrID1));
+				fY = event.getY(event.findPointerIndex(ptrID1));
+				sX = event.getX(event.findPointerIndex(ptrID2));
+				sY = event.getY(event.findPointerIndex(ptrID2));
 			}
-			
+
 			mLastAngle = 0f;
 			mDistance = 0;
 			break;
 
-		case MotionEvent.ACTION_POINTER_DOWN:		
-			Log.d(TAG, "ACTION_POINTER_DOWN");
-			if (ptrID2 == INVALID_POINTER_ID) {
-				ptrID2 = event.getPointerId(event.getActionIndex());
-			}
-			
-			if (ptrID1 == INVALID_POINTER_ID) {
-				ptrID1 = event.getPointerId(event.getActionIndex());
-			}
-			
-			mLastAngle = 0f;
-			mDistance = 0;
-			break;
-			
 		case MotionEvent.ACTION_MOVE:
 			if (event.getPointerCount() == 2) {
 				ptrID1 = event.getPointerId(0);
 				ptrID2 = event.getPointerId(1);
-				if(ptrID1 != INVALID_POINTER_ID &amp;&amp; ptrID2 != INVALID_POINTER_ID){			
-					
+				if(ptrID1 != INVALID_POINTER_ID &amp;&amp; ptrID2 != INVALID_POINTER_ID) {			
+
 					float nfX, nfY, nsX, nsY;
-					nsX = event.getX(event.findPointerIndex(ptrID1));
-					nsY = event.getY(event.findPointerIndex(ptrID1));
-					nfX = event.getX(event.findPointerIndex(ptrID2));
-					nfY = event.getY(event.findPointerIndex(ptrID2));
+					nsX = event.getX(event.findPointerIndex(ptrID2));
+					nsY = event.getY(event.findPointerIndex(ptrID2));
+					nfX = event.getX(event.findPointerIndex(ptrID1));
+					nfY = event.getY(event.findPointerIndex(ptrID1));
 
 					mGlobalAngle = angleBetweenLines(fX, fY, sX, sY, nfX, nfY, nsX, nsY);					
-					
+
 					if (mListener != null &amp;&amp; mIsRotationActivated &amp;&amp; mIsRotationEnabled) {
 						mListener.onRotation(this);
 					}
@@ -410,27 +385,26 @@ public class RotationGestureDetector {
 				} 
 			} 
 			break;
-			
+
 		case MotionEvent.ACTION_POINTER_UP:
-			Log.d(TAG, "ACTION_POINTER_UP");
-			if (event.getPointerId(event.getActionIndex()) == ptrID2) {
-				ptrID2 = INVALID_POINTER_ID;
-			}
-			
-			if (event.getPointerId(event.getActionIndex()) == ptrID1) {
-				ptrID1 = INVALID_POINTER_ID;
-			}
+			if (event.getPointerId(event.getActionIndex()) == ptrID2) ptrID2 = INVALID_POINTER_ID;			
+			if (event.getPointerId(event.getActionIndex()) == ptrID1) ptrID1 = INVALID_POINTER_ID;
 			break;
-			
+
 		case MotionEvent.ACTION_UP:
-			Log.d(TAG, "ACTION_UP");
-				ptrID1 = INVALID_POINTER_ID;
-				ptrID2 = INVALID_POINTER_ID;
-				mIsRotationActivated = false;
+			clearRotation();
 			break;
 
 		}
 		return true;
+	}
+
+	private void clearRotation() {
+		mLastAngle = 0f;
+		mDistance = 0;
+		ptrID1 = INVALID_POINTER_ID;
+		ptrID2 = INVALID_POINTER_ID;
+		mIsRotationActivated = false;
 	}
 
 	private float angleBetweenLines (float fX, float fY, float sX, float sY, float nfX, float nfY, float nsX, float nsY) {
@@ -446,7 +420,7 @@ public class RotationGestureDetector {
 		int newDist = (int)Topology.fastsqrt((x * x) + (y * y));
 		int distOffset = Math.abs(newDist - mDistance);
 		mDistance = newDist;
-		
+
 		if (!mIsRotationActivated &amp;&amp; Math.abs(angle) &lt; ANGLE_DETECTION_THRESHOLD) {
 			return 0;
 		}

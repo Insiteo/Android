@@ -625,7 +625,7 @@
  type="java.lang.String"
  transient="false"
  volatile="false"
- value="&quot;3.2.0_RC4&quot;"
+ value="&quot;3.2.0&quot;"
  static="true"
  final="true"
  deprecated="not deprecated"
@@ -2351,6 +2351,19 @@
  visibility="public"
 >
 </method>
+<method name="getZonesForMap"
+ return="java.util.List&lt;com.insiteo.lbs.map.entities.Zone&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="mapId" type="int">
+</parameter>
+</method>
 <method name="hasPackage"
  return="boolean"
  abstract="false"
@@ -3419,6 +3432,28 @@
  visibility="public"
 >
 </method>
+<method name="getZone"
+ return="com.insiteo.lbs.map.entities.Zone"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isAutoStart"
  return="boolean"
  abstract="false"
@@ -3985,6 +4020,28 @@
  visibility="public"
 >
 </method>
+<method name="getZone"
+ return="com.insiteo.lbs.map.entities.Zone"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getZonePoi"
+ return="com.insiteo.lbs.map.entities.ZonePoi"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
 <method name="isAutoStart"
  return="boolean"
  abstract="false"
@@ -3995,6 +4052,32 @@
  deprecated="not deprecated"
  visibility="public"
 >
+</method>
+<method name="setZone"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zone" type="com.insiteo.lbs.map.entities.Zone">
+</parameter>
+</method>
+<method name="setZonePoi"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="zonePoi" type="com.insiteo.lbs.map.entities.ZonePoi">
+</parameter>
 </method>
 </class>
 <interface name="IGeofenceListener"
@@ -4994,6 +5077,17 @@
 </constructor>
 <method name="clear"
  return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLastItineraryRequest"
+ return="com.insiteo.lbs.itinerary.ItineraryProvider.ItineraryRequest"
  abstract="false"
  native="false"
  synchronized="false"

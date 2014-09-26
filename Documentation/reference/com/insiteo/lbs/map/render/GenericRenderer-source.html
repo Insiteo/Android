@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   GenericRenderer
 
 
-| Insiteo API Documentation - Version 3.2.0_RC4
+| Insiteo API Documentation - Version 3.2.0
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0</span>
     
     </div>
     <div id="headerRight">
@@ -127,24 +127,6 @@
           </form>
       </div><!-- searchForm -->
   </div><!-- search -->
-      
-        
-  <div id="api-level-toggle">
-    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
-    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
-    <select id="apiLevelSelector">
-      <!-- option elements added by buildApiLevelSelector() -->
-    </select>
-  </div>
-  <script>
-   var SINCE_DATA = [ 'v1', 'v1' ];
-    
-    var SINCE_LABELS = [ 'v1', 'v1' ];
-    buildApiLevelSelector();
-    addLoadEvent(changeApiLevel);
-  </script>
-
-
       
     </div>
 </div><!-- header -->
@@ -298,8 +280,6 @@
 <div class="api-level">
   
 
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
 
   
   
@@ -343,8 +323,6 @@ package com.insiteo.lbs.map.render;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
@@ -352,6 +330,7 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.util.Pair;
+import android.util.SparseArray;
 
 import com.insiteo.lbs.common.CommonConstants;
 import com.insiteo.lbs.common.init.InitProvider;
@@ -380,7 +359,9 @@ public class GenericRenderer implements IRenderer {
 
 	private WeakReference&lt;World&gt; mWorld;
 
-	protected HashMap&lt;Integer, List&lt;Pair&lt;IRTO, Integer&gt;&gt;&gt; mRTOs = new HashMap&lt;Integer, List&lt;Pair&lt;IRTO,Integer&gt;&gt;&gt;();	//associate an RTO ID, with the list of its pair RTO-zoneID
+	//	protected HashMap&lt;Integer, List&lt;Pair&lt;IRTO, Integer&gt;&gt;&gt; mRTOs = new HashMap&lt;Integer, List&lt;Pair&lt;IRTO,Integer&gt;&gt;&gt;();	//associate an RTO ID, with the list of its pair RTO-zoneID
+
+	protected SparseArray&lt;List&lt;Pair&lt;IRTO, Integer&gt;&gt;&gt; mRTOs;
 
 	/**
 	 * Creates a renderer that can only hold objects of the given inner class.
@@ -389,6 +370,8 @@ public class GenericRenderer implements IRenderer {
 	public GenericRenderer(Class&lt;? extends IRTO&gt; aClass) {
 		Log.d(TAG, "Creating GenericRenderer with class " + aClass);
 		mInnerClass = aClass;
+
+		mRTOs = new SparseArray&lt;List&lt;Pair&lt;IRTO,Integer&gt;&gt;&gt;();
 	}
 
 	@Override
@@ -439,11 +422,18 @@ public class GenericRenderer implements IRenderer {
 	public void clear() {
 		try {
 			mRTOSema.acquire();
-			for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : mRTOs.values()) {
-				for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
+
+			for(int i = 0; i &lt; mRTOs.size(); i++) {
+				for(Pair&lt;IRTO, Integer&gt; pair : mRTOs.valueAt(i)) {
 					pair.first.freeResources();
 				}
 			}
+
+			//			for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : mRTOs.values()) {
+			//				for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
+			//					pair.first.freeResources();
+			//				}
+			//			}
 			mRTOs.clear();
 		}
 		catch (InterruptedException e) {
@@ -547,19 +537,32 @@ public class GenericRenderer implements IRenderer {
 	public void clearZone(int aZoneId) {
 		try {
 			mRTOSema.acquire();
-			Collection&lt;List&lt;Pair&lt;IRTO, Integer&gt;&gt;&gt; rtoMapValues = mRTOs.values();
-			for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : rtoMapValues) {
-				for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
+
+			for(int i = 0; i &lt; mRTOs.size(); i++) {
+				List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+				for(Pair&lt;IRTO, Integer&gt; pair : mRTOs.valueAt(i)) {
 					if (pair.second == aZoneId) {
 						if (mRenderMode == ERenderMode.RENDER_MODE_3D) clear3DObjectFromWorld(mWorld.get(), pair.first);
-						rtos.remove(pair);
+						mRTOs.valueAt(i).remove(pair);
 						break;
 					}
 				}
-				if (rtos.size() == 0) {
-					rtoMapValues.remove(rtos);
-				}
+				if (rtoAssoc.size() == 0) mRTOs.remove(i);
 			}
+
+			//			Collection&lt;List&lt;Pair&lt;IRTO, Integer&gt;&gt;&gt; rtoMapValues = mRTOs.values();
+			//			for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : rtoMapValues) {
+			//				for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
+			//					if (pair.second == aZoneId) {
+			//						if (mRenderMode == ERenderMode.RENDER_MODE_3D) clear3DObjectFromWorld(mWorld.get(), pair.first);
+			//						rtos.remove(pair);
+			//						break;
+			//					}
+			//				}
+			//				if (rtos.size() == 0) {
+			//					rtoMapValues.remove(rtos);
+			//				}
+			//			}
 		}
 		catch (InterruptedException e) {
 			e.printStackTrace();
@@ -601,34 +604,33 @@ public class GenericRenderer implements IRenderer {
 
 	@Override
 	public void draw(Canvas aCanvas, double aRatio, Point aOffset, float aAngle) {
-		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; !mRTOs.isEmpty()) {
+		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; mRTOs.size() != 0) {
 			try {
 				mRTOSema.acquire();
-					for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : mRTOs.values()) {
-						for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
-							IRTO r = pair.first;
-							if (pair.second == CommonConstants.NULL_ID) {
-								//draw the RTO using it's position. Display only RTO that are on the current map, or are associated with no map
-								if ((r.getMapID() == mCurrentMapID) || (r.getMapID() == IRTO.ALL_MAP_ID)) { 
-									r.draw(aCanvas, aRatio, aOffset, aAngle);
-								}
-							} else {
-								Zone z = InitProvider.getInstance().getZone(pair.second);
-								if (z != null &amp;&amp; (z.getMapId() == mCurrentMapID)) {
-									Point newOffset = new Point();
-									PointF rtoOffset = r.getZoneOffset();		
-									newOffset = new Point((int) ((z.getCenter().getX() + ((rtoOffset != null) ? rtoOffset.x : 0))* aRatio + aOffset.x),
-											(int) ((z.getCenter().getY() + ((rtoOffset != null) ? rtoOffset.y : 0))* aRatio + aOffset.y));
+				for(int i = 0; i &lt; mRTOs.size(); i++) {
+					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+					for(Pair&lt;IRTO, Integer&gt; pair : rtoAssoc) {
+						IRTO rto = pair.first;
 
-									r.draw(aCanvas, aRatio, newOffset, aAngle);
-								}
+						if (pair.second == CommonConstants.NULL_ID) {
+							if (rto.getMapID() == mCurrentMapID || rto.getMapID() == IRTO.ALL_MAP_ID) rto.draw(aCanvas, aRatio, aOffset, aAngle);
+						} else {
+							Zone z = InitProvider.getInstance().getZone(pair.second);
+							if (z != null &amp;&amp; z.getMapId() == mCurrentMapID) {
+								Point newOffset = new Point();
+								PointF rtoOffset = rto.getZoneOffset();		
+								newOffset = new Point((int) ((z.getCenter().getX() + ((rtoOffset != null) ? rtoOffset.x : 0))* aRatio + aOffset.x),
+										(int) ((z.getCenter().getY() + ((rtoOffset != null) ? rtoOffset.y : 0))* aRatio + aOffset.y));
+
+								rto.draw(aCanvas, aRatio, newOffset, aAngle);
 							}
 						}
 					}
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} finally {
-					mRTOSema.release();
+				mRTOSema.release();
 			}
 		}
 	}
@@ -639,64 +641,51 @@ public class GenericRenderer implements IRenderer {
 
 	@Override
 	public void draw3D(World world, double ratio, float angle) {
-		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; !mRTOs.isEmpty()) {
+		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; mRTOs.size() != 0) {
 
 			if (mWorld == null) mWorld = new WeakReference&lt;World&gt;(world);
 
-			boolean acq = false;
 			try {
-				acq = mRTOSema.tryAcquire();
-				if(acq) {
-					for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : mRTOs.values()) {
-						for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
-							IRTO r = pair.first;
-							if (pair.second == CommonConstants.NULL_ID) {
-								//draw the RTO using it's position. Display only RTO that are on the current map, or are associated with no map
-								if ((r.getMapID() == mCurrentMapID) || (r.getMapID() == IRTO.ALL_MAP_ID)) { 
-									add3DObjectToWorld(mWorld.get(), r);
-									r.draw3D(world, mCurrentMap, ratio, angle);
-								}
-							}
-							else {
-								//draw the RTO associated to zones
-								//								IZone zone = InitProvider.getInstance().getZone(pair.second);
-								//								if (zone != null &amp;&amp; (zone.getMapID() == mCurrentMapID)) {
-								//									add3DObjectToWorld(mWorld.get(), r);
-								//									zone.draw3D(world, mCurrentMap, ratio, angle, r);
-								//								}
-							}
+				mRTOSema.acquire();
+				for(int i = 0; i &lt; mRTOs.size(); i++) {
+					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+					for(Pair&lt;IRTO, Integer&gt; pair : rtoAssoc) {
+						IRTO rto = pair.first;
+
+						if (pair.second == CommonConstants.NULL_ID) {
+							//draw the RTO using it's position. Display only RTO that are on the current map, or are associated with no map
+							if (rto.getMapID() == mCurrentMapID || rto.getMapID() == IRTO.ALL_MAP_ID) rto.draw3D(world, mCurrentMap, ratio, angle);
+						} else {
+							Zone z = InitProvider.getInstance().getZone(pair.second);
+							if (z != null &amp;&amp; z.getMapId() == mCurrentMapID) rto.draw3D(world, mCurrentMap, ratio, angle);
 						}
 					}
 				}
-			}
-			finally {
-				if(acq) {
-					mRTOSema.release();
-				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				mRTOSema.release();
 			}
 		}
 	}
 
 	private void clear3DObjectsFromWorld(World world){
-		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; !mRTOs.isEmpty() &amp;&amp; world != null) {
-			boolean acq = false;
+		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; mRTOs.size() != 0 &amp;&amp; world != null) {
 			try {
-				acq = mRTOSema.tryAcquire();
-				if(acq) {
-					for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : mRTOs.values()) {
-						for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
-							IRTO r = pair.first;
-							if ((r.getMapID() != mCurrentMapID) || (r.getMapID() == IRTO.NO_MAP_ID)) { 
-								clear3DObjectFromWorld(world, pair.first);
-							}
+				mRTOSema.acquire();
+				for(int i = 0; i &lt; mRTOs.size(); i++) {
+					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+					for (Pair&lt;IRTO, Integer&gt; pair : rtoAssoc) {
+						IRTO rto = pair.first;
+						if (rto.getMapID() != mCurrentMapID || rto.getMapID() == IRTO.NO_MAP_ID) { 
+							clear3DObjectFromWorld(world, pair.first);
 						}
 					}
 				}
-			}
-			finally {
-				if(acq) {
-					mRTOSema.release();
-				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				mRTOSema.release();
 			}
 		}
 	}
@@ -712,29 +701,26 @@ public class GenericRenderer implements IRenderer {
 		}
 	}
 
-	private void add3DObjectsToWorld(World world){
-		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; !mRTOs.isEmpty() &amp;&amp; world != null) {
-			boolean acq = false;
-			try {
-				acq = mRTOSema.tryAcquire();
-				if(acq) {
-					for (List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos : mRTOs.values()) {
-						for (Pair&lt;IRTO, Integer&gt; pair : rtos) {
-							IRTO r = pair.first;
-							if ((r.getMapID() == mCurrentMapID) || (r.getMapID() == IRTO.ALL_MAP_ID)) { 
-								add3DObjectToWorld(world, pair.first);
-							}
-						}
-					}
-				}
-			}
-			finally {
-				if(acq) {
-					mRTOSema.release();
-				}
-			}
-		}
-	}
+	//	private void add3DObjectsToWorld(World world){
+	//		if(mIsDisplayed &amp;&amp; mRTOs != null &amp;&amp; mRTOs.size() != 0 &amp;&amp; world != null) {
+	//			try {
+	//				mRTOSema.acquire();
+	//				for(int i = 0; i &lt; mRTOs.size(); i++) {
+	//					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+	//					for (Pair&lt;IRTO, Integer&gt; pair : rtoAssoc) {
+	//						IRTO rto = pair.first;
+	//						if (rto.getMapID() == mCurrentMapID || rto.getMapID() == IRTO.ALL_MAP_ID) { 
+	//							add3DObjectToWorld(world, pair.first);
+	//						}
+	//					}
+	//				}
+	//			} catch (InterruptedException e) {
+	//				e.printStackTrace();
+	//			} finally {
+	//				mRTOSema.release();
+	//			}
+	//		}
+	//	}
 
 	public void add3DObjectToWorld(World world, IRTO rto){
 		ISObject3D obj = rto.get3DObject();
@@ -769,42 +755,28 @@ public class GenericRenderer implements IRenderer {
 			mHasMoved = false;
 			try {
 				mRTOSema.acquire();
-				//touch in reverse order from draw
-				Object[] rtoCollec = mRTOs.values().toArray();
-				for (int i=rtoCollec.length-1 ; i&gt;=0 ; i--) {
-					@SuppressWarnings("unchecked")
-					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos = (List&lt;Pair&lt;IRTO, Integer&gt;&gt;)rtoCollec[i];
-					for (int j=rtos.size()-1 ; j&gt;=0 ; j--) {
-						Pair&lt;IRTO, Integer&gt; pair = rtos.get(j);
-						IRTO r = pair.first;
+
+				for (int i = mRTOs.size() - 1; i &gt;= 0; i--) {
+					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+					for(Pair&lt;IRTO, Integer&gt; pair : rtoAssoc) {
+						IRTO rto = pair.first;
 						int zoneId = pair.second;
 
-						//check if the rto is on a zone
 						if (zoneId == CommonConstants.NULL_ID) {
-							//check its map
-							if ((r.getMapID() == mCurrentMapID) || (r.getMapID() == IRTO.ALL_MAP_ID)) { 
-								ret = dispatchTouchDown(r, aTouch, null);
-							}
-						}
-						else {
+							if (rto.getMapID() == mCurrentMapID || rto.getMapID() == IRTO.ALL_MAP_ID) ret = dispatchTouchDown(rto, aTouch, null);
+						} else {
 							Zone zone = InitProvider.getInstance().getZone(zoneId);
-							if (zone != null &amp;&amp; (zone.getCenter().getMapID() == mCurrentMapID)) {
-								ret = dispatchTouchDown(r, aTouch, zone);
+							if (zone != null &amp;&amp; zone.getCenter().getMapID() == mCurrentMapID) {
+								ret = dispatchTouchDown(rto, aTouch, zone);
 							}
 						}
-						if (ret) {
-							break;
-						}
+						if (ret) break;
 					}
-					if (ret) {
-						break;
-					}
+					if (ret) break;
 				}
-			}
-			catch (InterruptedException e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}
-			finally {
+			} finally {
 				mRTOSema.release();
 			}
 		}
@@ -822,15 +794,11 @@ public class GenericRenderer implements IRenderer {
 			break;
 		case RESULT_NOTIFY:
 			// dispatch event, but do not block other listeners
-			if (listener != null) {
-				listener.onRTOSelected(rto, aZone);
-			}
+			if (listener != null) listener.onRTOSelected(rto, aZone);
 			break;
 		case RESULT_NOTIFY_CONSUME:
 			//  dispatch event, and block other listeners
-			if (listener != null) {
-				listener.onRTOSelected(rto, aZone);
-			}
+			if (listener != null) listener.onRTOSelected(rto, aZone);
 			ret = true;
 			break;
 		case RESULT_NOTHING: break;
@@ -849,43 +817,28 @@ public class GenericRenderer implements IRenderer {
 		if(mIsTouchable) {
 			try {
 				mRTOSema.acquire();
-				//touch in reverse order from draw
-				Object[] rtoCollec = mRTOs.values().toArray();
-				for (int i=rtoCollec.length-1 ; i&gt;=0 ; i--) {
-					@SuppressWarnings("unchecked")
-					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos = (List&lt;Pair&lt;IRTO, Integer&gt;&gt;)rtoCollec[i];
-					for (int j=rtos.size()-1 ; j&gt;=0 ; j--) {
-						Pair&lt;IRTO, Integer&gt; pair = rtos.get(j);
-						IRTO r = pair.first;
+
+				for (int i = mRTOs.size() - 1; i &gt;= 0; i--) {
+					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+					for(Pair&lt;IRTO, Integer&gt; pair : rtoAssoc) {
+						IRTO rto = pair.first;
 						int zoneId = pair.second;
 
-						//check if the rto is on a zone
 						if (zoneId == CommonConstants.NULL_ID) {
-							//check its map
-							if ((r.getMapID() == mCurrentMapID) || (r.getMapID() == IRTO.ALL_MAP_ID)) { 
-								ret = dispatchTouchMove(r, aTouch, null);
-							}
-						}
-						else {
-							//check its zone
+							if (rto.getMapID() == mCurrentMapID || rto.getMapID() == IRTO.ALL_MAP_ID) ret = dispatchTouchMove(rto, aTouch, null);
+						} else {
 							Zone zone = InitProvider.getInstance().getZone(zoneId);
-							if (zone != null &amp;&amp; (zone.getCenter().getMapID() == mCurrentMapID)) {
-								ret = dispatchTouchMove(r, aTouch, zone);
+							if (zone != null &amp;&amp; zone.getCenter().getMapID() == mCurrentMapID) {
+								ret = dispatchTouchMove(rto, aTouch, zone);
 							}
 						}
-						if (ret) {
-							break;
-						}
+						if (ret) break;
 					}
-					if (ret) {
-						break;
-					}
+					if (ret) break;
 				}
-			}
-			catch (InterruptedException e) {
+			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}
-			finally {
+			} finally {
 				mRTOSema.release();
 			}
 		}
@@ -902,21 +855,17 @@ public class GenericRenderer implements IRenderer {
 			break;
 		case RESULT_NOTIFY:
 			// dispatch event, but do not block other listeners
-			if (listener != null) {
-				listener.onRTOMoved(rto, aZone);
-			}
+			if (listener != null) listener.onRTOMoved(rto, aZone);
 			mHasMoved = true;
 			break;
 		case RESULT_NOTIFY_CONSUME:
 			//  dispatch event, and block other listeners
-			if (listener != null) {
-				listener.onRTOMoved(rto, aZone);
-			}
+			if (listener != null) listener.onRTOMoved(rto, aZone);
 			mHasMoved = true;
 			ret = true;
 			break;
 		case RESULT_NOTHING: break;
-		} // end switch
+		} 
 		return ret;
 	}
 
@@ -931,43 +880,29 @@ public class GenericRenderer implements IRenderer {
 		if(mIsTouchable) {
 			try {
 				mRTOSema.acquire();
-				//touch in reverse order from draw
-				Object[] rtoCollec = mRTOs.values().toArray();
-				for (int i=rtoCollec.length-1 ; i&gt;=0 ; i--) {
-					@SuppressWarnings("unchecked")
-					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtos = (List&lt;Pair&lt;IRTO, Integer&gt;&gt;)rtoCollec[i];
-					for (int j=rtos.size()-1 ; j&gt;=0 ; j--) {
-						Pair&lt;IRTO, Integer&gt; pair = rtos.get(j);
-						IRTO r = pair.first;
+
+				for (int i = mRTOs.size() - 1; i &gt;= 0; i--) {
+					List&lt;Pair&lt;IRTO, Integer&gt;&gt; rtoAssoc = mRTOs.valueAt(i);
+					for(Pair&lt;IRTO, Integer&gt; pair : rtoAssoc) {
+						IRTO rto = pair.first;
 						int zoneId = pair.second;
 
-						//check if the rto is on a zone
 						if (zoneId == CommonConstants.NULL_ID) {
-							//check its map
-							if ((r.getMapID() == mCurrentMapID) || (r.getMapID() == IRTO.ALL_MAP_ID)) { 
-								ret = dispatchTouchUp(r, aTouch, null);
-							}
-						}
-						else {
-							//check its zone
+							if (rto.getMapID() == mCurrentMapID || rto.getMapID() == IRTO.ALL_MAP_ID) ret = dispatchTouchUp(rto, aTouch, null);
+						} else {
 							Zone zone = InitProvider.getInstance().getZone(zoneId);
-							if (zone != null &amp;&amp; (zone.getCenter().getMapID() == mCurrentMapID)) {
-								ret = dispatchTouchUp(r, aTouch, zone);
+							if (zone != null &amp;&amp; zone.getCenter().getMapID() == mCurrentMapID) {
+								ret = dispatchTouchUp(rto, aTouch, zone);
 							}
 						}
-						if (ret) {
-							break;
-						}
+						if (ret) break;
 					}
-					if (ret) {
-						break;
-					}
+					if (ret) break;
 				}
-			}
-			catch (InterruptedException e) {
+
+			} catch (InterruptedException e) {
 				e.printStackTrace();
-			}
-			finally {
+			} finally {
 				mRTOSema.release();
 			}
 		}
@@ -985,27 +920,17 @@ public class GenericRenderer implements IRenderer {
 		case RESULT_NOTIFY:
 			// dispatch event, but do not block other listeners
 			if(mHasMoved) {
-				if (listener != null) {
-					listener.onRTOReleased(rto, aZone);
-				}
-			}
-			else {
-				if (listener != null) {
-					listener.onRTOClicked(rto, aZone);
-				}
+				if (listener != null) listener.onRTOReleased(rto, aZone);
+			} else {
+				if (listener != null) listener.onRTOClicked(rto, aZone);
 			}
 			break;
 		case RESULT_NOTIFY_CONSUME:
 			//  dispatch event, and block other listeners
 			if(mHasMoved) {
-				if (listener != null) {
-					listener.onRTOReleased(rto, aZone);
-				}
-			}
-			else {
-				if (listener != null) {
-					listener.onRTOClicked(rto, aZone);
-				}
+				if (listener != null) listener.onRTOReleased(rto, aZone);
+			} else {
+				if (listener != null) listener.onRTOClicked(rto, aZone);
 			}
 			ret = true;
 			break;

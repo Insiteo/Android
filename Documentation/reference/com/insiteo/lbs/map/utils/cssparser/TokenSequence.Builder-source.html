@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../../favicon.ico" />
+<title>
+
+  TokenSequence.Builder
+
+
+| Insiteo API Documentation - Version 3.2.0
+
+</title>
+<link href="../../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../../../../", "../../../../../../../assets/");
+</script>
+<script src="../../../../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../../../../')"
+                      onkeyup="return search_changed(event, false, '../../../../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links">
+                <a href="../../../../../../packages.html"  >Package Index</a> | 
+                <a href="../../../../../../classes.html" >Class Index</a>
+              </div>
+              <ul>
+                
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/analytics/package-summary.html">com.insiteo.lbs.analytics</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/analytics/entities/package-summary.html">com.insiteo.lbs.analytics.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/package-summary.html">com.insiteo.lbs.common</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/auth/package-summary.html">com.insiteo.lbs.common.auth</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/auth/entities/package-summary.html">com.insiteo.lbs.common.auth.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/common/init/package-summary.html">com.insiteo.lbs.common.init</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/geofence/package-summary.html">com.insiteo.lbs.geofence</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/geofence/render/package-summary.html">com.insiteo.lbs.geofence.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/itinerary/package-summary.html">com.insiteo.lbs.itinerary</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/itinerary/entities/package-summary.html">com.insiteo.lbs.itinerary.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/location/package-summary.html">com.insiteo.lbs.location</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/location/utils/package-summary.html">com.insiteo.lbs.location.utils</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/package-summary.html">com.insiteo.lbs.map</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/database/package-summary.html">com.insiteo.lbs.map.database</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/entities/package-summary.html">com.insiteo.lbs.map.entities</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/gestures/package-summary.html">com.insiteo.lbs.map.gestures</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/render/package-summary.html">com.insiteo.lbs.map.render</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/utils/package-summary.html">com.insiteo.lbs.map.utils</a></li>
+    <li class="selected api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/package-summary.html">com.insiteo.lbs.map.utils.cssparser</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/meetme/package-summary.html">com.insiteo.lbs.meetme</a></li>
+    <li class="api apilevel-">
+  <a href="../../../../../../com/insiteo/lbs/meetme/requests/package-summary.html">com.insiteo.lbs.meetme.requests</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/CSSHandler.html">CSSHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/ParserConstants.html">ParserConstants</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/CSSParser.html">CSSParser</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/Declaration.html">Declaration</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/DefaultCSSHandler.html">DefaultCSSHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/FontFace.html">FontFace</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/KeyFrame.html">KeyFrame</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/RuleSet.html">RuleSet</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/Scanner.html">Scanner</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/SequentialInputStream.html">SequentialInputStream</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/Style3DCssHandler.html">Style3DCssHandler</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/Tester.html">Tester</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/Token.html">Token</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/TokenSequence.html">TokenSequence</a></li>
+          <li class="selected api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/TokenSequence.Builder.html">TokenSequence.Builder</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/FontFace.FontStretch.html">FontFace.FontStretch</a></li>
+          <li class="api apilevel-"><a href="../../../../../../com/insiteo/lbs/map/utils/cssparser/FontFace.FontStyle.html">FontFace.FontStyle</a></li>
+      </ul>
+    </li>
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links">
+            <a href="../../../../../../packages.html"  >Package Index</a> | 
+            <a href="../../../../../../classes.html" >Class Index</a>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+<div>
+<a href="TokenSequence.Builder.html">View Documentation</a>
+</div>
+
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+    static 
+     
+    
+    class
+<h1>TokenSequence.Builder</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+<div id="jd-content">
+  <pre class="prettyprint">
+/*
+ * Copyright 2013 Phil Brown
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.insiteo.lbs.map.utils.cssparser;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
+
+/**
+ * Simple organization of a sequence of tokens.
+ * @author Phil Brown
+ * @since 1:35:08 PM Dec 19, 2013
+ *
+ */
+public class TokenSequence implements Iterable&lt;Token&gt;
+{
+	/** The tokens in the sequence */
+	private List&lt;Token&gt; tokens;
+	/** The sequence as a string */
+	private String string;
+	
+	/**
+	 * Constructor
+	 * @param tokens
+	 * @param string
+	 */
+	public TokenSequence(List&lt;Token&gt; tokens, String string)
+	{
+		this.tokens = tokens;
+		this.string = string;
+	}
+	
+	/**
+	 * Constructor
+	 * @param token
+	 * @param string
+	 */
+	public TokenSequence(Token token, String string)
+	{
+		this.tokens = new ArrayList&lt;Token&gt;();
+		this.tokens.add(token);
+		this.string = string;
+	}
+	
+	/**
+	 * Create a TokenSequence from a String
+	 * @param s
+	 * @return
+	 * @throws IOException
+	 */
+	public static TokenSequence parse(String s) throws IOException
+	{
+		Scanner scanner = new Scanner(new ByteArrayInputStream(s.getBytes()));
+		Builder builder = new Builder();
+		Token t = scanner.nextToken();
+		while (t.tokenCode != ParserConstants.EOF)
+		{
+			builder.append(t);
+			t = scanner.nextToken();
+		}
+		return builder.create();
+	}
+	
+	/**
+	 * Gets the length of the TokenSequence
+	 * @return
+	 */
+	public int length()
+	{
+		return tokens.size();
+	}
+	
+	/**
+	 * Gets the tokens in the sequence
+	 * @return
+	 */
+	public List&lt;Token&gt; getTokens()
+	{
+		return tokens;
+	}
+	
+	/**
+	 * Get the tokens as an enumeration
+	 * @return
+	 */
+	public Enumeration&lt;Token&gt; enumerate()
+	{
+		Vector&lt;Token&gt; vector = new Vector&lt;Token&gt;();
+		for (int i = 0; i &lt; tokens.size(); i++)
+		{
+			vector.add(tokens.get(i));
+		}
+		return vector.elements();
+	}
+	
+	/**
+	 * Get a subsequence of the TokenSequence
+	 * @param start
+	 * @return
+	 */
+	public TokenSequence subSequence(int start)
+	{
+		Builder b = new Builder();
+		Enumeration&lt;Token&gt; t = enumerate();
+		int index = 0;
+		Token token = t.nextElement();
+		do {
+			if (index &gt;= start)
+				b.append(token);
+			index++;
+		}
+		while (t.hasMoreElements());
+		return b.create();
+	}
+	
+	/**
+	 * Get a subSequence of the TokenSequence
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	public TokenSequence subSequence(int start, int end)
+	{
+		Builder b = new Builder();
+		Enumeration&lt;Token&gt; t = enumerate();
+		int index = 0;
+		Token token = t.nextElement();
+		do {
+			if (index &gt;= end)
+				break;
+			if (index &gt;= start)
+				b.append(token);
+			index++;
+		}
+		while (t.hasMoreElements());
+		return b.create();
+	}
+	
+	@Override
+	public String toString()
+	{
+		return string;
+	}
+	
+	public String toDebugString()
+	{
+		StringBuilder builder = new StringBuilder();
+		for (int i = 0; i &lt; tokens.size(); i++)
+		{
+			builder.append(tokens.get(i).toDebugString());
+		}
+		return builder.toString();
+	}
+	
+	@Override
+	public boolean equals(Object object)
+	{
+		if (object instanceof TokenSequence)
+		{
+			TokenSequence seq = (TokenSequence) object;
+			if (tokens.size() == seq.tokens.size())
+			{
+				if (tokens.isEmpty())
+					return true;
+				Enumeration&lt;Token&gt; A = enumerate();
+				Enumeration&lt;Token&gt; B = seq.enumerate();
+				Token t1 = A.nextElement();
+				Token t2 = B.nextElement();
+				do
+				{
+					if (t1.nequals(t2))
+						return false;
+					t1 = A.nextElement();
+					t2 = B.nextElement();
+				}
+				while (A.hasMoreElements());
+				return true;
+			}
+			
+			
+		}
+		return false;
+	}
+	
+	/**
+	 * Not Equals
+	 * @param o
+	 * @return
+	 */
+	public boolean nequals(Object o)
+	{
+		return !equals(o);
+	}
+	
+	public boolean endsWith(Token t)
+	{
+		return tokens.get(tokens.size()-1).equals(t);
+	}
+	
+	public boolean startsWith(Token t)
+	{
+		return tokens.get(0).equals(t);
+	}
+	
+	public boolean startsWith(TokenSequence seq)
+	{
+		TokenSequence sub = subSequence(0, seq.length());
+System.out.println("subSequence(0," + seq.length() + " = " + sub);//TODO remove debug line
+		return sub.equals(seq);
+	}
+	
+	public boolean startsWith(String s)
+	{
+		try
+		{
+			return startsWith(parse(s));
+		}
+		catch (IOException io)
+		{
+			io.printStackTrace(System.out);
+		}
+		return false;
+	}
+	
+	/**
+	 * Splits the string on any of the given Tokens. This is useful, for example, when splitting 
+	 * on either {@link ParserConstants#COLON} or {@link ParserConstants#DOUBLE_COLON}.
+	 * @param t
+	 * @return
+	 */
+	public TokenSequence[] splitOnAny(Token[] t)
+	{
+		List&lt;TokenSequence&gt; list = new ArrayList&lt;TokenSequence&gt;();
+		Builder b = new Builder();
+		for (int i = 0; i &lt; length(); i++)
+		{
+			Token token = tokens.get(i);
+			for (Token _t : t)
+			{
+				if (_t.equals(token))
+				{
+					list.add(b.create());
+					b.clear();
+					break;
+				}
+				else
+				{
+					b.append(token);
+				}
+			}
+			
+		}
+		TokenSequence lastSequence = b.create();
+		if (lastSequence.length() &gt; 0)
+			list.add(lastSequence);
+		TokenSequence[] array = new TokenSequence[list.size()];
+		array = list.toArray(array);
+		return array;
+	}
+	
+	/**
+	 * Split the sequence on a given token
+	 * @param t
+	 * @return
+	 */
+	public TokenSequence[] split(Token t)
+	{
+		List&lt;TokenSequence&gt; list = new ArrayList&lt;TokenSequence&gt;();
+		Builder b = new Builder();
+		for (int i = 0; i &lt; length(); i++)
+		{
+			Token token = tokens.get(i);
+			if (t.equals(token))
+			{
+				list.add(b.create());
+				b.clear();
+				
+			}
+			else
+			{
+				b.append(token);
+			}
+		}
+		TokenSequence lastSequence = b.create();
+		if (lastSequence.length() &gt; 0)
+			list.add(lastSequence);
+		TokenSequence[] array = new TokenSequence[list.size()];
+		array = list.toArray(array);
+		return array;
+	}
+	
+	public boolean contains(Token t)
+	{
+		for (int i = 0; i &lt; length(); i++)
+		{
+			if (t.equals(tokens.get(i)))
+				return true;
+		}
+		return false;
+	}
+	
+	public boolean contains(TokenSequence t)
+	{
+		for (int i = 0; i &lt; tokens.size(); i++)
+		{
+			Token token = tokens.get(i);
+			if (token.equals(t.tokens.get(0)))
+			{
+				if (i + t.length() &lt; length())
+				{
+					if (subSequence(i, t.length()-1).equals(t))
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public int indexOf(Token t)
+	{
+		for (int i = 0; i &lt; length(); i++)
+		{
+			if (t.equals(tokens.get(i)))
+				return i;
+		}
+		return -1;
+	}
+
+	@Override
+	public Iterator&lt;Token&gt; iterator() {
+		return tokens.iterator();
+	}
+	
+	/**
+	 * Helper class for creating a TokenSequence
+	 * @author Phil Brown
+	 * @since 1:37:05 PM Jan 6, 2014
+	 *
+	 */
+	public static class Builder
+	{
+		List&lt;Token&gt; tokens;
+		StringBuilder builder;
+		
+		/**
+		 * Constructor
+		 */
+		public Builder()
+		{
+			tokens = new ArrayList&lt;Token&gt;();
+			builder = new StringBuilder();
+		}
+		
+		/**
+		 * Append a token
+		 * @param t
+		 * @return
+		 */
+		public Builder append(Token t)
+		{
+			tokens.add(t);
+			builder.append(t.toString());
+			return this;
+		}
+		
+		/**
+		 * Append a TokenSequence
+		 * @param t
+		 * @return
+		 */
+		public Builder append(TokenSequence t)
+		{
+			for (int i = 0; i &lt; t.length(); i++)
+			{
+				Token token = t.tokens.get(i);
+				tokens.add(token);
+				builder.append(token.toString());
+			}
+			
+			return this;
+		}
+		
+		/**
+		 * Create the sequence
+		 * @return
+		 */
+		public TokenSequence create()
+		{
+			return new TokenSequence(tokens, builder.toString());
+		}
+		
+		/**
+		 * Reset
+		 */
+		public void clear()
+		{
+			tokens.clear();
+			builder = new StringBuilder();
+		}
+	}
+}
+
+  </pre>
+</div>
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>

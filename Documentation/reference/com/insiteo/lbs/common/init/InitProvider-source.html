@@ -52,7 +52,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0_RC4." />
+  <meta name="description" content="Javadoc API documentation for Insiteo API Documentation - Version 3.2.0." />
 
 <link rel="shortcut icon" type="image/x-icon" href="../../../../../favicon.ico" />
 <title>
@@ -60,7 +60,7 @@
   InitProvider
 
 
-| Insiteo API Documentation - Version 3.2.0_RC4
+| Insiteo API Documentation - Version 3.2.0
 
 </title>
 <link href="../../../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 <div id="header">
     <div id="headerLeft">
     
-      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0_RC4</span>
+      <span id="masthead-title">Insiteo API Documentation - Version 3.2.0</span>
     
     </div>
     <div id="headerRight">
@@ -127,24 +127,6 @@
           </form>
       </div><!-- searchForm -->
   </div><!-- search -->
-      
-        
-  <div id="api-level-toggle">
-    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
-    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
-    <select id="apiLevelSelector">
-      <!-- option elements added by buildApiLevelSelector() -->
-    </select>
-  </div>
-  <script>
-   var SINCE_DATA = [ 'v1', 'v1' ];
-    
-    var SINCE_LABELS = [ 'v1', 'v1' ];
-    buildApiLevelSelector();
-    addLoadEvent(changeApiLevel);
-  </script>
-
-
       
     </div>
 </div><!-- header -->
@@ -294,8 +276,6 @@
 <div class="api-level">
   
 
-  Since: <a href="../../../../../guide/appendix/api-levels.html#level">API Level </a>
-
 
   
   
@@ -387,7 +367,7 @@ import com.insiteo.lbs.protobuf.model.map.ProtoMapZones.PBMapZones;
 
 /**
  * Singleton that will enable to initialize Insiteo API (see {@link InitProvider#startAPI(Activity, EServerType, int, String, IInitListener)}) and update the 
- * application data (see {@link InitProvider#updatePackages(Activity, IInitListener, boolean)}).
+ * application data (see {@link InitProvider#updatePackages(IInitListener, boolean)}).
  * &lt;strong&gt;NB : &lt;/strong&gt; Make sure to set your API key before the initialization process via the {@link InitProvider#setAPIKey(String)} method !
  * &lt;strong&gt;NB : &lt;/strong&gt; The API must be initialized before any other use !
  */
@@ -402,6 +382,7 @@ public class InitProvider implements IInitListener {
 	/**	The default value set to the {@link ERenderMode} for the initialization */
 	public static final ERenderMode DEFAULT_RENDER_MODE = ERenderMode.RENDER_MODE_2D; 
 
+	private static InitProvider sInstance = null;
 
 	private long mLastDataUpdateTime = 0;
 	private long mLastInitTime = 0;
@@ -418,23 +399,20 @@ public class InitProvider implements IInitListener {
 	private String mLbsUrl = null;
 	private String mAnalyticsUrl = null;
 
-	//	private Context mApplicationContext = null;
 	private boolean mAnalyticsAutoStart = false;
 
 	private Stack&lt;Package&gt; mRemotePackagesAvailable;
 	private Stack&lt;Package&gt; mPackagesToUpdate;
 	private Stack&lt;Package&gt; mPackagesDownloaded;
 
-
 	private String mExternalStoragePath = null;
 	private String mRODataDirPath = null;
 	private String mRWDataDirPath = null;
 	private InsiteoError mError = null;
 	private volatile boolean mIsInitialised = false;
-	private static InitProvider sInstance = null;
 
 	private WeakReference&lt;IInitListener&gt; mListener = null;
-	private WeakReference&lt;Activity&gt; mActivityRef = null;
+	private Activity mActivity = null;
 
 	private SparseArray&lt;Zone&gt; mZones = null; 
 	private SparseArray&lt;Map&gt; mMaps = null;
@@ -491,7 +469,7 @@ public class InitProvider implements IInitListener {
 	}
 
 	public Context getApplicationContext() {
-		return mActivityRef.get().getApplicationContext();
+		return mActivity.getApplicationContext();
 	}
 
 	//******************************************************************************************************************
@@ -499,28 +477,24 @@ public class InitProvider implements IInitListener {
 	// *****************************************************************************************************************
 
 	private void lockScreen() {
-		if(mActivityRef != null) {
-			if(mActivityRef.get() instanceof Activity) {
-				((Activity) mActivityRef.get()).runOnUiThread(new Runnable() {
+		if(mActivity != null) {
+				mActivity.runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						((Activity) mActivityRef.get()).getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+						mActivity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 					}
 				});
-			}
 		}
 	}
 
 	private void unlockScreen() {
-		if(mActivityRef != null) {
-			if(mActivityRef.get() instanceof Activity) {
-				((Activity) mActivityRef.get()).runOnUiThread(new Runnable() {
+		if(mActivity != null) {
+				mActivity.runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						((Activity) mActivityRef.get()).getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+						mActivity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 					}
 				});
-			}
 		}
 	}
 
@@ -641,7 +615,7 @@ public class InitProvider implements IInitListener {
 		mLastInitTime = System.currentTimeMillis();
 
 		mListener = new WeakReference&lt;IInitListener&gt;(listener);
-		mActivityRef = new WeakReference&lt;Activity&gt;(activity);
+		mActivity = activity;
 
 		mSiteId = siteId;
 		mLang = siteLang;
@@ -695,9 +669,9 @@ public class InitProvider implements IInitListener {
 	@SuppressWarnings("unchecked")
 	public ICancelable updatePackages(IInitListener aListener, Stack&lt;Package&gt; aPackagesToUpdate) {
 		PackageUpdater pu = null;
-		if(mActivityRef != null &amp;&amp; mActivityRef.get() != null) {
+		if(mActivity != null) {
 			mListener = new WeakReference&lt;IInitListener&gt;(aListener);
-			pu = new PackageUpdater(mActivityRef.get(), this);
+			pu = new PackageUpdater(mActivity, this);
 
 			mPackagesDownloaded = aPackagesToUpdate;
 
@@ -769,7 +743,7 @@ public class InitProvider implements IInitListener {
 	 */
 	private String initRWDataDirPath() {
 		String path = "";
-		Context context = mActivityRef.get();
+		Context context = mActivity;
 
 		if (context != null) {
 			File f = context.getDir(CommonConstants.DATA_DIRECTORY, Context.MODE_PRIVATE);
@@ -838,7 +812,6 @@ public class InitProvider implements IInitListener {
 	public void onInstallProgress(long aCurrentFile, long aTotalFiles) {
 		IInitListener listener = mListener.get(); 
 		if (listener != null) {
-			Log.d(TAG, "onInstallProgress");
 			listener.onInstallProgress(aCurrentFile, aTotalFiles);
 		}
 	}
@@ -849,8 +822,6 @@ public class InitProvider implements IInitListener {
 	 */
 	@Override
 	public void onDataUpdateDone(boolean aSuccess, InsiteoError aError) {
-
-		Log.d(TAG, "onDataUpdateDone");
 
 		onSiteContextChanged();
 
@@ -895,7 +866,6 @@ public class InitProvider implements IInitListener {
 	public void onDownloadProgress(long aDownloadedBytes, long aTotalBytes) {
 		IInitListener listener = mListener.get(); 
 		if (listener != null) {
-			Log.d(TAG, "onDownloadProgress");
 			listener.onDownloadProgress(aDownloadedBytes, aTotalBytes);
 		}
 	}
@@ -957,9 +927,7 @@ public class InitProvider implements IInitListener {
 				List&lt;PBMapZone&gt; pbMZs = root.getZonesList();
 				Iterator&lt;PBMapZone&gt; pbIte = pbMZs.iterator(); 
 				
-				int i = 0;
-				while (/*!mCancel &amp;&amp; */pbIte.hasNext() /*&amp;&amp; i &lt; 36*/ ) {
-					i++;
+				while (pbIte.hasNext()) {
 					PBMapZone pbMZ = pbIte.next();
 
 					//create polygon array
@@ -1130,6 +1098,23 @@ public class InitProvider implements IInitListener {
 		return mZones;
 	}
 
+	/**
+	 * Returns all the {@link Zone} of the {@link Map} define by the id.
+	 * @param mapId
+	 * @return an {@link List} containing all the {@link Zone} of the {@link Map} or 
+	 * an empty {@link List} if no {@link Zone} were found.
+	 */
+	public List&lt;Zone&gt; getZonesForMap(int mapId) {
+		List&lt;Zone&gt; result = new ArrayList&lt;Zone&gt;();
+		for(int i = 0 ; i &lt; mZones.size(); i++) {
+			Zone z = mZones.valueAt(i);
+			if(z.getMapId() == mapId) {
+				result.add(z);
+			}
+		}
+		return result;
+	}
+	
 
 	private void onSiteContextChanged() {
 		// 1 - Reopen database
@@ -1151,7 +1136,7 @@ public class InitProvider implements IInitListener {
 	 * @param aDefaultLanguage the default language for the current site 
 	 */
 	void setDefaultLanguage(String aDefaultLanguage) {
-		Context context = mActivityRef.get();
+		Context context = mActivity;
 		if (context != null) {
 			SharedPreferences prefs = context.getSharedPreferences(CommonConstants.PREFERENCES_BUNDLE_NAME, Context.MODE_PRIVATE);
 			Editor edit = prefs.edit();
@@ -1168,7 +1153,7 @@ public class InitProvider implements IInitListener {
 	 */
 	String getDefaultLanguage() {
 		String lang = null;
-		Context context = mActivityRef.get();
+		Context context = mActivity;
 		if (context != null) {
 			SharedPreferences prefs = context.getSharedPreferences(CommonConstants.PREFERENCES_BUNDLE_NAME, Context.MODE_PRIVATE);
 			lang = prefs.getString(CommonConstants.PREF_DEFAULT_LANGUAGE, null);
@@ -1253,24 +1238,28 @@ public class InitProvider implements IInitListener {
 	public String getRWDataDirPath() {
 		return mRWDataDirPath;
 	}
+	
 	/**
 	 * @return the url used to initialize the API
 	 */
 	public String getInitUrl() {
 		return mInitUrl;
 	}
+	
 	/**
 	 * @return the site ID used to initialize the API
 	 */
 	public int getSiteId() {
 		return mSiteId;
 	}
+	
 	/**
 	 * @return the locale used to initialize the API
 	 */
 	public String getLang() {
 		return mLang;
 	}
+	
 	/**
 	 * Returns the application version used for initialization. 
 	 * &lt;strong&gt;This is different from your application version !&lt;/strong&gt;
@@ -1279,6 +1268,7 @@ public class InitProvider implements IInitListener {
 	public int getAppVersion() {
 		return mAppVersion;
 	}
+	
 	/**
 	 * @return the url for lbs requests
 	 */
@@ -1292,6 +1282,7 @@ public class InitProvider implements IInitListener {
 	public String getContentUrl() {
 		return mContentUrl;
 	}
+	
 	/**
 	 * @return the url for maps requests
 	 */
@@ -1330,7 +1321,7 @@ public class InitProvider implements IInitListener {
 	 * @return
 	 */
 	public Stack&lt;Package&gt; getLocalPackagesAvailable(){
-		Stack&lt;Package&gt; packages = new Stack&lt;&gt;();
+		Stack&lt;Package&gt; packages = new Stack&lt;Package&gt;();
 
 		if(hasPackage(EPackageType.LOCATION)){
 			int locationVersion = EPackageType.LOCATION.getVersion();
@@ -1399,7 +1390,7 @@ public class InitProvider implements IInitListener {
 	 * Return the current API version.
 	 * @return The version of Insiteo's API.
 	 */
-	public String getAPIVersion(){
+	public String getAPIVersion() {
 		return CommonConstants.API_VERSION;
 	}
 
@@ -1415,8 +1406,7 @@ public class InitProvider implements IInitListener {
 	 * Returns the last time an API initialization was requested (even if this init failed).
 	 * @return mLastInitTime The last initialization time
 	 */
-	public long getLastInitTime(){
-
+	public long getLastInitTime() {
 		return mLastInitTime;
 	}
 
@@ -1442,7 +1432,7 @@ public class InitProvider implements IInitListener {
 		@Override
 		public void run() {
 			try {
-				Activity context = mActivityRef.get();
+				Activity context = mActivity;
 				if (context != null &amp;&amp; !mIsCanceled) {				
 
 					mInitRes = EInitResult.FAIL;
@@ -1484,7 +1474,7 @@ public class InitProvider implements IInitListener {
 				
 				//create error message
 				String errorMsg = "";
-				Activity activity = mActivityRef.get();
+				Activity activity = mActivity;
 				if (activity != null) {
 					errorMsg = activity.getString(R.string.insiteo_common_error_unable_to_init_api);
 					errorMsg += e.getLocalizedMessage();
@@ -1502,7 +1492,7 @@ public class InitProvider implements IInitListener {
 		private EInitResult initOnline(String url) {
 			EInitResult result = EInitResult.FAIL;
 
-			Context context = mActivityRef.get();
+			Context context = mActivity;
 			if (context != null &amp;&amp; !mIsCanceled) {
 
 				//load remote data
@@ -1551,7 +1541,11 @@ public class InitProvider implements IInitListener {
 		}
 
 
-		//create the stack of packages that need to be installed
+		/**
+		 * Creates the stack of packages that need to be installed
+		 * @param aPackages
+		 * @return
+		 */
 		private Stack&lt;Package&gt; filterPackagesToUpdate(Stack&lt;Package&gt; aPackages) {
 			Stack&lt;Package&gt; packagesToUpdate = new Stack&lt;Package&gt;();
 			for (Package pd : aPackages) {
@@ -1573,7 +1567,7 @@ public class InitProvider implements IInitListener {
 	private void initializeAnalytics(){
 		if (hasPackage(EPackageType.ANALYTICS)) {
 			if (mAnalyticsAutoStart) {
-				AnalyticsManager.getInstance().start(mActivityRef.get());
+				AnalyticsManager.getInstance().start(mActivity);
 			}
 		}
 	}
