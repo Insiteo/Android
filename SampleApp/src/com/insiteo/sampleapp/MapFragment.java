@@ -46,7 +46,6 @@ import com.insiteo.lbs.itinerary.entities.Section;
 import com.insiteo.lbs.location.ELocationModule;
 import com.insiteo.lbs.location.ILocationListener;
 import com.insiteo.lbs.location.InsLocation;
-import com.insiteo.lbs.location.LocationConstants;
 import com.insiteo.lbs.location.LocationProvider;
 import com.insiteo.lbs.location.LocationRenderer;
 import com.insiteo.lbs.location.utils.LocationUtils;
@@ -86,6 +85,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	private LocationRenderer mLocationrenderer;
 	private ImageButton mLocationButton;
 	private InsLocation mLastLocation;
+	private boolean mCenterOnPosition = true;
 
 	// GEOFENCING
 	private GeofenceProvider mGeofenceProvider;
@@ -100,11 +100,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			Bundle savedInstanceState) {
 
 		View rootView = inflater.inflate(R.layout.fragment_main, container,	false);
-
-		CommonConstants.DEBUG = InsiteoConf.LOG_ENABLED;
-		LocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
-
-
 
 		setHasOptionsMenu(true);
 
@@ -143,10 +138,10 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		inflater.inflate(R.menu.main, menu);
-		
+
 		MenuItem item = menu.findItem(R.id.action_version);
 		item.setTitle(CommonConstants.API_VERSION);
-		
+
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 
@@ -184,8 +179,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			break;
 
 		}
-
-
 		return result;
 	}
 
@@ -249,7 +242,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param mapName the new map's name
 	 */
 	@Override
-	public void onMapChanged(final int mapId, final String mapName) {		
+	public void onMapChanged(final int mapId, final String mapName) {	
+		Log.d(CommonConstants.DEBUG_TAG, "onMapChanged");
 		getActivity().runOnUiThread(new Runnable() {
 
 			@Override
@@ -279,6 +273,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void onMapViewReady(final int aMapID, final String aMapName) {
+		Log.d(CommonConstants.DEBUG_TAG, "onMapViewReady");
 		getActivity().runOnUiThread(new Runnable() {
 
 			@Override
@@ -305,6 +300,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void onZoneClicked(int zoneID, EZoneAction aActionType, String aActionParam) {
+		Log.d(CommonConstants.DEBUG_TAG, "onZoneClicked");
 
 		// Clear the MapView from all the GfxRto previously rendered.
 		mMapView.clearRenderer(GfxRto.class);
@@ -331,7 +327,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * Called when the MapView is clicked
 	 */
 	@Override
-	public void onMapClicked(Position clickedPosition) {		
+	public void onMapClicked(Position clickedPosition) {	
+		Log.d(CommonConstants.DEBUG_TAG, "onMapClicked");
 	}
 
 	/**
@@ -339,6 +336,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void onMapMoved() {
+		Log.d(CommonConstants.DEBUG_TAG, "onMapMoved");
+		mCenterOnPosition = false;
 	}
 
 	/**
@@ -346,7 +345,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param newZoomLevel the new zoomlevel
 	 */
 	@Override
-	public void onZoomEnd(int newZoomLevel) {
+	public void onZoomEnd(int newZoomLevel) {	
+		Log.d(CommonConstants.DEBUG_TAG, "onZoomEnd");
 	}
 
 	/**
@@ -354,6 +354,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void onMapReleased() {
+		Log.d(CommonConstants.DEBUG_TAG, "onMapReleased");
 	}
 
 
@@ -491,13 +492,13 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			pos.add(p);
 		}
 
-//		for (int i = 0; i < positionNbr; i++) {
-//			double x = Math.random() * 300;
-//			double y = Math.random() * 300;
-//
-//			Position p = new Position(2, x, y);
-//			pos.add(p);
-//		}
+		//		for (int i = 0; i < positionNbr; i++) {
+		//			double x = Math.random() * 300;
+		//			double y = Math.random() * 300;
+		//
+		//			Position p = new Position(2, x, y);
+		//			pos.add(p);
+		//		}
 
 		mItineraryProvider.requestOptimizedItinerary(pos, EOptimizationMode.EOptimizationModeNearestNeighbourShortestPath, true, false, this, false);
 
@@ -701,7 +702,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		/**
 		 * this method animate the map to be centered on the given position, here the user's position
 		 */
-		mMapView.centerMap(aLocation.getPosition(), true);
+		if(mCenterOnPosition) mMapView.centerMap(aLocation.getPosition(), true);
 
 		mLastLocMapID = aLocation.getMapID();	
 	}
@@ -759,6 +760,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			@Override
 			public void run() {
 				final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+				alert.setTitle(R.string.loc_activation_required);
 				alert.setMessage(R.string.loc_wifi_activation_required);
 				alert.setCancelable(false);
 				alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
@@ -785,6 +787,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			@Override
 			public void run() {
 				final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+				alert.setTitle(R.string.loc_activation_required);
 				alert.setMessage(R.string.loc_ble_activation_required);
 				alert.setCancelable(false);
 				alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {

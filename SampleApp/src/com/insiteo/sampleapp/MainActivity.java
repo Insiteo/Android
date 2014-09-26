@@ -8,12 +8,15 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.insiteo.lbs.common.CommonConstants;
 import com.insiteo.lbs.common.InsiteoError;
 import com.insiteo.lbs.common.init.EInitResult;
 import com.insiteo.lbs.common.init.EPackageType;
 import com.insiteo.lbs.common.init.IInitListener;
 import com.insiteo.lbs.common.init.InitProvider;
+import com.insiteo.lbs.common.utils.Log;
 import com.insiteo.lbs.common.utils.threading.ICancelable;
+import com.insiteo.lbs.location.LocationConstants;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -27,6 +30,9 @@ public class MainActivity extends Activity implements IInitListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 				
+		CommonConstants.DEBUG = InsiteoConf.LOG_ENABLED;
+		LocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
+		
 		initAPI();
 	}
 
@@ -87,7 +93,6 @@ public class MainActivity extends Activity implements IInitListener {
 			public void run() {
 
 				mInitStatusView.setVisibility(View.GONE);
-
 
 				switch (aInitRes) {
 
@@ -167,6 +172,7 @@ public class MainActivity extends Activity implements IInitListener {
 	 */
 	@Override
 	public void onDownloadProgress(long aDownloadedBytes, long aTotalBytes) {
+		
 		int percent = (int) (aDownloadedBytes * 100 / aTotalBytes);
 		String value = String.valueOf(percent) + "%";
 		
@@ -190,6 +196,7 @@ public class MainActivity extends Activity implements IInitListener {
 	 */
 	@Override
 	public void onInstallProgress(long aCurrentFile, long aTotalFiles) {
+		
 		int percent = (int) (aCurrentFile * 100 / aTotalFiles);
 		String value = String.valueOf(percent) + "%";
 
