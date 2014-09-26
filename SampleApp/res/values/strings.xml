@@ -22,6 +22,7 @@
     <string name="loc_btn_stop">Stop location</string>
     <string name="loc_init_fail">Location init failed :\n</string>
     <string name="loc_init_success">Location init done !</string>
+    <string name="loc_activation_required">Activation required !</string>
     <string name="loc_ble_activation_required">The BLE needs to be activated.</string>
     <string name="loc_wifi_activation_required">The WIFI needs to be activated.</string>
     <string name="loc_activate">Activate</string>
