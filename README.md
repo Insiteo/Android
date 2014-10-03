@@ -15,7 +15,8 @@ For further integration documentation you can have a look at the developer's sit
 
 ## Create your account
 
-If you wish to build your own map, install indoor location and get your API key please contact us here  http://www.insiteo.com/joomla/index.php/en/contact-us.
+If you wish to evaluate indoor location in your own building, you can order our test pack including 8 BLE beacons here:
+http://www.insiteo.com/joomla/index.php/en/contact-us.
 
 ## More informations
 
