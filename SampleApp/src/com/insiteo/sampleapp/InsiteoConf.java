@@ -19,7 +19,7 @@ public class InsiteoConf {
 	public static final String API_KEY = "5a30df2a-6038-698f-e387-0691ff1239d6";
 
 	/** Enables the log for the Java level code */
-	public static final boolean LOG_ENABLED    			= true;
+	public static final boolean LOG_ENABLED    			= false;
 
 	/** Enables the log for the embedded code (native library) */
 	public static final boolean EMBEDDED_LOG_ENABLED    = false;
