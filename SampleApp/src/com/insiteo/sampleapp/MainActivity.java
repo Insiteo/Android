@@ -14,8 +14,6 @@ import com.insiteo.lbs.common.init.EInitResult;
 import com.insiteo.lbs.common.init.EPackageType;
 import com.insiteo.lbs.common.init.IInitListener;
 import com.insiteo.lbs.common.init.InitProvider;
-import com.insiteo.lbs.common.utils.Log;
-import com.insiteo.lbs.common.utils.threading.ICancelable;
 import com.insiteo.lbs.location.LocationConstants;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
