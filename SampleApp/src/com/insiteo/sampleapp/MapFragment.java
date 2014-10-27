@@ -72,7 +72,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	private MapView mMapView = null;
 
 	private Map mCurrentMap;
-	private boolean mRotateMap = true;
+	private boolean mRotateMap = false;
 	List<Map> mMaps;
 
 	// ITINERARY
