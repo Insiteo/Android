@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.insiteo.sampleapp"
-    android:versionCode="5"
-    android:versionName="3.2.3" >
+    android:versionCode="6"
+    android:versionName="3.3.0_RC0" >
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
+        android:targetSdkVersion="21" />
     
-     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- this permission is used to get the UDID of the user when using the analytics API -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -37,9 +38,7 @@
         </activity>
         
         <service
-            android:name="com.insiteo.lbs.location.LocationService"
-            android:exported="false"
-            android:stopWithTask="true" />
+            android:name="com.insiteo.lbs.location.LocationService" />
         
     </application>
 

@@ -3,4 +3,6 @@
 	
 	<dimen name="insiteo_map_zone_line_width">4dp</dimen>
 	
+	<dimen name="insiteo_shelf_height">4dp</dimen>
+	
 </resources>

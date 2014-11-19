@@ -42,5 +42,8 @@
     <string name="locate_ext_poi_hint">anExternalPoiID</string>
     
     <string name="error_no_ext_poi_found">No external POI found.</string>
+    
+    
+    <string name="error_itinerary_computation_failed">Itinerary failed</string>
 
 </resources>

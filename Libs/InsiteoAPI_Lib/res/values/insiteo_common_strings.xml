@@ -7,6 +7,9 @@
 	<string name="insiteo_common_error_unable_to_init_api">Error. Unable to init API :\n</string>
 	<string name="insiteo_common_error_sdcard_access">Unable to access SD Card.</string>
 	<string name="insiteo_common_error_sdcard_no_space">Not enough space on SD Card.</string>
+	<string name="insiteo_common_error_missing_api_key">You need to set your API key!</string>
+	<string name="insiteo_common_error_init_cancelled">API initialization cancelled!</string>
+	<string name="insiteo_common_error_no_internet_access">Missing internet access.</string>
 	
 	<string name="insiteo_common_error_download_canceled">Download canceled.</string>
 	<string name="insiteo_common_error_unzip_canceled">Install canceled.</string>
