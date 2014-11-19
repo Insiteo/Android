@@ -36,12 +36,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:background="#F2F2F2"
         android:orientation="vertical"
         android:padding="18dp"
         android:visibility="gone" >
 
         <TextView 
+            android:id="@+id/update_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/launcher_ask_update_package"/>

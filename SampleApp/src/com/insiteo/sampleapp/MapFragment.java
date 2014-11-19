@@ -31,8 +31,8 @@ import com.insiteo.lbs.common.InsiteoError;
 import com.insiteo.lbs.common.init.InitProvider;
 import com.insiteo.lbs.common.utils.Log;
 import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.geofence.GeofenceArea;
 import com.insiteo.lbs.geofence.GeofenceProvider;
-import com.insiteo.lbs.geofence.GeofenceZone;
 import com.insiteo.lbs.geofence.IGeofenceListener;
 import com.insiteo.lbs.itinerary.IItineraryRendererListener;
 import com.insiteo.lbs.itinerary.IItineraryRequestListener;
@@ -55,7 +55,9 @@ import com.insiteo.lbs.map.database.MapDBHelper;
 import com.insiteo.lbs.map.entities.Map;
 import com.insiteo.lbs.map.entities.Zone;
 import com.insiteo.lbs.map.entities.ZonePoi;
+import com.insiteo.lbs.map.render.ERenderMode;
 import com.insiteo.lbs.map.render.EZoneAction;
+import com.insiteo.lbs.map.render.GenericRTO;
 import com.insiteo.lbs.map.render.IRTO;
 import com.insiteo.lbs.map.render.IRTOListener;
 import com.insiteo.sampleapp.render.GfxRto;
@@ -93,17 +95,16 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	private TextView mGeofenceToastText = null;
 
 	private int mLastLocMapID = CommonConstants.NULL_ID;
+	
 
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_main, container,	false);
+		View rootView = inflater.inflate((InitProvider.getInstance().getRenderMode() == ERenderMode.RENDER_MODE_2D) ? R.layout.fragment_map_2d : R.layout.fragment_map_3d, container, false);
 
 		setHasOptionsMenu(true);
-
-
 		return rootView;
 	}
 
@@ -115,11 +116,21 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		initializeGeofencingService();
 		super.onViewCreated(view, savedInstanceState);
 	}
+	
+	@Override
+	public void onResume() {
+		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
+		mMapView.onResume();
+		super.onResume();
+	}
 
 
 	@Override
 	public void onPause() {
 		stopLocation();
+		
+		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
+		mMapView.onPause();
 		super.onPause();
 	}
 	//******************************************************************************************************************
@@ -186,7 +197,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	public boolean onNavigationItemSelected(int position, long id) {
 		if(mMaps != null && mMaps.size() > position){
 			Map map = mMaps.get(position);
-			mMapView.changeMap(map.getId(), false, false, false);
+			mMapView.changeMap(map.getId(), true, true, true);
 		}
 		return true;
 	}
@@ -294,33 +305,38 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	/**
 	 * This event is triggered when a Zone object was clicked, and its associated action is custom, 
 	 * so it can't be handled by MapController.
-	 * @param aZoneID the clicked zone's ID
-	 * @param aActionType the type of action contained in this zone
-	 * @param aActionParam the action parameter
+	 * @param zone the clicked Zone.
+	 * @param actionType the type of action contained in this zone.
+	 * @param actionParam the action parameter.
 	 */
 	@Override
-	public void onZoneClicked(int zoneID, EZoneAction aActionType, String aActionParam) {
+	public void onZoneClicked(Zone zone, EZoneAction actionType, String actionParam) {
 		Log.d(CommonConstants.DEBUG_TAG, "onZoneClicked");
 
 		// Clear the MapView from all the GfxRto previously rendered.
 		mMapView.clearRenderer(GfxRto.class);
 
 		// Get all the external POI that are associated to this zone and add them on the map.
-		List<ZonePoi> zpas = MapDBHelper.getPoiAssocFromZone(zoneID, true);
+		List<ZonePoi> zpas = MapDBHelper.getPoiAssocFromZone(zone.getId(), true);
 
 		for(int i = 0; i < zpas.size(); i++) {
 			String poiExtId = zpas.get(i).getExternalPoiId();			
 			GfxRto rto = new GfxRto();
+			
 			rto.setLabel(poiExtId);
+			rto.setLabelDisplayed(true);
+			
+			rto.setAnnotationLabel(poiExtId);
 
 			// Apply a particular offset to this rto. This is used to have multiple rto in the same zone without superposition.
 			rto.setZoneOffset(zpas.get(i).getOffset());
 
-			mMapView.addRTOInZone(zoneID, rto);
+			mMapView.addRTOInZone(zone.getId(), rto);
+			
 		}
 
 		// Center the map on this zone with animation.
-		mMapView.centerMap(zoneID, true);
+		mMapView.centerMap(zone.getId(), true);
 	}
 
 	/**
@@ -411,6 +427,17 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 */
 	@Override
 	public void onRTOClicked(IRTO rto, Zone zone) {
+		if(rto instanceof GenericRTO) {
+			GenericRTO genericRto = (GenericRTO) rto; 
+
+			if(genericRto.isAnnotationClicked()) {
+				genericRto.setActionDisplayed(!genericRto.isActionDisplayed());
+			}
+
+			if(genericRto.isActionClicked()) {
+				genericRto.setIndicatorDisplayed(!genericRto.isIndicatorDisplayed());
+			}
+		}
 	}
 
 	/**
@@ -465,7 +492,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		//hide the old itinerary if it exists
 		mItineraryRenderer.setDisplayEnabled(false);         
 
-		Position arrival = new Position(mMapView.getMapId(), 100, 100);
+		Position arrival = new Position(mMapView.getMapId(), 20, 20);
 		mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
 
 		// If the location is started will request an itinerary from our current position
@@ -485,20 +512,29 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		ArrayList<Position> pos = new ArrayList<Position>();
 
 		for (int i = 0; i < positionNbr; i++) {
-			double x = Math.random() * 300;
-			double y = Math.random() * 300;
+			double x = Math.random() * 50;
+			double y = Math.random() * 50;
 
-			Position p = new Position(mCurrentMap.getId(), x, y);
-			pos.add(p);
+			if(mMaps.size() > 1 && i > positionNbr / 2) {
+				Map otherMap = null;
+				for (Map map : mMaps) {
+					if(map.getId() != mCurrentMap.getId()) {
+						otherMap = map;
+						break;
+					}
+				}
+				
+				if(otherMap != null) {
+					Position p = new Position(otherMap.getId(), x, y);
+					pos.add(p);
+				}
+				
+			} else {
+				Position p = new Position(mCurrentMap.getId(), x, y);
+				pos.add(p);
+			}
+			
 		}
-
-		//		for (int i = 0; i < positionNbr; i++) {
-		//			double x = Math.random() * 300;
-		//			double y = Math.random() * 300;
-		//
-		//			Position p = new Position(2, x, y);
-		//			pos.add(p);
-		//		}
 
 		mItineraryProvider.requestOptimizedItinerary(pos, EOptimizationMode.EOptimizationModeNearestNeighbourShortestPath, true, false, this, false);
 
@@ -529,6 +565,16 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	@Override
 	public void onItineraryRequestDone(boolean aSuccess, BaseRequest aRequest, final InsiteoError error) {
 		if(aSuccess) mItineraryRenderer.setDisplayEnabled(true);
+		else {
+			getActivity().runOnUiThread(new Runnable() {
+				
+				@Override
+				public void run() {
+					String message = getString(R.string.error_itinerary_computation_failed) + ": " + error.getMessage();
+					Crouton.makeText(getActivity(), message, Style.ALERT).show();
+				}
+			});
+		}
 	}
 
 	/**
@@ -581,12 +627,12 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aLeftZones list of zones that location has just left
 	 */
 	@Override
-	public void onGeofenceUpdate(List<GeofenceZone> aEnteredZones, List<GeofenceZone> aStayedZones, List<GeofenceZone> aLeftZones) {
+	public void onGeofenceUpdate(List<GeofenceArea> aEnteredZones, List<GeofenceArea> aStayedZones, List<GeofenceArea> aLeftZones) {
 		Log.d("Geofencing", "onGeofenceUpdate " + aEnteredZones.size() + " " + aStayedZones.size() + " " + aLeftZones.size());	
 
-		final List<GeofenceZone> zones = aEnteredZones;
+		final List<GeofenceArea> zones = aEnteredZones;
 
-		for (GeofenceZone z : zones) {
+		for (GeofenceArea z : zones) {
 			final String extra1 = z.getExtra1();
 			if (extra1 != null) {
 				getActivity().runOnUiThread(new Runnable() {
@@ -804,7 +850,6 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			}
 		});	
 	}
-
 
 
 }
