@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.insiteo.sampleapp.MainActivity" >
+
+    <item
+        android:id="@+id/action_version"
+        android:showAsAction="always"
+        android:enabled="false"
+        android:title="version"/>
+    
+    <item
+        android:id="@+id/action_itinerary"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_itinerary"/>
+    
+    <item
+        android:id="@+id/action_route"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_route"/>
+    
+    <item
+        android:id="@+id/action_locate_ext_poi"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_locate_ext_poi"/>
+    
+    <item
+        android:id="@+id/action_clear_itinerary"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_clear_itinerary"/>
+    
+    <item
+        android:id="@+id/action_clear_all"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_clear_all"/>
+
+</menu>
