@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- LAUNCHER -->
+    <color name="launcher_bkg">#DEDEDE</color>
+    
+    <color name="insiteo_green">#3198B4</color>
+
+</resources>
