@@ -17,6 +17,7 @@ import com.insiteo.lbs.common.init.IInitListener;
 import com.insiteo.lbs.common.init.InitProvider;
 import com.insiteo.lbs.common.init.Package;
 import com.insiteo.lbs.location.LocationConstants;
+import com.insiteo.lbs.map.MapConstants;
 import com.insiteo.lbs.map.render.ERenderMode;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
@@ -35,6 +36,10 @@ public class MainActivity extends Activity implements IInitListener {
 
 		CommonConstants.DEBUG = InsiteoConf.LOG_ENABLED;
 		LocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
+
+
+        MapConstants.USE_ZONE_3D_OPTIMIZATION = false;
+
 
 		initAPI();
 	}
