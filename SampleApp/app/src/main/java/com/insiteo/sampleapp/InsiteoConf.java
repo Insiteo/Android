@@ -18,7 +18,7 @@ public class InsiteoConf {
 	
 
 	/** The ERenderMode that should be used. */
-	public static final ERenderMode RENDER_MODE    = ERenderMode.RENDER_MODE_3D;
+	public static final ERenderMode RENDER_MODE    = ERenderMode.RENDER_MODE_2D;
 
 	// This key that Insiteo will provide you is mandatory to use our API.
 	public static final String API_KEY = "5a30df2a-6038-698f-e387-0691ff1239d6";

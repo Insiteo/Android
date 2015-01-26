@@ -1,1 +1,1 @@
-include ':app', ':lbsLib-release'
+include ':app', ':lbsLib-3.3.0_RC1-release'

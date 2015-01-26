@@ -1,24 +1,30 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
 
     defaultConfig {
-        applicationId "com.insiteo.sampleapp"
         minSdkVersion 14
         targetSdkVersion 21
     }
 
     buildTypes {
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
         release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
         }
     }
 }
 
 dependencies {
-    compile files('libs/crouton-1.8.1.jar')
-    compile project(':lbsLib-release')
+    compile 'com.android.support:support-v4:21.0.+'
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    compile project(':lbsLib-3.3.0_RC1-release')
 }

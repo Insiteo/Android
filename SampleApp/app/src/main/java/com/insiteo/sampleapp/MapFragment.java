@@ -2,10 +2,12 @@ package com.insiteo.sampleapp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
@@ -30,7 +32,7 @@ import com.insiteo.lbs.common.CommonConstants;
 import com.insiteo.lbs.common.InsiteoError;
 import com.insiteo.lbs.common.init.InitProvider;
 import com.insiteo.lbs.common.utils.Log;
-import com.insiteo.lbs.common.utils.geometry.Position;
+import com.insiteo.lbs.common.utils.geometry.ISPosition;
 import com.insiteo.lbs.geofence.GeofenceArea;
 import com.insiteo.lbs.geofence.GeofenceProvider;
 import com.insiteo.lbs.geofence.IGeofenceListener;
@@ -41,8 +43,8 @@ import com.insiteo.lbs.itinerary.ItineraryProvider.BaseRequest;
 import com.insiteo.lbs.itinerary.ItineraryProvider.EOptimizationMode;
 import com.insiteo.lbs.itinerary.ItineraryProvider.ItineraryRequest;
 import com.insiteo.lbs.itinerary.ItineraryRenderer;
-import com.insiteo.lbs.itinerary.entities.Itinerary;
-import com.insiteo.lbs.itinerary.entities.Section;
+import com.insiteo.lbs.itinerary.entities.ISItinerary;
+import com.insiteo.lbs.itinerary.entities.ISItinerarySection;
 import com.insiteo.lbs.location.ELocationModule;
 import com.insiteo.lbs.location.ILocationListener;
 import com.insiteo.lbs.location.InsLocation;
@@ -50,6 +52,7 @@ import com.insiteo.lbs.location.LocationProvider;
 import com.insiteo.lbs.location.LocationRenderer;
 import com.insiteo.lbs.location.utils.LocationUtils;
 import com.insiteo.lbs.map.IMapListener;
+import com.insiteo.lbs.map.Map3DView;
 import com.insiteo.lbs.map.MapView;
 import com.insiteo.lbs.map.database.MapDBHelper;
 import com.insiteo.lbs.map.entities.Map;
@@ -189,6 +192,11 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 			result = false;
 			break;
 
+        case R.id.action_information:
+                displayUIInformation();
+                result = false;
+                break;
+
 		}
 		return result;
 	}
@@ -202,9 +210,37 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		return true;
 	}
 
-	//******************************************************************************************************************
+
+    //**********************************************************************************************
+    // 	UI
+    // *********************************************************************************************
+
+    private void displayUIInformation() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+        View informationView = LayoutInflater.from(getActivity()).inflate(R.layout
+                .information_layout, null);
+
+        TextView apiVersion, locationVersion, itineraryVersion;
+
+        apiVersion = (TextView) informationView.findViewById(R.id.api_version_value);
+        locationVersion = (TextView) informationView.findViewById(R.id.loc_version_value);
+        itineraryVersion = (TextView) informationView.findViewById(R.id.iti_version_value);
+
+        apiVersion.setText(InitProvider.getInstance().getAPIVersion());
+        locationVersion.setText(LocationProvider.getInstance().getVersion());
+        itineraryVersion.setText(ItineraryProvider.getVersion());
+
+        alert.setView(informationView);
+
+        alert.create().show();
+
+
+    }
+
+	//**********************************************************************************************
 	// 	MAP SERVICE
-	// *****************************************************************************************************************
+	// *********************************************************************************************
 
 	private void initializeMapService(){
 		mMapView = (MapView) getView().findViewById(R.id.map);
@@ -343,7 +379,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * Called when the MapView is clicked
 	 */
 	@Override
-	public void onMapClicked(Position clickedPosition) {	
+	public void onMapClicked(ISPosition clickedPosition) {
 		Log.d(CommonConstants.DEBUG_TAG, "onMapClicked");
 	}
 
@@ -397,7 +433,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 							String poiExtId = zpas.get(i).getExternalPoiId();			
 							GfxRto rto = new GfxRto();
 							rto.setLabel(poiExtId);
-							mMapView.addRTOInZone(zpas.get(i).getZoneId(), rto);
+                            rto.setLabelDisplayed(true);
+							mMapView.addRTOInZone(zpas.get(i).getZoneId(), rto, zpas.get(i).getOffset());
 						}
 
 						if(!zpas.isEmpty()) {
@@ -492,7 +529,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		//hide the old itinerary if it exists
 		mItineraryRenderer.setDisplayEnabled(false);         
 
-		Position arrival = new Position(mMapView.getMapId(), 20, 20);
+		ISPosition arrival = new ISPosition(mMapView.getMapId(), 20, 20);
 		mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
 
 		// If the location is started will request an itinerary from our current position
@@ -509,7 +546,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 
 		int positionNbr = 4;
 
-		ArrayList<Position> pos = new ArrayList<Position>();
+		ArrayList<ISPosition> pos = new ArrayList<ISPosition>();
 
 		for (int i = 0; i < positionNbr; i++) {
 			double x = Math.random() * 50;
@@ -525,12 +562,12 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 				}
 				
 				if(otherMap != null) {
-					Position p = new Position(otherMap.getId(), x, y);
+                    ISPosition p = new ISPosition(otherMap.getId(), x, y);
 					pos.add(p);
 				}
 				
 			} else {
-				Position p = new Position(mCurrentMap.getId(), x, y);
+                ISPosition p = new ISPosition(mCurrentMap.getId(), x, y);
 				pos.add(p);
 			}
 			
@@ -583,7 +620,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aInstructionIndex the index of the instruction
 	 */
 	@Override
-	public void onInstructionClicked(Itinerary aItinerary, int aInstructionIndex) {
+	public void onInstructionClicked(ISItinerary aItinerary, int aInstructionIndex) {
 	}
 
 	/**
@@ -592,7 +629,7 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aNextPosition the position of the next itinerary section
 	 */
 	@Override
-	public void onMapSwitcherClicked(Position aNextPosition) {
+	public void onMapSwitcherClicked(ISPosition aNextPosition) {
 		if(aNextPosition != null){
 			mMapView.centerMap(aNextPosition, true);
 		}
@@ -605,7 +642,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 	 * @param aSection the section corresponding to the touched waypoint
 	 */
 	@Override
-	public void onWaypointClicked(Itinerary aItinerary, int aInstructionIndex, Section aSection) {
+	public void onWaypointClicked(ISItinerary aItinerary, int aInstructionIndex,
+                                  ISItinerarySection aSection) {
 	}
 
 	//******************************************************************************************************************
