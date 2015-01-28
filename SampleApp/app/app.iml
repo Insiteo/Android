@@ -83,9 +83,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="play-services-6.5.87" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
-    <orderEntry type="library" exported="" name="lbsLib-3.3.0_RC1-release-unspecified" level="project" />
+    <orderEntry type="library" exported="" name="lbsLib-3.3.0_RC1_vc2-unspecified" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="crouton-1.8.5" level="project" />
   </component>
