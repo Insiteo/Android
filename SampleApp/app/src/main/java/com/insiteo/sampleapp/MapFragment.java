@@ -1,13 +1,8 @@
 package com.insiteo.sampleapp;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.zip.Inflater;
-
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
@@ -52,7 +47,6 @@ import com.insiteo.lbs.location.LocationProvider;
 import com.insiteo.lbs.location.LocationRenderer;
 import com.insiteo.lbs.location.utils.LocationUtils;
 import com.insiteo.lbs.map.IMapListener;
-import com.insiteo.lbs.map.Map3DView;
 import com.insiteo.lbs.map.MapView;
 import com.insiteo.lbs.map.database.MapDBHelper;
 import com.insiteo.lbs.map.entities.Map;
@@ -64,6 +58,9 @@ import com.insiteo.lbs.map.render.GenericRTO;
 import com.insiteo.lbs.map.render.IRTO;
 import com.insiteo.lbs.map.render.IRTOListener;
 import com.insiteo.sampleapp.render.GfxRto;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -788,7 +785,8 @@ public class MapFragment extends Fragment implements IMapListener, IRTOListener,
 		 */
 		if(mCenterOnPosition) mMapView.centerMap(aLocation.getPosition(), true);
 
-		mLastLocMapID = aLocation.getMapID();	
+		mLastLocMapID = aLocation.getMapID();
+
 	}
 
 	/**
