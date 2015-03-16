@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/lbsLib-3.3.0_RC1-release" />
+            <option value="$PROJECT_DIR$/lbsLib-3.3.0_RC1_vc3" />
           </set>
         </option>
       </GradleProjectSettings>
