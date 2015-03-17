@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('lbsLib-3.3.0.aar'))

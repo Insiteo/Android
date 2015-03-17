@@ -1,1 +1,1 @@
-include ':app', ':lbsLib-3.3.0_RC1_vc3'
+include ':app', ':lbsLib-3.3.0'

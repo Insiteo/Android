@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lbsLib-3.3.0-unspecified">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/SampleApp/lbsLib-3.3.0/unspecified/libs/jpct_ae.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/SampleApp/lbsLib-3.3.0/unspecified/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/SampleApp/lbsLib-3.3.0/unspecified/libs/xbrt_android.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/SampleApp/lbsLib-3.3.0/unspecified/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/SampleApp/lbsLib-3.3.0/unspecified/libs/protobuf-java-lite.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

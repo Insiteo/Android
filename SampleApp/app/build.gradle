@@ -29,5 +29,5 @@ dependencies {
     compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
         exclude group: 'com.google.android', module: 'support-v4'
     }
-    compile project(':lbsLib-3.3.0_RC1_vc3')
+    compile project(':lbsLib-3.3.0')
 }
