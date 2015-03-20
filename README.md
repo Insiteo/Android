@@ -1,6 +1,4 @@
 # Insiteo Android sample application
-=======
-
 
 Insiteo is a provider of indoor location based services such as :
 
