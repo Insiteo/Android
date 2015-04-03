@@ -6,6 +6,7 @@ Insiteo is a provider of indoor location based services such as :
 - Location
 - Itinerary
 - Geofencing 
+- [Using the Beacon service](readme/BEACON.md)
 
 This sample application will demonstrate how to take full advantage of those services and integrate them in your application.
 
