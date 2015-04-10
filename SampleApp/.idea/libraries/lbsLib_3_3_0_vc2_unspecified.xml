@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lbsLib-3.3.0_vc2-unspecified">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/SampleApp/lbsLib-3.3.0_vc2/unspecified/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/SampleApp/lbsLib-3.3.0_vc2/unspecified/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

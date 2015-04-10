@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":lbsLib-3.3.0" />
+        <option name="GRADLE_PROJECT_PATH" value=":lbsLib-3.3.0_vc2" />
       </configuration>
     </facet>
   </component>
