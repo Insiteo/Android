@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.insiteo.lbs.map.Map3DView
+    <com.insiteo.lbs.map.ISMap3DView
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

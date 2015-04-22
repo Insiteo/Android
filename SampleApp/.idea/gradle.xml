@@ -5,15 +5,15 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.7" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/lbsLib-3.3.0_RC1_vc3" />
+            <option value="$PROJECT_DIR$/lbsLib-3.4.0_beta_vc2" />
           </set>
         </option>
       </GradleProjectSettings>
     </option>
   </component>
 </project>
-

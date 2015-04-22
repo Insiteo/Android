@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.insiteo.sampleapp"
-    android:versionCode="6"
-    android:versionName="3.3.0_RC0" >
-
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="21" />
-    
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!-- this permission is used to get the UDID of the user when using the analytics API -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    package="com.insiteo.sampleapp">
 
     <application
         android:allowBackup="true"
@@ -36,9 +17,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <service
-            android:name="com.insiteo.lbs.location.LocationService" />
+
+        <meta-data
+            android:name="com.insiteo.lbs.ApiKey"
+            android:value="@string/api_key" />
+        <meta-data
+            android:name="com.insiteo.lbs.ISEServerType"
+            android:value="@string/server" />
+        <meta-data
+            android:name="com.insiteo.lbs.ISERenderMode"
+            android:value="@string/render_mode" />
+        <meta-data
+            android:name="com.insiteo.lbs.AnalyticsAutoStart"
+            android:value="@string/analytics" />
+
+        <meta-data
+            android:name="com.insiteo.lbs.location.flags"
+            android:value="@string/location_flags" />
         
     </application>
 
