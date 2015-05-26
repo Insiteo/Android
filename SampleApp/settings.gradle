@@ -1,1 +1,3 @@
-include ':app', ':lbsLib-3.4.0_beta_vc2'
+include ':app', ':lbsLib-3.4.0_beta_vc3'
+include ':lbsLib'
+project(':lbsLib').projectDir=new File('../../android-api/api/lbs/lbsLib')
