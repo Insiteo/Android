@@ -1,18 +1,19 @@
 package com.insiteo.sampleapp;
 
-import android.app.Activity;
+import android.location.Location;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.insiteo.lbs.common.ISInsiteoError;
-import com.insiteo.lbs.common.auth.entities.ISUser;
+import com.insiteo.lbs.Insiteo;
+import com.insiteo.lbs.common.ISError;
+import com.insiteo.lbs.common.auth.entities.ISSite;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISPackage;
-import com.insiteo.lbs.common.init.Insiteo;
 import com.insiteo.lbs.common.init.listener.ISIInitListener;
 import com.insiteo.lbs.location.ISLocationConstants;
 import com.insiteo.lbs.map.ISMapConstants;
@@ -23,7 +24,7 @@ import java.util.Stack;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
 	public final static String TAG = "SampleApp";
 
@@ -51,6 +52,7 @@ public class MainActivity extends Activity {
 		mUpdateTitleView = (TextView) findViewById(R.id.update_title);
 
 		initAPI();
+
 	}
 
 	@Override
@@ -149,12 +151,12 @@ public class MainActivity extends Activity {
 
 	private final ISIInitListener mInitListener = new ISIInitListener() {
 		@Override
-		public void onInitDone(ISUser isUser, ISInsiteoError isInsiteoError, ISUserSite isUserSite) {
+		public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
 			mInitStatusView.setVisibility(View.GONE);
 		}
 
 		@Override
-		public void onStartDone(ISInsiteoError isInsiteoError, Stack<ISPackage> stack) {
+		public void onStartDone(ISError isInsiteoError, Stack<ISPackage> stack) {
 			displayUpdateView();
 		}
 
@@ -186,11 +188,23 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		public void onDataUpdateDone(boolean b, ISInsiteoError isInsiteoError) {
+		public void onDataUpdateDone(ISError error) {
 			mPackageStatusView.setVisibility(View.GONE);
 			startDashboard();
 		}
-	};
+
+        /**
+         * This callback will be used in order to select the most suitable {@link ISSite} that will be returned in
+         * by {@link #onInitDone(ISError, ISUserSite, boolean)}. Most of the time this should be used to return the user's location. If no {@link Location}
+         * (ie <code>null</code>) is returned  then the suggested {@link ISSite} will simply be the first one returned by the server.
+         *
+         * @return the {@link Location} to find the most suitable {@link ISSite} or <code>null</code>
+         */
+        @Override
+        public Location selectClosestToLocation() {
+            return null;
+        }
+    };
 
 
 

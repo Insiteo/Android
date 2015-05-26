@@ -3,6 +3,7 @@
     package="com.insiteo.sampleapp">
 
     <application
+        android:name=".SampleApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -27,9 +28,11 @@
         <meta-data
             android:name="com.insiteo.lbs.ISERenderMode"
             android:value="@string/render_mode" />
+
+        <!-- boolean values should not be set as a reference to an external string -->
         <meta-data
             android:name="com.insiteo.lbs.AnalyticsAutoStart"
-            android:value="@string/analytics" />
+            android:value="true" />
 
         <meta-data
             android:name="com.insiteo.lbs.location.flags"

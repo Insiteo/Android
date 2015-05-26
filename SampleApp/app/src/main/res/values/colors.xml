@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="teal">#009688</color>
+    <color name="primary">#009688</color>
+    <color name="primary_dark">#009688</color>
+    <color name="secondary">#F19D00</color>
+
+    <color name="accent">#009688</color>
+    <color name="text_primary">#FDFDFD</color>
+    <color name="window_background">#DEDEDE</color>
+
     <!-- LAUNCHER -->
     <color name="launcher_bkg">#DEDEDE</color>
     
