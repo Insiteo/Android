@@ -38,6 +38,7 @@
     <string name="action_clear_itinerary">Clear itinerary</string>
     <string name="action_clear_all">Clear everything</string>
     <string name="action_information">Information</string>
+    <string name="action_switch_site">Switch site</string>
     
     <string name="locate_ext_poi_title">Enter an external POI id: </string>
     <string name="locate_ext_poi_hint">anExternalPoiID</string>

@@ -40,7 +40,7 @@
         android:padding="18dp"
         android:visibility="gone" >
 
-        <TextView 
+        <!--<TextView
             android:id="@+id/update_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,15 +52,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:text="@string/action_skip" />
+            android:text="@string/action_skip" />-->
 
-        <Button
+        <!--<Button
             android:id="@+id/download_packages_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:text="@string/action_update_packages" />
+            android:text="@string/action_update_packages" />-->
 
         <ProgressBar
             android:id="@+id/update_progress"
@@ -77,6 +77,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_margin="8dp"
+            android:textColor="@color/primary"
             android:visibility="gone" />
 
         <TextView
@@ -86,6 +87,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_margin="8dp"
+            android:textColor="@color/primary"
             android:visibility="gone" />
     </RelativeLayout>
 

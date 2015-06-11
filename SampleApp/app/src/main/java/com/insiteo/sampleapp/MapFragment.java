@@ -1,11 +1,11 @@
 package com.insiteo.sampleapp;
 
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -148,8 +148,11 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		inflater.inflate(R.menu.main, menu);
 
-		MenuItem item = menu.findItem(R.id.action_version);
-		item.setTitle(Insiteo.getAPIVersion());
+		MenuItem versionItem = menu.findItem(R.id.action_version);
+        versionItem.setTitle(Insiteo.getAPIVersion());
+
+        MenuItem labelItem = menu.findItem(R.id.site_label);
+        labelItem.setTitle(Insiteo.getCurrentSite().getLabel());
 
 		super.onCreateOptionsMenu(menu, inflater);
 	}
@@ -191,6 +194,12 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
                 displayUIInformation();
                 result = false;
                 break;
+
+            case R.id.action_switch_site:
+                MainActivity act = (MainActivity) getActivity();
+                act.switchSite();
+				result = false;
+				break;
 
 		}
 		return result;

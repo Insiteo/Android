@@ -2,7 +2,9 @@ package com.insiteo.sampleapp;
 
 import android.location.Location;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -30,6 +32,8 @@ public class MainActivity extends ActionBarActivity {
 
 	private final static boolean AUTOMATIC_DOWNLOAD = true;
 
+    private MapFragment mMapFragment;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,11 +49,11 @@ public class MainActivity extends ActionBarActivity {
 		mInitStatusView = findViewById(R.id.init_status);
 		mPackageStatusView = findViewById(R.id.package_status);
 		mUpdateProgressBar = (ProgressBar) findViewById(R.id.update_progress);
-		mUpdateActionBtn = (Button) findViewById(R.id.download_packages_btn);
-		mSkipActionBtn = (Button) findViewById(R.id.skip_btn);
+		//mUpdateActionBtn = (Button) findViewById(R.id.download_packages_btn);
+		//mSkipActionBtn = (Button) findViewById(R.id.skip_btn);
 		mUpdateStepView = (TextView) findViewById(R.id.update_step);
 		mUpdateValueView = (TextView) findViewById(R.id.update_value);
-		mUpdateTitleView = (TextView) findViewById(R.id.update_title);
+		//mUpdateTitleView = (TextView) findViewById(R.id.update_title);
 
 		initAPI();
 
@@ -92,24 +96,24 @@ public class MainActivity extends ActionBarActivity {
 
 
 	
-	private void displayUpdateView() {
+	/*private void displayUpdateView() {
 		runOnUiThread(new Runnable() {
 			
 			@Override
 			public void run() {
 				mPackageStatusView.setVisibility(View.VISIBLE);
 				
-				mUpdateTitleView.setVisibility(View.GONE);
+				//mUpdateTitleView.setVisibility(View.GONE);
 				
-				mUpdateActionBtn.setVisibility(View.GONE);
-				mSkipActionBtn.setVisibility(View.GONE);
+				//mUpdateActionBtn.setVisibility(View.GONE);
+				//mSkipActionBtn.setVisibility(View.GONE);
 
 				mUpdateProgressBar.setVisibility(View.VISIBLE);
 				mUpdateStepView.setVisibility(View.VISIBLE);
 				mUpdateValueView.setVisibility(View.VISIBLE);
 			}
 		});		
-	}
+	}*/
 
 
 
@@ -125,10 +129,12 @@ public class MainActivity extends ActionBarActivity {
 					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAP3DPACKAGE)
 					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION)) {
 
-				getFragmentManager()
+
+
+
+                getSupportFragmentManager()
 						.beginTransaction()
-						.replace(R.id.container,
-								new MapFragment()).commit();
+						.replace(R.id.container, mMapFragment).commit();
 			} else {
 				Crouton.makeText(MainActivity.this, R.string.error_missing_required_package, Style.ALERT).show();
 			}
@@ -137,10 +143,12 @@ public class MainActivity extends ActionBarActivity {
 					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.TILES)
 					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION)) {
 
-				getFragmentManager()
+                mMapFragment = new MapFragment();
+
+				getSupportFragmentManager()
 						.beginTransaction()
 						.replace(R.id.container,
-								new MapFragment()).commit();
+                                mMapFragment).commit();
 			} else {
 				Crouton.makeText(MainActivity.this, R.string.error_missing_required_package, Style.ALERT).show();
 			}
@@ -152,16 +160,20 @@ public class MainActivity extends ActionBarActivity {
 	private final ISIInitListener mInitListener = new ISIInitListener() {
 		@Override
 		public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
-			mInitStatusView.setVisibility(View.GONE);
+
 		}
 
 		@Override
 		public void onStartDone(ISError isInsiteoError, Stack<ISPackage> stack) {
-			displayUpdateView();
+			mInitStatusView.setVisibility(View.GONE);
 		}
 
 		@Override
 		public void onPackageUpdateProgress(ISEPackageType isePackageType, boolean download, long progress, long total) {
+            if (mUpdateProgressBar.getVisibility() == View.GONE) mUpdateProgressBar.setVisibility(View.VISIBLE);
+            if (mUpdateStepView.getVisibility() == View.GONE) mUpdateStepView.setVisibility(View.VISIBLE);
+            if (mUpdateValueView.getVisibility() == View.GONE) mUpdateValueView.setVisibility(View.VISIBLE);
+
 			if(download) {
 				/** For the download process the progress is given in bytes */
 				int percent = (int) (progress * 100 / total);
@@ -209,5 +221,31 @@ public class MainActivity extends ActionBarActivity {
 
 
 
+	public void switchSite() {
+		SparseArray<ISUserSite> availablesSites = Insiteo.getCurrentUser().getSites();
 
+		if(availablesSites.size() <= 1) { Crouton.makeText(this, "Only one site available", Style.ALERT).show(); return; }
+
+
+		for (int i = 0; i < availablesSites.size(); i++) {
+			if (availablesSites.valueAt(i).getSiteId() != Insiteo.getCurrentSite().getSiteId()) {
+				Crouton.makeText(this, "Switching to site " + availablesSites.valueAt(i).getLabel(), Style.INFO).show();
+                getSupportFragmentManager().beginTransaction().remove(mMapFragment).commit();
+                mMapFragment = null;
+
+
+                getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+
+                mInitStatusView.setVisibility(View.VISIBLE);
+
+                mUpdateProgressBar.setVisibility(View.GONE);
+                mUpdateStepView.setVisibility(View.GONE);
+                mUpdateValueView.setVisibility(View.GONE);
+
+
+                Insiteo.getInstance().startAndUpdate(availablesSites.valueAt(i), mInitListener);
+
+			}
+		}
+	}
 }

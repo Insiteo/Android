@@ -19,37 +19,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f9a6b53-d6b5-40c1-a7ea-62bf8b807ef9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/SampleApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jpct_ae.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/lbsLib_3_4_0_beta_vc3_unspecified.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/protobuf_java_lite.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_21_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_21_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/xbrt_android.xml" />
-      <change type="DELETED" beforePath="C:\Users\MMO\Android\Insiteo\GitHub\Android\SampleApp\.idea\libraries\lbsLib_3_4_0_beta_vc2_unspecified.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\MMO\Android\Insiteo\GitHub\Android\SampleApp\.idea\libraries\support_annotations_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\MMO\Android\Insiteo\GitHub\Android\SampleApp\.idea\libraries\support_v4_21_0_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\MMO\Android\Insiteo\GitHub\Android\SampleApp\lbsLib-3.4.0_beta_vc2\build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\MMO\Android\Insiteo\GitHub\Android\SampleApp\lbsLib-3.4.0_beta_vc2\lbsLib-3.4.0_beta_vc2.aar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\MMO\Android\Insiteo\GitHub\Android\SampleApp\lbsLib-3.4.0_beta_vc2\lbsLib-3.4.0_beta_vc2.iml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lbsLib-3.4.0_beta_vc4/build.gradle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/lbsLib_3_4_0_beta_vc4_unspecified.xml" />
+      <change type="DELETED" beforePath="C:\Users\MMO\Android\Insiteo\GitHub\Android\SampleApp\.idea\libraries\lbsLib_3_4_0_beta_vc3_unspecified.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SampleApp.iws" />
@@ -107,12 +94,122 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/build.gradle">
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
+            <state vertical-scroll-proportion="-20.2">
+              <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.857143">
+              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6593807">
+              <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7494#7495#0" expanded="true" />
+                <element signature="e#7529#7530#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.257143">
+              <caret line="280" column="40" selection-start-line="280" selection-start-column="40" selection-end-line="280" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#onViewCreated#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onResume#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onPause#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#4542#4658#0" expanded="false" />
+                <element signature="method#onClick#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#6523#6619#0" expanded="false" />
+                <element signature="method#displayUIInformation#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#7585#7681#0" expanded="false" />
+                <element signature="method#initializeMapService#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#7898#8023#0" expanded="false" />
+                <element signature="method#initializeRTO#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onMapChanged#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onMapChanged#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onMapInitFailed#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onMapViewReady#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onMapViewReady#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onZoneClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onZoneClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onMapClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onMapMoved#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onMapMoved#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onZoomEnd#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onMapReleased#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#locateExtPoi#0;class#MapFragment#0" expanded="false" />
+                <element signature="class#13901:14035" expanded="false" />
+                <element signature="method#onClick#0;class#13901:14035" expanded="false" />
+                <element signature="e#14065#14181#0" expanded="false" />
+                <element signature="docComment;method#onRTOClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onRTOClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onRTOMoved#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onRTOReleased#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onRTOSelected#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#15688#15804#0" expanded="false" />
+                <element signature="method#initializeItineraryService#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#15994#16053#0" expanded="false" />
+                <element signature="docComment;method#computeItinerary#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#computeItinerary#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#computeOptimizedItinerary#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#computeOptimizedItinerary#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onItineraryChanged#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onItineraryChanged#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onItineraryRequestDone#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onItineraryRequestDone#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onInstructionClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onMapSwitcherClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onMapSwitcherClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onWaypointClicked#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#20688#20804#0" expanded="false" />
+                <element signature="method#initializeGeofencingService#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onGeofenceUpdate#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onGeofenceUpdate#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onGeofenceDataCleared#0;class#MapFragment#0" expanded="false" />
+                <element signature="e#22766#22882#0" expanded="false" />
+                <element signature="method#initializeLocationService#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#locationHandler#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#stopLocation#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#stopLocation#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#startLocation#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#startLocation#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onLocationInitDone#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onLocationReceived#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onLocationReceived#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onCompassAccuracyTooLow#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onNeedToActivateGPS#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onAzimuthReceived#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onLocationLost#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#noRegisteredBeaconDetected#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onWifiActivationRequired#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onWifiActivationRequired#0;class#MapFragment#0" expanded="false" />
+                <element signature="docComment;method#onBleActivationRequired#0;class#MapFragment#0" expanded="false" />
+                <element signature="method#onBleActivationRequired#0;class#MapFragment#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,47 +218,7 @@
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.0">
-              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="conf.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/conf.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07162921">
-              <caret line="3" column="63" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proguard-rules.pro" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/proguard-rules.pro">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -209,6 +266,10 @@
               <ExternalProjectPojo>
                 <option name="name" value="SampleApp" />
                 <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value=":lbsLib-3.4.0_beta_vc4" />
+                <option name="path" value="$PROJECT_DIR$/lbsLib-3.4.0_beta_vc4" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value=":lbsLib-3.4.0_beta_vc3" />
@@ -517,6 +578,14 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="preDexDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="preDexDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -547,9 +616,9 @@
                 <option name="name" value="prepareReleaseDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare SampleApp:lbsLib-3.4.0_beta_vc3:unspecified" />
+                <option name="description" value="Prepare SampleApp:lbsLib-3.4.0_beta_vc4:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareSampleAppLbsLib340_beta_vc3UnspecifiedLibrary" />
+                <option name="name" value="prepareSampleAppLbsLib340_beta_vc4UnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -586,14 +655,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="proguardDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="proguardDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1969,6 +2030,14 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="preDexDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="preDexDebugTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -1999,9 +2068,9 @@
                 <option name="name" value="prepareReleaseDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare SampleApp:lbsLib-3.4.0_beta_vc3:unspecified" />
+                <option name="description" value="Prepare SampleApp:lbsLib-3.4.0_beta_vc4:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareSampleAppLbsLib340_beta_vc3UnspecifiedLibrary" />
+                <option name="name" value="prepareSampleAppLbsLib340_beta_vc4UnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -2038,14 +2107,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="processReleaseResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="proguardDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="proguardDebugTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -3226,7 +3287,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="7159826693581" />
+        <entry key="$PROJECT_DIR$" value="8593211800333" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -3758,6 +3819,81 @@
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
+                  <entry key="$PROJECT_DIR$/lbsLib-3.4.0_beta_vc4">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/1.0.0/cc834d833ada2ae95c63eedfc87efcd2d842f3d6/gradle-1.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/1.0.0/79f4ed9b6582ecec4d7b35aecfa45fbc48dadb96/gradle-1.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/1.0.0/5937e1bdf4c807a0c2adf3e1269838238d05da2b/builder-1.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder/1.0.0/528fdfb8a4d51ae4177e7d913e88767916a84758/builder-1.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/24.0.0/53093824fcd36168d0650952def5e050d65c384d/lint-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint/24.0.0/e3d6e09a113af66fd2e5dc6e4d2321d7b0d82328/lint-24.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.1/proguard-gradle-5.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.1/proguard-gradle-5.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/24.0.0/ea9eac1abbb8e43a76135e7aaf821e2b8ec39795/sdk-common-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdk-common/24.0.0/ebb1e063b8c370a88a38bf46036dce3892fe6c01/sdk-common-24.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/24.0.0/6ecc67ffd7b05df1977b5a94d7d6a7e4d00bff4c/common-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/common/24.0.0/271771234c82097345fb73c9571c403e22f62faf/common-24.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/1.0.0/c42ebed2433b72f099bb697f56829bfcfc3a79e0/builder-test-api-1.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/1.0.0/2d6ea74b74f8d928e468ff623825d22a5d8a1649/builder-test-api-1.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/24.0.0/7dfed086e2e0fdd5434179d1a631357ac1376de8/ddmlib-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/24.0.0/25b4cd0c917c47ce599008f4431ecffa0a57b51a/ddmlib-24.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/24.0.0/ab95699556df591e0ba4d45666290b18883a1b9b/manifest-merger-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/24.0.0/d0193672ed299817e4be2ba1caeeda4924b0e447/manifest-merger-24.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/1.0.0/82702af4c805d26822b0465219f20821b815f529/builder-model-1.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.build/builder-model/1.0.0/2a3969a9082b47a4855395de918682eee946285a/builder-model-1.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/24.0.0/13407e220c83f2fe2cc3386e139cf833d55b72fa/sdklib-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/sdklib/24.0.0/df228874ac1c933b64492bdbe2d9bab5ab434166/sdklib-24.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/24.0.0/cc34e98c3842611e9ab9cc01617232e894671fee/lint-checks-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-checks/24.0.0/9cb8d9c675a7716ac6f4d20df0ef0aba0e4519f5/lint-checks-24.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.2.2/fb9dc21349d06dd00b395af5c42f299df828f9da/ecj-4.2.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/4.2.2/d9fd79499c664bccaf24dbe04be417de6c6af64a/ecj-4.2.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.1/proguard-base-5.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.1/proguard-base-5.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/17.0/guava-17.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/17.0/guava-17.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/24.0.0/e4d961e21d04d9888864269b31619ae8fee0341d/layoutlib-api-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/24.0.0/a43d5bf045da108875a860767c453078b0d77795/layoutlib-api-24.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/24.0.0/4435987ff2ed5c04657e2aaf1be48b8ce33e907f/dvlib-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools/dvlib/24.0.0/ae24752eb30a9154f5a3d822b64d28d709b9c30b/dvlib-24.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/24.0.0/78a156b170a550e48077b6cb3e46a5616d84437b/lint-api-24.0.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.lint/lint-api/24.0.0/f7b3b232bc6a2a48a48dd3aedb80113c82d6acba/lint-api-24.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/4.0/asm-analysis-4.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/4.0/asm-analysis-4.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/4.0/asm-4.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/4.0/asm-4.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.2/lombok-ast-0.2.2-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.2/lombok-ast-0.2.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/4.0/asm-tree-4.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/4.0/asm-tree-4.0.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/lbsLib-3.4.0_beta_vc4" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
                   <entry key="$PROJECT_DIR$/lbsLib-debug">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
@@ -3994,11 +4130,9 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/InsiteoConf.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/render/GfxRto.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/conf.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map_3d.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map_2d.xml" />
         <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/proguard-tester.pro" />
         <option value="$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/proguard-dev.pro" />
@@ -4009,10 +4143,23 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/src/main/java/com/insiteo/lbs/geofence/ISGeofenceProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java" />
+        <option value="$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/src/main/java/com/insiteo/lbs/common/init/ISEServerType.java" />
         <option value="$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/conf.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="MavenProjectNavigator">
@@ -4053,26 +4200,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SampleApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SampleApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lbsLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -4104,24 +4233,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SampleApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -4137,7 +4248,7 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
+              <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -4162,8 +4273,26 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SampleApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SampleApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lbsLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4175,7 +4304,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/lbsLib-3.4.0_beta_vc3.aar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/lbsLib-3.4.0_beta_vc4.aar" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -4266,6 +4395,15 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -4404,18 +4542,20 @@
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34673098" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="-22" y="190" width="1738" height="850" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41942856" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16551724" sideWeight="0.5021436" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2642015" sideWeight="0.25972006" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34827587" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14252874" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988507" sideWeight="0.49785638" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -4423,14 +4563,12 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2636656" sideWeight="0.7402799" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34673098" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="-22" y="190" width="1738" height="850" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -4441,14 +4579,14 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34673098" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="-22" y="190" width="1738" height="850" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41942856" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16551724" sideWeight="0.5021436" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2642015" sideWeight="0.25972006" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2636656" sideWeight="0.7402799" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2636656" sideWeight="0.7402799" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -4462,8 +4600,8 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.67011493" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6954023" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34827587" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16551724" sideWeight="0.49785638" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994652" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4483,32 +4621,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4636,19 +4753,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/information_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -4681,25 +4791,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_3d.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_2d.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_2d.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.285714">
           <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/src/main/java/com/insiteo/lbs/common/init/listener/ISIInitListener.java">
@@ -4720,7 +4830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4756,7 +4865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4774,26 +4882,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37683284">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/src/main/java/com/insiteo/lbs/Insiteo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="472" column="37" selection-start-line="472" selection-start-column="37" selection-end-line="472" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4801,59 +4893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="674" column="0" selection-start-line="674" selection-start-column="0" selection-end-line="674" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.114286">
-          <caret line="842" column="21" selection-start-line="842" selection-start-column="21" selection-end-line="842" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#onCreateView#0;class#MapFragment#0" expanded="false" />
-            <element signature="method#onViewCreated#0;class#MapFragment#0" expanded="false" />
-            <element signature="method#onResume#0;class#MapFragment#0" expanded="false" />
-            <element signature="method#onPause#0;class#MapFragment#0" expanded="false" />
-            <element signature="e#4531#4647#0" expanded="false" />
-            <element signature="method#onClick#0;class#MapFragment#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#MapFragment#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#MapFragment#0" expanded="false" />
-            <element signature="method#onNavigationItemSelected#0;class#MapFragment#0" expanded="false" />
-            <element signature="e#6192#6288#0" expanded="false" />
-            <element signature="method#displayUIInformation#0;class#MapFragment#0" expanded="false" />
-            <element signature="e#7254#7350#0" expanded="false" />
-            <element signature="e#7567#7692#0" expanded="false" />
-            <element signature="e#11549#11550#0" expanded="false" />
-            <element signature="e#11582#11583#0" expanded="false" />
-            <element signature="e#11879#11880#0" expanded="false" />
-            <element signature="e#11909#11910#0" expanded="false" />
-            <element signature="e#12000#12001#0" expanded="false" />
-            <element signature="e#12034#12035#0" expanded="false" />
-            <element signature="e#12172#12201#0" expanded="false" />
-            <element signature="e#12286#12314#0" expanded="false" />
-            <element signature="e#12415#12437#0" expanded="false" />
-            <element signature="e#12439#13495#0" expanded="false" />
-            <element signature="e#13400#13431#0" expanded="false" />
-            <element signature="e#13494#13495#0" expanded="false" />
-            <element signature="e#16979#16991#0" expanded="false" />
-            <element signature="e#19014#19068#0" expanded="false" />
-            <element signature="e#21776#22206#0" expanded="false" />
-            <element signature="e#22205#22206#0" expanded="false" />
-            <element signature="e#26956#26988#0" expanded="false" />
-            <element signature="e#27016#27053#0" expanded="false" />
-            <element signature="e#27124#27156#0" expanded="false" />
-            <element signature="e#27158#27361#0" expanded="false" />
-            <element signature="e#27360#27361#0" expanded="false" />
-            <element signature="e#27432#27602#0" expanded="false" />
-            <element signature="e#27601#27602#0" expanded="false" />
-            <element signature="e#27937#27969#0" expanded="false" />
-            <element signature="e#27997#28033#0" expanded="false" />
-            <element signature="e#28104#28136#0" expanded="false" />
-            <element signature="e#28138#28340#0" expanded="false" />
-            <element signature="e#28339#28340#0" expanded="false" />
-            <element signature="e#28411#28581#0" expanded="false" />
-            <element signature="e#28580#28581#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4868,47 +4907,178 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/src/main/java/com/insiteo/lbs/Insiteo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="501" column="47" selection-start-line="501" selection-start-column="47" selection-end-line="501" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/src/main/java/com/insiteo/lbs/common/init/ISEServerType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
-          <folding />
+        <state vertical-scroll-proportion="-0.026685392">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.22420634">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.0">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0035885167">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/conf.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07162921">
-          <caret line="3" column="63" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.1423445">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.2">
+          <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.857143">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.257143">
+          <caret line="280" column="40" selection-start-line="280" selection-start-column="40" selection-end-line="280" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onViewCreated#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onResume#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onPause#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#4542#4658#0" expanded="false" />
+            <element signature="method#onClick#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#6523#6619#0" expanded="false" />
+            <element signature="method#displayUIInformation#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#7585#7681#0" expanded="false" />
+            <element signature="method#initializeMapService#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#7898#8023#0" expanded="false" />
+            <element signature="method#initializeRTO#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onMapChanged#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onMapChanged#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onMapInitFailed#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onMapViewReady#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onMapViewReady#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onZoneClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onZoneClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onMapClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onMapMoved#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onMapMoved#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onZoomEnd#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onMapReleased#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#locateExtPoi#0;class#MapFragment#0" expanded="false" />
+            <element signature="class#13901:14035" expanded="false" />
+            <element signature="method#onClick#0;class#13901:14035" expanded="false" />
+            <element signature="e#14065#14181#0" expanded="false" />
+            <element signature="docComment;method#onRTOClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onRTOClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onRTOMoved#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onRTOReleased#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onRTOSelected#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#15688#15804#0" expanded="false" />
+            <element signature="method#initializeItineraryService#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#15994#16053#0" expanded="false" />
+            <element signature="docComment;method#computeItinerary#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#computeItinerary#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#computeOptimizedItinerary#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#computeOptimizedItinerary#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onItineraryChanged#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onItineraryChanged#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onItineraryRequestDone#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onItineraryRequestDone#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onInstructionClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onMapSwitcherClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onMapSwitcherClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onWaypointClicked#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#20688#20804#0" expanded="false" />
+            <element signature="method#initializeGeofencingService#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onGeofenceUpdate#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onGeofenceUpdate#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onGeofenceDataCleared#0;class#MapFragment#0" expanded="false" />
+            <element signature="e#22766#22882#0" expanded="false" />
+            <element signature="method#initializeLocationService#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#locationHandler#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#stopLocation#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#stopLocation#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#startLocation#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#startLocation#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onLocationInitDone#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onLocationReceived#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onLocationReceived#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onCompassAccuracyTooLow#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onNeedToActivateGPS#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onAzimuthReceived#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onLocationLost#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#noRegisteredBeaconDetected#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onWifiActivationRequired#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onWifiActivationRequired#0;class#MapFragment#0" expanded="false" />
+            <element signature="docComment;method#onBleActivationRequired#0;class#MapFragment#0" expanded="false" />
+            <element signature="method#onBleActivationRequired#0;class#MapFragment#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6593807">
+          <caret line="225" column="0" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7494#7495#0" expanded="true" />
+            <element signature="e#7529#7530#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
