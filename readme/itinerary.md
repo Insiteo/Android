@@ -1,6 +1,6 @@
 ## Itinerary
 
-> **Packages dependencies** If you intend to use the this service you have to make sure that the `itinerary` package have been properly downloaded. You can easily check if the package is available on the device with the following method: <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/common/auth/entities/ISSite.html#hasPackage(com.insiteo.lbs.common.init.ISEPackageType)" target="_blank">`ISSite#hasPackage(EPackageType.ITINERARY);`</a>.
+> **Packages dependencies** If you intend to use the this service you have to make sure that the `itinerary` package have been properly downloaded. You can easily check if the package is available on the device with the following method: <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/common/auth/entities/ISSite.html#hasPackage(com.insiteo.lbs.common.init.ISEPackageType)" target="_blank">`ISSite#hasPackage(EPackageType.ITINERARY);`</a>.
 
 ### Enable itinerary rendering
 
@@ -32,7 +32,7 @@ ISPosition arrival = new ISPosition(destMapId, 168, 100);
 itineraryProvider.requestItinerary(departure, arrival, listener, PMR_ENABLED);
 ```
 
-> **Note:** An <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/itinerary/ISItineraryProvider.BaseRequest.html" target="_blank">`ISBaseRequest`</a> is returned in order to identify sender through callbacks.
+> **Note:** An <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/itinerary/ISItineraryProvider.BaseRequest.html" target="_blank">`ISBaseRequest`</a> is returned in order to identify sender through callbacks.
 
 ### Request an itinerary from user location
 

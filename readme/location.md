@@ -1,6 +1,6 @@
 ## Location
 
-> **Packages dependencies** If you intend to use this service you have to make sure that the `location` package have been properly downloaded. You can easily check if the package is available on the device with the following method: <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/common/auth/entities/ISSite.html#hasPackage(com.insiteo.lbs.common.init.ISEPackageType)" target="_blank">`ISSite#hasPackage(EPackageType.LOCATION);`</a>.
+> **Packages dependencies** If you intend to use this service you have to make sure that the `location` package have been properly downloaded. You can easily check if the package is available on the device with the following method: <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/common/auth/entities/ISSite.html#hasPackage(com.insiteo.lbs.common.init.ISEPackageType)" target="_blank">`ISSite#hasPackage(EPackageType.LOCATION);`</a>.
 
 
 ### Location process
@@ -13,11 +13,11 @@
 
 ### Get your first location
 
-You can use our <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> to obtain location information. The <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> needs initialization information in order to communicate with our servers. You can easily link this library to the INSITEO map, so the location can be displayed on it.
+You can use our <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> to obtain location information. The <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> needs initialization information in order to communicate with our servers. You can easily link this library to the INSITEO map, so the location can be displayed on it.
 
-To receive location, you will need to start the <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a>, with a <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISILocationListener.html" target="_blank">`ISILocationProvider`</a>:
+To receive location, you will need to start the <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a>, with a <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISILocationListener.html" target="_blank">`ISILocationProvider`</a>:
 
-> **Which flags to use** By default we will use the location flags described in your `AndroidManifest.xml`. Please contact us to get the appropriate location settings and view <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> for flag details.
+> **Which flags to use** By default we will use the location flags described in your `AndroidManifest.xml`. Please contact us to get the appropriate location settings and view <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> for flag details.
 
 ```xml
 <application>
@@ -48,7 +48,7 @@ Available location-based services are:
 
 #### Get a specific LBS module
 
-To use them, you have to request them from <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> with the <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISELocationModule.html" target="_blank">`ISELocationModule`</a> method. Be aware that a new module is created for each call of <a href="http://api.insiteo.com/apidocs/android/v3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html#getModule(com.insiteo.lbs.location.ISELocationModule)" target="_blank">`LocationProvider#getModule()`</a>.
+To use them, you have to request them from <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html" target="_blank">`ISLocationProvider`</a> with the <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISELocationModule.html" target="_blank">`ISELocationModule`</a> method. Be aware that a new module is created for each call of <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/location/ISLocationProvider.html#getModule(com.insiteo.lbs.location.ISELocationModule)" target="_blank">`LocationProvider#getModule()`</a>.
 
 ## Where to go from there?
 
