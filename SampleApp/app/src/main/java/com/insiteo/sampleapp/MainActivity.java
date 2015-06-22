@@ -124,7 +124,7 @@ public class MainActivity extends ActionBarActivity {
 		/** In our case we consider that the application can only work if it has at least the required package for map and the location.
 		 * Here we are only checking for the Map2D packages, for the 3D check <code>MAP3DPACKAGE</code> instead of <code>TILES</code>*/
 
-		if (Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.RENDER_MODE_3D) {
+		if (Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_3D) {
 			if (Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAPDATA)
 					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAP3DPACKAGE)
 					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION)) {

@@ -1,3 +1,3 @@
-include ':app', ':lbsLib-3.4.0_beta_vc3', ':lbsLib-3.4.0_beta_vc4'
+include ':app', ':Insiteo-SDK-3.4.0'
 include ':lbsLib'
 project(':lbsLib').projectDir=new File('../../android-api/api/lbs/lbsLib')

@@ -100,7 +100,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate((Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.RENDER_MODE_2D) ? R.layout.fragment_map_2d : R.layout.fragment_map_3d, container, false);
+		View rootView = inflater.inflate((Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_2D) ? R.layout.fragment_map_2d : R.layout.fragment_map_3d, container, false);
 
 		setHasOptionsMenu(true);
 		return rootView;
