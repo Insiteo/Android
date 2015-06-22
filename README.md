@@ -136,6 +136,18 @@ private ISIInitListener listener = new ISIInitListener() {
           // Packages have been updated. The SDK is no ready to be used.
        }
     }
+    
+    /**
+     * This callback will be used in order to select the most suitable ISSite that will be returned in
+     * by onInitDone(ISError, ISUserSite, boolean). Most of the time this should be used to return the user's location. If no android.location.Location
+     * (ie null) is returned  then the suggested ISSite will simply be the first one returned by the server.
+     *
+     * @return the android.location.Location to find the most suitable ISSite or null
+     */
+     @Override
+     public Location selectClosestToLocation() {
+         return null;
+     }
 };
 ```
 
