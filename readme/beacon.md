@@ -133,3 +133,14 @@ In order to work the services requires the following permissions
 Those permissions are already set in the library's manifest and will be automatically merged to your application's manifest (unless this setting has been disabled).
 
 
+## Where to go from there?
+
+- [Compute your first itinerary](itinerary.md).
+- [Setup your first geofencing zone](geofence.md).
+- [Enable analytics](analytics.md).
+
+## You missed a thing?
+
+- [Project setup](../README.md).
+- [Display your first map](map.md).
+- [Get your first location](location.md).
