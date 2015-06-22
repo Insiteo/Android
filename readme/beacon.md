@@ -3,7 +3,7 @@
 In order to use the Insiteo BeaconService in your application you must extend the <code>ISBeaconApplication class</code>. 
 
 ```java
-public class TestBeaconApplication extends ISBeaconApplication {
+public class MyBeaconApplication extends ISBeaconApplication {
   ...
 }
 ```
@@ -13,7 +13,7 @@ Don't forget to specify it in your <code>AndroidManifest.xml</code> application 
 
 ```xml
 <application
-  android:name=".TestBeaconApplication"
+  android:name=".MyBeaconApplication"
   android:icon="@drawable/ic_launcher"
   android:label="@string/app_name"
   android:launchMode="singleInstance">
@@ -28,6 +28,16 @@ Your application will be the entry point for all the beacon events. <code>ISBeac
 
 
 ```java
+
+/**
+ * You should override this method if you don't want the service to be automatically started.
+ * For instance if you want to start the service only if the user has agreed to the usage conditions.
+ * @return <code>true</code> if the service should be started
+ */
+ protected boolean shouldAutoStartService() {
+     return true;
+ }
+
 /**
  * Callback triggered when the user enters an ISBeaconRegion
  * @param region entered
