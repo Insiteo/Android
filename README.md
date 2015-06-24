@@ -107,7 +107,7 @@ Insiteo.getInstance().initialize(getActivity(), listener);
 private ISIInitListener listener = new ISIInitListener() {
     
     @Override
-    public void onInitDone(ISUser user, ISInsiteoError error, ISUserSite suggestedSite) {
+    public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
        if(error == null) {
           // The suggested site will be started
        }
@@ -131,7 +131,7 @@ private ISIInitListener listener = new ISIInitListener() {
     }
 
     @Override
-    public void onDataUpdateDone(boolean success, ISInsiteoError error) {
+    public void onDataUpdateDone(ISInsiteoError error) {
        if(error == null) {
           // Packages have been updated. The SDK is no ready to be used.
        }
