@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jpct_ae">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/libs/jpct_ae.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

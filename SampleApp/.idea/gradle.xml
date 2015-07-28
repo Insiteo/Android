@@ -9,9 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Insiteo-SDK-3.4.0" />
+            <option value="$PROJECT_DIR$/Insiteo-SDK-3.4.2" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/../../android-api/api/lbs/lbsLib" />
           </set>
         </option>
       </GradleProjectSettings>

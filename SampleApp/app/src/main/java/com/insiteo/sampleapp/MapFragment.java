@@ -197,7 +197,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
             case R.id.action_switch_site:
                 MainActivity act = (MainActivity) getActivity();
-                act.switchSite();
+                //act.switchSite();
 				result = false;
 				break;
 

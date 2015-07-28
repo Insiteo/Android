@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.insiteo.sampleapp">
+    package="com.insiteo.sampleapp" >
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:name=".SampleApplication"
@@ -9,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.insiteo.sampleapp.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -33,11 +35,18 @@
         <meta-data
             android:name="com.insiteo.lbs.AnalyticsAutoStart"
             android:value="true" />
-
         <meta-data
             android:name="com.insiteo.lbs.location.flags"
             android:value="@string/location_flags" />
-        
+
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.insiteo.sampleapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

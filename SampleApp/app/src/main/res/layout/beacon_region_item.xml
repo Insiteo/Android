@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    card_view:cardBackgroundColor="#eeeeee"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardElevation="2dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp">
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/region_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_insiteo_beacon"/>
+
+            <TextView
+                android:id="@+id/region_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:fontFamily="sans-serif-light"
+                android:textStyle="bold"
+                android:text="Beacon region label"
+                android:textSize="20sp"
+                android:textColor="#666666"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/region_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Beacon region message"
+            android:textSize="16sp"
+            android:textColor="#999999"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="#CCCCCC"/>
+
+        <TextView
+            android:id="@+id/region_identifier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="bold"
+            android:text="Beacon region message"
+            android:textSize="12sp"
+            android:textColor="#999999"/>
+
+        <CheckBox
+            android:id="@+id/region_force_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:text="Force notification"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.CardView>

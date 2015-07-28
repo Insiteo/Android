@@ -1,43 +1,69 @@
 package com.insiteo.sampleapp;
 
-import android.location.Location;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.SparseArray;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.ISError;
-import com.insiteo.lbs.common.auth.entities.ISSite;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISPackage;
-import com.insiteo.lbs.common.init.listener.ISIInitListener;
 import com.insiteo.lbs.location.ISLocationConstants;
 import com.insiteo.lbs.map.ISMapConstants;
-import com.insiteo.lbs.map.render.ISERenderMode;
+import com.insiteo.sampleapp.beacon.BeaconMonitoringFragment;
+import com.insiteo.sampleapp.initialization.ISInitializationTaskFragment;
+import com.insiteo.sampleapp.settings.SettingsActivity;
 
 import java.util.Stack;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements ISInitializationTaskFragment.Callback {
 
 	public final static String TAG = "SampleApp";
 
-	private final static boolean AUTOMATIC_DOWNLOAD = true;
+    private final static int NO_RESOURCE = -1;
 
-    private MapFragment mMapFragment;
+    private ISInitializationTaskFragment mInitializationFragment;
+
+    private Toolbar mToolbar;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+
+    private ProgressBar mLoaderView;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+
+        // Set the UI
+        setContentView(R.layout.activity_main);
+        initToolbar();
+        initNavigationDrawer();
+        initElements();
+
+        FragmentManager fm = getSupportFragmentManager();
+        mInitializationFragment = (ISInitializationTaskFragment) fm.findFragmentByTag(TAG);
+
+        // If the Fragment is non-null, then it is currently being
+        // retained across a configuration change.
+        if (mInitializationFragment == null) {
+            launch(mInitializationFragment = ISInitializationTaskFragment.newInstance(), NO_RESOURCE);
+        }
+
 
 		Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
 		ISLocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
@@ -45,207 +71,152 @@ public class MainActivity extends ActionBarActivity {
 
         ISMapConstants.USE_ZONE_3D_OPTIMIZATION = false;
 
-		// Init UI components
-		mInitStatusView = findViewById(R.id.init_status);
-		mPackageStatusView = findViewById(R.id.package_status);
-		mUpdateProgressBar = (ProgressBar) findViewById(R.id.update_progress);
-		//mUpdateActionBtn = (Button) findViewById(R.id.download_packages_btn);
-		//mSkipActionBtn = (Button) findViewById(R.id.skip_btn);
-		mUpdateStepView = (TextView) findViewById(R.id.update_step);
-		mUpdateValueView = (TextView) findViewById(R.id.update_value);
-		//mUpdateTitleView = (TextView) findViewById(R.id.update_title);
-
-		initAPI();
-
 	}
 
-	@Override
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(mInitializationFragment != null) {
+
+            switch (mInitializationFragment.getCurrentState()){
+                case UNKNOWN:
+                    /**
+                     * Forces the API initialization
+                     */
+                    if(!Insiteo.getInstance().isAuthenticated()) {
+                        mInitializationFragment.initializeAPI();
+                        displayLoaderView(true);
+                    }
+                    break;
+
+                case INITIALIZING:
+                    displayLoaderView(true);
+                    break;
+            }
+        }
+    }
+
+    @Override
 	protected void onDestroy() {
 		Crouton.cancelAllCroutons();
 		super.onDestroy();
 	}
 
-	//******************************************************************************************************************
-	// API INITIALIZATION
-	// *****************************************************************************************************************
+    private void launch(Fragment frag, int subtitleRes) {
 
-	// UI Components
-	private View mInitStatusView;
-	private View mPackageStatusView;
+        if(subtitleRes != NO_RESOURCE) mToolbar.setSubtitle(subtitleRes);
 
-	private ProgressBar mUpdateProgressBar;
-	private Button mUpdateActionBtn;
-	private Button mSkipActionBtn;
-	private TextView mUpdateStepView;
-	private TextView mUpdateValueView;
-	private TextView mUpdateTitleView;
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
-	/**
-	 * This method initializes the InsiteoAPI in order to be able to use all services 
-	 */
-	private void initAPI() {
-		Insiteo.getInstance().launch(this, mInitListener);
-		mInitStatusView.setVisibility(View.VISIBLE);
-	}
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, frag)
+                .commit();
+    }
 
+    //**********************************************************************************************
+    // 	OptionMenu
+    // *********************************************************************************************
 
-
-	//******************************************************************************************************************
-	// DATA DOWNLOAD
-	// *****************************************************************************************************************
-
-
-	
-	/*private void displayUpdateView() {
-		runOnUiThread(new Runnable() {
-			
-			@Override
-			public void run() {
-				mPackageStatusView.setVisibility(View.VISIBLE);
-				
-				//mUpdateTitleView.setVisibility(View.GONE);
-				
-				//mUpdateActionBtn.setVisibility(View.GONE);
-				//mSkipActionBtn.setVisibility(View.GONE);
-
-				mUpdateProgressBar.setVisibility(View.VISIBLE);
-				mUpdateStepView.setVisibility(View.VISIBLE);
-				mUpdateValueView.setVisibility(View.VISIBLE);
-			}
-		});		
-	}*/
-
-
-
-	/**
-	 * Launches the {@link MapFragment}
-	 */
-	private void startDashboard() {
-		/** In our case we consider that the application can only work if it has at least the required package for map and the location.
-		 * Here we are only checking for the Map2D packages, for the 3D check <code>MAP3DPACKAGE</code> instead of <code>TILES</code>*/
-
-		if (Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_3D) {
-			if (Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAPDATA)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAP3DPACKAGE)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION)) {
-
-
-
-
-                getSupportFragmentManager()
-						.beginTransaction()
-						.replace(R.id.container, mMapFragment).commit();
-			} else {
-				Crouton.makeText(MainActivity.this, R.string.error_missing_required_package, Style.ALERT).show();
-			}
-		} else {
-			if (Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAPDATA)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.TILES)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION)) {
-
-                mMapFragment = new MapFragment();
-
-				getSupportFragmentManager()
-						.beginTransaction()
-						.replace(R.id.container,
-                                mMapFragment).commit();
-			} else {
-				Crouton.makeText(MainActivity.this, R.string.error_missing_required_package, Style.ALERT).show();
-			}
-		}
-	}
-
-
-
-	private final ISIInitListener mInitListener = new ISIInitListener() {
-		@Override
-		public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
-
-		}
-
-		@Override
-		public void onStartDone(ISError isInsiteoError, Stack<ISPackage> stack) {
-			mInitStatusView.setVisibility(View.GONE);
-		}
-
-		@Override
-		public void onPackageUpdateProgress(ISEPackageType isePackageType, boolean download, long progress, long total) {
-            if (mUpdateProgressBar.getVisibility() == View.GONE) mUpdateProgressBar.setVisibility(View.VISIBLE);
-            if (mUpdateStepView.getVisibility() == View.GONE) mUpdateStepView.setVisibility(View.VISIBLE);
-            if (mUpdateValueView.getVisibility() == View.GONE) mUpdateValueView.setVisibility(View.VISIBLE);
-
-			if(download) {
-				/** For the download process the progress is given in bytes */
-				int percent = (int) (progress * 100 / total);
-				String value = String.valueOf(percent) + "%";
-
-				mUpdateStepView.setText(R.string.launcher_downloading);
-				mUpdateValueView.setText(value);
-
-				mUpdateProgressBar.setIndeterminate(false);
-				mUpdateProgressBar.setMax((int)(total/1024));
-				mUpdateProgressBar.setProgress((int)(progress/1024));
-			} else {
-				/** For the install process the progress is given in number of files */
-				int percent = (int) (progress * 100 / total);
-				String value = String.valueOf(percent) + "%";
-
-				mUpdateStepView.setText(R.string.launcher_installing);
-				mUpdateValueView.setText(value);
-
-				mUpdateProgressBar.setIndeterminate(false);
-				mUpdateProgressBar.setMax((int)(total));
-				mUpdateProgressBar.setProgress((int)(progress));
-			}
-		}
-
-		@Override
-		public void onDataUpdateDone(ISError error) {
-			mPackageStatusView.setVisibility(View.GONE);
-			startDashboard();
-		}
-
-        /**
-         * This callback will be used in order to select the most suitable {@link ISSite} that will be returned in
-         * by {@link #onInitDone(ISError, ISUserSite, boolean)}. Most of the time this should be used to return the user's location. If no {@link Location}
-         * (ie <code>null</code>) is returned  then the suggested {@link ISSite} will simply be the first one returned by the server.
-         *
-         * @return the {@link Location} to find the most suitable {@link ISSite} or <code>null</code>
-         */
-        @Override
-        public Location selectClosestToLocation() {
-            return null;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: mDrawerLayout.openDrawer(GravityCompat.START); return true;
         }
-    };
+        return super.onOptionsItemSelected(item);
+    }
+
+    //**********************************************************************************************
+    // 	UI Elements
+    // *********************************************************************************************
+
+    private void initToolbar() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+    }
+
+    private void initNavigationDrawer() {
+        NavigationView navView = (NavigationView) findViewById(R.id.navigation);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.beacon_monitoring:
+                        mDrawerLayout.closeDrawers();
+                        BeaconMonitoringFragment frag = BeaconMonitoringFragment.newInstance();
+                        launch(frag, R.string.beacon_monitoring_title);
+                        return true;
+                    case R.id.menu_settings:
+                        mDrawerLayout.closeDrawers();
+                        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
 
 
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
 
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                supportInvalidateOptionsMenu();
+            }
 
-	public void switchSite() {
-		SparseArray<ISUserSite> availablesSites = Insiteo.getCurrentUser().getSites();
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                supportInvalidateOptionsMenu();
+            }
+        };
 
-		if(availablesSites.size() <= 1) { Crouton.makeText(this, "Only one site available", Style.ALERT).show(); return; }
+        mDrawerLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                mDrawerToggle.syncState();
+            }
+        });
 
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+    }
 
-		for (int i = 0; i < availablesSites.size(); i++) {
-			if (availablesSites.valueAt(i).getSiteId() != Insiteo.getCurrentSite().getSiteId()) {
-				Crouton.makeText(this, "Switching to site " + availablesSites.valueAt(i).getLabel(), Style.INFO).show();
-                getSupportFragmentManager().beginTransaction().remove(mMapFragment).commit();
-                mMapFragment = null;
+    private void initElements() {
+        mLoaderView = (ProgressBar) findViewById(R.id.initialization_progress);
+    }
 
+    private void displayLoaderView(boolean visible) {
+        mLoaderView.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
 
-                getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+    //**********************************************************************************************
+    // 	ISInitializationTaskFragment#Callback
+    // *********************************************************************************************
 
-                mInitStatusView.setVisibility(View.VISIBLE);
+    @Override
+    public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
+        displayLoaderView(false);
+        launch(BeaconMonitoringFragment.newInstance(), R.string.beacon_monitoring_title);
+    }
 
-                mUpdateProgressBar.setVisibility(View.GONE);
-                mUpdateStepView.setVisibility(View.GONE);
-                mUpdateValueView.setVisibility(View.GONE);
+    @Override
+    public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
 
+    }
 
-                Insiteo.getInstance().startAndUpdate(availablesSites.valueAt(i), mInitListener);
+    @Override
+    public void onPackageUpdateProgress(ISEPackageType packageType, boolean download, long progress, long total) {
 
-			}
-		}
-	}
+    }
+
+    @Override
+    public void onDataUpdateDone(ISError error) {
+
+    }
 }

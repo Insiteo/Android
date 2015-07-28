@@ -48,4 +48,11 @@
     
     <string name="error_itinerary_computation_failed">Itinerary failed</string>
 
+
+    <string name="beacon_monitoring_title">Beacon Monitoring</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
 </resources>
