@@ -27,9 +27,6 @@ import android.widget.Toast;
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.utils.geometry.ISPosition;
-import com.insiteo.lbs.geofence.ISGeofenceArea;
-import com.insiteo.lbs.geofence.ISGeofenceProvider;
-import com.insiteo.lbs.geofence.ISIGeofenceListener;
 import com.insiteo.lbs.itinerary.ISIItineraryRendererListener;
 import com.insiteo.lbs.itinerary.ISIItineraryRequestListener;
 import com.insiteo.lbs.itinerary.ISItineraryProvider;
@@ -37,10 +34,8 @@ import com.insiteo.lbs.itinerary.ISItineraryRenderer;
 import com.insiteo.lbs.itinerary.entities.ISItinerary;
 import com.insiteo.lbs.itinerary.entities.ISItinerarySection;
 import com.insiteo.lbs.location.ISELocationModule;
-import com.insiteo.lbs.location.ISILocationListener;
 import com.insiteo.lbs.location.ISLocation;
 import com.insiteo.lbs.location.ISLocationProvider;
-import com.insiteo.lbs.location.ISLocationRenderer;
 import com.insiteo.lbs.map.ISIMapListener;
 import com.insiteo.lbs.map.ISMapView;
 import com.insiteo.lbs.map.database.ISMapDBHelper;
@@ -53,6 +48,8 @@ import com.insiteo.lbs.map.render.ISGenericRTO;
 import com.insiteo.lbs.map.render.ISIRTO;
 import com.insiteo.lbs.map.render.ISIRTOListener;
 import com.insiteo.sampleapp.render.GfxRto;
+import com.insiteo.sampleapp.service.GeofencingController;
+import com.insiteo.sampleapp.service.LocationController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +58,7 @@ import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListener, OnClickListener,
-		ISIItineraryRendererListener, ISIItineraryRequestListener, ISILocationListener, ActionBar.OnNavigationListener {
+		ISIItineraryRendererListener, ISIItineraryRequestListener, ActionBar.OnNavigationListener {
 
 	public final static String TAG = MapFragment.class.getSimpleName();
 
@@ -72,7 +69,6 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	private ISMapView mMapView = null;
 
 	private ISMap mCurrentMap;
-	private boolean mRotateMap = false;
 	List<ISMap> mMaps;
 
 	// ITINERARY
@@ -82,28 +78,25 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	private ISItineraryRenderer mItineraryRenderer;
 
 	// LOCATION
-	private ISLocationRenderer mLocationrenderer;
+	private LocationController locationController;
 	private ImageButton mLocationButton;
-	private ISLocation mLastLocation;
-	private boolean mCenterOnPosition = true;
 
 	// GEOFENCING
 	private GeofencingController geofencingController;
 	private View mGeofenceToastView = null;
 	private TextView mGeofenceToastText = null;
 
-	private int mLastLocMapID = -1;
 
 
 	public MapFragment() {
 		MapViewController mapViewController = new MapViewController(this);
+		this.locationController = new LocationController(mapViewController);
 		this.geofencingController = new GeofencingController(mapViewController);
-
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	                         Bundle savedInstanceState) {
 
 		View rootView = inflater.inflate((Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_2D) ? R.layout.fragment_map_2d : R.layout.fragment_map_3d, container, false);
 
@@ -114,17 +107,19 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		mGeofenceToastView = LayoutInflater.from(getActivity()).inflate(R.layout.geofencing_toast, null);
-		mGeofenceToastText = (TextView)mGeofenceToastView.findViewById(R.id.geofence_text);
+		mGeofenceToastText = (TextView) mGeofenceToastView.findViewById(R.id.geofence_text);
+		mLocationButton = (ImageButton) getView().findViewById(R.id.btn_loc);
+		mLocationButton.setOnClickListener(this);
 		initializeMapService();
-		initializeLocationService();
+		locationController.init(getResources());
 		initializeItineraryService();
 		geofencingController.init();
 		super.onViewCreated(view, savedInstanceState);
 	}
-	
+
 	@Override
 	public void onResume() {
-		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
+		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */
 		mMapView.onResume();
 		super.onResume();
 	}
@@ -132,9 +127,9 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	@Override
 	public void onPause() {
-		stopLocation();
+		locationController.stopLocation();
 		
-		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
+		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */
 		mMapView.onPause();
 		super.onPause();
 	}
@@ -145,9 +140,9 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.btn_loc:
-			locationHandler();
-			break;
+			case R.id.btn_loc:
+				locationController.locationHandler();
+				break;
 		}
 	}
 
@@ -156,10 +151,10 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		inflater.inflate(R.menu.main, menu);
 
 		MenuItem versionItem = menu.findItem(R.id.action_version);
-        versionItem.setTitle(Insiteo.getAPIVersion());
+		versionItem.setTitle(Insiteo.getAPIVersion());
 
-        MenuItem labelItem = menu.findItem(R.id.site_label);
-        labelItem.setTitle(Insiteo.getCurrentSite().getLabel());
+		MenuItem labelItem = menu.findItem(R.id.site_label);
+		labelItem.setTitle(Insiteo.getCurrentSite().getLabel());
 
 		super.onCreateOptionsMenu(menu, inflater);
 	}
@@ -170,41 +165,41 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 		switch (item.getItemId()) {
 
-		case R.id.action_itinerary: 
-			computeItinerary();
-			result = false;
-			break;
+			case R.id.action_itinerary:
+				computeItinerary();
+				result = false;
+				break;
 
-		case R.id.action_route: 
-			computeOptimizedItinerary();
-			result = false;
-			break;
+			case R.id.action_route:
+				computeOptimizedItinerary();
+				result = false;
+				break;
 
-		case R.id.action_locate_ext_poi: 
-			locateExtPoi();
-			result = false;
-			break;
+			case R.id.action_locate_ext_poi:
+				locateExtPoi();
+				result = false;
+				break;
 
-		case R.id.action_clear_itinerary: 
-			mItineraryRenderer.clear();
-			result = false;
-			break;
+			case R.id.action_clear_itinerary:
+				mItineraryRenderer.clear();
+				result = false;
+				break;
 
 
-		case R.id.action_clear_all: 
-			mItineraryRenderer.clear();
-			mMapView.clearRenderer(GfxRto.class);
-			result = false;
-			break;
+			case R.id.action_clear_all:
+				mItineraryRenderer.clear();
+				mMapView.clearRenderer(GfxRto.class);
+				result = false;
+				break;
 
-        case R.id.action_information:
-                displayUIInformation();
-                result = false;
-                break;
+			case R.id.action_information:
+				displayUIInformation();
+				result = false;
+				break;
 
-            case R.id.action_switch_site:
-                MainActivity act = (MainActivity) getActivity();
-                act.switchSite();
+			case R.id.action_switch_site:
+				MainActivity act = (MainActivity) getActivity();
+				act.switchSite();
 				result = false;
 				break;
 
@@ -214,7 +209,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	@Override
 	public boolean onNavigationItemSelected(int position, long id) {
-		if(mMaps != null && mMaps.size() > position){
+		if (mMaps != null && mMaps.size() > position) {
 			ISMap map = mMaps.get(position);
 			mMapView.changeMap(map.getId(), true, true, true);
 		}
@@ -222,38 +217,38 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	}
 
 
-    //**********************************************************************************************
-    // 	UI
-    // *********************************************************************************************
+	//**********************************************************************************************
+	// 	UI
+	// *********************************************************************************************
 
-    private void displayUIInformation() {
-        AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+	private void displayUIInformation() {
+		AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
 
-        View informationView = LayoutInflater.from(getActivity()).inflate(R.layout
-                .information_layout, null);
+		View informationView = LayoutInflater.from(getActivity()).inflate(R.layout
+				.information_layout, null);
 
-        TextView apiVersion, locationVersion, itineraryVersion;
+		TextView apiVersion, locationVersion, itineraryVersion;
 
-        apiVersion = (TextView) informationView.findViewById(R.id.api_version_value);
-        locationVersion = (TextView) informationView.findViewById(R.id.loc_version_value);
-        itineraryVersion = (TextView) informationView.findViewById(R.id.iti_version_value);
+		apiVersion = (TextView) informationView.findViewById(R.id.api_version_value);
+		locationVersion = (TextView) informationView.findViewById(R.id.loc_version_value);
+		itineraryVersion = (TextView) informationView.findViewById(R.id.iti_version_value);
 
-        apiVersion.setText(Insiteo.getAPIVersion());
-        locationVersion.setText(ISLocationProvider.getVersion());
-        itineraryVersion.setText(ISItineraryProvider.getVersion());
+		apiVersion.setText(Insiteo.getAPIVersion());
+		locationVersion.setText(ISLocationProvider.getVersion());
+		itineraryVersion.setText(ISItineraryProvider.getVersion());
 
-        alert.setView(informationView);
+		alert.setView(informationView);
 
-        alert.create().show();
+		alert.create().show();
 
 
-    }
+	}
 
 	//**********************************************************************************************
 	// 	MAP SERVICE
 	// *********************************************************************************************
 
-	private void initializeMapService(){
+	private void initializeMapService() {
 		mMapView = (ISMapView) getView().findViewById(R.id.map);
 
 		// The MapView listener. By default the listener is set to the context (if it implements IMapListener) that created the View.
@@ -261,7 +256,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		mMapView.setListener(this);
 	}
 
-	private void initializeRTO(){
+	private void initializeRTO() {
 		// 1 - The RTO class needs to be added to the MapViewController in order to be drawn by a GenericRenderer
 		mMapView.setPriority(GfxRto.class, 14);
 
@@ -269,7 +264,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		mMapView.setRTOListener(this, GfxRto.class);
 	}
 
-	private void setMapNavigationList(){
+	private void setMapNavigationList() {
 
 		// Retrieve the list MapData associated to the current site.
 		mMaps = ISMapDBHelper.getMaps(false);
@@ -299,14 +294,15 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Called when the map displayed by the MapView changes.
-	 * @param mapId the new map's ID
+	 *
+	 * @param mapId   the new map's ID
 	 * @param mapName the new map's name
 	 */
 	@Override
-	public void onMapChanged(final int mapId, final String mapName) {	
+	public void onMapChanged(final int mapId, final String mapName) {
 		Log.d(TAG, "onMapChanged");
-		for(int i = 0; i < mMaps.size(); i++){
-			if(mMaps.get(i).getId() == mapId) {
+		for (int i = 0; i < mMaps.size(); i++) {
+			if (mMaps.get(i).getId() == mapId) {
 				mCurrentMap = mMaps.get(i);
 				((ActionBarActivity) getActivity()).getSupportActionBar().setSelectedNavigationItem(i);
 			}
@@ -315,6 +311,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Called when the MapView could not be initialized
+	 *
 	 * @param aReason the reason of the failure
 	 */
 	@Override
@@ -323,28 +320,30 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Called when the MapView is ready (ie : maps data is initialized)
-	 * @param aMapID the ID of the current map
+	 *
+	 * @param aMapID   the ID of the current map
 	 * @param aMapName the name of the current map
 	 */
 	@Override
 	public void onMapViewReady(final int aMapID, final String aMapName) {
 		Log.d(TAG, "onMapViewReady");
-        setMapNavigationList();
+		setMapNavigationList();
 
-        initializeRTO();
+		initializeRTO();
 
-        // Add the location and itinerary renderers to the MapView to enable their display.
-        mMapView.addRenderer(mLocationrenderer);
-        mMapView.addRenderer(mItineraryRenderer);
+		// Add the location and itinerary renderers to the MapView to enable their display.
+		mMapView.addRenderer(locationController.getLocationRenderer());
+		mMapView.addRenderer(mItineraryRenderer);
 
-        mCurrentMap = ISMapDBHelper.getMap(aMapID);
+		mCurrentMap = ISMapDBHelper.getMap(aMapID);
 	}
 
 	/**
-	 * This event is triggered when a Zone object was clicked, and its associated action is custom, 
+	 * This event is triggered when a Zone object was clicked, and its associated action is custom,
 	 * so it can't be handled by MapController.
-	 * @param zone the clicked Zone.
-	 * @param actionType the type of action contained in this zone.
+	 *
+	 * @param zone        the clicked Zone.
+	 * @param actionType  the type of action contained in this zone.
 	 * @param actionParam the action parameter.
 	 */
 	@Override
@@ -357,20 +356,20 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		// Get all the external POI that are associated to this zone and add them on the map.
 		List<ISZonePoi> zpas = ISMapDBHelper.getPoiAssocFromZone(zone.getId(), true);
 
-		for(int i = 0; i < zpas.size(); i++) {
-			String poiExtId = zpas.get(i).getExternalPoiId();			
+		for (int i = 0; i < zpas.size(); i++) {
+			String poiExtId = zpas.get(i).getExternalPoiId();
 			GfxRto rto = new GfxRto();
-			
+
 			rto.setLabel(poiExtId);
 			rto.setLabelDisplayed(true);
-			
+
 			rto.setAnnotationLabel(poiExtId);
 
 			// Apply a particular offset to this rto. This is used to have multiple rto in the same zone without superposition.
 			rto.setZoneOffset(zpas.get(i).getOffset());
 
 			mMapView.addRTOInZone(zone.getId(), rto);
-			
+
 		}
 
 		// Center the map on this zone with animation.
@@ -391,11 +390,12 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onMapMoved() {
 		Log.d(TAG, "onMapMoved");
-		mCenterOnPosition = false;
+		locationController.disableCenterOnPosition();
 	}
 
 	/**
-	 * Called when the zoomlevel has changed	
+	 * Called when the zoomlevel has changed
+	 *
 	 * @param newZoomLevel the new zoomlevel
 	 */
 	@Override
@@ -412,42 +412,42 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	}
 
 
-	public void locateExtPoi(){
-        final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-        alert.setTitle(R.string.locate_ext_poi_title);
-        final EditText input = new EditText(getActivity());
-        input.setHint(R.string.locate_ext_poi_hint);
-        alert.setView(input);
-        alert.setCancelable(false);
-        alert.setPositiveButton(R.string.action_locate, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                String value = input.getText().toString();
+	public void locateExtPoi() {
+		final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+		alert.setTitle(R.string.locate_ext_poi_title);
+		final EditText input = new EditText(getActivity());
+		input.setHint(R.string.locate_ext_poi_hint);
+		alert.setView(input);
+		alert.setCancelable(false);
+		alert.setPositiveButton(R.string.action_locate, new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				String value = input.getText().toString();
 
-                // Clear the MapView from all the GfxRto previously rendered.
-                mMapView.clearRenderer(GfxRto.class);
+				// Clear the MapView from all the GfxRto previously rendered.
+				mMapView.clearRenderer(GfxRto.class);
 
-                List<ISZonePoi> zpas = ISMapDBHelper.getZoneAssocFromExtPoi(value);
+				List<ISZonePoi> zpas = ISMapDBHelper.getZoneAssocFromExtPoi(value);
 
-                for(int i = 0; i < zpas.size(); i++) {
-                    String poiExtId = zpas.get(i).getExternalPoiId();
-                    GfxRto rto = new GfxRto();
-                    rto.setLabel(poiExtId);
-                    rto.setLabelDisplayed(true);
-                    mMapView.addRTOInZone(zpas.get(i).getZoneId(), rto, zpas.get(i).getOffset());
-                }
+				for (int i = 0; i < zpas.size(); i++) {
+					String poiExtId = zpas.get(i).getExternalPoiId();
+					GfxRto rto = new GfxRto();
+					rto.setLabel(poiExtId);
+					rto.setLabelDisplayed(true);
+					mMapView.addRTOInZone(zpas.get(i).getZoneId(), rto, zpas.get(i).getOffset());
+				}
 
-                if(!zpas.isEmpty()) {
-                    mMapView.centerMap(zpas.get(0).getZoneId(), true);
-                } else {
-                    Crouton.makeText(getActivity(), R.string.error_no_ext_poi_found, Style.ALERT).show();
-                }
-            }
-        });
-        alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-            }
-        });
-        alert.show();
+				if (!zpas.isEmpty()) {
+					mMapView.centerMap(zpas.get(0).getZoneId(), true);
+				} else {
+					Crouton.makeText(getActivity(), R.string.error_no_ext_poi_found, Style.ALERT).show();
+				}
+			}
+		});
+		alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+			}
+		});
+		alert.show();
 	}
 
 	//******************************************************************************************************************
@@ -456,19 +456,20 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Called when a RTO is clicked
-	 * @param rto the RTO that was clicked
+	 *
+	 * @param rto  the RTO that was clicked
 	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
 	public void onRTOClicked(ISIRTO rto, ISZone zone) {
-		if(rto instanceof ISGenericRTO) {
+		if (rto instanceof ISGenericRTO) {
 			ISGenericRTO genericRto = (ISGenericRTO) rto;
 
-			if(genericRto.isAnnotationClicked()) {
+			if (genericRto.isAnnotationClicked()) {
 				genericRto.setActionDisplayed(!genericRto.isActionDisplayed());
 			}
 
-			if(genericRto.isActionClicked()) {
+			if (genericRto.isActionClicked()) {
 				genericRto.setIndicatorDisplayed(!genericRto.isIndicatorDisplayed());
 			}
 		}
@@ -476,7 +477,8 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Called when a RTO is moved
-	 * @param rto the RTO that was moved
+	 *
+	 * @param rto  the RTO that was moved
 	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
@@ -485,7 +487,8 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Called when a RTO is released
-	 * @param rto the RTO that was released
+	 *
+	 * @param rto  the RTO that was released
 	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
@@ -494,18 +497,19 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Called when a RTO is selected
-	 * @param rto the RTO that was selected
+	 *
+	 * @param rto  the RTO that was selected
 	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
 	 */
 	@Override
 	public void onRTOSelected(ISIRTO rto, ISZone zone) {
-	}	
+	}
 
 	//******************************************************************************************************************
 	// 	ITINERARY SERVICE 
 	// *****************************************************************************************************************
 
-	private void initializeItineraryService(){
+	private void initializeItineraryService() {
 		// create an itinerary provider, as we don't use location. 
 		// When using location, it is easier to get itinerary provider from location provider)
 		mItineraryProvider = (ISItineraryProvider) ISLocationProvider.getInstance().getModule(ISELocationModule.ITINERARY);
@@ -524,22 +528,24 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	 */
 	private void computeItinerary() {
 		//hide the old itinerary if it exists
-		mItineraryRenderer.setDisplayEnabled(false);         
+		mItineraryRenderer.setDisplayEnabled(false);
 
 		ISPosition arrival = new ISPosition(mMapView.getMapId(), 20, 20);
 		mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
 
 		// If the location is started will request an itinerary from our current position
 		if (!ISLocationProvider.getInstance().isStarted()) {
-			startLocation();
-		} 
+			mLocationButton.setImageResource(R.drawable.localization_button);
+			((AnimationDrawable) mLocationButton.getDrawable()).start();
+			locationController.startLocation();
+		}
 
 	}
 
 	/**
 	 * This method shows how to compute a route between different positions
 	 */
-	private void computeOptimizedItinerary(){
+	private void computeOptimizedItinerary() {
 
 		int positionNbr = 4;
 
@@ -549,25 +555,25 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 			double x = Math.random() * 50;
 			double y = Math.random() * 50;
 
-			if(mMaps.size() > 1 && i > positionNbr / 2) {
+			if (mMaps.size() > 1 && i > positionNbr / 2) {
 				ISMap otherMap = null;
 				for (ISMap map : mMaps) {
-					if(map.getId() != mCurrentMap.getId()) {
+					if (map.getId() != mCurrentMap.getId()) {
 						otherMap = map;
 						break;
 					}
 				}
-				
-				if(otherMap != null) {
-                    ISPosition p = new ISPosition(otherMap.getId(), x, y);
+
+				if (otherMap != null) {
+					ISPosition p = new ISPosition(otherMap.getId(), x, y);
 					pos.add(p);
 				}
-				
+
 			} else {
-                ISPosition p = new ISPosition(mCurrentMap.getId(), x, y);
+				ISPosition p = new ISPosition(mCurrentMap.getId(), x, y);
 				pos.add(p);
 			}
-			
+
 		}
 
 		mItineraryProvider.requestOptimizedItinerary(pos, ISItineraryProvider.ISEOptimizationMode.NearestNeighbourShortestPath, true, false, this, false);
@@ -575,10 +581,11 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	}
 
 	/**
-	 * Callback fired when the itinerary of the last request changed (when location is updated for example). 
+	 * Callback fired when the itinerary of the last request changed (when location is updated for example).
 	 * This method can be used to ask for a new itinerary if the user is now too far from the itinerary (we usually recompute
 	 * the itinerary over a distance of 5 meters).
-	 * @param aRequest the related request
+	 *
+	 * @param aRequest       the related request
 	 * @param aDistanceToIti the distance between the user location and the itinerary (in meter)
 	 */
 	@Override
@@ -592,22 +599,24 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 	/**
 	 * Callback for itinerary request completion
+	 *
 	 * @param aSuccess true if the request was successful
 	 * @param aRequest the request object containing itinerary data
-	 * @param error an error object containing a code and a message, null if request was successful 
+	 * @param error    an error object containing a code and a message, null if request was successful
 	 */
 	@Override
 	public void onItineraryRequestDone(boolean aSuccess, ISItineraryProvider.ISBaseRequest aRequest, final ISError error) {
-		if(aSuccess) mItineraryRenderer.setDisplayEnabled(true);
+		if (aSuccess) mItineraryRenderer.setDisplayEnabled(true);
 		else {
-            String message = getString(R.string.error_itinerary_computation_failed) + ": " + error;
-            Crouton.makeText(getActivity(), message, Style.ALERT).show();
-        }
+			String message = getString(R.string.error_itinerary_computation_failed) + ": " + error;
+			Crouton.makeText(getActivity(), message, Style.ALERT).show();
+		}
 	}
 
 	/**
-	 * Callback fired when an instruction (a list of sections linked by edges) is touched 
-	 * @param aItinerary the itinerary that contains the instruction
+	 * Callback fired when an instruction (a list of sections linked by edges) is touched
+	 *
+	 * @param aItinerary        the itinerary that contains the instruction
 	 * @param aInstructionIndex the index of the instruction
 	 */
 	@Override
@@ -615,203 +624,34 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	}
 
 	/**
-	 * Callback fired when a waypoint corresponding to a map change is clicked 
-	 * (ie : the last waypoint of the displayed map, if this waypoint is not the end of itinerary) 	
+	 * Callback fired when a waypoint corresponding to a map change is clicked
+	 * (ie : the last waypoint of the displayed map, if this waypoint is not the end of itinerary)
+	 *
 	 * @param aNextPosition the position of the next itinerary section
 	 */
 	@Override
 	public void onMapSwitcherClicked(ISPosition aNextPosition) {
-		if(aNextPosition != null){
+		if (aNextPosition != null) {
 			mMapView.centerMap(aNextPosition, true);
 		}
 	}
 
 	/**
 	 * Callback fired when a waypoint (ie : a graphical point) is touched
-	 * @param aItinerary the itinerary that contains the section
-	 * @param aInstructionIndex the index of the instruction that contains the section 
-	 * @param aSection the section corresponding to the touched waypoint
+	 *
+	 * @param aItinerary        the itinerary that contains the section
+	 * @param aInstructionIndex the index of the instruction that contains the section
+	 * @param aSection          the section corresponding to the touched waypoint
 	 */
 	@Override
 	public void onWaypointClicked(ISItinerary aItinerary, int aInstructionIndex,
-                                  ISItinerarySection aSection) {
+	                              ISItinerarySection aSection) {
 	}
-
-	//******************************************************************************************************************
-	// LOCATION SERVICE
-	// *****************************************************************************************************************
-
-	private void initializeLocationService(){
-
-		mLocationButton = (ImageButton) getView().findViewById(R.id.btn_loc);
-		mLocationButton.setOnClickListener(this);
-
-		/**
-		 * Get the location renderer that automatically created by the location provider. We then set its drawing priority and 
-		 * add it to the MapViewController that will handle the drawing process.
-		 * The location rendering object uses 3 different colors:
-		 * - one for the location ie the color of the dot that represents your location
-		 * - one specific color that is used when the LocationProvider failed computing your position (locationLost).
-		 * - one to draw an accuracy circle around your position.
-		 * They can all be override whether from the resources (use insiteo_location_userlocation, insiteo_location_userlocationlost,
-		 * insiteo_location_accuracy_color color resources) or by calling the appropriate method on the LocationRenderer
-		 */
-		mLocationrenderer = (ISLocationRenderer) ISLocationProvider.getInstance().getRenderer(getResources());
-		mLocationrenderer.setPriority(11);
-	}
-
-	private void locationHandler() {
-		if (!ISLocationProvider.getInstance().isStarted()) {
-			startLocation();
-		} else if(ISLocationProvider.getInstance().isStarted() && !mRotateMap){
-			mRotateMap = true;
-		} else {
-			stopLocation();
-			mRotateMap = false;
-		}
-	}
-
-	/**
-	 * Stops the location computing process.
-	 */
-	public void stopLocation(){
-		ISLocationProvider.getInstance().stop();
-		mLocationButton.setImageResource(R.drawable.ic_location_off);
-		mLastLocMapID = -1;
-		mMapView.rotate(0f, false);
-
-		mLastLocation = null;
-	}
-
-	/**
-	 * Starts the location computing process using the flags that were defined in the LauncherActivity
-	 */
-	private void startLocation() {
-		mLocationButton.setImageResource(R.drawable.localization_button);
-		((AnimationDrawable) mLocationButton.getDrawable()).start();
-
-		ISLocationProvider.getInstance().start(this);
-	}
-
-	/**
-	 * Called when the location computing process has been started.
-	 * @param aError the error returned in case of failure
-	 */
-	@Override
-	public void onLocationInitDone(final ISError aError) {
-	}
-
-	/**
-	 * This listener gets triggered each time the location process has been able to compute a new position
-	 * @param aLocation the last calculated position
-	 */
-	@Override
-	public void onLocationReceived(final ISLocation aLocation) {
-        mLocationButton.setImageResource(R.drawable.ic_location_on);
-
-		mLastLocation = aLocation;
-
-		/**
-		 * this method animate the map to be centered on the given position, here the user's position
-		 */
-		if(mCenterOnPosition) mMapView.centerMap(aLocation.getPosition(), true);
-
-		mLastLocMapID = aLocation.getMapID();
-
-	}
-
-	/**
-	 * This callback gets triggered when the accuracy returned by the compass sensors is too low. This could lead to imprecise location.
-	 */
-	@Override
-	public void onCompassAccuracyTooLow() {
-	}
-
-	/**
-	 * This callback gets triggered if the GPS is required and the API did not managed to start it.
-	 */
-	@Override
-	public void onNeedToActivateGPS() {
-	}
-
-	@Override
-	public void onAzimuthReceived(final float aAzimuth) {
-		if (mRotateMap && mLastLocation != null) {
-			float angle = aAzimuth;
-			if (mCurrentMap != null && mLastLocMapID == mCurrentMap.getId()) {
-				boolean isMapOriented = mCurrentMap.isOriented();
-				if (isMapOriented) {
-					float mapAzimuth =  mCurrentMap.getAzimuth();
-					angle = mapAzimuth - aAzimuth;
-				}
-			}
-			mMapView.rotate(angle, false);
-		}
-	}
-
-	/**
-	 * This gets called when the LocationProvider has lost your position.
-	 * @param aLastKnownLocation the last position that has been computed
-	 */
-	@Override
-	public void onLocationLost(ISLocation aLastKnownLocation) {
-	}
-
-	/**
-	 * This callback gets called if none of the known AP dedicated to the location process of this site were detected. This might means that the users is not on the site.
-	 */
-	@Override
-	public void noRegisteredBeaconDetected() {
-	}   
-
-	/**
-	 * This callback gets triggered when the LocationService requires the WIFI to be switch on. It enable to ask the user for this permission.
-	 */
-	@Override
-	public void onWifiActivationRequired() {
-        final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-        alert.setTitle(R.string.loc_activation_required);
-        alert.setMessage(R.string.loc_wifi_activation_required);
-        alert.setCancelable(false);
-        alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                ISLocationProvider.getInstance().activateWifi();
-            }
-        });
-        alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                stopLocation();
-            }
-        });
-        alert.show();
-	}
-
-	/**
-	 * This callback gets triggered when the LocationService requires the BLE to be switch on. It enable to ask the user for this permission.
-	 */
-	@Override
-	public void onBleActivationRequired() {
-        final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-        alert.setTitle(R.string.loc_activation_required);
-        alert.setMessage(R.string.loc_ble_activation_required);
-        alert.setCancelable(false);
-        alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                ISLocationProvider.getInstance().activateBle();
-            }
-        });
-        alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                stopLocation();
-            }
-        });
-        alert.show();
-	}
-
 
 	public void showGeofenceToast(final String extra1) {
 		getActivity().runOnUiThread(new Runnable() {
-			@Override public void run() {
+			@Override
+			public void run() {
 				mGeofenceToastText.setText(extra1);
 				final Toast t = new Toast(getActivity());
 
@@ -823,5 +663,66 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 				t.show();
 			}
 		});
+	}
+
+	public void stopLocation() {
+		mMapView.rotate(0f, false);
+		mLocationButton.setImageResource(R.drawable.ic_location_off);
+	}
+
+	public void showLocationButtonResourceOn() {
+		mLocationButton.setImageResource(R.drawable.ic_location_on);
+	}
+
+	public void centerMap(ISPosition position) {
+		mMapView.centerMap(position, true);
+	}
+
+	public void rotateMap(int mLastLocMapID, float aAzimuth) {
+		float angle = aAzimuth;
+		if (mCurrentMap != null && mLastLocMapID == mCurrentMap.getId()) {
+			boolean isMapOriented = mCurrentMap.isOriented();
+			if (isMapOriented) {
+				float mapAzimuth =  mCurrentMap.getAzimuth();
+				angle = mapAzimuth - aAzimuth;
+			}
+		}
+		mMapView.rotate(angle, false);
+	}
+
+	public void showWifiActivitionRequiredDialog() {
+		final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+		alert.setTitle(R.string.loc_activation_required);
+		alert.setMessage(R.string.loc_wifi_activation_required);
+		alert.setCancelable(false);
+		alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				ISLocationProvider.getInstance().activateWifi();
+			}
+		});
+		alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				stopLocation();
+			}
+		});
+		alert.show();
+	}
+
+	public void showBLEActivitionRequiredDialog() {
+		final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+		alert.setTitle(R.string.loc_activation_required);
+		alert.setMessage(R.string.loc_ble_activation_required);
+		alert.setCancelable(false);
+		alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				ISLocationProvider.getInstance().activateBle();
+			}
+		});
+		alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				stopLocation();
+			}
+		});
+		alert.show();
 	}
 }
