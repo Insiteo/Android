@@ -1,5 +1,8 @@
 package com.insiteo.sampleapp;
 
+import android.graphics.drawable.AnimationDrawable;
+
+import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.utils.geometry.ISPosition;
 
 public class MapViewController {
@@ -35,5 +38,13 @@ public class MapViewController {
 
 	public void showBLEActivitionRequiredDialog() {
 		mapFragment.showBLEActivitionRequiredDialog();
+	}
+
+	public void showItinaryAlert(ISError error) {
+		mapFragment.showItinaryAlert(error);
+	}
+
+	public void showLocationButtonResourceLocalizationWithAnimation() {
+		mapFragment.showLocationButtonResourceLocalizationWithAnimation();
 	}
 }

@@ -27,14 +27,7 @@ import android.widget.Toast;
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.utils.geometry.ISPosition;
-import com.insiteo.lbs.itinerary.ISIItineraryRendererListener;
-import com.insiteo.lbs.itinerary.ISIItineraryRequestListener;
 import com.insiteo.lbs.itinerary.ISItineraryProvider;
-import com.insiteo.lbs.itinerary.ISItineraryRenderer;
-import com.insiteo.lbs.itinerary.entities.ISItinerary;
-import com.insiteo.lbs.itinerary.entities.ISItinerarySection;
-import com.insiteo.lbs.location.ISELocationModule;
-import com.insiteo.lbs.location.ISLocation;
 import com.insiteo.lbs.location.ISLocationProvider;
 import com.insiteo.lbs.map.ISIMapListener;
 import com.insiteo.lbs.map.ISMapView;
@@ -49,21 +42,18 @@ import com.insiteo.lbs.map.render.ISIRTO;
 import com.insiteo.lbs.map.render.ISIRTOListener;
 import com.insiteo.sampleapp.render.GfxRto;
 import com.insiteo.sampleapp.service.GeofencingController;
+import com.insiteo.sampleapp.service.ItinaryController;
 import com.insiteo.sampleapp.service.LocationController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListener, OnClickListener,
-		ISIItineraryRendererListener, ISIItineraryRequestListener, ActionBar.OnNavigationListener {
+		ActionBar.OnNavigationListener {
 
 	public final static String TAG = MapFragment.class.getSimpleName();
-
-
-	private final static boolean PMR_ENABLED = false;
 
 	// MAP
 	private ISMapView mMapView = null;
@@ -72,10 +62,8 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	List<ISMap> mMaps;
 
 	// ITINERARY
-	private final static boolean ITINERARY_RECOMPUTE_ACTIVATED = true;
-	private final static float MAX_RECOMPUTATION_DISTANCE = 5;
-	private ISItineraryProvider mItineraryProvider;
-	private ISItineraryRenderer mItineraryRenderer;
+	private ItinaryController itinaryController;
+
 
 	// LOCATION
 	private LocationController locationController;
@@ -86,12 +74,11 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	private View mGeofenceToastView = null;
 	private TextView mGeofenceToastText = null;
 
-
-
 	public MapFragment() {
 		MapViewController mapViewController = new MapViewController(this);
 		this.locationController = new LocationController(mapViewController);
 		this.geofencingController = new GeofencingController(mapViewController);
+		this.itinaryController = new ItinaryController(mapViewController);
 	}
 
 	@Override
@@ -112,7 +99,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		mLocationButton.setOnClickListener(this);
 		initializeMapService();
 		locationController.init(getResources());
-		initializeItineraryService();
+		itinaryController.init(getResources());
 		geofencingController.init();
 		super.onViewCreated(view, savedInstanceState);
 	}
@@ -166,12 +153,12 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		switch (item.getItemId()) {
 
 			case R.id.action_itinerary:
-				computeItinerary();
+				itinaryController.computeItinerary(mMapView, locationController);
 				result = false;
 				break;
 
 			case R.id.action_route:
-				computeOptimizedItinerary();
+				itinaryController.computeOptimizedItinerary(mMaps, mCurrentMap);
 				result = false;
 				break;
 
@@ -181,13 +168,13 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 				break;
 
 			case R.id.action_clear_itinerary:
-				mItineraryRenderer.clear();
+				itinaryController.clear();
 				result = false;
 				break;
 
 
 			case R.id.action_clear_all:
-				mItineraryRenderer.clear();
+				itinaryController.clear();
 				mMapView.clearRenderer(GfxRto.class);
 				result = false;
 				break;
@@ -333,7 +320,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 		// Add the location and itinerary renderers to the MapView to enable their display.
 		mMapView.addRenderer(locationController.getLocationRenderer());
-		mMapView.addRenderer(mItineraryRenderer);
+		mMapView.addRenderer(itinaryController.getItineraryRenderer());
 
 		mCurrentMap = ISMapDBHelper.getMap(aMapID);
 	}
@@ -509,144 +496,10 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	// 	ITINERARY SERVICE 
 	// *****************************************************************************************************************
 
-	private void initializeItineraryService() {
-		// create an itinerary provider, as we don't use location. 
-		// When using location, it is easier to get itinerary provider from location provider)
-		mItineraryProvider = (ISItineraryProvider) ISLocationProvider.getInstance().getModule(ISELocationModule.ITINERARY);
-		mItineraryProvider.setDynamicMode(true);
 
-		//get itinerary renderer linked to provider
-		mItineraryRenderer = (ISItineraryRenderer) mItineraryProvider.getRenderer(getResources());
-		mItineraryRenderer.setPriority(10);
-		mItineraryRenderer.setLinkToEnds(true, true);
-		mItineraryRenderer.setListener(this);
 
-	}
 
-	/**
-	 * This method shows how to compute an itinerary between two points
-	 */
-	private void computeItinerary() {
-		//hide the old itinerary if it exists
-		mItineraryRenderer.setDisplayEnabled(false);
 
-		ISPosition arrival = new ISPosition(mMapView.getMapId(), 20, 20);
-		mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
-
-		// If the location is started will request an itinerary from our current position
-		if (!ISLocationProvider.getInstance().isStarted()) {
-			mLocationButton.setImageResource(R.drawable.localization_button);
-			((AnimationDrawable) mLocationButton.getDrawable()).start();
-			locationController.startLocation();
-		}
-
-	}
-
-	/**
-	 * This method shows how to compute a route between different positions
-	 */
-	private void computeOptimizedItinerary() {
-
-		int positionNbr = 4;
-
-		ArrayList<ISPosition> pos = new ArrayList<ISPosition>();
-
-		for (int i = 0; i < positionNbr; i++) {
-			double x = Math.random() * 50;
-			double y = Math.random() * 50;
-
-			if (mMaps.size() > 1 && i > positionNbr / 2) {
-				ISMap otherMap = null;
-				for (ISMap map : mMaps) {
-					if (map.getId() != mCurrentMap.getId()) {
-						otherMap = map;
-						break;
-					}
-				}
-
-				if (otherMap != null) {
-					ISPosition p = new ISPosition(otherMap.getId(), x, y);
-					pos.add(p);
-				}
-
-			} else {
-				ISPosition p = new ISPosition(mCurrentMap.getId(), x, y);
-				pos.add(p);
-			}
-
-		}
-
-		mItineraryProvider.requestOptimizedItinerary(pos, ISItineraryProvider.ISEOptimizationMode.NearestNeighbourShortestPath, true, false, this, false);
-
-	}
-
-	/**
-	 * Callback fired when the itinerary of the last request changed (when location is updated for example).
-	 * This method can be used to ask for a new itinerary if the user is now too far from the itinerary (we usually recompute
-	 * the itinerary over a distance of 5 meters).
-	 *
-	 * @param aRequest       the related request
-	 * @param aDistanceToIti the distance between the user location and the itinerary (in meter)
-	 */
-	@Override
-	public void onItineraryChanged(ISItineraryProvider.ISBaseRequest aRequest, float aDistanceToIti) {
-		if (aRequest instanceof ISItineraryProvider.ISItineraryRequest && ISLocationProvider.getInstance().isStarted() && ITINERARY_RECOMPUTE_ACTIVATED) {
-			if (aDistanceToIti > MAX_RECOMPUTATION_DISTANCE || aDistanceToIti == -1) {
-				aRequest.recompute();
-			}
-		}
-	}
-
-	/**
-	 * Callback for itinerary request completion
-	 *
-	 * @param aSuccess true if the request was successful
-	 * @param aRequest the request object containing itinerary data
-	 * @param error    an error object containing a code and a message, null if request was successful
-	 */
-	@Override
-	public void onItineraryRequestDone(boolean aSuccess, ISItineraryProvider.ISBaseRequest aRequest, final ISError error) {
-		if (aSuccess) mItineraryRenderer.setDisplayEnabled(true);
-		else {
-			String message = getString(R.string.error_itinerary_computation_failed) + ": " + error;
-			Crouton.makeText(getActivity(), message, Style.ALERT).show();
-		}
-	}
-
-	/**
-	 * Callback fired when an instruction (a list of sections linked by edges) is touched
-	 *
-	 * @param aItinerary        the itinerary that contains the instruction
-	 * @param aInstructionIndex the index of the instruction
-	 */
-	@Override
-	public void onInstructionClicked(ISItinerary aItinerary, int aInstructionIndex) {
-	}
-
-	/**
-	 * Callback fired when a waypoint corresponding to a map change is clicked
-	 * (ie : the last waypoint of the displayed map, if this waypoint is not the end of itinerary)
-	 *
-	 * @param aNextPosition the position of the next itinerary section
-	 */
-	@Override
-	public void onMapSwitcherClicked(ISPosition aNextPosition) {
-		if (aNextPosition != null) {
-			mMapView.centerMap(aNextPosition, true);
-		}
-	}
-
-	/**
-	 * Callback fired when a waypoint (ie : a graphical point) is touched
-	 *
-	 * @param aItinerary        the itinerary that contains the section
-	 * @param aInstructionIndex the index of the instruction that contains the section
-	 * @param aSection          the section corresponding to the touched waypoint
-	 */
-	@Override
-	public void onWaypointClicked(ISItinerary aItinerary, int aInstructionIndex,
-	                              ISItinerarySection aSection) {
-	}
 
 	public void showGeofenceToast(final String extra1) {
 		getActivity().runOnUiThread(new Runnable() {
@@ -724,5 +577,15 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 			}
 		});
 		alert.show();
+	}
+
+	public void showItinaryAlert(ISError error) {
+		String message = getString(R.string.error_itinerary_computation_failed) + ": " + error;
+		Crouton.makeText(getActivity(), message, Style.ALERT).show();
+	}
+
+	public void showLocationButtonResourceLocalizationWithAnimation() {
+		mLocationButton.setImageResource(R.drawable.localization_button);
+		((AnimationDrawable) mLocationButton.getDrawable()).start();
 	}
 }
