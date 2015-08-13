@@ -1,20 +1,22 @@
 package com.insiteo.sampleapp;
 
 import android.content.Context;
+import android.util.SparseArray;
 
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.auth.entities.ISSite;
+import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
-import com.insiteo.lbs.common.init.listener.ISIInitListener;
 import com.insiteo.lbs.map.render.ISERenderMode;
 
-public class InsiteoWrapper {
+public class InsiteoController {
 
-	public InsiteoWrapper() {
+
+	public InsiteoController() {
 		Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
 	}
 
-	public void launch(Context context, ISIInitListener mInitListener) {
+	public void initAPI(Context context, MainISIInitListener mInitListener) {
 		Insiteo.getInstance().launch(context, mInitListener);
 	}
 
@@ -37,5 +39,21 @@ public class InsiteoWrapper {
 
 	public boolean is3DModeReady() {
 		return isRenderMode3D() && has3DPackages();
+	}
+
+	public SparseArray<ISUserSite> getAvailablesSites() {
+		return Insiteo.getCurrentUser().getSites();
+	}
+
+	public boolean isSameSite(ISUserSite userSite) {
+		return userSite.getSiteId() == Insiteo.getCurrentSite().getSiteId();
+	}
+
+	public void startAndUpdate(ISUserSite userSite, MainISIInitListener mInitListener) {
+		Insiteo.getInstance().startAndUpdate(userSite, mInitListener);
+	}
+
+	public boolean isReady() {
+		return is3DModeReady() || has2DPackages();
 	}
 }
