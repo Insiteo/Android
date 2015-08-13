@@ -44,16 +44,21 @@ import com.insiteo.sampleapp.render.GfxRto;
 import com.insiteo.sampleapp.service.GeofencingController;
 import com.insiteo.sampleapp.service.ItinaryController;
 import com.insiteo.sampleapp.service.LocationController;
+import com.insiteo.sampleapp.service.RTOController;
 
 import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListener, OnClickListener,
+public class MapFragment extends Fragment implements ISIMapListener, OnClickListener,
 		ActionBar.OnNavigationListener {
 
 	public final static String TAG = MapFragment.class.getSimpleName();
+
+	private View mGeofenceToastView = null;
+	private TextView mGeofenceToastText = null;
+	private ImageButton mLocationButton;
 
 	// MAP
 	private ISMapView mMapView = null;
@@ -61,32 +66,23 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	private ISMap mCurrentMap;
 	List<ISMap> mMaps;
 
-	// ITINERARY
 	private ItinaryController itinaryController;
-
-
-	// LOCATION
 	private LocationController locationController;
-	private ImageButton mLocationButton;
-
-	// GEOFENCING
 	private GeofencingController geofencingController;
-	private View mGeofenceToastView = null;
-	private TextView mGeofenceToastText = null;
+	private RTOController rtoController;
+
 
 	public MapFragment() {
 		MapViewController mapViewController = new MapViewController(this);
 		this.locationController = new LocationController(mapViewController);
 		this.geofencingController = new GeofencingController(mapViewController);
 		this.itinaryController = new ItinaryController(mapViewController);
+		this.rtoController = new RTOController();
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-	                         Bundle savedInstanceState) {
-
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate((Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_2D) ? R.layout.fragment_map_2d : R.layout.fragment_map_3d, container, false);
-
 		setHasOptionsMenu(true);
 		return rootView;
 	}
@@ -248,7 +244,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		mMapView.setPriority(GfxRto.class, 14);
 
 		// 2 - We tell the MapViewController to put a listener for touch events on this type of RTOs
-		mMapView.setRTOListener(this, GfxRto.class);
+		mMapView.setRTOListener(rtoController, GfxRto.class);
 	}
 
 	private void setMapNavigationList() {
@@ -436,70 +432,6 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		});
 		alert.show();
 	}
-
-	//******************************************************************************************************************
-	// 	RTO SERVICE 
-	// *****************************************************************************************************************
-
-	/**
-	 * Called when a RTO is clicked
-	 *
-	 * @param rto  the RTO that was clicked
-	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
-	 */
-	@Override
-	public void onRTOClicked(ISIRTO rto, ISZone zone) {
-		if (rto instanceof ISGenericRTO) {
-			ISGenericRTO genericRto = (ISGenericRTO) rto;
-
-			if (genericRto.isAnnotationClicked()) {
-				genericRto.setActionDisplayed(!genericRto.isActionDisplayed());
-			}
-
-			if (genericRto.isActionClicked()) {
-				genericRto.setIndicatorDisplayed(!genericRto.isIndicatorDisplayed());
-			}
-		}
-	}
-
-	/**
-	 * Called when a RTO is moved
-	 *
-	 * @param rto  the RTO that was moved
-	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
-	 */
-	@Override
-	public void onRTOMoved(ISIRTO rto, ISZone zone) {
-	}
-
-	/**
-	 * Called when a RTO is released
-	 *
-	 * @param rto  the RTO that was released
-	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
-	 */
-	@Override
-	public void onRTOReleased(ISIRTO rto, ISZone zone) {
-	}
-
-	/**
-	 * Called when a RTO is selected
-	 *
-	 * @param rto  the RTO that was selected
-	 * @param zone the zone containing this RTO (if RTO was put in a zone), or null if RTO was not set in a zone
-	 */
-	@Override
-	public void onRTOSelected(ISIRTO rto, ISZone zone) {
-	}
-
-	//******************************************************************************************************************
-	// 	ITINERARY SERVICE 
-	// *****************************************************************************************************************
-
-
-
-
-
 
 	public void showGeofenceToast(final String extra1) {
 		getActivity().runOnUiThread(new Runnable() {
