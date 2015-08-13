@@ -16,9 +16,7 @@ import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISPackage;
 import com.insiteo.lbs.common.init.listener.ISIInitListener;
-import com.insiteo.lbs.location.ISLocationConstants;
 import com.insiteo.lbs.map.ISMapConstants;
-import com.insiteo.lbs.map.render.ISERenderMode;
 
 import java.util.Stack;
 
@@ -35,14 +33,13 @@ public class MainActivity extends AppCompatActivity {
 	private ProgressBar mUpdateProgressBar;
 	private TextView mUpdateStepView;
 	private TextView mUpdateValueView;
+	private InsiteoWrapper insiteoWrapper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
-		ISLocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
+		insiteoWrapper = new InsiteoWrapper();
 
 		ISMapConstants.USE_ZONE_3D_OPTIMIZATION = false;
 
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void initAPI() {
-		Insiteo.getInstance().launch(this, mInitListener);
+		insiteoWrapper.launch(this, mInitListener);
 		mInitStatusView.setVisibility(View.VISIBLE);
 	}
 
@@ -70,34 +67,12 @@ public class MainActivity extends AppCompatActivity {
 	 * Launches the {@link MapFragment}
 	 */
 	private void startDashboard() {
-		/** In our case we consider that the application can only work if it has at least the required package for map and the location.
-		 * Here we are only checking for the Map2D packages, for the 3D check <code>MAP3DPACKAGE</code> instead of <code>TILES</code>*/
-
-		if (Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_3D) {
-			if (Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAPDATA)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAP3DPACKAGE)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION)) {
-
-				getSupportFragmentManager()
-						.beginTransaction()
-						.replace(R.id.container, mMapFragment).commit();
-			} else {
-				Crouton.makeText(MainActivity.this, R.string.error_missing_required_package, Style.ALERT).show();
-			}
+		if (insiteoWrapper.is3DModeReady() || insiteoWrapper.has2DPackages()) {
+			getSupportFragmentManager()
+					.beginTransaction()
+					.replace(R.id.container, mMapFragment).commit();
 		} else {
-			if (Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAPDATA)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.TILES)
-					&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION)) {
-
-				mMapFragment = new MapFragment();
-
-				getSupportFragmentManager()
-						.beginTransaction()
-						.replace(R.id.container,
-								mMapFragment).commit();
-			} else {
-				Crouton.makeText(MainActivity.this, R.string.error_missing_required_package, Style.ALERT).show();
-			}
+			Crouton.makeText(MainActivity.this, R.string.error_missing_required_package, Style.ALERT).show();
 		}
 	}
 
@@ -177,11 +152,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 		for (int i = 0; i < availablesSites.size(); i++) {
-			if (availablesSites.valueAt(i).getSiteId() != Insiteo.getCurrentSite().getSiteId()) {
-				Crouton.makeText(this, "Switching to site " + availablesSites.valueAt(i).getLabel(), Style.INFO).show();
+			ISUserSite userSite = availablesSites.valueAt(i);
+			if (userSite.getSiteId() != Insiteo.getCurrentSite().getSiteId()) {
+				Crouton.makeText(this, "Switching to site " + userSite.getLabel(), Style.INFO).show();
 				getSupportFragmentManager().beginTransaction().remove(mMapFragment).commit();
 				mMapFragment = null;
-
 
 				getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
 
@@ -192,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
 				mUpdateValueView.setVisibility(View.GONE);
 
 
-				Insiteo.getInstance().startAndUpdate(availablesSites.valueAt(i), mInitListener);
+				Insiteo.getInstance().startAndUpdate(userSite, mInitListener);
 
 			}
 		}
