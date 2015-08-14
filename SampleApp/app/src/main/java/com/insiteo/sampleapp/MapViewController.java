@@ -1,9 +1,9 @@
 package com.insiteo.sampleapp;
 
-import android.graphics.drawable.AnimationDrawable;
-
 import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.utils.geometry.ISPosition;
+import com.insiteo.sampleapp.render.GfxRto;
+import com.insiteo.sampleapp.service.RTOController;
 
 public class MapViewController {
 	private MapFragment mapFragment;
@@ -46,5 +46,37 @@ public class MapViewController {
 
 	public void showLocationButtonResourceLocalizationWithAnimation() {
 		mapFragment.showLocationButtonResourceLocalizationWithAnimation();
+	}
+
+	public void updateActionBar(String[] mapNames) {
+		mapFragment.updateActionBar(mapNames);
+	}
+
+	public void selectActionBarItem(int i) {
+		mapFragment.selectActionBarItem(i);
+	}
+
+	public void initRTO(RTOController rtoController) {
+		mapFragment.initRTO(rtoController);
+	}
+
+	public void addRenderers() {
+		mapFragment.addRenderers();
+	}
+
+	public void clearRenderers() {
+		mapFragment.clearRenderers();
+	}
+
+	public void centerMap(int zoneId) {
+		mapFragment.centerMap(zoneId);
+	}
+
+	public void addRTOInZone(int id, GfxRto rto) {
+		mapFragment.addRTOInZone(id, rto);
+	}
+
+	public void rotate(float angle) {
+		mapFragment.rotate(angle);
 	}
 }

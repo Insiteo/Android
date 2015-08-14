@@ -5,9 +5,10 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -29,55 +30,42 @@ import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.utils.geometry.ISPosition;
 import com.insiteo.lbs.itinerary.ISItineraryProvider;
 import com.insiteo.lbs.location.ISLocationProvider;
-import com.insiteo.lbs.map.ISIMapListener;
 import com.insiteo.lbs.map.ISMapView;
 import com.insiteo.lbs.map.database.ISMapDBHelper;
 import com.insiteo.lbs.map.entities.ISMap;
-import com.insiteo.lbs.map.entities.ISZone;
 import com.insiteo.lbs.map.entities.ISZonePoi;
 import com.insiteo.lbs.map.render.ISERenderMode;
-import com.insiteo.lbs.map.render.ISEZoneAction;
-import com.insiteo.lbs.map.render.ISGenericRTO;
-import com.insiteo.lbs.map.render.ISIRTO;
-import com.insiteo.lbs.map.render.ISIRTOListener;
 import com.insiteo.sampleapp.render.GfxRto;
 import com.insiteo.sampleapp.service.GeofencingController;
 import com.insiteo.sampleapp.service.ItinaryController;
 import com.insiteo.sampleapp.service.LocationController;
+import com.insiteo.sampleapp.service.MapController;
 import com.insiteo.sampleapp.service.RTOController;
+import com.threed.jpct.SimpleVector;
 
 import java.util.List;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class MapFragment extends Fragment implements ISIMapListener, OnClickListener,
-		ActionBar.OnNavigationListener {
-
-	public final static String TAG = MapFragment.class.getSimpleName();
+public class MapFragment extends Fragment implements OnClickListener, ActionBar.OnNavigationListener {
 
 	private View mGeofenceToastView = null;
 	private TextView mGeofenceToastText = null;
 	private ImageButton mLocationButton;
-
-	// MAP
 	private ISMapView mMapView = null;
-
-	private ISMap mCurrentMap;
-	List<ISMap> mMaps;
 
 	private ItinaryController itinaryController;
 	private LocationController locationController;
 	private GeofencingController geofencingController;
-	private RTOController rtoController;
-
+	private MapController mapController;
 
 	public MapFragment() {
 		MapViewController mapViewController = new MapViewController(this);
 		this.locationController = new LocationController(mapViewController);
 		this.geofencingController = new GeofencingController(mapViewController);
 		this.itinaryController = new ItinaryController(mapViewController);
-		this.rtoController = new RTOController();
+		this.mapController = new MapController(mapViewController, locationController);
 	}
 
 	@Override
@@ -92,8 +80,11 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 		mGeofenceToastView = LayoutInflater.from(getActivity()).inflate(R.layout.geofencing_toast, null);
 		mGeofenceToastText = (TextView) mGeofenceToastView.findViewById(R.id.geofence_text);
 		mLocationButton = (ImageButton) getView().findViewById(R.id.btn_loc);
+		mMapView = (ISMapView) getView().findViewById(R.id.map);
+		// The MapView listener. By default the listener is set to the context (if it implements IMapListener) that created the View.
+		// In the case of fragment we have to explicitly set it.
+		mMapView.setListener(mapController);
 		mLocationButton.setOnClickListener(this);
-		initializeMapService();
 		locationController.init(getResources());
 		itinaryController.init(getResources());
 		geofencingController.init();
@@ -111,14 +102,10 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	@Override
 	public void onPause() {
 		locationController.stopLocation();
-		
 		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */
 		mMapView.onPause();
 		super.onPause();
 	}
-	//******************************************************************************************************************
-	// 	UI CALLBACKS
-	// *****************************************************************************************************************
 
 	@Override
 	public void onClick(View v) {
@@ -132,69 +119,48 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		inflater.inflate(R.menu.main, menu);
-
-		MenuItem versionItem = menu.findItem(R.id.action_version);
-		versionItem.setTitle(Insiteo.getAPIVersion());
-
-		MenuItem labelItem = menu.findItem(R.id.site_label);
-		labelItem.setTitle(Insiteo.getCurrentSite().getLabel());
-
+		menu.findItem(R.id.action_version).setTitle(Insiteo.getAPIVersion());
+		menu.findItem(R.id.site_label).setTitle(Insiteo.getCurrentSite().getLabel());
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		boolean result = true;
-
 		switch (item.getItemId()) {
-
 			case R.id.action_itinerary:
 				itinaryController.computeItinerary(mMapView, locationController);
-				result = false;
-				break;
-
+				return false;
 			case R.id.action_route:
-				itinaryController.computeOptimizedItinerary(mMaps, mCurrentMap);
-				result = false;
-				break;
-
+				itinaryController.computeOptimizedItinerary(mapController.getMaps(), mapController.getCurrentMap());
+				return false;
 			case R.id.action_locate_ext_poi:
 				locateExtPoi();
-				result = false;
-				break;
-
+				return false;
 			case R.id.action_clear_itinerary:
 				itinaryController.clear();
-				result = false;
-				break;
-
-
+				return false;
 			case R.id.action_clear_all:
 				itinaryController.clear();
 				mMapView.clearRenderer(GfxRto.class);
-				result = false;
-				break;
-
+				return false;
 			case R.id.action_information:
 				displayUIInformation();
-				result = false;
-				break;
-
+				return false;
 			case R.id.action_switch_site:
 				MainActivity act = (MainActivity) getActivity();
 				act.switchSite();
-				result = false;
-				break;
-
+				return false;
 		}
-		return result;
+		return true;
 	}
 
 	@Override
 	public boolean onNavigationItemSelected(int position, long id) {
-		if (mMaps != null && mMaps.size() > position) {
-			ISMap map = mMaps.get(position);
+		try {
+			ISMap map = mapController.getMap(position);
 			mMapView.changeMap(map.getId(), true, true, true);
+		} catch (IllegalArgumentException iae) {
+			Log.e(getClass().getSimpleName(), iae.getMessage(), iae);
 		}
 		return true;
 	}
@@ -205,11 +171,17 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	// *********************************************************************************************
 
 	private void displayUIInformation() {
-		AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+		View informationView = buildInformationView();
+		new AlertDialog.Builder(getActivity())
+				.setView(informationView)
+				.create()
+				.show();
+	}
 
+	@NonNull
+	private View buildInformationView() {
 		View informationView = LayoutInflater.from(getActivity()).inflate(R.layout
 				.information_layout, null);
-
 		TextView apiVersion, locationVersion, itineraryVersion;
 
 		apiVersion = (TextView) informationView.findViewById(R.id.api_version_value);
@@ -219,218 +191,7 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 		apiVersion.setText(Insiteo.getAPIVersion());
 		locationVersion.setText(ISLocationProvider.getVersion());
 		itineraryVersion.setText(ISItineraryProvider.getVersion());
-
-		alert.setView(informationView);
-
-		alert.create().show();
-
-
-	}
-
-	//**********************************************************************************************
-	// 	MAP SERVICE
-	// *********************************************************************************************
-
-	private void initializeMapService() {
-		mMapView = (ISMapView) getView().findViewById(R.id.map);
-
-		// The MapView listener. By default the listener is set to the context (if it implements IMapListener) that created the View.
-		// In the case of fragment we have to explicitly set it.
-		mMapView.setListener(this);
-	}
-
-	private void initializeRTO() {
-		// 1 - The RTO class needs to be added to the MapViewController in order to be drawn by a GenericRenderer
-		mMapView.setPriority(GfxRto.class, 14);
-
-		// 2 - We tell the MapViewController to put a listener for touch events on this type of RTOs
-		mMapView.setRTOListener(rtoController, GfxRto.class);
-	}
-
-	private void setMapNavigationList() {
-
-		// Retrieve the list MapData associated to the current site.
-		mMaps = ISMapDBHelper.getMaps(false);
-		final String[] mapNames = new String[mMaps.size()];
-
-		int i = 0;
-		for (ISMap map : mMaps) {
-			mapNames[i] = map.getName();
-			i++;
-		}
-
-		ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-
-		if (actionBar != null) {
-			actionBar.setDisplayShowTitleEnabled(false);
-			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-
-			// Set up the dropdown list navigation in the action bar.
-			actionBar.setListNavigationCallbacks(
-					// Specify a SpinnerAdapter to populate the dropdown list.
-					new ArrayAdapter<String>(actionBar.getThemedContext(),
-							android.R.layout.simple_list_item_1,
-							android.R.id.text1, mapNames), MapFragment.this);
-		}
-
-	}
-
-	/**
-	 * Called when the map displayed by the MapView changes.
-	 *
-	 * @param mapId   the new map's ID
-	 * @param mapName the new map's name
-	 */
-	@Override
-	public void onMapChanged(final int mapId, final String mapName) {
-		Log.d(TAG, "onMapChanged");
-		for (int i = 0; i < mMaps.size(); i++) {
-			if (mMaps.get(i).getId() == mapId) {
-				mCurrentMap = mMaps.get(i);
-				((ActionBarActivity) getActivity()).getSupportActionBar().setSelectedNavigationItem(i);
-			}
-		}
-	}
-
-	/**
-	 * Called when the MapView could not be initialized
-	 *
-	 * @param aReason the reason of the failure
-	 */
-	@Override
-	public void onMapInitFailed(String aReason) {
-	}
-
-	/**
-	 * Called when the MapView is ready (ie : maps data is initialized)
-	 *
-	 * @param aMapID   the ID of the current map
-	 * @param aMapName the name of the current map
-	 */
-	@Override
-	public void onMapViewReady(final int aMapID, final String aMapName) {
-		Log.d(TAG, "onMapViewReady");
-		setMapNavigationList();
-
-		initializeRTO();
-
-		// Add the location and itinerary renderers to the MapView to enable their display.
-		mMapView.addRenderer(locationController.getLocationRenderer());
-		mMapView.addRenderer(itinaryController.getItineraryRenderer());
-
-		mCurrentMap = ISMapDBHelper.getMap(aMapID);
-	}
-
-	/**
-	 * This event is triggered when a Zone object was clicked, and its associated action is custom,
-	 * so it can't be handled by MapController.
-	 *
-	 * @param zone        the clicked Zone.
-	 * @param actionType  the type of action contained in this zone.
-	 * @param actionParam the action parameter.
-	 */
-	@Override
-	public void onZoneClicked(ISZone zone, ISEZoneAction actionType, String actionParam) {
-		Log.d(TAG, "onZoneClicked");
-
-		// Clear the MapView from all the GfxRto previously rendered.
-		mMapView.clearRenderer(GfxRto.class);
-
-		// Get all the external POI that are associated to this zone and add them on the map.
-		List<ISZonePoi> zpas = ISMapDBHelper.getPoiAssocFromZone(zone.getId(), true);
-
-		for (int i = 0; i < zpas.size(); i++) {
-			String poiExtId = zpas.get(i).getExternalPoiId();
-			GfxRto rto = new GfxRto();
-
-			rto.setLabel(poiExtId);
-			rto.setLabelDisplayed(true);
-
-			rto.setAnnotationLabel(poiExtId);
-
-			// Apply a particular offset to this rto. This is used to have multiple rto in the same zone without superposition.
-			rto.setZoneOffset(zpas.get(i).getOffset());
-
-			mMapView.addRTOInZone(zone.getId(), rto);
-
-		}
-
-		// Center the map on this zone with animation.
-		mMapView.centerMap(zone.getId(), true);
-	}
-
-	/**
-	 * Called when the MapView is clicked
-	 */
-	@Override
-	public void onMapClicked(ISPosition clickedPosition) {
-		Log.d(TAG, "onMapClicked");
-	}
-
-	/**
-	 * Called when the MapView is moved
-	 */
-	@Override
-	public void onMapMoved() {
-		Log.d(TAG, "onMapMoved");
-		locationController.disableCenterOnPosition();
-	}
-
-	/**
-	 * Called when the zoomlevel has changed
-	 *
-	 * @param newZoomLevel the new zoomlevel
-	 */
-	@Override
-	public void onZoomEnd(int newZoomLevel) {
-		Log.d(TAG, "onZoomEnd");
-	}
-
-	/**
-	 * Called the map has stopped moving
-	 */
-	@Override
-	public void onMapReleased() {
-		Log.d(TAG, "onMapReleased");
-	}
-
-
-	public void locateExtPoi() {
-		final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-		alert.setTitle(R.string.locate_ext_poi_title);
-		final EditText input = new EditText(getActivity());
-		input.setHint(R.string.locate_ext_poi_hint);
-		alert.setView(input);
-		alert.setCancelable(false);
-		alert.setPositiveButton(R.string.action_locate, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				String value = input.getText().toString();
-
-				// Clear the MapView from all the GfxRto previously rendered.
-				mMapView.clearRenderer(GfxRto.class);
-
-				List<ISZonePoi> zpas = ISMapDBHelper.getZoneAssocFromExtPoi(value);
-
-				for (int i = 0; i < zpas.size(); i++) {
-					String poiExtId = zpas.get(i).getExternalPoiId();
-					GfxRto rto = new GfxRto();
-					rto.setLabel(poiExtId);
-					rto.setLabelDisplayed(true);
-					mMapView.addRTOInZone(zpas.get(i).getZoneId(), rto, zpas.get(i).getOffset());
-				}
-
-				if (!zpas.isEmpty()) {
-					mMapView.centerMap(zpas.get(0).getZoneId(), true);
-				} else {
-					Crouton.makeText(getActivity(), R.string.error_no_ext_poi_found, Style.ALERT).show();
-				}
-			}
-		});
-		alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-			}
-		});
-		alert.show();
+		return informationView;
 	}
 
 	public void showGeofenceToast(final String extra1) {
@@ -463,52 +224,38 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 		mMapView.centerMap(position, true);
 	}
 
-	public void rotateMap(int mLastLocMapID, float aAzimuth) {
-		float angle = aAzimuth;
-		if (mCurrentMap != null && mLastLocMapID == mCurrentMap.getId()) {
-			boolean isMapOriented = mCurrentMap.isOriented();
-			if (isMapOriented) {
-				float mapAzimuth =  mCurrentMap.getAzimuth();
-				angle = mapAzimuth - aAzimuth;
-			}
-		}
-		mMapView.rotate(angle, false);
-	}
-
 	public void showWifiActivitionRequiredDialog() {
-		final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-		alert.setTitle(R.string.loc_activation_required);
-		alert.setMessage(R.string.loc_wifi_activation_required);
-		alert.setCancelable(false);
-		alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				ISLocationProvider.getInstance().activateWifi();
-			}
-		});
-		alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				stopLocation();
-			}
-		});
-		alert.show();
+		new AlertDialog.Builder(getActivity())
+				.setTitle(R.string.loc_activation_required)
+				.setMessage(R.string.loc_wifi_activation_required)
+				.setCancelable(false)
+				.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						ISLocationProvider.getInstance().activateWifi();
+					}
+				})
+				.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						stopLocation();
+					}
+				})
+				.show();
 	}
 
 	public void showBLEActivitionRequiredDialog() {
-		final AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-		alert.setTitle(R.string.loc_activation_required);
-		alert.setMessage(R.string.loc_ble_activation_required);
-		alert.setCancelable(false);
-		alert.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				ISLocationProvider.getInstance().activateBle();
-			}
-		});
-		alert.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+		new AlertDialog.Builder(getActivity())
+				.setTitle(R.string.loc_activation_required)
+				.setMessage(R.string.loc_ble_activation_required)
+				.setCancelable(false)
+				.setPositiveButton(getString(R.string.loc_activate), new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						ISLocationProvider.getInstance().activateBle();
+					}
+				}).setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				stopLocation();
 			}
-		});
-		alert.show();
+		}).show();
 	}
 
 	public void showItinaryAlert(ISError error) {
@@ -519,5 +266,101 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	public void showLocationButtonResourceLocalizationWithAnimation() {
 		mLocationButton.setImageResource(R.drawable.localization_button);
 		((AnimationDrawable) mLocationButton.getDrawable()).start();
+	}
+
+	public void updateActionBar(String[] mapNames) {
+		ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+
+		if (actionBar != null) {
+			actionBar.setDisplayShowTitleEnabled(false);
+			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+
+			// Set up the dropdown list navigation in the action bar.
+			actionBar.setListNavigationCallbacks(
+					// Specify a SpinnerAdapter to populate the dropdown list.
+					new ArrayAdapter<String>(actionBar.getThemedContext(),
+							android.R.layout.simple_list_item_1,
+							android.R.id.text1, mapNames), MapFragment.this);
+		}
+	}
+
+	public void selectActionBarItem(int i) {
+		((AppCompatActivity) getActivity()).getSupportActionBar().setSelectedNavigationItem(i);
+	}
+
+	public void initRTO(RTOController rtoController) {
+		// 1 - The RTO class needs to be added to the MapViewController in order to be drawn by a GenericRenderer
+		mMapView.setPriority(GfxRto.class, 14);
+		// 2 - We tell the MapViewController to put a listener for touch events on this type of RTOs
+		mMapView.setRTOListener(rtoController, GfxRto.class);
+	}
+
+	public void addRenderers() {
+		mMapView.addRenderer(locationController.getLocationRenderer());
+		mMapView.addRenderer(itinaryController.getItineraryRenderer());
+	}
+
+	public void clearRenderers() {
+		mMapView.clearRenderer(GfxRto.class);
+	}
+
+	public void centerMap(int zoneId) {
+		mMapView.centerMap(zoneId, true);
+	}
+
+	public void addRTOInZone(int zoneId, GfxRto rto) {
+		mMapView.addRTOInZone(zoneId, rto);
+	}
+
+	public void rotate(float angle) {
+		mMapView.rotate(angle, false);
+	}
+
+	public void locateExtPoi() {
+		final EditText input = new EditText(getActivity());
+		input.setHint(R.string.locate_ext_poi_hint);
+		DialogInterface.OnClickListener onPositiveClickListener = new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				clearRenderers();
+				String value = input.getText().toString();
+				List<ISZonePoi> zpas = ISMapDBHelper.getZoneAssocFromExtPoi(value);
+
+				for (int i = 0; i < zpas.size(); i++) {
+					String poiExtId = zpas.get(i).getExternalPoiId();
+					GfxRto rto = new GfxRto();
+					rto.setLabel(poiExtId);
+					rto.setLabelDisplayed(true);
+					addRTOInZone(zpas.get(i).getZoneId(), rto, zpas.get(i).getOffset());
+				}
+
+				if (zpas.isEmpty()) {
+					showNoExtPoiAlert();
+				} else {
+					centerMap(zpas.get(0).getZoneId());
+				}
+			}
+		};
+		new AlertDialog.Builder(getActivity())
+				.setTitle(R.string.locate_ext_poi_title)
+				.setView(input)
+				.setCancelable(false)
+				.setPositiveButton(R.string.action_locate, onPositiveClickListener)
+				.setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+					}
+				})
+				.show();
+	}
+
+	public void showNoExtPoiAlert() {
+		Crouton.makeText(getActivity(), R.string.error_no_ext_poi_found, Style.ALERT).show();
+	}
+
+	public void addRTOInZone(int zoneId, GfxRto rto, SimpleVector offset) {
+		mMapView.addRTOInZone(zoneId, rto, offset);
+	}
+
+	public void rotateMap(int mLastLocMapID, float aAzimuth) {
+		mapController.rotateMap(mLastLocMapID, aAzimuth);
 	}
 }
