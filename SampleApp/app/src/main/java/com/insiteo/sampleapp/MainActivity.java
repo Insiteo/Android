@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 		MainViewController mainViewController = new MainViewController(this, insiteoController);
 		mInitListener = new MainISIInitListener(mainViewController);
 		ISMapConstants.USE_ZONE_3D_OPTIMIZATION = false;
-
 		mInitStatusView = findViewById(R.id.init_status);
 		mPackageStatusView = findViewById(R.id.package_status);
 		mUpdateProgressBar = (ProgressBar) findViewById(R.id.update_progress);
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
 		mInitStatusView.setVisibility(View.VISIBLE);
 
 		insiteoController.initAPI(this, mInitListener);
-
 	}
 
 	@Override
@@ -58,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void showMapFragment() {
+		mMapFragment = new MapFragment();
 		getSupportFragmentManager()
 				.beginTransaction()
 				.replace(R.id.container, mMapFragment)
