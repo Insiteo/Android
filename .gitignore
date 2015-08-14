@@ -214,3 +214,8 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+SampleApp/.gradle/2.2.1/taskArtifacts/cache.properties.lock
+SampleApp/.gradle/2.2.1/taskArtifacts/fileHashes.bin
+SampleApp/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin
+SampleApp/.gradle/2.2.1/taskArtifacts/outputFileStates.bin
+SampleApp/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin
