@@ -47,5 +47,6 @@
     
     
     <string name="error_itinerary_computation_failed">Itinerary failed</string>
+    <string name="one_site_available">Only one site available</string>
 
 </resources>

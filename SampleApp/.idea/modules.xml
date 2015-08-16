@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Insiteo-SDK-3.4.0/Insiteo-SDK-3.4.0.iml" filepath="$PROJECT_DIR$/Insiteo-SDK-3.4.0/Insiteo-SDK-3.4.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/SampleApp.iml" filepath="$PROJECT_DIR$/SampleApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/lbsLib.iml" filepath="$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/lbsLib.iml" />
+      <module fileurl="file://$USER_HOME$/android-api/api/lbs/lbsLib/lbsLib.iml" filepath="$USER_HOME$/android-api/api/lbs/lbsLib/lbsLib.iml" />
     </modules>
   </component>
 </project>

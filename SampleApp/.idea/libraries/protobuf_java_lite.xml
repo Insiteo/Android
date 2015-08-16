@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="protobuf-java-lite">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/libs/protobuf-java-lite.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
