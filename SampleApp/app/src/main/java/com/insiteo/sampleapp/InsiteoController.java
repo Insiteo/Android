@@ -5,36 +5,54 @@ import android.util.SparseArray;
 
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.auth.entities.ISSite;
+import com.insiteo.lbs.common.auth.entities.ISUser;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.map.render.ISERenderMode;
+import com.insiteo.sampleapp.moduleinjection.GraphProvider;
+
+import javax.inject.Inject;
+
+import dagger.Lazy;
 
 public class InsiteoController {
 
+	@Inject
+	Insiteo instance;
+	@Inject
+	Lazy<ISUser> lazyCurrentUser;
+	@Inject
+	Lazy<ISSite> lazyCurrentSite;
 
 	public InsiteoController() {
+		init();
+		GraphProvider.injectApplicationGraph(this);
+	}
+
+	protected void init() {
 		Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
 	}
 
 	public void initAPI(Context context, MainISIInitListener mInitListener) {
-		Insiteo.getInstance().launch(context, mInitListener);
+		instance.launch(context, mInitListener);
 	}
 
 	public boolean isRenderMode3D() {
-		return Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_3D;
+		return lazyCurrentUser.get().getRenderMode() == ISERenderMode.MODE_3D;
 	}
 
 	public boolean has3DPackages() {
-		ISSite currentSite = Insiteo.getCurrentSite();
-		return currentSite.hasPackage(ISEPackageType.MAPDATA)
-				&& currentSite.hasPackage(ISEPackageType.MAP3DPACKAGE)
-				&& currentSite.hasPackage(ISEPackageType.LOCATION);
+		ISSite isSite = lazyCurrentSite.get();
+		return isSite.hasPackage(ISEPackageType.MAPDATA)
+				&& isSite.hasPackage(ISEPackageType.MAP3DPACKAGE)
+				&& isSite.hasPackage(ISEPackageType.LOCATION);
 	}
 
 	public boolean has2DPackages() {
-		return Insiteo.getCurrentSite().hasPackage(ISEPackageType.MAPDATA)
-				&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.TILES)
-				&& Insiteo.getCurrentSite().hasPackage(ISEPackageType.LOCATION);
+		ISSite isSite = lazyCurrentSite.get();
+		return isSite.hasPackage(ISEPackageType.MAPDATA)
+				&& isSite.hasPackage(ISEPackageType.TILES)
+				&& isSite.hasPackage(ISEPackageType.LOCATION);
 	}
 
 	public boolean is3DModeReady() {
@@ -42,15 +60,15 @@ public class InsiteoController {
 	}
 
 	public SparseArray<ISUserSite> getAvailablesSites() {
-		return Insiteo.getCurrentUser().getSites();
+		return lazyCurrentUser.get().getSites();
 	}
 
 	public boolean isSameSite(ISUserSite userSite) {
-		return userSite.getSiteId() == Insiteo.getCurrentSite().getSiteId();
+		return userSite.getSiteId() == lazyCurrentSite.get().getSiteId();
 	}
 
 	public void startAndUpdate(ISUserSite userSite, MainISIInitListener mInitListener) {
-		Insiteo.getInstance().startAndUpdate(userSite, mInitListener);
+		instance.startAndUpdate(userSite, mInitListener);
 	}
 
 	public boolean isReady() {

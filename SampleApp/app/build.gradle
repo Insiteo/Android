@@ -30,5 +30,7 @@ dependencies {
     }
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.squareup.dagger:dagger:1.2.2'
+    compile 'com.squareup.dagger:dagger-compiler:1.2.2'
     compile project(':Insiteo-SDK-3.4.0')
 }
