@@ -502,13 +502,16 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		// create an itinerary provider, as we don't use location. 
 		// When using location, it is easier to get itinerary provider from location provider)
 		mItineraryProvider = (ISItineraryProvider) ISLocationProvider.getInstance().getModule(ISELocationModule.ITINERARY);
-		mItineraryProvider.setDynamicMode(true);
 
-		//get itinerary renderer linked to provider
-		mItineraryRenderer = (ISItineraryRenderer) mItineraryProvider.getRenderer(getResources());
-		mItineraryRenderer.setPriority(10);
-		mItineraryRenderer.setLinkToEnds(true, true);
-		mItineraryRenderer.setListener(this);
+        if (mItineraryProvider != null) {
+            mItineraryProvider.setDynamicMode(true);
+
+            //get itinerary renderer linked to provider
+            mItineraryRenderer = (ISItineraryRenderer) mItineraryProvider.getRenderer(getResources());
+            mItineraryRenderer.setPriority(10);
+            mItineraryRenderer.setLinkToEnds(true, true);
+            mItineraryRenderer.setListener(this);
+        }
 
 	}
 

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.ISError;
@@ -160,7 +161,7 @@ public class MainActivity extends ActionBarActivity {
 	private final ISIInitListener mInitListener = new ISIInitListener() {
 		@Override
 		public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
-
+			Toast.makeText(MainActivity.this, error + "", Toast.LENGTH_SHORT).show();
 		}
 
 		@Override

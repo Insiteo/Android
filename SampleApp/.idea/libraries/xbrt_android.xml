@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="xbrt_android">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../android-api/api/lbs/lbsLib/libs/xbrt_android.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
