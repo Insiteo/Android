@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.insiteo.lbs.Insiteo;
+import com.insiteo.lbs.beacon.service.ISBeaconService;
 import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;

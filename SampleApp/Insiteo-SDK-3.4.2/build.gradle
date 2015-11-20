@@ -1,2 +1,0 @@
-configurations.create("default")
-artifacts.add("default", file('Insiteo-SDK-3.4.2.aar'))
