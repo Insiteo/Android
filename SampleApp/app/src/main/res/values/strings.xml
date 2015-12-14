@@ -50,6 +50,7 @@
 
 
     <string name="beacon_monitoring_title">Beacon Monitoring</string>
+    <string name="map_title">Map</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

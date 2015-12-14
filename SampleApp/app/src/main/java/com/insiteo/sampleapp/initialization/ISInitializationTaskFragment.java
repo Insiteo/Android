@@ -15,6 +15,7 @@ import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISPackage;
 import com.insiteo.lbs.common.init.listener.ISIInitListener;
+import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.common.utils.threading.ISICancelable;
 
 import java.util.Stack;
@@ -24,7 +25,7 @@ import java.util.Stack;
  */
 public class ISInitializationTaskFragment extends Fragment implements ISIInitListener {
 
-    private final static String TAG = "ISInitializationTaskFragment";
+    private static final String TAG = "ISInitTaskFragment";
 
     public enum TaskState {
         INITIALIZING,
@@ -156,6 +157,7 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
 
     @Override
     public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
+        ISLog.d(TAG, "onInitDone() called with: " + "error = [" + error + "], suggestedSite = [" + suggestedSite + "], fromLocalCache = [" + fromLocalCache + "]");
         if (mListener != null) {
             mListener.onInitDone(error, suggestedSite, fromLocalCache);
         }
@@ -164,6 +166,7 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
 
     @Override
     public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
+        ISLog.d(TAG, "onStartDone() called with: " + "error = [" + error + "], packageToUpdate = [" + packageToUpdate + "]");
         if(mListener != null) {
             mListener.onStartDone(error, packageToUpdate);
         }
@@ -173,7 +176,7 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
     @Override
     public void onPackageUpdateProgress(ISEPackageType packageType, boolean download,
                                         long progress, long total) {
-
+        ISLog.d(TAG, "onPackageUpdateProgress() called with: " + "packageType = [" + packageType + "], download = [" + download + "], progress = [" + progress + "], total = [" + total + "]");
         mUpdateProgressValue = download ? progress / 1024 : progress;
         mUpdateProgressTotal = download ? total / 1024 : total;
 

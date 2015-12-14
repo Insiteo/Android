@@ -26,9 +26,6 @@ public class BeaconMonitoringFragment extends Fragment {
         return new BeaconMonitoringFragment();
     }
 
-    public BeaconMonitoringFragment() {
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

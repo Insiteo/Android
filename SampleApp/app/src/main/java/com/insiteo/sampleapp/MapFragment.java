@@ -93,8 +93,16 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	private TextView mGeofenceToastText = null;
 
 	private int mLastLocMapID = -1;
-	
 
+
+    public static MapFragment newInstance() {
+        
+        Bundle args = new Bundle();
+        
+        MapFragment fragment = new MapFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -40,10 +40,10 @@ public class SampleApplication extends ISBeaconApplication {
         Insiteo.setDebug(BuildConfig.DEBUG);
         super.onCreate();
 
-        if (!runsOnServiceProcess()) {
+        //if (!runsOnServiceProcess()) {
             bus = EventBus.getDefault();
             beaconRegions = new HashMap<>();
-        }
+        //}
 
     }
 
@@ -53,7 +53,6 @@ public class SampleApplication extends ISBeaconApplication {
         boolean autoStart = prefs.getBoolean(SettingsPrefs.BEACON_MONITORING_ENABLED, SettingsPrefs.BEACON_MONITORING_ENABLED_DEFAULT);
         return autoStart;
     }
-
 
     public Map<Long, StateBeaconRegion> getRegions() {
         return beaconRegions;
@@ -110,5 +109,6 @@ public class SampleApplication extends ISBeaconApplication {
         bus.post(new BeaconRegionEvent(stateRegion));
 
     }
+
 
 }

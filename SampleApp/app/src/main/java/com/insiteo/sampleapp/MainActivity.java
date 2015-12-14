@@ -16,11 +16,12 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.insiteo.lbs.Insiteo;
-import com.insiteo.lbs.beacon.service.ISBeaconService;
 import com.insiteo.lbs.common.ISError;
+import com.insiteo.lbs.common.auth.entities.ISUser;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISPackage;
+import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.location.ISLocationConstants;
 import com.insiteo.lbs.map.ISMapConstants;
 import com.insiteo.sampleapp.beacon.BeaconMonitoringFragment;
@@ -64,7 +65,6 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
         if (mInitializationFragment == null) {
             launch(mInitializationFragment = ISInitializationTaskFragment.newInstance(), NO_RESOURCE);
         }
-
 
 		Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
 		ISLocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
@@ -112,6 +112,14 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
         fragmentManager.beginTransaction()
                 .replace(R.id.container, frag)
                 .commit();
+    }
+
+    private void launchBeacon() {
+        launch(BeaconMonitoringFragment.newInstance(), R.string.beacon_monitoring_title);
+    }
+
+    private void launchMap() {
+        launch(MapFragment.newInstance(), R.string.map_title);
     }
 
     //**********************************************************************************************
@@ -203,12 +211,32 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
     @Override
     public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
         displayLoaderView(false);
-        launch(BeaconMonitoringFragment.newInstance(), R.string.beacon_monitoring_title);
+
+        if (error == null) {
+            if (Insiteo.getInstance().isAuthenticated()) {
+                ISUser user = Insiteo.getCurrentUser();
+                ISUserSite oab = user.getSite(463);
+
+                if (oab != null) {
+                    mInitializationFragment.startSite(oab);
+                } else {
+                    ISLog.e(TAG, "onInitDone: site not found");
+                }
+            }
+        } else {
+            ISLog.e(TAG, "onInitDone: " + error);
+        }
     }
 
     @Override
     public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
-
+        if (error == null) {
+            if (packageToUpdate.isEmpty()) {
+                launchMap();
+            }
+        } else {
+            ISLog.e(TAG, "onStartDone: " + error);
+        }
     }
 
     @Override
@@ -218,6 +246,10 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 
     @Override
     public void onDataUpdateDone(ISError error) {
-
+        if (error != null) {
+            launchMap();
+        } else {
+            ISLog.e(TAG, "onDataUpdateDone: " + error);
+        }
     }
 }
