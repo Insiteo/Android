@@ -1,6 +1,6 @@
 package com.insiteo.sampleapp.initialization;
 
-import android.app.Activity;
+import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,6 +17,7 @@ import com.insiteo.lbs.common.init.ISPackage;
 import com.insiteo.lbs.common.init.listener.ISIInitListener;
 import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.common.utils.threading.ISICancelable;
+import com.insiteo.sampleapp.InitComponentFragment;
 
 import java.util.Stack;
 
@@ -60,8 +61,8 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onAttach(Context context) {
+        super.onAttach(context);
 
         Fragment parentFragment = getParentFragment();
 
@@ -74,9 +75,9 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
             }
         } else {
             try {
-                mListener = (Callback) getActivity();
+                mListener = (Callback) this.parentFragment;
             } catch (ClassCastException e) {
-                throw new ClassCastException(activity.toString()
+                throw new ClassCastException(context.toString()
                         + " must implement InsiteoTaskCallbacks");
             }
         }
@@ -87,6 +88,8 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
         super.onDetach();
         mListener = null;
     }
+
+
 
     /***********************************************************************************************
      Fragment callback interface to implement
@@ -115,8 +118,19 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
         eCurrentState = TaskState.UNKNOWN;
     }
 
+    Context mContext = null;
+    public void setContext(Context c) {
+        mContext = c;
+    }
+
+    InitComponentFragment parentFragment = null;
+    public void setParentFragment(InitComponentFragment frag) {
+        parentFragment = frag;
+    }
+
     public void initializeAPI() {
-        Insiteo.getInstance().initialize(getActivity(), this);
+        ISLog.d(TAG, this + "initializeAPI: ");
+        Insiteo.getInstance().initialize(mContext, this);
         eCurrentState = TaskState.INITIALIZING;
     }
 
@@ -157,7 +171,7 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
 
     @Override
     public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
-        ISLog.d(TAG, "onInitDone() called with: " + "error = [" + error + "], suggestedSite = [" + suggestedSite + "], fromLocalCache = [" + fromLocalCache + "]");
+        ISLog.d(TAG, this + "onInitDone() called with: " + "error = [" + error + "], suggestedSite = [" + suggestedSite + "], fromLocalCache = [" + fromLocalCache + "]");
         if (mListener != null) {
             mListener.onInitDone(error, suggestedSite, fromLocalCache);
         }

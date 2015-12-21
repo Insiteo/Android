@@ -3,9 +3,9 @@
 
     <string name="app_name">Sample App</string>
 
-    
+
     <string name="init_progress">Initialization</string>
-    
+
     <string name="launcher_initializing">Initializing ...</string>
     <string name="launcher_api_init_fail">Initialization failure:</string>
     <string name="launcher_api_init_success">Initialization done.</string>
@@ -15,9 +15,9 @@
     <string name="launcher_no_data_available">No data available. Cannot launch application.</string>
     <string name="launcher_pck_download_success">Packages download OK</string>
     <string name="launcher_pck_download_failed">Packages download FAILED :\n</string>
-    
+
     <string name="error_missing_required_package">Missing required packages</string>
-    
+
     <string name="loc_btn_start">Start location</string>
     <string name="loc_btn_stop">Stop location</string>
     <string name="loc_init_fail">Location init failed :\n</string>
@@ -26,12 +26,12 @@
     <string name="loc_ble_activation_required">The BLE needs to be activated.</string>
     <string name="loc_wifi_activation_required">The WIFI needs to be activated.</string>
     <string name="loc_activate">Activate</string>
-    
+
     <string name="action_update_packages">Update</string>
     <string name="action_skip">Skip</string>
-    
+
     <string name="action_locate">Locate</string>
-    
+
     <string name="action_itinerary">Compute an itinerary</string>
     <string name="action_route">Compute an optimized route</string>
     <string name="action_locate_ext_poi">Locate an external POI</string>
@@ -39,21 +39,27 @@
     <string name="action_clear_all">Clear everything</string>
     <string name="action_information">Information</string>
     <string name="action_switch_site">Switch site</string>
-    
+
     <string name="locate_ext_poi_title">Enter an external POI id: </string>
     <string name="locate_ext_poi_hint">anExternalPoiID</string>
-    
+
     <string name="error_no_ext_poi_found">No external POI found.</string>
-    
-    
+
+
     <string name="error_itinerary_computation_failed">Itinerary failed</string>
 
 
     <string name="beacon_monitoring_title">Beacon Monitoring</string>
+    <string name="map_rto_title">Map + RTO</string>
+    <string name="map_location_title">Map + Location</string>
+    <string name="map_location_geofencing_title">Map + Location + Geofencing</string>
     <string name="map_title">Map</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

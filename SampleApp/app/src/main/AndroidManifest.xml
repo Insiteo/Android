@@ -37,7 +37,7 @@
             android:value="true" />
         <meta-data
             android:name="com.insiteo.lbs.location.flags"
-            android:value="@string/location_flags" />
+            android:value="NAVIGATION_FLAG_BLE" />
 
         <activity
             android:name=".settings.SettingsActivity"

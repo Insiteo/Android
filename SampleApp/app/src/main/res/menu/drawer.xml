@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/api_initialization"
+            android:title="Api Localization">
+            <menu>
+                <item
+                    android:id="@+id/init_all_in_one"
+                    android:icon="@drawable/ic_settings_remote_black_24dp"
+                    android:title="Init All In One"
+                    android:enabled="true"
+                    />
+                <item
+                    android:id="@+id/init_step_by_step"
+                    android:icon="@drawable/ic_settings_remote_black_24dp"
+                    android:title="Init Step By Step"
+                    android:enabled="true"
+                    />
+            </menu>
+        </item>
+    </group>
 
     <group
         android:checkableBehavior="single">
@@ -11,6 +32,56 @@
                     android:id="@+id/beacon_monitoring"
                     android:icon="@drawable/ic_settings_remote_black_24dp"
                     android:title="Monitoring"
+                    android:enabled="true"
+                    />
+            </menu>
+        </item>
+    </group>
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/map_section"
+            android:title="Map">
+            <menu>
+                <item
+                    android:id="@+id/map_rto"
+                    android:icon="@drawable/ic_settings_remote_black_24dp"
+                    android:title="Map + RTO"
+                    android:enabled="true"
+                    />
+                <item
+                    android:id="@+id/map_location"
+                    android:icon="@drawable/ic_settings_remote_black_24dp"
+                    android:title="Map + Location"
+                    android:enabled="true"
+                    />
+                <item
+                    android:id="@+id/map_location_geofencing"
+                    android:icon="@drawable/ic_settings_remote_black_24dp"
+                    android:title="Map + Location + Geofencing"
+                    android:enabled="true"
+                    />
+                <item
+                    android:id="@+id/map_location_itinery"
+                    android:icon="@drawable/ic_settings_remote_black_24dp"
+                    android:title="Map + Location + Itinary"
+                    android:enabled="true"
+                    />
+            </menu>
+        </item>
+    </group>
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/analytics_section"
+            android:title="Analytics">
+            <menu>
+                <item
+                    android:id="@+id/analytics_generic_overriding"
+                    android:icon="@drawable/ic_settings_remote_black_24dp"
+                    android:title="Analytics Generic + Overriding"
                     android:enabled="true"
                     />
             </menu>
