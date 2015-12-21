@@ -28,7 +28,7 @@ public class SampleApplication extends ISBeaconApplication {
      * be trigger (if properly on back office), otherwise they will only be trigger when
      * the application is in background
      */
-    private final static boolean FORCE_NOTIFICATION  = false; //remettre à true
+    private final static boolean FORCE_NOTIFICATION  = true; //remettre à true
 
     private Map<Long, StateBeaconRegion> beaconRegions;
     public static EventBus bus;
@@ -51,8 +51,8 @@ public class SampleApplication extends ISBeaconApplication {
     protected boolean shouldAutoStartService() {
         SharedPreferences prefs = getSharedPreferences(SettingsPrefs.BEACON_PREFS, MODE_PRIVATE);
         boolean autoStart = prefs.getBoolean(SettingsPrefs.BEACON_MONITORING_ENABLED, SettingsPrefs.BEACON_MONITORING_ENABLED_DEFAULT);
-        //return autoStart;
-        return false;
+        return autoStart;
+        //return false;
     }
 
     public Map<Long, StateBeaconRegion> getRegions() {
