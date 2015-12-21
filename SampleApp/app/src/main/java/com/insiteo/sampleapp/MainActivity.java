@@ -11,34 +11,25 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.insiteo.lbs.Insiteo;
-import com.insiteo.lbs.common.ISError;
-import com.insiteo.lbs.common.auth.entities.ISUser;
-import com.insiteo.lbs.common.auth.entities.ISUserSite;
-import com.insiteo.lbs.common.init.ISEPackageType;
-import com.insiteo.lbs.common.init.ISPackage;
-import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.location.ISLocationConstants;
-import com.insiteo.lbs.map.ISMapConstants;
 import com.insiteo.sampleapp.beacon.BeaconMonitoringFragment;
-import com.insiteo.sampleapp.initialization.ISInitializationTaskFragment;
 import com.insiteo.sampleapp.settings.SettingsActivity;
-
-import java.util.Stack;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 
-public class MainActivity extends ActionBarActivity implements ISInitializationTaskFragment.Callback {
+public class MainActivity extends ActionBarActivity {
 
 	public final static String TAG = "SampleApp";
 
     private final static int NO_RESOURCE = -1;
 
-    private ISInitializationTaskFragment mInitializationFragment;
+
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
@@ -50,52 +41,16 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
         // Set the UI
         setContentView(R.layout.activity_main);
         initToolbar();
         initNavigationDrawer();
         initElements();
 
-        FragmentManager fm = getSupportFragmentManager();
-        mInitializationFragment = (ISInitializationTaskFragment) fm.findFragmentByTag(TAG);
-
-        // If the Fragment is non-null, then it is currently being
-        // retained across a configuration change.
-        if (mInitializationFragment == null) {
-            launch(mInitializationFragment = ISInitializationTaskFragment.newInstance(), NO_RESOURCE);
-        }
-
 		Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
 		ISLocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
 
-
-        ISMapConstants.USE_ZONE_3D_OPTIMIZATION = false;
-
 	}
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(mInitializationFragment != null) {
-
-            switch (mInitializationFragment.getCurrentState()){
-                case UNKNOWN:
-                    /**
-                     * Forces the API initialization
-                     */
-                    if(!Insiteo.getInstance().isAuthenticated()) {
-                        mInitializationFragment.initializeAPI();
-                        displayLoaderView(true);
-                    }
-                    break;
-
-                case INITIALIZING:
-                    displayLoaderView(true);
-                    break;
-            }
-        }
-    }
 
     @Override
 	protected void onDestroy() {
@@ -104,7 +59,7 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 	}
 
     private void launch(Fragment frag, int subtitleRes) {
-
+        Log.e(TAG, "launch: " + frag);
         if(subtitleRes != NO_RESOURCE) mToolbar.setSubtitle(subtitleRes);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -112,14 +67,6 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
         fragmentManager.beginTransaction()
                 .replace(R.id.container, frag)
                 .commit();
-    }
-
-    private void launchBeacon() {
-        launch(BeaconMonitoringFragment.newInstance(), R.string.beacon_monitoring_title);
-    }
-
-    private void launchMap() {
-        launch(MapFragment.newInstance(), R.string.map_title);
     }
 
     //**********************************************************************************************
@@ -153,6 +100,26 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
                         mDrawerLayout.closeDrawers();
                         BeaconMonitoringFragment frag = BeaconMonitoringFragment.newInstance();
                         launch(frag, R.string.beacon_monitoring_title);
+                        return true;
+                    case R.id.init_all_in_one:
+                        mDrawerLayout.closeDrawers();
+                        MapFragment map_frag = MapFragment.newInstance();
+                        launch(map_frag, R.string.beacon_monitoring_title);
+                        return true;
+                    case R.id.map_rto:
+                        mDrawerLayout.closeDrawers();
+                        MapRTOFragment map_rto_frag = MapRTOFragment.newInstance();
+                        launch(map_rto_frag, R.string.map_rto_title);
+                        return true;
+                    case R.id.map_location:
+                        mDrawerLayout.closeDrawers();
+                        MapLocationFragment map_loc_frag = MapLocationFragment.newInstance();
+                        launch(map_loc_frag, R.string.map_location_title);
+                        return true;
+                    case R.id.map_location_geofencing:
+                        mDrawerLayout.closeDrawers();
+                        MapLocationGeofencingFragment map_geofencing_frag = MapLocationGeofencingFragment.newInstance();
+                        launch(map_geofencing_frag, R.string.map_location_geofencing_title);
                         return true;
                     case R.id.menu_settings:
                         mDrawerLayout.closeDrawers();
@@ -198,58 +165,5 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 
     private void initElements() {
         mLoaderView = (ProgressBar) findViewById(R.id.initialization_progress);
-    }
-
-    private void displayLoaderView(boolean visible) {
-        mLoaderView.setVisibility(visible ? View.VISIBLE : View.GONE);
-    }
-
-    //**********************************************************************************************
-    // 	ISInitializationTaskFragment#Callback
-    // *********************************************************************************************
-
-    @Override
-    public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
-        displayLoaderView(false);
-
-        if (error == null) {
-            if (Insiteo.getInstance().isAuthenticated()) {
-                ISUser user = Insiteo.getCurrentUser();
-                ISUserSite oab = user.getSite(463);
-
-                if (oab != null) {
-                    mInitializationFragment.startSite(oab);
-                } else {
-                    ISLog.e(TAG, "onInitDone: site not found");
-                }
-            }
-        } else {
-            ISLog.e(TAG, "onInitDone: " + error);
-        }
-    }
-
-    @Override
-    public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
-        if (error == null) {
-            if (packageToUpdate.isEmpty()) {
-                launchMap();
-            }
-        } else {
-            ISLog.e(TAG, "onStartDone: " + error);
-        }
-    }
-
-    @Override
-    public void onPackageUpdateProgress(ISEPackageType packageType, boolean download, long progress, long total) {
-
-    }
-
-    @Override
-    public void onDataUpdateDone(ISError error) {
-        if (error != null) {
-            launchMap();
-        } else {
-            ISLog.e(TAG, "onDataUpdateDone: " + error);
-        }
     }
 }
