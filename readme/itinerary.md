@@ -21,6 +21,30 @@ mapView.addRenderer(itineraryRenderer);
 itineraryRenderer.setListener(listener);
 ```
 
+> **Customizing the rendering**: if you want you can change the colors that are used for the itinerary, for that you simply need to override any of the following xml values:
+
+```xml
+<color name="insiteo_itinerary_section_color_normal">#ff226c79</color>
+<color name="insiteo_itinerary_section_color_disabled">#ff666666</color>
+<color name="insiteo_itinerary_section_color_selectable">#ff226c79</color>
+<color name="insiteo_itinerary_section_color_selected">#ff00b7df</color>
+
+<color name="insiteo_itinerary_section_background_color_normal">#ffffffff</color>
+<color name="insiteo_itinerary_section_background_color_disabled">#ffcccccc</color>
+<color name="insiteo_itinerary_section_background_color_selectable">#ffffffff</color>
+<color name="insiteo_itinerary_section_background_color_selected">#ffffffff</color>
+
+<color name="insiteo_itinerary_waypoint_color_normal">#ff226c79</color>
+<color name="insiteo_itinerary_waypoint_color_mapchange_enter">#ffeeb052</color>
+<color name="insiteo_itinerary_waypoint_color_mapchange_exit">#ff91e58f</color>
+<color name="insiteo_itinerary_waypoint_color_first">#ff28ab25</color>
+<color name="insiteo_itinerary_waypoint_color_last">#ffee0000</color>
+
+<color name="insiteo_itinerary_waypoint_background_color">#ffffffff</color>
+
+<color name="insiteo_itinerary_animation_point_color">#ffffffff</color>
+``` 
+
 ### Request an itinerary between two points
 
 To compute an itinerary between two points, simply do like this:
