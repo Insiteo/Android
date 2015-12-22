@@ -143,7 +143,9 @@ If you want an offset to be used when drawing an <a href="http://dev.insiteo.com
 
 ### Best practices
 
-It is best practice to call the <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/map/ISMapView.html" target="_blank">`ISMapView`</a> <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/map/ISMapView.html#onPause()" target="_blank">`onPause`</a> and <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/map/ISMapView.html#onResume()" target="_blank">`onResume`</a> methods in your `Activity` or `Fragment` respective methods.
+- **Map rendering** It is best practice to call the <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/map/ISMapView.html" target="_blank">`ISMapView`</a> <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/map/ISMapView.html#onPause()" target="_blank">`onPause`</a> and <a href="http://dev.insiteo.com/api/doc/android/3.4/reference/com/insiteo/lbs/map/ISMapView.html#onResume()" target="_blank">`onResume`</a> methods in your `Activity` or `Fragment` respective methods.
+
+- **Handling loads of POI** if your application needs to handle a large amount of graphical object it can be best to filter what should be rendered depending on the zoomLevel. Use the `onZoomEnd(int newZoomLevel)` method to remove old `ISIRTO` from the `ISMapView` and add the new ones.
 
 ## Where to go from there?
 
