@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="server">test</string>
-    <!--<string name="api_key">5a30df2a-6038-698f-e387-0691ff1239d6</string>-->
+    <string name="api_key">5a30df2a-6038-698f-e387-0691ff1239d6</string>
     <string name="render_mode">MODE_2D</string>
     <string name="location_flags">BACKGROUND_FLAG_BLE</string>
-
-    <string name="api_key">9f3c5728-8c12-40e8-9433-444d3ac21fd8</string>
 </resources>

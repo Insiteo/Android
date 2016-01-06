@@ -648,9 +648,12 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	private void initializeGeofencingService(){
 		// geofencing
 		mGeofenceProvider = (ISGeofenceProvider) ISLocationProvider.getInstance().getModule(ISELocationModule.GEOFENCING);
-		mGeofenceProvider.setListener(this);
-		mGeofenceToastView = LayoutInflater.from(getActivity()).inflate(R.layout.geofencing_toast, null);
-		mGeofenceToastText = (TextView)mGeofenceToastView.findViewById(R.id.geofence_text);
+		if (mGeofenceProvider != null) {
+			mGeofenceProvider.setListener(this);
+			mGeofenceToastView = LayoutInflater.from(getActivity()).inflate(R.layout.geofencing_toast, null);
+			mGeofenceToastText = (TextView)mGeofenceToastView.findViewById(R.id.geofence_text);
+		}
+
 	}
 
 	/**
@@ -745,7 +748,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		mLocationButton.setImageResource(R.drawable.localization_button);
 		((AnimationDrawable) mLocationButton.getDrawable()).start();
 
-		ISLocationProvider.getInstance().start(this);
+		ISLocationProvider.getInstance().start(ISLocationProvider.GPS, this);
 	}
 
 	/**

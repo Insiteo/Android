@@ -42,14 +42,20 @@
             tools:context="com.insiteo.sampleapp.MainActivity"
             tools:ignore="MergeRootFrame" >
 
-                <ProgressBar
-                    android:id="@+id/initialization_progress"
-                    style="?android:attr/progressBarStyleLarge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="8dp"
-                    android:visibility="gone"/>
+            <ProgressBar
+                android:id="@+id/initialization_progress"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/update_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
 
         </FrameLayout>
 
@@ -65,5 +71,3 @@
         android:fitsSystemWindows="true" />
 
 </android.support.v4.widget.DrawerLayout>
-
-

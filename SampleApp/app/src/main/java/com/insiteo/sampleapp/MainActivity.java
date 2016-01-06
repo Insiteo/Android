@@ -14,10 +14,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.ISError;
-import com.insiteo.lbs.common.auth.entities.ISUser;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISPackage;
@@ -45,6 +45,7 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
     private ActionBarDrawerToggle mDrawerToggle;
 
     private ProgressBar mLoaderView;
+    private TextView mUpdateProgress;
 
 
 	@Override
@@ -71,7 +72,6 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 
 
         ISMapConstants.USE_ZONE_3D_OPTIMIZATION = false;
-
 	}
 
     @Override
@@ -198,6 +198,7 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 
     private void initElements() {
         mLoaderView = (ProgressBar) findViewById(R.id.initialization_progress);
+        mUpdateProgress = (TextView) findViewById(R.id.update_progress);
     }
 
     private void displayLoaderView(boolean visible) {
@@ -213,16 +214,7 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
         displayLoaderView(false);
 
         if (error == null) {
-            if (Insiteo.getInstance().isAuthenticated()) {
-                ISUser user = Insiteo.getCurrentUser();
-                ISUserSite oab = user.getSite(463);
-
-                if (oab != null) {
-                    mInitializationFragment.startSite(oab);
-                } else {
-                    ISLog.e(TAG, "onInitDone: site not found");
-                }
-            }
+            mInitializationFragment.startSite(suggestedSite);
         } else {
             ISLog.e(TAG, "onInitDone: " + error);
         }
@@ -241,12 +233,19 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 
     @Override
     public void onPackageUpdateProgress(ISEPackageType packageType, boolean download, long progress, long total) {
+        ISLog.d(TAG, "onPackageUpdateProgress() called with: " + "packageType = [" + packageType + "], download = [" + download + "], progress = [" + progress + "], total = [" + total + "]");
+        StringBuilder sb = new StringBuilder();
+        if (download) sb.append("downloading => "); else sb.append("installing => ");
 
+        sb.append('[').append(packageType).append(']').append(' ');
+        sb.append(' ').append(progress).append('/').append(total);
+
+        mUpdateProgress.setText(sb.toString());
     }
 
     @Override
     public void onDataUpdateDone(ISError error) {
-        if (error != null) {
+        if (error == null) {
             launchMap();
         } else {
             ISLog.e(TAG, "onDataUpdateDone: " + error);
