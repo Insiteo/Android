@@ -84,7 +84,7 @@ public class MapLocationGeofencingFragment extends MapLocationFragment implement
         final List<ISGeofenceArea> zones = aEnteredZones;
 
         for (ISGeofenceArea z : zones) {
-            final String extra1 = z.getExtra1();
+            final String extra1 = z.getMessage();
             if (extra1 != null) {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override public void run() {

@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.init.ISPackage;
+import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.map.database.ISMapDBHelper;
 import com.insiteo.lbs.map.entities.ISZone;
 import com.insiteo.lbs.map.entities.ISZonePoi;
@@ -65,14 +66,22 @@ public class MapRTOFragment extends MapLocationFragment implements ISIRTOListene
         super.onLocationInitDone(isError);
     }
 
-    @Override
+   /* @Override
     public void onMapInitDone() {
         initializationMapRTO();
+    }*/
+
+    @Override
+    public void initMap() {
+        super.initMap();
+        mMapView.setPriority(GfxRto.class, 14);
+        mMapView.setRTOListener(this, GfxRto.class);
     }
 
-    private void initializationMapRTO() {
-        mMapFrag.mMapView.setPriority(GfxRto.class, 14);
-        mMapFrag.mMapView.setRTOListener(this, GfxRto.class);
+    @Override
+    public void onMapViewReady(final int aMapID, final String aMapName) {
+        super.onMapViewReady(aMapID, aMapName);
+
     }
 
     /**
@@ -82,6 +91,7 @@ public class MapRTOFragment extends MapLocationFragment implements ISIRTOListene
      */
     @Override
     public void onRTOClicked(ISIRTO rto, ISZone zone) {
+        ISLog.e(TAG, "onRTOClicked: " );
         if(rto instanceof ISGenericRTO) {
             ISGenericRTO genericRto = (ISGenericRTO) rto;
 
@@ -131,10 +141,10 @@ public class MapRTOFragment extends MapLocationFragment implements ISIRTOListene
      * @param actionParam the action parameter.
      */
     @Override
-    public void onMapZoneClicked(ISZone zone, ISEZoneAction actionType, String actionParam) {
+    public void onZoneClicked(ISZone zone, ISEZoneAction actionType, String actionParam) {
 
         // Clear the MapView from all the GfxRto previously rendered.
-        mMapFrag.mMapView.clearRenderer(GfxRto.class);
+        mMapView.clearRenderer(GfxRto.class);
 
         // Get all the external POI that are associated to this zone and add them on the map.
         List<ISZonePoi> zpas = ISMapDBHelper.getPoiAssocFromZone(zone.getId(), true);
@@ -151,11 +161,11 @@ public class MapRTOFragment extends MapLocationFragment implements ISIRTOListene
             // Apply a particular offset to this rto. This is used to have multiple rto in the same zone without superposition.
             rto.setZoneOffset(zpas.get(i).getOffset());
 
-            mMapFrag.mMapView.addRTOInZone(zone.getId(), rto);
+            mMapView.addRTOInZone(zone.getId(), rto);
         }
 
         // Center the map on this zone with animation.
-        mMapFrag.mMapView.centerMap(zone.getId(), true);
+        mMapView.centerMap(zone.getId(), true);
     }
 
 }

@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="API VERSION"
+            android:text="API"
             android:id="@+id/api_version_label"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="LOCATION VERSION"
+            android:text="Location"
             android:id="@+id/loc_version_label"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="ITINERARY VERSION"
+            android:text="Itinerary"
             android:id="@+id/iti_version_label"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -77,6 +77,31 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/iti_version_value"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Site Id"
+            android:id="@+id/site_id_label"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="35dp"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/site_id_value"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>

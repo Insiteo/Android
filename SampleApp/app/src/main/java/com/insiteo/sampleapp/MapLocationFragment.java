@@ -9,21 +9,16 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.insiteo.lbs.common.ISError;
-import com.insiteo.lbs.common.init.ISPackage;
+import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.location.ISILocationListener;
 import com.insiteo.lbs.location.ISLocation;
 import com.insiteo.lbs.location.ISLocationProvider;
 import com.insiteo.lbs.location.ISLocationRenderer;
-import com.insiteo.lbs.map.entities.ISMap;
-
-import java.util.Stack;
 
 /**
  * Created by Cyril on 15/12/2015.
  */
-public class MapLocationFragment extends InitComponentFragment implements ISILocationListener, View.OnClickListener{
-    private ISMap mCurrentMap;
-
+public class MapLocationFragment extends MapFragment implements ISILocationListener, View.OnClickListener{
     private ImageButton mLocationButton;
     private ISLocationRenderer mLocationrenderer;
     private boolean mCenterOnPosition = true;
@@ -50,16 +45,17 @@ public class MapLocationFragment extends InitComponentFragment implements ISILoc
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
     }
 
     @Override
-    public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
-        super.onStartDone(error, packageToUpdate);
+    public void onMapViewReady(final int aMapID, final String aMapName) {
+        super.onMapViewReady(aMapID, aMapName);
         initializeLocationService();
     }
 
     private void initializeLocationService() {
-
+        ISLog.e(TAG, "initializeLocationService: " );
         mLocationButton = (ImageButton) getView().findViewById(R.id.btn_loc);
         mLocationButton.setOnClickListener(this);
 
@@ -78,7 +74,19 @@ public class MapLocationFragment extends InitComponentFragment implements ISILoc
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        stopLocation();
+    }
+
+    @Override
+    public void initMap() {
+        super.initMap();
+    }
+
+    @Override
     public void onClick(View v) {
+        ISLog.e(TAG, "onClick: MapLocationFragment" );
         switch (v.getId()) {
             case R.id.btn_loc:
                 locationHandler();
@@ -100,7 +108,7 @@ public class MapLocationFragment extends InitComponentFragment implements ISILoc
     /**
      * Starts the location computing process using the flags that were defined in the LauncherActivity
      */
-    private void startLocation() {
+    public void startLocation() {
         mLocationButton.setImageResource(R.drawable.localization_button);
         ((AnimationDrawable) mLocationButton.getDrawable()).start();
 
@@ -114,14 +122,14 @@ public class MapLocationFragment extends InitComponentFragment implements ISILoc
         ISLocationProvider.getInstance().stop();
         mLocationButton.setImageResource(R.drawable.ic_location_off);
         mLastLocMapID = -1;
-        mMapFrag.mMapView.rotate(0f, false);
+        mMapView.rotate(0f, false);
 
         mLastLocation = null;
     }
 
     @Override
     public void onLocationInitDone(ISError isError) {
-        mMapFrag.mMapView.addRenderer(mLocationrenderer);
+        mMapView.addRenderer(mLocationrenderer);
     }
 
     @Override
@@ -133,7 +141,7 @@ public class MapLocationFragment extends InitComponentFragment implements ISILoc
         /**
          * this method animate the map to be centered on the given position, here the user's position
          */
-        if(mCenterOnPosition) mMapFrag.mMapView.centerMap(aLocation.getPosition(), true);
+        if(mCenterOnPosition) mMapView.centerMap(aLocation.getPosition(), true);
 
         mLastLocMapID = aLocation.getMapID();
     }
@@ -149,7 +157,7 @@ public class MapLocationFragment extends InitComponentFragment implements ISILoc
                     angle = mapAzimuth - aAzimuth;
                 }
             }
-            mMapFrag.mMapView.rotate(angle, false);
+            mMapView.rotate(angle, false);
         }
     }
 

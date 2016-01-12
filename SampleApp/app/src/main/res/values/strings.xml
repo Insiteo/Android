@@ -50,16 +50,16 @@
 
 
     <string name="beacon_monitoring_title">Beacon Monitoring</string>
+    <string name="init_all_in_one">Init All In One</string>
     <string name="map_rto_title">Map + RTO</string>
     <string name="map_location_title">Map + Location</string>
     <string name="map_location_geofencing_title">Map + Location + Geofencing</string>
+    <string name="map_location_itinery_title">Map + Location + Itinery</string>
     <string name="map_title">Map</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -103,8 +103,8 @@ public class MainActivity extends ActionBarActivity {
                         return true;
                     case R.id.init_all_in_one:
                         mDrawerLayout.closeDrawers();
-                        MapFragment map_frag = MapFragment.newInstance();
-                        launch(map_frag, R.string.beacon_monitoring_title);
+                        InitAllInOneFragment all_frag = InitAllInOneFragment.newInstance();
+                        launch(all_frag, R.string.init_all_in_one);
                         return true;
                     case R.id.map_rto:
                         mDrawerLayout.closeDrawers();
@@ -120,6 +120,11 @@ public class MainActivity extends ActionBarActivity {
                         mDrawerLayout.closeDrawers();
                         MapLocationGeofencingFragment map_geofencing_frag = MapLocationGeofencingFragment.newInstance();
                         launch(map_geofencing_frag, R.string.map_location_geofencing_title);
+                        return true;
+                    case R.id.map_location_itinery:
+                        mDrawerLayout.closeDrawers();
+                        MapLocationItineraryFragment map_itinary_frag = MapLocationItineraryFragment.newInstance();
+                        launch(map_itinary_frag, R.string.map_location_itinery_title);
                         return true;
                     case R.id.menu_settings:
                         mDrawerLayout.closeDrawers();

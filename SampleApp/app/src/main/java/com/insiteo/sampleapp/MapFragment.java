@@ -1,19 +1,20 @@
 package com.insiteo.sampleapp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.insiteo.lbs.Insiteo;
+import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.common.utils.geometry.ISPosition;
 import com.insiteo.lbs.itinerary.ISItineraryProvider;
 import com.insiteo.lbs.location.ISLocationProvider;
@@ -24,23 +25,18 @@ import com.insiteo.lbs.map.entities.ISMap;
 import com.insiteo.lbs.map.entities.ISZone;
 import com.insiteo.lbs.map.render.ISERenderMode;
 import com.insiteo.lbs.map.render.ISEZoneAction;
+import com.insiteo.sampleapp.initialization.ISInitializationTaskFragment;
 
 import java.util.List;
 
-public class MapFragment extends Fragment implements ISIMapListener, OnClickListener, ActionBar.OnNavigationListener {
+public class MapFragment extends ISInitializationTaskFragment implements ISIMapListener, View.OnClickListener, ActionBar.OnNavigationListener {
 
 	public final static String TAG = MapFragment.class.getSimpleName();
 
 	public ISMapView mMapView = null;
 
-	private ISMap mCurrentMap;
+	public ISMap mCurrentMap;
 	List<ISMap> mMaps;
-
-    Callback mapCallback = null;
-
-    public void setCallbackListerner(Callback c) {
-        mapCallback = c;
-    }
 
     public static MapFragment newInstance() {
         Bundle args = new Bundle();
@@ -53,23 +49,25 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-		View rootView = inflater.inflate((Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_2D) ? R.layout.fragment_map_2d : R.layout.fragment_map_3d, container, false);
-
-		setHasOptionsMenu(true);
+		View rootView = inflater.inflate(R.layout.fragment_map_location, container, false);
 		return rootView;
 	}
 
 	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
+	public void initMap() {
+		LayoutInflater inflater =  (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View rootView = inflater.inflate((Insiteo.getCurrentUser().getRenderMode() == ISERenderMode.MODE_2D) ? R.layout.fragment_map_2d : R.layout.fragment_map_3d, null, false);
+		FrameLayout container = (FrameLayout)getView().findViewById(R.id.map_container);
+		container.addView(rootView);
 		initializeMapService();
-		super.onViewCreated(view, savedInstanceState);
 	}
+
+
 
 	@Override
 	public void onResume() {
 		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
-		mMapView.onResume();
+		//mMapView.onResume();
 		super.onResume();
 	}
 
@@ -86,6 +84,7 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 
 	@Override
 	public void onClick(View v) {
+		ISLog.e(TAG, "onClick: MapFragment" );
 		switch (v.getId()) {
 		case R.id.btn_loc:
 
@@ -133,6 +132,7 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	// *********************************************************************************************
 
 	private void initializeMapService() {
+		ISLog.e(TAG, "initializeMapService: " );
 		mMapView = (ISMapView) getView().findViewById(R.id.map);
 
 		// The MapView listener. By default the listener is set to the context (if it implements IMapListener) that created the View.
@@ -199,15 +199,8 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	@Override
 	public void onMapViewReady(final int aMapID, final String aMapName) {
         setMapNavigationList();
-
         mCurrentMap = ISMapDBHelper.getMap(aMapID);
-        mapCallback.onMapInitDone();
 	}
-
-    public interface Callback {
-        void onMapInitDone();
-		void onMapZoneClicked(ISZone zone, ISEZoneAction actionType, String actionParam);
-    }
 
 	/**
 	 * This event is triggered when a Zone object was clicked, and its associated action is custom,
@@ -218,7 +211,7 @@ public class MapFragment extends Fragment implements ISIMapListener, OnClickList
 	 */
 	@Override
 	public void onZoneClicked(ISZone zone, ISEZoneAction actionType, String actionParam) {
-		mapCallback.onMapZoneClicked(zone, actionType, actionParam);
+
 	}
 
 	/**

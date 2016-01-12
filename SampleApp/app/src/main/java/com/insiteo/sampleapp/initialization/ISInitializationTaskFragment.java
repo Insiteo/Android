@@ -1,5 +1,6 @@
 package com.insiteo.sampleapp.initialization;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
@@ -17,7 +18,6 @@ import com.insiteo.lbs.common.init.ISPackage;
 import com.insiteo.lbs.common.init.listener.ISIInitListener;
 import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.common.utils.threading.ISICancelable;
-import com.insiteo.sampleapp.InitComponentFragment;
 
 import java.util.Stack;
 
@@ -27,6 +27,7 @@ import java.util.Stack;
 public class ISInitializationTaskFragment extends Fragment implements ISIInitListener {
 
     private static final String TAG = "ISInitTaskFragment";
+    private ProgressDialog mProgress;
 
     public enum TaskState {
         INITIALIZING,
@@ -37,7 +38,7 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
     }
 
 
-    private Callback mListener;
+  //  private Callback mListener;
 
     private TaskState eCurrentState = TaskState.UNKNOWN;
 
@@ -57,50 +58,25 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mProgress = new ProgressDialog(getActivity());
+        mProgress.setMessage("Downloading New Package");
+        mProgress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        mProgress.setIndeterminate(true);
+        mProgress.setProgress(0);
+      //  View rootView = inflater.inflate(R.layout.fragment_map_location, container, false);
+
         return null;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
-        Fragment parentFragment = getParentFragment();
-
-        if(parentFragment != null) {
-            try {
-                mListener = (Callback) parentFragment;
-            } catch (ClassCastException e) {
-                throw new ClassCastException(parentFragment.toString()
-                        + " must implement InsiteoTaskCallbacks");
-            }
-        } else {
-            try {
-                mListener = (Callback) this.parentFragment;
-            } catch (ClassCastException e) {
-                throw new ClassCastException(context.toString()
-                        + " must implement InsiteoTaskCallbacks");
-            }
-        }
+        initializeAPI();
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
-    }
-
-
-
-    /***********************************************************************************************
-     Fragment callback interface to implement
-     **********************************************************************************************/
-
-    public interface Callback {
-        void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache);
-        void onStartDone(ISError error, Stack<ISPackage> packageToUpdate);
-        void onPackageUpdateProgress(ISEPackageType packageType, boolean download,
-                                     long progress, long total);
-        void onDataUpdateDone(ISError error);
     }
 
     /***********************************************************************************************
@@ -118,19 +94,9 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
         eCurrentState = TaskState.UNKNOWN;
     }
 
-    Context mContext = null;
-    public void setContext(Context c) {
-        mContext = c;
-    }
-
-    InitComponentFragment parentFragment = null;
-    public void setParentFragment(InitComponentFragment frag) {
-        parentFragment = frag;
-    }
-
     public void initializeAPI() {
         ISLog.d(TAG, this + "initializeAPI: ");
-        Insiteo.getInstance().initialize(mContext, this);
+        Insiteo.getInstance().initialize(getActivity(), this);
         eCurrentState = TaskState.INITIALIZING;
     }
 
@@ -172,8 +138,12 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
     @Override
     public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
         ISLog.d(TAG, this + "onInitDone() called with: " + "error = [" + error + "], suggestedSite = [" + suggestedSite + "], fromLocalCache = [" + fromLocalCache + "]");
-        if (mListener != null) {
-            mListener.onInitDone(error, suggestedSite, fromLocalCache);
+        if(error == null) {
+            // The suggested site will be started
+            ISLog.i(TAG, "onInitDone: starting site " + suggestedSite);
+            Insiteo.getInstance().start(suggestedSite, this);
+        } else {
+            ISLog.e(TAG, "onInitDone: " + error);
         }
         eCurrentState = TaskState.UNKNOWN;
     }
@@ -181,8 +151,19 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
     @Override
     public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
         ISLog.d(TAG, "onStartDone() called with: " + "error = [" + error + "], packageToUpdate = [" + packageToUpdate + "]");
-        if(mListener != null) {
-            mListener.onStartDone(error, packageToUpdate);
+        if(error == null) {
+            if(!packageToUpdate.isEmpty()) {
+                // Package update are available. They will be downloaded.
+                ISLog.d(TAG, "onStartDone: packages should be updated");
+                Insiteo.getInstance().update(this, packageToUpdate);
+                mProgress.show();
+            } else {
+                // No package require to be updated. The SDK is no ready to be used.
+                ISLog.e(TAG, "onStartDone:  no pck to update starting map");
+                initMap();
+            }
+        } else {
+            ISLog.e(TAG, "onStartDone: " + error);
         }
         eCurrentState = TaskState.UNKNOWN;
     }
@@ -193,20 +174,26 @@ public class ISInitializationTaskFragment extends Fragment implements ISIInitLis
         ISLog.d(TAG, "onPackageUpdateProgress() called with: " + "packageType = [" + packageType + "], download = [" + download + "], progress = [" + progress + "], total = [" + total + "]");
         mUpdateProgressValue = download ? progress / 1024 : progress;
         mUpdateProgressTotal = download ? total / 1024 : total;
-
-        if(mListener != null) {
-            mListener.onPackageUpdateProgress(packageType, download, mUpdateProgressValue,
-                    mUpdateProgressTotal);
-        }
+        mProgress.setProgress((int) mUpdateProgressValue);
         eCurrentState = download ? TaskState.DOWNLOADING : TaskState.INSTALLING;
     }
 
     @Override
     public void onDataUpdateDone(ISError error) {
-        if(mListener != null) {
-            mListener.onDataUpdateDone(error);
+        if(error == null) {
+            // Packages have been updated. The SDK is no ready to be used.
+            ISLog.e(TAG, "onDataUpdateDone: starting map");
+            initMap();
+            mProgress.hide();
+        } else {
+            ISLog.e(TAG, "onDataUpdateDone: " + error);
+            mProgress.hide();
         }
         eCurrentState = TaskState.UNKNOWN;
     }
 
+    public void initMap()
+    {
+
+    }
 }
