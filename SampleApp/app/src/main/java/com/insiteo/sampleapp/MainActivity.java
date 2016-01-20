@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.ISError;
+import com.insiteo.lbs.common.auth.entities.ISSite;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISPackage;
@@ -213,7 +214,11 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
     public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
         displayLoaderView(false);
 
-        if (error == null) {
+        /**
+         * The sdk will return an error if no internet access is available but this does not
+         * mean that the sdk can not be used
+         */
+        if (error == null || error.getReason() == ISError.ReasonConnectivity) {
             mInitializationFragment.startSite(suggestedSite);
         } else {
             ISLog.e(TAG, "onInitDone: " + error);
@@ -222,8 +227,13 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
 
     @Override
     public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
-        if (error == null) {
-            if (packageToUpdate.isEmpty()) {
+        /**
+         * The sdk will return an error if no internet access is available but this does not
+         * mean that the sdk can not be used. Indeed if all the package are available locally
+         * it should be ok
+         */
+        if (error == null || error.getReason() == ISError.ReasonConnectivity) {
+            if (packageToUpdate == null || packageToUpdate.isEmpty()) {
                 launchMap();
             }
         } else {
@@ -249,6 +259,11 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
             launchMap();
         } else {
             ISLog.e(TAG, "onDataUpdateDone: " + error);
+            ISSite site = Insiteo.getCurrentSite();
+            if (site != null && site.hasPackage(ISEPackageType.MAPDATA)
+                    && site.hasPackage(ISEPackageType.TILES)) {
+                launchMap();
+            }
         }
     }
 }
