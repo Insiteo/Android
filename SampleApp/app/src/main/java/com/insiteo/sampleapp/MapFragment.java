@@ -186,14 +186,18 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 			result = false;
 			break;
 
-		case R.id.action_clear_itinerary: 
-			mItineraryRenderer.clear();
+		case R.id.action_clear_itinerary:
+			if(mItineraryRenderer != null) {
+				mItineraryRenderer.clear();
+			}
 			result = false;
 			break;
 
 
-		case R.id.action_clear_all: 
-			mItineraryRenderer.clear();
+		case R.id.action_clear_all:
+			if(mItineraryRenderer != null) {
+				mItineraryRenderer.clear();
+			}
 			mMapView.clearRenderer(GfxRto.class);
 			result = false;
 			break;
@@ -527,12 +531,15 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	 * This method shows how to compute an itinerary between two points
 	 */
 	private void computeItinerary() {
-		//hide the old itinerary if it exists
-		mItineraryRenderer.setDisplayEnabled(false);         
+		if(mItineraryRenderer != null) {
+			//hide the old itinerary if it exists
+			mItineraryRenderer.setDisplayEnabled(false);
+		}
 
-		ISPosition arrival = new ISPosition(mMapView.getMapId(), 20, 20);
-		mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
-
+		if(mItineraryProvider != null) {
+			ISPosition arrival = new ISPosition(mMapView.getMapId(), 20, 20);
+			mItineraryProvider.requestItineraryFromCurrentLocation(arrival, true, this, PMR_ENABLED);
+		}
 		// If the location is started will request an itinerary from our current position
 		if (!ISLocationProvider.getInstance().isStarted()) {
 			startLocation();
@@ -574,8 +581,9 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 			
 		}
 
-		mItineraryProvider.requestOptimizedItinerary(pos, ISItineraryProvider.ISEOptimizationMode.NearestNeighbourShortestPath, true, false, this, false);
-
+		if(mItineraryProvider != null) {
+			mItineraryProvider.requestOptimizedItinerary(pos, ISItineraryProvider.ISEOptimizationMode.NearestNeighbourShortestPath, true, false, this, false);
+		}
 	}
 
 	/**
@@ -602,7 +610,11 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	 */
 	@Override
 	public void onItineraryRequestDone(boolean aSuccess, ISItineraryProvider.ISBaseRequest aRequest, final ISError error) {
-		if(aSuccess) mItineraryRenderer.setDisplayEnabled(true);
+		if(aSuccess) {
+			if(mItineraryRenderer != null) {
+				mItineraryRenderer.setDisplayEnabled(true);
+			}
+		}
 		else {
             String message = getString(R.string.error_itinerary_computation_failed) + ": " + error;
             Crouton.makeText(getActivity(), message, Style.ALERT).show();
