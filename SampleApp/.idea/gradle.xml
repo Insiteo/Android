@@ -9,7 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Insiteo-SDK-3.4.5" />
+            <option value="$PROJECT_DIR$/Insiteo-SDK-3.4.7" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
