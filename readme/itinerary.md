@@ -117,5 +117,5 @@ public void onItineraryChanged(BaseRequest request, float distanceToIti) {
 - [Project setup](../README.md).
 - [Display your first map](map.md).
 - [Get your first location](location.md).
-- [Configure your iBeacons](beacon.md).
+- [Configure and launch iBeacon service](beacon.md).
 
