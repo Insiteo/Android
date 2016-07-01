@@ -40,6 +40,6 @@ It can be useful in some cases to add information to a <a href="http://dev.insit
 - [Project setup](../README.md).
 - [Display your first map](map.md).
 - [Get your first location](location.md).
-- [Configure your iBeacons](beacon.md).
+- [Configure and launch iBeacon service](beacon.md).
 - [Compute your first itinerary](itinerary.md).
 - [Setup your first geofencing zone](geofence.md).
