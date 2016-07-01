@@ -116,5 +116,5 @@ You can now view your <a href="http://dev.insiteo.com/api/doc/android/3.4/refere
 - [Project setup](../README.md).
 - [Display your first map](map.md).
 - [Get your first location](location.md).
-- [Configure your iBeacons](beacon.md).
+- [Configure and launch iBeacon service](beacon.md).
 - [Compute your first itinerary](itinerary.md).
