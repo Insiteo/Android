@@ -52,7 +52,7 @@ To use them, you have to request them from <a href="http://dev.insiteo.com/api/d
 
 ## Where to go from there?
 
-- [Configure your iBeacons](beacon.md).
+- [Configure and launch iBeacon service](beacon.md).
 - [Compute your first itinerary](itinerary.md).
 - [Setup your first geofencing zone](geofence.md).
 - [Enable analytics](analytics.md).
