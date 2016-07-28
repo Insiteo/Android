@@ -1,6 +1,6 @@
 # Using the Beacon Service
 
-In order to use the Insiteo BeaconService in your application you must extend the <code>ISBeaconApplication class</code>. 
+In order to use the Insiteo BeaconService in your application you must extend the <code>ISBeaconApplication class</code>. You can create your own Application objet. As soon as your Application Object is specified in <code>AndroidManifest.xml</code>, Android System and the Insiteo Library will handle the proper behavior of the Service.
 
 ```java
 public class MyBeaconApplication extends ISBeaconApplication {
