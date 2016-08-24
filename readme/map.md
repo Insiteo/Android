@@ -150,7 +150,7 @@ If you want an offset to be used when drawing an <a href="http://dev.insiteo.com
 ## Where to go from there?
 
 - [Get your first location](location.md).
-- [Configure your iBeacons](beacon.md).
+- [Configure and launch iBeacon service](beacon.md).
 - [Compute your first itinerary](itinerary.md).
 - [Setup your first geofencing zone](geofence.md).
 - [Enable analytics](analytics.md).

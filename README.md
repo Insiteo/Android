@@ -161,7 +161,7 @@ You can easily change the current site by calling the `startAndUpdate(...)` meth
 
 - [Display your first map](readme/map.md).
 - [Get your first location](readme/location.md).
-- [Configure your iBeacons](readme/beacon.md).
+- [Configure and launch iBeacon service](readme/beacon.md).
 - [Compute your first itinerary](readme/itinerary.md).
 - [Setup your first geofencing zone](readme/geofence.md).
 - [Enable analytics](readme/analytics.md).
