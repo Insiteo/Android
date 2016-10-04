@@ -3,11 +3,21 @@
     package="com.insiteo.sampleapp" >
 
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- Used to keep the location service running when app is in the background -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:name=".SampleApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
+        android:launchMode="singleInstance"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity

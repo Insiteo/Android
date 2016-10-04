@@ -86,7 +86,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/bundles" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dependency-cache" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/SampleApp/Insiteo-SDK-3.5.1/unspecified/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/SampleApp/Insiteo-SDK-3.5.2/unspecified/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars" />
@@ -121,7 +121,7 @@
     <orderEntry type="library" exported="" name="eventbus-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="crouton-1.8.5" level="project" />
-    <orderEntry type="module" module-name="Insiteo-SDK-3.5.1" exported="" />
-    <orderEntry type="library" exported="" name="Insiteo-SDK-3.5.1-unspecified" level="project" />
+    <orderEntry type="module" module-name="Insiteo-SDK-3.5.2" exported="" />
+    <orderEntry type="library" exported="" name="Insiteo-SDK-3.5.2-unspecified" level="project" />
   </component>
 </module>

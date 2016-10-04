@@ -1,20 +1,31 @@
 package com.insiteo.sampleapp;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.insiteo.lbs.Insiteo;
 import com.insiteo.lbs.common.ISError;
@@ -29,6 +40,8 @@ import com.insiteo.sampleapp.beacon.BeaconMonitoringFragment;
 import com.insiteo.sampleapp.initialization.ISInitializationTaskFragment;
 import com.insiteo.sampleapp.settings.SettingsActivity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
@@ -67,13 +80,25 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
         if (mInitializationFragment == null) {
             launch(mInitializationFragment = ISInitializationTaskFragment.newInstance(), NO_RESOURCE);
         }
+        boolean permRequired = checkPermissionStatus();
 
-		Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
-		ISLocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
+
+
+        if(!permRequired)
+            init();
+
+
+	}
+
+    public void init() {
+
+
+        Insiteo.setDebug(InsiteoConf.LOG_ENABLED);
+        ISLocationConstants.DEBUG_MODE = InsiteoConf.EMBEDDED_LOG_ENABLED;
 
 
         ISMapConstants.USE_ZONE_3D_OPTIMIZATION = false;
-	}
+    }
 
     @Override
     protected void onStart() {
@@ -265,5 +290,97 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
                 launchMap();
             }
         }
+    }
+
+    //**********************************************************************************************
+    // Android M permissions request
+    //**********************************************************************************************
+
+    //**********************************************************************************************
+    // Android M permissions request
+    //**********************************************************************************************
+
+    private static final int PERMISSION_REQUEST = 0;
+
+    private boolean checkPermissionStatus() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            final List<String> permissionsList = new ArrayList<String>();
+
+            StringBuilder message = new StringBuilder();
+            message.append("The application requires the following permissions: \n ");
+
+            if (!isPermissionGranted(Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                permissionsList.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+                message.append("\n - ACCESS_COARSE_LOCATION in order to scan BLE and WIFI signals\n");
+
+            }
+
+            if (!isPermissionGranted(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                permissionsList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                message.append("\n - WRITE_EXTERNAL_STORAGE in order to write temporary files on the SD card \n");
+
+            }
+
+            if (!isPermissionGranted(Manifest.permission.READ_PHONE_STATE)) {
+                permissionsList.add(Manifest.permission.READ_PHONE_STATE);
+                message.append("\n - READ_PHONE_STATE to pause scans on phone calls \n");
+
+            }
+
+            if (!permissionsList.isEmpty()) {
+                displayPermissionsAlert("Permission required", message.toString(),
+                        permissionsList.toArray(new String[permissionsList.size()]));
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private void displayPermissionsAlert(String title, String message, final String[] permissions) {
+        TextView tv = new TextView(this);
+        tv.setText(message);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title);
+        builder.setView(tv);
+        builder.setPositiveButton(android.R.string.ok, null);
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                requestPermissions(permissions, PERMISSION_REQUEST);
+            }
+        });
+        builder.show();
+    }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_REQUEST: {
+
+                for (int i = 0; i < permissions.length; i++) {
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        init();
+                        Log.d(TAG, permissions[i] + " granted");
+                    } else {
+                        Toast.makeText(MainActivity.this, "All permissions are required", Toast.LENGTH_SHORT).show();
+                        Log.w(TAG, permissions[i] + " refused");
+                        finish();
+                    }
+                }
+
+                return;
+            }
+        }
+    }
+
+    private boolean isPermissionGranted(String permission) {
+        int permissionCheck = ContextCompat.checkSelfPermission(this,
+                permission);
+        return permissionCheck == PackageManager.PERMISSION_GRANTED;
     }
 }

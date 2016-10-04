@@ -110,5 +110,10 @@ public class SampleApplication extends ISBeaconApplication {
 
     }
 
+    @Override
+    public void onStayedBeaconRegion(ISBeaconRegion region) {
+        ISLog.d(TAG, "onEStayedBeaconRegion  " + region);
+    }
+
 
 }
