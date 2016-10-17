@@ -16,5 +16,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/ic_location_off" />
-    
+
+    <ImageButton
+        android:id="@+id/btn_toggle_render"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_location_pending"
+        android:visibility="gone" />
 </RelativeLayout>

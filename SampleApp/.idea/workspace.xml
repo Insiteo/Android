@@ -6,7 +6,6 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -35,12 +34,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-              <folding>
-                <element signature="e#4509#4510#0" expanded="false" />
-                <element signature="e#4578#4579#0" expanded="false" />
-                <element signature="e#7364#7365#0" expanded="false" />
-                <element signature="e#7421#7422#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,11 +44,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1839#1840#0" expanded="false" />
-                <element signature="e#1875#1876#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,19 +54,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1434#1435#0" expanded="false" />
-                <element signature="e#1473#1474#0" expanded="false" />
-                <element signature="e#4238#4239#0" expanded="false" />
-                <element signature="e#4274#4275#0" expanded="false" />
-                <element signature="e#4318#4319#0" expanded="false" />
-                <element signature="e#4361#4362#0" expanded="false" />
-                <element signature="e#4405#4406#0" expanded="false" />
-                <element signature="e#4448#4449#0" expanded="false" />
-                <element signature="e#4746#4747#0" expanded="false" />
-                <element signature="e#4773#4774#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,17 +84,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsPrefs.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SettingsPrefs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/settings/SettingsPrefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37800688">
+            <state vertical-scroll-proportion="0.0">
               <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
@@ -127,31 +103,35 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="430" column="16" selection-start-line="430" selection-start-column="16" selection-end-line="431" selection-end-column="53" />
+              <caret line="412" column="10" selection-start-line="412" selection-start-column="10" selection-end-line="412" selection-end-column="10" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#12174#12175#0" expanded="false" />
-                <element signature="e#12207#12208#0" expanded="false" />
-                <element signature="e#12504#12505#0" expanded="false" />
-                <element signature="e#12534#12535#0" expanded="false" />
-                <element signature="e#12625#12626#0" expanded="false" />
-                <element signature="e#12659#12660#0" expanded="false" />
-                <element signature="e#28512#28513#0" expanded="false" />
-                <element signature="e#28558#28559#0" expanded="false" />
-                <element signature="e#29491#29492#0" expanded="false" />
-                <element signature="e#29537#29538#0" expanded="false" />
+                <element signature="e#13099#13128#0" expanded="true" />
+                <element signature="e#13213#13241#0" expanded="true" />
+                <element signature="e#13342#13364#0" expanded="true" />
+                <element signature="e#14327#14358#0" expanded="true" />
+                <element signature="e#18091#18103#0" expanded="true" />
+                <element signature="e#20216#20270#0" expanded="true" />
+                <element signature="e#28348#28380#0" expanded="true" />
+                <element signature="e#28408#28445#0" expanded="true" />
+                <element signature="e#28516#28548#0" expanded="true" />
+                <element signature="e#29329#29361#0" expanded="true" />
+                <element signature="e#29389#29425#0" expanded="true" />
+                <element signature="e#29496#29528#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InsiteoConf.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/InsiteoConf.java">
-          <provider selected="true" editor-type-id="text-editor">
+      <file leaf-file-name="fragment_map_2d.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_2d.xml">
+          <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -178,8 +158,8 @@
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value=":Insiteo-SDK-3.5.2" />
-                <option name="path" value="$PROJECT_DIR$/Insiteo-SDK-3.5.2" />
+                <option name="name" value=":Insiteo-SDK-3.5.3" />
+                <option name="path" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -703,9 +683,9 @@
                 <option name="name" value="prepareReleaseUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare SampleApp:Insiteo-SDK-3.5.2:unspecified" />
+                <option name="description" value="Prepare SampleApp:Insiteo-SDK-3.5.3:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareSampleAppInsiteoSDK352UnspecifiedLibrary" />
+                <option name="name" value="prepareSampleAppInsiteoSDK353UnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -901,6 +881,57 @@
               <ExternalTaskPojo>
                 <option name="description" value="Displays the tasks runnable from project ':Insiteo-SDK-3.5.2'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.2" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Insiteo-SDK-3.5.3">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in project ':Insiteo-SDK-3.5.3'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by project ':Insiteo-SDK-3.5.3'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in project ':Insiteo-SDK-3.5.3'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in project ':Insiteo-SDK-3.5.3'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of project ':Insiteo-SDK-3.5.3'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of project ':Insiteo-SDK-3.5.3'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of project ':Insiteo-SDK-3.5.3'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from project ':Insiteo-SDK-3.5.3'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
             </list>
@@ -1396,9 +1427,9 @@
                 <option name="name" value="prepareReleaseUnitTestDependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare SampleApp:Insiteo-SDK-3.5.2:unspecified" />
+                <option name="description" value="Prepare SampleApp:Insiteo-SDK-3.5.3:unspecified" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareSampleAppInsiteoSDK352UnspecifiedLibrary" />
+                <option name="name" value="prepareSampleAppInsiteoSDK353UnspecifiedLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1567,7 +1598,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5894080435817" />
+        <entry key="$PROJECT_DIR$" value="5897464559994" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1844,6 +1875,95 @@
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
+                  <entry key="$PROJECT_DIR$/Insiteo-SDK-3.5.3">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle/2.1.2/gradle-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-core/2.1.2/gradle-core-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jacoco/org.jacoco.core/0.7.4.201502262128/org.jacoco.core-0.7.4.201502262128-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jacoco/org.jacoco.core/0.7.4.201502262128/org.jacoco.core-0.7.4.201502262128.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder/2.1.2/builder-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/transform-api/2.0.0-deprecated-use-gradle-api/transform-api-2.0.0-deprecated-use-gradle-api.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-commons/5.0.3/asm-commons-5.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-api/2.1.2/gradle-api-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.2.1/proguard-gradle-5.2.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.2.1/proguard-gradle-5.2.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/5.0.3/asm-5.0.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint/25.1.2/lint-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/compilerCommon/2.1.2/compilerCommon-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/common/25.1.2/common-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jack/jack-api/0.10.0/jack-api-0.10.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdk-common/25.1.2/sdk-common-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/5.0.3/asm-tree-5.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/manifest-merger/25.1.2/manifest-merger-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-test-api/2.1.2/builder-test-api-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-model/2.1.2/builder-model-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jill/jill-api/0.10.0/jill-api-0.10.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/ddms/ddmlib/25.1.2/ddmlib-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdklib/25.1.2/sdklib-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/17.0/guava-17.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/17.0/guava-17.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/annotations/25.1.2/annotations-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.2.1/proguard-base-5.2.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.2.1/proguard-base-5.2.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-checks/25.1.2/lint-checks-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/eclipse/jdt/core/compiler/ecj/4.4.2/ecj-4.4.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/tunnelvisionlabs/antlr4/4.5/antlr4-4.5.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/baseLibrary/2.1.2/baseLibrary-2.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/dvlib/25.1.2/dvlib-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/layoutlib/layoutlib-api/25.1.2/layoutlib-api-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/repository/25.1.2/repository-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/5.0.3/asm-analysis-5.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-api/25.1.2/lint-api-25.1.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/tunnelvisionlabs/antlr4-runtime/4.5/antlr4-runtime-4.5.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/tunnelvisionlabs/antlr4-annotations/4.5/antlr4-annotations-4.5.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/antlr/ST4/4.0.8/ST4-4.0.8.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/abego/treelayout/org.abego.treelayout.core/1.0.1/org.abego.treelayout.core-1.0.1.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/Insiteo-SDK-3.5.3" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
                   <entry key="$PROJECT_DIR$/app">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
@@ -2080,14 +2200,15 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/conf.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map_2d.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="2391" />
-    <option name="y" value="-9" />
     <option name="width" value="2418" />
-    <option name="height" value="1318" />
+    <option name="height" value="1309" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2114,8 +2235,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2124,68 +2247,16 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SampleApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SampleApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sampleapp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SampleApp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sampleapp" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="device.picker.selection" value="2badbe31" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../libs/Insiteo-SDK-3.5.2.aar" />
-    <property name="android.project.structure.last.selected" value="Insiteo-SDK-3.5.1" />
+    <property name="device.picker.selection" value="5c0ebced" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../libs/Insiteo-SDK-3.5.3.aar" />
+    <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RunManager" selected="Android Application.app">
@@ -2465,7 +2536,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2391" y="-9" width="2418" height="1318" extended-state="6" />
+    <frame x="2391" y="0" width="2418" height="1309" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2473,7 +2544,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45430347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33184257" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45348838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39929014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2482,7 +2554,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2491,8 +2563,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2540,56 +2612,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="430" column="16" selection-start-line="430" selection-start-column="16" selection-end-line="431" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12174#12175#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#12504#12505#0" expanded="false" />
-            <element signature="e#12534#12535#0" expanded="false" />
-            <element signature="e#12625#12626#0" expanded="false" />
-            <element signature="e#12659#12660#0" expanded="false" />
-            <element signature="e#28512#28513#0" expanded="false" />
-            <element signature="e#28558#28559#0" expanded="false" />
-            <element signature="e#29491#29492#0" expanded="false" />
-            <element signature="e#29537#29538#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/InsiteoConf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#4509#4510#0" expanded="false" />
-            <element signature="e#4578#4579#0" expanded="false" />
-            <element signature="e#7364#7365#0" expanded="false" />
-            <element signature="e#7421#7422#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/SampleApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1839#1840#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2597,19 +2624,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#4238#4239#0" expanded="false" />
-            <element signature="e#4274#4275#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
-            <element signature="e#4361#4362#0" expanded="false" />
-            <element signature="e#4405#4406#0" expanded="false" />
-            <element signature="e#4448#4449#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2634,17 +2649,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="430" column="16" selection-start-line="430" selection-start-column="16" selection-end-line="431" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12174#12175#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#12504#12505#0" expanded="false" />
-            <element signature="e#12534#12535#0" expanded="false" />
-            <element signature="e#12625#12626#0" expanded="false" />
-            <element signature="e#12659#12660#0" expanded="false" />
-            <element signature="e#28512#28513#0" expanded="false" />
-            <element signature="e#28558#28559#0" expanded="false" />
-            <element signature="e#29491#29492#0" expanded="false" />
-            <element signature="e#29537#29538#0" expanded="false" />
+            <element signature="e#13099#13128#0" expanded="true" />
+            <element signature="e#13213#13241#0" expanded="true" />
+            <element signature="e#13342#13364#0" expanded="true" />
+            <element signature="e#14327#14358#0" expanded="true" />
+            <element signature="e#18091#18103#0" expanded="true" />
+            <element signature="e#20216#20270#0" expanded="true" />
+            <element signature="e#28348#28380#0" expanded="true" />
+            <element signature="e#28408#28445#0" expanded="true" />
+            <element signature="e#28516#28548#0" expanded="true" />
+            <element signature="e#29329#29361#0" expanded="true" />
+            <element signature="e#29389#29425#0" expanded="true" />
+            <element signature="e#29496#29528#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2661,12 +2677,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#4509#4510#0" expanded="false" />
-            <element signature="e#4578#4579#0" expanded="false" />
-            <element signature="e#7364#7365#0" expanded="false" />
-            <element signature="e#7421#7422#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2674,11 +2685,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1839#1840#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2686,19 +2693,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#4238#4239#0" expanded="false" />
-            <element signature="e#4274#4275#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
-            <element signature="e#4361#4362#0" expanded="false" />
-            <element signature="e#4405#4406#0" expanded="false" />
-            <element signature="e#4448#4449#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2723,17 +2718,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="430" column="16" selection-start-line="430" selection-start-column="16" selection-end-line="431" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12174#12175#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#12504#12505#0" expanded="false" />
-            <element signature="e#12534#12535#0" expanded="false" />
-            <element signature="e#12625#12626#0" expanded="false" />
-            <element signature="e#12659#12660#0" expanded="false" />
-            <element signature="e#28512#28513#0" expanded="false" />
-            <element signature="e#28558#28559#0" expanded="false" />
-            <element signature="e#29491#29492#0" expanded="false" />
-            <element signature="e#29537#29538#0" expanded="false" />
+            <element signature="e#13099#13128#0" expanded="true" />
+            <element signature="e#13213#13241#0" expanded="true" />
+            <element signature="e#13342#13364#0" expanded="true" />
+            <element signature="e#14327#14358#0" expanded="true" />
+            <element signature="e#18091#18103#0" expanded="true" />
+            <element signature="e#20216#20270#0" expanded="true" />
+            <element signature="e#28348#28380#0" expanded="true" />
+            <element signature="e#28408#28445#0" expanded="true" />
+            <element signature="e#28516#28548#0" expanded="true" />
+            <element signature="e#29329#29361#0" expanded="true" />
+            <element signature="e#29389#29425#0" expanded="true" />
+            <element signature="e#29496#29528#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2750,12 +2746,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
-          <folding>
-            <element signature="e#4509#4510#0" expanded="false" />
-            <element signature="e#4578#4579#0" expanded="false" />
-            <element signature="e#7364#7365#0" expanded="false" />
-            <element signature="e#7421#7422#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2763,11 +2754,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1839#1840#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2775,19 +2762,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#4238#4239#0" expanded="false" />
-            <element signature="e#4274#4275#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
-            <element signature="e#4361#4362#0" expanded="false" />
-            <element signature="e#4405#4406#0" expanded="false" />
-            <element signature="e#4448#4449#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2812,17 +2787,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="430" column="16" selection-start-line="430" selection-start-column="16" selection-end-line="431" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12174#12175#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#12504#12505#0" expanded="false" />
-            <element signature="e#12534#12535#0" expanded="false" />
-            <element signature="e#12625#12626#0" expanded="false" />
-            <element signature="e#12659#12660#0" expanded="false" />
-            <element signature="e#28512#28513#0" expanded="false" />
-            <element signature="e#28558#28559#0" expanded="false" />
-            <element signature="e#29491#29492#0" expanded="false" />
-            <element signature="e#29537#29538#0" expanded="false" />
+            <element signature="e#13099#13128#0" expanded="true" />
+            <element signature="e#13213#13241#0" expanded="true" />
+            <element signature="e#13342#13364#0" expanded="true" />
+            <element signature="e#14327#14358#0" expanded="true" />
+            <element signature="e#18091#18103#0" expanded="true" />
+            <element signature="e#20216#20270#0" expanded="true" />
+            <element signature="e#28348#28380#0" expanded="true" />
+            <element signature="e#28408#28445#0" expanded="true" />
+            <element signature="e#28516#28548#0" expanded="true" />
+            <element signature="e#29329#29361#0" expanded="true" />
+            <element signature="e#29389#29425#0" expanded="true" />
+            <element signature="e#29496#29528#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2839,12 +2815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding>
-            <element signature="e#4509#4510#0" expanded="false" />
-            <element signature="e#4578#4579#0" expanded="false" />
-            <element signature="e#7364#7365#0" expanded="false" />
-            <element signature="e#7421#7422#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2852,11 +2823,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1839#1840#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2864,19 +2831,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#4238#4239#0" expanded="false" />
-            <element signature="e#4274#4275#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
-            <element signature="e#4361#4362#0" expanded="false" />
-            <element signature="e#4405#4406#0" expanded="false" />
-            <element signature="e#4448#4449#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2901,17 +2856,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12174#12175#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#12504#12505#0" expanded="false" />
-            <element signature="e#12534#12535#0" expanded="false" />
-            <element signature="e#12625#12626#0" expanded="false" />
-            <element signature="e#12659#12660#0" expanded="false" />
-            <element signature="e#28512#28513#0" expanded="false" />
-            <element signature="e#28558#28559#0" expanded="false" />
-            <element signature="e#29491#29492#0" expanded="false" />
-            <element signature="e#29537#29538#0" expanded="false" />
+            <element signature="e#13099#13128#0" expanded="true" />
+            <element signature="e#13213#13241#0" expanded="true" />
+            <element signature="e#13342#13364#0" expanded="true" />
+            <element signature="e#14327#14358#0" expanded="true" />
+            <element signature="e#18091#18103#0" expanded="true" />
+            <element signature="e#20216#20270#0" expanded="true" />
+            <element signature="e#28348#28380#0" expanded="true" />
+            <element signature="e#28408#28445#0" expanded="true" />
+            <element signature="e#28516#28548#0" expanded="true" />
+            <element signature="e#29329#29361#0" expanded="true" />
+            <element signature="e#29389#29425#0" expanded="true" />
+            <element signature="e#29496#29528#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2928,12 +2884,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          <folding>
-            <element signature="e#4509#4510#0" expanded="false" />
-            <element signature="e#4578#4579#0" expanded="false" />
-            <element signature="e#7364#7365#0" expanded="false" />
-            <element signature="e#7421#7422#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2941,11 +2892,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1839#1840#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2953,19 +2900,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#4238#4239#0" expanded="false" />
-            <element signature="e#4274#4275#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
-            <element signature="e#4361#4362#0" expanded="false" />
-            <element signature="e#4405#4406#0" expanded="false" />
-            <element signature="e#4448#4449#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2990,17 +2925,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12174#12175#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#12504#12505#0" expanded="false" />
-            <element signature="e#12534#12535#0" expanded="false" />
-            <element signature="e#12625#12626#0" expanded="false" />
-            <element signature="e#12659#12660#0" expanded="false" />
-            <element signature="e#28512#28513#0" expanded="false" />
-            <element signature="e#28558#28559#0" expanded="false" />
-            <element signature="e#29491#29492#0" expanded="false" />
-            <element signature="e#29537#29538#0" expanded="false" />
+            <element signature="e#13099#13128#0" expanded="true" />
+            <element signature="e#13213#13241#0" expanded="true" />
+            <element signature="e#13342#13364#0" expanded="true" />
+            <element signature="e#14327#14358#0" expanded="true" />
+            <element signature="e#18091#18103#0" expanded="true" />
+            <element signature="e#20216#20270#0" expanded="true" />
+            <element signature="e#28348#28380#0" expanded="true" />
+            <element signature="e#28408#28445#0" expanded="true" />
+            <element signature="e#28516#28548#0" expanded="true" />
+            <element signature="e#29329#29361#0" expanded="true" />
+            <element signature="e#29389#29425#0" expanded="true" />
+            <element signature="e#29496#29528#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3017,12 +2953,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="221" column="42" selection-start-line="221" selection-start-column="42" selection-end-line="221" selection-end-column="42" />
-          <folding>
-            <element signature="e#4509#4510#0" expanded="false" />
-            <element signature="e#4578#4579#0" expanded="false" />
-            <element signature="e#7364#7365#0" expanded="false" />
-            <element signature="e#7421#7422#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3030,19 +2961,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#4238#4239#0" expanded="false" />
-            <element signature="e#4274#4275#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
-            <element signature="e#4361#4362#0" expanded="false" />
-            <element signature="e#4405#4406#0" expanded="false" />
-            <element signature="e#4448#4449#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3082,39 +3001,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="44" selection-start-line="130" selection-start-column="44" selection-end-line="130" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#4238#4239#0" expanded="false" />
-            <element signature="e#4274#4275#0" expanded="false" />
-            <element signature="e#4318#4319#0" expanded="false" />
-            <element signature="e#4361#4362#0" expanded="false" />
-            <element signature="e#4405#4406#0" expanded="false" />
-            <element signature="e#4448#4449#0" expanded="false" />
-            <element signature="e#4746#4747#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="430" column="16" selection-start-line="430" selection-start-column="16" selection-end-line="431" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#12174#12175#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#12504#12505#0" expanded="false" />
-            <element signature="e#12534#12535#0" expanded="false" />
-            <element signature="e#12625#12626#0" expanded="false" />
-            <element signature="e#12659#12660#0" expanded="false" />
-            <element signature="e#28512#28513#0" expanded="false" />
-            <element signature="e#28558#28559#0" expanded="false" />
-            <element signature="e#29491#29492#0" expanded="false" />
-            <element signature="e#29537#29538#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3130,11 +3017,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="118" column="1" selection-start-line="118" selection-start-column="1" selection-end-line="118" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1839#1840#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3142,12 +3025,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#4509#4510#0" expanded="false" />
-            <element signature="e#4578#4579#0" expanded="false" />
-            <element signature="e#7364#7365#0" expanded="false" />
-            <element signature="e#7421#7422#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3163,18 +3041,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/settings/SettingsPrefs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37800688">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_location_pending.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/notif.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="412" column="10" selection-start-line="412" selection-start-column="10" selection-end-line="412" selection-end-column="10" />
+          <folding>
+            <element signature="e#13099#13128#0" expanded="true" />
+            <element signature="e#13213#13241#0" expanded="true" />
+            <element signature="e#13342#13364#0" expanded="true" />
+            <element signature="e#14327#14358#0" expanded="true" />
+            <element signature="e#18091#18103#0" expanded="true" />
+            <element signature="e#20216#20270#0" expanded="true" />
+            <element signature="e#28348#28380#0" expanded="true" />
+            <element signature="e#28408#28445#0" expanded="true" />
+            <element signature="e#28516#28548#0" expanded="true" />
+            <element signature="e#29329#29361#0" expanded="true" />
+            <element signature="e#29389#29425#0" expanded="true" />
+            <element signature="e#29496#29528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_2d.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

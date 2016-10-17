@@ -84,6 +84,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	// LOCATION
 	private ISLocationRenderer mLocationrenderer;
 	private ImageButton mLocationButton;
+	private ImageButton mRenderButton;
 	private ISLocation mLastLocation;
 	private boolean mCenterOnPosition = true;
 
@@ -149,6 +150,20 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		case R.id.btn_loc:
 			locationHandler();
 			break;
+		case R.id.btn_toggle_render:
+			toggleRender();
+			break;
+		}
+	}
+
+	boolean isRendering = true;
+	public void toggleRender() {
+		if(isRendering) {
+			isRendering = false;
+			mMapView.stopRendering();
+		} else {
+			isRendering = true;
+			mMapView.startRendering();
 		}
 	}
 
@@ -395,7 +410,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	 */
 	@Override
 	public void onMapMoved() {
-		Log.d(TAG, "onMapMoved");
+		//Log.d(TAG, "onMapMoved");
 		mCenterOnPosition = false;
 	}
 
@@ -715,6 +730,9 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 		mLocationButton = (ImageButton) getView().findViewById(R.id.btn_loc);
 		mLocationButton.setOnClickListener(this);
+
+		mRenderButton = (ImageButton) getView().findViewById(R.id.btn_toggle_render);
+		mRenderButton.setOnClickListener(this);
 
 		/**
 		 * Get the location renderer that automatically created by the location provider. We then set its drawing priority and 
