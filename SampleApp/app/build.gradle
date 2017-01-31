@@ -26,7 +26,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
         exclude group: 'com.google.android', module: 'support-v4'
     }
@@ -35,5 +35,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:cardview-v7:23.1.1'
     compile 'de.greenrobot:eventbus:2.4.0'
-    compile project(':Insiteo-SDK-3.5.3')
+    compile project(':Insiteo-SDK-3.6.0')
 }
