@@ -30,7 +30,7 @@ To receive location, you will need to start the <a href="http://dev.insiteo.com/
 ISLocationProvider locProvider = ISLocationProvider.getInstance();
 
 // Add location renderer to the ISMapView, thus location is displayed on map
-mapView.addRenderer((LocationRenderer) LocationProvider.getInstance().getRenderer(getResources()));
+mapView.addRenderer(locProvider.getInstance().getRenderer(getResources()));
 
 locProvider.start(listener); 
 ```
