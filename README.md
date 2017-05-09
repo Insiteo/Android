@@ -99,54 +99,64 @@ The first step to access Insiteo's services, is to initialize our API via the `I
 
 Here is a snippet that will show you how to properly do the initialization process:
 
+	public class MainActivity extends Activity implements  ISIInitListener, ISILocationListener {
+    	RelativeLayout mRelativeLayout;
 
-	Insiteo.getInstance().initialize(getActivity(), listener);
-	private ISIInitListener listener = new ISIInitListener() {
-    
-	    @Override
-	    public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
-	       if(error == null) {
-	          // The suggested site will be started
-	       }
-	    }
-	    
-	    @Override
-	    public void onStartDone(ISInsiteoError error, Stack<ISPackage> packageToUpdate) {
-	       if(error == null) {
-	          if(!packageToUpdate.isEmpty()) {
-	             // Package update are available. They will be downloaded.
-	          } else {
-	             // No package require to be updated. The SDK is no ready to be used.
-	          }
-	       }
-	    }
-	    
-	    @Override
-	    public void onPackageUpdateProgress(ISEPackageType packageType, boolean download,
-	                                        long progress, long total) {
-	       showUpdateUI();
+		@Override
+	    protected void onCreate(Bundle savedInstanceState) {
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.activity_main);
+	        mRelativeLayout = (RelativeLayout)findViewById(R.id.activity_main);
+	        Insiteo.getInstance().initialize(this, this);
 	    }
 	
-	    @Override
-	    public void onDataUpdateDone(ISInsiteoError error) {
-	       if(error == null) {
-	          // Packages have been updated. The SDK is no ready to be used.
-	       }
-	    }
+		Insiteo.getInstance().initialize(getActivity(), listener);
+		private ISIInitListener listener = new ISIInitListener() {
 	    
-	    /**
-	     * This callback will be used in order to select the most suitable ISSite that will be returned in
-	     * by onInitDone(ISError, ISUserSite, boolean). Most of the time this should be used to return the user's location. If no android.location.Location
-	     * (ie null) is returned  then the suggested ISSite will simply be the first one returned by the server.
-	     *
-	     * @return the android.location.Location to find the most suitable ISSite or null
-	     */
-	     @Override
-	     public Location selectClosestToLocation() {
-	         return null;
-	     }
-	};
+		    @Override
+	        public void onInitDone(ISError error, ISUserSite suggestedSite, boolean fromLocalCache) {
+	            Log.d("InsiteoTest", "onInitDone");
+	            if(error == null) {
+	                Log.d("InsiteoTest", "onInitDone2");
+	                Insiteo.getInstance().startAndUpdate(suggestedSite, this);
+	                // The suggested site will be started
+	            }
+	        }
+	
+	        @Override
+	        public void onStartDone(ISError error, Stack<ISPackage> packageToUpdate) {
+	            Log.d("InsiteoTest", "onStartDone");
+	
+	            if(error == null) {
+	                if(!packageToUpdate.isEmpty()) {
+	                    // Package update are available. They will be downloaded.
+	                    Log.d("InsiteoTest", "onStartDone1");
+	                } else {
+	                    // No package require to be updated. The SDK is no ready to be used.
+	                    Log.d("InsiteoTest", "onStartDone2");
+	                }
+	            }
+	        }
+	
+	        @Override
+	        public void onPackageUpdateProgress(ISEPackageType packageType, boolean download,
+	                                            long progress, long total) {
+	            showUpdateUI();
+	        }
+		};
+	
+		@Override
+	    public void onDataUpdateDone(ISError error) {
+	        if(error == null) {
+	            // Packages have been updated. The SDK is no ready to be used.
+	            Log.d("InsiteoTest", "onDataUpdateDone !");
+	        }
+	    }
 
+	    private void showUpdateUI() {
+	        Log.d("InsiteoTest", "ShowUpdateUI");
+	    }
+	}
 
 > If you wish to handle all the initialization steps manually you can individually call `initialize(...)`, `start(...)` and `update(...)`. For more details please refer to the documentation.
 
