@@ -135,7 +135,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onPause() {
 		stopLocation();
-		
+
 		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
 		mMapView.onPause();
 		super.onPause();

@@ -32,6 +32,7 @@ import com.insiteo.lbs.common.ISError;
 import com.insiteo.lbs.common.auth.entities.ISSite;
 import com.insiteo.lbs.common.auth.entities.ISUserSite;
 import com.insiteo.lbs.common.init.ISEPackageType;
+import com.insiteo.lbs.common.init.ISEServerType;
 import com.insiteo.lbs.common.init.ISPackage;
 import com.insiteo.lbs.common.utils.ISLog;
 import com.insiteo.lbs.location.ISLocationConstants;
