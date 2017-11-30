@@ -6,10 +6,7 @@ This sample application will demonstrate how to take full advantage of those ser
 
 For further integration documentation you can have a look at the developer's site: http://dev.insiteo.com/api
 
-If you wish to evaluate indoor location in your own building, you can order our test pack including 8 BLE beacons here:
-http://www.insiteo.com/joomla/index.php/en/contact-us.
-
-If you want more information on our services http://www.insiteo.com/joomla/index.php
+If you want more information on our services http://www.insiteo.com/
 
 ## Installation
 
