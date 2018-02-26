@@ -127,7 +127,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onResume() {
 		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
-		mMapView.onResume();
+		//mMapView.onResume();
 		super.onResume();
 	}
 
@@ -137,7 +137,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		stopLocation();
 
 		/* It is best practice to pause the MapView component on its parent Fragment (or Activity) respective method */ 
-		mMapView.onPause();
+		//mMapView.onPause();
 		super.onPause();
 	}
 	//******************************************************************************************************************
