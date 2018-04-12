@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.insiteo.lbs</groupId>
+  <artifactId>lbs</artifactId>
+  <versioning>
+    <release>3.6.4</release>
+    <versions>
+      <version>3.6.4</version>
+    </versions>
+    <lastUpdated>20180412105225</lastUpdated>
+  </versioning>
+</metadata>
