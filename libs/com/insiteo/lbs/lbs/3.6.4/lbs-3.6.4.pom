@@ -5,4 +5,5 @@
   <groupId>com.insiteo.lbs</groupId>
   <artifactId>lbs</artifactId>
   <version>3.6.4</version>
+  <packaging>aar</packaging>
 </project>
