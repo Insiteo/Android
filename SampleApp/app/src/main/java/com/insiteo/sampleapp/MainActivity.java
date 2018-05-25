@@ -16,8 +16,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -47,7 +47,7 @@ import java.util.Stack;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 
-public class MainActivity extends ActionBarActivity implements ISInitializationTaskFragment.Callback {
+public class MainActivity extends AppCompatActivity implements ISInitializationTaskFragment.Callback {
 
 	public final static String TAG = "SampleApp";
 

@@ -3,7 +3,7 @@ package com.insiteo.sampleapp.settings;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -11,7 +11,7 @@ import android.widget.Switch;
 import com.insiteo.lbs.beacon.ISBeaconProvider;
 import com.insiteo.sampleapp.R;
 
-public class SettingsActivity extends ActionBarActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
