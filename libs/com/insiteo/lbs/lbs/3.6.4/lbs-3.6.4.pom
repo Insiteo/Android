@@ -5,18 +5,4 @@
   <groupId>com.insiteo.lbs</groupId>
   <artifactId>lbs</artifactId>
   <version>3.6.4</version>
-  <dependencies>
-    <dependency>
-      <groupId>com.android.support</groupId>
-      <artifactId>appcompat-v7</artifactId>
-      <version>27.1.0</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.altbeacon</groupId>
-      <artifactId>android-beacon-library</artifactId>
-      <version>2.13.1</version>
-      <scope>compile</scope>
-    </dependency>
-  </dependencies>
 </project>
