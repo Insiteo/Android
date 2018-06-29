@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: SampleApp:Insiteo-SDK-3.6.3l">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/a27d2ef1a4b5f3062ad4e61b0ddcc8468481c05b/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/a27d2ef1a4b5f3062ad4e61b0ddcc8468481c05b/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
