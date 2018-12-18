@@ -7,7 +7,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -301,7 +301,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 			i++;
 		}
 
-		ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+		ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
 
 		if (actionBar != null) {
 			actionBar.setDisplayShowTitleEnabled(false);
@@ -328,7 +328,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		for(int i = 0; i < mMaps.size(); i++){
 			if(mMaps.get(i).getId() == mapId) {
 				mCurrentMap = mMaps.get(i);
-				((ActionBarActivity) getActivity()).getSupportActionBar().setSelectedNavigationItem(i);
+				((AppCompatActivity) getActivity()).getSupportActionBar().setSelectedNavigationItem(i);
 			}
 		}
 	}

@@ -16,8 +16,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -47,7 +47,7 @@ import java.util.Stack;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 
-public class MainActivity extends ActionBarActivity implements ISInitializationTaskFragment.Callback {
+public class MainActivity extends AppCompatActivity implements ISInitializationTaskFragment.Callback {
 
 	public final static String TAG = "SampleApp";
 
@@ -310,8 +310,8 @@ public class MainActivity extends ActionBarActivity implements ISInitializationT
             StringBuilder message = new StringBuilder();
             message.append("The application requires the following permissions: \n ");
 
-            if (!isPermissionGranted(Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                permissionsList.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+            if (!isPermissionGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
+                permissionsList.add(Manifest.permission.ACCESS_FINE_LOCATION);
                 message.append("\n - ACCESS_COARSE_LOCATION in order to scan BLE and WIFI signals\n");
 
             }

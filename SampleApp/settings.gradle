@@ -1,1 +1,1 @@
-include ':app', ':Insiteo-SDK-3.6.3n'
+include ':app', ':Insiteo-SDK-3.6.4'
