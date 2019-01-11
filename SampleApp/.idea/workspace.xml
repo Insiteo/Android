@@ -66,8 +66,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="313" column="67" selection-start-line="313" selection-start-column="67" selection-end-line="313" selection-end-column="67" />
+            <state relative-caret-position="468">
+              <caret line="334" column="13" selection-start-line="334" selection-start-column="13" selection-end-line="334" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,7 +78,7 @@
       <file leaf-file-name="AppCompatActivity.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AppCompatActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="374">
               <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
             </state>
           </provider>
@@ -96,34 +96,10 @@
       <file leaf-file-name="MapFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
+            <state relative-caret-position="4301">
               <caret line="311" column="74" selection-start-line="311" selection-start-column="74" selection-end-line="311" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#13101#13130#0" expanded="true" />
-                <element signature="e#13215#13243#0" expanded="true" />
-                <element signature="e#13344#13366#0" expanded="true" />
-                <element signature="e#13368#14424#0" expanded="true" />
-                <element signature="e#14329#14360#0" expanded="true" />
-                <element signature="e#14423#14424#0" expanded="true" />
-                <element signature="e#18093#18105#0" expanded="true" />
-                <element signature="e#20218#20272#0" expanded="true" />
-                <element signature="e#23023#23453#0" expanded="true" />
-                <element signature="e#23452#23453#0" expanded="true" />
-                <element signature="e#28350#28382#0" expanded="true" />
-                <element signature="e#28410#28447#0" expanded="true" />
-                <element signature="e#28518#28550#0" expanded="true" />
-                <element signature="e#28552#28755#0" expanded="true" />
-                <element signature="e#28754#28755#0" expanded="true" />
-                <element signature="e#28826#28996#0" expanded="true" />
-                <element signature="e#28995#28996#0" expanded="true" />
-                <element signature="e#29331#29363#0" expanded="true" />
-                <element signature="e#29391#29427#0" expanded="true" />
-                <element signature="e#29498#29530#0" expanded="true" />
-                <element signature="e#29532#29734#0" expanded="true" />
-                <element signature="e#29733#29734#0" expanded="true" />
-                <element signature="e#29805#29975#0" expanded="true" />
-                <element signature="e#29974#29975#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,13 +144,6 @@
             <state relative-caret-position="374">
               <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Insiteo-SDK-3.6.3o/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -231,10 +200,6 @@
               <ExternalProjectPojo>
                 <option name="name" value=":app" />
                 <option name="path" value="$PROJECT_DIR$/app" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value=":Insiteo-SDK-3.6.3o" />
-                <option name="path" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value=":Insiteo-SDK-3.6.4" />
@@ -1115,62 +1080,6 @@
                 <option name="description" value="Displays the properties of root project 'SampleApp'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
-              </ExternalTaskPojo>
-            </list>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/Insiteo-SDK-3.6.3o">
-          <value>
-            <list>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by project ':Insiteo-SDK-3.6.3o'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="components" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of project ':Insiteo-SDK-3.6.3o'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="projects" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in project ':Insiteo-SDK-3.6.3o'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="dependentComponents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in project ':Insiteo-SDK-3.6.3o'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="buildEnvironment" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in project ':Insiteo-SDK-3.6.3o'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="dependencyInsight" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in project ':Insiteo-SDK-3.6.3o'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="dependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays a help message." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="help" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of project ':Insiteo-SDK-3.6.3o'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="model" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of project ':Insiteo-SDK-3.6.3o'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="properties" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from project ':Insiteo-SDK-3.6.3o'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/Insiteo-SDK-3.6.3o" />
-                <option name="name" value="tasks" />
               </ExternalTaskPojo>
             </list>
           </value>
@@ -4382,7 +4291,7 @@
     <option name="height" value="879" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -4398,25 +4307,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="SampleApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="SampleApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="SampleApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="sampleapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
             <path>
               <item name="SampleApp" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -4425,6 +4318,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4604,24 +4498,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32963374" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="3" />
-      <window_info id="Build Variants" order="3" sideWeight="0.5033113" side_tool="true" visible="true" weight="0.1609808" />
+      <window_info id="Build Variants" order="3" sideWeight="0.5049669" side_tool="true" visible="true" weight="0.1609808" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50159913" side_tool="true" visible="true" weight="0.32963374" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
-      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.49840087" visible="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.49840087" weight="0.32963374" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49668875" visible="true" weight="0.1609808" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49946696" weight="0.32963374" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49503312" visible="true" weight="0.1609808" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49840087" visible="true" weight="0.32963374" />
       <window_info anchor="right" id="Gradle" order="3" visible="true" weight="0.3283582" />
       <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.15938166" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990981" />
@@ -4632,15 +4526,16 @@
       <window_info anchor="right" id="Android Model" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Preview" order="4" weight="0.32942432" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Nl-Palette" order="3" />
       <window_info anchor="right" id="Properties" order="3" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.34075725" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Gradle Console" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Android Monitor" order="7" weight="0.25591883" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -4927,11 +4822,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Insiteo-SDK-3.6.3o/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Insiteo-SDK-3.6.3o/build.gradle" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/SampleApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -4975,49 +4866,25 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/appcompat-v7/26.1.0/2b34456c30d6b6e5db5fa3e8fa02f6cebd5531fd/appcompat-v7-26.1.0-sources.jar!/android/support/v7/app/AppCompatActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="374">
           <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="4301">
           <caret line="311" column="74" selection-start-line="311" selection-start-column="74" selection-end-line="311" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13101#13130#0" expanded="true" />
-            <element signature="e#13215#13243#0" expanded="true" />
-            <element signature="e#13344#13366#0" expanded="true" />
-            <element signature="e#13368#14424#0" expanded="true" />
-            <element signature="e#14329#14360#0" expanded="true" />
-            <element signature="e#14423#14424#0" expanded="true" />
-            <element signature="e#18093#18105#0" expanded="true" />
-            <element signature="e#20218#20272#0" expanded="true" />
-            <element signature="e#23023#23453#0" expanded="true" />
-            <element signature="e#23452#23453#0" expanded="true" />
-            <element signature="e#28350#28382#0" expanded="true" />
-            <element signature="e#28410#28447#0" expanded="true" />
-            <element signature="e#28518#28550#0" expanded="true" />
-            <element signature="e#28552#28755#0" expanded="true" />
-            <element signature="e#28754#28755#0" expanded="true" />
-            <element signature="e#28826#28996#0" expanded="true" />
-            <element signature="e#28995#28996#0" expanded="true" />
-            <element signature="e#29331#29363#0" expanded="true" />
-            <element signature="e#29391#29427#0" expanded="true" />
-            <element signature="e#29498#29530#0" expanded="true" />
-            <element signature="e#29532#29734#0" expanded="true" />
-            <element signature="e#29733#29734#0" expanded="true" />
-            <element signature="e#29805#29975#0" expanded="true" />
-            <element signature="e#29974#29975#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="313" column="67" selection-start-line="313" selection-start-column="67" selection-end-line="313" selection-end-column="67" />
+        <state relative-caret-position="468">
+          <caret line="334" column="13" selection-start-line="334" selection-start-column="13" selection-end-line="334" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
