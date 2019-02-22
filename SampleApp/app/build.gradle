@@ -35,5 +35,5 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
     implementation 'de.greenrobot:eventbus:2.4.0'
-    implementation project(':Insiteo-SDK-3.6.4a')
+    implementation project(':Insiteo-SDK-3.6.4b')
 }

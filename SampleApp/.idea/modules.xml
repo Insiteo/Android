@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Insiteo-SDK-3.6.4a/Insiteo-SDK-3.6.4a.iml" filepath="$PROJECT_DIR$/Insiteo-SDK-3.6.4a/Insiteo-SDK-3.6.4a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Insiteo-SDK-3.6.4b/Insiteo-SDK-3.6.4b.iml" filepath="$PROJECT_DIR$/Insiteo-SDK-3.6.4b/Insiteo-SDK-3.6.4b.iml" />
       <module fileurl="file://$PROJECT_DIR$/SampleApp.iml" filepath="$PROJECT_DIR$/SampleApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
