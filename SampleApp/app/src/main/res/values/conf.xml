@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="server">prod</string>
-    <string name="api_key">2ad95a1d-713d-4100-8d9f-4917f8dc8de7</string>
-    <string name="render_mode">MODE_2D</string>
+    <string name="api_key">724c294f-e1ec-4853-a9d4-549eefb42d29</string>
+    <string name="render_mode">MODE_3D</string>
     <string name="location_flags">BACKGROUND_FLAG_BLE</string>
 </resources>

@@ -118,9 +118,9 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		initializeMapService();
-		initializeLocationService();
-		initializeItineraryService();
-		initializeGeofencingService();
+//		initializeLocationService();
+//		initializeItineraryService();
+//		initializeGeofencingService();
 		super.onViewCreated(view, savedInstanceState);
 	}
 	
