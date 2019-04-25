@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:Insiteo-SDK-3.6.5a:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/Insiteo-SDK-3.6.5a.aar/0f89b8287d0e6cc82dcde6f8f8ebfbfe/jars/libs/xbrt_android.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/Insiteo-SDK-3.6.5a.aar/0f89b8287d0e6cc82dcde6f8f8ebfbfe/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/Insiteo-SDK-3.6.5a.aar/0f89b8287d0e6cc82dcde6f8f8ebfbfe/jars/libs/protobuf-java-lite.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/Insiteo-SDK-3.6.5a.aar/0f89b8287d0e6cc82dcde6f8f8ebfbfe/jars/libs/jpct_ae.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/Insiteo-SDK-3.6.5a.aar/0f89b8287d0e6cc82dcde6f8f8ebfbfe/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

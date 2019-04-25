@@ -118,9 +118,9 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		initializeMapService();
-//		initializeLocationService();
-//		initializeItineraryService();
-//		initializeGeofencingService();
+		initializeLocationService();
+		initializeItineraryService();
+		initializeGeofencingService();
 		super.onViewCreated(view, savedInstanceState);
 	}
 	
@@ -778,7 +778,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 		mLocationButton.setImageResource(R.drawable.localization_button);
 		((AnimationDrawable) mLocationButton.getDrawable()).start();
 
-		ISLocationProvider.getInstance().start(ISLocationProvider.GPS, this);
+		ISLocationProvider.getInstance().start(21, this);
 	}
 
 	/**
