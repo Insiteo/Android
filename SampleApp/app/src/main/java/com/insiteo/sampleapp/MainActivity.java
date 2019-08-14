@@ -35,6 +35,7 @@ import com.insiteo.lbs.common.init.ISEPackageType;
 import com.insiteo.lbs.common.init.ISEServerType;
 import com.insiteo.lbs.common.init.ISPackage;
 import com.insiteo.lbs.common.utils.ISLog;
+import com.insiteo.lbs.itinerary.GfxInstruction;
 import com.insiteo.lbs.location.ISLocationConstants;
 import com.insiteo.lbs.map.ISMapConstants;
 import com.insiteo.sampleapp.beacon.BeaconMonitoringFragment;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements ISInitializationT
         if(!permRequired)
             init();
 
-
+        GfxInstruction.SECTION_WIDTH_IN_METERS = 10;
 	}
 
     public void init() {

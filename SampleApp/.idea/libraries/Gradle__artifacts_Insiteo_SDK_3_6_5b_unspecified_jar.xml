@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:Insiteo-SDK-3.6.5b:unspecified@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/Insiteo-SDK-3.6.5b.aar/e37cf24b4ac63c8f3cca5cd76c51738c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/Insiteo-SDK-3.6.5b.aar/e37cf24b4ac63c8f3cca5cd76c51738c/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

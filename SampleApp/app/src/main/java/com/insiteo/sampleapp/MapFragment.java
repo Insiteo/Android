@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -278,7 +279,7 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 
 		// The MapView listener. By default the listener is set to the context (if it implements IMapListener) that created the View.
 		// In the case of fragment we have to explicitly set it.
-		mMapView.setListener(this);
+		mMapView.setListener(getContext(), this);
 	}
 
 	private void initializeRTO(){
@@ -429,6 +430,14 @@ public class MapFragment extends Fragment implements ISIMapListener, ISIRTOListe
 	@Override
 	public void onMapReleased() {
 		Log.d(TAG, "onMapReleased");
+	}
+
+	@Override
+	public void onDoubleTap(MotionEvent e) {
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e) {
 	}
 
 
