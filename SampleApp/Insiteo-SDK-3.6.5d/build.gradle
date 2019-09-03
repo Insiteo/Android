@@ -1,0 +1,4 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('Insiteo-SDK-3.6.5d.aar'))
+dependencies {
+}

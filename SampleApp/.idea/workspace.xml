@@ -17,10 +17,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9201aa8d-bbee-4f5b-b690-da240cc7f349" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__artifacts_Insiteo_SDK_3_6_5c_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Insiteo-SDK-3.6.5c/Insiteo-SDK-3.6.5c.aar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Insiteo-SDK-3.6.5c/Insiteo-SDK-3.6.5c.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Insiteo-SDK-3.6.5c/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__artifacts_Insiteo_SDK_3_6_5d_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Insiteo-SDK-3.6.5d/Insiteo-SDK-3.6.5d.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Insiteo-SDK-3.6.5d/Insiteo-SDK-3.6.5d.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Insiteo-SDK-3.6.5d/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -36,15 +36,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Insiteo-SDK-3.6.5a/Insiteo-SDK-3.6.5a.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Insiteo-SDK-3.6.5a/Insiteo-SDK-3.6.5a.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Insiteo-SDK-3.6.5a/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Insiteo-SDK-3.6.5c/build.gradle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libs/Insiteo-SDK-3.6.5a.aar" beforeDir="false" />
     </list>
     <ignored path="SampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,51 +92,53 @@
     <session id="1271886751">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="7" />
-          <entry key="java" value="100" />
+          <entry key="java" value="111" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="7" />
-          <entry key="JAVA" value="100" />
+          <entry key="JAVA" value="111" />
           <entry key="XML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="gradle" value="19" />
-          <entry key="java" value="11" />
-          <entry key="pro" value="9" />
-          <entry key="properties" value="14" />
-          <entry key="xml" value="26" />
+          <entry key="gradle" value="28" />
+          <entry key="java" value="14" />
+          <entry key="pro" value="12" />
+          <entry key="properties" value="15" />
+          <entry key="xml" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="Groovy" value="19" />
-          <entry key="JAVA" value="11" />
-          <entry key="ProGuard File" value="9" />
-          <entry key="Properties" value="14" />
-          <entry key="XML" value="26" />
+          <entry key="Groovy" value="28" />
+          <entry key="JAVA" value="14" />
+          <entry key="ProGuard File" value="12" />
+          <entry key="Properties" value="15" />
+          <entry key="XML" value="35" />
         </counts>
       </usages-collector>
     </session>
@@ -152,32 +149,32 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+        <entry file="file://$PROJECT_DIR$/local.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/local.properties">
+        <entry file="file://$PROJECT_DIR$/Insiteo-SDK-3.6.5d/build.gradle">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="439" column="28" selection-start-line="439" selection-start-column="28" selection-end-line="439" selection-end-column="28" />
+            <state relative-caret-position="352">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12476#12477#0" expanded="true" />
-                <element signature="e#12509#12510#0" expanded="true" />
-                <element signature="e#12808#12809#0" expanded="true" />
-                <element signature="e#12838#12839#0" expanded="true" />
-                <element signature="e#12929#12930#0" expanded="true" />
-                <element signature="e#12963#12964#0" expanded="true" />
+                <element signature="e#18254#18266#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -186,7 +183,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="5593">
               <caret line="379" column="9" selection-start-line="379" selection-start-column="9" selection-end-line="379" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -197,12 +194,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_3d.xml">
-          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -226,25 +223,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+            <state relative-caret-position="731">
+              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Insiteo-SDK-3.6.5c/build.gradle">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" column="76" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="76" />
             </state>
           </provider>
+          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
     </leaf>
@@ -4508,6 +4500,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -4519,7 +4512,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -4535,7 +4527,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4544,13 +4536,13 @@
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.profiler.active" value="true" />
-    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.last.selected" value="Insiteo-SDK-3.6.5c" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="ZY225CNSG8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../libs/Insiteo-SDK-3.6.5c.aar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../libs/Insiteo-SDK-3.6.5d.aar" />
     <property name="settings.editor.selected.configurable" value="instant.run" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1565794976281" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1567502123593" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -4710,53 +4702,6 @@
       </ExternalSystemSettings>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="SampleApp" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="SampleApp" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
@@ -4794,11 +4739,11 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4719472" visible="true" weight="0.15991472" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4669967" visible="true" weight="0.15991472" />
       <window_info id="Structure" order="1" sideWeight="0.50165564" side_tool="true" weight="0.15938166" />
       <window_info id="Captures" order="2" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="3" />
-      <window_info id="Build Variants" order="4" sideWeight="0.5280528" side_tool="true" visible="true" weight="0.15991472" />
+      <window_info id="Build Variants" order="4" sideWeight="0.5330033" side_tool="true" visible="true" weight="0.15991472" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.50165564" side_tool="true" weight="0.15938166" />
       <window_info id="Capture Tool" order="7" />
@@ -4810,12 +4755,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49093816" visible="true" weight="0.3259177" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.48933902" visible="true" weight="0.3259177" />
       <window_info anchor="bottom" id="Gradle Console" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Android Profiler" order="9" sideWeight="0.4989339" weight="0.32925472" />
       <window_info anchor="bottom" id="Android Monitor" order="10" weight="0.25591883" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32963374" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5090618" side_tool="true" visible="true" weight="0.3259177" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.510661" side_tool="true" visible="true" weight="0.3259177" />
       <window_info anchor="bottom" id="Logcat" order="13" sideWeight="0.49520257" weight="0.51390433" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.34075725" />
@@ -4848,18 +4793,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java</url>
-          <line>568</line>
+          <line>564</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java</url>
-          <line>177</line>
+          <line>178</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java</url>
-          <line>294</line>
+          <line>295</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -4871,7 +4816,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java</url>
-          <line>791</line>
+          <line>787</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -4964,29 +4909,36 @@
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/gradle.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/gradle.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/local.properties">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5593">
+          <caret line="379" column="9" selection-start-line="379" selection-start-column="9" selection-end-line="379" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_map_3d.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/conf.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -5002,53 +4954,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="76" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="731">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Insiteo-SDK-3.6.5c/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+        <state relative-caret-position="204">
+          <caret line="12" column="76" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="76" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="379" column="9" selection-start-line="379" selection-start-column="9" selection-end-line="379" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Insiteo-SDK-3.6.5d/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/insiteo/sampleapp/MapFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="439" column="28" selection-start-line="439" selection-start-column="28" selection-end-line="439" selection-end-column="28" />
+        <state relative-caret-position="352">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#12476#12477#0" expanded="true" />
-            <element signature="e#12509#12510#0" expanded="true" />
-            <element signature="e#12808#12809#0" expanded="true" />
-            <element signature="e#12838#12839#0" expanded="true" />
-            <element signature="e#12929#12930#0" expanded="true" />
-            <element signature="e#12963#12964#0" expanded="true" />
+            <element signature="e#18254#18266#0" expanded="true" />
           </folding>
         </state>
       </provider>
